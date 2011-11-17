@@ -6,7 +6,7 @@ There are two main goals accomplished in my dotfiles to produce insane productiv
   * All common bash commands should be two and three character mnemonic aliases
   * Most vim tasks, especially those having to do with navigation, should be mapped to a single Capital Letter or two letter mnemonic. 
 
-Setup
+Setup for Bash
 ---
 To set these up as your own (careful, don't overwrite your bash_profile unintentionally!):
 
@@ -22,6 +22,8 @@ feel free to edit them:
     ae # alias edit
     ar # alias reload
 
+Setup for Vim
+---
 To use the vim files:
 
     ln -s ~/.dotfiles/vimrc ~/.vimrc
@@ -31,13 +33,6 @@ The .vimrc is well commented and broken up by settings. I encourage you
 to take a look and learn some of my handy aliases, or comment them out
 if you don't like them, or make your own.
 
-To use the gitconfig (some of the git bash aliases rely on my git aliases)
-
-    ln -s ~/.dotfiles/gitconfig ~/.gitconfig
-
-
-Major Vim Improvements 
----
 These are things I use every day to be insanely productive. Hope you like em.
 
  * F - instantly Find definition of class (must have exuberant ctags installed)
@@ -56,6 +51,20 @@ These are things I use every day to be insanely productive. Hope you like em.
  * Ctrl-\ - Show NerdTree (project finder) and expose current file
  * cf - Copy Filename of current file into system (not vi) paste buffer 
  * // - clear the search
+ * ,, - use EasyMotion - type that and then type one of the highlighted letters. I'm just exploring this one.
+
+Setup for Git
+---
+To use the gitconfig (some of the git bash aliases rely on my git aliases)
+
+    ln -s ~/.dotfiles/gitconfig ~/.gitconfig
+
+Read through the gitconfig to find out what's in store.
+
+OSX Hacks
+---
+The osx file is a bash script that sets up sensible defaults for devs and power users
+under osx. Read through it before running it.
 
 Credits
 ===
