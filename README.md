@@ -47,6 +47,7 @@ These are things I use every day to be insanely productive. Hope you like em.
  * K - git grep for the Kurrent word under the cursor
  * O - Open a GitGrep command line with a quote pretyped (close the quote yourself)
  * M - show my Marks (set a mark with mX where X is a letter, navigate to mark using 'X). Uppercase marks to mark files, lowercase marks to use within a file.
+ * Z - jump back and forth between last two buffers
  * Q - Quit a window (normally Ctrl-w,c)
  * \Q - Kill a buffer completely (normally :bw)
  * Ctrl-j and Ctrl-k to move up and down roughly by functions
@@ -54,6 +55,7 @@ These are things I use every day to be insanely productive. Hope you like em.
  * H,L,I,M - to move left, right, up, down between windows
  * Ctrl-\ - Show NerdTree (project finder) and expose current file
  * cf - Copy Filename of current file into system (not vi) paste buffer 
+ * // - clear the search
 
 Credits
 ===
