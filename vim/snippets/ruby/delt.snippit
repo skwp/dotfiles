@@ -1,0 +1,1 @@
+delegate :${1:method}, to: :${2:object}

@@ -1,0 +1,184 @@
+*IndentAnything*    For Vim version 7.0
+
+
+The IndentAnything plugin is intended to make it easier to write new
+indentation scripts and/or supplement existing ones.  It makes the assumption
+that all indentable languages have similar characteristics:
+
+	- blocks of code over multiple lines
+	- continuation lines
+	- comments
+
+The rules of indentation are specified in a series of variables.
+
+================================================================================
+
+					*b:defaultIndentExpr*
+b:defaultIndentExpr
+	
+	If defined, this value is executed to find the starting indent for a
+	line.  The default is to use the indentation of the previous code
+	line.  But IndentAnything can be used to suplement other, existing
+	indentation scripts.
+
+	For example:
+>
+		let b:defaultIndentExpr = &indentexpr
+		setlocal indentexpr=IndentAnything()
+<
+
+					*b:indentTrios*
+b:indentTrios
+
+	This is the core of indenting anything.  The original version of this
+	script was meant to be a simple "get indentation inside parenthesis".
+	But a pair of paranthesis is just like any other pair of characters or
+	keywords that specify a block of code that should be indented.
+
+	This is a list of indent "trios" (start, middle, end).  The values
+	kept in this variable are the arguments that will be passed to
+	|searchpair()|.
+
+	The following example specifies that there should be a level of
+	indentation inside parenthesis and braces.  It also takes into account
+	the case statements inside a switch block.
+>
+		let b:indentTrios = [
+		            \ [ '(', '', ')' ],
+		            \ [ '{', '\(default:\|case.*:\)', '}' ]
+		\]
+<
+	Note: There is logic that makes the distinction between matches at the
+	beginning of lines or not.  These patterns should not include '^'
+	(beginning-of-line), or that logic will break.
+
+					*b:lineContList*
+b:lineContList
+	
+	This is a list of dictionaries specifying the lines that are continued
+	by the next line.  For example, in shell scripts, a trailing '\'
+	indicates that the next line is a continuation.
+
+	The dictionaries contain the following keys:
+
+	pattern : The regular expression matching a line that is continued.
+		  Used to determine if the current line is a continuation, and
+		  should therefore be indented another level.
+	ignore  : Pattern matching the CURRENT line if it should ignore a
+	          previous continued line.
+
+	The following example handles if, else, for, and while statements that are
+	NOT followed by a code block ('{') and lines ending in an operator
+	whose RHS is on the next line:
+>
+		let b:lineContList = [
+	            \ { 'pattern' : '^\s*\(if\|for\|while\)\s*(.*)\s*\(\(//.*\)\|/\*.*\*/\s*\)\?\_$\(\_s*{\)\@!' },
+	            \ { 'pattern' : '^\s*else' .                 '\s*\(\(//.*\)\|/\*.*\*/\s*\)\?\_$\(\_s*{\)\@!' },
+	            \ { 'pattern' : '\(+\|=\|+=\|-=\)\s*\(\(//.*\)\|/\*.*\*/\s*\)\?$' }
+		\]
+<
+
+					*b:contTraversesLineComments*
+b:contTraversesLineComments
+
+	If a continued line and its continuation can have line-comments
+	between them, then the value of this variable should be non-zero.
+	For example,
+>
+		if (x)
+		    // comment here
+		    statement
+<
+
+
+					*b:commentRE* *b:lineCommentRE*
+					*b:blockCommentRE*
+b:commentRE 
+b:lineCommentRE  
+b:blockCommentRE 
+
+	These are regular expressions that match the syntax names for comments
+	for the filetype being indented.  Line comments (like '// ...') and
+	block comments (like '/* ... */') are supported.
+
+	Example:
+>
+		let b:commentRE      = 'javaScript\(Line\)\?Comment'
+		let b:lineCommentRE  = 'javaScriptLineComment'
+		let b:blockCommentRE = 'javaScriptComment'
+<
+
+					*b:stringRE* *b:singleQuoteStringRE*
+					*b:doubleQuoteStringRE*
+							
+b:stringRE            
+b:singleQuoteStringRE 
+b:doubleQuoteStringRE 
+
+	These are regular expressions that match the syntax names for strings
+	for the filetype being indented.  There are strings in single-quotes
+	(''), double-quotes (""), and an expression for strings of any kind.
+
+	This is used mostly for avoiding matching of pairs and continuation
+	patterns inside strings.
+
+	Example:
+>
+		let b:stringRE            = 'javaScriptString\(S\|D\)'
+		let b:singleQuoteStringRE = 'javaScriptStringS'
+		let b:doubleQuoteStringRE = 'javaScriptStringD'
+<
+
+					*b:blockCommentStartRE*
+					*b:blockCommentMiddleRE*
+					*b:blockCommentEndRE*
+					*b:blockCommentMiddleExtra*
+b:blockCommentStartRE  
+b:blockCommentMiddleRE 
+b:blockCommentEndRE    
+b:blockCommentMiddleExtra 
+
+	This allows for special indentation for block comments.  For example,
+	to properly indent C-style comments, use the following:
+>
+		let b:blockCommentStartRE  = '/\*'
+		let b:blockCommentMiddleRE = '\*'
+		let b:blockCommentEndRE    = '\*/'
+		let b:blockCommentMiddleExtra = 1
+<
+	This will indent the following code like so:
+>
+		statement;
+		/*
+		 * comment
+		 */
+		statement;
+<
+	The second statement indented one character less than the last line of
+	the comment.  The value of |b:blockCommentMiddleExtra| will cause the
+	middle lines of the comment (those starting with '*') to be indented
+	by that many more characters.  This value can also be negative.
+
+	The example here duplicates the behavior of cindent.  However, this
+	will work for any style block comment.  For example, HTML comments
+	could be indented like this:
+>
+		<!--
+		   - Comment
+		   -->
+		<br>
+<
+	This will be most effective if the 'comments' option is configured
+	properly for the filetype.  The above works best with the following:
+>
+		setl comments=sr:<!--,m:-,e:-->
+		let b:blockCommentStartRE  = '<!--'
+		let b:blockCommentMiddleRE = '-'
+		let b:blockCommentEndRE    = '-->'
+		let b:blockCommentMiddleExtra = 3
+		
+<
+
+
+ vim:noet:sw=8:
+ vim:tw=78:ts=8:ft=help:norl:

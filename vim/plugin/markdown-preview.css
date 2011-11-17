@@ -1,0 +1,44 @@
+body div#content {
+  margin            : 0 auto;
+  width             : 920px;
+  background-color  : #f8f8f8;
+  padding           : .7em;
+  font-size         : 13.34px;
+  font-family       : verdana, sans-serif;
+  border            : 1px #E0E0E0 solid;
+}
+
+body div#content h2, body div#content h3, body div#content h4 {
+  padding-top  : 10px;
+  border-top   : 4px solid #E0E0E0;
+}
+
+body div#content pre {
+  padding          : 5px;
+  border-style     : solid;
+  border-width     : 1px;
+  border-color     : #E0E0E0;
+  background-color : #F8F8FF;
+}
+
+body div#content pre code {
+  padding          : 5px;
+  background-color : #F8F8FF;
+  border           : none;
+}
+
+body div#content code {
+  font-family      : courier, fixed;
+  display          : inline-block;
+  padding          : 0px 2px 0px 2px;
+  background-color : #F8F8FF;
+  border           : 1px #E0E0E0 solid;
+}
+
+body h4#title {
+  font-family : verdana, sans-serif;
+  display     : block;
+  margin      : 0 auto;
+  width       : 920px;
+}
+

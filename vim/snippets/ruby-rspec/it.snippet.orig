@@ -1,0 +1,8 @@
+<<<<<<< HEAD:ruby-rspec/it.snippet
+it '${1}' do
+  ${2}
+=======
+it "${1}" do
+	${2}
+>>>>>>> 7e58374... Ruby rspec snippets improvements:ruby-rspec/it.snippet
+end

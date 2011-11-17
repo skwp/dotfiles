@@ -1,0 +1,547 @@
+*EasyGrep.txt*
+==============================================================================
+  EasyGrep                                                          *EasyGrep*
+==============================================================================
+
+Author:      Dan Price   vim@danprice.fastmail.net       *EasyGrep_Author*
+
+Goal:        To be an easy to use, powerful find and     |EasyGrep_Motivation|
+             replace tool for users of all skill levels.
+Version:     0.96                                        |EasyGrep_History|
+
+License:     Public domain, no restrictions whatsoever   |EasyGrep_License|
+Contribute:  Please report any bugs or suggestions       |EasyGrep_Bugs|
+             to the address above.                       |EasyGrep_Future|
+
+
+==============================================================================
+  Table of Contents                                        *EasyGrep_Contents*
+==============================================================================
+
+
+             1. Motivation.................|EasyGrep_Motivation|
+             2. Operation..................|EasyGrep_Operation|
+                2.1 Modes..................|EasyGrep_OperationModes|
+             3. Keymaps....................|EasyGrep_Keymaps|
+                3.1 Option Mappings........|EasyGrep_KeymapsOptions|
+                3.2 Mapping Customization..|EasyGrep_KeymapsCustomization|
+             4. Commands...................|EasyGrep_Commands|
+             5. Options....................|EasyGrep_Options|
+                5.1  Summary...............|EasyGrep_OptionsSummary|
+                5.2  Explorer..............|EasyGrep_OptionsExplorer|
+                5.3  Details...............|EasyGrep_OptionsDetail|
+             6. Bugs.......................|EasyGrep_Bugs|
+             7. Future.....................|EasyGrep_Future|
+             8. History....................|EasyGrep_History|
+             9. License....................|EasyGrep_License|
+
+
+==============================================================================
+  Motivation                                             *EasyGrep_Motivation*
+==============================================================================
+
+EasyGrep's main goal is to make search and replace in files easy.  Other Vim
+plugins provide similar functionality, but few provide the same level of
+functionality with as little configuration as EasyGrep does.  In the common
+case, all it takes to search for a string across multiple files is three
+keypresses: <leader>vv.  No clicks, no commands, no project/tags setup -- just
+three keys.  When you need a substitution, it also takes the same number of
+keys to start a replace in files.  After using EasyGrep, you'll wonder at how
+you got around without it.
+
+While EasyGrep's default configuration will satisfy many users, it provides
+more than a dozen options for those who need more control |EasyGrep_Options|.
+When you need to change options, EasyGrep provides an options explorer that
+indicates which files will be searched and allows visual customization of its
+options |EasyGrep_OptionsExplorer|.  When this isn't fast enough, EasyGrep
+provides key mappings for each option to toggle its value
+|EasyGrep_KeymapsOptions|.  If you can't find an option you need, contact me
+|EasyGrep_Author| and if it doesn't already exist, we'll make it happen.
+
+I hope that EasyGrep makes Vim more fun, productive, and easy for you to use.
+
+                                Happy Vimming!
+
+
+==============================================================================
+  Operation                                               *EasyGrep_Operation*
+==============================================================================
+
+EasyGrep makes using Vim's grep capabilities easier.  When using EasyGrep,
+searching for a word is as easy as typing a three keypress mapping
+|EasyGrep_Keymaps|.  In addition to keymaps, search and replace can be invoked
+through commands |EasyGrep_Commands|.
+
+To determine which files to search, EasyGrep provides three modes, described
+in the next section.
+
+
+Search Modes                                         |EasyGrep_OperationModes|
+
+All
+    All files will be searched  (default).
+
+Buffers
+    Files currently open in vim will be searched.  Recursion has no meaning in
+    this mode, and will be turned off.
+
+TrackExt
+    Files that match the extension of the currently opened file will be
+    searched.  Additionally, this extension can be mapped to a user defined
+    set of extensions that will also be searched |EasyGrepFileAssociations|. 
+
+    For example: in the default configuration, when test.cpp is open, files
+    that match any one of
+
+        *.cpp *.hpp *.cxx *.hxx *.cc *.c *.h 
+
+    will be searched when a Grep is initiated.  I find this mode to be the
+    most useful.
+
+User
+    Specify a custom set of file extensions to search.
+
+
+These modes can be quickly changed through the |EasyGrep_OptionsExplorer| or
+|EasyGrep_KeymapsOptions|.
+
+
+==============================================================================
+  Keymaps                                                   *EasyGrep_Keymaps*
+==============================================================================
+
+EasyGrep uses Vim's leader key, which is by default '\'.  For information on
+this key, type ":help mapleader".
+
+<Leader>vv  - Grep for the word under the cursor, match all occurences,
+              like 'g*'.  See ":help gstar".
+<Leader>vV  - Grep for the word under the cursor, match whole word, like
+              '*'.  See ":help star".
+<Leader>va  - Like vv, but add to existing list.
+<Leader>vA  - Like vV, but add to existing list.
+
+<Leader>vr  - Perform a global search on the word under the cursor
+              and prompt for a pattern with which to replace it.
+<Leader>vR  - Like vr, but match whole word.
+
+Each of these commands has an 'all occurences' and 'whole word' option,
+designated by the case of the last character.  If you would prefer that these
+be reversed, see |EasyGrepInvertWholeWord|.
+
+In addition to grepping the word under the cursor, text may be visually
+selected and these mappings may be used analogously to as they are used above.
+Visual selections will automatically be escaped so as not to confuse the
+selection with a regular expression.
+
+    e.g. Selecting the text inside the quotes here "/<word\>" will match
+    against "\<word\>" but not against "word".  
+
+To search with a regular expression, see the :Grep command |EasyGrep_Commands|
+
+Each of the above commands will search files according to settings
+controlled by:
+
+<Leader>vo  - Open an options explorer to select the files to search in and
+              set grep options.
+
+For the options provided, see |EasyGrep_Options|.
+
+
+                                                     *EasyGrep_KeymapsOptions*
+
+For each of the options presented in the options explorer, there is a mapping
+that allows a direct change of this option.  The pattern is <Leader>vy* ,
+where star is the value listed in the options window for each of the options.
+
+    e.g. To toggle recursive mode, type '\vyr'
+
+See |EasyGrepOptionPrefix| to change the prefix from '\vy' or to turn these
+keymappings off.
+
+
+                                               *EasyGrep_KeymapsCustomization*
+
+Beyond EasyGrepOptionPrefix, other keymaps may be remapped to your liking.
+See the "Keymaps" section of EasyGrep.vim for the names of these items.
+
+Mappings take the form:
+
+    map <silent> (keycombination) <plug>(MappingName)
+e.g.
+    map <silent> ,op <plug>EgMapGrepOptions
+
+
+==============================================================================
+  Commands                                                 *EasyGrep_Commands*
+==============================================================================
+
+:Grep [arg]
+    Search for the specified arg, like <Leader>vv.  When an ! is added,
+    search like <Leader>vV
+
+:GrepAdd [arg]
+    Search for the specified arg, add to existing file list, as in
+    <Leader>va.  When an ! is added, search like <Leader>vA
+
+    The Above commands can additionally accept command switches:
+    -r   Perform a recursive search
+    -R   Perform a recursive search
+    -i   Perform a case-insensitive search
+    -I   Perform a case-sensitive search
+
+:Replace [target] [replacement]
+:Replace /[target]/[replacement]/
+    Perform a global search and replace.  The function searches
+    the same set of files a grep for the desired target and opens a dialog to
+    confirm replacement.  In the second, forward slash delineated form, back
+    and forward slashes must be explicitly escaped.
+
+:ReplaceUndo
+    Undoes the last :Replace operation.  Does not stack successive
+    searches; only the last replace may be undone.  This function may not
+    work well when edits are made between a call to Replace and a call to
+    ReplaceUndo.
+
+    Note: currently implemented ReplaceUndo will fail to restore replacements
+    that make use of backreferences.|EasyGrep_Bugs|
+
+:GrepOptions
+    Open the options explorer to set options.
+
+
+For each of the search and replace commands, searching with regular
+expressions is supported.  Note that regular expressions are handled as
+indicated by the 'magic' option (see ":help 'magic'").
+
+
+==============================================================================
+  Options                                                   *EasyGrep_Options*
+==============================================================================
+
+Options Summary                                      *EasyGrep_OptionsSummary*
+
+ Option                               Description
+------------------------------------------------------------------------------
+|EasyGrepFileAssociations|            Specifies the location of the EasyGrep
+                                      file associations
+------------------------------------------------------------------------------
+|EasyGrepMode|                        Mode of operation
+------------------------------------------------------------------------------
+|EasyGrepCommand|                     Whether to use vimgrep or grepprg
+------------------------------------------------------------------------------
+|EasyGrepRecursive|                   Recursive searching
+------------------------------------------------------------------------------
+|EasyGrepIgnoreCase|                  Case-sensitivity in searches
+------------------------------------------------------------------------------
+|EasyGrepHidden|                      Include hidden files in searches
+------------------------------------------------------------------------------
+|EasyGrepAllOptionsInExplorer|        How many options to show in the explorer
+------------------------------------------------------------------------------
+|EasyGrepWindow|                      Quickfix or location list
+------------------------------------------------------------------------------
+|EasyGrepOpenWindowOnMatch|           Open grep window on successful match
+------------------------------------------------------------------------------
+|EasyGrepEveryMatch|                  Match multiple times per line
+------------------------------------------------------------------------------
+|EasyGrepJumpToMatch|                 Jump to first match
+------------------------------------------------------------------------------
+|EasyGrepSearchCurrentBufferDir|      Whether to search current buffers dir
+                                      in addition to working dir
+------------------------------------------------------------------------------
+|EasyGrepInvertWholeWord|             Invert the meaning of whole word for vv
+                                      and vV keymaps
+------------------------------------------------------------------------------
+|EasyGrepFileAssociationsInExplorer|  Whether to show the file associations
+                                      list in the options explorer
+------------------------------------------------------------------------------
+|EasyGrepReplaceWindowMode|           Controls whether to use tabs or splits 
+                                      when replacing in files
+------------------------------------------------------------------------------
+|EasyGrepReplaceAllPerFile|           Replace on per file or global basis
+------------------------------------------------------------------------------
+|EasyGrepOptionPrefix|                Specify the keymap for toggling options
+------------------------------------------------------------------------------
+|EasyGrepExtraWarnings|               Whether to show extra warnings
+------------------------------------------------------------------------------
+
+
+Options Explorer                                    *EasyGrep_OptionsExplorer*
+
+    To invoke the options explorer, type '\vo' (default).  The options
+    explorer presents all of EasyGrep's customizable options and provides
+    information on the file patterns that will be searched when invoking a
+    Grep.
+
+    A useful exercise for beginners is to toggle between EasyGrep's options
+    and modes (|EasyGrep_OperationModes|) and type 'e' to see which files will
+    be searched for a given configuration.
+
+
+Options Details                                       *EasyGrep_OptionsDetail*
+
+*EasyGrepFileAssociations* 
+Specifies the location of a file that contains groups of files that should be
+associated with one another.  When set to an empty string "", no file read
+will be attempted.
+
+This file has a simple syntax used to logically link different files types.
+A simple configuration is shown below:
+
+     C=*.c *.h
+     C++=*.cpp *.hpp *.cxx *.hxx *.cc <C>
+     VHDL=*.hdl *.vhd *.vhdl *.vbe *.vst
+     Web=*.htm *.html *.js
+
+For example, in this configuration, whenever the active file has the .c
+extension, files with the .h extension will also be search.  A special feature
+of this syntax is the ability to link groups together.  For example, the C++
+group links to all files that are in the C group.
+
+
+*EasyGrepMode*
+Specifies the mode in which to start.
+0 - All files
+1 - Open Buffers
+2 - Track the current extension
+
+Note: I find option 2 to be the most powerful, but option 0 is activated by
+default because it is the most intuitive for users who haven't take the
+time to understand how the script works.  See |EasyGrep_OperationModes|.
+
+*EasyGrepCommand* 
+Specifies the grep command to use.
+
+0 - vimgrep
+1 - grep (follows grepprg)
+
+*EasyGrepRecursive* 
+Specifies that recursive search be activated on start.
+
+*EasyGrepIgnoreCase* 
+Specifies the case sensitivity of searches.  Note that this can be further
+overrided for vimgrep searches with \c and \C.
+
+*EasyGrepHidden* 
+Specifies that hidden files search be activated on start.  Note that hidden
+implies the unix meaning of those files that are prepended with a '.', and not
+the Windows meaning of those files with a hidden attribute.
+
+*EasyGrepAllOptionsInExplorer* 
+Specifies that all options be included in the explorer window.
+
+Note: settting this option is very useful when you want to try out and
+learn all of the options available in this script.
+
+*EasyGrepWindow*
+Specifies the window to use for matches.
+0 - quickfix
+1 - location list
+
+*EasyGrepOpenWindowOnMatch*
+Specifies whether to open the with matches after a search.
+
+*EasyGrepEveryMatch*
+Specifies that multiple matches on the same line be treated as different
+matches, like the g option to vimgrep.
+
+*EasyGrepJumpToMatch*
+Specifies that jump to first match be activated, like the j option to vimgrep.
+
+*EasyGrepSearchCurrentBufferDir*
+Setting this option causes EasyGrep to search the current buffer's
+directory in addition to the current working directory.
+
+*EasyGrepInvertWholeWord*
+Specifies that the whole word search keys should be inverted from their
+default meaning.  For example, when this option is activated, <Leader>vv
+matches whole word, while <Leader>vV matches everything that includes the
+word.  Note that this affects both keymappings and commands.
+
+*EasyGrepFileAssociationsInExplorer*
+Specifies whether to show the file associations list in the options explorer
+window.
+
+*EasyGrepOptionPrefix*
+Specifies the prefix that is used when building keymaps for setting options
+directly.  To specify that no option keymaps be created, set this to the empty
+string.  
+
+Default:
+    let g:EasyGrepOptionPrefix='<leader>vy'
+Custom:
+    let g:EasyGrepOptionPrefix=',oe'
+None:
+    let g:EasyGrepOptionPrefix=''
+
+
+*EasyGrepReplaceWindowMode*
+Specifies the mode that the script will use when a buffer needs to be changed
+while performing a global replace.
+0 - Open a new tab for each window
+1 - Perform a split of the current window with the next window
+2 - autowriteall; create no new windows
+
+Note: Option 1 has the possibility of running out of vertical space to
+split more windows.  Actions are taken to make this a non-issue, but this
+option can often be more clunky than other options.
+Note: As a result of the limitation above, option 0 is the only mode that
+won't require saving the files during a replace.
+
+*EasyGrepReplaceAllPerFile*
+Specifies that selecting 'a' (for all) will apply the replacements on a per
+file basis, as opposed to globally as is the default.
+
+*EasyGrepExtraWarnings*
+Specifies that warnings be issued for conditions that may be valid but confuse
+some users.
+
+
+==============================================================================
+  Future                                                     *EasyGrep_Future*
+==============================================================================
+
+------------------------------------------------------------------------------
+Show search progress?
+------------------------------------------------------------------------------
+Allow entries in the file associations list to be regular expressions
+------------------------------------------------------------------------------
+Idea: create capability to include paths other than the active directory (and
+below) in a search.  e.g.  ../../include, $INCLUDE, etc.
+------------------------------------------------------------------------------
+Idea: set file/directory exclusions
+------------------------------------------------------------------------------
+
+
+==============================================================================
+  Bugs                                                         *EasyGrep_Bugs*
+==============================================================================
+
+If you discover any bugs not listed here, please contact the |EasyGrep_Author|
+
+------------------------------------------------------------------------------
+ReplaceUndo can't correctly restore replacements that use numbered
+sub-expressions
+------------------------------------------------------------------------------
+ReplaceUndo can't currently replace the text accurately in all cases if case
+insensitivity is turned on
+------------------------------------------------------------------------------
+Increase the granularity of the match inside of a Replace call so that you can
+individually decide per line
+------------------------------------------------------------------------------
+Cursorline doesn't always follow to the line at which the replacement is going
+to happen
+------------------------------------------------------------------------------
+Successive warning messages can hide a previous message
+------------------------------------------------------------------------------
+ReplaceUndo opens a window even if it is already open?
+------------------------------------------------------------------------------
+Report that a swap file can't be opened
+------------------------------------------------------------------------------
+Don't warn when the current file will actually be searched because recursion
+is on and it is below the current directory
+------------------------------------------------------------------------------
+
+
+
+==============================================================================
+  History                                                   *EasyGrep_History*
+==============================================================================
+
+  0.96
+      Feature: Expanded upon the list of file associations
+      Feature: Expanded searches to the current buffer's directory
+      in addition to the current working directory
+      Feature: Added command line arguments to :Grep and :Replace for
+      recursive searches and case sensitivity
+      Feature: Added toggle for window replace mode
+      Feature: Added toggle for showing file associations list in options
+      explorer
+      Bugfix: Case insensitivity would fail in replacing some patterns
+  0.95
+      Feature: Added search and replace on visual selections
+      Feature: Improved Grepping for items that can be interpreted as regular
+      expressions.  Selections are assumed to be literal, whereas explicit
+      commands are assumed to be regular expressions.
+      Feature: Removed option g:EasyGrepNoDirectMappings in favor of
+      g:EasyGrepOptionPrefix, which allows the option prefix to be changed.
+      Bugfix:  The tracked extension would sometimes fail to be updated when
+      switching between buffers
+	  Documentation: Split the documentation into its own file; greatly
+	  expanded upon its contents
+      Change: Activating a mode that is already activated will no longer
+      deactivate it
+      Change: GrepOptions no longer accepts an argument; use user mode instead
+      Change: Clarified mapping names; custom mappings will need to
+      be reset.
+  0.9
+      Feature: Added forward slash delineated pattern to the Replace command
+      e.g. :Replace /target/replacement/
+      that allows more complicated replacements; you can now work with
+      patterns that have spaces in them.
+      Bugfix: If cursorline is off at the start of a replace, now ensuring
+      that cursorline is turned off for all buffers, and not just the last one
+      Bugfix: fixed an issue with an extra tab being opened during a
+      replacement
+  0.8
+      Implemented case sensitivity that is independent of ignorecase, thanks
+      to Doro Wu for contributing to this functionality
+      Changed shortcut key for hidden files from 'i' to 'h'
+  0.7
+      Expanded search of EasyGrepFileAssociations list to every component of
+      'runtimepath'.  This solves a starting message for those who placed
+      EasyGrepFileAssociations in a location other than the first location in
+      'runtimepath'.
+  0.6
+      Fixed paths with spaces in them
+      Folds will now be disabled where replacements are to be made
+      Fixed an error with checking for extra warnings
+      Better highlighting while replacing
+      Recursive mode can no longer be activated when Buffers mode is activated
+  0.5
+      Fixed an issue with tracking the file extension where sometimes the
+      desired extension wouldn't be registered.
+      Better reporting when no files match.
+      Now warning when searching from a working directory that doesn't match
+      the current file's directory.
+      Added g:EasyGrepExtraWarnings option.
+  0.4
+      Improved Replace and ReplaceUndo
+      Added two configurable modes for how the windows operate when doing a
+      global replace.
+      Fixed an issue with linked filetypes.
+  0.3
+      Added experimental :Replace and :ReplaceUndo commands; keymapped
+      <leader>vr for :Replace
+      Improved response when no matches
+  0.2
+      Added option to toggle showing fewer or more options; showing fewer
+      options by default.
+      Added option '?' to print the current configuration and save it to a
+      register.
+      Now creating direct mappings by default; see g:EasyGrepNoDirectMappings
+      to turn this off.
+  0.1
+      Initial version
+
+
+==============================================================================
+  License                                                   *EasyGrep_License*
+==============================================================================
+
+                  Public domain, no restrictions whatsoever
+
+When writing EasyGrep, I wanted it to be free in the broadest sense.  Of
+course, most (if not all) plugins for Vim are free, but I wanted mine to be
+freer still: I've released EasyGrep in the public domain.  It took a lot of
+time and learning to get EasyGrep to work, and I want anyone to take advantage
+of my contribution.  If you see some (or many) snippets of EasyGrep's code
+that you need, use it -- you don't need to ask me, think about any copyright,
+worry about violating a license, or even note that the code came from me, just
+use it.  My only request is that if you are thinking of forking EasyGrep (or
+enhancing, as some authors claim to do), please contact me to let me know what
+you feel is lacking in EasyGrep, and I promise I'll be receptive to correcting
+these issues.
+
+
+==============================================================================
+vim:tw=78:ts=4:ft=help:norl:fdm=marker

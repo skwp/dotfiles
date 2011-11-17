@@ -1,0 +1,91 @@
+[user]
+	name = yan
+	email = yan@pritzker.ws
+[color]
+  ui = true
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+; [color "status"]
+; added = green
+; changed = yellow
+; untracked = red
+[alias]
+	d = diff 			# show unstaged changes
+	dc = diff --cached		# show staged changes
+  last = diff HEAD^ # show last committed change
+	unstage = reset HEAD 		# remove files from index (tracking)
+	uncommit = reset --soft HEAD^   # go back before last commit, with files in uncommitted state
+	chunkyadd = add --patch		# stage commits chunk by chunk
+	filelog = log -u		# show changes to a file
+	amend = commit --amend
+	ammend = commit --amend
+	mt = mergetool	#fire up the merge tool
+  
+  addall = !sh -c 'git add . && git add -u'
+
+#   stashselective = !f(){ git add -A; git unstage $1; git ci -m "temp"; git stash; git uncommit; }; f
+
+	# rebasing
+	rc = rebase --continue
+	rs = rebase --skip
+	
+	# save some typing for common commands
+	ci = commit
+	co = checkout
+	b = branch -v
+	r = remote -v
+	t = tag -n
+	
+	# create and switch to a new branch (mnemonic: "git new branch branchname...")
+	nb = checkout -b  
+
+	stat = status
+	s = status
+	
+	# stashing
+	ss = stash
+	sl = stash list
+	sa = stash apply
+	sd = stash drop
+
+	# grab a change from a branch
+	cp = cherry-pick -x
+
+	# move patch
+
+	# nice logs
+	changes = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\" --name-status
+	short = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\" 
+	changelog = log --pretty=format:\" * %s\" 
+	shortnocolor = log --pretty=format:\"%h %cr %cn %s\" 
+  
+	# svn helpers
+	svnr = svn rebase
+	svnd = svn dcommit
+	svnl = svn log --oneline --show-commit 
+
+  drop = !sh -c 'git add . && git stash && git stash drop'
+  grab = !sh -c 'git-grab.sh'
+[gc]
+#	auto = 1
+[merge]
+	summary = true
+	verbosity = 1
+[apply]
+	whitespace = nowarn
+[branch]
+  autosetupmerge = true
+[push]
+	default = matching
+[github]
+	user = skwp
+[core]
+	autocrlf = false
+	editor = /usr/bin/vim

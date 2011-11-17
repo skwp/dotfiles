@@ -1,0 +1,23 @@
+    When I go to [page_name]
+    When I press "[button]"
+    When I follow "[link]"
+    When I fill in "[field]" with "[value]"
+    When I select "[value]" from "[field]"
+    When I select "[time]" as the date and time
+    When I select "[datetime]" as the "[datetime_label]" date and time
+    When I select "[time]" as the time
+    When I select "[time]" as the "[time_label]" time
+    When I select "[date]" as the date
+    When I select "[date]" as the "[date_label]" date
+    When I check "[field]"
+    When I uncheck "[field]"
+    When I choose "[field]"
+    When I attach the file at "[path]" to "[field]"
+  
+    Then I should see "[text]"
+    Then I should not see "[text]"
+    Then the "[field]" field should contain "[value]"
+    Then the "[field]" field should not contain "[value]"
+    Then the "[label]" checkbox should be checked
+    Then I should be on [page_name]
+

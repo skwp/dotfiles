@@ -1,0 +1,487 @@
+@media print {
+  /* print.css from blueprint CSS framework */
+  .page {
+      margin-left: 0.1in;
+      margin-right: 0.1in;
+      margin-top: 2in;
+  }
+  body {
+    line-height:1.5;
+    font-family:"Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-family: Georgia, Times, serif;
+    color:#000;
+    background:none;
+    font-size:12pt;
+  }
+  .container {
+    background:none;
+  }
+  hr {
+    background:#ccc;
+    color:#ccc;
+    width:100%;
+    height:2px;
+    margin:2em 0;
+    padding:0;
+    border:none;
+  }
+  hr.space {
+    background:#fff;
+    color:#fff;
+    visibility:hidden;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family:"Helvetica Neue", Arial, "Lucida Grande", sans-serif;
+  }
+  code {
+    font:.9em "Courier New", Monaco, Courier, monospace;
+  }
+  pre {
+    line-height:0.8;
+  }
+  a img {
+    border:none;
+  }
+  p img.top {
+    margin-top:0;
+  }
+  blockquote {
+    margin:1.5em;
+    padding:1em;
+    font-style:italic;
+    font-size:.9em;
+  }
+  .small {
+    font-size:.9em;
+  }
+  .large {
+    font-size:1.1em;
+  }
+  .quiet {
+    color:#999;
+  }
+  .hide {display:none;}
+  a:link, a:visited {
+    background:transparent;font-weight:700;text-decoration:underline;
+  }
+  a:link:after, a:visited:after {
+    content:" (" attr(href) ")";font-size:90%;
+  }
+  table {
+    page-break-inside: avoid;
+  }
+}
+
+@media screen {
+  /* screen.css from Safari Reader */
+  h1.title {
+    font-family: Palatino, Georgia, Times, "Times New Roman", serif;
+    font-weight: bold;
+    font-size: 1.33em;
+    line-height: 1.25em;
+  }
+
+  h1 {
+    font-size: 1.25em;
+  }
+
+  h2 {
+    font-size: 1.125em;
+  }
+
+  h3 {
+    font-size: 1.05em;
+  }
+
+  .page a {
+    text-decoration: none;
+    color: rgb(32, 0, 127);
+  }
+
+  .page a:visited {
+    color: rgb(32, 0, 127);
+  }
+
+  #article img {
+    /* Float images to the left, so that text will nicely flow around them. */
+    float: left;
+    margin-right: 12px;
+  }
+
+  #article img.reader-image-tiny {
+    /* Don't float very small images -- let them display where they occur in the text. */
+    float: none;
+    margin: 0;
+  }
+
+  #article img.reader-image-large {
+    float: none;
+    margin: auto;
+    display: block;
+  }
+
+  .float {
+    margin: 8px 0;
+    font-size: 65%;
+    line-height: 1.4;
+    text-align: left;
+  }
+
+  .float.left {
+    float: left;
+    margin-right: 20px;
+  }
+
+  .float.right {
+    float: right;
+    margin-left: 20px;
+  }
+
+  .float.full-width {
+    float: none;
+    display: block;
+  }
+
+  .page {
+    font: 20px Palatino, Georgia, Times, "Times New Roman", serif;
+    line-height: 160%;
+    text-align: justify;
+  }
+
+  .page:first-of-type .title {
+    display: block;
+  }
+
+  .page table {
+    font-size: 0.9em;
+    text-align: left;
+  }
+
+  .page.rtl table {
+    text-align: right;
+  }
+
+  .page-number {
+    display: none;
+  }
+
+  .title {
+    display: none;
+  }  
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    -webkit-user-select: none;
+  }
+
+  .cached embed, .cached applet, .cached object {
+    display: none !important;
+  }
+
+  #background {
+    background-color: rgba(0, 0, 0, 0.8);
+    -webkit-transform: translateZ(0);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  #container {
+    margin-left: -431px;
+    left: 50%;
+    width: 862px;
+    height: 100%;
+    position: absolute;
+    pointer-events: none;
+  }
+
+  #centered {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+
+  .preloading #background {
+    opacity: 0;
+  }
+
+  .preloading #centered {
+    -webkit-transform: translate3d(0, 100%, 0);
+  }
+
+  .activating #background {
+    -webkit-transition: opacity 0.40s ease-out;
+    opacity: 1.0;
+  }
+
+  .activating #fade-top {
+    -webkit-animation-name: fadeTopActivationFadeIn;
+    -webkit-animation-duration: 0.40s;
+    -webkit-animation-timing-function: ease-out;
+  }
+
+  .activating.skip-transition #fade-top {
+    -webkit-animation: none !important;
+  }
+
+  @-webkit-keyframes fadeTopActivationFadeIn {
+    0% {
+      opacity: 0;
+    }
+    80% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .activating.skip-transition #background {
+    -webkit-transition: none !important;
+  }
+
+  .activating #centered {
+    -webkit-transition: -webkit-transform 0.40s ease-out;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  .activating.skip-transition #centered {
+    -webkit-transition: none !important;
+  }
+
+  .deactivating #background {
+    -webkit-transition: opacity 0.40s ease-in;
+    opacity: 0;
+  }
+
+  .deactivating #fade-top {
+    opacity: 0;
+  }
+
+  .deactivating #fade-bottom {
+    -webkit-transition: opacity 0.40s ease-in;
+    opacity: 0;
+  }
+
+  .deactivating #centered {
+    -webkit-transition: -webkit-transform 0.40s ease-in;
+    -webkit-transform: translate3d(0, 100%, 0);
+  }
+
+  .deactivating #hud {
+    -webkit-transition: opacity 0.25s ease-in;
+    opacity: 0 !important;
+  }
+
+  #drop-shadow {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 800px;
+    left: 10px;
+    border-width: 24px 24px;
+    -webkit-border-image: url(safari-resource:/ReaderDropShadow.png) 24 24 24 24 stretch stretch;
+    opacity: 0;
+  }
+
+
+  #hud {
+    position: fixed;
+    width: 314px;
+    height: 72px;
+    left: 50%;
+    margin-left: -157px;
+    bottom: 30px;
+    background: rgba(0, 0, 0, 0.75);
+    -webkit-border-radius: 12px;
+    z-index: 100;
+    opacity: 0;
+    -webkit-transition: opacity 0.75s;
+    pointer-events: auto;
+    zoom: reset;
+  }
+
+  #hud button {
+    display: block;
+    float: left;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: none;
+    margin: 12px 5px;
+  }
+
+  #hud button:first-of-type {
+    margin-left: 12px;
+  }
+
+  #hud button:last-of-type {
+    margin-right: 12px;
+  }
+
+  #hud-zoom-out {
+    background: url(safari-resource:/ReaderHUDZoomOutInactive.png) no-repeat;
+  }
+
+  #hud-zoom-out:active {
+    background: url(safari-resource:/ReaderHUDZoomOutActive.png) no-repeat;
+  }
+
+  #hud-zoom-in {
+    background: url(safari-resource:/ReaderHUDZoomInInactive.png) no-repeat;
+  }
+
+  #hud-zoom-in:active {
+    background: url(safari-resource:/ReaderHUDZoomInActive.png) no-repeat;
+  }
+
+  #hud-mail {
+    background: url(safari-resource:/ReaderHUDMailContentsInactive.png) no-repeat;
+  }
+
+  #hud-mail:active {
+    background: url(safari-resource:/ReaderHUDMailContentsActive.png) no-repeat;
+  }
+
+  #hud-print {
+    background: url(safari-resource:/ReaderHUDPrintInactive.png) no-repeat;
+  }
+
+  #hud-print:active {
+    background: url(safari-resource:/ReaderHUDPrintActive.png) no-repeat;
+  }
+
+  #hud-exit {
+    background: url(safari-resource:/ReaderHUDCloseInactive.png) no-repeat;
+  }
+
+  #hud-exit:active {
+    background: url(safari-resource:/ReaderHUDCloseActive.png) no-repeat;
+  }
+
+  #article {
+    /* The width of 819px here includes 19px for the WebKit scrollbar's width. */
+    /* The padding-right of 8px separates the scrollbar from the article itself. */
+    position: absolute;
+    height: 100%;
+    left: 34px;
+    width: 819px;
+    padding-right: 8px;
+    overflow: scroll;
+    z-index: 0;
+    outline: none;
+    pointer-events: auto;
+    -webkit-user-select: auto;
+    -webkit-transform: translateZ(0);
+  }
+
+  .article-fade {
+    position: absolute;
+    left: 34px;
+    height: 36px;
+    width: 800px;
+    z-index: 10; 
+    pointer-events: none;
+  }
+
+  #fade-top {
+    top: 0;
+    background: url(safari-resource:/ReaderFadeTop.png) repeat-x;
+  }
+
+  #fade-bottom {
+    bottom: 0;
+    background: url(safari-resource:/ReaderFadeBottom.png) repeat-x;
+  }
+
+  #resize-indicator {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 12px;
+    height: 12px;
+    background: url(safari-resource:/TopSitesCornerResize.png);
+  }
+
+  .page:only-of-type .page-number {
+    display: none;
+  }
+
+  .page-number {
+    display: block;
+    font: bold 11px Helvetica, sans-serif;
+    margin-left: 12px;
+    color: #B2B2B2;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    -webkit-user-select: none;
+  }
+
+  .page:first-of-type {
+    margin-top: 22px;
+  }
+
+  .page:last-of-type {
+    margin-bottom: 22px;
+  }
+
+  .page {
+    width: 658px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    padding: 45px 70px;
+    color: black;
+    background: white;
+    border: 1px solid #c3c3c3;
+    position: relative;
+    overflow: hidden;
+    -webkit-transition: height .5s ease-out;
+  }
+
+  .page.rtl {
+    direction: rtl;
+  }
+
+  #incoming-page-placeholder {
+    height: 30px;
+    margin-bottom: 0;
+  }
+
+  #incoming-page-corner {
+    position: absolute;
+    right: 10px;
+    top: 8px;
+  }
+
+  #incoming-page-spinner {
+    width: 16px;
+    height: 16px;
+    float: right;
+    background: url(safari-resource:/ReaderSpinner.png);
+  }
+
+  #incoming-page-text {
+    float: right;
+    margin-top: 2px;
+    margin-left: 8px;
+    color: #B2B2B2;
+    font: bold 11px Helvetica, sans-serif;
+    -webkit-user-select: none;
+  }
+
+  #next-page-container {
+    position:absolute;
+    display: none;
+  }
+
+  .no-transition {
+    -webkit-transition: none !important;
+  }
+}

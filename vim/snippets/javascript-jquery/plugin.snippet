@@ -1,0 +1,28 @@
+// Create Closure
+;(function($) {
+    $.fn.${1} = function(options) {
+        // Extend the defaults, over-writing them with anything passed by the caller
+        var opts = $.extend({}, $.fn.$1.defaults, options);
+		
+        // Iterate over each element
+        return this.each(function() {
+            $this = $(this);
+			
+            // Allow for use of the Metadata plugin
+            var o = $.meta ? $.extend({}, opts, $this.data()) : opts;
+			
+            ${2:YOUR CODE GOES HERE}
+			
+        });
+    };
+	
+    // Additional methods follow the format:
+    // $.fn.$1.format = function(txt) {
+        // FUNCTION STUFF GOES HERE
+    // };
+	
+    // Plugin Defaults
+    $.fn.$1.defaults = {
+		
+    };
+})(jQuery);    // Closure Closed

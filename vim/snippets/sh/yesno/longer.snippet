@@ -1,0 +1,5 @@
+echo -n "Do you wish to ${1:#question}" '[y/n] ' ; read ${2:ans}
+case "$$2" in
+	y*|Y*) ${3:#statement} ;;
+	*) ${4:#statement};;
+esac
