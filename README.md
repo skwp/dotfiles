@@ -6,6 +6,15 @@ There are two main goals accomplished in my dotfiles to produce insane productiv
   * All common bash commands should be two and three character mnemonic aliases
   * Most vim tasks, especially those having to do with navigation, should be mapped to a single Capital Letter or two letter mnemonic. 
 
+Submodules
+---
+
+This project uses git submodules for some of its plugins. Please run:
+
+    git submodule update
+
+To get all the current plugins. Over time, I plan to move all plugins into submodules.
+
 Setup for Bash
 ---
 To set these up as your own (careful, don't overwrite your bash_profile unintentionally!):
