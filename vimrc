@@ -145,6 +145,7 @@ if has("gui_running")
     endif
     if has("gui_mac") || has("gui_macvim")
         set guifont=Monaco:h17
+        set guifont=Inconsolata:h20 " if available, this one is nicer
     endif
     if has("gui_win32") || has("gui_win32s")
         set guifont=Consolas:h12
@@ -330,8 +331,17 @@ nnoremap <silent> P :GitGrepCurrentPartial<CR>
 
 
 " Remember cursor position and etc when you leave windows
-au BufWinLeave * silent! mkview  "make vim save view (state) (folds, cursor, etc)
-au BufWinEnter * silent! loadview "make vim load view (state) (folds, cursorrsor, etc)
+" au BufWinLeave * silent! mkview  "make vim save view (state) (folds, cursor, etc)
+" au BufWinEnter * silent! loadview "make vim load view (state) (folds, cursorrsor, etc)
+
+" When editing a file, always jump to the last known cursor position.
+" Don't do it when the position is invalid or when inside an event handler
+" (happens when dropping a file on gvim).
+autocmd BufReadPost *
+      \ if line("'\"") > 0 && line("'\"") <= line("$") |
+      \   exe "normal g`\"" |
+      \ endif
+
 
 " Make nerdtree look nice
 let NERDTreeMinimalUI = 1 
