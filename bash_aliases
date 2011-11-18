@@ -28,6 +28,13 @@ alias bor='. ~/dev/config/bash_options'
 alias bp='vi ~/.bash_profile'
 alias br='. ~/.bash_profile'
 
+# vimrc editing
+alias ve='vi ~/.vimrc'
+
+# zsh profile editing
+alias ze='vi ~/.zshrc'
+alias zr='. ~/.zshrc'
+
 # Git Aliases
 alias gs='git status'
 alias gstsh='git stash'
