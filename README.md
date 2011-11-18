@@ -84,9 +84,17 @@ for good text editing features across the entire OS. To install:
 
     git submodule update
     mkdir -p ~/Library/KeyBindings
-    ln -s KeyBindings/DefaultKeyBinding.dict ~/Library/KeyBindings/
+    ln -s KeyBindings/DefaultKeyBinding.dict ~/Library/KeyBindings/DefaultKeyBindings.dict
 
 More info: http://brettterpstra.com/keybinding-madness/
+
+other OSX Insane Productivity tools I use
+---
+ * NValt - Notational Velocity alternative fork - http://brettterpstra.com/project/nvalt/
+   Dirt simple note taking, syncs to simplenote, supports all kinds of fun things like @done for todos
+
+ * Safari Snipe extension - find an open tab. Map it to "Ctrl-/" for ultimate vim-style happiness
+   http://safariextensions.tumblr.com/post/3681229291/snipe-03-06-11
 
 Credits
 ===

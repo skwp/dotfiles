@@ -92,3 +92,8 @@ alias sudo='sudo '
 
 # Gem install
 alias sgi='sudo gem install --no-ri --no-rdoc'
+
+# TODOS
+# This uses NValt (NotationalVelocity alt fork) - http://brettterpstra.com/project/nvalt/
+# to find the note called 'todo'
+alias todo='open nvalt://find/todo'

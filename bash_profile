@@ -4,8 +4,8 @@ if [ -e ~/.secrets ]; then
 fi
 
 # Load git completion
-. ~/dev/bin/git-completion.bash
+. ~/.dotfiles/git-completion.bash
 
 # My aliases and options
-. ~/dev/config/bash_aliases
-. ~/dev/config/bash_options
+. ~/.dotfiles/bash_aliases
+. ~/.dotfiles/bash_options
