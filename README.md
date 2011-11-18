@@ -64,7 +64,20 @@ Read through the gitconfig to find out what's in store.
 OSX Hacks
 ---
 The osx file is a bash script that sets up sensible defaults for devs and power users
-under osx. Read through it before running it.
+under osx. Read through it before running it. To use:
+
+    ./osx
+
+OSX KeyBindings for systemwide text editing
+---
+I am also experimenting with Brett Terpstra's OSX KeyBindings (github: ttscoff/KeyBindings) 
+for good text editing features across the entire OS. To install:
+
+    git submodule update
+    mkdir -p ~/Library/KeyBindings
+    ln -s KeyBindings/DefaultKeyBinding.dict ~/Library/KeyBindings/
+
+More info: http://brettterpstra.com/keybinding-madness/
 
 Credits
 ===

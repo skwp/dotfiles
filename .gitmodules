@@ -1,0 +1,3 @@
+[submodule "KeyBindings"]
+	path = KeyBindings
+	url = https://github.com/ttscoff/KeyBindings.git
