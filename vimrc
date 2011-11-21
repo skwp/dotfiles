@@ -190,9 +190,9 @@ nnoremap <silent> <C-\> :call FindInNERDTree()<CR>:set winfixwidth<CR>
 nnoremap <silent> <C-j> }
 nnoremap <silent> <C-k> {
 
-" Move between split windows by using the four directions H, L, I, M 
-" (note that  I use I and M instead of J and K because  J already does 
-" line joins and K is mapped  to GitGrep the current word
+" Move between split windows by using the four directions H, L, I, N 
+" (note that  I use I and N instead of J and K because  J already does 
+" line joins and K is mapped to GitGrep the current word
 nnoremap <silent> H <C-w>h
 nnoremap <silent> L <C-w>l
 nnoremap <silent> I <C-w>k
