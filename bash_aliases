@@ -71,6 +71,8 @@ alias gpl='git pull'
 alias gps='git push'
 alias gpsh='git push'
 alias gnb='git nb' # new branch aka checkout -b
+alias grs='git reset' 
+alias grsh='git reset --hard'
 
 # Common bash functions
 alias less='less -r'
