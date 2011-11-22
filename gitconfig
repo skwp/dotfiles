@@ -1,3 +1,5 @@
+[github]
+	user = skwp
 [user]
 	name = yan
 	email = yan@pritzker.ws
@@ -12,10 +14,6 @@
   frag = magenta bold
   old = red bold
   new = green bold
-; [color "status"]
-; added = green
-; changed = yellow
-; untracked = red
 [alias]
 	d = diff 			# show unstaged changes
 	dc = diff --cached		# show staged changes
@@ -29,8 +27,6 @@
 	mt = mergetool	#fire up the merge tool
   
   addall = !sh -c 'git add . && git add -u'
-
-#   stashselective = !f(){ git add -A; git unstage $1; git ci -m "temp"; git stash; git uncommit; }; f
 
 	# rebasing
 	rc = rebase --continue
@@ -83,9 +79,34 @@
 [branch]
   autosetupmerge = true
 [push]
-	default = matching
-[github]
-	user = skwp
+  # 'git push' will push the current branch to its tracking branch
+  # the usual default is to push all branches
+	default = tracking 
 [core]
 	autocrlf = false
-	editor = /usr/bin/vim
+  editor = /usr/bin/vim
+	excludesfile = /Users/yan/.gitignore_global
+
+[merge]
+  tool = threesome
+
+[mergetool "threesome"]
+  cmd = "mvim -f $BASE $LOCAL $REMOTE $MERGED -c 'ThreesomeInit'"
+  trustExitCode = true
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[advice]
+	statusHints = false
+[diff]
+  # Git diff will use (i)ndex, (w)ork tree, (c)ommit and (o)bject 
+  # instead of a/b/c/d as prefixes for patches
+	mnemonicprefix = true
+
+[rerere]
+  # Remember my merges
+  # http://gitfu.wordpress.com/2008/04/20/git-rerere-rereremember-what-you-did-last-time/
+	enabled = true
