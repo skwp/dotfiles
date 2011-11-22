@@ -134,23 +134,14 @@ if has("gui_running")
 		"tell the term has 256 colors
 		set t_Co=256
 
-    if has("gui_gnome")
-        set term=gnome-256color
-        colorscheme desert
-    else
-        colorscheme railscasts 
-        set guitablabel=%M%t
-        set lines=60
-        set columns=190
-    endif
-    if has("gui_mac") || has("gui_macvim")
-        set guifont=Monaco:h17
-        set guifont=Inconsolata:h20 " if available, this one is nicer
-    endif
-    if has("gui_win32") || has("gui_win32s")
-        set guifont=Consolas:h12
-				set enc=utf-8
-    endif
+    " colorscheme railscasts 
+    colorscheme solarized
+    set guitablabel=%M%t
+    set lines=60
+    set columns=190
+
+    set guifont=Monaco:h17
+    set guifont=Inconsolata:h20 " if available, this one is nicer
 else
 		"dont load csapprox if we no gui support - silences an annoying warning
     let g:CSApprox_loaded = 1
@@ -364,9 +355,12 @@ nmap <silent> S \lj
 let g:LustyJugglerSuppressRubyWarning = 1
 let g:LustyJugglerAltTabMode = 1
 
-" Show me all my marks (using showmarks plugin)
-nnoremap <silent> M :PreviewMarks<CR>
+" Show me all my marks (using showmarks plugin) using \m
+nnoremap <silent> <Leader>m :PreviewMarks<CR>
 
 " copy current filename into system clipboard - mnemonic: (c)urrent(f)ilename
 " this is helpful to paste someone the path you're looking at
 nnoremap <silent> cf :let @* = expand("%:p")<CR>
+
+" For fugitive.git, dp means :diffput. Define dg to mean :diffget
+nnoremap <silent> dg :diffget<CR>

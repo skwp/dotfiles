@@ -50,7 +50,7 @@ These are things I use every day to be insanely productive. Hope you like em.
  * T - Tag list (list of methods in a class)
  * K - git grep for the Kurrent word under the cursor
  * O - Open a GitGrep command line with a quote pretyped (close the quote yourself)
- * M - show my Marks (set a mark with mX where X is a letter, navigate to mark using 'X). Uppercase marks to mark files, lowercase marks to use within a file.
+ * \m - show my Marks (set a mark with mX where X is a letter, navigate to mark using 'X). Uppercase marks to mark files, lowercase marks to use within a file.
  * Z - jump back and forth between last two buffers
  * Q - Quit a window (normally Ctrl-w,c)
  * \Q - Kill a buffer completely (normally :bw)
