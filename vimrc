@@ -218,6 +218,7 @@ let Tlist_Close_On_Select = 1
 let Tlist_Show_One_File = 1
 let Tlist_Enable_Fold_Column = 0
 let Tlist_Display_Prototype = 0
+let Tlist_Use_SingleClick = 1
 
 " automaticaly reload files changed outside of vim
 set autoread

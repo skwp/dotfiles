@@ -23,7 +23,6 @@ alias ar='. ~/dev/config/bash_aliases'  #alias reload
 alias boe='vi ~/dev/config/bash_options' 
 alias bor='. ~/dev/config/bash_options' 
 
-
 # .bash_profile editing
 alias bp='vi ~/.bash_profile'
 alias br='. ~/.bash_profile'
@@ -48,7 +47,8 @@ alias gcim='git ci -m'
 alias gci='git ci'
 alias gco='git co'
 alias ga='git add -A'
-alias gu='git unstage'
+alias guns='git unstage'
+alias gunc='git uncommit'
 alias gm='git merge'
 alias gms='git merge --squash'
 alias gam='git amend'
@@ -81,6 +81,7 @@ alias l='less'
 alias lh='ls -alt | head' # see the last modified files
 alias fn="find . -name"
 alias screen='TERM=screen screen'
+alias cl='clear'
 
 # Zippin
 alias gz='tar -zcvf'
@@ -90,8 +91,9 @@ alias irb='pry'
 alias c='script/console --irb=pry'
 alias ms='mongrel_rails start'
 
-# Vim/ctags "mctags = make ctags"
-alias mctags='/opt/local/bin/ctags -Rf ./tags *'
+# Vim/ctags "mctags = make ctags", using the ruby specific version
+# to save some time
+alias mctags=~/.bin/run_tags.rb #'/opt/local/bin/ctags -Rf ./tags *'
 
 alias ka9='killall -9'
 alias k9='kill -9'

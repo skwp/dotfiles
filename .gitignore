@@ -1,4 +1,5 @@
 .DS_Store
 vim/backups
 *un~
+vim/.netrwhist
 .netrwhist

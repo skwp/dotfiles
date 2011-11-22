@@ -1,7 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/Users/yan/dev/cft/builder-tools/get-base-iso'
-let g:netrw_dirhist_2='/Users/yan/dev/piglatin'
-let g:netrw_dirhist_3='/Users/yan/dev/config/vim/autoload/conque_term'
-let g:netrw_dirhist_4='/Users/yan/Documents/Vuze'
-let g:netrw_dirhist_5='/Users/yan/dev/config'

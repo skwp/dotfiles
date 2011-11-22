@@ -9,3 +9,4 @@ fi
 # My aliases and options
 . ~/.dotfiles/bash_aliases
 . ~/.dotfiles/bash_options
+. ~/.dotfiles/bash_path
