@@ -10,3 +10,6 @@ fi
 . ~/.dotfiles/bash_aliases
 . ~/.dotfiles/bash_options
 . ~/.dotfiles/bash_path
+
+# RVM
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 

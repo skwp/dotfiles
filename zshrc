@@ -1,0 +1,27 @@
+# Configuration
+source ~/.dotfiles/bash_aliases
+source ~/.dotfiles/zsh_aliases
+source ~/.dotfiles/bash_path
+# 
+# Things I don't want to publish to github
+source ~/.secrets
+
+# Vim mode
+bindkey -v
+
+# Give me my bash style incremental search
+bindkey '^R' history-incremental-search-backward
+
+# Speed up git completion
+# http://talkings.org/post/5236392664/zsh-and-slow-git-completion
+__git_files () { 
+  _wanted files expl 'local files' _files 
+}
+
+# Always pushd when changing directory
+setopt auto_pushd
+
+# Fuzzy matching of completions for when you mistype them:
+zstyle ':completion:*' completer _complete _match _approximate
+zstyle ':completion:*:match:*' original only
+zstyle ':completion:*:approximate:*' max-errors 1 numeric

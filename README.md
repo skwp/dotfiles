@@ -15,6 +15,18 @@ This project uses git submodules for some of its plugins. Please run:
 
 To get all the current plugins. Over time, I plan to move all plugins into submodules.
 
+Setup for ZSH
+---
+I am now using ZSH as my default shell because of its awesome globbing
+and autocomplete features, nice colors, etc. This setup assumes you use
+oh-my-zsh (https://github.com/robbyrussell/oh-my-zsh)
+
+Place this as the last line in your ~/.zshrc created by oh-my-zsh:
+
+    source ~/.dotfiles/zshrc
+
+This setup reuses my bash aliases but provides some custom functions.
+
 Setup for Bash
 ---
 To set these up as your own (careful, don't overwrite your bash_profile unintentionally!):
