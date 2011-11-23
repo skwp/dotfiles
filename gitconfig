@@ -58,6 +58,9 @@
 
   # move patch
 
+  # default logging
+  l = log --decorate --graph --oneline 
+
   # nice logs
   changes = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\" --name-status
   short = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\" 

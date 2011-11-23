@@ -16,23 +16,23 @@ alias du='du -h -d 1'
 alias lsg='ll | grep'
 
 # Alias Editing
-alias ae='vi ~/dev/config/bash_aliases' #alias edit
-alias ar='. ~/dev/config/bash_aliases'  #alias reload
+alias ae='vi ~/.dotfiles/bash_aliases' #alias edit
+alias ar='source ~/.dotfiles/bash_aliases'  #alias reload
 
 # Bash Options Editing
-alias boe='vi ~/dev/config/bash_options' 
-alias bor='. ~/dev/config/bash_options' 
+alias boe='vi ~/.dotfiles/bash_options' 
+alias bor='source ~/.dotfiles/bash_options' 
 
 # .bash_profile editing
 alias bp='vi ~/.bash_profile'
-alias br='. ~/.bash_profile'
+alias br='source ~/.bash_profile'
 
 # vimrc editing
 alias ve='vi ~/.vimrc'
 
 # zsh profile editing
 alias ze='vi ~/.zshrc'
-alias zr='. ~/.zshrc'
+alias zr='source ~/.zshrc'
 
 # Git Aliases
 alias gs='git status'
@@ -56,9 +56,9 @@ alias gr='git rebase'
 alias gra='git rebase --abort'
 alias grc='git rebase --continue'
 alias gbi='git rebase --interactive'
-alias gl='git log'
-alias glg='git log'
-alias glog='git log'
+alias gl='git l'
+alias glg='git l'
+alias glog='git l'
 alias co='git co'
 alias gf='git fetch'
 alias gfch='git fetch'
