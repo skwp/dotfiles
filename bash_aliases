@@ -87,7 +87,6 @@ alias cl='clear'
 alias gz='tar -zcvf'
 
 # Ruby
-alias irb='pry'
 alias c='script/console --irb=pry'
 alias ms='mongrel_rails start'
 
