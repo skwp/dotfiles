@@ -1,10 +1,4 @@
 # set these tokens up in your env, such as ~/.secrets
-[github]
-  user = $GITHUB_USER
-  token = $GITHUB_TOKEN 
-[user]
-  name = $GIT_USER
-  email = $GIT_EMAIL
 [color]
   ui = true
 [color "branch"]
