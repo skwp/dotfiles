@@ -53,7 +53,7 @@
   # move patch
 
   # default logging
-  l = log --decorate --graph --date=short --pretty=\"format:%ad %C(yellow)%h%C(green)%d%Creset %C(blue)%s %C(white) [%an]%Creset\"
+  l = log --decorate --graph --date=short --pretty=\"format:%C(blue)%ad%Creset %C(yellow)%h%C(green)%d%Creset %C(blue)%s %C(black) [%an]%Creset\"
 
   # nice logs
   changes = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\" --name-status
