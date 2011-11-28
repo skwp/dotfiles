@@ -1,5 +1,5 @@
 # PS
-alias psg="ps aux | grep $1"
+alias psg="ps aux | grep "
 alias psr='ps aux | grep ruby'
 
 # Moving around
