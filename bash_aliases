@@ -10,7 +10,7 @@ alias cdb='cd -'
 alias df='df -h'
 alias ll='ls -alGh'
 alias ls='ls -Gh'
-alias du='du -h -d 1'
+alias du='du -h -d 2'
 
 # show me files matching "ls grep"
 alias lsg='ll | grep'
@@ -73,6 +73,8 @@ alias gpsh='git push'
 alias gnb='git nb' # new branch aka checkout -b
 alias grs='git reset' 
 alias grsh='git reset --hard'
+alias gcln='git clean'
+alias gclndf='git clean -df'
 
 # Common bash functions
 alias less='less -r'
@@ -82,6 +84,7 @@ alias lh='ls -alt | head' # see the last modified files
 alias fn="find . -name"
 alias screen='TERM=screen screen'
 alias cl='clear'
+alias ps='ps aux'
 
 # Zippin
 alias gz='tar -zcvf'
