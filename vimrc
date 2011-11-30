@@ -309,8 +309,18 @@ hi Directory guifg=#5285b4
 hi NonText guifg=#101010 "hide the blank line ~ marks
 hi rubyClass guifg=lightgreen gui=bold
 
+" this affects LustyJuggler's 'currently selected' color
+" designed for use with solarized colorscheme
+hi Question guifg=yellow
+
 " show this many lines around what i'm editing
 set so=8
+
+" aliases (C)opy (c)ommand - which allows us to execute
+" the line we're looking at (it does so by yy-copy, colon
+" to get to the command mode, C-f to get to history editing
+" p to paste it, C-c to return to command mode, and CR to execute
+nmap <silent> Cc yy:<C-f>p<C-c><CR>
 
 " Find references to the currently opened partial (file)
 " by pressing P in command mode 
@@ -365,3 +375,6 @@ nnoremap <silent> cf :let @* = expand("%:p")<CR>
 
 " For fugitive.git, dp means :diffput. Define dg to mean :diffget
 nnoremap <silent> dg :diffget<CR>
+
+" alias W to write the file instead of :w
+nnoremap W :w<CR>
