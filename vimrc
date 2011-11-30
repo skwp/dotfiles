@@ -250,7 +250,7 @@ imap <silent> <C-K> <%=   %><Esc>3hi
 
 " create <%= foo %> erb tags using Ctrl-j in edit mode
 imap <silent> <C-J> <%  %><Esc>2hi
-imap <silent> <C-;> _
+
 
 " hit \t to run current test
 nmap <silent> <Leader>t :RunRubyFocusedContext<CR>
@@ -357,6 +357,8 @@ nmap <silent> // :nohlsearch<CR>
 
 " Use EasyMotion by double tapping comma
 nmap <silent> ,, \\w
+" Use EasyMotion backwards by z,,
+nmap <silent> z,, \\b
 
 " User LustyJuggler buffer switcher by hitting S
 " and then using the homerow keys to select the file
@@ -384,13 +386,20 @@ nnoremap W :w<CR>
 nnoremap yw yaw
 
 
-  call EasyMotion#InitOptions({
-  \   'leader_key'      : '<Leader><Leader>'
-  \ , 'keys'            : 'abcdefghijklmnopqrstuvwxyz'
-  \ , 'do_shade'        : 1
-  \ , 'do_mapping'      : 1
-  \ , 'grouping'        : 1
-  \
-  \ , 'hl_group_target' : 'EasyMotionTarget'
-  \ , 'hl_group_shade'  : 'EasyMotionShade'
-  \ })
+" in code, undescores and dashes are very commmon, but 
+" the key is really far away. remap Apple-k to give us
+" underscores and Apple-Shift-K to give dashes. 
+" home row for the win!
+imap <silent> <D-k> _
+imap <silent> <D-K> -
+
+call EasyMotion#InitOptions({
+\   'leader_key'      : '<Leader><Leader>'
+\ , 'keys'            : 'abcdefghijklmnopqrstuvwxyz'
+\ , 'do_shade'        : 1
+\ , 'do_mapping'      : 1
+\ , 'grouping'        : 1
+\
+\ , 'hl_group_target' : 'EasyMotionTarget'
+\ , 'hl_group_shade'  : 'EasyMotionShade'
+\ })

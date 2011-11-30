@@ -72,7 +72,10 @@ These are things I use every day to be insanely productive. Hope you like em.
  * Ctrl-\ - Show NerdTree (project finder) and expose current file
  * cf - Copy Filename of current file into system (not vi) paste buffer 
  * // - clear the search
- * ,, - use EasyMotion - type that and then type one of the highlighted letters. I'm just exploring this one.
+ * ,, or z,, - use EasyMotion - type that and then type one of the highlighted letters. I'm just exploring this one.
+ * Apple-k and Apple-K to type underscores and dashes, since they are so common in code but so far away from home row
+ * yw - remapped to yaw, meaning yanking a word will yank the entire word no matter where your cursor is
+ * W - write a file (instead of :w, saving you keystrokes for the most common vim operation)
 
 Setup for Git
 ---
