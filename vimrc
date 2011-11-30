@@ -378,3 +378,19 @@ nnoremap <silent> dg :diffget<CR>
 
 " alias W to write the file instead of :w
 nnoremap W :w<CR>
+
+" alias yw to yank the entire word even if the
+" cursor is inside the word
+nnoremap yw yaw
+
+
+  call EasyMotion#InitOptions({
+  \   'leader_key'      : '<Leader><Leader>'
+  \ , 'keys'            : 'abcdefghijklmnopqrstuvwxyz'
+  \ , 'do_shade'        : 1
+  \ , 'do_mapping'      : 1
+  \ , 'grouping'        : 1
+  \
+  \ , 'hl_group_target' : 'EasyMotionTarget'
+  \ , 'hl_group_shade'  : 'EasyMotionShade'
+  \ })
