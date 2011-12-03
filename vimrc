@@ -22,7 +22,6 @@ set showmode    "show current mode down the bottom
 
 set incsearch   "find the next match as we type the search
 set hlsearch    "hilight searches by default
-set ignorecase  "ignore case when searching
 
 set nowrap      "dont wrap lines
 set linebreak   "wrap lines at convenient points
@@ -393,9 +392,13 @@ nnoremap yw yaw
 imap <silent> <D-k> _
 imap <silent> <D-K> -
 
+" This remaps easymotion to show us only the left
+" hand home row keys as navigation options which 
+" may mean more typing to get to a particular spot
+" but it'll all be isolated to one area of the keyboard
 call EasyMotion#InitOptions({
 \   'leader_key'      : '<Leader><Leader>'
-\ , 'keys'            : 'abcdefghijklmnopqrstuvwxyz'
+\ , 'keys'            : 'asdfwejkliogh'
 \ , 'do_shade'        : 1
 \ , 'do_mapping'      : 1
 \ , 'grouping'        : 1
