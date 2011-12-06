@@ -43,6 +43,19 @@ feel free to edit them:
     ae # alias edit
     ar # alias reload
 
+Setup for Pry
+---
+Pry (http://pry.github.com/) offers a much better out of the box IRB experience 
+with colors, tab completion, and lots of other tricks. You should:
+
+    gem install pry
+    gem install awesome_print
+    ln -s ~/.dotfiles/irb/pryrc ~/.pryrc
+    ln -s ~/.dotfiles/irb/aprc ~/.aprc
+
+The pryrc included here also offers some nice commands like 'clear', 'sql', and etc
+Look at the pryrc to see a list of commands or just type 'help' from pry.
+
 Setup for Vim
 ---
 To use the vim files:
@@ -76,6 +89,8 @@ These are things I use every day to be insanely productive. Hope you like em.
  * Apple-k and Apple-K to type underscores and dashes, since they are so common in code but so far away from home row
  * yw - remapped to yaw, meaning yanking a word will yank the entire word no matter where your cursor is
  * W - write a file (instead of :w, saving you keystrokes for the most common vim operation)
+ * gcc (comment a line) via tComment, and gcp custom alias to comment a paragraph
+ * Cc - (Current command) copies the command under your cursor and executes it in vim. Great for testing single line changes to vimrc.
 
 Setup for Git
 ---
@@ -117,10 +132,11 @@ I can't take credit for all of this. The vim files are a combination of
 work by tpope, scrooloose, and many hours of scouring blogs, vimscripts,
 and other places for the cream of the crop of vim and bash awesomeness.
 
-TODO
+COMING SOON
 ===
-I started migrating to tpope's pathogen, but only a few plugins are 
-currently under vim/bundles. 
+ * Full migration to tpope's pathogen for all plugins
+ * Better isolation of customizations in smaller chunks
+ * Automatic setup script to symlink all dotfiles, or just some selectively 
 
 For more tips and tricks
 ===
