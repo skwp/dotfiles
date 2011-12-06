@@ -1,5 +1,0 @@
-GIT COMMIT                                              *ft-gitcommit-plugin*
-
-One command, :DiffGitCached, is provided to show a diff of the current commit
-in the preview window.  It is equivalent to calling "git diff --cached" plus
-any arguments given to the command.
