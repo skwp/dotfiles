@@ -133,8 +133,12 @@ if has("gui_running")
 		"tell the term has 256 colors
 		set t_Co=256
 
-    " colorscheme railscasts 
+    " http://ethanschoonover.com/solarized/vim-colors-solarized
     colorscheme solarized
+
+
+    set background=dark
+
     set guitablabel=%M%t
     set lines=60
     set columns=190
@@ -296,21 +300,6 @@ set guioptions-=L
 " Disable the macvim toolbar
 set guioptions-=T
 
-" Set up nicer coloring
-hi LineNr  guifg=#505050   guibg=#101010
-hi Normal  guifg=White     guibg=#101010
-hi StatusLine guibg=#111111 guifg=#313131
-hi Search guibg=#333333 guifg=#E05133
-hi StatusLineNC guibg=#111111 guifg=#313131 
-hi VertSplit guibg=#101010 guifg=#313131
-hi treeDir guifg=#5285b4
-hi Directory guifg=#5285b4
-hi NonText guifg=#101010 "hide the blank line ~ marks
-hi rubyClass guifg=lightgreen gui=bold
-
-" this affects LustyJuggler's 'currently selected' color
-" designed for use with solarized colorscheme
-hi Question guifg=yellow
 
 " show this many lines around what i'm editing
 set so=8
@@ -403,6 +392,22 @@ call EasyMotion#InitOptions({
 \ , 'do_mapping'      : 1
 \ , 'grouping'        : 1
 \
-\ , 'hl_group_target' : 'EasyMotionTarget'
+\ , 'hl_group_target' : 'Question'
 \ , 'hl_group_shade'  : 'EasyMotionShade'
 \ })
+
+
+" FIXME: the color mods below do not properly
+" load when solarized color scheme is used. They
+" must be run individually (put cursor on line and
+" hit Cc to run the command)
+"
+" Designed to make LustyJuggler more usable
+" This affects the currently selected buffer
+" unless run by itself (put cursor over these lines and hit Cc)
+hi clear Question
+hi! Question guifg=yellow
+
+" Make EasyMotion more yellow, less red
+hi clear EasyMotionTarget
+hi! EasyMotionTarget guifg=yellow
