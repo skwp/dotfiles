@@ -381,6 +381,13 @@ nnoremap yw yaw
 imap <silent> <D-k> _
 imap <silent> <D-K> -
 
+" extensions for tComment plugin. Normally
+" tComment maps 'gcc' to comment current line
+" this adds 'gcp' comment current paragraph (block)
+" using tComment's built in <c-_>p mapping
+nmap <silent> gcp <c-_>p
+
+
 " This remaps easymotion to show us only the left
 " hand home row keys as navigation options which 
 " may mean more typing to get to a particular spot
