@@ -142,6 +142,8 @@ Included vim plugins
  * NERDTree-tabs - makes NERDTree play nice with MacVim tabs so that it's on every tab
  * ShowMarks - creates a visual gutter to the left of the number column showing you your marks (saved locations). use \mt to toggle it, \mm to place the next available mark, \mh to delete, \ma to clear all. Use standard vim mark navigation ('X) for mark named X.
  * EasyMotion - hit ,, (forward) or z,, (back) and watch the magic happen. just type the letters and jump directly to your target
+ * BufExplorer - access with 'B' - a big buffer window, good for when you want to search for a buffer
+ * LustyJuggler - access with 'S' - a small buffer window at the bottom, each buffer is assigned to a home row key in order
 
  Git
 

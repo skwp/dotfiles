@@ -52,3 +52,6 @@
 [submodule "vim/bundle/Lokaltog-vim-easymotion"]
 	path = vim/bundle/Lokaltog-vim-easymotion
 	url = https://github.com/Lokaltog/vim-easymotion
+[submodule "vim/bundle/vim-scripts-bufexplorer.zip"]
+	path = vim/bundle/vim-scripts-bufexplorer.zip
+	url = https://github.com/vim-scripts/bufexplorer.zip.git
