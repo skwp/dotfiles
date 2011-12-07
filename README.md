@@ -115,7 +115,7 @@ Some of the vim customizations include:
  * T - Tag list (list of methods in a class)
  * K - git grep for the Kurrent word under the cursor
  * O - Open a GitGrep command line with a quote pretyped (close the quote yourself)
- * \m - show my Marks (set a mark with mX where X is a letter, navigate to mark using 'X). Uppercase marks to mark files, lowercase marks to use within a file.
+ * \mm - show my Marks (set a mark with mX where X is a letter, navigate to mark using 'X). Uppercase marks to mark files, lowercase marks to use within a file.
  * Z - jump back and forth between last two buffers
  * Q - Quit a window (normally Ctrl-w,c)
  * \Q - Kill a buffer completely (normally :bw)
@@ -136,10 +136,14 @@ Some of the vim customizations include:
 Included vim plugins
 ---
 
- * fugitive - "a git wrapper so awesome, it should be illegal.." 
-    * Try Gstatus and hit '-' on the screen to toggle files. Hit 'd' on the same screen for a diff.
-    * Watch: http://vimcasts.org/blog/2011/05/the-fugitive-series/
+ * fugitive - "a git wrapper so awesome, it should be illegal..". Try Gstatus and hit '-' to toggle files. Git 'd' to see a diff. Learn more: http://vimcasts.org/blog/2011/05/the-fugitive-series/
  * GitGrep - much better than the grep provided with fugitive; use :GitGrep or hit K to grep current word
+ * showmarks - creates a visual gutter to the left of the number column showing you your bookmarks. use \mt to toggle it, \mm to place the next available mark, \mh to delete, \ma to clear all. Use standard vim mark navigation ('X) for mark named X.
+ * delimitMate - automatically closes quotes 
+ * solarized - a color scheme scientifically calibrated for awesomeness
+ * ConqueTerm - embedded fully colorful shell inside your vim
+ * vim-ruby-conque - helpers to run ruby,rspec,rake within ConqueTerm - use \rr (ruby), \ss (rspec), \ll (rspec line), \RR (rake)
+ * AnsiEsc - inteprets ansi color codes inside log files. great for looking at Rails logs
  * ruby-debug-ide - not quite working for me, but maybe it will for you. supposedly a graphical debugger you can step through
 
 Adding your own vim plugins

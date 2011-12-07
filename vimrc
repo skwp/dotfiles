@@ -325,37 +325,25 @@ nnoremap ; :
 "Clear current search highlight by double tapping //
 nmap <silent> // :nohlsearch<CR>
 
-" Use EasyMotion by double tapping comma
-nmap <silent> ,, \\w
-" Use EasyMotion backwards by z,,
-nmap <silent> z,, \\b
 
-" User LustyJuggler buffer switcher by hitting S
-" and then using the homerow keys to select the file
-" double tap the home row key to go to the file or hit
-" once to just select it in the juggler
-nmap <silent> S \lj
-let g:LustyJugglerSuppressRubyWarning = 1
-let g:LustyJugglerAltTabMode = 1
 
-" Show me all my marks (using showmarks plugin) using \m
-nnoremap <silent> <Leader>m :PreviewMarks<CR>
 
 " copy current filename into system clipboard - mnemonic: (c)urrent(f)ilename
 " this is helpful to paste someone the path you're looking at
 nnoremap <silent> cf :let @* = expand("%:p")<CR>
 
-" For fugitive.git, dp means :diffput. Define dg to mean :diffget
-nnoremap <silent> dg :diffget<CR>
 
-" alias W to write the file instead of :w
-nnoremap W :w<CR>
-
+" General vim sanity improvements
+" ========================================
 " alias yw to yank the entire word even if the
 " cursor is inside the word
 nnoremap yw yaw
+" alias W to write the file instead of :w
+nnoremap W :w<CR> 
 
 
+" RSI Prevention - keyboard remaps
+" ========================================
 " in code, undescores and dashes are very commmon, but 
 " the key is really far away. remap Apple-k to give us
 " underscores and Apple-Shift-K to give dashes. 
@@ -363,12 +351,47 @@ nnoremap yw yaw
 imap <silent> <D-k> _
 imap <silent> <D-K> -
 
+
+" fugitive.git
+" ========================================
+" For fugitive.git, dp means :diffput. Define dg to mean :diffget
+nnoremap <silent> dg :diffget<CR>
+
+
+" tComment
+" ========================================
 " extensions for tComment plugin. Normally
 " tComment maps 'gcc' to comment current line
 " this adds 'gcp' comment current paragraph (block)
 " using tComment's built in <c-_>p mapping
 nmap <silent> gcp <c-_>p
 
+
+" LustyJuggler 
+" ========================================
+" User LustyJuggler buffer switcher by hitting S
+" and then using the homerow keys to select the file
+" double tap the home row key to go to the file or hit
+" once to just select it in the juggler
+nmap <silent> S \lj
+let g:LustyJugglerSuppressRubyWarning = 1
+let g:LustyJugglerAltTabMode = 1
+" Colors to make LustyJuggler more usable
+" the Question color in LustyJuggler is mapped to
+" the currently selected buffer.
+hi clear Question
+hi! Question guifg=yellow
+
+
+" EasyMotion
+" ========================================
+" Use EasyMotion by double tapping comma
+nmap <silent> ,, \\w
+" Use EasyMotion backwards by z,,
+nmap <silent> z,, \\b
+" Make EasyMotion more yellow, less red
+hi clear EasyMotionTarget
+hi! EasyMotionTarget guifg=yellow
 
 " This remaps easymotion to show us only the left
 " hand home row keys as navigation options which 
@@ -385,20 +408,16 @@ call EasyMotion#InitOptions({
 \ , 'hl_group_shade'  : 'EasyMotionShade'
 \ })
 
-
-" FIXME: the color mods below do not properly
-" load when solarized color scheme is used. They
-" must be run individually (put cursor on line and
-" hit Cc to run the command)
-"
-" Designed to make LustyJuggler more usable
-" This affects the currently selected buffer
-" unless run by itself (put cursor over these lines and hit Cc)
-hi clear Question
-hi! Question guifg=yellow
-
-" Make EasyMotion more yellow, less red
-hi clear EasyMotionTarget
-hi! EasyMotionTarget guifg=yellow
-
+" vim-ruby-conque
+" ========================================
 let g:ruby_conque_rspec_command='spec'
+
+
+" ShowMarks 
+" ========================================
+" Tell showmarks to not include the various brace marks (),{}, etc
+let g:showmarks_include = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXY"
+
+" Tell showmarks to stop using the '>' indicator for marks
+let g:showmarks_textlower="\t" 
+let g:showmarks_textupper="\t"
