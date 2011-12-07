@@ -19,3 +19,6 @@
 [submodule "vim/bundle/astashov-vim-ruby-debugger"]
 	path = vim/bundle/astashov-vim-ruby-debugger
 	url = https://github.com/astashov/vim-ruby-debugger
+[submodule "vim/bundle/godlygeek-csapprox"]
+	path = vim/bundle/godlygeek-csapprox
+	url = https://github.com/godlygeek/csapprox.git
