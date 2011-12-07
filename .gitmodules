@@ -10,9 +10,6 @@
 [submodule "vim/bundle/vim-ruby-conque"]
 	path = vim/bundle/vim-ruby-conque
 	url = https://github.com/skwp/vim-ruby-conque
-[submodule "vim/bundle/AnsiEsc"]
-	path = vim/bundle/AnsiEsc
-	url = https://github.com/vim-scripts/AnsiEsc.vim.git
 [submodule "vim/bundle/raimondi-delimitMate"]
 	path = vim/bundle/raimondi-delimitMate
 	url = https://github.com/Raimondi/delimitMate
@@ -22,3 +19,6 @@
 [submodule "vim/bundle/godlygeek-csapprox"]
 	path = vim/bundle/godlygeek-csapprox
 	url = https://github.com/godlygeek/csapprox.git
+[submodule "vim/bundle/vim-scripts-AnsiEsc"]
+	path = vim/bundle/vim-scripts-AnsiEsc
+	url = https://github.com/vim-scripts/AnsiEsc.vim.git

@@ -265,9 +265,9 @@ let g:ConqueTerm_CWInsert = 1
 let g:ConqueTerm_Color = 2
 
 " Open up a variety of commands in the ConqueTerm
-nmap <silent> <Leader>c :execute 'ConqueTermSplit script/console --irb=pry'<CR>
-nmap <silent> <Leader>i :execute 'ConqueTermSplit pry'<CR>
-nmap <silent> <Leader>b :execute 'ConqueTermSplit /bin/bash --login'<CR>
+nmap <silent> <Leader>cc :execute 'ConqueTermSplit script/console --irb=pry'<CR>
+nmap <silent> <Leader>pp :execute 'ConqueTermSplit pry'<CR>
+nmap <silent> <Leader>bb :execute 'ConqueTermSplit /bin/bash --login'<CR>
 
 let g:ConqueTerm_SendVisKey = '<Leader>e'
 

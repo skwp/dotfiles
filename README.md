@@ -142,6 +142,18 @@ Included vim plugins
  * GitGrep - much better than the grep provided with fugitive; use :GitGrep or hit K to grep current word
  * ruby-debug-ide - not quite working for me, but maybe it will for you. supposedly a graphical debugger you can step through
 
+Adding your own vim plugins
+---
+
+Provided util automatically initializes a git submodule for you:
+
+    util/addvim https://github.com/robgleeson/hammer.vim.git
+
+Turns into:
+
+    git submodule add https://github.com/robgleeson/hammer.vim.git vim/bundle/robgleeson-hammer
+
+You can then commit the change. It's good to have your own fork of this project to do that.
 
 Setup for Git
 ---
