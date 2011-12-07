@@ -49,3 +49,6 @@
 [submodule "vim/bundle/scrooloose-syntastic"]
 	path = vim/bundle/scrooloose-syntastic
 	url = https://github.com/scrooloose/syntastic.git
+[submodule "vim/bundle/Lokaltog-vim-easymotion"]
+	path = vim/bundle/Lokaltog-vim-easymotion
+	url = https://github.com/Lokaltog/vim-easymotion
