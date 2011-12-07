@@ -1,16 +1,51 @@
-Yan's Excellent Dotfiles!
+YADR: Yet Another Dotfile Repo
 ====
 
-There are two main goals accomplished in my dotfiles to produce insane productivity
+Warning: These dotfiles are opinionated! 
 
-  * All common bash commands should be two and three character mnemonic aliases
-  * Most vim tasks, especially those having to do with navigation, should be mapped to a single Capital Letter or two letter mnemonic. 
+This is a collection of best of breed tools from across the web,
+from scouring other people's dotfile repos, blogs, and projects.
+
+In some ways, this is an alternative to janus (https://github.com/carlhuda/janus), offering
+many of the same plugins, with minor differnces. But it's also much more,
+providing shell customizations (zsh), an irb replacement (pry) with customizations,
+and osx settings that are developer friendly (such as fast key repeat),
+and remapping your caps-lock to be Esc for vim.
+
+The strongly held opinions expressed here:
+
+  * OSX is the best operating system for development, but you have to tweak it slightly to be dev friendly.
+  * ZSH is the best shell. I used bash for a long time and I have seen the light. Just
+    its fuzzy typo autocompletion is worth the money and saves huge on keystrokes. 
+  * oh-my-zsh is the best collection of plugins for zsh and reduces the switching cost from bash to zsh to one command.
+  * MacVim is the best editor. You will type less and get more done. Vim should be used everywhere (irb, shell, mysql command line).
+  * iTerm2 is the best terminal - it has splits and good full screen capabilities
+  * Git is the best source control manager. There are probably better ones out there, but this one is mine
+
+The ideas that guide this project:
+
+  * All common commands should be two and three character mnemonic aliases - less keystrokes, RSI reduction
+  * Most used vim commands should be under your fingertips (home row, prefer Shift to other command keys)
+  * Avoid stressful hand motions, e.g. remap Esc to caps lock key, remap underscore to Alt-k in vim
+  * Plugin architecture (using tpope's pathogen for vim)
+  * Colors are _important_ - avoid stressful colors, use the well designed solarized (http://ethanschoonover.com/solarized) colorscheme 
+    for both vim and iTerm2
+
+Before you start
+---
+
+ * Remap caps-lock to escape: http://stackoverflow.com/questions/127591/using-caps-lock-as-esc-in-mac-os-x
+
+ * Switch to zsh using oh-my-zh (https://github.com/robbyrussell/oh-my-zsh) in one easy step: 
+
+        wget --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
 
 Submodules
 ---
 
 This project uses git submodules for some of its plugins. Please run:
 
+    git submodule init
     git submodule update
 
 To get all the current plugins. Over time, I plan to move all plugins into submodules.
@@ -18,30 +53,25 @@ To get all the current plugins. Over time, I plan to move all plugins into submo
 Setup for ZSH
 ---
 I am now using ZSH as my default shell because of its awesome globbing
-and autocomplete features, nice colors, etc. This setup assumes you use
-oh-my-zsh (https://github.com/robbyrussell/oh-my-zsh)
+and autocomplete features (the spelling fixer autocomplete is worth the money alone). 
+
+This setup assumes you use oh-my-zsh (https://github.com/robbyrussell/oh-my-zsh)
 
 Place this as the last line in your ~/.zshrc created by oh-my-zsh:
 
     source ~/.dotfiles/zshrc
 
-This setup reuses my bash aliases but provides some custom functions.
-
-Setup for Bash
----
-To set these up as your own (careful, don't overwrite your bash_profile unintentionally!):
-
-    git clone git://github.com/skwp/dotfiles ~/.dotfiles
-
-    ln -s ~/.dotfiles/bash_profile ~/.bash_profile
-    . ~/.bash_profile
-
-Lots of things I do every day are done with 
-two or three character mnemonic aliases. Please 
-feel free to edit them:
+Lots of things I do every day are done with two or three character 
+mnemonic aliases. Please feel free to edit them:
 
     ae # alias edit
     ar # alias reload
+
+Here are some of the customizations you get with this setup:
+
+ * Vim mode
+ * Bash style ctrl-R for reverse history finder
+ * Fuzzy matching - if you mistype a directory name, tab completoin will fix it
 
 Setup for Pry
 ---
@@ -53,8 +83,18 @@ with colors, tab completion, and lots of other tricks. You should:
     ln -s ~/.dotfiles/irb/pryrc ~/.pryrc
     ln -s ~/.dotfiles/irb/aprc ~/.aprc
 
-The pryrc included here also offers some nice commands like 'clear', 'sql', and etc
-Look at the pryrc to see a list of commands or just type 'help' from pry.
+Use pry
+
+  * as irb: 'pry'
+  * as rails console: script/console --irb=pry
+
+Pry customizations:
+
+ * 'clear' command to clear screen
+ * 'sql' command to execute something (within a rails console)
+ * all objects displayed in readable format (colorized, sorted hash keys) - via awesome_print
+ * a few color modifications to make it more useable
+ * type 'help' to see all the commands
 
 Setup for Vim
 ---
@@ -67,7 +107,7 @@ The .vimrc is well commented and broken up by settings. I encourage you
 to take a look and learn some of my handy aliases, or comment them out
 if you don't like them, or make your own.
 
-These are things I use every day to be insanely productive. Hope you like em.
+Some of the vim customizations include:
 
  * F - instantly Find definition of class (must have exuberant ctags installed)
  * B - show Buffer explorer
@@ -85,12 +125,13 @@ These are things I use every day to be insanely productive. Hope you like em.
  * Ctrl-\ - Show NerdTree (project finder) and expose current file
  * cf - Copy Filename of current file into system (not vi) paste buffer 
  * // - clear the search
- * ,, or z,, - use EasyMotion - type that and then type one of the highlighted letters. I'm just exploring this one.
+ * ,, or z,, - use EasyMotion - type that and then type one of the highlighted letters.
  * Apple-k and Apple-K to type underscores and dashes, since they are so common in code but so far away from home row
  * yw - remapped to yaw, meaning yanking a word will yank the entire word no matter where your cursor is
  * W - write a file (instead of :w, saving you keystrokes for the most common vim operation)
  * gcc (comment a line) via tComment, and gcp custom alias to comment a paragraph
  * Cc - (Current command) copies the command under your cursor and executes it in vim. Great for testing single line changes to vimrc.
+ * \ss to run specs, \ll to run a given spec on a line - using my vim-ruby-conque plugin (https://github.com/skwp/vim-ruby-conque)
 
 Setup for Git
 ---
@@ -98,7 +139,18 @@ To use the gitconfig (some of the git bash aliases rely on my git aliases)
 
     ln -s ~/.dotfiles/gitconfig ~/.gitconfig
 
-Read through the gitconfig to find out what's in store.
+Some of the customizations provided include:
+
+  * git l - a much more usable git log
+  * git b - a list of branches with summary of last commit
+  * git r - a list of remotes with info
+  * git t - a list of tags with info
+  * git nb - a (n)ew (b)ranch - like checkout -b
+  * git cp - cherry-pick -x (showing what was cherrypicked)
+  * git changelog - a nice format for creating changelogs
+  * Some sensible default configs, such as improving merge messages, push only pushes the current branch, removing status hints, and using mnemonic prefixes in diff: (i)ndex, (w)ork tree, (c)ommit and (o)bject 
+  * Slightly imrpoved colors for diff
+  * git unstage (remove from index) and git uncommit (revert to the time prior to the last commit - dangerous if already pushed) aliases
 
 OSX Hacks
 ---
@@ -107,24 +159,17 @@ under osx. Read through it before running it. To use:
 
     ./osx
 
-OSX KeyBindings for systemwide text editing
+These hacks are Lion-centric. May not work for other OS'es. My favorite mods include:
+
+  * Ultra fast key repeat rate (now you can scroll super quick using j/k)
+  * No disk image verification (downloaded files open quicker) 
+  * Display the ~/Library folder in finder (hidden in Lion)
+
+Other recommended OSX tools 
 ---
-I am also experimenting with Brett Terpstra's OSX KeyBindings (github: ttscoff/KeyBindings) 
-for good text editing features across the entire OS. To install:
-
-    git submodule update
-    mkdir -p ~/Library/KeyBindings
-    ln -s KeyBindings/DefaultKeyBinding.dict ~/Library/KeyBindings/DefaultKeyBindings.dict
-
-More info: http://brettterpstra.com/keybinding-madness/
-
-other OSX Insane Productivity tools I use
----
- * NValt - Notational Velocity alternative fork - http://brettterpstra.com/project/nvalt/
-   Dirt simple note taking, syncs to simplenote, supports all kinds of fun things like @done for todos
-
- * Safari Snipe extension - find an open tab. Map it to "Ctrl-/" for ultimate vim-style happiness
-   http://safariextensions.tumblr.com/post/3681229291/snipe-03-06-11
+ * NValt - Notational Velocity alternative fork - http://brettterpstra.com/project/nvalt/ - syncs with SimpleNote
+ * Vimium for Chrome - vim style browsing. The 'f' to type the two char alias of any link is worth it.
+ * QuickCursor - gives you Apple-Shift-E to edit any OSX text field in vim.
 
 Credits
 ===
@@ -134,8 +179,8 @@ and other places for the cream of the crop of vim and bash awesomeness.
 
 COMING SOON
 ===
- * Full migration to tpope's pathogen for all plugins
- * Better isolation of customizations in smaller chunks
+ * Full migration to tpope's pathogen format (~/.vim/bundle) for all plugins
+ * Better isolation of customizations in smaller chunks, maybe as plugins
  * Automatic setup script to symlink all dotfiles, or just some selectively 
 
 For more tips and tricks

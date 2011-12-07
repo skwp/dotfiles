@@ -1,8 +1,7 @@
 # Configuration
-source ~/.dotfiles/bash_aliases
+source ~/.dotfiles/aliases
 source ~/.dotfiles/zsh_aliases
-source ~/.dotfiles/bash_path
-# 
+
 # Things I don't want to publish to github
 source ~/.secrets
 
@@ -28,3 +27,6 @@ zstyle ':completion:*:approximate:*' max-errors 1 numeric
 
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" 
+
+# Add path to our custom bins
+export PATH=$PATH:~/.dotfiles/bin

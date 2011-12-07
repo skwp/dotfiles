@@ -135,16 +135,13 @@ if has("gui_running")
 
     " http://ethanschoonover.com/solarized/vim-colors-solarized
     colorscheme solarized
-
-
     set background=dark
 
     set guitablabel=%M%t
     set lines=60
     set columns=190
 
-    set guifont=Monaco:h17
-    set guifont=Inconsolata:h20 " if available, this one is nicer
+    set guifont=Inconsolata:h20,Monaco:h17
 else
 		"dont load csapprox if we no gui support - silences an annoying warning
     let g:CSApprox_loaded = 1

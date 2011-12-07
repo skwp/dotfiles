@@ -16,16 +16,8 @@ alias du='du -h -d 2'
 alias lsg='ll | grep'
 
 # Alias Editing
-alias ae='vi ~/.dotfiles/bash_aliases' #alias edit
-alias ar='source ~/.dotfiles/bash_aliases'  #alias reload
-
-# Bash Options Editing
-alias boe='vi ~/.dotfiles/bash_options' 
-alias bor='source ~/.dotfiles/bash_options' 
-
-# .bash_profile editing
-alias bp='vi ~/.bash_profile'
-alias br='source ~/.bash_profile'
+alias ae='vi ~/.dotfiles/aliases' #alias edit
+alias ar='source ~/.dotfiles/aliases'  #alias reload
 
 # vimrc editing
 alias ve='vi ~/.vimrc'
@@ -76,12 +68,11 @@ alias grsh='git reset --hard'
 alias gcln='git clean'
 alias gclndf='git clean -df'
 
-# Common bash functions
+# Common shell functions
 alias less='less -r'
 alias tf='tail -f'
 alias l='less'
 alias lh='ls -alt | head' # see the last modified files
-alias fn="find . -name"
 alias screen='TERM=screen screen'
 alias cl='clear'
 alias ps='ps aux'
