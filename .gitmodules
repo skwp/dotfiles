@@ -7,6 +7,6 @@
 [submodule "vim/bundle/vim-colors-solarized"]
 	path = vim/bundle/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized
-[submodule "bin/willmorgan"]
-  path = bin/willmorgan
-  url = git://gitorious.org/willgit/mainline.git/ bin/willmorgan
+[submodule "vim/bundle/vim-ruby-conque"]
+	path = vim/bundle/vim-ruby-conque
+	url = https://github.com/skwp/vim-ruby-conque

@@ -268,24 +268,9 @@ let g:ConqueTerm_CWInsert = 1
 let g:ConqueTerm_Color = 2
 
 " Open up a variety of commands in the ConqueTerm
-nmap <silent> <Leader>r :call RunRubyCurrentFileConque()<CR>
-nmap <silent> <Leader>S :call RunRspecCurrentFileConque()<CR>
-nmap <silent> <Leader>R :call RunRakeConque()<CR>
 nmap <silent> <Leader>c :execute 'ConqueTermSplit script/console --irb=pry'<CR>
 nmap <silent> <Leader>i :execute 'ConqueTermSplit pry'<CR>
 nmap <silent> <Leader>b :execute 'ConqueTermSplit /bin/bash --login'<CR>
-
-function RunRubyCurrentFileConque()
-  execute "ConqueTermSplit ruby" bufname('%')
-endfunction
-
-function RunRspecCurrentFileConque()
-  execute "ConqueTermSplit rspec" bufname('%') " --color --format doc"
-endfunction
-
-function RunRakeConque()
-  execute "ConqueTermSplit rake"
-endfunction
 
 let g:ConqueTerm_SendVisKey = '<Leader>e'
 
@@ -418,3 +403,5 @@ hi! Question guifg=yellow
 " Make EasyMotion more yellow, less red
 hi clear EasyMotionTarget
 hi! EasyMotionTarget guifg=yellow
+
+let g:ruby_conque_rspec_command='spec'
