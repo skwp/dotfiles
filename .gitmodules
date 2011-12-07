@@ -64,3 +64,12 @@
 [submodule "vim/bundle/skwp-greplace"]
 	path = vim/bundle/skwp-greplace
 	url = https://github.com/skwp/greplace.vim
+[submodule "vim/bundle/tpope-vim-repeat"]
+	path = vim/bundle/tpope-vim-repeat
+	url = https://github.com/tpope/vim-repeat.git
+[submodule "vim/bundle/vim-scripts-taglist"]
+	path = vim/bundle/vim-scripts-taglist
+	url = https://github.com/vim-scripts/taglist.vim.git
+[submodule "vim/bundle/tpope-vim-surround"]
+	path = vim/bundle/tpope-vim-surround
+	url = https://github.com/tpope/vim-surround.git

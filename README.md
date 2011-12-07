@@ -143,6 +143,7 @@ Included vim plugins
  * ShowMarks - creates a visual gutter to the left of the number column showing you your marks (saved locations). use \mt to toggle it, \mm to place the next available mark, \mh to delete, \ma to clear all. Use standard vim mark navigation ('X) for mark named X.
  * EasyMotion - hit ,, (forward) or z,, (back) and watch the magic happen. just type the letters and jump directly to your target - in the provided vimrc the keys are optimized for home and upper row, no pinkies
  * LustyJuggler/Explorer - hit B, type buf name to match a buffer, or type S and use the home row keys to select a buffer
+ * TagList - hit T to see a list of methods in a class (uses ctags)
 
  Git
 
@@ -173,6 +174,7 @@ Included vim plugins
  * IndexedSearch - when you do searches will show you "Match 2 of 4" in the status line, nothing new to learn
  * delimitMate - automatically closes quotes 
  * syntastic - automatic syntax checking when you save the file
+ * repeat - adds '.' (repeat command) support for complex commands like surround.vim. i.e. if you perform a surround and hit '.', it will Just Work (vim by default will only repeat the last piece of the complex command)
 
 
 
