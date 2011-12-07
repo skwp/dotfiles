@@ -28,3 +28,6 @@
 [submodule "vim/bundle/kogakure-vim-sparkup"]
 	path = vim/bundle/kogakure-vim-sparkup
 	url = https://github.com/kogakure/vim-sparkup.git
+[submodule "vim/bundle/tomtom-tcomment_vim"]
+	path = vim/bundle/tomtom-tcomment_vim
+	url = https://github.com/tomtom/tcomment_vim.git
