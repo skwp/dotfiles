@@ -40,3 +40,6 @@
 [submodule "vim/bundle/jistr-vim-nerdtree-tabs"]
 	path = vim/bundle/jistr-vim-nerdtree-tabs
 	url = https://github.com/jistr/vim-nerdtree-tabs.git
+[submodule "vim/bundle/vim-scripts-AutoTag"]
+	path = vim/bundle/vim-scripts-AutoTag
+	url = https://github.com/vim-scripts/AutoTag.git

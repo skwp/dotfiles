@@ -257,7 +257,6 @@ nmap <silent> <Leader>t :RunRubyFocusedContext<CR>
 
 " set up automatic ctags
 let Tlist_Ctags_Cmd='/opt/local/bin/ctags'
-source ~/.vim/plugin/autotag.vim
 
 " Run the current file in a ConqueTerm, great for ruby tests
 let g:ConqueTerm_InsertOnEnter = 0
