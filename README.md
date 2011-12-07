@@ -136,17 +136,36 @@ Some of the vim customizations include:
 Included vim plugins
 ---
 
+ Navigation
+
+ * NERDTree - everyone's favorite tree browser
+ * NERDTree-tabs - makes NERDTree play nice with MacVim tabs so that it's on every tab
+ * showmarks - creates a visual gutter to the left of the number column showing you your bookmarks. use \mt to toggle it, \mm to place the next available mark, \mh to delete, \ma to clear all. Use standard vim mark navigation ('X) for mark named X.
+
+ Git
+
  * fugitive - "a git wrapper so awesome, it should be illegal..". Try Gstatus and hit '-' to toggle files. Git 'd' to see a diff. Learn more: http://vimcasts.org/blog/2011/05/the-fugitive-series/
  * GitGrep - much better than the grep provided with fugitive; use :GitGrep or hit K to grep current word
- * showmarks - creates a visual gutter to the left of the number column showing you your bookmarks. use \mt to toggle it, \mm to place the next available mark, \mh to delete, \ma to clear all. Use standard vim mark navigation ('X) for mark named X.
+
+ Colors
+
+ * AnsiEsc - inteprets ansi color codes inside log files. great for looking at Rails logs
+ * solarized - a color scheme scientifically calibrated for awesomeness (including skwp mods for ShowMarks)
+ * csapprox - helps colors to be represented correctly on terminals (even though we expect to use MacVim)
+
+ Automation
+
  * delimitMate - automatically closes quotes 
- * solarized - a color scheme scientifically calibrated for awesomeness
+ * tComment - gcc to comment a line, gcp to comment blocks, nuff said
+ * sparkup - div.foo#bar - hit ctrl-e, expands into <code><div class='foo' id#bar/></code>, and that's just the beginning
+
+ Utils
+
  * ConqueTerm - embedded fully colorful shell inside your vim
  * vim-ruby-conque - helpers to run ruby,rspec,rake within ConqueTerm - use \rr (ruby), \ss (rspec), \ll (rspec line), \RR (rake)
- * AnsiEsc - inteprets ansi color codes inside log files. great for looking at Rails logs
- * ruby-debug-ide - not quite working for me, but maybe it will for you. supposedly a graphical debugger you can step through
- * tComment - gcc to comment a line, gcp to comment blocks, nuff said
  * vim-markdown-preview - :Mm to view your README.md as html
+ * ruby-debug-ide - not quite working for me, but maybe it will for you. supposedly a graphical debugger you can step through
+
 
 Adding your own vim plugins
 ---

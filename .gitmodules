@@ -37,3 +37,6 @@
 [submodule "vim/bundle/scrooloose-nerdtree"]
 	path = vim/bundle/scrooloose-nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
+[submodule "vim/bundle/jistr-vim-nerdtree-tabs"]
+	path = vim/bundle/jistr-vim-nerdtree-tabs
+	url = https://github.com/jistr/vim-nerdtree-tabs.git
