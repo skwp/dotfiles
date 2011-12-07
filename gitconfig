@@ -83,7 +83,7 @@
   default = tracking 
 [core]
   autocrlf = false
-  editor = /usr/bin/vim
+  editor = /usr/bin/vi
   excludesfile = ~/.dotfiles/gitignore_global
 
 [advice]
