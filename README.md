@@ -161,6 +161,7 @@ Included vim plugins
  * tComment - gcc to comment a line, gcp to comment blocks, nuff said
  * sparkup - div.foo#bar - hit ctrl-e, expands into <code><div class='foo' id#bar/></code>, and that's just the beginning
  * rails.vim - syntax highlighting, gf (goto file) enhancements, and lots more. should be required for any rails dev
+ * necomplcache - automatic completion showing, and added Command-Space to select a completion (same as Ctrl-N)
 
  Utils
 
