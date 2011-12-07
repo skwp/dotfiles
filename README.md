@@ -59,7 +59,7 @@ This setup assumes you use oh-my-zsh (https://github.com/robbyrussell/oh-my-zsh)
 
 Place this as the last line in your ~/.zshrc created by oh-my-zsh:
 
-    source ~/.dotfiles/zshrc
+    source ~/.dotfiles/zsh/zshrc
 
 Lots of things I do every day are done with two or three character 
 mnemonic aliases. Please feel free to edit them:

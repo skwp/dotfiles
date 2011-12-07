@@ -1,6 +1,6 @@
 # Configuration
-source ~/.dotfiles/aliases
-source ~/.dotfiles/zsh_aliases
+source ~/.dotfiles/zsh/aliases
+source ~/.dotfiles/zsh/zsh_aliases
 
 # Things I don't want to publish to github
 source ~/.secrets
