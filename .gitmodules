@@ -85,3 +85,12 @@
 [submodule "vim/bundle/vim-scripts-matchit.zip"]
 	path = vim/bundle/vim-scripts-matchit.zip
 	url = https://github.com/vim-scripts/matchit.zip.git
+[submodule "vim/bundle/skwp-vim-indexed-search"]
+	path = vim/bundle/skwp-vim-indexed-search
+	url = https://github.com/skwp/vim-indexed-search
+[submodule "vim/bundle/tpope-vim-endwise"]
+	path = vim/bundle/tpope-vim-endwise
+	url = https://github.com/tpope/vim-endwise.git
+[submodule "vim/bundle/skwp-vim-html-escape"]
+	path = vim/bundle/skwp-vim-html-escape
+	url = https://github.com/skwp/vim-html-escape
