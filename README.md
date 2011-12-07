@@ -145,6 +145,7 @@ Included vim plugins
  * vim-ruby-conque - helpers to run ruby,rspec,rake within ConqueTerm - use \rr (ruby), \ss (rspec), \ll (rspec line), \RR (rake)
  * AnsiEsc - inteprets ansi color codes inside log files. great for looking at Rails logs
  * ruby-debug-ide - not quite working for me, but maybe it will for you. supposedly a graphical debugger you can step through
+ * tComment - gcc to comment a line, gcp to comment blocks, nuff said
 
 Adding your own vim plugins
 ---

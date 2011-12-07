@@ -31,3 +31,6 @@
 [submodule "vim/bundle/tomtom-tcomment_vim"]
 	path = vim/bundle/tomtom-tcomment_vim
 	url = https://github.com/tomtom/tcomment_vim.git
+[submodule "vim/bundle/nelstrom-vim-markdown-preview"]
+	path = vim/bundle/nelstrom-vim-markdown-preview
+	url = https://github.com/nelstrom/vim-markdown-preview
