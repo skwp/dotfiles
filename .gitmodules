@@ -34,3 +34,6 @@
 [submodule "vim/bundle/nelstrom-vim-markdown-preview"]
 	path = vim/bundle/nelstrom-vim-markdown-preview
 	url = https://github.com/nelstrom/vim-markdown-preview
+[submodule "vim/bundle/scrooloose-nerdtree"]
+	path = vim/bundle/scrooloose-nerdtree
+	url = https://github.com/scrooloose/nerdtree.git

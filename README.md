@@ -146,6 +146,7 @@ Included vim plugins
  * AnsiEsc - inteprets ansi color codes inside log files. great for looking at Rails logs
  * ruby-debug-ide - not quite working for me, but maybe it will for you. supposedly a graphical debugger you can step through
  * tComment - gcc to comment a line, gcp to comment blocks, nuff said
+ * vim-markdown-preview - :Mm to view your README.md as html
 
 Adding your own vim plugins
 ---
