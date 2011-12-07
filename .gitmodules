@@ -43,3 +43,9 @@
 [submodule "vim/bundle/vim-scripts-AutoTag"]
 	path = vim/bundle/vim-scripts-AutoTag
 	url = https://github.com/vim-scripts/AutoTag.git
+[submodule "vim/bundle/vim-scripts-IndexedSearch"]
+	path = vim/bundle/vim-scripts-IndexedSearch
+	url = https://github.com/vim-scripts/IndexedSearch
+[submodule "vim/bundle/scrooloose-syntastic"]
+	path = vim/bundle/scrooloose-syntastic
+	url = https://github.com/scrooloose/syntastic.git
