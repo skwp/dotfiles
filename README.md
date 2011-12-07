@@ -133,6 +133,16 @@ Some of the vim customizations include:
  * Cc - (Current command) copies the command under your cursor and executes it in vim. Great for testing single line changes to vimrc.
  * \ss to run specs, \ll to run a given spec on a line - using my vim-ruby-conque plugin (https://github.com/skwp/vim-ruby-conque)
 
+Included vim plugins
+---
+
+ * fugitive - "a git wrapper so awesome, it should be illegal.." 
+    * Try Gstatus and hit '-' on the screen to toggle files. Hit 'd' on the same screen for a diff.
+    * Watch: http://vimcasts.org/blog/2011/05/the-fugitive-series/
+ * GitGrep - much better than the grep provided with fugitive; use :GitGrep or hit K to grep current word
+
+
+
 Setup for Git
 ---
 To use the gitconfig (some of the git bash aliases rely on my git aliases)

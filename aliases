@@ -67,6 +67,9 @@ alias grs='git reset'
 alias grsh='git reset --hard'
 alias gcln='git clean'
 alias gclndf='git clean -df'
+alias gsm='git submodule'
+alias gsmi='git submodule init'
+alias gsmu='git submodule update'
 
 # Common shell functions
 alias less='less -r'
