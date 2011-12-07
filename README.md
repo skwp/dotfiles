@@ -140,7 +140,7 @@ Included vim plugins
     * Try Gstatus and hit '-' on the screen to toggle files. Hit 'd' on the same screen for a diff.
     * Watch: http://vimcasts.org/blog/2011/05/the-fugitive-series/
  * GitGrep - much better than the grep provided with fugitive; use :GitGrep or hit K to grep current word
-
+ * ruby-debug-ide - not quite working for me, but maybe it will for you. supposedly a graphical debugger you can step through
 
 
 Setup for Git

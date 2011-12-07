@@ -16,3 +16,6 @@
 [submodule "vim/bundle/raimondi-delimitMate"]
 	path = vim/bundle/raimondi-delimitMate
 	url = https://github.com/Raimondi/delimitMate
+[submodule "vim/bundle/astashov-vim-ruby-debugger"]
+	path = vim/bundle/astashov-vim-ruby-debugger
+	url = https://github.com/astashov/vim-ruby-debugger
