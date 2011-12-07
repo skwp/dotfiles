@@ -94,3 +94,6 @@
 [submodule "vim/bundle/skwp-vim-html-escape"]
 	path = vim/bundle/skwp-vim-html-escape
 	url = https://github.com/skwp/vim-html-escape
+[submodule "vim/bundle/Shougo-neocomplcache"]
+	path = vim/bundle/Shougo-neocomplcache
+	url = https://github.com/Shougo/neocomplcache.git

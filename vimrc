@@ -31,18 +31,6 @@ set noswapfile
 set nobackup
 set nowb
 
-" Better omnicomplete options (use Ctrl-P, Ctrl-N or Tab)
-if v:version >= 700
-  set omnifunc=syntaxcomplete#Complete " override built-in C omnicomplete with C++ OmniCppComplete plugin
-  let OmniCpp_GlobalScopeSearch   = 1
-  let OmniCpp_DisplayMode         = 1
-  let OmniCpp_ShowScopeInAbbr     = 0 "do not show namespace in pop-up
-  let OmniCpp_ShowPrototypeInAbbr = 1 "show prototype in pop-up
-  let OmniCpp_ShowAccess          = 1 "show access in pop-up
-  let OmniCpp_SelectFirstItem     = 1 "select first item in pop-up
-  set completeopt=menuone,menu,longest
-endif
-
 " persistent undos - undo after you re-open the file
 " but this gives warnings under command line vim
 " use only in macvim
@@ -174,7 +162,8 @@ endfunction
 " Open the project tree and expose current file in the nerdtree with Ctrl-\
 " the winfixwidth call ensures that nerdtree will not resize
 " if we create or remove other windows
-nnoremap <silent> <C-\> :NERDTreeFind<CR>:set winfixwidth<CR>
+let g:NERDTreeWinSize = 30 
+nnoremap <silent> <C-\> :NERDTreeFind<CR>
 
 " move up/down quickly by using Ctrl-j, Ctrl-k
 " which will move us around by functions
@@ -413,5 +402,12 @@ let g:ruby_conque_rspec_command='spec'
 let g:showmarks_include = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXY"
 
 " Tell showmarks to stop using the '>' indicator for marks
-let g:showmarks_textlower="\t" 
-let g:showmarks_textupper="\t"
+let g:showmarks_textlower="\t>" 
+let g:showmarks_textupper="\t>"
+
+" neocomplcache
+" A beter autocomplete system!
+let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_camel_case_completion = 1
+let g:neocomplcache_enable_underbar_completion = 1
+let g:neocomplcache_min_syntax_length = 5
