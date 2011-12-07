@@ -55,3 +55,12 @@
 [submodule "vim/bundle/vim-scripts-bufexplorer.zip"]
 	path = vim/bundle/vim-scripts-bufexplorer.zip
 	url = https://github.com/vim-scripts/bufexplorer.zip.git
+[submodule "vim/bundle/sjbach-lusty"]
+	path = vim/bundle/sjbach-lusty
+	url = https://github.com/sjbach/lusty.git
+[submodule "vim/bundle/tjennings-git-grep-vim"]
+	path = vim/bundle/tjennings-git-grep-vim
+	url = https://github.com/tjennings/git-grep-vim
+[submodule "vim/bundle/skwp-greplace"]
+	path = vim/bundle/skwp-greplace
+	url = https://github.com/skwp/greplace.vim

@@ -230,11 +230,6 @@ set viminfo='100,f1
 " this uses ctags. the standard way to get this is Ctrl-]
 nnoremap <silent> F <C-]>
 
-"open buf explorer with B
-map B <Leader>bv
-let g:bufExplorerShowRelativePath=1  " Show relative paths.
-let g:bufExplorerDefaultHelp=0
-
 "toggle between last two buffers with Z (normally ctrl-shift-6)
 nnoremap <silent> Z <C-^>
 
@@ -368,11 +363,11 @@ nmap <silent> gcp <c-_>p
 
 " LustyJuggler 
 " ========================================
-" User LustyJuggler buffer switcher by hitting S
-" and then using the homerow keys to select the file
-" double tap the home row key to go to the file or hit
-" once to just select it in the juggler
-nmap <silent> S \lj
+" better triggers for buffer switching
+" B to use the juggler, S to search the buffers
+nmap <silent> B \lj
+nmap <silent> S \lb
+
 let g:LustyJugglerSuppressRubyWarning = 1
 let g:LustyJugglerAltTabMode = 1
 " Colors to make LustyJuggler more usable
@@ -398,7 +393,7 @@ hi! EasyMotionTarget guifg=yellow
 " but it'll all be isolated to one area of the keyboard
 call EasyMotion#InitOptions({
 \   'leader_key'      : '<Leader><Leader>'
-\ , 'keys'            : 'asdfwejkliogh'
+\ , 'keys'            : 'fjdkslewio'
 \ , 'do_shade'        : 1
 \ , 'do_mapping'      : 1
 \ , 'grouping'        : 1
