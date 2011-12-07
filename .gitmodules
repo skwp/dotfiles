@@ -25,3 +25,6 @@
 [submodule "vim/bundle/skwp-vim-ruby-conque"]
 	path = vim/bundle/skwp-vim-ruby-conque
 	url = https://github.com/skwp/vim-ruby-conque
+[submodule "vim/bundle/kogakure-vim-sparkup"]
+	path = vim/bundle/kogakure-vim-sparkup
+	url = https://github.com/kogakure/vim-sparkup.git
