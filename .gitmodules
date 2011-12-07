@@ -79,3 +79,9 @@
 [submodule "vim/bundle/vim-ruby-vim-ruby"]
 	path = vim/bundle/vim-ruby-vim-ruby
 	url = https://github.com/vim-ruby/vim-ruby.git
+[submodule "vim/bundle/ecomba-vim-ruby-refactoring"]
+	path = vim/bundle/ecomba-vim-ruby-refactoring
+	url = https://github.com/ecomba/vim-ruby-refactoring
+[submodule "vim/bundle/vim-scripts-matchit.zip"]
+	path = vim/bundle/vim-scripts-matchit.zip
+	url = https://github.com/vim-scripts/matchit.zip.git
