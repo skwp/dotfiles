@@ -4,9 +4,6 @@
 [submodule "vim/bundle/fugitive"]
 	path = vim/bundle/tpope-fugitive
 	url = http://github.com/tpope/vim-fugitive.git
-[submodule "vim/bundle/vim-ruby-conque"]
-	path = vim/bundle/vim-ruby-conque
-	url = https://github.com/skwp/vim-ruby-conque
 [submodule "vim/bundle/raimondi-delimitMate"]
 	path = vim/bundle/raimondi-delimitMate
 	url = https://github.com/Raimondi/delimitMate
@@ -25,3 +22,6 @@
 [submodule "vim/bundle/skwp-vim-colors-solarized"]
 	path = vim/bundle/skwp-vim-colors-solarized
 	url = https://github.com/skwp/vim-colors-solarized
+[submodule "vim/bundle/skwp-vim-ruby-conque"]
+	path = vim/bundle/skwp-vim-ruby-conque
+	url = https://github.com/skwp/vim-ruby-conque
