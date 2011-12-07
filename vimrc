@@ -174,7 +174,7 @@ endfunction
 " Open the project tree and expose current file in the nerdtree with Ctrl-\
 " the winfixwidth call ensures that nerdtree will not resize
 " if we create or remove other windows
-nnoremap <silent> <C-\> :call FindInNERDTree()<CR>:set winfixwidth<CR>
+nnoremap <silent> <C-\> :NERDTreeFind<CR>:set winfixwidth<CR>
 
 " move up/down quickly by using Ctrl-j, Ctrl-k
 " which will move us around by functions
