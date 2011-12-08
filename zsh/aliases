@@ -3,6 +3,7 @@
 # YADR support
 alias yav='yadr vim-add-plugin'
 alias yuv='yadr vim-update-plugins'
+alias yip='yadr init-plugins'
 
 # PS
 alias psg="ps aux | grep "

@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+require File.join(File.dirname(__FILE__), 'default_libs')
+
+GitStyleBinary.command do
+  version "yadr-init-plugins 1.0" 
+
+short_desc "Initialize all submodules. Run this every time you pull a new yadr version."
+
+  run do |command|
+    system("cd ~/.dotfiles && git submodule init && git submodule update")
+  end
+
+end

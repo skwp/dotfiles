@@ -28,35 +28,51 @@ Differences from janus:
 
   * Much larger and (imho) better curated list of vim plugins
   * Optimized for one color scheme (solarized) means everything Just Looks Good
-  * Easy plugin management system using yadr command - no editing of config files
+  * Easy plugin management system using **yadr** command which is a thin shell over git submodules - no editing of config files
   * No need to replace your vimrc, instead uses overridable submodules (Coming Soon)
-  * More than just vim plugins - get great shell aliases, osx, and irb/pry tweaks as well
+  * More than just vim plugins - great shell aliases, osx, and irb/pry tweaks to make you more productive
 
 Before you start
 ---
 
- * Remap caps-lock to escape: http://stackoverflow.com/questions/127591/using-caps-lock-as-esc-in-mac-os-x
+ * Remap caps-lock to escape: http://pqrs.org/macosx/keyremap4macbook/extra.html
 
- * Switch to zsh using oh-my-zh (https://github.com/robbyrussell/oh-my-zsh) in one easy step: 
-
-        wget --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
-
-Submodules
+Installation
 ---
 
-This project uses git submodules for some of its plugins. Please run:
+Coming Soon: gem-based installation
 
-    git submodule init; git submodule update
+This project uses git submodules for its plugins, but this is handled
+for you by the **yadr** command. Please run:
 
-To get all the current plugins, every time you pull this YADR repo. 
+    git clone https://github.com/skwp/dotfiles ~/.dotfiles
+
+    ~/.dotfiles/bin/yadr/yadr init-plugins
+
+NOTE: by default, YADR will not touch any of your files. You have to manually 
+activate each of its components, if you choose, by following the sections below.
+Eventually these will be automated.
+
+If you pull new changes, be sure to run this to init all the submodules:
+
+    yadr init-plugins
+
+After you install yadr shell aliases, you can use the *yip* alias to do the same.
 
 Setup for ZSH
 ---
-I am now using ZSH as my default shell because of its awesome globbing
+After a lifetime of bash, I am now using ZSH as my default shell because of its awesome globbing
 and autocomplete features (the spelling fixer autocomplete is worth the money alone). 
 
-This setup assumes you use oh-my-zsh (https://github.com/robbyrussell/oh-my-zsh)
+Migrating from bash to zsh is essentially pain free. The zshrc provided here
+restores the only feature that I felt was 'broken' which is the Ctrl-R reverse history search.
 
+While I am not going to support bash out of the box here, YADR _should_ work with bash if
+you just source the _aliases_ file. However, I recommend taking 5 mins and upgrading to zsh
+with this completely automated command courtesy of oh-my-zsh:
+
+    wget --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
+     
 Place this as the last line in your ~/.zshrc created by oh-my-zsh:
 
     source ~/.dotfiles/zsh/zshrc
@@ -67,11 +83,11 @@ mnemonic aliases. Please feel free to edit them:
     ae # alias edit
     ar # alias reload
 
-Here are some of the customizations you get with this setup:
+Here are some of the customizations provided in ~/.dotfiles/zshrc:
 
  * Vim mode
  * Bash style ctrl-R for reverse history finder
- * Fuzzy matching - if you mistype a directory name, tab completoin will fix it
+ * Fuzzy matching - if you mistype a directory name, tab completion will fix it
 
 Setup for Pry
 ---
@@ -249,11 +265,6 @@ COMING SOON
  * Automatic setup script to symlink all dotfiles, or just some selectively 
 
 
-Bash Users
----
-I used bash all my life. Last month I switched to zsh. It's nearly 100% backwards compatible
-and I promise you, you won't miss bash at all once you derive insane time saving from all the
-autocorrect and completion zsh can do for you on the command line.
 
 For more tips and tricks
 ---
