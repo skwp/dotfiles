@@ -58,6 +58,7 @@ If you pull new changes, be sure to run this to init all the submodules:
     yadr init-plugins
 
 After you install yadr shell aliases, you can use the *yip* alias to do the same.
+Please note that init-plugins will automatically compile the CommandT plugin for you.
 
 Setup for ZSH
 ---
@@ -161,6 +162,7 @@ Included vim plugins
  * EasyMotion - hit ,, (forward) or z,, (back) and watch the magic happen. just type the letters and jump directly to your target - in the provided vimrc the keys are optimized for home and upper row, no pinkies
  * LustyJuggler/Explorer - hit B, type buf name to match a buffer, or type S and use the home row keys to select a buffer
  * TagList - hit T to see a list of methods in a class (uses ctags)
+ * CommandT - although I personally use PeepOpen, this is available as it's pretty standard
 
  Git
 

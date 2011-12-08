@@ -8,6 +8,12 @@ short_desc "Initialize all submodules. Run this every time you pull a new yadr v
 
   run do |command|
     system("cd ~/.dotfiles && git submodule init && git submodule update")
+    
+    # Compile Command-T
+    if File.directory?(File.expand_path("~/.dotfiles/vim/bundle/wincent-Command-T"))
+      puts "Compiling Command-T plugin..."
+      system("cd ~/.dotfiles/vim/bundle/wincent-Command-T && rake make")
+    end
   end
 
 end
