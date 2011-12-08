@@ -46,10 +46,9 @@ Submodules
 
 This project uses git submodules for some of its plugins. Please run:
 
-    git submodule init
-    git submodule update
+    git submodule init; git submodule update
 
-To get all the current plugins. Over time, I plan to move all plugins into submodules.
+To get all the current plugins, every time you pull this YADR repo. 
 
 Setup for ZSH
 ---
@@ -190,7 +189,11 @@ YADR comes with a dead simple plugin manager that just uses git submodules, with
 
 You can update all the plugins easily:
 
-    yuv -u https://github.com/airblade/vim-rooter
+    yuv 
+
+Delete a plugin (Coming Soon)
+
+   ydv -p airblade-vim-rooter
 
 The aliases (yav=yadr vim-add-plugin) and (yuv=yadr vim-update-all-plugins) live in the aliases file.
 You can then commit the change. It's good to have your own fork of this project to do that.
