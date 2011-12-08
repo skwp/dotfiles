@@ -106,3 +106,6 @@
 [submodule "vim/bundle/tpope-vim-fugitive"]
 	path = vim/bundle/tpope-vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
+[submodule "vim/bundle/mikefarmer-snipmate"]
+	path = vim/bundle/mikefarmer-snipmate
+	url = https://github.com/mikefarmer/snipmate.vim.git
