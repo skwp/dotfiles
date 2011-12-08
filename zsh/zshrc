@@ -29,4 +29,4 @@ zstyle ':completion:*:approximate:*' max-errors 1 numeric
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" 
 
 # Add path to our custom bins
-export PATH=$PATH:~/.dotfiles/bin
+export PATH=$PATH:~/.dotfiles/bin:~/.dotfiles/bin/yadr

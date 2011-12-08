@@ -1,0 +1,116 @@
+== 1.16.2 / 2010-04-06
+* Bugfix in Trollop::options. Thanks to Brian C. Thomas for pointing it out.
+
+== 1.16.1 / 2010-04-05
+* Bugfix in Trollop::die method introduced in last release.
+
+== 1.16 / 2010-04-01
+* Add Trollop::with_standard_exception_handling method for easing the use of Parser directly.
+* Handle scientific notation in float arguments, thanks to Will Fitzgerald.
+* Drop hoe dependency.
+
+== 1.15 / 2009-09-30
+* Don't raise an exception when out of short arguments (thanks to Rafael
+  Sevilla for pointing out how dumb this behavior was).
+
+== 1.14 / 2009-06-19
+* Make :multi arguments default to [], not nil, when not set on the commandline.
+* Minor commenting and error message improvements
+
+== 1.13 / 2009-03-16
+* Fix parsing of "--longarg=<value with spaces>".
+
+== 1.12 / 2009-01-30
+* Fix some unit test failures in the last release. Should be more careful.
+* Make default short options only be assigned *after* all user-specified
+  short options. Now there's a little less juggling to do when you just
+  want to specify a few short options.
+
+== 1.11 / 2009-01-29
+* Set <opt>_given keys in the results hash for options that were specified
+  on the commandline.
+
+== 1.10.2 / 2008-10-23
+* No longer try `stty size` for screen size detection. Just use curses, and
+  screen users will have to deal with the screen clearing.
+
+== 1.10.1 / 2008-10-22
+* Options hash now responds to method calls as well as standard hash lookup.
+* Default values for multi-occurrence parameters now autoboxed.
+* The relationship between multi-value, multi-occurrence, and default values
+  improved and explained.
+* Documentation improvements.
+
+== 1.10 / 2008-10-21
+* Added :io type for parameters that point to IO streams (filenames, URIs, etc).
+* For screen size detection, first try `stty size` before loading Curses.
+* Improved documentation.
+
+== 1.9 / 2008-08-20
+* Added 'stop_on_unknown' command to stop parsing on any unknown argument.
+  This is useful for handling sub-commands when you don't know the entire
+  set of commands up front. (E.g. if the initial arguments can change it.)
+* Added a :multi option for parameters, signifying that they can be specified
+  multiple times.
+* Added :ints, :strings, :doubles, and :floats option types, which can take
+  multiple arguments.
+
+== 1.8.2 / 2008-06-25
+* Bugfix for #conflicts and #depends error messages
+
+== 1.8.1 / 2008-06-24
+* Bugfix for short option autocreation
+* More aggressive documentation
+
+== 1.8 / 2008-06-16
+* Sub-command support via Parser#stop_on
+
+== 1.7.2 / 2008-01-16
+* Ruby 1.9-ify. Apparently this means replacing :'s with ;'s.
+
+== 1.7.1 / 2008-01-07
+* Documentation improvements
+
+== 1.7 / 2007-06-17
+* Fix incorrect error message for multiple missing required arguments
+  (thanks to Neill Zero)
+
+== 1.6 / 2007-04-01
+* Don't attempt curses screen-width magic unless running on a terminal.
+
+== 1.5 / 2007-03-31
+* --help and --version do the right thing even if the rest of the
+  command line is incorrect.
+* Added #conflicts and #depends to model dependencies and exclusivity
+  between arguments.
+* Minor bugfixes.
+
+== 1.4 / 2007-03-26
+* Disable short options with :short => :none.
+* Minor bugfixes and error message improvements.
+
+== 1.3 / 2007-01-31
+* Wrap at (screen width - 1) instead of screen width.
+* User can override --help and --version.
+* Bugfix in handling of -v and -h.
+* More tests to confirm the above.
+
+== 1.2 / 2007-01-31
+* Minor documentation tweaks.
+* Removed hoe dependency.
+
+== 1.1 / 2007-01-30
+* Trollop::options now passes any arguments as block arguments. Since
+  instance variables are not properly captured by the block, this
+  makes it slightly less noisy to pass them in as local variables.
+  (A real-life use for _why's cloaker!)
+* Help display now preserves original argument order.
+* Trollop::die now also has a single string form in case death is not
+  due to a single argument.
+* Parser#text now an alias for Parser#banner, and can be called
+  multiple times, with the output being placed in the right position
+  in the help text.
+* Slightly more indicative formatting for parameterized arguments.
+
+== 1.0 / 2007-01-29
+* Initial release.

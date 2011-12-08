@@ -1,5 +1,9 @@
 # Aliases in this file are bash and zsh compatible
-#
+
+# YADR support
+alias yav='yadr vim-add-plugin'
+alias yuv='yadr vim-update-plugins'
+
 # PS
 alias psg="ps aux | grep "
 alias psr='ps aux | grep ruby'
@@ -106,3 +110,4 @@ alias sgi='sudo gem install --no-ri --no-rdoc'
 # This uses NValt (NotationalVelocity alt fork) - http://brettterpstra.com/project/nvalt/
 # to find the note called 'todo'
 alias todo='open nvalt://find/todo'
+
