@@ -97,3 +97,6 @@
 [submodule "vim/bundle/skwp-vim-colors-solarized"]
 	path = vim/bundle/skwp-vim-colors-solarized
 	url = https://github.com/skwp/vim-colors-solarized
+[submodule "vim/bundle/rson-vim-conque"]
+	path = vim/bundle/rson-vim-conque
+	url = https://github.com/rson/vim-conque.git
