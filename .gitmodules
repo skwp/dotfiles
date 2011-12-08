@@ -1,9 +1,6 @@
 [submodule "KeyBindings"]
 	path = KeyBindings
 	url = https://github.com/ttscoff/KeyBindings.git
-[submodule "vim/bundle/fugitive"]
-	path = vim/bundle/tpope-fugitive
-	url = http://github.com/tpope/vim-fugitive.git
 [submodule "vim/bundle/raimondi-delimitMate"]
 	path = vim/bundle/raimondi-delimitMate
 	url = https://github.com/Raimondi/delimitMate
@@ -106,3 +103,6 @@
 [submodule "vim/bundle/drewolson-ruby_focused_unit_test_vim"]
 	path = vim/bundle/drewolson-ruby_focused_unit_test_vim
 	url = https://github.com/drewolson/ruby_focused_unit_test_vim
+[submodule "vim/bundle/tpope-vim-fugitive"]
+	path = vim/bundle/tpope-vim-fugitive
+	url = https://github.com/tpope/vim-fugitive
