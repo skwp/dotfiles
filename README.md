@@ -13,23 +13,24 @@ and osx settings that are developer friendly (such as fast key repeat),
 and remapping your caps-lock to be Esc for vim.
 
 The strongly held opinions expressed here:
-
-  * OSX is the best operating system for development, but you have to tweak it slightly to be dev friendly.
-  * ZSH is the best shell. I used bash for a long time and I have seen the light. Just
-    its fuzzy typo autocompletion is worth the money and saves huge on keystrokes. 
-  * oh-my-zsh is the best collection of plugins for zsh and reduces the switching cost from bash to zsh to one command.
-  * MacVim is the best editor. You will type less and get more done. Vim should be used everywhere (irb, shell, mysql command line).
-  * iTerm2 is the best terminal - it has splits and good full screen capabilities
-  * Git is the best source control manager. There are probably better ones out there, but this one is mine
-
-The ideas that guide this project:
-
+---
+  * This configuration is for OSX, MacVim, zsh, and pry instead of irb. 
+  * Apple-style philosophy: not a lot of choices, but everything Just Works and Looks Good. 
   * All common commands should be two and three character mnemonic aliases - less keystrokes, RSI reduction
   * Most used vim commands should be under your fingertips (home row, prefer Shift to other command keys)
   * Avoid stressful hand motions, e.g. remap Esc to caps lock key, remap underscore to Alt-k in vim
-  * Plugin architecture (using tpope's pathogen for vim)
-  * Colors are _important_ - avoid stressful colors, use the well designed solarized (http://ethanschoonover.com/solarized) colorscheme 
-    for both vim and iTerm2
+  * Easy to use plugin architecture, no config files to edit.
+  * Pick one tool and use it everywhere: vim-ize everything
+  * Colors are _important_ - solarized (http://ethanschoonover.com/solarized) is a great looking scheme that is scientifically designed to be awesome.
+
+Differences from janus:
+---
+
+  * Much larger and (imho) better curated list of vim plugins
+  * Optimized for one color scheme (solarized) means everything Just Looks Good
+  * Easy plugin management system using yadr command - no editing of config files
+  * No need to replace your vimrc, instead uses overridable submodules (Coming Soon)
+  * More than just vim plugins - get great shell aliases, osx, and irb/pry tweaks as well
 
 Before you start
 ---
@@ -108,6 +109,7 @@ to take a look and learn some of my handy aliases, or comment them out
 if you don't like them, or make your own.
 
 Some of the vim customizations include:
+TODO: these customizations will be extracted into a separate keybinding plugin so as not to interfere with standard keybindings 
 
  * F - instantly Find definition of class (must have exuberant ctags installed)
  * B - show Buffer explorer
@@ -179,18 +181,18 @@ Included vim plugins
  * repeat - adds '.' (repeat command) support for complex commands like surround.vim. i.e. if you perform a surround and hit '.', it will Just Work (vim by default will only repeat the last piece of the complex command)
 
 
-
 Adding your own vim plugins
 ---
 
-Provided util automatically initializes a git submodule for you:
+YADR comes with a dead simple plugin manager that just uses git submodules, without any fancy config files.
 
-    util/addvim https://github.com/robgleeson/hammer.vim.git
+    yav -u https://github.com/airblade/vim-rooter
 
-Turns into:
+You can update all the plugins easily:
 
-    git submodule add https://github.com/robgleeson/hammer.vim.git vim/bundle/robgleeson-hammer
+    yuv -u https://github.com/airblade/vim-rooter
 
+The aliases (yav=yadr vim-add-plugin) and (yuv=yadr vim-update-all-plugins) live in the aliases file.
 You can then commit the change. It's good to have your own fork of this project to do that.
 
 Setup for Git
@@ -232,17 +234,24 @@ Other recommended OSX tools
  * QuickCursor - gives you Apple-Shift-E to edit any OSX text field in vim.
 
 Credits
-===
+---
 I can't take credit for all of this. The vim files are a combination of
 work by tpope, scrooloose, and many hours of scouring blogs, vimscripts,
 and other places for the cream of the crop of vim and bash awesomeness.
 
 COMING SOON
-===
+---
  * Full migration to tpope's pathogen format (~/.vim/bundle) for all plugins
  * Better isolation of customizations in smaller chunks, maybe as plugins
  * Automatic setup script to symlink all dotfiles, or just some selectively 
 
+
+Bash Users
+---
+I used bash all my life. Last month I switched to zsh. It's nearly 100% backwards compatible
+and I promise you, you won't miss bash at all once you derive insane time saving from all the
+autocorrect and completion zsh can do for you on the command line.
+
 For more tips and tricks
-===
+---
 Follow my blog: http://yanpritzker.com
