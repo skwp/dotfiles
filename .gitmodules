@@ -109,3 +109,6 @@
 [submodule "vim/snippets"]
 	path = vim/snippets
 	url = https://github.com/scrooloose/snipmate-snippets.git
+[submodule "vim/bundle/wincent-Command-T"]
+	path = vim/bundle/wincent-Command-T
+	url = https://github.com/wincent/Command-T

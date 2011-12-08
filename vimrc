@@ -237,10 +237,6 @@ imap <silent> <C-K> <%=   %><Esc>3hi
 " create <%= foo %> erb tags using Ctrl-j in edit mode
 imap <silent> <C-J> <%  %><Esc>2hi
 
-
-" hit \t to run current test
-nmap <silent> <Leader>t :RunRubyFocusedContext<CR>
-
 " set up automatic ctags
 let Tlist_Ctags_Cmd='/opt/local/bin/ctags'
 
@@ -414,3 +410,10 @@ let g:neocomplcache_enable_camel_case_completion = 1
 let g:neocomplcache_enable_underbar_completion = 1
 let g:neocomplcache_min_syntax_length = 5
 inoremap <expr><D-Space>  pumvisible() ? "\<C-n>" : "\<TAB>" 
+
+
+" Command-T
+" Mapped to ,t
+let g:CommandTMaxHeight = 5
+let g:CommandTMatchWindowReverse = 1
+nmap ,t :CommandT<CR>
