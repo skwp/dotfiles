@@ -100,3 +100,9 @@
 [submodule "vim/bundle/rson-vim-conque"]
 	path = vim/bundle/rson-vim-conque
 	url = https://github.com/rson/vim-conque.git
+[submodule "vim/bundle/tpope-vim-pathogen"]
+	path = vim/bundle/tpope-vim-pathogen
+	url = https://github.com/tpope/vim-pathogen
+[submodule "vim/bundle/drewolson-ruby_focused_unit_test_vim"]
+	path = vim/bundle/drewolson-ruby_focused_unit_test_vim
+	url = https://github.com/drewolson/ruby_focused_unit_test_vim

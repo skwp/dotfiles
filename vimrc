@@ -1,5 +1,6 @@
 " Use tpope's pathogen plugin to manage all other plugins
-call pathogen#runtime_append_all_bundles()
+runtime bundle/tpope-vim-pathogen/autoload/pathogen.vim
+call pathogen#infect()
 call pathogen#helptags()
 
 "Use Vim settings, rather then Vi settings (much better!).
