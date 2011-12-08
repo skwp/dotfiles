@@ -178,14 +178,19 @@ Included vim plugins
  * tComment - gcc to comment a line, gcp to comment blocks, nuff said
  * sparkup - div.foo#bar - hit ctrl-e, expands into <code><div class='foo' id#bar/></code>, and that's just the beginning
  * rails.vim - syntax highlighting, gf (goto file) enhancements, and lots more. should be required for any rails dev
- * necomplcache - automatic completion showing, and added Command-Space to select a completion (same as Ctrl-N)
+ * ruby.vim - lots of general enhancements for ruby dev
+ * necomplcache - intelligent and fast complete as you type, and added Command-Space to select a completion (same as Ctrl-N)
+ * snipMate - offers textmate-like snippet expansion + scrooloose-snippets . try hitting TAB after typing a snippet
 
  Utils
 
+ * surround - super easy quote and tag manipulation - ysiw" - sourround inner word with quotes. ci"' - change inner double quotes to single quotes, etc
  * greplace - use :Gsearch to find across many files, replace inside the changes, then :Greplace to do a replace across all matches
  * ConqueTerm - embedded fully colorful shell inside your vim
  * vim-ruby-conque - helpers to run ruby,rspec,rake within ConqueTerm - use \rr (ruby), \ss (rspec), \ll (rspec line), \RR (rake)
+ * ruby_focused_unit_test - helpers to run tests/specs with \t
  * vim-markdown-preview - :Mm to view your README.md as html
+ * html-escape - hit ctrl-h to escape html
  * ruby-debug-ide - not quite working for me, but maybe it will for you. supposedly a graphical debugger you can step through
 
  General enhancements that don't add new commands
@@ -194,6 +199,9 @@ Included vim plugins
  * delimitMate - automatically closes quotes 
  * syntastic - automatic syntax checking when you save the file
  * repeat - adds '.' (repeat command) support for complex commands like surround.vim. i.e. if you perform a surround and hit '.', it will Just Work (vim by default will only repeat the last piece of the complex command)
+ * endwise - automatically closes blocks (if/end)
+ * autotag - automatically creates tags for fast sourcecode browsing. use ctrl-[ over a symbol name to go to its definition
+ * matchit - helps with matching brackets, improves other plugins
 
 
 Adding your own vim plugins
