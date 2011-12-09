@@ -228,6 +228,14 @@ To use the gitconfig (some of the git bash aliases rely on my git aliases)
 
     ln -s ~/.dotfiles/gitconfig ~/.gitconfig
 
+Since the gitconfig doesn't contain the user info, I recommend using env variables.
+Put the following in your ~/.secrets file which is automatically referenced by the provided zshrc:
+
+    export GIT_AUTHOR_NAME=yourname
+    export GIT_AUTHOR_EMAIL=you@domain.com
+    export GIT_COMITTER_NAME=yourname
+    export GIT_COMITTER_EMAIL=you@domain.com
+
 Some of the customizations provided include:
 
   * git l - a much more usable git log

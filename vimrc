@@ -230,6 +230,7 @@ nnoremap <silent> K :GitGrep <cword><CR>
 "open up a git grep line, with a quote started for the search
 "mnemonic: the letter O looks like a magnifying glass or goggles (search)
 nnoremap O :GitGrep "
+nnoremap <silent> P :GitGrepCurrentPartial<CR>
 
 " create <%= foo %> erb tags using Ctrl-k in edit mode
 imap <silent> <C-K> <%=   %><Esc>3hi
@@ -272,16 +273,6 @@ set so=8
 " to get to the command mode, C-f to get to history editing
 " p to paste it, C-c to return to command mode, and CR to execute
 nmap <silent> Cc yy:<C-f>p<C-c><CR>
-
-" Find references to the currently opened partial (file)
-" by pressing P in command mode 
-function GitGrepCurrentPartial() 
-  " :call GitGrep(substitute(substitute(expand('%<'),'.*\/_','','g'),'.html','','g'))
-  :call GitGrep(substitute(substitute(substitute(expand('%<'),'.*\/','','g'), '$_','','g'),'.html','','g'))
-endfunction
-command! GitGrepCurrentPartial call GitGrepCurrentPartial()
-nnoremap <silent> P :GitGrepCurrentPartial<CR>
-
 
 " Remember cursor position and etc when you leave windows
 " au BufWinLeave * silent! mkview  "make vim save view (state) (folds, cursor, etc)
