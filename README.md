@@ -128,12 +128,15 @@ Some of the vim customizations include:
 TODO: these customizations will be extracted into a separate keybinding plugin so as not to interfere with standard keybindings 
 
  * F - instantly Find definition of class (must have exuberant ctags installed)
- * B - show Buffer explorer
+ * B - show buffers (LustyJuggler buffer search), just type to fuzzy match a buffer name
  * S - Show buffers in LustyJuggler (use asdfjkl home row keys to then select buffer)
  * T - Tag list (list of methods in a class)
+
  * K - git grep for the Kurrent word under the cursor
- * O - Open a GitGrep command line with a quote pretyped (close the quote yourself)
- * \mm - show my Marks (set a mark with mX where X is a letter, navigate to mark using 'X). Uppercase marks to mark files, lowercase marks to use within a file.
+ * ,gg - GitGrep command line with a quote pretyped (close the quote yourself)
+ * ,gcp - GitGrep Current Partial to find references to the current view partial
+
+ * \mm - set the next available mark (set a mark with mX where X is a letter, navigate to mark using 'X). Uppercase marks to mark files, lowercase marks to use within a file.
  * Z - jump back and forth between last two buffers
  * Q - Quit a window (normally Ctrl-w,c)
  * \Q - Kill a buffer completely (normally :bw)
@@ -144,12 +147,14 @@ TODO: these customizations will be extracted into a separate keybinding plugin s
  * cf - Copy Filename of current file into system (not vi) paste buffer 
  * // - clear the search
  * ,, or z,, - use EasyMotion - type that and then type one of the highlighted letters.
- * Apple-k and Apple-K to type underscores and dashes, since they are so common in code but so far away from home row
+ * Apple-k and Apple-d to type underscores and dashes, since they are so common in code but so far away from home row
  * yw - remapped to yaw, meaning yanking a word will yank the entire word no matter where your cursor is
  * W - write a file (instead of :w, saving you keystrokes for the most common vim operation)
  * gcc (comment a line) via tComment, and gcp custom alias to comment a paragraph
  * Cc - (Current command) copies the command under your cursor and executes it in vim. Great for testing single line changes to vimrc.
  * \ss to run specs, \ll to run a given spec on a line - using my vim-ruby-conque plugin (https://github.com/skwp/vim-ruby-conque)
+ * ,t - Command-T fuzzy file selector (alternative to PeepOpen)
+ * ,T - Command-T fuzzy buffer selector (alternative to LustyJuggler)
 
 Included vim plugins
 ---

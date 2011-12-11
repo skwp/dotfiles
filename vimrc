@@ -339,6 +339,9 @@ nnoremap <silent> dg :diffget<CR>
 " using tComment's built in <c-_>p mapping
 nmap <silent> gcp <c-_>p
 
+" AutoTag
+" Seems to have problems with some vim files
+let g:autotagExcludeSuffixes="tml.xml.text.txt.vim"
 
 " LustyJuggler 
 " ========================================
@@ -349,6 +352,7 @@ nmap <silent> S \lb
 
 let g:LustyJugglerSuppressRubyWarning = 1
 let g:LustyJugglerAltTabMode = 1
+let g:LustyJugglerShowKeys = 'a' " show a/s/d/f keys 
 " Colors to make LustyJuggler more usable
 " the Question color in LustyJuggler is mapped to
 " the currently selected buffer.
@@ -409,6 +413,7 @@ inoremap <expr><D-Space>  pumvisible() ? "\<C-n>" : "\<TAB>"
 let g:CommandTMaxHeight = 5
 let g:CommandTMatchWindowReverse = 1
 nmap ,t :CommandT<CR>
+nmap ,T :CommandTBuffer<CR>
 
 
 " Some color remaps
