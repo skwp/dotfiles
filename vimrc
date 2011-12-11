@@ -33,6 +33,9 @@ set noswapfile
 set nobackup
 set nowb
 
+" Disable cursor blink
+set gcr=a:blinkon0
+
 " persistent undos - undo after you re-open the file
 " but this gives warnings under command line vim
 " use only in macvim
@@ -228,9 +231,8 @@ nnoremap <silent> Z <C-^>
 nnoremap <silent> K :GitGrep <cword><CR>
 
 "open up a git grep line, with a quote started for the search
-"mnemonic: the letter O looks like a magnifying glass or goggles (search)
-nnoremap O :GitGrep "
-nnoremap <silent> P :GitGrepCurrentPartial<CR>
+nnoremap ,gg :GitGrep "
+nnoremap ,gcp :GitGrepCurrentPartial<CR>
 
 " create <%= foo %> erb tags using Ctrl-k in edit mode
 imap <silent> <C-K> <%=   %><Esc>3hi
@@ -317,11 +319,10 @@ nnoremap W :w<CR>
 " RSI Prevention - keyboard remaps
 " ========================================
 " in code, undescores and dashes are very commmon, but 
-" the key is really far away. remap Apple-k to give us
-" underscores and Apple-Shift-K to give dashes. 
-" home row for the win!
+" the key is really far away. remap the middle fingers
+" with the command key to do what we want (type dashes)
 imap <silent> <D-k> _
-imap <silent> <D-K> -
+imap <silent> <D-d> -
 
 
 " fugitive.git
@@ -408,3 +409,9 @@ inoremap <expr><D-Space>  pumvisible() ? "\<C-n>" : "\<TAB>"
 let g:CommandTMaxHeight = 5
 let g:CommandTMatchWindowReverse = 1
 nmap ,t :CommandT<CR>
+
+
+" Some color remaps
+" If statements and def statements should look similar 
+" so you can see the flow 
+hi! link rubyDefine rubyControl
