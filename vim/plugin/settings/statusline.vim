@@ -1,18 +1,21 @@
 "statusline setup
+set statusline=%#DiffAdd#
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-set statusline=%#warningmsg#
-set statusline+=%f
+set statusline=%#DiffAdd#
+set statusline+=%f\  
+set statusline+=%#LineNr# "switch to colors used for line number
 set statusline+=%{fugitive#statusline()}
+set statusline+=%#DiffAdd#  "switch back to normal
+set statusline+=%=      "left/right separator
 set statusline+=%m      "modified flag
 
 "display a warning if &paste is set
-set statusline+=%#error#
+set statusline+=%#DiffChange#
 set statusline+=%{&paste?'[paste]':''}
-set statusline+=%*
-set statusline+=%=      "left/right separator
+set statusline+=%#LineNr# "switch to colors used for line number
 set statusline+=%{StatuslineCurrentHighlight()}\ \ "current highlight
+set statusline+=%#DiffAdd# "switch to colors used for line number
 set statusline+=%c:     "cursor column
 set statusline+=%l/%L   "cursor line/total lines
 "set statusline+=\ %P    "percent through file
