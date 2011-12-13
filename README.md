@@ -201,6 +201,7 @@ Included vim plugins
  * vim-markdown-preview - :Mm to view your README.md as html
  * html-escape - hit ctrl-h to escape html
  * ruby-debug-ide - not quite working for me, but maybe it will for you. supposedly a graphical debugger you can step through
+ * Gundo - visualize your undos - pretty amazing plugin. Hit ,u with my keymappings to trigger it, very user friendly
 
  General enhancements that don't add new commands
 
