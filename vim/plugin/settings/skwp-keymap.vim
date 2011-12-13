@@ -5,6 +5,8 @@
 " alias yw to yank the entire word even if the
 " cursor is inside the word
 nnoremap yw yaw
+"make Y consistent with C and D
+nnoremap Y y$
 
 " ========================================
 " RSI Prevention - keyboard remaps
@@ -44,12 +46,12 @@ imap <D-/> <Esc>:TComment<CR>i
 nnoremap ,gg :GitGrep "
 nnoremap ,gcp :GitGrepCurrentPartial<CR>
 
-" hit F to find the definition of the current class
+" hit ,f to find the definition of the current class
 " this uses ctags. the standard way to get this is Ctrl-]
-nnoremap <silent> F <C-]>
+nnoremap <silent> ,f <C-]>
 
 "toggle between last two buffers with Z (normally ctrl-shift-6)
-nnoremap <silent> Z <C-^>
+nnoremap <silent> ,z <C-^>
 
 "git grep the current word using K (mnemonic Kurrent)
 nnoremap <silent> K :GitGrep <cword><CR>
@@ -74,8 +76,8 @@ nnoremap <silent> Q <C-w>c
 " Use \Q to kill the buffer entirely
 nnoremap <silent> <Leader>Q :bw<CR>
 
-"open the taglist (method browser) using \t 
-nnoremap <silent> <Leader>t :TlistToggle<CR>
+"open the taglist (method browser) using ,t 
+nnoremap <silent> ,T :TlistToggle<CR>
 
 " create <%= foo %> erb tags using Ctrl-k in edit mode
 imap <silent> <C-K> <%=   %><Esc>3hi

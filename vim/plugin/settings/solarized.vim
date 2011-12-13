@@ -8,3 +8,5 @@ hi! link rubyDefine rubyControl
 " the currently selected buffer.
 hi clear Question
 hi! Question guifg=yellow
+
+hi! link TagListFileName  Question

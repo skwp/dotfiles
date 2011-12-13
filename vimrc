@@ -1,17 +1,13 @@
+"Use Vim settings, rather then Vi settings (much better!).
+"This must be first, because it changes other options as a side effect.
+set nocompatible
+
 " Use tpope's pathogen plugin to manage all other plugins
 runtime bundle/tpope-vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 call pathogen#helptags()
 
-"Use Vim settings, rather then Vi settings (much better!).
-"This must be first, because it changes other options as a side effect.
-set nocompatible
-
-" Line numbers are good
-set number
-
-" I don't like code folding
-set nofoldenable
+set number " Line numbers are good
 
 "allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -92,8 +88,6 @@ syntax on
 set mouse=a
 set ttymouse=xterm2
 
-" Don’t worry about the name. What this does is allow Vim to manage multiple buffers effectively.
-" 
 " The current buffer can be put to the background without writing to disk;
 " When a background buffer becomes current again, marks and undo-history are remembered.
 " Turn this on.
@@ -102,25 +96,23 @@ set hidden
 
 " Make it beautiful - colors and fonts
 if has("gui_running")
-    "tell the term has 256 colors
-    set t_Co=256
+  "tell the term has 256 colors
+  set t_Co=256
 
-    " http://ethanschoonover.com/solarized/vim-colors-solarized
-    colorscheme solarized
-    set background=dark
+  " http://ethanschoonover.com/solarized/vim-colors-solarized
+  colorscheme solarized
+  set background=dark
 
-    set guitablabel=%M%t
-    set lines=60
-    set columns=190
+  set guitablabel=%M%t
+  set lines=60
+  set columns=190
 
-    set guifont=Inconsolata:h20,Monaco:h17
+  set guifont=Inconsolata:h20,Monaco:h17
 else
-		"dont load csapprox if we no gui support - silences an annoying warning
-    let g:CSApprox_loaded = 1
+  "dont load csapprox if we no gui support - silences an annoying warning
+  let g:CSApprox_loaded = 1
 endif
 
-"make Y consistent with C and D
-nnoremap Y y$
 
 " automaticaly reload files changed outside of vim
 set autoread

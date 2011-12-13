@@ -12,3 +12,11 @@ call EasyMotion#InitOptions({
 \ , 'hl_group_target' : 'Question'
 \ , 'hl_group_shade'  : 'EasyMotionShade'
 \ })
+
+" Use EasyMotion by double tapping comma
+nmap <silent> ,, \\w
+" Use EasyMotion backwards by z,,
+nmap <silent> z,, \\b
+" Make EasyMotion more yellow, less red
+hi clear EasyMotionTarget
+hi! EasyMotionTarget guifg=yellow

@@ -130,7 +130,7 @@ TODO: these customizations will be extracted into a separate keybinding plugin s
  * F - instantly Find definition of class (must have exuberant ctags installed)
  * B - show buffers (LustyJuggler buffer search), just type to fuzzy match a buffer name
  * S - Show buffers in LustyJuggler (use asdfjkl home row keys to then select buffer)
- * \t - Tag list (list of methods in a class)
+ * ,T - Tag list (list of methods in a class)
 
  * Cmd-* - highlight all occurrences of current word (similar to regular * except doesn't move)
  * ,hl - toggle search highlight on and off
@@ -168,7 +168,7 @@ Included vim plugins
  * ShowMarks - creates a visual gutter to the left of the number column showing you your marks (saved locations). use \mt to toggle it, \mm to place the next available mark, \mh to delete, \ma to clear all. Use standard vim mark navigation ('X) for mark named X.
  * EasyMotion - hit ,, (forward) or z,, (back) and watch the magic happen. just type the letters and jump directly to your target - in the provided vimrc the keys are optimized for home and upper row, no pinkies
  * LustyJuggler/Explorer - hit B, type buf name to match a buffer, or type S and use the home row keys to select a buffer
- * TagList - hit T to see a list of methods in a class (uses ctags)
+ * TagList - hit ,T to see a list of methods in a class (uses ctags)
  * CommandT - although I personally use PeepOpen, this is available as it's pretty standard
 
  Git
