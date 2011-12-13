@@ -130,8 +130,10 @@ TODO: these customizations will be extracted into a separate keybinding plugin s
  * F - instantly Find definition of class (must have exuberant ctags installed)
  * B - show buffers (LustyJuggler buffer search), just type to fuzzy match a buffer name
  * S - Show buffers in LustyJuggler (use asdfjkl home row keys to then select buffer)
- * T - Tag list (list of methods in a class)
+ * \t - Tag list (list of methods in a class)
 
+ * Cmd-* - highlight all occurrences of current word (similar to regular * except doesn't move)
+ * ,hl - toggle search highlight on and off
  * K - git grep for the Kurrent word under the cursor
  * ,gg - GitGrep command line with a quote pretyped (close the quote yourself)
  * ,gcp - GitGrep Current Partial to find references to the current view partial
