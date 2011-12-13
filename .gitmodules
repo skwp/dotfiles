@@ -115,3 +115,12 @@
 [submodule "vim/bundle/skwp-vim-git-grep-rails-partial"]
 	path = vim/bundle/skwp-vim-git-grep-rails-partial
 	url = https://github.com/skwp/vim-git-grep-rails-partial
+[submodule "vim/bundle/tpope-vim-unimpaired"]
+	path = vim/bundle/tpope-vim-unimpaired
+	url = https://github.com/tpope/vim-unimpaired
+[submodule "vim/bundle/tpope-vim-git"]
+	path = vim/bundle/tpope-vim-git
+	url = https://github.com/tpope/vim-git
+[submodule "vim/bundle/vim-scripts-lastpos"]
+	path = vim/bundle/vim-scripts-lastpos
+	url = https://github.com/vim-scripts/lastpos.vim
