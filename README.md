@@ -124,39 +124,65 @@ The .vimrc is well commented and broken up by settings. I encourage you
 to take a look and learn some of my handy aliases, or comment them out
 if you don't like them, or make your own.
 
-Some of the vim customizations include:
-TODO: these customizations will be extracted into a separate keybinding plugin so as not to interfere with standard keybindings 
+Vim Keymaps (in vim/plugin/settings)
+---
 
- * F - instantly Find definition of class (must have exuberant ctags installed)
- * B - show buffers (LustyJuggler buffer search), just type to fuzzy match a buffer name
- * S - Show buffers in LustyJuggler (use asdfjkl home row keys to then select buffer)
- * ,T - Tag list (list of methods in a class)
+The files in vim/plugin/settings are customizations stored on a per-plugin 
+basis. The main keymap is available in skwp-keymap.vim, but some of the vim
+files contain key mappings as well (TODO: probably will move them out to skwp-keymap.vim)
+
+ Navigation
+
+ * ,f - instantly Find definition of class (must have exuberant ctags installed)
+ * Ctrl-j and Ctrl-k to move up and down roughly by functions
+ * Ctrl-\ - Show NerdTree (project finder) and expose current file
+ * ,, or z,, - use EasyMotion - type that and then type one of the highlighted letters.
+ * ,z - jump back and forth between last two buffers
+
+ LustyJuggler
+
+ * ,b - show buffers (LustyJuggler buffer search), just type to fuzzy match a buffer name
+ * ,s - Show buffers in LustyJuggler (use asdfjkl home row keys to then select buffer)
+ * ,lf - lusty file finder
+ * ,lr - lusty file finder from current folder
+
+ Rails 
+
+ * \ss to run specs, \ll to run a given spec on a line - using my vim-ruby-conque plugin (https://github.com/skwp/vim-ruby-conque)
+ * ,lm ,lc ,ls - rails specific lusty juggler file finders (models, controllers, specs, etc) - just use the letter for what you want after ,l
+
+ Search
 
  * Cmd-* - highlight all occurrences of current word (similar to regular * except doesn't move)
  * ,hl - toggle search highlight on and off
  * K - git grep for the Kurrent word under the cursor
  * ,gg - GitGrep command line with a quote pretyped (close the quote yourself)
  * ,gcp - GitGrep Current Partial to find references to the current view partial
+ * // - clear the search
 
+ Code Browsing
+
+ * ,T - Tag list (list of methods in a class)
  * \mm - set the next available mark (set a mark with mX where X is a letter, navigate to mark using 'X). Uppercase marks to mark files, lowercase marks to use within a file.
- * Z - jump back and forth between last two buffers
+
+ RSI-reduction
+
+ * Cmd-k and Cmd-d to type underscores and dashes (use ), since they are so common in code but so far away from home row
+ * W - write a file (instead of :w, saving you keystrokes for the most common vim operation)
+
+ Buffer/Window Manipulation
+
  * Q - Quit a window (normally Ctrl-w,c)
  * \Q - Kill a buffer completely (normally :bw)
- * Ctrl-j and Ctrl-k to move up and down roughly by functions
  * vv and ss - vertical and horizontal split windows by double tapping
  * H,L,I,M - to move left, right, up, down between windows
- * Ctrl-\ - Show NerdTree (project finder) and expose current file
+ 
+ Convenience
+
  * cf - Copy Filename of current file into system (not vi) paste buffer 
- * // - clear the search
- * ,, or z,, - use EasyMotion - type that and then type one of the highlighted letters.
- * Apple-k and Apple-d to type underscores and dashes, since they are so common in code but so far away from home row
- * yw - remapped to yaw, meaning yanking a word will yank the entire word no matter where your cursor is
- * W - write a file (instead of :w, saving you keystrokes for the most common vim operation)
- * gcc (comment a line) via tComment, and gcp custom alias to comment a paragraph
  * Cc - (Current command) copies the command under your cursor and executes it in vim. Great for testing single line changes to vimrc.
- * \ss to run specs, \ll to run a given spec on a line - using my vim-ruby-conque plugin (https://github.com/skwp/vim-ruby-conque)
- * ,t - Command-T fuzzy file selector (alternative to PeepOpen)
- * ,T - Command-T fuzzy buffer selector (alternative to LustyJuggler)
+ * gcc (comment a line) via tComment, and gcp custom alias to comment a paragraph
+ * ,t - Command-T fuzzy file selector (alternative to PeepOpen / LustyJuggler)
 
 Included vim plugins
 ---
