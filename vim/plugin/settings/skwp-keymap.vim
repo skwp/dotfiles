@@ -120,3 +120,6 @@ nmap . .`[
 " swap them: http://items.sjbach.com/319/configuring-vim-right
 nnoremap ' `
 nnoremap ` '
+
+" Abbreviations to use...snippets that are expanded with space
+abbr pry! require 'pry'; binding.pry 
