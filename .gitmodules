@@ -4,9 +4,6 @@
 [submodule "vim/bundle/raimondi-delimitMate"]
 	path = vim/bundle/raimondi-delimitMate
 	url = https://github.com/Raimondi/delimitMate
-[submodule "vim/bundle/astashov-vim-ruby-debugger"]
-	path = vim/bundle/astashov-vim-ruby-debugger
-	url = https://github.com/astashov/vim-ruby-debugger
 [submodule "vim/bundle/godlygeek-csapprox"]
 	path = vim/bundle/godlygeek-csapprox
 	url = https://github.com/godlygeek/csapprox.git
@@ -127,3 +124,9 @@
 [submodule "vim/bundle/sjl-gundo"]
 	path = vim/bundle/sjl-gundo
 	url = https://github.com/sjl/gundo.vim
+[submodule "vim/bundle/vim-scripts-sudo"]
+	path = vim/bundle/vim-scripts-sudo
+	url = https://github.com/vim-scripts/sudo.vim
+[submodule "vim/bundle/mileszs-ack"]
+	path = vim/bundle/mileszs-ack
+	url = https://github.com/mileszs/ack.vim
