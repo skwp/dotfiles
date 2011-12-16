@@ -145,3 +145,6 @@
 [submodule "vim/bundle/austintaylor-vim-indentobject"]
 	path = vim/bundle/austintaylor-vim-indentobject
 	url = https://github.com/austintaylor/vim-indentobject
+[submodule "vim/bundle/jpalardy-vim-slime"]
+	path = vim/bundle/jpalardy-vim-slime
+	url = https://github.com/jpalardy/vim-slime
