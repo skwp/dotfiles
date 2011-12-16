@@ -101,7 +101,8 @@ if has("gui_running")
   colorscheme solarized
   set background=dark
 
-  set guitablabel=%M%t
+  " Show tab number (useful for Cmd-1, Cmd-2.. mapping)
+  set guitablabel=%N:\ %t\ %M
   set lines=60
   set columns=190
 

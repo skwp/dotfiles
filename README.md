@@ -136,7 +136,6 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * ,f - instantly Find definition of class (must have exuberant ctags installed)
  * ,z - jump back and forth between last two buffers
  * ,, or z,, - use EasyMotion - type that and then type one of the highlighted letters.
-
  * Ctrl-j and Ctrl-k to move up and down roughly by functions
  * Ctrl-\ - Show current file in nerd tree
  * Ctrl-O - Old cursor position - this is a standard mapping but very useful, so included here
@@ -148,11 +147,11 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * ,s - Show buffers in LustyJuggler (use asdfjkl home row keys to then select buffer)
  * ,lf - lusty file finder
  * ,lr - lusty file finder from current folder
+ * ,lm ,lc ,ls - rails specific lusty juggler file finders (models, controllers, specs, etc) - just use the letter for what you want after ,l
 
  Rails 
 
  * ,ru - Rails Unittest - synonym for :AV from rails.vim, opens up the corresponding test/spec to the file you're looking for, in a vertical split
- * ,lm ,lc ,ls - rails specific lusty juggler file finders (models, controllers, specs, etc) - just use the letter for what you want after ,l
  * \ss to run specs, \ll to run a given spec on a line - using my vim-ruby-conque plugin (https://github.com/skwp/vim-ruby-conque)
 
  Search
@@ -181,7 +180,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * vv and ss - vertical and horizontal split windows by double tapping
  * H,L,I,M - to move left, right, up, down between windows
  * Cmd-H and Cmd-L - left an right on tabs
- * Use Cmd-1..Cmd-0 to switch to a specific tab number (like iTerm)
+ * Use Cmd-1..Cmd-0 to switch to a specific tab number (like iTerm) - and tabs have been set up to show numbers
 
  Utility
 
