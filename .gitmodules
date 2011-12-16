@@ -133,3 +133,15 @@
 [submodule "vim/bundle/mattn-zencoding-vim"]
 	path = vim/bundle/mattn-zencoding-vim
 	url = https://github.com/mattn/zencoding-vim
+[submodule "vim/bundle/nelstrom-vim-textobj-rubyblock"]
+	path = vim/bundle/nelstrom-vim-textobj-rubyblock
+	url = https://github.com/nelstrom/vim-textobj-rubyblock
+[submodule "vim/bundle/kana-vim-textobj-user"]
+	path = vim/bundle/kana-vim-textobj-user
+	url = https://github.com/kana/vim-textobj-user
+[submodule "vim/bundle/spiiph-vim-space"]
+	path = vim/bundle/spiiph-vim-space
+	url = https://github.com/spiiph/vim-space
+[submodule "vim/bundle/austintaylor-vim-indentobject"]
+	path = vim/bundle/austintaylor-vim-indentobject
+	url = https://github.com/austintaylor/vim-indentobject

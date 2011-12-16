@@ -225,6 +225,8 @@ Included vim plugins
  * ruby.vim - lots of general enhancements for ruby dev
  * necomplcache - intelligent and fast complete as you type, and added Command-Space to select a completion (same as Ctrl-N)
  * snipMate - offers textmate-like snippet expansion + scrooloose-snippets . try hitting TAB after typing a snippet
+ * textobj-rubyblock - provides visual block selection specific to ruby. try var/vir to select a ruby block
+ * vim-indentobject - manipulation of blocks by their indentation (great for yaml) use vai/vii to select around an indent block
 
  Utils
 
@@ -237,6 +239,7 @@ Included vim plugins
  * html-escape - hit ctrl-h to escape html
  * ruby-debug-ide - not quite working for me, but maybe it will for you. supposedly a graphical debugger you can step through
  * Gundo - visualize your undos - pretty amazing plugin. Hit ,u with my keymappings to trigger it, very user friendly
+ * space-vim - hit space to repeat many navigation commands like finds, etc. very intuitive
 
  General enhancements that don't add new commands
 
@@ -315,9 +318,21 @@ Other recommended OSX tools
 
 Credits
 ---
+
 I can't take credit for all of this. The vim files are a combination of
 work by tpope, scrooloose, and many hours of scouring blogs, vimscripts,
-and other places for the cream of the crop of vim and bash awesomeness.
+and other places for the cream of the crop of vim awesomeness.
+
+ * https://github.com/astrails/dotvim
+ * https://github.com/carlhuda/janus
+ * https://github.com/tpope
+ * https://github.com/scrooloose
+ * https://github.com/kana
+ * https://github.com/robbyrussell
+ * https://github.com/nelstrom
+
+And everything that's in the modules included in vim/bundle of course.
+Please explore these people's work.
 
 COMING SOON
 ---
