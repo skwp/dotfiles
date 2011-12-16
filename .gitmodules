@@ -145,3 +145,6 @@
 [submodule "vim/bundle/jpalardy-vim-slime"]
 	path = vim/bundle/jpalardy-vim-slime
 	url = https://github.com/jpalardy/vim-slime
+[submodule "vim/bundle/vim-scripts-ZoomWin"]
+	path = vim/bundle/vim-scripts-ZoomWin
+	url = https://github.com/vim-scripts/ZoomWin.git

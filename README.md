@@ -133,13 +133,12 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
 
  Navigation
 
- * ,f - instantly Find definition of class (must have exuberant ctags installed)
  * ,z - jump back and forth between last two buffers
- * ,, or z,, - use EasyMotion - type that and then type one of the highlighted letters.
- * Ctrl-j and Ctrl-k to move up and down roughly by functions
  * Ctrl-\ - Show current file in nerd tree
+ * Ctrl-j and Ctrl-k to move up and down roughly by functions
  * Ctrl-O - Old cursor position - this is a standard mapping but very useful, so included here
  * Ctrl-I - opposite of Ctrl-O (again, this is standard)
+ * \mm - set the next available mark (set a mark with mX where X is a letter, navigate to mark using 'X). Uppercase marks to mark files, lowercase marks to use within a file.
 
  LustyJuggler
 
@@ -149,37 +148,37 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * ,lr - lusty file finder from current folder
  * ,lm ,lc ,ls - rails specific lusty juggler file finders (models, controllers, specs, etc) - just use the letter for what you want after ,l
 
- Rails 
+ Rails
 
  * ,ru - Rails Unittest - synonym for :AV from rails.vim, opens up the corresponding test/spec to the file you're looking for, in a vertical split
  * \ss to run specs, \ll to run a given spec on a line - using my vim-ruby-conque plugin (https://github.com/skwp/vim-ruby-conque)
 
- Search
+ Search/Code Navigation
 
+ * ,f - instantly Find definition of class (must have exuberant ctags installed)
+ *  K - GitGrep the current word under the cursor
  * Cmd-* - highlight all occurrences of current word (similar to regular * except doesn't move)
  * ,hl - toggle search highlight on and off
- * ,gcw - GitGrep the current word under the cursor
  * ,gg - GitGrep command line with a quote pretyped (close the quote yourself)
  * ,gcp - GitGrep Current Partial to find references to the current view partial
  * // - clear the search
-
- Code Browsing
-
  * ,T - Tag list (list of methods in a class)
- * \mm - set the next available mark (set a mark with mX where X is a letter, navigate to mark using 'X). Uppercase marks to mark files, lowercase marks to use within a file.
 
  RSI-reduction
 
  * Cmd-k and Cmd-d to type underscores and dashes (use ), since they are so common in code but so far away from home row
  * ; instead of : - avoid Shift for common tasks, just hit semicolon to get to ex mode
 
- Buffer/Window Manipulation
+ Buffer/Window/Tab Manipulation
 
- * Q - Quit a window (normally Ctrl-w,c)
- * \Q - Kill a buffer completely (normally :bw)
- * vv and ss - vertical and horizontal split windows by double tapping
+ * ,m - NERDTree toggle
+ * Q - Quit a window, keep buffer alive (Ctrl-w,c)
+ * \Q - Quit window, kill buffer (:bw)
+ * vv - vertical split (Ctrl-w,v)
+ * ss - horizontal split (Ctrl-w,s)
  * H,L,I,M - to move left, right, up, down between windows
  * Cmd-H and Cmd-L - left an right on tabs
+ * ,, to zoom a window to max size and again to unzoom it (ZoomWin standard Ctrl-w,o)
  * Use Cmd-1..Cmd-0 to switch to a specific tab number (like iTerm) - and tabs have been set up to show numbers
 
  Utility
@@ -200,7 +199,7 @@ Included vim plugins
  * NERDTree - everyone's favorite tree browser
  * NERDTree-tabs - makes NERDTree play nice with MacVim tabs so that it's on every tab
  * ShowMarks - creates a visual gutter to the left of the number column showing you your marks (saved locations). use \mt to toggle it, \mm to place the next available mark, \mh to delete, \ma to clear all. Use standard vim mark navigation ('X) for mark named X.
- * EasyMotion - hit ,, (forward) or z,, (back) and watch the magic happen. just type the letters and jump directly to your target - in the provided vimrc the keys are optimized for home and upper row, no pinkies
+ * EasyMotion - hit \\w (forward) or \\b (back) and watch the magic happen. just type the letters and jump directly to your target - in the provided vimrc the keys are optimized for home and upper row, no pinkies
  * LustyJuggler/Explorer - hit B, type buf name to match a buffer, or type S and use the home row keys to select a buffer
  * TagList - hit ,T to see a list of methods in a class (uses ctags)
  * CommandT - although I personally use PeepOpen, this is available as it's pretty standard

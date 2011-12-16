@@ -39,7 +39,8 @@ nnoremap ; :
 nmap ,ru :AV<CR>
 
 " ==== NERD tree
-nmap ,n :NERDTreeToggle<CR>
+" ,m is less stressful on the fingers than ,n
+nmap ,m :NERDTreeToggle<CR>
 
 " move up/down quickly by using Ctrl-j, Ctrl-k
 " which will move us around by functions
@@ -67,6 +68,9 @@ nnoremap <silent> ,z <C-^>
 "git grep the current word using K (mnemonic Kurrent)
 nnoremap <silent> K :GitGrep <cword><CR>
 
+" ==============================
+" Window/Tab/Split Manipulation
+" ==============================
 " Move between split windows by using the four directions H, L, I, N 
 " (note that  I use I and N instead of J and K because  J already does 
 " line joins and K is mapped to GitGrep the current word
@@ -78,6 +82,9 @@ nnoremap <silent> M <C-w>j
 " Move between tabs with Cmd-Shift-H and Cmd-Shift-L
 map <silent> <D-H> :tabprevious<cr>
 map <silent> <D-L> :tabnext<cr>
+
+" Zoom in and out of current window with ,,
+map <silent> ,, <C-w>o
 
 " Use numbers to pick the tab you want (like iTerm)
 map <silent> <D-1> :tabn 1<cr>
