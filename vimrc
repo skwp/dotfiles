@@ -102,7 +102,10 @@ if has("gui_running")
   set background=dark
 
   " Show tab number (useful for Cmd-1, Cmd-2.. mapping)
-  set guitablabel=%N:\ %t\ %M
+  " For some reason this doesn't work as a regular set command,
+  " (the numbers don't show up) so I made it a VimEnter event
+  autocmd VimEnter * set guitablabel=%N:\ %t\ %M
+
   set lines=60
   set columns=190
 
