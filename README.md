@@ -1,6 +1,8 @@
 YADR: Yet Another Dotfile Repo
 ====
 
+**Pre-Alpha Preview Release - Please Report Bugs**
+
 Warning: These dotfiles are opinionated! 
 
 This is a collection of best of breed tools from across the web,
