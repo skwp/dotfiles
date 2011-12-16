@@ -30,6 +30,14 @@ nnoremap W :w<CR>
 " Don't have to use Shift to get into command mode, just hit semicolon
 nnoremap ; :
 
+" ================== rails.vim
+"
+" Open corresponding unit test/spec in a vertical split
+nmap ,rt :AV<CR>
+
+" ==== NERD tree
+nmap ,n :NERDTreeToggle<CR>
+
 " move up/down quickly by using Ctrl-j, Ctrl-k
 " which will move us around by functions
 nnoremap <silent> <C-j> }
