@@ -122,4 +122,6 @@ set viminfo='100,f1
 " term for running tests
 "
 autocmd WinEnter * stopinsert
-"autocmd WinEnter * NeoComplCacheEnable
+
+" Auto save when we go elsewhere
+au FocusLost * :wa
