@@ -130,3 +130,6 @@
 [submodule "vim/bundle/mileszs-ack"]
 	path = vim/bundle/mileszs-ack
 	url = https://github.com/mileszs/ack.vim
+[submodule "vim/bundle/mattn-zencoding-vim"]
+	path = vim/bundle/mattn-zencoding-vim
+	url = https://github.com/mattn/zencoding-vim
