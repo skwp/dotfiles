@@ -191,6 +191,12 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * gcp (comment a paragraph) added
  * ,t - Command-T fuzzy file selector (alternative to PeepOpen / LustyJuggler)
 
+ Local Anonymous Bookmarking
+
+ * ,bb - toggle local anonymous bookmark at current location
+ * ,bn ,bp - next and previous anonymous bookmark
+ * ,bc - clear anonymous bookmarks
+
 Included vim plugins
 ---
 
@@ -203,6 +209,7 @@ Included vim plugins
  * LustyJuggler/Explorer - hit B, type buf name to match a buffer, or type S and use the home row keys to select a buffer
  * TagList - hit ,T to see a list of methods in a class (uses ctags)
  * CommandT - although I personally use PeepOpen, this is available as it's pretty standard
+ * VimBookmarks - toggle an anonymous bookmark ,bb and go thru them ,bn ,bp and clear them ,bc
 
  Git
 

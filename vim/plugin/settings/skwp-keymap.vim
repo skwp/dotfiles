@@ -152,7 +152,19 @@ nnoremap ' `
 nnoremap ` '
 
 " ============================
+" VimBookmarking
+" ============================
+"
+" Set anonymous bookmarks
+nmap ,bb :ToggleBookmark<cr>
+nmap ,bn :NextBookmark<cr>
+nmap ,bp :PreviousBookmark<cr>
+nmap ,bc :ClearBookmarks<cr>
+"
+" ============================
 " Abbreviations to use...
 " ============================
 " snippets that are expanded with space
 abbr pry! require 'pry'; binding.pry 
+
+

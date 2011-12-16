@@ -148,3 +148,6 @@
 [submodule "vim/bundle/vim-scripts-ZoomWin"]
 	path = vim/bundle/vim-scripts-ZoomWin
 	url = https://github.com/vim-scripts/ZoomWin.git
+[submodule "vim/bundle/dterei-VimBookmarking"]
+	path = vim/bundle/dterei-VimBookmarking
+	url = https://github.com/dterei/VimBookmarking
