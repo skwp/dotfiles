@@ -2,9 +2,15 @@
 " General vim sanity improvements
 " ========================================
 "
-" alias yw to yank the entire word even if the
-" cursor is inside the word
-nnoremap yw yaw
+" alias yw to yank the entire word 'yank inner word'
+" even if the cursor is halfway inside the word
+" FIXME: will not properly repeat when you use a dot (tie into repeat.vim)
+nnoremap ,yw yiww
+
+" ,ow = 'overwrite word', replace a word with what's in the yank buffer
+" FIXME: will not properly repeat when you use a dot (tie into repeat.vim)
+nnoremap ,ow viwp 
+
 "make Y consistent with C and D
 nnoremap Y y$
 
@@ -24,16 +30,13 @@ imap <silent> <D-d> _
 imap <silent> <D-K> -
 imap <silent> <D-D> -
 
-" alias W to write the file instead of :w
-nnoremap W :w<CR> 
-
 " Don't have to use Shift to get into command mode, just hit semicolon
 nnoremap ; :
 
 " ================== rails.vim
 "
-" Open corresponding unit test/spec in a vertical split
-nmap ,rt :AV<CR>
+" Open corresponding unittest (or spec), alias for :AV in rails.vim 
+nmap ,ru :AV<CR>
 
 " ==== NERD tree
 nmap ,n :NERDTreeToggle<CR>
@@ -72,6 +75,22 @@ nnoremap <silent> L <C-w>l
 nnoremap <silent> I <C-w>k
 nnoremap <silent> M <C-w>j
 
+" Move between tabs with Cmd-Shift-H and Cmd-Shift-L
+map <silent> <D-H> :tabprevious<cr>
+map <silent> <D-L> :tabnext<cr>
+
+" Use numbers to pick the tab you want (like iTerm)
+map <silent> <D-1> :tabn 1<cr>
+map <silent> <D-2> :tabn 2<cr>
+map <silent> <D-3> :tabn 3<cr>
+map <silent> <D-4> :tabn 4<cr>
+map <silent> <D-5> :tabn 5<cr>
+map <silent> <D-6> :tabn 6<cr>
+map <silent> <D-7> :tabn 7<cr>
+map <silent> <D-8> :tabn 8<cr>
+map <silent> <D-9> :tabn 9<cr>
+map <silent> <D-0> :tabn 0<cr>
+
 " Create window splits easier. The default
 " way is Ctrl-w,v and Ctrl-w,s. I remap
 " this to vv and ss
@@ -99,16 +118,16 @@ imap <silent> <C-J> <%  %><Esc>2hi
 
 " copy current filename into system clipboard - mnemonic: (c)urrent(f)ilename
 " this is helpful to paste someone the path you're looking at
-nnoremap <silent> cf :let @* = expand("%:p")<CR>
+nnoremap <silent> ,cf :let @* = expand("%:p")<CR>
 
 "Clear current search highlight by double tapping //
 nmap <silent> // :nohlsearch<CR>
 
-" (C)opy (c)ommand - which allows us to execute
+" (c)opy (c)ommand - which allows us to execute
 " the line we're looking at (it does so by yy-copy, colon
 " to get to the command mode, C-f to get to history editing
 " p to paste it, C-c to return to command mode, and CR to execute
-nmap <silent> Cc yy:<C-f>p<C-c><CR>
+nmap <silent> ,cc yy:<C-f>p<C-c><CR>
 
 " Type ,hl to toggle highlighting on/off, and show current value.
 noremap ,hl :set hlsearch! hlsearch?<CR>
@@ -116,10 +135,6 @@ noremap ,hl :set hlsearch! hlsearch?<CR>
 " Apple-* Highlight all occurrences of current word (like '*' but without moving)
 " http://vim.wikia.com/wiki/Highlight_all_search_pattern_matches
 nnoremap <D-*> :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
-
-" After repeating a command, return the cursor to where it started
-" http://vim.wikia.com/wiki/VimTip1142
-nmap . .`[
 
 " These are very similar keys. Typing 'a will jump to the line in the current
 " file marked with ma. However, `a will jump to the line and column marked
@@ -129,5 +144,8 @@ nmap . .`[
 nnoremap ' `
 nnoremap ` '
 
-" Abbreviations to use...snippets that are expanded with space
+" ============================
+" Abbreviations to use...
+" ============================
+" snippets that are expanded with space
 abbr pry! require 'pry'; binding.pry 

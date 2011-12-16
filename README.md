@@ -134,10 +134,13 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  Navigation
 
  * ,f - instantly Find definition of class (must have exuberant ctags installed)
- * Ctrl-j and Ctrl-k to move up and down roughly by functions
- * Ctrl-\ - Show NerdTree (project finder) and expose current file
- * ,, or z,, - use EasyMotion - type that and then type one of the highlighted letters.
  * ,z - jump back and forth between last two buffers
+ * ,, or z,, - use EasyMotion - type that and then type one of the highlighted letters.
+
+ * Ctrl-j and Ctrl-k to move up and down roughly by functions
+ * Ctrl-\ - Show current file in nerd tree
+ * Ctrl-O - Old cursor position - this is a standard mapping but very useful, so included here
+ * Ctrl-I - opposite of Ctrl-O (again, this is standard)
 
  LustyJuggler
 
@@ -148,14 +151,15 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
 
  Rails 
 
- * \ss to run specs, \ll to run a given spec on a line - using my vim-ruby-conque plugin (https://github.com/skwp/vim-ruby-conque)
+ * ,ru - Rails Unittest - synonym for :AV from rails.vim, opens up the corresponding test/spec to the file you're looking for, in a vertical split
  * ,lm ,lc ,ls - rails specific lusty juggler file finders (models, controllers, specs, etc) - just use the letter for what you want after ,l
+ * \ss to run specs, \ll to run a given spec on a line - using my vim-ruby-conque plugin (https://github.com/skwp/vim-ruby-conque)
 
  Search
 
  * Cmd-* - highlight all occurrences of current word (similar to regular * except doesn't move)
  * ,hl - toggle search highlight on and off
- * K - git grep for the Kurrent word under the cursor
+ * ,gcw - GitGrep the current word under the cursor
  * ,gg - GitGrep command line with a quote pretyped (close the quote yourself)
  * ,gcp - GitGrep Current Partial to find references to the current view partial
  * // - clear the search
@@ -168,7 +172,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  RSI-reduction
 
  * Cmd-k and Cmd-d to type underscores and dashes (use ), since they are so common in code but so far away from home row
- * W - write a file (instead of :w, saving you keystrokes for the most common vim operation)
+ * ; instead of : - avoid Shift for common tasks, just hit semicolon to get to ex mode
 
  Buffer/Window Manipulation
 
@@ -176,12 +180,17 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * \Q - Kill a buffer completely (normally :bw)
  * vv and ss - vertical and horizontal split windows by double tapping
  * H,L,I,M - to move left, right, up, down between windows
- 
- Convenience
+ * Cmd-H and Cmd-L - left an right on tabs
+ * Use Cmd-1..Cmd-0 to switch to a specific tab number (like iTerm)
 
- * cf - Copy Filename of current file into system (not vi) paste buffer 
- * Cc - (Current command) copies the command under your cursor and executes it in vim. Great for testing single line changes to vimrc.
- * gcc (comment a line) via tComment, and gcp custom alias to comment a paragraph
+ Utility
+
+ * ,cf - Copy Filename of current file into system (not vi) paste buffer 
+ * ,cc - (Current command) copies the command under your cursor and executes it in vim. Great for testing single line changes to vimrc.
+ * ,yw - yank a word from anywhere within the word (so you don't have to go to the beginning of it)
+ * ,ow - overwrite a word with whatever is in your yank buffer - you can be anywhere on the word. saves having to visually select it
+ * gcc (comment a line) via tComment (standard)
+ * gcp (comment a paragraph) added
  * ,t - Command-T fuzzy file selector (alternative to PeepOpen / LustyJuggler)
 
 Included vim plugins
