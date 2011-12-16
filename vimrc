@@ -51,7 +51,6 @@ set softtabstop=2
 set tabstop=2
 set expandtab
 set autoindent
-set list listchars=tab:\ \ ,trail:·
 
 " Prevent 'Press ENTER..' on error messages
 set shortmess=atI
@@ -66,9 +65,8 @@ set wildmode=list:longest
 set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
 set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
 
-"display tabs and trailing spaces
-set list
-set listchars=tab:\ \ ,extends:>,precedes:<
+"display tabs and trailing spaces   
+set list listchars=tab:\ \ ,trail:·
 
 set formatoptions-=o "dont continue comments when pushing o/O
 
@@ -122,4 +120,6 @@ set viminfo='100,f1
 
 " prevent auto insert mode, which is helpful when using conque
 " term for running tests
+"
 autocmd WinEnter * stopinsert
+"autocmd WinEnter * NeoComplCacheEnable
