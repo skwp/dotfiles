@@ -33,6 +33,9 @@ imap <silent> <D-D> -
 " Don't have to use Shift to get into command mode, just hit semicolon
 nnoremap ; :
 
+"Go to last edit location with ,.
+nnoremap ,. '.
+
 " ================== rails.vim
 "
 " Open corresponding unittest (or spec), alias for :AV in rails.vim 

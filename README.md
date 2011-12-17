@@ -1,9 +1,19 @@
-YADR: Yet Another Dotfile Repo
-====
+     _     _           _
+    | |   | |         | |
+    | |___| |_____  __| | ____
+    |_____  (____ |/ _  |/ ___)
+     _____| / ___ ( (_| | |
+    (_______\_____|\____|_|
 
-**Pre-Alpha Preview Release - Please Report Bugs**
+    # Yet Another Dotfile Repo v0.7alpha
+    # Alpha Release Please Report Bugs
 
-Warning: These dotfiles are opinionated! 
+    git clone https://github.com/skwp/dotfiles ~/.dotfiles
+    ~/.dotfiles/bin/yadr/yadr init-plugins
+
+    # Your dotfiles are safe! YADR will not
+    # overwrite anything. Please read on for
+    # install directions!
 
 This is a collection of best of breed tools from across the web,
 from scouring other people's dotfile repos, blogs, and projects.
@@ -42,13 +52,10 @@ Before you start
 Installation
 ---
 
-Coming Soon: gem-based installation
-
 This project uses git submodules for its plugins, but this is handled
 for you by the **yadr** command. Please run:
 
     git clone https://github.com/skwp/dotfiles ~/.dotfiles
-
     ~/.dotfiles/bin/yadr/yadr init-plugins
 
 NOTE: by default, YADR will not touch any of your files. You have to manually 
@@ -155,6 +162,12 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * ,ru - Rails Unittest - synonym for :AV from rails.vim, opens up the corresponding test/spec to the file you're looking for, in a vertical split
  * \ss to run specs, \ll to run a given spec on a line - using my vim-ruby-conque plugin (https://github.com/skwp/vim-ruby-conque)
 
+ Surround.vim customizations
+
+ * in plugin/settings/surround.vim (this folder contains all my customizations)
+ * the # key now surrounds with #{}, so - ysaw# surround around word #{foo}
+ * = surrounds with <%= erb tag %> and - for <% this %>, so yss= or yss- to wrap code
+
  Search/Code Navigation
 
  * ,f - instantly Find definition of class (must have exuberant ctags installed)
@@ -170,19 +183,26 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
 
  * Cmd-k and Cmd-d to type underscores and dashes (use ), since they are so common in code but so far away from home row
  * ; instead of : - avoid Shift for common tasks, just hit semicolon to get to ex mode
+ * ,. to go to last edit location instead of '. because the apostrophe is hard on the pinky
 
- Buffer/Window/Tab Manipulation
+ Tab Navigation
 
- * ,m - NERDTree toggle
- * Q - Quit a window, keep buffer alive (Ctrl-w,c)
+ * Cmd-H and Cmd-L - left an right on tabs
+ * Use Cmd-1..Cmd-0 to switch to a specific tab number (like iTerm) - and tabs have been set up to show numbers
+
+ Window Navigation
+
+ * H L I M - to move left, right, up, down between windows
+ * Q -  Quit a window, keep buffer alive (Ctrl-w,c)
  * \Q - Quit window, kill buffer (:bw)
+
+ **Splits***
+
  * vv - vertical split (Ctrl-w,v)
  * ss - horizontal split (Ctrl-w,s)
- * H,L,I,M - to move left, right, up, down between windows
- * Cmd-H and Cmd-L - left an right on tabs
  * ,, to zoom a window to max size and again to unzoom it (ZoomWin standard Ctrl-w,o)
- * Use Cmd-1..Cmd-0 to switch to a specific tab number (like iTerm) - and tabs have been set up to show numbers
  * ,q to close the quickfix and ,oq to open the quickfix (great for lookin at Ack or GitGrep results)
+ * ,m - NERDTree toggle
 
  Utility
 
@@ -238,6 +258,7 @@ Included vim plugins
 
  Utils
 
+ * yankring - effortless sanity for pasting. every time you yank something it goes into a buffer. after hitting p to paste, use ctrl-p or ctrl-n to cycle through the paste options. great for when you accidentally overwrite your yank with a delete
  * surround - super easy quote and tag manipulation - ysiw" - sourround inner word with quotes. ci"' - change inner double quotes to single quotes, etc
  * greplace - use :Gsearch to find across many files, replace inside the changes, then :Greplace to do a replace across all matches
  * ConqueTerm - embedded fully colorful shell inside your vim
@@ -252,7 +273,7 @@ Included vim plugins
 
  General enhancements that don't add new commands
 
- * IndexedSearch - when you do searches will show you "Match 2 of 4" in the status line, nothing new to learn
+ * IndexedSearch - when you do searches will show you "Match 2 of 4" in the status line
  * delimitMate - automatically closes quotes 
  * syntastic - automatic syntax checking when you save the file
  * repeat - adds '.' (repeat command) support for complex commands like surround.vim. i.e. if you perform a surround and hit '.', it will Just Work (vim by default will only repeat the last piece of the complex command)
@@ -270,7 +291,7 @@ YADR comes with a dead simple plugin manager that just uses git submodules, with
 
 You can update all the plugins easily:
 
-    yuv 
+    yuv
 
 Delete a plugin (Coming Soon)
 
@@ -345,11 +366,8 @@ Please explore these people's work.
 
 COMING SOON
 ---
- * Full migration to tpope's pathogen format (~/.vim/bundle) for all plugins
  * Better isolation of customizations in smaller chunks, maybe as plugins
  * Automatic setup script to symlink all dotfiles, or just some selectively 
-
-
 
 For more tips and tricks
 ---
