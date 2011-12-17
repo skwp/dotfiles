@@ -18,38 +18,40 @@
 This is a collection of best of breed tools from across the web,
 from scouring other people's dotfile repos, blogs, and projects.
 
-In some ways, this is an alternative to janus (https://github.com/carlhuda/janus), offering
-many of the same plugins, with minor differnces. But it's also much more,
-providing shell customizations (zsh), an irb replacement (pry) with customizations,
-and osx settings that are developer friendly (such as fast key repeat),
-and remapping your caps-lock to be Esc for vim.
-
-The strongly held opinions expressed here:
+What is YADR? 
 ---
-  * This configuration is for OSX, MacVim, zsh, and pry instead of irb. 
-  * Apple-style philosophy: not a lot of choices, but everything Just Works and Looks Good. 
+
+**YADR is an opinionated dotfile repo that will make your heart sing**
+
+  * OSX is the best OS. MacVim is the best editor. Zsh is the best shell. Pry is the best irb. Solarized is the best color scheme.
+  * Apple-style philosophy: make everything Just Work and Look Good. Don't worry about too many options.
   * All common commands should be two and three character mnemonic aliases - less keystrokes, RSI reduction
-  * Most used vim commands should be under your fingertips (home row, prefer Shift to other command keys)
-  * Avoid stressful hand motions, e.g. remap Esc to caps lock key, remap underscore to Alt-k in vim
+  * Avoid stressful hand motions, e.g. remap Esc to caps lock key, remap underscore to Alt-k in vim, make window management in vim easy.
   * Easy to use plugin architecture, no config files to edit.
   * Pick one tool and use it everywhere: vim-ize everything
-  * Colors are _important_ - solarized (http://ethanschoonover.com/solarized) is a great looking scheme that is scientifically designed to be awesome.
   * **NEW Beautiful, easy to read and small vimrc**
   * **NEW No key overrides or custom hackery in vimrc, everything in well factored snippets in .vim/plugin/settings**
 
-Differences from janus:
+Why is this not a fork of Janus?
 ---
+Janus is an amazing _first effort_ to deliver a ready-to-use vim setup and is a huge inspiration to us all.
 
-  * Much larger and (imho) better curated list of vim plugins
-  * Optimized for one color scheme (solarized) means everything Just Looks Good
-  * Easy plugin management system using **yadr** command which is a thin shell over git submodules - no editing of config files
-  * No need to replace your vimrc, instead uses overridable submodules (Coming Soon)
-  * More than just vim plugins - great shell aliases, osx, and irb/pry tweaks to make you more productive
+**However as any first effort, it paves the way to improvements:**
+
+  * Much larger list of vim plugins, specifically geared to Ruby/Rails/Git development.
+  * Optimized support for MacVim only means less things will break because we don't worry about linux or gvim.
+  * Optimized support for Solarized color scheme only, everything guaranteed to Look Good. Your eyes will thank you.
+  * All plugins tested with Solarized and custom color maps provided where needed to ensure your eyes will not bleed.
+  * No configuration file to maintain. YADR uses tiny ruby scripts to wrap git submodule maintenance.
+  * Much cleaner vimrc that does not introduce any new key maps. (Janus: 160 lines vimrc, 260 lines gvimrc; YADR: 90 lines vimrc with great comments)
+  * All keymaps and customization in small, easy to maintain files under .vim/plugin/settings
+  * More than just vim plugins - great shell aliases, osx, and irb/pry tweaks to make you more productive.
 
 Before you start
 ---
 
- * Remap caps-lock to escape: http://pqrs.org/macosx/keyremap4macbook/extra.html
+For the love of all that is holy, stop abusing your hands!
+Remap caps-lock to escape: http://pqrs.org/macosx/keyremap4macbook/extra.html
 
 Installation
 ---
@@ -356,6 +358,7 @@ I can't take credit for all of this. The vim files are a combination of
 work by tpope, scrooloose, and many hours of scouring blogs, vimscripts,
 and other places for the cream of the crop of vim awesomeness.
 
+ * http://ethanschoonover.com/solarized - a scientifically calibrated color scheme
  * https://github.com/astrails/dotvim
  * https://github.com/carlhuda/janus
  * https://github.com/tpope
