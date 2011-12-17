@@ -5,7 +5,7 @@
      _____| / ___ ( (_| | |
     (_______\_____|\____|_|
 
-    # Yet Another Dotfile Repo v0.7alpha
+    # Yet Another Dotfile Repo v0.8
     # Alpha Release Please Report Bugs
 
     git clone https://github.com/skwp/dotfiles ~/.dotfiles
@@ -34,6 +34,8 @@ The strongly held opinions expressed here:
   * Easy to use plugin architecture, no config files to edit.
   * Pick one tool and use it everywhere: vim-ize everything
   * Colors are _important_ - solarized (http://ethanschoonover.com/solarized) is a great looking scheme that is scientifically designed to be awesome.
+  * **NEW Beautiful, easy to read and small vimrc**
+  * **NEW No key overrides or custom hackery in vimrc, everything in well factored snippets in .vim/plugin/settings**
 
 Differences from janus:
 ---
@@ -78,22 +80,22 @@ Migrating from bash to zsh is essentially pain free. The zshrc provided here
 restores the only feature that I felt was 'broken' which is the Ctrl-R reverse history search.
 
 While I am not going to support bash out of the box here, YADR _should_ work with bash if
-you just source the _aliases_ file. However, I recommend taking 5 mins and upgrading to zsh
-with this completely automated command courtesy of oh-my-zsh:
+you just source the _aliases_ file. However, you soul will sing if you install zsh. I promise.
+
+**Install zsh pain free, automatically, with no pain:**
 
     wget --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
-     
-Place this as the last line in your ~/.zshrc created by oh-my-zsh:
+
+**Place this as the last line in your ~/.zshrc created by oh-my-zsh:**
 
     source ~/.dotfiles/zsh/zshrc
 
-Lots of things I do every day are done with two or three character 
-mnemonic aliases. Please feel free to edit them:
+**Everyday shell commands should be two character mnemonic aliases**
 
     ae # alias edit
     ar # alias reload
 
-Here are some of the customizations provided in ~/.dotfiles/zshrc:
+**Customized zsh provided by ~/.dotfiles/zshrc:**
 
  * Vim mode
  * Bash style ctrl-R for reverse history finder
@@ -109,12 +111,12 @@ with colors, tab completion, and lots of other tricks. You should:
     ln -s ~/.dotfiles/irb/pryrc ~/.pryrc
     ln -s ~/.dotfiles/irb/aprc ~/.aprc
 
-Use pry
+**Use pry**
 
   * as irb: 'pry'
   * as rails console: script/console --irb=pry
 
-Pry customizations:
+**Pry customizations:**
 
  * 'clear' command to clear screen
  * 'sql' command to execute something (within a rails console)
@@ -140,7 +142,7 @@ The files in vim/plugin/settings are customizations stored on a per-plugin
 basis. The main keymap is available in skwp-keymap.vim, but some of the vim
 files contain key mappings as well (TODO: probably will move them out to skwp-keymap.vim)
 
- Navigation
+ **Navigation**
 
  * ,z - jump back and forth between last two buffers
  * Ctrl-\ - Show current file in nerd tree
@@ -149,7 +151,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * Ctrl-I - opposite of Ctrl-O (again, this is standard)
  * \mm - set the next available mark (set a mark with mX where X is a letter, navigate to mark using 'X). Uppercase marks to mark files, lowercase marks to use within a file.
 
- LustyJuggler
+ **LustyJuggler**
 
  * ,b - show buffers (LustyJuggler buffer search), just type to fuzzy match a buffer name
  * ,s - Show buffers in LustyJuggler (use asdfjkl home row keys to then select buffer)
@@ -157,18 +159,18 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * ,lr - lusty file finder from current folder
  * ,lm ,lc ,ls - rails specific lusty juggler file finders (models, controllers, specs, etc) - just use the letter for what you want after ,l
 
- Rails
+ **Rails**
 
  * ,ru - Rails Unittest - synonym for :AV from rails.vim, opens up the corresponding test/spec to the file you're looking for, in a vertical split
  * \ss to run specs, \ll to run a given spec on a line - using my vim-ruby-conque plugin (https://github.com/skwp/vim-ruby-conque)
 
- Surround.vim customizations
+ **Surround.vim customizations**
 
  * in plugin/settings/surround.vim (this folder contains all my customizations)
  * the # key now surrounds with #{}, so - ysaw# surround around word #{foo}
  * = surrounds with <%= erb tag %> and - for <% this %>, so yss= or yss- to wrap code
 
- Search/Code Navigation
+ **Search/Code Navigation**
 
  * ,f - instantly Find definition of class (must have exuberant ctags installed)
  *  K - GitGrep the current word under the cursor and show results in quickfix window
@@ -179,24 +181,24 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * // - clear the search
  * ,T - Tag list (list of methods in a class)
 
- RSI-reduction
+ **RSI-reduction**
 
  * Cmd-k and Cmd-d to type underscores and dashes (use ), since they are so common in code but so far away from home row
  * ; instead of : - avoid Shift for common tasks, just hit semicolon to get to ex mode
  * ,. to go to last edit location instead of '. because the apostrophe is hard on the pinky
 
- Tab Navigation
+ **Tab Navigation**
 
  * Cmd-H and Cmd-L - left an right on tabs
  * Use Cmd-1..Cmd-0 to switch to a specific tab number (like iTerm) - and tabs have been set up to show numbers
 
- Window Navigation
+ **Window Navigation**
 
  * H L I M - to move left, right, up, down between windows
  * Q -  Quit a window, keep buffer alive (Ctrl-w,c)
  * \Q - Quit window, kill buffer (:bw)
 
- **Splits***
+ **Splits**
 
  * vv - vertical split (Ctrl-w,v)
  * ss - horizontal split (Ctrl-w,s)
@@ -204,7 +206,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * ,q to close the quickfix and ,oq to open the quickfix (great for lookin at Ack or GitGrep results)
  * ,m - NERDTree toggle
 
- Utility
+ **Utility**
 
  * ,cf - Copy Filename of current file into system (not vi) paste buffer 
  * ,cc - (Current command) copies the command under your cursor and executes it in vim. Great for testing single line changes to vimrc.
@@ -214,7 +216,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * gcp (comment a paragraph) added
  * ,t - Command-T fuzzy file selector (alternative to PeepOpen / LustyJuggler)
 
- Local Anonymous Bookmarking
+ **Local Anonymous Bookmarking**
 
  * ,bb - toggle local anonymous bookmark at current location
  * ,bn ,bp - next and previous anonymous bookmark
@@ -223,7 +225,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
 Included vim plugins
 ---
 
- Navigation
+ **Navigation**
 
  * NERDTree - everyone's favorite tree browser
  * NERDTree-tabs - makes NERDTree play nice with MacVim tabs so that it's on every tab
@@ -234,18 +236,18 @@ Included vim plugins
  * CommandT - although I personally use PeepOpen, this is available as it's pretty standard
  * VimBookmarks - toggle an anonymous bookmark ,bb and go thru them ,bn ,bp and clear them ,bc
 
- Git
+ **Git**
 
  * fugitive - "a git wrapper so awesome, it should be illegal..". Try Gstatus and hit '-' to toggle files. Git 'd' to see a diff. Learn more: http://vimcasts.org/blog/2011/05/the-fugitive-series/
  * GitGrep - much better than the grep provided with fugitive; use :GitGrep or hit K to grep current word
 
- Colors
+ **Colors**
 
  * AnsiEsc - inteprets ansi color codes inside log files. great for looking at Rails logs
  * solarized - a color scheme scientifically calibrated for awesomeness (including skwp mods for ShowMarks)
  * csapprox - helps colors to be represented correctly on terminals (even though we expect to use MacVim)
 
- Coding
+ **Coding**
 
  * tComment - gcc to comment a line, gcp to comment blocks, nuff said
  * sparkup - div.foo#bar - hit ctrl-e, expands into <code><div class='foo' id#bar/></code>, and that's just the beginning
@@ -256,7 +258,7 @@ Included vim plugins
  * textobj-rubyblock - provides visual block selection specific to ruby. try var/vir to select a ruby block
  * vim-indentobject - manipulation of blocks by their indentation (great for yaml) use vai/vii to select around an indent block
 
- Utils
+ **Utils**
 
  * yankring - effortless sanity for pasting. every time you yank something it goes into a buffer. after hitting p to paste, use ctrl-p or ctrl-n to cycle through the paste options. great for when you accidentally overwrite your yank with a delete
  * surround - super easy quote and tag manipulation - ysiw" - sourround inner word with quotes. ci"' - change inner double quotes to single quotes, etc
@@ -271,7 +273,7 @@ Included vim plugins
  * space-vim - hit space to repeat many navigation commands like finds, etc. very intuitive
  * slime - use ctrl-c,ctrl-c to send text to a running irb/pry/console. To start the console, you must use screen with a named session: "screen -S [name] [cmd]", ex: "screen -S pry pry"
 
- General enhancements that don't add new commands
+ **General enhancements that don't add new commands**
 
  * IndexedSearch - when you do searches will show you "Match 2 of 4" in the status line
  * delimitMate - automatically closes quotes 
@@ -302,19 +304,20 @@ You can then commit the change. It's good to have your own fork of this project 
 
 Setup for Git
 ---
-To use the gitconfig (some of the git bash aliases rely on my git aliases)
+**To use the gitconfig (some of the git bash aliases rely on my git aliases)**
 
     ln -s ~/.dotfiles/gitconfig ~/.gitconfig
 
 Since the gitconfig doesn't contain the user info, I recommend using env variables.
-Put the following in your ~/.secrets file which is automatically referenced by the provided zshrc:
+
+**Put the following in your ~/.secrets file which is automatically referenced by the provided zshrc:**
 
     export GIT_AUTHOR_NAME=yourname
     export GIT_AUTHOR_EMAIL=you@domain.com
     export GIT_COMITTER_NAME=yourname
     export GIT_COMITTER_EMAIL=you@domain.com
 
-Some of the customizations provided include:
+**Some of the customizations provided include:**
 
   * git l - a much more usable git log
   * git b - a list of branches with summary of last commit
