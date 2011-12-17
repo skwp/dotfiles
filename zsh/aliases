@@ -67,6 +67,7 @@ alias gdc='git diff --cached'
 alias gpub='grb publish'
 alias gtr='grb track'
 alias gpl='git pull'
+alias gplr='git pull --rebase'
 alias gps='git push'
 alias gpsh='git push'
 alias gnb='git nb' # new branch aka checkout -b
