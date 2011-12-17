@@ -126,6 +126,3 @@ set viminfo='100,f1
 " term for running tests
 "
 autocmd WinEnter * stopinsert
-
-" Auto save when we go elsewhere
-au FocusLost * :wa

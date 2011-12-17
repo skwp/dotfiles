@@ -42,6 +42,11 @@ nmap ,ru :AV<CR>
 " ,m is less stressful on the fingers than ,n
 nmap ,m :NERDTreeToggle<CR>
 
+" ,q to toggle quickfix window (where you have stuff like GitGrep)
+" ,oq to open it back up (rare)
+nmap <silent> ,q :cclose<CR>
+nmap <silent> ,oq :copen<CR>
+
 " move up/down quickly by using Ctrl-j, Ctrl-k
 " which will move us around by functions
 nnoremap <silent> <C-j> }

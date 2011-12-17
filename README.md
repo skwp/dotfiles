@@ -158,7 +158,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  Search/Code Navigation
 
  * ,f - instantly Find definition of class (must have exuberant ctags installed)
- *  K - GitGrep the current word under the cursor
+ *  K - GitGrep the current word under the cursor and show results in quickfix window
  * Cmd-* - highlight all occurrences of current word (similar to regular * except doesn't move)
  * ,hl - toggle search highlight on and off
  * ,gg - GitGrep command line with a quote pretyped (close the quote yourself)
@@ -182,6 +182,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * Cmd-H and Cmd-L - left an right on tabs
  * ,, to zoom a window to max size and again to unzoom it (ZoomWin standard Ctrl-w,o)
  * Use Cmd-1..Cmd-0 to switch to a specific tab number (like iTerm) - and tabs have been set up to show numbers
+ * ,q to close the quickfix and ,oq to open the quickfix (great for lookin at Ack or GitGrep results)
 
  Utility
 
@@ -189,7 +190,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * ,cc - (Current command) copies the command under your cursor and executes it in vim. Great for testing single line changes to vimrc.
  * ,yw - yank a word from anywhere within the word (so you don't have to go to the beginning of it)
  * ,ow - overwrite a word with whatever is in your yank buffer - you can be anywhere on the word. saves having to visually select it
- * gcc (comment a line) via tComment (standard)
+ * Cmd-/ - toggle comments (usually gcc from tComment)
  * gcp (comment a paragraph) added
  * ,t - Command-T fuzzy file selector (alternative to PeepOpen / LustyJuggler)
 
