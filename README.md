@@ -262,6 +262,7 @@ Included vim plugins
 
  **Utils**
 
+ * tabularize - align code effortlessly by using :Tabularize /[character] to align by a character, or try the mappings ,a= and ,a: to align by equals or colons
  * yankring - effortless sanity for pasting. every time you yank something it goes into a buffer. after hitting p to paste, use ctrl-p or ctrl-n to cycle through the paste options. great for when you accidentally overwrite your yank with a delete
  * surround - super easy quote and tag manipulation - ysiw" - sourround inner word with quotes. ci"' - change inner double quotes to single quotes, etc
  * greplace - use :Gsearch to find across many files, replace inside the changes, then :Greplace to do a replace across all matches

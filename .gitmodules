@@ -160,6 +160,9 @@
 [submodule "vim/bundle/chrismetcalf-vim-yankring"]
 	path = vim/bundle/chrismetcalf-vim-yankring
 	url = https://github.com/chrismetcalf/vim-yankring.git
-[submodule "vim/bundle/tsaleh-vim-align"]
-	path = vim/bundle/tsaleh-vim-align
-	url = https://github.com/tsaleh/vim-align
+[submodule "vim/bundle/mattn-gist-vim"]
+	path = vim/bundle/mattn-gist-vim
+	url = https://github.com/mattn/gist-vim
+[submodule "vim/bundle/godlygeek-tabular"]
+	path = vim/bundle/godlygeek-tabular
+	url = https://github.com/godlygeek/tabular

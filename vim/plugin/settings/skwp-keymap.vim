@@ -29,7 +29,6 @@ imap <silent> <D-k> _
 imap <silent> <D-d> _
 imap <silent> <D-K> -
 imap <silent> <D-D> -
-
 " Don't have to use Shift to get into command mode, just hit semicolon
 nnoremap ; :
 
@@ -158,6 +157,16 @@ nnoremap <D-*> :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
 " swap them: http://items.sjbach.com/319/configuring-vim-right
 nnoremap ' `
 nnoremap ` '
+
+" Tabularization. Hit ,a then type a character you want to align by
+" The mnemonic is 'a' for align
+if exists(":Tabularize")
+  nmap ,a= :Tabularize /=<CR>
+  vmap ,a= :Tabularize /=<CR>
+  nmap ,a: :Tabularize /:\zs<CR>
+  vmap ,a: :Tabularize /:\zs<CR>
+endif
+
 
 " ============================
 " VimBookmarking
