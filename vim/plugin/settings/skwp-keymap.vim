@@ -158,15 +158,16 @@ nnoremap <D-*> :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
 nnoremap ' `
 nnoremap ` '
 
-" Tabularization. Hit ,a then type a character you want to align by
-" The mnemonic is 'a' for align
+" Tabularization. Hit Ctrl-a then type a character you want to align by
 if exists(":Tabularize")
-  nmap ,a= :Tabularize /=<CR>
-  vmap ,a= :Tabularize /=<CR>
-  nmap ,a: :Tabularize /:\zs<CR>
-  vmap ,a: :Tabularize /:\zs<CR>
+  nmap <C-a> :Tabularize /
+  vmap <C-a> :Tabularize /
 endif
 
+" ===
+" SplitJoin plugin
+nmap sj :SplitjoinSplit<cr>
+nmap sk :SplitjoinJoin<cr>
 
 " ============================
 " VimBookmarking

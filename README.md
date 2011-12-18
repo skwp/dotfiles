@@ -217,6 +217,10 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * Cmd-/ - toggle comments (usually gcc from tComment)
  * gcp (comment a paragraph) added
  * ,t - Command-T fuzzy file selector (alternative to PeepOpen / LustyJuggler)
+ * sj - split a line such as a hash {:foo => {:bar => :baz}} into a multiline hash (j = down)
+ * sk - unsplit a link (k = up)
+ * Ctrl-a - align things (type a character/expression to align by, works in visual mode or by itself)
+ * sj and sk - split and unsplit things (like ruby hashes) into multiple lines
 
  **Local Anonymous Bookmarking**
 
@@ -262,7 +266,8 @@ Included vim plugins
 
  **Utils**
 
- * tabularize - align code effortlessly by using :Tabularize /[character] to align by a character, or try the mappings ,a= and ,a: to align by equals or colons
+ * SplitJoin - easily split up things like ruby hashes into multiple lines or join them back together. Try :SplitjoinJoin and :SplitjoinSplit or use the bindings sj(split) and sk(unsplit) - mnemonically j and k are directions down and up 
+ * tabularize - align code effortlessly by using :Tabularize /[character] to align by a character, or try the keymaps
  * yankring - effortless sanity for pasting. every time you yank something it goes into a buffer. after hitting p to paste, use ctrl-p or ctrl-n to cycle through the paste options. great for when you accidentally overwrite your yank with a delete
  * surround - super easy quote and tag manipulation - ysiw" - sourround inner word with quotes. ci"' - change inner double quotes to single quotes, etc
  * greplace - use :Gsearch to find across many files, replace inside the changes, then :Greplace to do a replace across all matches

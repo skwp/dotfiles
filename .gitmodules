@@ -166,3 +166,6 @@
 [submodule "vim/bundle/godlygeek-tabular"]
 	path = vim/bundle/godlygeek-tabular
 	url = https://github.com/godlygeek/tabular
+[submodule "vim/bundle/AndrewRadev-splitjoin"]
+	path = vim/bundle/AndrewRadev-splitjoin
+	url = https://github.com/AndrewRadev/splitjoin.vim
