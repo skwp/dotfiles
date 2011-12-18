@@ -84,15 +84,21 @@ restores the only feature that I felt was 'broken' which is the Ctrl-R reverse h
 While I am not going to support bash out of the box here, YADR _should_ work with bash if
 you just source the _aliases_ file. However, you soul will sing if you install zsh. I promise.
 
-**Install zsh pain free, automatically, with no pain:**
+**Install zsh pain free, automatically:**
 
     wget --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
 
-**Place this as the last line in your ~/.zshrc created by oh-my-zsh:**
+Place this as the last line in your ~/.zshrc created by oh-my-zsh:
 
     source ~/.dotfiles/zsh/zshrc
 
-**Everyday shell commands should be two character mnemonic aliases**
+Or, to make things simpler you can just use the YADR-provided zsh/oh_my_zsh_zshrc
+Please note that this relies on the skwp fork of oh-my-zsh which contains skwp.theme
+
+    ln -sf ~/.dotfiles/zsh/oh_my_zsh_zshrc ~/.zshrc
+
+Lots of things I do every day are done with two or three character 
+mnemonic aliases. Please feel free to edit them:
 
     ae # alias edit
     ar # alias reload
@@ -132,7 +138,7 @@ To use the vim files:
 
     ln -s ~/.dotfiles/vimrc ~/.vimrc
     ln -s ~/.dotfiles/vim ~/.vim
-    
+
 The .vimrc is well commented and broken up by settings. I encourage you
 to take a look and learn some of my handy aliases, or comment them out
 if you don't like them, or make your own.
@@ -356,6 +362,7 @@ Other recommended OSX tools
  * NValt - Notational Velocity alternative fork - http://brettterpstra.com/project/nvalt/ - syncs with SimpleNote
  * Vimium for Chrome - vim style browsing. The 'f' to type the two char alias of any link is worth it.
  * QuickCursor - gives you Apple-Shift-E to edit any OSX text field in vim.
+ * brew install autojump - will track your commonly used directories and let you jump there. With the zsh plugin you can just type 'j [dirspec]', a few letters of the dir you want to go to.]'
 
 Credits
 ---
