@@ -169,3 +169,6 @@
 [submodule "vim/bundle/AndrewRadev-splitjoin"]
 	path = vim/bundle/AndrewRadev-splitjoin
 	url = https://github.com/AndrewRadev/splitjoin.vim
+[submodule "vim/bundle/int3-vim-extradite"]
+	path = vim/bundle/int3-vim-extradite
+	url = https://github.com/int3/vim-extradite

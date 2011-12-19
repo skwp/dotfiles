@@ -251,6 +251,7 @@ Included vim plugins
  **Git**
 
  * fugitive - "a git wrapper so awesome, it should be illegal..". Try Gstatus and hit '-' to toggle files. Git 'd' to see a diff. Learn more: http://vimcasts.org/blog/2011/05/the-fugitive-series/
+ * extradite - use :Extradite to get a really great git log browser. Only works when you have a file open.
  * GitGrep - much better than the grep provided with fugitive; use :GitGrep or hit K to grep current word
 
  **Colors**
