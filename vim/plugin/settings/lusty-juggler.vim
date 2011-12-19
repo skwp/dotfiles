@@ -27,6 +27,7 @@ map ,lh :LustyFilesystemExplorer app/helpers<CR>
 map ,ll :LustyFilesystemExplorer lib<CR>
 map ,lp :LustyFilesystemExplorer public<CR>
 map ,ls :LustyFilesystemExplorer specs<CR>
+map ,lf :LustyFilesystemExplorer fast_spec<CR>
 map ,lt :LustyFilesystemExplorer test<CR>
 
 let g:LustyJugglerSuppressRubyWarning = 1

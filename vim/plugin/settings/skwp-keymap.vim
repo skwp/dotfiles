@@ -185,4 +185,7 @@ nmap ,bc :ClearBookmarks<cr>
 " snippets that are expanded with space
 abbr pry! require 'pry'; binding.pry 
 
+" If you use a fast_spec directory, Rfastspec can help you find
+" one of your fast specs
+autocmd User BufEnterRails Rnavcommand fastspec fast_spec/ -glob=**/** -suffix=_spec.rb -default=model()
 
