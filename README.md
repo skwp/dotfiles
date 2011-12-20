@@ -47,6 +47,10 @@ Janus is an amazing _first effort_ to deliver a ready-to-use vim setup and is a 
   * All keymaps and customization in small, easy to maintain files under .vim/plugin/settings
   * More than just vim plugins - great shell aliases, osx, and irb/pry tweaks to make you more productive.
 
+Screenshot
+---
+![screenshot](http://i.imgur.com/lEFlF.png)
+
 Before you start
 ---
 
