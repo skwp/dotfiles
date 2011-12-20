@@ -111,13 +111,13 @@ map <silent> <D-0> :tabn 0<cr>
 nnoremap <silent> vv <C-w>v
 nnoremap <silent> ss <C-w>s
 
-" Remap Q to close a window
-nnoremap <silent> Q <C-w>c
+" Use Q to kill a buffer
+nnoremap <silent> Q :bw<CR>
 
-" Use \Q to kill the buffer entirely
-nnoremap <silent> <Leader>Q :bw<CR>
+" Remap \Q to close a window (leave buffer open in memory)
+nnoremap <silent> <Leader>Q <C-w>c
 
-"open the taglist (method browser) using ,t 
+"open the taglist (method browser) using ,t
 nnoremap <silent> ,T :TlistToggle<CR>
 
 " create <%= foo %> erb tags using Ctrl-k in edit mode

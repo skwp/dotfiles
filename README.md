@@ -203,8 +203,8 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  **Window Navigation**
 
  * H L I M - to move left, right, up, down between windows
- * Q -  Quit a window, keep buffer alive (Ctrl-w,c)
- * \Q - Quit window, kill buffer (:bw)
+ * Q - Quit window, kill buffer (:bw)
+ * \Q -  Quit a window, keep buffer alive (Ctrl-w,c)
 
  **Splits**
 
@@ -268,8 +268,17 @@ Included vim plugins
  * ruby.vim - lots of general enhancements for ruby dev
  * necomplcache - intelligent and fast complete as you type, and added Command-Space to select a completion (same as Ctrl-N)
  * snipMate - offers textmate-like snippet expansion + scrooloose-snippets . try hitting TAB after typing a snippet
- * textobj-rubyblock - provides visual block selection specific to ruby. try var/vir to select a ruby block
- * vim-indentobject - manipulation of blocks by their indentation (great for yaml) use vai/vii to select around an indent block
+
+ **TextObjects**
+
+ The things in this section provide new "objects" to work with your standard verbs such as yank/delete/change/=(codeformat), etc
+
+ * textobj-rubyblock - ruby blocks become vim textobjects denoted with 'r'. try var/vir to select a ruby block, dar/dir for delete car/cir for change, =ar/=ir for formatting, etc
+ * vim-indentobject - manipulate chunks of code by indentation level (great for yaml) use vai/vii to select around an indent block, same as above applies
+ * argtextobj - manipulation of function arguments as an "a" object, so vaa/via, caa/cia, daa/dia, etc..
+ * textobj-datetime - gives you 'da' (date), 'df' (date full) and so on text objects. useable with all standard verbs
+ * vim-textobj-entire - gives you 'e' for entire document. so vae (visual around entire document), and etc
+ * vim-textobj-rubysymbol - gives you ':' textobj. so va: to select a ruby symbol. da: to delete a symbol..etc
 
  **Utils**
 

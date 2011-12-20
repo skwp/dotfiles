@@ -172,3 +172,9 @@
 [submodule "vim/bundle/int3-vim-extradite"]
 	path = vim/bundle/int3-vim-extradite
 	url = https://github.com/int3/vim-extradite
+[submodule "vim/bundle/vim-scripts-argtextobj"]
+	path = vim/bundle/vim-scripts-argtextobj
+	url = https://github.com/vim-scripts/argtextobj.vim
+[submodule "vim/bundle/bootleq-vim-textobj-rubysymbol"]
+	path = vim/bundle/bootleq-vim-textobj-rubysymbol
+	url = https://github.com/bootleq/vim-textobj-rubysymbol
