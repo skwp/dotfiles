@@ -157,11 +157,18 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  **Navigation**
 
  * ,z - jump back and forth between last two buffers
- * Ctrl-\ - Show current file in nerd tree
  * Ctrl-j and Ctrl-k to move up and down roughly by functions
- * Ctrl-O - Old cursor position - this is a standard mapping but very useful, so included here
- * Ctrl-I - opposite of Ctrl-O (again, this is standard)
+ * Ctrl-o - Old cursor position - this is a standard mapping but very useful, so included here
+ * Ctrl-i - opposite of Ctrl-O (again, this is standard)
+
+ **Marks**
+
  * \mm - set the next available mark (set a mark with mX where X is a letter, navigate to mark using 'X). Uppercase marks to mark files, lowercase marks to use within a file.
+ * \ma - clear all marks
+ * \mh - clear current mark
+ * ,bb - toggle local anonymous bookmark at current location
+ * ,bn ,bp - next and previous anonymous bookmark
+ * ,bc - clear anonymous bookmarks
 
  **LustyJuggler**
 
@@ -175,6 +182,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
 
  * ,ru - Rails Unittest - synonym for :AV from rails.vim, opens up the corresponding test/spec to the file you're looking for, in a vertical split
  * \ss to run specs, \ll to run a given spec on a line - using my vim-ruby-conque plugin (https://github.com/skwp/vim-ruby-conque)
+ * Cmd-Shift-R to use vim-rspec to run a spec file. Soon to support running individual contexts.
 
  **Surround.vim customizations**
 
@@ -194,8 +202,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * ,T - Tag list (list of methods in a class)
 
  **RSI-reduction**
-
- * Cmd-k and Cmd-d to type underscores and dashes (use ), since they are so common in code but so far away from home row
+ * Cmd-k and Cmd-d to type underscores and dashes (use Shift), since they are so common in code but so far away from home row
  * ; instead of : - avoid Shift for common tasks, just hit semicolon to get to ex mode
  * ,. to go to last edit location instead of '. because the apostrophe is hard on the pinky
 
@@ -214,9 +221,14 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
 
  * vv - vertical split (Ctrl-w,v)
  * ss - horizontal split (Ctrl-w,s)
- * ,, to zoom a window to max size and again to unzoom it (ZoomWin standard Ctrl-w,o)
- * ,q to close the quickfix and ,oq to open the quickfix (great for lookin at Ack or GitGrep results)
+ * ,, - zoom a window to max size and again to unzoom it (ZoomWin plugin, usually C-w,o)
+ * ,oq - open quickfix window (this is where output from GitGrep goes)
+ * ,q  - close quickfix
+
+ **NERDTree Project Tree**
+
  * ,m - NERDTree toggle
+ * Ctrl-\ - Show current file tree
 
  **Utility**
 
@@ -224,19 +236,15 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * ,cc - (Current command) copies the command under your cursor and executes it in vim. Great for testing single line changes to vimrc.
  * ,yw - yank a word from anywhere within the word (so you don't have to go to the beginning of it)
  * ,ow - overwrite a word with whatever is in your yank buffer - you can be anywhere on the word. saves having to visually select it
- * Cmd-/ - toggle comments (usually gcc from tComment)
- * gcp (comment a paragraph) added
- * ,t - Command-T fuzzy file selector (alternative to PeepOpen / LustyJuggler)
+ * ,t - Command-T fuzzy file selector
  * sj - split a line such as a hash {:foo => {:bar => :baz}} into a multiline hash (j = down)
  * sk - unsplit a link (k = up)
- * Ctrl-a - align things (type a character/expression to align by, works in visual mode or by itself)
- * sj and sk - split and unsplit things (like ruby hashes) into multiple lines
+ * Cmd-Shift-A - align things (type a character/expression to align by, works in visual mode or by itself)
 
- **Local Anonymous Bookmarking**
+ **Comments**
 
- * ,bb - toggle local anonymous bookmark at current location
- * ,bn ,bp - next and previous anonymous bookmark
- * ,bc - clear anonymous bookmarks
+ * Cmd-/ - toggle comments (usually gcc from tComment)
+ * gcp (comment a paragraph) 
 
 Included vim plugins
 ---
@@ -249,7 +257,7 @@ Included vim plugins
  * EasyMotion - hit \\w (forward) or \\b (back) and watch the magic happen. just type the letters and jump directly to your target - in the provided vimrc the keys are optimized for home and upper row, no pinkies
  * LustyJuggler/Explorer - hit B, type buf name to match a buffer, or type S and use the home row keys to select a buffer
  * TagList - hit ,T to see a list of methods in a class (uses ctags)
- * CommandT - although I personally use PeepOpen, this is available as it's pretty standard
+ * CommandT - ,t to find a file
  * VimBookmarks - toggle an anonymous bookmark ,bb and go thru them ,bn ,bp and clear them ,bc
 
  **Git**
@@ -293,6 +301,7 @@ Included vim plugins
  * greplace - use :Gsearch to find across many files, replace inside the changes, then :Greplace to do a replace across all matches
  * ConqueTerm - embedded fully colorful shell inside your vim
  * vim-ruby-conque - helpers to run ruby,rspec,rake within ConqueTerm - use \rr (ruby), \ss (rspec), \ll (rspec line), \RR (rake)
+ * vim-rspec - really clean and colorful rspec output (Cmd-Shift-R) with ability to navigate directly to error; will replace vim-ruby-conque when I do a couple enhancements/bug fixes
  * ruby_focused_unit_test - helpers to run tests/specs with \t
  * vim-markdown-preview - :Mm to view your README.md as html
  * html-escape - hit ctrl-h to escape html

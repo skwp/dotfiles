@@ -158,14 +158,16 @@ nnoremap <D-*> :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
 nnoremap ' `
 nnoremap ` '
 
-" Tabularization. Hit Ctrl-a then type a character you want to align by
-if exists(":Tabularize")
-  nmap <C-a> :Tabularize /
-  vmap <C-a> :Tabularize /
-endif
+" ============================
+" Tabularize - alignment 
+" ============================
+" Hit Cmd-Shift-A then type a character you want to align by
+nmap <D-A> :Tabularize /
+vmap <D-A> :Tabularize /
 
-" ===
+" ============================
 " SplitJoin plugin
+" ============================
 nmap sj :SplitjoinSplit<cr>
 nmap sk :SplitjoinJoin<cr>
 
@@ -184,6 +186,12 @@ nmap ,bc :ClearBookmarks<cr>
 " ============================
 " snippets that are expanded with space
 abbr pry! require 'pry'; binding.pry 
+
+" ============================
+" vim-rspec
+" ============================
+" Cmd-Shift-R for RSpec
+nmap <D-R> :RunSpec<CR>
 
 " If you use a fast_spec directory, Rfastspec can help you find
 " one of your fast specs
