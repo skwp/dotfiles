@@ -178,3 +178,6 @@
 [submodule "vim/bundle/bootleq-vim-textobj-rubysymbol"]
 	path = vim/bundle/bootleq-vim-textobj-rubysymbol
 	url = https://github.com/bootleq/vim-textobj-rubysymbol
+[submodule "vim/bundle/skwp-vim-rspec"]
+	path = vim/bundle/skwp-vim-rspec
+	url = https://github.com/skwp/vim-rspec
