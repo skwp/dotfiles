@@ -78,6 +78,7 @@ alias gclndf='git clean -df'
 alias gsm='git submodule'
 alias gsmi='git submodule init'
 alias gsmu='git submodule update'
+alias gt='git t'
 
 # Common shell functions
 alias less='less -r'
