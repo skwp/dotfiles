@@ -214,8 +214,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  **Window Navigation**
 
  * H L I M - to move left, right, up, down between windows
- * Q - Quit window, kill buffer (:bw)
- * \Q -  Quit a window, keep buffer alive (Ctrl-w,c)
+ * Q - Intelligent Window Killer. Close window (wincmd c) if there are multiple windows to same buffer, or kill the buffer (bwipeout) if this is the last window into it.
 
  **Splits**
 

@@ -111,11 +111,6 @@ map <silent> <D-0> :tabn 0<cr>
 nnoremap <silent> vv <C-w>v
 nnoremap <silent> ss <C-w>s
 
-" Use Q to kill a buffer
-nnoremap <silent> Q :bw<CR>
-
-" Remap \Q to close a window (leave buffer open in memory)
-nnoremap <silent> <Leader>Q <C-w>c
 
 "open the taglist (method browser) using ,t
 nnoremap <silent> ,T :TlistToggle<CR>
