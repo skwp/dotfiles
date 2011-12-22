@@ -307,7 +307,6 @@ Included vim plugins
  * html-escape - hit ctrl-h to escape html
  * ruby-debug-ide - not quite working for me, but maybe it will for you. supposedly a graphical debugger you can step through
  * Gundo - visualize your undos - pretty amazing plugin. Hit ,u with my keymappings to trigger it, very user friendly
- * space-vim - hit space to repeat many navigation commands like finds, etc. very intuitive
  * slime - use ctrl-c,ctrl-c to send text to a running irb/pry/console. To start the console, you must use screen with a named session: "screen -S [name] [cmd]", ex: "screen -S pry pry"
 
  **General enhancements that don't add new commands**
