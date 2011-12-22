@@ -3,9 +3,15 @@
 " so you can see the flow 
 hi! link rubyDefine rubyControl
 
+" This is a better cursor
+hi! link Cursor VisualNOS
+
 " This is a bit nicer visual selection, and
 " as a side bonus it makes CommandT look better
 hi! link Visual DiffChange
+
+" Search is way too distracting in original Solarized
+hi! link Search DiffAdd
 
 " Colors to make LustyJuggler more usable
 " the Question color in LustyJuggler is mapped to
