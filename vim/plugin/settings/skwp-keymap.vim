@@ -62,7 +62,7 @@ map <D-/> :TComment<CR>
 imap <D-/> <Esc>:TComment<CR>i
 
 "open up a git grep line, with a quote started for the search
-nnoremap ,gg :GitGrep "
+nnoremap ,gg :GitGrep ""<left>
 nnoremap ,gcp :GitGrepCurrentPartial<CR>
 
 " hit ,f to find the definition of the current class
