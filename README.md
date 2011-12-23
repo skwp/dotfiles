@@ -176,7 +176,6 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * ,s - Show buffers in LustyJuggler (use asdfjkl home row keys to then select buffer)
  * ,lf - lusty file finder
  * ,lr - lusty file finder from current folder
- * ,lm ,lc ,ls - rails specific lusty juggler file finders (models, controllers, specs, etc) - just use the letter for what you want after ,l
 
  **Rails**
 
@@ -200,6 +199,22 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * ,gcp - GitGrep Current Partial to find references to the current view partial
  * // - clear the search
  * ,T - Tag list (list of methods in a class)
+
+ **File Navigation**
+ * ,t - Command-T fuzzy file selector
+ * ,jm jump (command-t) app/models
+ * ,jc app/controllers
+ * ,jv app/views
+ * ,jh app/helpers
+ * ,jl lib
+ * ,jp public
+ * ,js spec
+ * ,jf fast_spec
+ * ,jt test
+ * ,jd db
+ * ,jC config
+ * ,jV vendor
+ * ,jF factories
 
  **RSI-reduction**
  * Cmd-k and Cmd-d to type underscores and dashes (use Shift), since they are so common in code but so far away from home row
@@ -235,7 +250,6 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * ,cc - (Current command) copies the command under your cursor and executes it in vim. Great for testing single line changes to vimrc.
  * ,yw - yank a word from anywhere within the word (so you don't have to go to the beginning of it)
  * ,ow - overwrite a word with whatever is in your yank buffer - you can be anywhere on the word. saves having to visually select it
- * ,t - Command-T fuzzy file selector
  * sj - split a line such as a hash {:foo => {:bar => :baz}} into a multiline hash (j = down)
  * sk - unsplit a link (k = up)
  * Cmd-Shift-A - align things (type a character/expression to align by, works in visual mode or by itself)
