@@ -246,6 +246,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
 
  **Utility**
 
+ * \gi - toggle visual indentation guides
  * ,cf - Copy Filename of current file into system (not vi) paste buffer 
  * ,cc - (Current command) copies the command under your cursor and executes it in vim. Great for testing single line changes to vimrc.
  * ,yw - yank a word from anywhere within the word (so you don't have to go to the beginning of it)
@@ -321,6 +322,7 @@ Included vim plugins
  * ruby-debug-ide - not quite working for me, but maybe it will for you. supposedly a graphical debugger you can step through
  * Gundo - visualize your undos - pretty amazing plugin. Hit ,u with my keymappings to trigger it, very user friendly
  * slime - use ctrl-c,ctrl-c to send text to a running irb/pry/console. To start the console, you must use screen with a named session: "screen -S [name] [cmd]", ex: "screen -S pry pry"
+ * vim-indent-guides - use \gi to turn on visual indentation guides. off by default
 
  **General enhancements that don't add new commands**
 

@@ -181,3 +181,6 @@
 [submodule "vim/bundle/skwp-vim-rspec"]
 	path = vim/bundle/skwp-vim-rspec
 	url = https://github.com/skwp/vim-rspec
+[submodule "vim/bundle/nathanaelkane-vim-indent-guides"]
+	path = vim/bundle/nathanaelkane-vim-indent-guides
+	url = https://github.com/nathanaelkane/vim-indent-guides
