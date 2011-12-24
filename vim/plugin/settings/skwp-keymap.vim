@@ -18,9 +18,9 @@ nnoremap Y y$
 " RSI Prevention - keyboard remaps
 " ========================================
 " Certain things we do every day as programmers stress
-" out our hands. For example, typing underscores and 
+" out our hands. For example, typing underscores and
 " dashes are very common, and in position that require
-" a lot of hand movement. Vim to the rescue 
+" a lot of hand movement. Vim to the rescue
 "
 " Now using the middle finger of either hand you can type
 " underscores with apple-k or apple-d, and add Shift
@@ -187,8 +187,5 @@ abbr pry! require 'pry'; binding.pry
 " ============================
 " Cmd-Shift-R for RSpec
 nmap <D-R> :RunSpec<CR>
-
-" If you use a fast_spec directory, Rfastspec can help you find
-" one of your fast specs
-autocmd User BufEnterRails Rnavcommand fastspec fast_spec/ -glob=**/** -suffix=_spec.rb -default=model()
-
+" Cmd-Shift-L for RSpec Current Line
+nmap <D-L> :RunSpecLine<CR>

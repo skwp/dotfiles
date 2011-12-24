@@ -181,7 +181,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
 
  * ,ru - Rails Unittest - synonym for :AV from rails.vim, opens up the corresponding test/spec to the file you're looking for, in a vertical split
  * \ss to run specs, \ll to run a given spec on a line - using my vim-ruby-conque plugin (https://github.com/skwp/vim-ruby-conque)
- * Cmd-Shift-R to use vim-rspec to run a spec file. Soon to support running individual contexts.
+ * Cmd-Shift-R to use vim-rspec to run a spec file. Cmd-Shift-L to run from a line (individual it block)
 
  **Surround.vim customizations**
 
