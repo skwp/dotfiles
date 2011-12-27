@@ -86,9 +86,9 @@ nnoremap <silent> L <C-w>l
 nnoremap <silent> I <C-w>k
 nnoremap <silent> M <C-w>j
 
-" Move between tabs with Cmd-Shift-H and Cmd-Shift-L
-map <silent> <D-H> :tabprevious<cr>
-map <silent> <D-L> :tabnext<cr>
+" Move between tabs with Ctrl-Shift-H and Ctrl-Shift-L
+map <silent> <C-H> :tabprevious<cr>
+map <silent> <C-L> :tabnext<cr>
 
 " Zoom in and out of current window with ,,
 map <silent> ,, <C-w>o
@@ -154,7 +154,7 @@ nnoremap ' `
 nnoremap ` '
 
 " ============================
-" Tabularize - alignment 
+" Tabularize - alignment
 " ============================
 " Hit Cmd-Shift-A then type a character you want to align by
 nmap <D-A> :Tabularize /
@@ -180,7 +180,7 @@ nmap ,bc :ClearBookmarks<cr>
 " Abbreviations to use...
 " ============================
 " snippets that are expanded with space
-abbr pry! require 'pry'; binding.pry 
+abbr pry! require 'pry'; binding.pry
 
 " ============================
 " vim-rspec

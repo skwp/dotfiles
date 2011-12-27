@@ -201,6 +201,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * ,T - Tag list (list of methods in a class)
 
  **File Navigation**
+
  * ,t - Command-T fuzzy file selector
  * ,jm jump (command-t) app/models
  * ,jc app/controllers
@@ -223,7 +224,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
 
  **Tab Navigation**
 
- * Cmd-H and Cmd-L - left an right on tabs
+ * Ctrl-H and Ctrl-L - left an right on tabs
  * Use Cmd-1..Cmd-0 to switch to a specific tab number (like iTerm) - and tabs have been set up to show numbers
 
  **Window Navigation**
