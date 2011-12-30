@@ -18,7 +18,7 @@
 This is a collection of best of breed tools from across the web,
 from scouring other people's dotfile repos, blogs, and projects.
 
-What is YADR? 
+What is YADR?
 ---
 
 **YADR is an opinionated dotfile repo that will make your heart sing**
@@ -334,6 +334,7 @@ Included vim plugins
  * endwise - automatically closes blocks (if/end)
  * autotag - automatically creates tags for fast sourcecode browsing. use ctrl-[ over a symbol name to go to its definition
  * matchit - helps with matching brackets, improves other plugins
+ * sass-status - decorates your status bar with full nesting of where you are in the sass file
 
 
 Adding your own vim plugins

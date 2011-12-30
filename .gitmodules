@@ -184,3 +184,9 @@
 [submodule "vim/bundle/nathanaelkane-vim-indent-guides"]
 	path = vim/bundle/nathanaelkane-vim-indent-guides
 	url = https://github.com/nathanaelkane/vim-indent-guides
+[submodule "vim/bundle/aaronjensen-vim-sass-status"]
+	path = vim/bundle/aaronjensen-vim-sass-status
+	url = https://github.com/aaronjensen/vim-sass-status
+[submodule "vim/bundle/tpope-vim-haml"]
+	path = vim/bundle/tpope-vim-haml
+	url = https://github.com/tpope/vim-haml
