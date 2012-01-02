@@ -37,7 +37,7 @@ nnoremap ,. '.
 
 " ================== rails.vim
 "
-" Open corresponding unittest (or spec), alias for :AV in rails.vim 
+" Open corresponding unittest (or spec), alias for :AV in rails.vim
 nmap ,ru :AV<CR>
 
 " ==== NERD tree
@@ -78,8 +78,8 @@ nnoremap <silent> K :GitGrep <cword><CR>
 " ==============================
 " Window/Tab/Split Manipulation
 " ==============================
-" Move between split windows by using the four directions H, L, I, N 
-" (note that  I use I and N instead of J and K because  J already does 
+" Move between split windows by using the four directions H, L, I, N
+" (note that  I use I and N instead of J and K because  J already does
 " line joins and K is mapped to GitGrep the current word
 nnoremap <silent> H <C-w>h
 nnoremap <silent> L <C-w>l

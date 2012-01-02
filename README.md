@@ -66,7 +66,7 @@ for you by the **yadr** command. Please run:
     git clone https://github.com/skwp/dotfiles ~/.dotfiles
     ~/.dotfiles/bin/yadr/yadr init-plugins
 
-NOTE: by default, YADR will not touch any of your files. You have to manually 
+NOTE: by default, YADR will not touch any of your files. You have to manually
 activate each of its components, if you choose, by following the sections below.
 Eventually these will be automated.
 
@@ -80,7 +80,7 @@ Please note that init-plugins will automatically compile the CommandT plugin for
 Setup for ZSH
 ---
 After a lifetime of bash, I am now using ZSH as my default shell because of its awesome globbing
-and autocomplete features (the spelling fixer autocomplete is worth the money alone). 
+and autocomplete features (the spelling fixer autocomplete is worth the money alone).
 
 Migrating from bash to zsh is essentially pain free. The zshrc provided here
 restores the only feature that I felt was 'broken' which is the Ctrl-R reverse history search.
@@ -101,7 +101,7 @@ Please note that this relies on the skwp fork of oh-my-zsh which contains skwp.t
 
     ln -sf ~/.dotfiles/zsh/oh_my_zsh_zshrc ~/.zshrc
 
-Lots of things I do every day are done with two or three character 
+Lots of things I do every day are done with two or three character
 mnemonic aliases. Please feel free to edit them:
 
     ae # alias edit
@@ -115,7 +115,7 @@ mnemonic aliases. Please feel free to edit them:
 
 Setup for Pry
 ---
-Pry (http://pry.github.com/) offers a much better out of the box IRB experience 
+Pry (http://pry.github.com/) offers a much better out of the box IRB experience
 with colors, tab completion, and lots of other tricks. You should:
 
     gem install pry
@@ -150,7 +150,7 @@ if you don't like them, or make your own.
 Vim Keymaps (in vim/plugin/settings)
 ---
 
-The files in vim/plugin/settings are customizations stored on a per-plugin 
+The files in vim/plugin/settings are customizations stored on a per-plugin
 basis. The main keymap is available in skwp-keymap.vim, but some of the vim
 files contain key mappings as well (TODO: probably will move them out to skwp-keymap.vim)
 
@@ -218,6 +218,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * ,jF factories
 
  **RSI-reduction**
+
  * Cmd-k and Cmd-d to type underscores and dashes (use Shift), since they are so common in code but so far away from home row
  * ; instead of : - avoid Shift for common tasks, just hit semicolon to get to ex mode
  * ,. to go to last edit location instead of '. because the apostrophe is hard on the pinky
@@ -248,10 +249,11 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  **Utility**
 
  * \gi - toggle visual indentation guides
- * ,cf - Copy Filename of current file into system (not vi) paste buffer 
+ * ,cf - Copy Filename of current file into system (not vi) paste buffer
  * ,cc - (Current command) copies the command under your cursor and executes it in vim. Great for testing single line changes to vimrc.
  * ,yw - yank a word from anywhere within the word (so you don't have to go to the beginning of it)
  * ,ow - overwrite a word with whatever is in your yank buffer - you can be anywhere on the word. saves having to visually select it
+ * ,ws - strip trailing whitespaces
  * sj - split a line such as a hash {:foo => {:bar => :baz}} into a multiline hash (j = down)
  * sk - unsplit a link (k = up)
  * Cmd-Shift-A - align things (type a character/expression to align by, works in visual mode or by itself)
@@ -259,7 +261,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  **Comments**
 
  * Cmd-/ - toggle comments (usually gcc from tComment)
- * gcp (comment a paragraph) 
+ * gcp (comment a paragraph)
 
 Included vim plugins
 ---
@@ -309,7 +311,7 @@ Included vim plugins
 
  **Utils**
 
- * SplitJoin - easily split up things like ruby hashes into multiple lines or join them back together. Try :SplitjoinJoin and :SplitjoinSplit or use the bindings sj(split) and sk(unsplit) - mnemonically j and k are directions down and up 
+ * SplitJoin - easily split up things like ruby hashes into multiple lines or join them back together. Try :SplitjoinJoin and :SplitjoinSplit or use the bindings sj(split) and sk(unsplit) - mnemonically j and k are directions down and up
  * tabularize - align code effortlessly by using :Tabularize /[character] to align by a character, or try the keymaps
  * yankring - effortless sanity for pasting. every time you yank something it goes into a buffer. after hitting p to paste, use ctrl-p or ctrl-n to cycle through the paste options. great for when you accidentally overwrite your yank with a delete
  * surround - super easy quote and tag manipulation - ysiw" - sourround inner word with quotes. ci"' - change inner double quotes to single quotes, etc
@@ -328,7 +330,7 @@ Included vim plugins
  **General enhancements that don't add new commands**
 
  * IndexedSearch - when you do searches will show you "Match 2 of 4" in the status line
- * delimitMate - automatically closes quotes 
+ * delimitMate - automatically closes quotes
  * syntastic - automatic syntax checking when you save the file
  * repeat - adds '.' (repeat command) support for complex commands like surround.vim. i.e. if you perform a surround and hit '.', it will Just Work (vim by default will only repeat the last piece of the complex command)
  * endwise - automatically closes blocks (if/end)
@@ -379,7 +381,7 @@ Since the gitconfig doesn't contain the user info, I recommend using env variabl
   * git nb - a (n)ew (b)ranch - like checkout -b
   * git cp - cherry-pick -x (showing what was cherrypicked)
   * git changelog - a nice format for creating changelogs
-  * Some sensible default configs, such as improving merge messages, push only pushes the current branch, removing status hints, and using mnemonic prefixes in diff: (i)ndex, (w)ork tree, (c)ommit and (o)bject 
+  * Some sensible default configs, such as improving merge messages, push only pushes the current branch, removing status hints, and using mnemonic prefixes in diff: (i)ndex, (w)ork tree, (c)ommit and (o)bject
   * Slightly imrpoved colors for diff
   * git unstage (remove from index) and git uncommit (revert to the time prior to the last commit - dangerous if already pushed) aliases
 
@@ -393,10 +395,10 @@ under osx. Read through it before running it. To use:
 These hacks are Lion-centric. May not work for other OS'es. My favorite mods include:
 
   * Ultra fast key repeat rate (now you can scroll super quick using j/k)
-  * No disk image verification (downloaded files open quicker) 
+  * No disk image verification (downloaded files open quicker)
   * Display the ~/Library folder in finder (hidden in Lion)
 
-Other recommended OSX tools 
+Other recommended OSX tools
 ---
  * NValt - Notational Velocity alternative fork - http://brettterpstra.com/project/nvalt/ - syncs with SimpleNote
  * Vimium for Chrome - vim style browsing. The 'f' to type the two char alias of any link is worth it.
@@ -425,7 +427,7 @@ Please explore these people's work.
 COMING SOON
 ---
  * Better isolation of customizations in smaller chunks, maybe as plugins
- * Automatic setup script to symlink all dotfiles, or just some selectively 
+ * Automatic setup script to symlink all dotfiles, or just some selectively
 
 For more tips and tricks
 ---
