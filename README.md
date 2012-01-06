@@ -254,7 +254,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * ,cc - (Current command) copies the command under your cursor and executes it in vim. Great for testing single line changes to vimrc.
  * ,yw - yank a word from anywhere within the word (so you don't have to go to the beginning of it)
  * ,ow - overwrite a word with whatever is in your yank buffer - you can be anywhere on the word. saves having to visually select it
- * ,ws - strip trailing whitespaces
+ * ,w - strip trailing whitespaces
  * sj - split a line such as a hash {:foo => {:bar => :baz}} into a multiline hash (j = down)
  * sk - unsplit a link (k = up)
  * Cmd-Shift-A - align things (type a character/expression to align by, works in visual mode or by itself)
