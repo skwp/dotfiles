@@ -190,3 +190,6 @@
 [submodule "vim/bundle/tpope-vim-haml"]
 	path = vim/bundle/tpope-vim-haml
 	url = https://github.com/tpope/vim-haml
+[submodule "vim/bundle/kien-tabman"]
+	path = vim/bundle/kien-tabman
+	url = https://github.com/kien/tabman.vim

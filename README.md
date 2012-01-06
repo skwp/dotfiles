@@ -222,6 +222,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * Cmd-k and Cmd-d to type underscores and dashes (use Shift), since they are so common in code but so far away from home row
  * ; instead of : - avoid Shift for common tasks, just hit semicolon to get to ex mode
  * ,. to go to last edit location instead of '. because the apostrophe is hard on the pinky
+ * Cmd-' and Cmd-" to change content inside quotes
 
  **Tab Navigation**
 
@@ -276,6 +277,7 @@ Included vim plugins
  * TagList - hit ,T to see a list of methods in a class (uses ctags)
  * CommandT - ,t to find a file
  * VimBookmarks - toggle an anonymous bookmark ,bb and go thru them ,bn ,bp and clear them ,bc
+ * TabMan - hit \mt to see all tabs and buffers in a tree. Easy to navigate and close.
 
  **Git**
 
