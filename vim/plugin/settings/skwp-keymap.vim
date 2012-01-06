@@ -29,6 +29,11 @@ imap <silent> <D-k> _
 imap <silent> <D-d> _
 imap <silent> <D-K> -
 imap <silent> <D-D> -
+
+" Change inside quotes with Cmd-" and Cmd-'
+nnoremap <D-'> ci'
+nnoremap <D-"> ci"
+
 " Don't have to use Shift to get into command mode, just hit semicolon
 nnoremap ; :
 
