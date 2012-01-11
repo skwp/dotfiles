@@ -193,3 +193,6 @@
 [submodule "vim/bundle/kien-tabman"]
 	path = vim/bundle/kien-tabman
 	url = https://github.com/kien/tabman.vim
+[submodule "vim/bundle/claco-jasmine"]
+	path = vim/bundle/claco-jasmine
+	url = https://github.com/claco/jasmine.vim

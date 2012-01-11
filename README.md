@@ -299,6 +299,7 @@ Included vim plugins
  * ruby.vim - lots of general enhancements for ruby dev
  * necomplcache - intelligent and fast complete as you type, and added Command-Space to select a completion (same as Ctrl-N)
  * snipMate - offers textmate-like snippet expansion + scrooloose-snippets . try hitting TAB after typing a snippet
+ * jasmine.vim - support for jasmine javascript unit testing, including snippets for it, before, etc..
 
  **TextObjects**
 
