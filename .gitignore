@@ -5,3 +5,4 @@ vim/view
 vim/.netrwhist
 vim/tmp
 .netrwhist
+bin/subl
