@@ -106,9 +106,6 @@
 [submodule "vim/snippets"]
 	path = vim/snippets
 	url = https://github.com/scrooloose/snipmate-snippets.git
-[submodule "vim/bundle/wincent-Command-T"]
-	path = vim/bundle/wincent-Command-T
-	url = https://github.com/wincent/Command-T
 [submodule "vim/bundle/skwp-vim-git-grep-rails-partial"]
 	path = vim/bundle/skwp-vim-git-grep-rails-partial
 	url = https://github.com/skwp/vim-git-grep-rails-partial
@@ -196,3 +193,6 @@
 [submodule "vim/bundle/claco-jasmine"]
 	path = vim/bundle/claco-jasmine
 	url = https://github.com/claco/jasmine.vim
+[submodule "vim/bundle/skwp-Command-T"]
+	path = vim/bundle/skwp-Command-T
+	url = https://github.com/skwp/Command-T
