@@ -52,7 +52,7 @@ task :install => :submodules do
 end
 
 task :commandt do
-  Dir.chdir "vim/bundle/wincent-Command-T/ruby/command-t" do
+  Dir.chdir "vim/bundle/skwp-Command-T/ruby/command-t" do
     sh "ruby extconf.rb"
     sh "make clean && make"
   end
