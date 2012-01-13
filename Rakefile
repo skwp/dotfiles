@@ -2,10 +2,15 @@ require 'rake'
 
 desc "Hook our dotfiles into system-standard positions."
 task :install => :submodules do
-  linkables = Dir.glob('git/*')
-  linkables += Dir.glob('irb/*')
-  linkables += Dir.glob('{vim,vimrc}')
-  linkables += Dir.glob('zsh/zshrc')
+  # this has all the linkables from this directory.
+  linkables = []
+  linkables += Dir.glob('git/*') if want_to_install?('git')
+  linkables += Dir.glob('irb/*') if want_to_install?('irb/pry')
+  linkables += Dir.glob('{vim,vimrc}') if want_to_install?('vim')
+  linkables += Dir.glob('zsh/zshrc') if want_to_install?('zsh')
+
+  # this grabs all of them from the user's custom directory.
+  custom = Dir.glob("#{ENV["HOME"]}/.dotfiles/*").collect { |i| i.split('/').last }
 
   skip_all = false
   overwrite_all = false
@@ -16,11 +21,13 @@ task :install => :submodules do
     backup = false
 
     file = linkable.split('/').last
+    if (custom.include?(file))
+      source = "#{ENV["HOME"]}/.dotfiles/#{file}"
+    else
+      source = "#{ENV["PWD"]}/#{linkable}"
+    end
     target = "#{ENV["HOME"]}/.#{file}"
 
-    puts "--------"
-    puts "file:   #{file}"
-    puts "target: #{target}"
 
     if File.exists?(target) || File.symlink?(target)
       unless skip_all || overwrite_all || backup_all
@@ -36,14 +43,32 @@ task :install => :submodules do
       FileUtils.rm_rf(target) if overwrite || overwrite_all
       `mv "$HOME/.#{file}" "$HOME/.#{file}.backup"` if backup || backup_all
     end
-    `ln -s "$PWD/#{linkable}" "#{target}"`
+    puts "--------"
+    puts "file:   #{file}"
+    puts "source: #{source}"
+    puts "target: #{target}"
+    `ln -s "#{source}" "#{target}"`
+  end
+end
+
+task :commandt do
+  Dir.chdir "vim/bundle/wincent-Command-T/ruby/command-t" do
+    sh "ruby extconf.rb"
+    sh "make clean && make"
   end
 end
 
 desc "Init and update submodules."
 task :submodules do
-  sh("git submodule init")
-  sh("git submodule update")
+  # sh("git submodule init")
+  # sh("git submodule update")
 end
 
 task :default => 'install'
+
+private
+
+def want_to_install? (section)
+  puts "Would you like to install configuration files for: #{section}? [y]es, [n]o"
+  STDIN.gets.chomp == 'y'
+end
