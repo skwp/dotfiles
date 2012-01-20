@@ -200,10 +200,10 @@ Since the gitconfig doesn't contain the user info, I recommend using env variabl
 
 **Put the following in your ~/.secrets file which is automatically referenced by the provided zshrc:**
 
-    export GIT_AUTHOR_NAME=yourname
-    export GIT_AUTHOR_EMAIL=you@domain.com
-    export GIT_COMITTER_NAME=yourname
-    export GIT_COMITTER_EMAIL=you@domain.com
+    export GIT_AUTHOR_NAME="You Name"
+    export GIT_AUTHOR_EMAIL="you@domain.com"
+    export GIT_COMMITTER_NAME="Your Name"
+    export GIT_COMMITTER_EMAIL="you@domain.com"
 
 **Some of the customizations provided include:**
 
