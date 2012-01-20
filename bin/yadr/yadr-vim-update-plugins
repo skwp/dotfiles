@@ -7,7 +7,7 @@ GitStyleBinary.command do
 short_desc "Update all vim plugins to latest versions from github"
 
   run do |command|
-    system("cd ~/.dotfiles && git submodule foreach git pull origin master")
+    system("cd ~/.yadr && git submodule foreach git pull origin master")
   end
 
 end

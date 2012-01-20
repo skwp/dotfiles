@@ -7,12 +7,12 @@ GitStyleBinary.command do
 short_desc "Initialize all submodules. Run this every time you pull a new yadr version."
 
   run do |command|
-    system("cd ~/.dotfiles && git submodule init && git submodule update")
+    system("cd ~/.yadr && git submodule init && git submodule update")
     
     # Compile Command-T
-    if File.directory?(File.expand_path("~/.dotfiles/vim/bundle/skwp-Command-T"))
+    if File.directory?(File.expand_path("~/.yadr/vim/bundle/skwp-Command-T"))
       puts "Compiling Command-T plugin..."
-      system("cd ~/.dotfiles/vim/bundle/skwp-Command-T && rake make")
+      system("cd ~/.yadr/vim/bundle/skwp-Command-T && rake make")
     end
   end
 
