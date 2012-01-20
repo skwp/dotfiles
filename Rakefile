@@ -51,17 +51,9 @@ task :install => :submodules do
   end
 end
 
-task :commandt do
-  Dir.chdir "vim/bundle/skwp-Command-T/ruby/command-t" do
-    sh "ruby extconf.rb"
-    sh "make clean && make"
-  end
-end
-
 desc "Init and update submodules."
 task :submodules do
-  # sh("git submodule init")
-  # sh("git submodule update")
+  sh("bin/yadr/yadr-init-plugins")
 end
 
 task :default => 'install'
