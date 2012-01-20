@@ -3,10 +3,16 @@ source ~/.yadr/zsh/aliases
 source ~/.yadr/zsh/zsh_aliases
 
 # source every zsh file in user's .dotfiles
-for config_file ($HOME/.dotfiles/zsh/*) source $config_file
+if [[ -a ~/.dotfiles/zsh/ ]]
+then
+  for config_file (~/.dotfiles/zsh/*) source $config_file
+fi
 
 # Things I don't want to publish to github
-source ~/.secrets
+if [[ -a ~/.secrets ]]
+then
+  source ~/.secrets
+fi
 
 # Vim mode
 bindkey -v
