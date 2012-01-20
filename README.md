@@ -125,7 +125,6 @@ Please note that init-plugins will automatically compile the CommandT plugin for
 
 Customization
 --
-
 You may override YADR config files by creating a file of your own in
 `~/.dotfiles` and re-running `rake` from `~/.yadr`.
 
@@ -139,6 +138,16 @@ provided files.
 ~/.dotfiles/pryrc         ~/.yadr/irb/pryrc
 ~/.dotfiles/vimrc         ~/.yadr/vim/vimrc       # not recommended!
 ~/.dotfiles/zshrc         ~/.yadr/zsh/zshrc
+```
+
+Customizing ZSH
+---
+All files you place in `~/.dotfiles/zsh` will be sourced by the YADR
+`zshrc`. For example, to add [RVM](http://beginrescueend.com/):
+
+```bash
+mkdir ~/.dotfiles/zsh
+echo '[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"' > ~/.dotfiles/zsh/rvm
 ```
 
 
