@@ -49,6 +49,16 @@ task :install => :submodules do
     puts "target: #{target}"
     `ln -s "#{source}" "#{target}"`
   end
+
+  puts ""
+  puts "   _     _           _         "
+  puts "  | |   | |         | |        "
+  puts "  | |___| |_____  __| | ____   "
+  puts "  |_____  (____ |/ _  |/ ___)  "
+  puts "   _____| / ___ ( (_| | |      "
+  puts "  (_______\_____|\____|_|      "
+  puts ""
+  puts "YADR has been installed. Please restart your terminal and vim."
 end
 
 desc "Init and update submodules."
