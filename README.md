@@ -66,7 +66,7 @@ Prerequisites
 --
 
 YADR is opinionated. To get the most out of using it, you should install
-all the software it depends on. 
+all the software it depends on.
 
 [Homebrew](http://mxcl.github.com/homebrew/)
 ---
@@ -80,7 +80,17 @@ Homebrew is _the missing package manager for OSX_. To install:
 With homebrew installed, install some packages:
 
 ```bash
-brew install ack ctags git hub imagemagick macvim 
+brew install ack ctags git hub imagemagick macvim
+```
+
+ctags
+---
+
+Vim will complain every time you save a file if you do not have ctags installed correctly. Run this:
+
+```bash
+sudo mv /usr/bin/ctags /usr/bin/ctags_original
+which ctags     # should show /usr/local/bin/ctags
 ```
 
 [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
