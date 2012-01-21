@@ -193,6 +193,3 @@
 [submodule "vim/bundle/claco-jasmine"]
 	path = vim/bundle/claco-jasmine
 	url = https://github.com/claco/jasmine.vim
-[submodule "vim/bundle/skwp-Command-T"]
-	path = vim/bundle/skwp-Command-T
-	url = https://github.com/skwp/Command-T

@@ -1,13 +1,12 @@
 " Some color remaps
-" If statements and def statements should look similar 
-" so you can see the flow 
+" If statements and def statements should look similar
+" so you can see the flow
 hi! link rubyDefine rubyControl
 
 " This is a better cursor
 hi! link Cursor VisualNOS
 
-" This is a bit nicer visual selection, and
-" as a side bonus it makes CommandT look better
+" This is a bit nicer visual selection
 hi! link Visual DiffChange
 
 " Search is way too distracting in original Solarized
