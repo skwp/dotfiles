@@ -166,16 +166,13 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * \mm - set the next available mark (set a mark with mX where X is a letter, navigate to mark using 'X). Uppercase marks to mark files, lowercase marks to use within a file.
  * \ma - clear all marks
  * \mh - clear current mark
- * ,bb - toggle local anonymous bookmark at current location
- * ,bn ,bp - next and previous anonymous bookmark
- * ,bc - clear anonymous bookmarks
+ * ,Bt - toggle local anonymous bookmark at current location
+ * ,Bn ,Bp - next and previous anonymous bookmark
+ * ,Bc - clear anonymous bookmarks
 
  **LustyJuggler**
 
- * ,b - show buffers (LustyJuggler buffer search), just type to fuzzy match a buffer name
- * ,s - Show buffers in LustyJuggler (use asdfjkl home row keys to then select buffer)
- * ,lf - lusty file finder
- * ,lr - lusty file finder from current folder
+ * ,lj - show buffers (LustyJuggler buffer search), just type to fuzzy match a buffer name
 
  **Rails**
 
@@ -203,6 +200,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  **File Navigation**
 
  * ,t - Command-T fuzzy file selector
+ * ,b - Command-T buffer selector
  * ,jm jump (command-t) app/models
  * ,jc app/controllers
  * ,jv app/views
@@ -244,7 +242,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
 
  **NERDTree Project Tree**
 
- * ,m - NERDTree toggle
+ * Cmd-N - NERDTree toggle
  * Ctrl-\ - Show current file tree
 
  **Utility**

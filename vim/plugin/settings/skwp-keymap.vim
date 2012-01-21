@@ -2,6 +2,11 @@
 " General vim sanity improvements
 " ========================================
 "
+"
+" Change leader to a comma because the backslash is too far away
+" That means all \x commands turn into ,x
+let mapleader=","
+
 " alias yw to yank the entire word 'yank inner word'
 " even if the cursor is halfway inside the word
 " FIXME: will not properly repeat when you use a dot (tie into repeat.vim)
@@ -49,8 +54,8 @@ nnoremap ,. '.
 nmap ,ru :AV<CR>
 
 " ==== NERD tree
-" ,m is less stressful on the fingers than ,n
-nmap ,m :NERDTreeToggle<CR>
+" Cmd-Shift-N for nerd tree
+nmap <D-N> :NERDTreeToggle<CR>
 
 " ,q to toggle quickfix window (where you have stuff like GitGrep)
 " ,oq to open it back up (rare)
@@ -179,10 +184,10 @@ nmap sk :SplitjoinJoin<cr>
 " ============================
 "
 " Set anonymous bookmarks
-nmap ,bb :ToggleBookmark<cr>
-nmap ,bn :NextBookmark<cr>
-nmap ,bp :PreviousBookmark<cr>
-nmap ,bc :ClearBookmarks<cr>
+nmap ,Bb :ToggleBookmark<cr>
+nmap ,Bn :NextBookmark<cr>
+nmap ,Bp :PreviousBookmark<cr>
+nmap ,Bc :ClearBookmarks<cr>
 "
 " ============================
 " Abbreviations to use...
