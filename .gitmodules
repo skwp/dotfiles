@@ -193,3 +193,6 @@
 [submodule "vim/bundle/claco-jasmine"]
 	path = vim/bundle/claco-jasmine
 	url = https://github.com/claco/jasmine.vim
+[submodule "vim/bundle/ctrlp"]
+	path = vim/bundle/ctrlp
+	url = git://github.com/kien/ctrlp.vim.git
