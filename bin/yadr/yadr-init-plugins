@@ -2,18 +2,11 @@
 require File.join(File.dirname(__FILE__), 'default_libs')
 
 GitStyleBinary.command do
-  version "yadr-init-plugins 1.0" 
-
-short_desc "Initialize all submodules. Run this every time you pull a new yadr version."
+  version "yadr-init-plugins 1.0"
+  short_desc "Initialize all submodules. Run this every time you pull a new yadr version."
 
   run do |command|
-    system("cd ~/.dotfiles && git submodule init && git submodule update")
-    
-    # Compile Command-T
-    if File.directory?(File.expand_path("~/.dotfiles/vim/bundle/skwp-Command-T"))
-      puts "Compiling Command-T plugin..."
-      system("cd ~/.dotfiles/vim/bundle/skwp-Command-T && rake make")
-    end
+    system("cd ~/.yadr && git submodule init && git submodule update")
   end
 
 end

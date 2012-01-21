@@ -14,7 +14,7 @@ GitStyleBinary.command do
       begin
         repo=command[:url]
         bundle_path=repo.gsub("https://github.com/","").gsub(".git","").gsub("/","-").gsub(".vim","")
-        system("cd ~/.dotfiles && git submodule add #{repo} vim/bundle/#{bundle_path}")
+        system("cd ~/.yadr && git submodule add #{repo} vim/bundle/#{bundle_path}")
       rescue
         puts "Sorry, couldn't parse your path: #{$!}"
       end
