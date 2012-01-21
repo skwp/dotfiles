@@ -178,7 +178,7 @@ mnemonic aliases. Please feel free to edit them:
     ae # alias edit
     ar # alias reload
 
-**Customized zsh provided by ~/.dotfiles/zshrc:**
+**ZSH Customizations**
 
  * Vim mode
  * Bash style ctrl-R for reverse history finder
@@ -436,7 +436,7 @@ Adding your own vim plugins
 
 YADR comes with a dead simple plugin manager that just uses git submodules, without any fancy config files.
 
-    yav -u https://github.com/airblade/vim-rooter
+    yav git://github.com/airblade/vim-rooter.git
 
 You can update all the plugins easily:
 
