@@ -1,3 +1,6 @@
+# Find YADR
+YADR=`find ~ -type file -maxdepth 2 -name .yadr | head | sed 's/\.yadr//'`
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -35,18 +38,18 @@ plugins=(git)
 # Begin YADR specific
 
 # Configuration
-source ~/.yadr/zsh/aliases
-source ~/.yadr/zsh/zsh_aliases
+source $YADR/zsh/aliases
+source $YADR/zsh/zsh_aliases
+for function ($YADR/zsh/yadr-management/*) source $function
 
 # source every zsh file in user's .dotfiles
-if [[ -a ~/.dotfiles/zsh/ ]]
-then
+if [[ -d $HOME/.dotfiles/zsh/ ]] && [[ $HOME/.dotfiles/ != $YADR ]]; then
+  echo 'yuuuup'
   for config_file (~/.dotfiles/zsh/*) source $config_file
 fi
 
 # Things I don't want to publish to github
-if [[ -a ~/.secrets ]]
-then
+if [[ -a ~/.secrets ]] then
   source ~/.secrets
 fi
 
@@ -72,8 +75,3 @@ setopt auto_pushd
 zstyle ':completion:*' completer _complete _match _approximate
 zstyle ':completion:*:match:*' original only
 zstyle ':completion:*:approximate:*' max-errors 1 numeric
-
-# Add path to our custom bins
-export PATH=$PATH:~/.yadr/bin:~/.yadr/bin/yadr
-
-

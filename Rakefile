@@ -63,7 +63,13 @@ end
 
 desc "Init and update submodules."
 task :submodules do
-  sh("bin/yadr/yadr-init-plugins")
+  sh('git submodule init && git submodule update')
+  command_t = 'vim/bundle/skwp-Command-T'
+  if File.exists?(command_t) && File.directory?(command_t)
+    Dir.chdir(command_t) do
+      `rake make`
+    end
+  end
 end
 
 task :default => 'install'

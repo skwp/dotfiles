@@ -1,4 +1,0 @@
-#!/usr/bin/env ruby
-$:.unshift(File.dirname(__FILE__) + "/../../lib")
-VERSION="0.0.2" # just to test it
-require 'git-style-binary/command'
