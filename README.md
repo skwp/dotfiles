@@ -195,6 +195,9 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * ,gg - GitGrep command line with a quote pretyped (close the quote yourself)
  * ,gcp - GitGrep Current Partial to find references to the current view partial
  * // - clear the search
+ * ,q/ -  quickfix window with last search (stolen from Steve Losh)
+ * ,qa/ - quickfix Ack last search (Steve Losh)
+ * ,qg/ - quickfix GitGrep last search
  * ,T - Tag list (list of methods in a class)
 
  **File Navigation**
@@ -237,8 +240,8 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * vv - vertical split (Ctrl-w,v)
  * ss - horizontal split (Ctrl-w,s)
  * ,, - zoom a window to max size and again to unzoom it (ZoomWin plugin, usually C-w,o)
- * ,oq - open quickfix window (this is where output from GitGrep goes)
- * ,q  - close quickfix
+ * ,qo - open quickfix window (this is where output from GitGrep goes)
+ * ,qc - close quickfix
 
  **NERDTree Project Tree**
 

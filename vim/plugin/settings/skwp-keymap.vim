@@ -14,7 +14,7 @@ nnoremap ,yw yiww
 
 " ,ow = 'overwrite word', replace a word with what's in the yank buffer
 " FIXME: will not properly repeat when you use a dot (tie into repeat.vim)
-nnoremap ,ow viwp
+nnoremap ,ow "_diwhp
 
 "make Y consistent with C and D
 nnoremap Y y$
@@ -59,8 +59,8 @@ nmap <D-N> :NERDTreeToggle<CR>
 
 " ,q to toggle quickfix window (where you have stuff like GitGrep)
 " ,oq to open it back up (rare)
-nmap <silent> ,q :cclose<CR>
-nmap <silent> ,oq :copen<CR>
+nmap <silent> ,qc :cclose<CR>
+nmap <silent> ,qo :copen<CR>
 
 " move up/down quickly by using Ctrl-j, Ctrl-k
 " which will move us around by functions
