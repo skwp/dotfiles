@@ -313,6 +313,7 @@ Included vim plugins
  * textobj-datetime - gives you 'da' (date), 'df' (date full) and so on text objects. useable with all standard verbs
  * vim-textobj-entire - gives you 'e' for entire document. so vae (visual around entire document), and etc
  * vim-textobj-rubysymbol - gives you ':' textobj. so va: to select a ruby symbol. da: to delete a symbol..etc
+ * vim-textobj-function - gives you 'f' textobj. so vaf to select a function
  * next-textobject - from Steve Losh, ability to use 'n' such as vinb (visual inside (n)ext set of parens) 
 
  **Utils**
