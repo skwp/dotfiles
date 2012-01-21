@@ -67,6 +67,9 @@ nmap <silent> ,qo :copen<CR>
 nnoremap <silent> <C-j> }
 nnoremap <silent> <C-k> {
 
+autocmd FileType ruby map <buffer> <C-j> ]m
+autocmd FileType ruby map <buffer> <C-k> [m
+
 " Open the project tree and expose current file in the nerdtree with Ctrl-\
 nnoremap <silent> <C-\> :NERDTreeFind<CR>
 
