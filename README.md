@@ -163,9 +163,9 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
 
  **Marks**
 
- * \mm - set the next available mark (set a mark with mX where X is a letter, navigate to mark using 'X). Uppercase marks to mark files, lowercase marks to use within a file.
- * \ma - clear all marks
- * \mh - clear current mark
+ * ,mm - set the next available mark (set a mark with mX where X is a letter, navigate to mark using 'X). Uppercase marks to mark files, lowercase marks to use within a file.
+ * ,ma - clear all marks
+ * ,mh - clear current mark
  * ,Bt - toggle local anonymous bookmark at current location
  * ,Bn ,Bp - next and previous anonymous bookmark
  * ,Bc - clear anonymous bookmarks
@@ -177,7 +177,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  **Rails**
 
  * ,ru - Rails Unittest - synonym for :AV from rails.vim, opens up the corresponding test/spec to the file you're looking for, in a vertical split
- * \ss to run specs, \ll to run a given spec on a line - using my vim-ruby-conque plugin (https://github.com/skwp/vim-ruby-conque)
+ * ,ss to run specs, ,ll to run a given spec on a line - using my vim-ruby-conque plugin (https://github.com/skwp/vim-ruby-conque)
  * Cmd-Shift-R to use vim-rspec to run a spec file. Cmd-Shift-L to run from a line (individual it block)
 
  **Surround.vim customizations**
@@ -250,7 +250,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
 
  **Utility**
 
- * \ig - toggle visual indentation guides
+ * ,ig - toggle visual indentation guides
  * ,cf - Copy Filename of current file into system (not vi) paste buffer
  * ,cc - (Current command) copies the command under your cursor and executes it in vim. Great for testing single line changes to vimrc.
  * ,yw - yank a word from anywhere within the word (so you don't have to go to the beginning of it)
@@ -272,13 +272,13 @@ Included vim plugins
 
  * NERDTree - everyone's favorite tree browser
  * NERDTree-tabs - makes NERDTree play nice with MacVim tabs so that it's on every tab
- * ShowMarks - creates a visual gutter to the left of the number column showing you your marks (saved locations). use \mt to toggle it, \mm to place the next available mark, \mh to delete, \ma to clear all. Use standard vim mark navigation ('X) for mark named X.
- * EasyMotion - hit \\w (forward) or \\b (back) and watch the magic happen. just type the letters and jump directly to your target - in the provided vimrc the keys are optimized for home and upper row, no pinkies
+ * ShowMarks - creates a visual gutter to the left of the number column showing you your marks 
+ * EasyMotion - hit ,,w (forward) or ,,b (back) and watch the magic happen. just type the letters and jump directly to your target - in the provided vimrc the keys are optimized for home and upper row, no pinkies
  * LustyJuggler/Explorer - hit B, type buf name to match a buffer, or type S and use the home row keys to select a buffer
  * TagList - hit ,T to see a list of methods in a class (uses ctags)
  * CommandT - ,t to find a file
  * VimBookmarks - toggle an anonymous bookmark ,bb and go thru them ,bn ,bp and clear them ,bc
- * TabMan - hit \mt to see all tabs and buffers in a tree. Easy to navigate and close.
+ * TabMan - hit ,mt to see all tabs and buffers in a tree. Easy to navigate and close.
 
  **Git**
 
@@ -321,15 +321,14 @@ Included vim plugins
  * surround - super easy quote and tag manipulation - ysiw" - sourround inner word with quotes. ci"' - change inner double quotes to single quotes, etc
  * greplace - use :Gsearch to find across many files, replace inside the changes, then :Greplace to do a replace across all matches
  * ConqueTerm - embedded fully colorful shell inside your vim
- * vim-ruby-conque - helpers to run ruby,rspec,rake within ConqueTerm - use \rr (ruby), \ss (rspec), \ll (rspec line), \RR (rake)
+ * vim-ruby-conque - helpers to run ruby,rspec,rake within ConqueTerm - use ,rr (ruby), ,ss (rspec), ,ll (rspec line), ,RR (rake)
  * vim-rspec - really clean and colorful rspec output (Cmd-Shift-R) with ability to navigate directly to error; will replace vim-ruby-conque when I do a couple enhancements/bug fixes
- * ruby_focused_unit_test - helpers to run tests/specs with \t
  * vim-markdown-preview - :Mm to view your README.md as html
  * html-escape - hit ctrl-h to escape html
  * ruby-debug-ide - not quite working for me, but maybe it will for you. supposedly a graphical debugger you can step through
  * Gundo - visualize your undos - pretty amazing plugin. Hit ,u with my keymappings to trigger it, very user friendly
  * slime - use ctrl-c,ctrl-c to send text to a running irb/pry/console. To start the console, you must use screen with a named session: "screen -S [name] [cmd]", ex: "screen -S pry pry"
- * vim-indent-guides - use \gi to turn on visual indentation guides. off by default
+ * vim-indent-guides - visual indent guides, off by default
 
  **General enhancements that don't add new commands**
 
