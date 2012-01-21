@@ -20,3 +20,12 @@ hi clear Question
 hi! Question guifg=yellow
 
 hi! link TagListFileName  Question
+
+" For jasmine.vim
+hi! link specFunctions rubyDefine
+hi! link specMatcher rubyConstant
+hi! link specSpys rubyConstant
+
+" Ruby, slightly better colors for solarized
+hi! link rubyStringDelimiter rubyConstant
+hi! link rubyInterpolationDelimiter rubyConstant
