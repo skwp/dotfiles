@@ -85,9 +85,6 @@ nnoremap <silent> ,f <C-]>
 "toggle between last two buffers with Z (normally ctrl-shift-6)
 nnoremap <silent> ,z <C-^>
 
-"git grep the current word using K (mnemonic Kurrent)
-nnoremap <silent> K :GitGrep <cword><CR>
-
 " ==============================
 " Window/Tab/Split Manipulation
 " ==============================
