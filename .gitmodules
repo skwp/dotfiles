@@ -199,3 +199,9 @@
 [submodule "vim/bundle/kana-vim-textobj-function"]
 	path = vim/bundle/kana-vim-textobj-function
 	url = https://github.com/kana/vim-textobj-function
+[submodule "vim/bundle/kchmck-vim-coffee-script"]
+	path = vim/bundle/kchmck-vim-coffee-script
+	url = https://github.com/kchmck/vim-coffee-script
+[submodule "vim/bundle/wavded-vim-stylus"]
+	path = vim/bundle/wavded-vim-stylus
+	url = https://github.com/wavded/vim-stylus

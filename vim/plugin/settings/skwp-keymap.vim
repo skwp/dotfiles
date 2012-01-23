@@ -48,6 +48,15 @@ nnoremap ; :
 "Go to last edit location with ,.
 nnoremap ,. '.
 
+"When typing a string, your quotes auto complete. Move past the quote
+"while still in insert mode by hitting Ctrl-a. Example:
+"
+" type 'foo<c-a>
+"
+" the first quote will autoclose so you'll get 'foo' and hitting <c-a> will
+" put the cursor right after the quote
+imap <C-a> <esc>wa
+
 " ================== rails.vim
 "
 " Open corresponding unittest (or spec), alias for :AV in rails.vim
