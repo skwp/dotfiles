@@ -1,5 +1,5 @@
 # Find YADR
-YADR=`find ~ -type file -maxdepth 2 -name .yadr | head | sed 's/\.yadr//'`
+YADR=`find -L ~ -type file -maxdepth 2 -name .yadr | head | sed 's/\.yadr//'`
 
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
@@ -44,7 +44,6 @@ for function ($YADR/zsh/yadr-management/*) source $function
 
 # source every zsh file in user's .dotfiles
 if [[ -d $HOME/.dotfiles/zsh/ ]] && [[ $HOME/.dotfiles/ != $YADR ]]; then
-  echo 'yuuuup'
   for config_file (~/.dotfiles/zsh/*) source $config_file
 fi
 
