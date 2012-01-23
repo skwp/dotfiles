@@ -29,3 +29,9 @@ hi! link specSpys rubyConstant
 " Ruby, slightly better colors for solarized
 hi! link rubyStringDelimiter rubyConstant
 hi! link rubyInterpolationDelimiter rubyConstant
+hi! link rubySymbol rubyBlockParameter
+
+" For R and other languages that use Delimiters, we don't want them red
+hi! link Delimiter Identifier
+hi! link rDollar Identifier
+
