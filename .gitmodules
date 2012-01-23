@@ -205,3 +205,6 @@
 [submodule "vim/bundle/wavded-vim-stylus"]
 	path = vim/bundle/wavded-vim-stylus
 	url = https://github.com/wavded/vim-stylus
+[submodule "vim/bundle/vim-scripts-Vim-R-plugin"]
+	path = vim/bundle/vim-scripts-Vim-R-plugin
+	url = https://github.com/vim-scripts/Vim-R-plugin
