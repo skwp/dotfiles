@@ -375,10 +375,15 @@ Since the gitconfig doesn't contain the user info, I recommend using env variabl
 
 **Put the following in your ~/.secrets file which is automatically referenced by the provided zshrc:**
 
-    export GIT_AUTHOR_NAME=yourname
-    export GIT_AUTHOR_EMAIL=you@domain.com
-    export GIT_COMITTER_NAME=yourname
-    export GIT_COMITTER_EMAIL=you@domain.com
+    # Set your git user info
+    export GIT_AUTHOR_NAME='You Name'
+    export GIT_AUTHOR_EMAIL='you@domain.com'
+    export GIT_COMMITTER_NAME='Your Name'
+    export GIT_COMMITTER_EMAIL='you@domain.com'
+
+    # Optionally, set your GitHub credentials
+    export GITHUB_USER='your_user_name'
+    export GITHUB_TOKEN='your_github_token'
 
 **Some of the customizations provided include:**
 
@@ -440,3 +445,4 @@ COMING SOON
 For more tips and tricks
 ---
 Follow my blog: http://yanpritzker.com
+
