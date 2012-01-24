@@ -58,8 +58,7 @@ For the love of all that is holy, stop abusing your hands!
 Remap caps-lock to escape: http://pqrs.org/macosx/keyremap4macbook/extra.html
 
 
-Prerequisites
---
+## Dependencies
 
 YADR is opinionated. To get the most out of using it, you should install
 all the software it depends on.
