@@ -510,10 +510,14 @@ And everything that's in the modules included in vim/bundle of course.
 Please explore these people's work.
 
 
-### Comming Soon
+### Coming Soon
 
  * Automatic installation setup
 
+### Contributors
+
+ * Initial Version: @skwp
+ * Cleanup, auto installer: @kylewest
 
 ### For more tips and tricks
 
