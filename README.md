@@ -58,6 +58,59 @@ For the love of all that is holy, stop abusing your hands!
 Remap caps-lock to escape: http://pqrs.org/macosx/keyremap4macbook/extra.html
 
 
+Prerequisites
+--
+
+YADR is opinionated. To get the most out of using it, you should install
+all the software it depends on.
+
+[Homebrew](http://mxcl.github.com/homebrew/)
+---
+
+Homebrew is _the missing package manager for OSX_. To install:
+
+```bash
+/usr/bin/ruby -e "$(curl -fsSL https://raw.github.com/gist/323731)"
+```
+
+With homebrew installed, install some packages:
+
+```bash
+brew install ack ctags git hub imagemagick macvim
+```
+
+[ctags](http://ctags.sourceforge.net/)
+---
+
+Vim will complain every time you save a file if you do not have ctags installed correctly. We
+assume you have installed ctags via homebrew. If you have homebrew setup correctly running
+`which ctags` should output `/usr/local/bin/ctags`. If you get something else do this:
+
+Make sure `/usr/local/bin` is before `/usr/bin` in your PATH.
+
+If that doesn't work, move the OSX supplies ctags [like so](http://www.mattpolito.info/post/1648956809/ctags-got-you-down):
+
+```bash
+sudo mv /usr/bin/ctags /usr/bin/ctags_original
+```
+
+[oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
+---
+
+```bash
+curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+```
+
+[Pry](http://pry.github.com/)
+---
+Pry offers a much better out of the box IRB experience with colors, tab completion, and lots of other tricks. You should:
+
+```bash
+gem install pry
+gem install awesome_print
+```
+
+
 ## Installation
 
 This project uses git submodules for its plugins, but this is handled
