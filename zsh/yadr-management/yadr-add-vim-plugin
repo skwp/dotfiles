@@ -1,0 +1,11 @@
+function yadr-add-vim-plugin(){
+  local original_directory=$(pwd)
+  local submodule_name=`echo $1 | sed 's/\.git$//' | cut -d / -f 5`
+
+  if [[ -d $YADR ]]; then
+    cd $YADR
+    git submodule add $1 $YADR/vim/bundle/${submodule_name}
+  fi
+
+  cd $original_directory
+}

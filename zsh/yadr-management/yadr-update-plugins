@@ -1,0 +1,15 @@
+function yadr-init-plugins(){
+  local original_directory=$(pwd)
+
+  if [[ -d $YADR ]]; then
+    cd $YADR && git submodule init && git submodule update
+  fi
+
+  if [[ -d $YADR/vim/bundle/skwp-Command-T ]]; then
+    echo "Compiling Command-T Plugin..."
+    cd $YADR/vim/bundle/skwp-Command-T
+    rake make
+  fi
+
+  cd $original_directory
+}

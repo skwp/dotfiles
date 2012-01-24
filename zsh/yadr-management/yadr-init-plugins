@@ -1,0 +1,9 @@
+function yadr-update-plugins(){
+  local original_directory=$(pwd)
+
+  if [[ -d $YADR ]]; then
+    cd $YADR && git submodule foreach git pull origin master
+  fi
+
+  cd $original_directory
+}

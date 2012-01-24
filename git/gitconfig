@@ -36,7 +36,7 @@
   t = tag -n
 
   # create and switch to a new branch (mnemonic: "git new branch branchname...")
-  nb = checkout -b  
+  nb = checkout -b
 
   stat = status
   s = status
@@ -57,14 +57,14 @@
 
   # nice logs
   changes = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\" --name-status
-  short = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\" 
-  changelog = log --pretty=format:\" * %s\" 
-  shortnocolor = log --pretty=format:\"%h %cr %cn %s\" 
+  short = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\"
+  changelog = log --pretty=format:\" * %s\"
+  shortnocolor = log --pretty=format:\"%h %cr %cn %s\"
 
   # svn helpers
   svnr = svn rebase
   svnd = svn dcommit
-  svnl = svn log --oneline --show-commit 
+  svnl = svn log --oneline --show-commit
 
   drop = !sh -c 'git add . && git stash && git stash drop'
   grab = !sh -c 'git-grab.sh'
@@ -80,16 +80,16 @@
 [push]
   # 'git push' will push the current branch to its tracking branch
   # the usual default is to push all branches
-  default = tracking 
+  default = tracking
 [core]
   autocrlf = false
   editor = /usr/bin/vim
-  excludesfile = ~/.dotfiles/gitignore_global
+  excludesfile = ~/.gitignore
 
 [advice]
   statusHints = false
 [diff]
-  # Git diff will use (i)ndex, (w)ork tree, (c)ommit and (o)bject 
+  # Git diff will use (i)ndex, (w)ork tree, (c)ommit and (o)bject
   # instead of a/b/c/d as prefixes for patches
   mnemonicprefix = true
 

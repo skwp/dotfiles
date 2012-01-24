@@ -1,9 +1,44 @@
+# Find YADR
+YADR=`find -L ~ -type file -maxdepth 2 -name .yadr | head | sed 's/\.yadr//'`
+
+# Path to your oh-my-zsh configuration.
+ZSH=$HOME/.oh-my-zsh
+
+# Set name of the theme to load.
+ZSH_THEME="robbyrussell"
+
+# Default plugins.
+plugins=(git)
+
+# -------------------
+# Begin YADR specific
+# ===================
+
+# source every zsh file in user's .dotfiles
+if [[ -d $HOME/.dotfiles/zsh/before/ ]] && [[ $HOME/.dotfiles/ != $YADR ]]; then
+  for config_file (~/.dotfiles/zsh/before/**/*.zsh) source $config_file
+fi
+
+# Source oh-my-zsh
+source $ZSH/oh-my-zsh.sh
+
 # Configuration
-source ~/.dotfiles/zsh/aliases
-source ~/.dotfiles/zsh/zsh_aliases
+source $YADR/zsh/aliases
+source $YADR/zsh/zsh_aliases
+for function ($YADR/zsh/yadr-management/*) source $function
+
+# ------------------
+# zsh/after
+# ==================
+# source every zsh file in user's .dotfiles
+if [[ -d $HOME/.dotfiles/zsh/after/ ]] && [[ $HOME/.dotfiles/ != $YADR ]]; then
+  for config_file (~/.dotfiles/zsh/after/**/*.zsh) source $config_file
+fi
 
 # Things I don't want to publish to github
-source ~/.secrets
+if [[ -a ~/.secrets ]] then
+  source ~/.secrets
+fi
 
 # Vim mode
 bindkey -v
@@ -13,8 +48,8 @@ bindkey '^R' history-incremental-search-backward
 
 # Speed up git completion
 # http://talkings.org/post/5236392664/zsh-and-slow-git-completion
-__git_files () { 
-  _wanted files expl 'local files' _files 
+__git_files () {
+  _wanted files expl 'local files' _files
 }
 
 # Always pushd when changing directory
@@ -25,8 +60,3 @@ zstyle ':completion:*' completer _complete _match _approximate
 zstyle ':completion:*:match:*' original only
 zstyle ':completion:*:approximate:*' max-errors 1 numeric
 
-# RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" 
-
-# Add path to our custom bins
-export PATH=$PATH:~/.dotfiles/bin:~/.dotfiles/bin/yadr

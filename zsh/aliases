@@ -1,9 +1,9 @@
 # Aliases in this file are bash and zsh compatible
 
 # YADR support
-alias yav='yadr vim-add-plugin'
-alias yuv='yadr vim-update-plugins'
-alias yip='yadr init-plugins'
+alias yav='yadr-add-vim-plugin'
+alias yuv='yadr-update-plugins'
+alias yip='yadr-init-plugins'
 
 # PS
 alias psg="ps aux | grep "
@@ -23,8 +23,8 @@ alias du='du -h -d 2'
 alias lsg='ll | grep'
 
 # Alias Editing
-alias ae='vi ~/.dotfiles/zsh/aliases' #alias edit
-alias ar='source ~/.dotfiles/zsh/aliases'  #alias reload
+alias ae='vi $YADR/zsh/aliases' #alias edit
+alias ar='source $YADR/zsh/aliases'  #alias reload
 
 # vimrc editing
 alias ve='vi ~/.vimrc'
@@ -71,7 +71,7 @@ alias gplr='git pull --rebase'
 alias gps='git push'
 alias gpsh='git push'
 alias gnb='git nb' # new branch aka checkout -b
-alias grs='git reset' 
+alias grs='git reset'
 alias grsh='git reset --hard'
 alias gcln='git clean'
 alias gclndf='git clean -df'
