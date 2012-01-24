@@ -22,7 +22,7 @@ set gcr=a:blinkon0              "Disable cursor blink
 set autoread                    "Reload files changed outside vim
 
 " This makes vim act like all other editors, buffers can
-" exist in the background without being in a window. 
+" exist in the background without being in a window.
 " http://items.sjbach.com/319/configuring-vim-right
 set hidden
 
@@ -80,7 +80,8 @@ set nofoldenable        "dont fold by default
 set wildmode=list:longest
 set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
 set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
-set wildignore+=*/.git/*,*/.hg/*,*/.svn/*   " for Linux/MacOSX
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
+set wildignore+=*vim/backups*
 
 "
 

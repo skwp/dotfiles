@@ -79,7 +79,6 @@ yadr init-plugins
 ```
 
 After you install yadr shell aliases, you can use the *yip* alias to do the same.
-Please note that init-plugins will automatically compile the CommandT plugin for you.
 
 
 ### Setup for ZSH
@@ -256,8 +255,9 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
 
  **File Navigation**
 
- * ,t - Command-T fuzzy file selector
- * ,b - Command-T buffer selector
+ * ,t - CtrlP fuzzy file selector
+ * ,b - CtrlP buffer selector
+ * Cmd-Shift-P - Clear CtrlP cache
  * ,jm jump (command-t) app/models
  * ,jc app/controllers
  * ,jv app/views
@@ -329,8 +329,8 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * ShowMarks - creates a visual gutter to the left of the number column showing you your marks
  * EasyMotion - hit ,,w (forward) or ,,b (back) and watch the magic happen. just type the letters and jump directly to your target - in the provided vimrc the keys are optimized for home and upper row, no pinkies
  * LustyJuggler/Explorer - hit B, type buf name to match a buffer, or type S and use the home row keys to select a buffer
- * TagList - hit ,T to see a list of methods in a class (uses ctags)
- * CommandT - ,t to find a file
+ * TagBar - hit ,T to see a list of methods in a class (uses ctags)
+ * CtrlP - Ctrl-p or ,t to find a file
  * VimBookmarks - toggle an anonymous bookmark ,bb and go thru them ,bn ,bp and clear them ,bc
  * TabMan - hit ,mt to see all tabs and buffers in a tree. Easy to navigate and close.
 
