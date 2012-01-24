@@ -18,8 +18,8 @@
 This is a collection of best of breed tools from across the web,
 from scouring other people's dotfile repos, blogs, and projects.
 
-What is YADR?
----
+
+## What is YADR?
 
 **YADR is an opinionated dotfile repo that will make your heart sing**
 
@@ -32,8 +32,8 @@ What is YADR?
   * **NEW Beautiful, easy to read and small vimrc**
   * **NEW No key overrides or custom hackery in vimrc, everything in well factored snippets in .vim/plugin/settings**
 
-Why is this not a fork of Janus?
----
+
+## Why is this not a fork of Janus?
 Janus is an amazing _first effort_ to deliver a ready-to-use vim setup and is a huge inspiration to us all.
 
 **However as any first effort, it paves the way to improvements:**
@@ -47,24 +47,26 @@ Janus is an amazing _first effort_ to deliver a ready-to-use vim setup and is a 
   * All keymaps and customization in small, easy to maintain files under .vim/plugin/settings
   * More than just vim plugins - great shell aliases, osx, and irb/pry tweaks to make you more productive.
 
-Screenshot
----
+
+## Screenshot
 ![screenshot](http://i.imgur.com/lEFlF.png)
 
-Before you start
----
+
+## Before you start
 
 For the love of all that is holy, stop abusing your hands!
 Remap caps-lock to escape: http://pqrs.org/macosx/keyremap4macbook/extra.html
 
-Installation
----
+
+## Installation
 
 This project uses git submodules for its plugins, but this is handled
 for you by the **yadr** command. Please run:
 
+    ```bash
     git clone https://github.com/skwp/dotfiles ~/.dotfiles
     ~/.dotfiles/bin/yadr/yadr init-plugins
+    ```
 
 NOTE: by default, YADR will not touch any of your files. You have to manually
 activate each of its components, if you choose, by following the sections below.
@@ -77,8 +79,9 @@ If you pull new changes, be sure to run this to init all the submodules:
 After you install yadr shell aliases, you can use the *yip* alias to do the same.
 Please note that init-plugins will automatically compile the CommandT plugin for you.
 
-Setup for ZSH
----
+
+### Setup for ZSH
+
 After a lifetime of bash, I am now using ZSH as my default shell because of its awesome globbing
 and autocomplete features (the spelling fixer autocomplete is worth the money alone).
 
@@ -90,7 +93,9 @@ you just source the _aliases_ file. However, you soul will sing if you install z
 
 **Install zsh pain free, automatically:**
 
-    wget --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
+    ```bash
+    curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+    ```
 
 Place this as the last line in your ~/.zshrc created by oh-my-zsh:
 
@@ -113,15 +118,17 @@ mnemonic aliases. Please feel free to edit them:
  * Bash style ctrl-R for reverse history finder
  * Fuzzy matching - if you mistype a directory name, tab completion will fix it
 
-Setup for Pry
----
+
+### Setup for Pry
 Pry (http://pry.github.com/) offers a much better out of the box IRB experience
 with colors, tab completion, and lots of other tricks. You should:
 
+    ```bash
     gem install pry
     gem install awesome_print
     ln -s ~/.dotfiles/irb/pryrc ~/.pryrc
     ln -s ~/.dotfiles/irb/aprc ~/.aprc
+    ```
 
 **Use pry**
 
@@ -136,19 +143,61 @@ with colors, tab completion, and lots of other tricks. You should:
  * a few color modifications to make it more useable
  * type 'help' to see all the commands
 
-Setup for Vim
----
+
+### Setup for Git
+
+**To use the gitconfig (some of the git bash aliases rely on my git aliases)**
+
+    ```bash
+    ln -s ~/.dotfiles/gitconfig ~/.gitconfig
+    ```
+
+Since the gitconfig doesn't contain the user info, I recommend using env variables.
+
+**Put the following in your ~/.secrets file which is automatically referenced by the provided zshrc:**
+
+    # Set your git user info
+    export GIT_AUTHOR_NAME='Your Name'
+    export GIT_AUTHOR_EMAIL='you@domain.com'
+    export GIT_COMMITTER_NAME='Your Name'
+    export GIT_COMMITTER_EMAIL='you@domain.com'
+
+    # Optionally, set your GitHub credentials
+    export GITHUB_USER='your_user_name'
+    export GITHUB_TOKEN='your_github_token'
+
+**Some of the customizations provided include:**
+
+  * git l - a much more usable git log
+  * git b - a list of branches with summary of last commit
+  * git r - a list of remotes with info
+  * git t - a list of tags with info
+  * git nb - a (n)ew (b)ranch - like checkout -b
+  * git cp - cherry-pick -x (showing what was cherrypicked)
+  * git changelog - a nice format for creating changelogs
+  * Some sensible default configs, such as improving merge messages, push only pushes the current branch, removing status hints, and using mnemonic prefixes in diff: (i)ndex, (w)ork tree, (c)ommit and (o)bject
+  * Slightly imrpoved colors for diff
+  * git unstage (remove from index) and git uncommit (revert to the time prior to the last commit - dangerous if already pushed) aliases
+
+
+### Setup for Vim
+
 To use the vim files:
 
+    ```bash
     ln -s ~/.dotfiles/vimrc ~/.vimrc
     ln -s ~/.dotfiles/vim ~/.vim
+    ```
 
 The .vimrc is well commented and broken up by settings. I encourage you
 to take a look and learn some of my handy aliases, or comment them out
 if you don't like them, or make your own.
 
-Vim Keymaps (in vim/plugin/settings)
----
+
+## Vim Configuration
+
+
+### Vim Keymaps (in vim/plugin/settings)
 
 The files in vim/plugin/settings are customizations stored on a per-plugin
 basis. The main keymap is available in skwp-keymap.vim, but some of the vim
@@ -266,14 +315,14 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * Cmd-/ - toggle comments (usually gcc from tComment)
  * gcp (comment a paragraph)
 
-Included vim plugins
----
+
+### Included vim plugins
 
  **Navigation**
 
  * NERDTree - everyone's favorite tree browser
  * NERDTree-tabs - makes NERDTree play nice with MacVim tabs so that it's on every tab
- * ShowMarks - creates a visual gutter to the left of the number column showing you your marks 
+ * ShowMarks - creates a visual gutter to the left of the number column showing you your marks
  * EasyMotion - hit ,,w (forward) or ,,b (back) and watch the magic happen. just type the letters and jump directly to your target - in the provided vimrc the keys are optimized for home and upper row, no pinkies
  * LustyJuggler/Explorer - hit B, type buf name to match a buffer, or type S and use the home row keys to select a buffer
  * TagList - hit ,T to see a list of methods in a class (uses ctags)
@@ -316,7 +365,7 @@ Included vim plugins
  * vim-textobj-entire - gives you 'e' for entire document. so vae (visual around entire document), and etc
  * vim-textobj-rubysymbol - gives you ':' textobj. so va: to select a ruby symbol. da: to delete a symbol..etc
  * vim-textobj-function - gives you 'f' textobj. so vaf to select a function
- * next-textobject - from Steve Losh, ability to use 'n' such as vinb (visual inside (n)ext set of parens) 
+ * next-textobject - from Steve Losh, ability to use 'n' such as vinb (visual inside (n)ext set of parens)
 
  **Utils**
 
@@ -347,8 +396,7 @@ Included vim plugins
  * sass-status - decorates your status bar with full nesting of where you are in the sass file
 
 
-Adding your own vim plugins
----
+### Adding your own vim plugins
 
 YADR comes with a dead simple plugin manager that just uses git submodules, without any fancy config files.
 
@@ -365,41 +413,11 @@ Delete a plugin (Coming Soon)
 The aliases (yav=yadr vim-add-plugin) and (yuv=yadr vim-update-all-plugins) live in the aliases file.
 You can then commit the change. It's good to have your own fork of this project to do that.
 
-Setup for Git
----
-**To use the gitconfig (some of the git bash aliases rely on my git aliases)**
 
-    ln -s ~/.dotfiles/gitconfig ~/.gitconfig
+## Miscellaneous
 
-Since the gitconfig doesn't contain the user info, I recommend using env variables.
 
-**Put the following in your ~/.secrets file which is automatically referenced by the provided zshrc:**
-
-    # Set your git user info
-    export GIT_AUTHOR_NAME='Your Name'
-    export GIT_AUTHOR_EMAIL='you@domain.com'
-    export GIT_COMMITTER_NAME='Your Name'
-    export GIT_COMMITTER_EMAIL='you@domain.com'
-
-    # Optionally, set your GitHub credentials
-    export GITHUB_USER='your_user_name'
-    export GITHUB_TOKEN='your_github_token'
-
-**Some of the customizations provided include:**
-
-  * git l - a much more usable git log
-  * git b - a list of branches with summary of last commit
-  * git r - a list of remotes with info
-  * git t - a list of tags with info
-  * git nb - a (n)ew (b)ranch - like checkout -b
-  * git cp - cherry-pick -x (showing what was cherrypicked)
-  * git changelog - a nice format for creating changelogs
-  * Some sensible default configs, such as improving merge messages, push only pushes the current branch, removing status hints, and using mnemonic prefixes in diff: (i)ndex, (w)ork tree, (c)ommit and (o)bject
-  * Slightly imrpoved colors for diff
-  * git unstage (remove from index) and git uncommit (revert to the time prior to the last commit - dangerous if already pushed) aliases
-
-OSX Hacks
----
+### OSX Hacks
 The osx file is a bash script that sets up sensible defaults for devs and power users
 under osx. Read through it before running it. To use:
 
@@ -411,15 +429,16 @@ These hacks are Lion-centric. May not work for other OS'es. My favorite mods inc
   * No disk image verification (downloaded files open quicker)
   * Display the ~/Library folder in finder (hidden in Lion)
 
-Other recommended OSX tools
----
+
+### Other recommended OSX tools
+
  * NValt - Notational Velocity alternative fork - http://brettterpstra.com/project/nvalt/ - syncs with SimpleNote
  * Vimium for Chrome - vim style browsing. The 'f' to type the two char alias of any link is worth it.
  * QuickCursor - gives you Apple-Shift-E to edit any OSX text field in vim.
  * brew install autojump - will track your commonly used directories and let you jump there. With the zsh plugin you can just type 'j [dirspec]', a few letters of the dir you want to go to.]'
 
-Credits
----
+
+### Credits
 
 I can't take credit for all of this. The vim files are a combination of
 work by tpope, scrooloose, and many hours of scouring blogs, vimscripts,
@@ -437,12 +456,14 @@ and other places for the cream of the crop of vim awesomeness.
 And everything that's in the modules included in vim/bundle of course.
 Please explore these people's work.
 
-COMING SOON
----
+
+### Comming Soon
+
  * Better isolation of customizations in smaller chunks, maybe as plugins
  * Automatic setup script to symlink all dotfiles, or just some selectively
 
-For more tips and tricks
----
+
+### For more tips and tricks
+
 Follow my blog: http://yanpritzker.com
 
