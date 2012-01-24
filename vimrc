@@ -80,6 +80,9 @@ set nofoldenable        "dont fold by default
 set wildmode=list:longest
 set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
 set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*   " for Linux/MacOSX
+
+"
 
 " ================ Scrolling ========================
 
