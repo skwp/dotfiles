@@ -342,9 +342,9 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
 
  * vv - vertical split (Ctrl-w,v)
  * ss - horizontal split (Ctrl-w,s)
- * ,, - zoom a window to max size and again to unzoom it (ZoomWin plugin, usually C-w,o)
  * ,qo - open quickfix window (this is where output from GitGrep goes)
  * ,qc - close quickfix
+ * ,gz - zoom a window to max size and again to unzoom it (ZoomWin plugin, usually C-w,o)
 
  **NERDTree Project Tree**
 
@@ -512,8 +512,7 @@ Please explore these people's work.
 
 ### Comming Soon
 
- * Better isolation of customizations in smaller chunks, maybe as plugins
- * Automatic setup script to symlink all dotfiles, or just some selectively
+ * Automatic installation setup
 
 
 ### For more tips and tricks

@@ -113,7 +113,7 @@ map <silent> <C-H> :tabprevious<cr>
 map <silent> <C-L> :tabnext<cr>
 
 " Zoom in and out of current window with ,,
-map <silent> ,, <C-w>o
+map <silent> ,gz <C-w>o
 
 " Use numbers to pick the tab you want (like iTerm)
 map <silent> <D-1> :tabn 1<cr>
@@ -133,6 +133,9 @@ map <silent> <D-0> :tabn 0<cr>
 nnoremap <silent> vv <C-w>v
 nnoremap <silent> ss <C-w>s
 
+
+"open the taglist (method browser) using ,t
+nnoremap <silent> ,T :TlistToggle<CR>
 
 " create <%= foo %> erb tags using Ctrl-k in edit mode
 imap <silent> <C-K> <%=   %><Esc>3hi
