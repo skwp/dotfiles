@@ -134,9 +134,6 @@ nnoremap <silent> vv <C-w>v
 nnoremap <silent> ss <C-w>s
 
 
-"open the taglist (method browser) using ,t
-nnoremap <silent> ,T :TlistToggle<CR>
-
 " create <%= foo %> erb tags using Ctrl-k in edit mode
 imap <silent> <C-K> <%=   %><Esc>3hi
 

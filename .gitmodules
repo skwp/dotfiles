@@ -208,3 +208,6 @@
 [submodule "vim/bundle/kien-ctrlp"]
 	path = vim/bundle/kien-ctrlp
 	url = https://github.com/kien/ctrlp.vim
+[submodule "vim/bundle/majutsushi-tagbar"]
+	path = vim/bundle/majutsushi-tagbar
+	url = https://github.com/majutsushi/tagbar.git
