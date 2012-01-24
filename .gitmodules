@@ -208,3 +208,6 @@
 [submodule "vim/bundle/vim-scripts-Vim-R-plugin"]
 	path = vim/bundle/vim-scripts-Vim-R-plugin
 	url = https://github.com/vim-scripts/Vim-R-plugin
+[submodule "vim/bundle/kien-ctrlp"]
+	path = vim/bundle/kien-ctrlp
+	url = https://github.com/kien/ctrlp.vim
