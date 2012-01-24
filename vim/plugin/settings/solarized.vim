@@ -6,8 +6,7 @@ hi! link rubyDefine rubyControl
 " This is a better cursor
 hi! link Cursor VisualNOS
 
-" This is a bit nicer visual selection, and
-" as a side bonus it makes CommandT look better
+" This is a bit nicer visual selection
 hi! link Visual DiffChange
 
 " Search is way too distracting in original Solarized
@@ -35,3 +34,6 @@ hi! link rubySymbol rubyBlockParameter
 hi! link Delimiter Identifier
 hi! link rDollar Identifier
 
+" For vimscript, don' tlike red..
+hi link vimMapModKey Operator
+hi link vimNotation Label
