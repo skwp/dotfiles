@@ -15,7 +15,6 @@
   # add
   a = add                           # add
   chunkyadd = add --patch           # stage commits chunk by chunk
-  addall = !sh -c 'git add . && git add -u' # TODO: what does this do?
 
   # branch
   b = branch -v                     # branch (verbose)
@@ -84,9 +83,6 @@
   svnr = svn rebase
   svnd = svn dcommit
   svnl = svn log --oneline --show-commit
-
-  drop = !sh -c 'git add . && git stash && git stash drop'  # TODO: what does this do?
-  grab = !sh -c 'git-grab.sh'                               # TODO: what does this do?
 [format]
   pretty = format:%C(blue)%ad%Creset %C(yellow)%h%C(green)%d%Creset %C(blue)%s %C(magenta) [%an]%Creset
 [merge]
@@ -114,4 +110,3 @@
   # Remember my merges
   # http://gitfu.wordpress.com/2008/04/20/git-rerere-rereremember-what-you-did-last-time/
   enabled = true
-
