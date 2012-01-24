@@ -63,10 +63,10 @@ Remap caps-lock to escape: http://pqrs.org/macosx/keyremap4macbook/extra.html
 This project uses git submodules for its plugins, but this is handled
 for you by the **yadr** command. Please run:
 
-    ```bash
-    git clone https://github.com/skwp/dotfiles ~/.dotfiles
-    ~/.dotfiles/bin/yadr/yadr init-plugins
-    ```
+```bash
+git clone https://github.com/skwp/dotfiles ~/.dotfiles
+~/.dotfiles/bin/yadr/yadr init-plugins
+```
 
 NOTE: by default, YADR will not touch any of your files. You have to manually
 activate each of its components, if you choose, by following the sections below.
@@ -74,7 +74,9 @@ Eventually these will be automated.
 
 If you pull new changes, be sure to run this to init all the submodules:
 
-    yadr init-plugins
+```bash
+yadr init-plugins
+```
 
 After you install yadr shell aliases, you can use the *yip* alias to do the same.
 Please note that init-plugins will automatically compile the CommandT plugin for you.
@@ -93,9 +95,9 @@ you just source the _aliases_ file. However, you soul will sing if you install z
 
 **Install zsh pain free, automatically:**
 
-    ```bash
-    curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
-    ```
+```bash
+curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+```
 
 Place this as the last line in your ~/.zshrc created by oh-my-zsh:
 
@@ -104,7 +106,9 @@ Place this as the last line in your ~/.zshrc created by oh-my-zsh:
 Or, to make things simpler you can just use the YADR-provided zsh/oh_my_zsh_zshrc
 Please note that this relies on the skwp fork of oh-my-zsh which contains skwp.theme
 
-    ln -sf ~/.dotfiles/zsh/oh_my_zsh_zshrc ~/.zshrc
+```bash
+ln -sf ~/.dotfiles/zsh/oh_my_zsh_zshrc ~/.zshrc
+```
 
 Lots of things I do every day are done with two or three character
 mnemonic aliases. Please feel free to edit them:
@@ -123,12 +127,12 @@ mnemonic aliases. Please feel free to edit them:
 Pry (http://pry.github.com/) offers a much better out of the box IRB experience
 with colors, tab completion, and lots of other tricks. You should:
 
-    ```bash
-    gem install pry
-    gem install awesome_print
-    ln -s ~/.dotfiles/irb/pryrc ~/.pryrc
-    ln -s ~/.dotfiles/irb/aprc ~/.aprc
-    ```
+```bash
+gem install pry
+gem install awesome_print
+ln -s ~/.dotfiles/irb/pryrc ~/.pryrc
+ln -s ~/.dotfiles/irb/aprc ~/.aprc
+```
 
 **Use pry**
 
@@ -148,9 +152,9 @@ with colors, tab completion, and lots of other tricks. You should:
 
 **To use the gitconfig (some of the git bash aliases rely on my git aliases)**
 
-    ```bash
-    ln -s ~/.dotfiles/gitconfig ~/.gitconfig
-    ```
+```bash
+ln -s ~/.dotfiles/gitconfig ~/.gitconfig
+```
 
 Since the gitconfig doesn't contain the user info, I recommend using env variables.
 
@@ -184,10 +188,10 @@ Since the gitconfig doesn't contain the user info, I recommend using env variabl
 
 To use the vim files:
 
-    ```bash
-    ln -s ~/.dotfiles/vimrc ~/.vimrc
-    ln -s ~/.dotfiles/vim ~/.vim
-    ```
+```bash
+ln -s ~/.dotfiles/vimrc ~/.vimrc
+ln -s ~/.dotfiles/vim ~/.vim
+```
 
 The .vimrc is well commented and broken up by settings. I encourage you
 to take a look and learn some of my handy aliases, or comment them out
