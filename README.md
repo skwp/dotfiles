@@ -258,7 +258,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * ,t - CtrlP fuzzy file selector
  * ,b - CtrlP buffer selector
  * Cmd-Shift-P - Clear CtrlP cache
- * ,jm jump (command-t) app/models
+ * ,jm jump (via CtrlP) app/models
  * ,jc app/controllers
  * ,jv app/views
  * ,jh app/helpers
