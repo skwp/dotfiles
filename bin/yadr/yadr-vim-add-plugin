@@ -2,7 +2,7 @@
 require File.join(File.dirname(__FILE__), 'default_libs')
 
 GitStyleBinary.command do
-  version "yadr-add-vim-plugin 1.0" 
+  version "yadr-add-vim-plugin 1.0"
 
   short_desc "Add a vim plugin from a github repo"
   opt :url, "Github url (http:// or git://)", :type => String
@@ -14,7 +14,7 @@ GitStyleBinary.command do
       begin
         repo=command[:url]
         bundle_path=repo.gsub("https://github.com/","").gsub(".git","").gsub("/","-").gsub(".vim","")
-        system("cd ~/.dotfiles && git submodule add #{repo} vim/bundle/#{bundle_path}")
+        system("cd #{$yadr} && git submodule add #{repo} vim/bundle/#{bundle_path}")
       rescue
         puts "Sorry, couldn't parse your path: #{$!}"
       end
