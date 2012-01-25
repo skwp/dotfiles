@@ -453,6 +453,11 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * sass-status - decorates your status bar with full nesting of where you are in the sass file
 
 
+### Overriding vim settings
+
+You may use `~/.vimrc.before` for settings like the __leader__ setting. You may `~/.vimrc.after` for any additional overrides/settings.
+
+
 ### Adding your own vim plugins
 
 YADR comes with a dead simple plugin manager that just uses git submodules, without any fancy config files.
