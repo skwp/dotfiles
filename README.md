@@ -368,6 +368,10 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * Cmd-/ - toggle comments (usually gcc from tComment)
  * gcp (comment a paragraph)
 
+ **Wrapping**
+
+ * :Wrap - wrap long lines (e.g. when editing markdown files).
+ * Cmd-[j, k, $, 0, ^] - navigate display lines.
 
 ### Included vim plugins
 
