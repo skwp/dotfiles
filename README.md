@@ -8,8 +8,8 @@
     # Yet Another Dotfile Repo v0.8
     # Alpha Release Please Report Bugs
 
-    git clone https://github.com/skwp/dotfiles ~/.dotfiles
-    ~/.dotfiles/bin/yadr/yadr init-plugins
+    git clone https://github.com/skwp/dotfiles ~/.yadr
+    cd ~/.yadr && rake install
 
     # Your dotfiles are safe! YADR will not
     # overwrite anything. Please read on for
@@ -109,28 +109,29 @@ gem install awesome_print
 
 ## Installation
 
-This project uses git submodules for its plugins, but this is handled
-for you by the **yadr** command. Please run:
+Installation is automated via `rake` and the `yadr` command. To get
+started please run:
 
 ```bash
-git clone https://github.com/skwp/dotfiles ~/.dotfiles
-~/.dotfiles/bin/yadr/yadr init-plugins
+git clone https://github.com/skwp/dotfiles ~/.yadr
+cd ~/.yadr && rake install
 ```
 
-NOTE: by default, YADR will not touch any of your files. You have to manually
-activate each of its components, if you choose, by following the sections below.
-Eventually these will be automated.
+Note: YADR will not destroy any of your files unless you tell it to.
 
-If you pull new changes, be sure to run this to init all the submodules:
+
+## Upgrading
+
+Upgrading is easy.
 
 ```bash
-yadr init-plugins
+cd ~/.yadr
+git pull origin master
+rake install
 ```
 
-After you install yadr shell aliases, you can use the *yip* alias to do the same.
 
-
-### Setup for ZSH
+### ZSH
 
 After a lifetime of bash, I am now using ZSH as my default shell because of its awesome globbing
 and autocomplete features (the spelling fixer autocomplete is worth the money alone).
@@ -141,72 +142,51 @@ restores the only feature that I felt was 'broken' which is the Ctrl-R reverse h
 While I am not going to support bash out of the box here, YADR _should_ work with bash if
 you just source the _aliases_ file. However, you soul will sing if you install zsh. I promise.
 
-**Install zsh pain free, automatically:**
-
-```bash
-curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
-```
-
-Place this as the last line in your ~/.zshrc created by oh-my-zsh:
-
-    source ~/.dotfiles/zsh/zshrc
-
-Or, to make things simpler you can just use the YADR-provided zsh/oh_my_zsh_zshrc
-Please note that this relies on the skwp fork of oh-my-zsh which contains skwp.theme
-
-```bash
-ln -sf ~/.dotfiles/zsh/oh_my_zsh_zshrc ~/.zshrc
-```
-
 Lots of things I do every day are done with two or three character
 mnemonic aliases. Please feel free to edit them:
 
     ae # alias edit
     ar # alias reload
 
-**Customized zsh provided by ~/.dotfiles/zshrc:**
+**ZSH Customizations**
 
  * Vim mode
  * Bash style ctrl-R for reverse history finder
  * Fuzzy matching - if you mistype a directory name, tab completion will fix it
 
 
-### Setup for Pry
+### Pry
+
 Pry (http://pry.github.com/) offers a much better out of the box IRB experience
 with colors, tab completion, and lots of other tricks. You should:
+
+#### Install the gem
 
 ```bash
 gem install pry
 gem install awesome_print
-ln -s ~/.dotfiles/irb/pryrc ~/.pryrc
-ln -s ~/.dotfiles/irb/aprc ~/.aprc
 ```
 
-**Use pry**
+#### Use pry
 
-  * as irb: 'pry'
-  * as rails console: script/console --irb=pry
+  * as irb: `pry`
+  * as rails console: `script/console --irb=pry`
 
-**Pry customizations:**
+#### Pry Customizations:
 
- * 'clear' command to clear screen
- * 'sql' command to execute something (within a rails console)
+ * `clear` command to clear screen
+ * `sql` command to execute something (within a rails console)
  * all objects displayed in readable format (colorized, sorted hash keys) - via awesome_print
  * a few color modifications to make it more useable
- * type 'help' to see all the commands
+ * type `help` to see all the commands
 
 
-### Setup for Git
+### Git
 
-**To use the gitconfig (some of the git bash aliases rely on my git aliases)**
+#### User Info
 
-```bash
-ln -s ~/.dotfiles/gitconfig ~/.gitconfig
-```
-
-Since the gitconfig doesn't contain the user info, I recommend using env variables.
-
-**Put the following in your ~/.secrets file which is automatically referenced by the provided zshrc:**
+Since the gitconfig doesn't contain the user info, I recommend using env variables. Put the following in 
+your `~/.secrets` file which is automatically referenced by the provided zshrc:
 
     # Set your git user info
     export GIT_AUTHOR_NAME='Your Name'
@@ -218,7 +198,7 @@ Since the gitconfig doesn't contain the user info, I recommend using env variabl
     export GITHUB_USER='your_user_name'
     export GITHUB_TOKEN='your_github_token'
 
-**Some of the customizations provided include:**
+#### Git Customizations:
 
   * git l - a much more usable git log
   * git b - a list of branches with summary of last commit
@@ -232,14 +212,7 @@ Since the gitconfig doesn't contain the user info, I recommend using env variabl
   * git unstage (remove from index) and git uncommit (revert to the time prior to the last commit - dangerous if already pushed) aliases
 
 
-### Setup for Vim
-
-To use the vim files:
-
-```bash
-ln -s ~/.dotfiles/vimrc ~/.vimrc
-ln -s ~/.dotfiles/vim ~/.vim
-```
+### Vim
 
 The .vimrc is well commented and broken up by settings. I encourage you
 to take a look and learn some of my handy aliases, or comment them out
@@ -514,10 +487,12 @@ Please explore these people's work.
 
  * Automatic installation setup
 
+
 ### Contributors
 
  * Initial Version: @skwp
  * Cleanup, auto installer: @kylewest
+
 
 ### For more tips and tricks
 
