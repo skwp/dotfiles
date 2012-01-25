@@ -94,6 +94,10 @@ nnoremap ,gcp :GitGrepCurrentPartial<CR>
 " this uses ctags. the standard way to get this is Ctrl-]
 nnoremap <silent> ,f <C-]>
 
+" use ,F to jump to tag in a vertical split
+nnoremap <silent> ,F :let word=expand("<cword>")<CR>:vsp<CR>:wincmd w<cr>:exec("tag ". word)<cr>
+
+
 "toggle between last two buffers with Z (normally ctrl-shift-6)
 nnoremap <silent> ,z <C-^>
 
