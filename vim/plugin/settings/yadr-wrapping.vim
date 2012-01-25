@@ -4,6 +4,7 @@ function! SetupWrapping()
   set showbreak=…
 endfunction
 
+" TODO: this should happen automatically for certain file types (e.g. markdown)
 command! -nargs=* Wrap :call SetupWrapping()<CR>
 
 vmap <D-j> gj
