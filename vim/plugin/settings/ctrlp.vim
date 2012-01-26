@@ -1,3 +1,5 @@
+let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
+
 " Default to filename searches - so that appctrl will find application
 " controller
 let g:ctrlp_by_filename = 1
@@ -12,6 +14,7 @@ nnoremap <C-b> :CtrlPBuffer<cr>
 
 " Cmd-Shift-P to clear the cache
 nnoremap <silent> <D-P> :ClearCtrlPCache<cr>
+
 
 " Idea from : http://www.charlietanksley.net/blog/blog/2011/10/18/vim-navigation-with-lustyexplorer-and-lustyjuggler/
 " Open CtrlP starting from a particular path, making it much
