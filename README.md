@@ -200,16 +200,16 @@ your `~/.secrets` file which is automatically referenced by the provided zshrc:
 
 #### Git Customizations:
 
-  * git l - a much more usable git log
-  * git b - a list of branches with summary of last commit
-  * git r - a list of remotes with info
-  * git t - a list of tags with info
-  * git nb - a (n)ew (b)ranch - like checkout -b
-  * git cp - cherry-pick -x (showing what was cherrypicked)
-  * git changelog - a nice format for creating changelogs
+  * `git l` - a much more usable git log
+  * `git b` - a list of branches with summary of last commit
+  * `git r` - a list of remotes with info
+  * `git t` - a list of tags with info
+  * `git nb` - a (n)ew (b)ranch - like checkout -b
+  * `git cp` - cherry-pick -x (showing what was cherrypicked)
+  * `git changelog` - a nice format for creating changelogs
   * Some sensible default configs, such as improving merge messages, push only pushes the current branch, removing status hints, and using mnemonic prefixes in diff: (i)ndex, (w)ork tree, (c)ommit and (o)bject
   * Slightly imrpoved colors for diff
-  * git unstage (remove from index) and git uncommit (revert to the time prior to the last commit - dangerous if already pushed) aliases
+  * `git unstage` (remove from index) and `git uncommit` (revert to the time prior to the last commit - dangerous if already pushed) aliases
 
 
 ### Vim
@@ -228,123 +228,128 @@ The files in vim/plugin/settings are customizations stored on a per-plugin
 basis. The main keymap is available in skwp-keymap.vim, but some of the vim
 files contain key mappings as well (TODO: probably will move them out to skwp-keymap.vim)
 
- **Navigation**
+#### Navigation
 
- * ,z - jump back and forth between last two buffers
- * Ctrl-j and Ctrl-k to move up and down roughly by functions
- * Ctrl-o - Old cursor position - this is a standard mapping but very useful, so included here
- * Ctrl-i - opposite of Ctrl-O (again, this is standard)
+ * `,z` - jump back and forth between last two buffers
+ * `Ctrl-j` and `Ctrl-k` to move up and down roughly by functions
+ * `Ctrl-o` - Old cursor position - this is a standard mapping but very useful, so included here
+ * `Ctrl-i` - opposite of Ctrl-O (again, this is standard)
 
- **Marks**
+#### Marks
 
- * ,mm - set the next available mark (set a mark with mX where X is a letter, navigate to mark using 'X). Uppercase marks to mark files, lowercase marks to use within a file.
- * ,ma - clear all marks
- * ,mh - clear current mark
- * ,Bt - toggle local anonymous bookmark at current location
- * ,Bn ,Bp - next and previous anonymous bookmark
- * ,Bc - clear anonymous bookmarks
+ * `,mm` - set the next available mark (set a mark with `mX` where `X` is a letter, navigate to mark using `'X`). Uppercase marks to mark files, lowercase marks to use within a file.
+ * `,ma` - clear all marks
+ * `,mh` - clear current mark
+ * `,Bt` - toggle local anonymous bookmark at current location
+ * `,Bn` `,Bp` - next and previous anonymous bookmark
+ * `,Bc` - clear anonymous bookmarks
 
- **LustyJuggler**
+#### LustyJuggler
 
- * ,lj - show buffers (LustyJuggler buffer search), just type to fuzzy match a buffer name
+ * `,lj` - show buffers (LustyJuggler buffer search), just type to fuzzy match a buffer name
 
- **Rails**
+#### Rails
 
- * ,ru - Rails Unittest - synonym for :AV from rails.vim, opens up the corresponding test/spec to the file you're looking for, in a vertical split
- * ,ss to run specs, ,ll to run a given spec on a line - using my vim-ruby-conque plugin (https://github.com/skwp/vim-ruby-conque)
- * Cmd-Shift-R to use vim-rspec to run a spec file. Cmd-Shift-L to run from a line (individual it block)
+ * `,ru` - Rails Unittest - synonym for `:AV` from rails.vim, opens up the corresponding test/spec to the file you're looking for, in a vertical split
+ * `,ss` to run specs, `,ll` to run a given spec on a line - using my [vim-ruby-conque plugin](https://github.com/skwp/vim-ruby-conque)
+ * `Cmd-Shift-R` to use vim-rspec to run a spec file. `Cmd-Shift-L` to run from a line (individual it block)
 
- **Surround.vim customizations**
+#### Surround.vim customizations
 
  * in plugin/settings/surround.vim (this folder contains all my customizations)
- * the # key now surrounds with #{}, so - ysaw# surround around word #{foo}
- * = surrounds with <%= erb tag %> and - for <% this %>, so yss= or yss- to wrap code
+ * the `#` key now surrounds with `#{}`, so `ysaw#` (surround around word) `#{foo}`
+ * `=` surrounds with `<%= erb tag %>`; `-` for `<% this %>`. So, `yss=` or `yss-` to wrap code
 
- **Search/Code Navigation**
+#### Search/Code Navigation
 
- * ,f - instantly Find definition of class (must have exuberant ctags installed)
- * K - GitGrep the current word under the cursor and show results in quickfix window
- * ,K - GitGrep the current word up to next exclamation point (useful for ruby foo! methods)
- * Cmd-* - highlight all occurrences of current word (similar to regular * except doesn't move)
- * ,hl - toggle search highlight on and off
- * ,gg - GitGrep command line with a quote pretyped (close the quote yourself)
- * ,gcp - GitGrep Current Partial to find references to the current view partial
- * // - clear the search
- * ,q/ -  quickfix window with last search (stolen from Steve Losh)
- * ,qa/ - quickfix Ack last search (Steve Losh)
- * ,qg/ - quickfix GitGrep last search
- * ,T - Tag list (list of methods in a class)
+ * `,f` - instantly Find definition of class (must have exuberant ctags installed)
+ * `,F` - same as ,f but in a vertical split
+ * `K` - GitGrep the current word under the cursor and show results in quickfix window
+ * `,K` - GitGrep the current word up to next exclamation point (useful for ruby foo! methods)
+ * `Cmd-*` - highlight all occurrences of current word (similar to regular `*` except doesn't move)
+ * `,hl` - toggle search highlight on and off
+ * `,gg` - GitGrep command line with a quote pretyped (close the quote yourself)
+ * `,gcp` - GitGrep Current Partial to find references to the current view partial
+ * `//` - clear the search
+ * `,q/` -  quickfix window with last search (stolen from Steve Losh)
+ * `,qa/` - quickfix Ack last search (Steve Losh)
+ * `,qg/` - quickfix GitGrep last search
+ * `,T` - Tag list (list of methods in a class)
 
- **File Navigation**
+#### File Navigation
 
- * ,t - CtrlP fuzzy file selector
- * ,b - CtrlP buffer selector
- * Cmd-Shift-P - Clear CtrlP cache
- * ,jm jump (via CtrlP) app/models
- * ,jc app/controllers
- * ,jv app/views
- * ,jh app/helpers
- * ,jl lib
- * ,jp public
- * ,js spec
- * ,jf fast_spec
- * ,jt test
- * ,jd db
- * ,jC config
- * ,jV vendor
- * ,jF factories
+ * `,t` - CtrlP fuzzy file selector
+ * `,b` - CtrlP buffer selector
+ * `Cmd-Shift-P` - Clear CtrlP cache
+ * `,jm` jump (via CtrlP) to app/models
+ * `,jc` app/controllers
+ * `,jv` app/views
+ * `,jh` app/helpers
+ * `,jl` lib
+ * `,jp` public
+ * `,js` spec
+ * `,jf` fast_spec
+ * `,jt` test
+ * `,jd` db
+ * `,jC` config
+ * `,jV` vendor
+ * `,jF` factories
 
- **RSI-reduction**
+#### RSI-reduction
 
- * Cmd-k and Cmd-d to type underscores and dashes (use Shift), since they are so common in code but so far away from home row
- * ; instead of : - avoid Shift for common tasks, just hit semicolon to get to ex mode
- * ,. to go to last edit location instead of '. because the apostrophe is hard on the pinky
- * Cmd-' and Cmd-" to change content inside quotes
+ * `Cmd-k` and `Cmd-d` to type underscores and dashes (use Shift), since they are so common in code but so far away from home row
+ * `;` in addition to `:` - avoid Shift for common tasks, just hit semicolon to get to ex mode
+ * `,.` to go to last edit location instead of `'.` because the apostrophe is hard on the pinky
+ * `Cmd-'` and `Cmd-"` to change content inside quotes
 
- **Tab Navigation**
+#### Tab Navigation
 
- * Ctrl-H and Ctrl-L - left an right on tabs
- * Use Cmd-1..Cmd-0 to switch to a specific tab number (like iTerm) - and tabs have been set up to show numbers
+ * `Ctrl-H` and `Ctrl-L` - left an right on tabs
+ * Use `Cmd-1` thru `Cmd-9` to switch to a specific tab number (like iTerm) - and tabs have been set up to show numbers
 
- **Window Navigation**
+#### Window Navigation
 
- * H L I M - to move left, right, up, down between windows
- * Q - Intelligent Window Killer. Close window (wincmd c) if there are multiple windows to same buffer, or kill the buffer (bwipeout) if this is the last window into it.
+ * `H` `L` `I` `M` - to move left, right, up, down between windows
+ * `Q` - Intelligent Window Killer. Close window `wincmd c` if there are multiple windows to same buffer, or kill the buffer `bwipeout` if this is the last window into it.
 
- **Splits**
+#### Splits
 
- * vv - vertical split (Ctrl-w,v)
- * ss - horizontal split (Ctrl-w,s)
- * ,qo - open quickfix window (this is where output from GitGrep goes)
- * ,qc - close quickfix
- * ,gz - zoom a window to max size and again to unzoom it (ZoomWin plugin, usually C-w,o)
+ * `vv` - vertical split (`Ctrl-w,v`)
+ * `ss` - horizontal split (`Ctrl-w,s`)
+ * `,qo` - open quickfix window (this is where output from GitGrep goes)
+ * `,qc` - close quickfix
+ * `,gz` - zoom a window to max size and again to unzoom it (ZoomWin plugin, usually `C-w,o`)
 
- **NERDTree Project Tree**
+#### NERDTree Project Tree
 
- * Cmd-N - NERDTree toggle
- * Ctrl-\ - Show current file tree
+ * `Cmd-Shift-N` - NERDTree toggle
+ * `Ctrl-\` - Show current file tree
 
- **Utility**
+#### Utility
 
- * ,ig - toggle visual indentation guides
- * ,cf - Copy Filename of current file into system (not vi) paste buffer
- * ,cc - (Current command) copies the command under your cursor and executes it in vim. Great for testing single line changes to vimrc.
- * ,yw - yank a word from anywhere within the word (so you don't have to go to the beginning of it)
- * ,ow - overwrite a word with whatever is in your yank buffer - you can be anywhere on the word. saves having to visually select it
- * ,w - strip trailing whitespaces
- * sj - split a line such as a hash {:foo => {:bar => :baz}} into a multiline hash (j = down)
- * sk - unsplit a link (k = up)
- * Cmd-Shift-A - align things (type a character/expression to align by, works in visual mode or by itself)
+ * `,ig` - toggle visual indentation guides
+ * `,cf` - Copy Filename of current file into system (not vi) paste buffer
+ * `,cc` - (Current command) copies the command under your cursor and executes it in vim. Great for testing single line changes to vimrc.
+ * `,yw` - yank a word from anywhere within the word (so you don't have to go to the beginning of it)
+ * `,ow` - overwrite a word with whatever is in your yank buffer - you can be anywhere on the word. saves having to visually select it
+ * `,w` - strip trailing whitespaces
+ * `sj` - split a line such as a hash {:foo => {:bar => :baz}} into a multiline hash (j = down)
+ * `sk` - unsplit a link (k = up)
+ * `Cmd-Shift-A` - align things (type a character/expression to align by, works in visual mode or by itself)
 
- **Comments**
+#### Comments
 
- * Cmd-/ - toggle comments (usually gcc from tComment)
- * gcp (comment a paragraph)
+ * `Cmd-/` - toggle comments (usually gcc from tComment)
+ * `gcp` (comment a paragraph)
 
+ **Wrapping**
+
+ * :Wrap - wrap long lines (e.g. when editing markdown files).
+ * Cmd-[j, k, $, 0, ^] - navigate display lines.
 
 ### Included vim plugins
 
- **Navigation**
+#### Navigation
 
  * NERDTree - everyone's favorite tree browser
  * NERDTree-tabs - makes NERDTree play nice with MacVim tabs so that it's on every tab
@@ -356,22 +361,22 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * VimBookmarks - toggle an anonymous bookmark ,bb and go thru them ,bn ,bp and clear them ,bc
  * TabMan - hit ,mt to see all tabs and buffers in a tree. Easy to navigate and close.
 
- **Git**
+#### Git
 
- * fugitive - "a git wrapper so awesome, it should be illegal..". Try Gstatus and hit '-' to toggle files. Git 'd' to see a diff. Learn more: http://vimcasts.org/blog/2011/05/the-fugitive-series/
+ * fugitive - "a git wrapper so awesome, it should be illegal...". Try Gstatus and hit `-` to toggle files. Git `d` to see a diff. Learn more: http://vimcasts.org/blog/2011/05/the-fugitive-series/
  * extradite - use :Extradite to get a really great git log browser. Only works when you have a file open.
  * GitGrep - much better than the grep provided with fugitive; use :GitGrep or hit K to grep current word
 
- **Colors**
+#### Colors
 
  * AnsiEsc - inteprets ansi color codes inside log files. great for looking at Rails logs
  * solarized - a color scheme scientifically calibrated for awesomeness (including skwp mods for ShowMarks)
  * csapprox - helps colors to be represented correctly on terminals (even though we expect to use MacVim)
 
- **Coding**
+#### Coding
 
  * tComment - gcc to comment a line, gcp to comment blocks, nuff said
- * sparkup - div.foo#bar - hit ctrl-e, expands into <code><div class='foo' id#bar/></code>, and that's just the beginning
+ * sparkup - div.foo#bar - hit `ctrl-e`, expands into `<div class="foo" id="bar"/>`, and that's just the beginning
  * rails.vim - syntax highlighting, gf (goto file) enhancements, and lots more. should be required for any rails dev
  * ruby.vim - lots of general enhancements for ruby dev
  * necomplcache - intelligent and fast complete as you type, and added Command-Space to select a completion (same as Ctrl-N)
@@ -380,20 +385,20 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * vim-coffeescript - support for coffeescript, highlighting
  * vim-stylus - support for stylus css language
 
- **TextObjects**
+#### TextObjects
 
  The things in this section provide new "objects" to work with your standard verbs such as yank/delete/change/=(codeformat), etc
 
- * textobj-rubyblock - ruby blocks become vim textobjects denoted with 'r'. try var/vir to select a ruby block, dar/dir for delete car/cir for change, =ar/=ir for formatting, etc
+ * textobj-rubyblock - ruby blocks become vim textobjects denoted with `r`. try var/vir to select a ruby block, dar/dir for delete car/cir for change, =ar/=ir for formatting, etc
  * vim-indentobject - manipulate chunks of code by indentation level (great for yaml) use vai/vii to select around an indent block, same as above applies
  * argtextobj - manipulation of function arguments as an "a" object, so vaa/via, caa/cia, daa/dia, etc..
- * textobj-datetime - gives you 'da' (date), 'df' (date full) and so on text objects. useable with all standard verbs
- * vim-textobj-entire - gives you 'e' for entire document. so vae (visual around entire document), and etc
- * vim-textobj-rubysymbol - gives you ':' textobj. so va: to select a ruby symbol. da: to delete a symbol..etc
- * vim-textobj-function - gives you 'f' textobj. so vaf to select a function
- * next-textobject - from Steve Losh, ability to use 'n' such as vinb (visual inside (n)ext set of parens)
+ * textobj-datetime - gives you `da` (date), `df` (date full) and so on text objects. useable with all standard verbs
+ * vim-textobj-entire - gives you `e` for entire document. so vae (visual around entire document), and etc
+ * vim-textobj-rubysymbol - gives you `:` textobj. so va: to select a ruby symbol. da: to delete a symbol..etc
+ * vim-textobj-function - gives you `f` textobj. so vaf to select a function
+ * next-textobject - from Steve Losh, ability to use `n` such as vinb (visual inside (n)ext set of parens)
 
- **Utils**
+#### Utils
 
  * SplitJoin - easily split up things like ruby hashes into multiple lines or join them back together. Try :SplitjoinJoin and :SplitjoinSplit or use the bindings sj(split) and sk(unsplit) - mnemonically j and k are directions down and up
  * tabularize - align code effortlessly by using :Tabularize /[character] to align by a character, or try the keymaps
@@ -410,16 +415,21 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * slime - use ctrl-c,ctrl-c to send text to a running irb/pry/console. To start the console, you must use screen with a named session: "screen -S [name] [cmd]", ex: "screen -S pry pry"
  * vim-indent-guides - visual indent guides, off by default
 
- **General enhancements that don't add new commands**
+#### General enhancements that don't add new commands
 
  * IndexedSearch - when you do searches will show you "Match 2 of 4" in the status line
  * delimitMate - automatically closes quotes
  * syntastic - automatic syntax checking when you save the file
- * repeat - adds '.' (repeat command) support for complex commands like surround.vim. i.e. if you perform a surround and hit '.', it will Just Work (vim by default will only repeat the last piece of the complex command)
+ * repeat - adds `.` (repeat command) support for complex commands like surround.vim. i.e. if you perform a surround and hit `.`, it will Just Work (vim by default will only repeat the last piece of the complex command)
  * endwise - automatically closes blocks (if/end)
  * autotag - automatically creates tags for fast sourcecode browsing. use ctrl-[ over a symbol name to go to its definition
  * matchit - helps with matching brackets, improves other plugins
  * sass-status - decorates your status bar with full nesting of where you are in the sass file
+
+
+### Overriding vim settings
+
+You may use `~/.vimrc.before` for settings like the __leader__ setting. You may `~/.vimrc.after` for any additional overrides/settings.
 
 
 ### Adding your own vim plugins
@@ -459,9 +469,9 @@ These hacks are Lion-centric. May not work for other OS'es. My favorite mods inc
 ### Other recommended OSX tools
 
  * NValt - Notational Velocity alternative fork - http://brettterpstra.com/project/nvalt/ - syncs with SimpleNote
- * Vimium for Chrome - vim style browsing. The 'f' to type the two char alias of any link is worth it.
+ * Vimium for Chrome - vim style browsing. The `f` to type the two char alias of any link is worth it.
  * QuickCursor - gives you Apple-Shift-E to edit any OSX text field in vim.
- * brew install autojump - will track your commonly used directories and let you jump there. With the zsh plugin you can just type 'j [dirspec]', a few letters of the dir you want to go to.]'
+ * brew install autojump - will track your commonly used directories and let you jump there. With the zsh plugin you can just type `j [dirspec]`, a few letters of the dir you want to go to.
 
 
 ### Credits

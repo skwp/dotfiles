@@ -2,6 +2,12 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+" TODO: this may not be in the correct place. It is intended to allow overriding <Leader>.
+" source ~/.vimrc.before if it exists.
+if filereadable(expand("~/.vimrc.before"))
+  source ~/.vimrc.before
+endif
+
 " =============== Pathogen Initialization ===============
 " This loads all the plugins in ~/.vim/bundle
 " Use tpope's pathogen plugin to manage all other plugins
@@ -90,3 +96,4 @@ set wildignore+=*vim/backups*
 set scrolloff=8         "Start scrolling when we're 8 lines away from margins
 set sidescrolloff=15
 set sidescroll=1
+
