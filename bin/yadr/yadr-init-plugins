@@ -6,7 +6,7 @@ GitStyleBinary.command do
   short_desc "Initialize all submodules. Run this every time you pull a new yadr version."
 
   run do |command|
-    system("cd ~/.dotfiles && git submodule init && git submodule update")
+    `cd "#{$yadr}" && git submodule update --init`
   end
 
 end
