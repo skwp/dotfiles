@@ -7,7 +7,7 @@ task :install => :submodules do
   linkables += Dir.glob('git/*') if want_to_install?('git')
   linkables += Dir.glob('irb/*') if want_to_install?('irb/pry')
   linkables += Dir.glob('{vim,vimrc}') if want_to_install?('vim')
-  linkables += Dir.glob('zsh/oh_my_zsh_zshrc') if want_to_install?('zsh')
+  linkables += Dir.glob('zsh/zshrc') if want_to_install?('zsh')
 
   skip_all = false
   overwrite_all = false
