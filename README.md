@@ -29,8 +29,8 @@ from scouring other people's dotfile repos, blogs, and projects.
   * Avoid stressful hand motions, e.g. remap Esc to caps lock key, remap underscore to Alt-k in vim, make window management in vim easy.
   * Easy to use plugin architecture, no config files to edit.
   * Pick one tool and use it everywhere: vim-ize everything
-  *#### NEW Beautiful, easy to read and small vimrc**
-  *#### NEW No key overrides or custom hackery in vimrc, everything in well factored snippets in .vim/plugin/settings**
+  * **NEW Beautiful, easy to read and small vimrc**
+  * **NEW No key overrides or custom hackery in vimrc, everything in well factored snippets in .vim/plugin/settings**
 
 
 ## Why is this not a fork of Janus?
@@ -110,7 +110,7 @@ gem install awesome_print
 ## Installation
 
 This project uses git submodules for its plugins, but this is handled
-for you by the#### yadr** command. Please run:
+for you by the `yadr` command. Please run:
 
 ```bash
 git clone https://github.com/skwp/dotfiles ~/.dotfiles
