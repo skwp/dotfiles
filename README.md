@@ -369,6 +369,10 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * `Cmd-/` - toggle comments (usually gcc from tComment)
  * `gcp` (comment a paragraph)
 
+ **Wrapping**
+
+ * :Wrap - wrap long lines (e.g. when editing markdown files).
+ * Cmd-[j, k, $, 0, ^] - navigate display lines.
 
 ### Included vim plugins
 
@@ -448,6 +452,11 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * autotag - automatically creates tags for fast sourcecode browsing. use ctrl-[ over a symbol name to go to its definition
  * matchit - helps with matching brackets, improves other plugins
  * sass-status - decorates your status bar with full nesting of where you are in the sass file
+
+
+### Overriding vim settings
+
+You may use `~/.vimrc.before` for settings like the __leader__ setting. You may `~/.vimrc.after` for any additional overrides/settings.
 
 
 ### Adding your own vim plugins
