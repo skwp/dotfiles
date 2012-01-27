@@ -282,3 +282,6 @@
   path = vim/bundle/majutsushi-tagbar
   url = https://github.com/majutsushi/tagbar.git
   ignore=dirty
+[submodule "vim/bundle/joestelmach-javaScriptLint"]
+	path = vim/bundle/joestelmach-javaScriptLint
+	url = https://github.com/joestelmach/javaScriptLint.vim
