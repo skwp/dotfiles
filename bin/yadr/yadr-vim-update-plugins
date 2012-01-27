@@ -2,12 +2,11 @@
 require File.join(File.dirname(__FILE__), 'default_libs')
 
 GitStyleBinary.command do
-  version "yadr-vim-update-plugins 1.0" 
-
-short_desc "Update all vim plugins to latest versions from github"
+  version "yadr-vim-update-plugins 1.0"
+  short_desc "Update all vim plugins to latest versions from github"
 
   run do |command|
-    system("cd ~/.dotfiles && git submodule foreach git pull origin master")
+    `cd "#{$yadr}" && git submodule foreach git pull origin master`
   end
 
 end
