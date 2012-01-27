@@ -1,6 +1,25 @@
+# Source oh-my-zsh if it is installed.
+if [[ -d $HOME/.oh-my-zsh ]]; then
+  # Path to your oh-my-zsh configuration.
+  ZSH=$HOME/.oh-my-zsh
+
+  # Set name of the theme to load.
+  ZSH_THEME="skwp"
+
+  # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+  # Example format: plugins=(rails git textmate ruby lighthouse)
+  plugins=(git rvm ruby rails autojump)
+
+  # Load default oh-my-zsh stuff
+  source $ZSH/oh-my-zsh.sh
+fi
+
+# Don't change. The following determines where YADR is installed.
+yadr=`find -L ~ -type file -maxdepth 2 -name .yadr | head | sed 's:\.yadr\/::'`
+
 # Configuration
-source ~/.dotfiles/zsh/aliases
-source ~/.dotfiles/zsh/zsh_aliases
+source $yadr/zsh/aliases
+source $yadr/zsh/zsh_aliases
 
 # Things I don't want to publish to github
 source ~/.secrets
@@ -13,8 +32,8 @@ bindkey '^R' history-incremental-search-backward
 
 # Speed up git completion
 # http://talkings.org/post/5236392664/zsh-and-slow-git-completion
-__git_files () { 
-  _wanted files expl 'local files' _files 
+__git_files () {
+  _wanted files expl 'local files' _files
 }
 
 # Always pushd when changing directory
@@ -26,7 +45,7 @@ zstyle ':completion:*:match:*' original only
 zstyle ':completion:*:approximate:*' max-errors 1 numeric
 
 # RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" 
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # Add path to our custom bins
-export PATH=$PATH:~/.dotfiles/bin:~/.dotfiles/bin/yadr
+export PATH=$PATH:$yadr/bin:$yadr/bin/yadr
