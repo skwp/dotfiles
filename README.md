@@ -303,6 +303,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * `;` in addition to `:` - avoid Shift for common tasks, just hit semicolon to get to ex mode
  * `,.` to go to last edit location instead of `'.` because the apostrophe is hard on the pinky
  * `Cmd-'` and `Cmd-"` to change content inside quotes
+ * Cmd-Space to autocomplete. Tab for snipmate snippets.
 
 #### Tab Navigation
 
