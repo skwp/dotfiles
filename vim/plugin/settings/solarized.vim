@@ -15,7 +15,7 @@ hi! link Search DiffAdd
 " Colors to make LustyJuggler more usable
 " the Question color in LustyJuggler is mapped to
 " the currently selected buffer.
-hi clear Question
+hi! clear Question
 hi! Question guifg=yellow
 
 hi! link TagListFileName  Question
@@ -35,5 +35,8 @@ hi! link Delimiter Identifier
 hi! link rDollar Identifier
 
 " For vimscript, don' tlike red..
-hi link vimMapModKey Operator
-hi link vimNotation Label
+hi! link vimMapModKey Operator
+hi! link vimNotation Label
+
+" Better json highlighting
+hi! link htmlArg Label
