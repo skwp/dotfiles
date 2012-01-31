@@ -131,7 +131,7 @@ rake install
 ```
 
 
-### ZSH
+## ZSH
 
 After a lifetime of bash, I am now using ZSH as my default shell because of its awesome globbing
 and autocomplete features (the spelling fixer autocomplete is worth the money alone).
@@ -148,31 +148,31 @@ mnemonic aliases. Please feel free to edit them:
     ae # alias edit
     ar # alias reload
 
-**ZSH Customizations**
+### ZSH Customizations
 
  * Vim mode
  * Bash style ctrl-R for reverse history finder
  * Fuzzy matching - if you mistype a directory name, tab completion will fix it
 
 
-### Pry
+## Pry
 
 Pry (http://pry.github.com/) offers a much better out of the box IRB experience
 with colors, tab completion, and lots of other tricks. You should:
 
-#### Install the gem
+### Install the gem
 
 ```bash
 gem install pry
 gem install awesome_print
 ```
 
-#### Use pry
+### Use pry
 
   * as irb: `pry`
   * as rails console: `script/console --irb=pry`
 
-#### Pry Customizations:
+### Pry Customizations:
 
  * `clear` command to clear screen
  * `sql` command to execute something (within a rails console)
@@ -181,9 +181,9 @@ gem install awesome_print
  * type `help` to see all the commands
 
 
-### Git
+## Git
 
-#### User Info
+### User Info
 
 Since the gitconfig doesn't contain the user info, I recommend using env variables. Put the following in 
 your `~/.secrets` file which is automatically referenced by the provided zshrc:
@@ -198,7 +198,7 @@ your `~/.secrets` file which is automatically referenced by the provided zshrc:
     export GITHUB_USER='your_user_name'
     export GITHUB_TOKEN='your_github_token'
 
-#### Git Customizations:
+### Git Customizations:
 
   * `git l` - a much more usable git log
   * `git b` - a list of branches with summary of last commit
@@ -212,17 +212,19 @@ your `~/.secrets` file which is automatically referenced by the provided zshrc:
   * `git unstage` (remove from index) and `git uncommit` (revert to the time prior to the last commit - dangerous if already pushed) aliases
 
 
-### Vim
+## RubyGems
+
+A .gemrc is included. Never again type `gem install whatever --no-ri --no-rdoc`. `--no-ri --no-rdoc` is done by default.
+
+
+## Vim Configuration
 
 The .vimrc is well commented and broken up by settings. I encourage you
 to take a look and learn some of my handy aliases, or comment them out
 if you don't like them, or make your own.
 
 
-## Vim Configuration
-
-
-### Vim Keymaps (in vim/plugin/settings)
+### Vim Keymaps
 
 The files in vim/plugin/settings are customizations stored on a per-plugin
 basis. The main keymap is available in skwp-keymap.vim, but some of the vim
