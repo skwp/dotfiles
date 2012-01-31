@@ -1,5 +1,4 @@
-custom/zsh/before
-custom/zsh/after
+custom/zsh
 
 vim/backups
 vim/view
