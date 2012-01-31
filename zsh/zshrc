@@ -30,8 +30,7 @@ if [[ -d $HOME/.oh-my-zsh ]]; then
 fi
 
 # Configuration
-source $yadr/zsh/aliases
-source $yadr/zsh/zsh_aliases
+for config_file ($yadr/zsh/*.zsh) source $config_file
 
 # RVM / rbenv
 if [[ -d ~/.rvm/ ]] && [[ -d ~/.rbenv/ ]]; then
@@ -44,11 +43,9 @@ if [[ -d ~/.rvm/ ]] && [[ -d ~/.rbenv/ ]]; then
   echo ''
 else
   if [[ -d ~/.rvm/ ]]; then
-    echo 'found RVM'
     [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
   fi
   if [[ -d ~/.rbenv/ ]]; then
-    echo 'found rbenv'
     eval "$(rbenv init -)"
   fi
 fi
