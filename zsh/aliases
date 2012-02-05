@@ -106,9 +106,6 @@ alias mctags=~/.bin/run_tags.rb #'/opt/local/bin/ctags -Rf ./tags *'
 alias ka9='killall -9'
 alias k9='kill -9'
 
-# This trick makes sudo understand all my aliases
-alias sudo='sudo '
-
 # Gem install
 alias sgi='sudo gem install --no-ri --no-rdoc'
 

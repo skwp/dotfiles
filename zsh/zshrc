@@ -22,7 +22,7 @@ source $yadr/zsh/aliases
 source $yadr/zsh/zsh_aliases
 
 # Things I don't want to publish to github
-source ~/.secrets
+[[ -s "$HOME/.secrets" ]] && source "$HOME/.secrets"
 
 # Vim mode
 bindkey -v
