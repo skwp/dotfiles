@@ -271,6 +271,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * `Cmd-*` - highlight all occurrences of current word (similar to regular `*` except doesn't move)
  * `,hl` - toggle search highlight on and off
  * `,gg` - GitGrep command line with a quote pretyped (close the quote yourself)
+ * `,gd` - GitGrep def (greps for 'def [function name]') when cursor is over the function name
  * `,gcp` - GitGrep Current Partial to find references to the current view partial
  * `//` - clear the search
  * `,q/` -  quickfix window with last search (stolen from Steve Losh)
