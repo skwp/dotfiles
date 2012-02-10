@@ -240,7 +240,8 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
 
 #### Navigation
 
- * `,z` - jump back and forth between last two buffers
+ * `,z` - go to previous buffer (:bp)
+ * `,x` - go to next buffer (:bn)
  * `Ctrl-j` and `Ctrl-k` to move up and down roughly by functions
  * `Ctrl-o` - Old cursor position - this is a standard mapping but very useful, so included here
  * `Ctrl-i` - opposite of Ctrl-O (again, this is standard)
