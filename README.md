@@ -348,6 +348,8 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * `,w` - strip trailing whitespaces
  * `sj` - split a line such as a hash {:foo => {:bar => :baz}} into a multiline hash (j = down)
  * `sk` - unsplit a link (k = up)
+ * `,he` - Html Escape
+ * `,hu` - Html Unescape
  * `Cmd-Shift-A` - align things (type a character/expression to align by, works in visual mode or by itself)
 
 #### Comments
@@ -422,7 +424,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * vim-ruby-conque - helpers to run ruby,rspec,rake within ConqueTerm - use ,rr (ruby), ,ss (rspec), ,ll (rspec line), ,RR (rake)
  * vim-rspec - really clean and colorful rspec output (Cmd-Shift-R) with ability to navigate directly to error; will replace vim-ruby-conque when I do a couple enhancements/bug fixes
  * vim-markdown-preview - :Mm to view your README.md as html
- * html-escape - hit ctrl-h to escape html
+ * html-escape - ,he and ,hu to escape and unescape html
  * ruby-debug-ide - not quite working for me, but maybe it will for you. supposedly a graphical debugger you can step through
  * Gundo - visualize your undos - pretty amazing plugin. Hit ,u with my keymappings to trigger it, very user friendly
  * slime - use ctrl-c,ctrl-c to send text to a running irb/pry/console. To start the console, you must use screen with a named session: "screen -S [name] [cmd]", ex: "screen -S pry pry"
