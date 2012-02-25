@@ -99,7 +99,7 @@
 [core]
   autocrlf = false
   editor = vim
-  excludesfile = ~/.dotfiles/gitignore_global
+  excludesfile = ~/.yadr/gitignore_global
 [advice]
   statusHints = false
 [diff]
