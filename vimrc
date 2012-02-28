@@ -49,12 +49,10 @@ set nowb
 
 " ================ Persistent Undo ==================
 " Keep undo history across sessions, by storing in file.
-" Only works in MacVim (gui) mode.
+" Only works all the time.
 
-if has('gui_running')
-  set undodir=~/.vim/backups
-  set undofile
-endif
+set undodir=~/.vim/backups
+set undofile
 
 " ================ Indentation ======================
 
