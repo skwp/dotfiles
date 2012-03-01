@@ -29,6 +29,9 @@ alias lsg='ll | grep'
 alias ae='vi $yadr/zsh/aliases' #alias edit
 alias ar='source $yadr/zsh/aliases'  #alias reload
 
+# vim using
+alias vim=$(brew ls macvim | grep Contents/MacOS/Vim)
+
 # vimrc editing
 alias ve='vi ~/.vimrc'
 
@@ -105,9 +108,6 @@ alias mctags=~/.bin/run_tags.rb #'/opt/local/bin/ctags -Rf ./tags *'
 
 alias ka9='killall -9'
 alias k9='kill -9'
-
-# This trick makes sudo understand all my aliases
-alias sudo='sudo '
 
 # Gem install
 alias sgi='sudo gem install --no-ri --no-rdoc'

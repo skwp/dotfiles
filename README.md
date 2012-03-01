@@ -97,6 +97,14 @@ sudo mv /usr/bin/ctags /usr/bin/ctags_original
 curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 ```
 
+Please note: if you want the skwp theme referenced in these dotfiles, you should
+grab the skwp fork of oh-my-zsh, which just has the additional theme. While we are
+waiting for @robbyrussell to merge the theme upstream (unknown if it will happen).
+
+    cd ~/.oh-my-zsh
+    git remote add skwp https://github.com/skwp/oh-my-zsh.git
+    git pull skwp master
+
 ### [Pry](http://pry.github.com/)
 
 Pry offers a much better out of the box IRB experience with colors, tab completion, and lots of other tricks. You should:
@@ -232,7 +240,8 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
 
 #### Navigation
 
- * `,z` - jump back and forth between last two buffers
+ * `,z` - go to previous buffer (:bp)
+ * `,x` - go to next buffer (:bn)
  * `Ctrl-j` and `Ctrl-k` to move up and down roughly by functions
  * `Ctrl-o` - Old cursor position - this is a standard mapping but very useful, so included here
  * `Ctrl-i` - opposite of Ctrl-O (again, this is standard)
@@ -271,6 +280,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * `Cmd-*` - highlight all occurrences of current word (similar to regular `*` except doesn't move)
  * `,hl` - toggle search highlight on and off
  * `,gg` - GitGrep command line with a quote pretyped (close the quote yourself)
+ * `,gd` - GitGrep def (greps for 'def [function name]') when cursor is over the function name
  * `,gcp` - GitGrep Current Partial to find references to the current view partial
  * `//` - clear the search
  * `,q/` -  quickfix window with last search (stolen from Steve Losh)
@@ -303,6 +313,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * `;` in addition to `:` - avoid Shift for common tasks, just hit semicolon to get to ex mode
  * `,.` to go to last edit location instead of `'.` because the apostrophe is hard on the pinky
  * `Cmd-'` and `Cmd-"` to change content inside quotes
+ * Cmd-Space to autocomplete. Tab for snipmate snippets.
 
 #### Tab Navigation
 
@@ -337,6 +348,8 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * `,w` - strip trailing whitespaces
  * `sj` - split a line such as a hash {:foo => {:bar => :baz}} into a multiline hash (j = down)
  * `sk` - unsplit a link (k = up)
+ * `,he` - Html Escape
+ * `,hu` - Html Unescape
  * `Cmd-Shift-A` - align things (type a character/expression to align by, works in visual mode or by itself)
 
 #### Comments
@@ -411,7 +424,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * vim-ruby-conque - helpers to run ruby,rspec,rake within ConqueTerm - use ,rr (ruby), ,ss (rspec), ,ll (rspec line), ,RR (rake)
  * vim-rspec - really clean and colorful rspec output (Cmd-Shift-R) with ability to navigate directly to error; will replace vim-ruby-conque when I do a couple enhancements/bug fixes
  * vim-markdown-preview - :Mm to view your README.md as html
- * html-escape - hit ctrl-h to escape html
+ * html-escape - ,he and ,hu to escape and unescape html
  * ruby-debug-ide - not quite working for me, but maybe it will for you. supposedly a graphical debugger you can step through
  * Gundo - visualize your undos - pretty amazing plugin. Hit ,u with my keymappings to trigger it, very user friendly
  * slime - use ctrl-c,ctrl-c to send text to a running irb/pry/console. To start the console, you must use screen with a named session: "screen -S [name] [cmd]", ex: "screen -S pry pry"

@@ -98,8 +98,10 @@ nnoremap <silent> ,f <C-]>
 nnoremap <silent> ,F :let word=expand("<cword>")<CR>:vsp<CR>:wincmd w<cr>:exec("tag ". word)<cr>
 
 
-"toggle between last two buffers with Z (normally ctrl-shift-6)
-nnoremap <silent> ,z <C-^>
+"Move back and forth through previous and next buffers
+"with ,z and ,x
+nnoremap <silent> ,z :bp<CR>
+nnoremap <silent> ,x :bn<CR>
 
 " ==============================
 " Window/Tab/Split Manipulation
