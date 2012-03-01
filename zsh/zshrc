@@ -18,7 +18,7 @@ if [[ -d $HOME/.oh-my-zsh ]]; then
   ZSH_THEME="robbyrussell"
 
   # Default plugins.
-  plugins=(brew git github ruby)
+  plugins=(git ruby)
 
   # source every zsh file in user's custom/zsh/before. This is useful for setting theme and plugins.
   if [[ -d $yadr/custom/zsh/ ]]; then
