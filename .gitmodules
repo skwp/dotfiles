@@ -14,10 +14,6 @@
   path = vim/bundle/vim-scripts-AnsiEsc
   url = https://github.com/vim-scripts/AnsiEsc.vim.git
   ignore=dirty
-[submodule "vim/bundle/garbas-vim-showmarks"]
-  path = vim/bundle/garbas-vim-showmarks
-  url = https://github.com/garbas/vim-showmarks
-  ignore=dirty
 [submodule "vim/bundle/skwp-vim-ruby-conque"]
   path = vim/bundle/skwp-vim-ruby-conque
   url = https://github.com/skwp/vim-ruby-conque
@@ -250,10 +246,6 @@
   path = vim/bundle/tpope-vim-haml
   url = https://github.com/tpope/vim-haml
   ignore=dirty
-[submodule "vim/bundle/kien-tabman"]
-  path = vim/bundle/kien-tabman
-  url = https://github.com/kien/tabman.vim
-  ignore=dirty
 [submodule "vim/bundle/claco-jasmine"]
   path = vim/bundle/claco-jasmine
   url = https://github.com/claco/jasmine.vim
@@ -285,3 +277,6 @@
 [submodule "vim/bundle/joestelmach-javaScriptLint"]
 	path = vim/bundle/joestelmach-javaScriptLint
 	url = https://github.com/joestelmach/javaScriptLint.vim
+[submodule "vim/bundle/VimEz-ShowMarks"]
+	path = vim/bundle/VimEz-ShowMarks
+	url = https://github.com/VimEz/ShowMarks.git

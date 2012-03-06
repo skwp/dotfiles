@@ -374,7 +374,6 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * TagBar - hit ,T to see a list of methods in a class (uses ctags)
  * CtrlP - Ctrl-p or ,t to find a file
  * VimBookmarks - toggle an anonymous bookmark ,bb and go thru them ,bn ,bp and clear them ,bc
- * TabMan - hit ,mt to see all tabs and buffers in a tree. Easy to navigate and close.
 
 #### Git
 
