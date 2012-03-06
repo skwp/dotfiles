@@ -42,9 +42,6 @@ nnoremap <D-"> ci"
 " Add spaces around a symbol with Ctrl-Space
 nnoremap <C-Space> i <esc><right>a <esc>
 
-" Don't have to use Shift to get into command mode, just hit semicolon
-nnoremap ; :
-
 "Go to last edit location with ,.
 nnoremap ,. '.
 
