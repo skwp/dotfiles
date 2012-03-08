@@ -336,6 +336,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
 
  * `H` `L` `I` `M` - to move left, right, up, down between windows
  * `Q` - Intelligent Window Killer. Close window `wincmd c` if there are multiple windows to same buffer, or kill the buffer `bwipeout` if this is the last window into it.
+ * `+` and `-` for resizing vertical windows
 
 #### Splits
 

@@ -133,6 +133,10 @@ map <silent> <D-9> :tabn 9<cr>
 nnoremap <silent> vv <C-w>v
 nnoremap <silent> ss <C-w>s
 
+" Resize vertical windows by hitting plus and minus
+nnoremap <silent> + <C-w>+
+nnoremap <silent> - <C-w>-
+
 "open the taglist (method browser) using ,t
 nnoremap <silent> ,T :TlistToggle<CR>
 
