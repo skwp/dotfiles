@@ -280,3 +280,6 @@
 [submodule "vim/bundle/VimEz-ShowMarks"]
 	path = vim/bundle/VimEz-ShowMarks
 	url = https://github.com/VimEz/ShowMarks.git
+[submodule "vim/bundle/skwp-vim-powerline"]
+	path = vim/bundle/skwp-vim-powerline
+	url = https://github.com/skwp/vim-powerline

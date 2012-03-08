@@ -5,7 +5,7 @@
      _____| / ___ ( (_| | |
     (_______\_____|\____|_|
 
-    # Yet Another Dotfile Repo v0.8
+    # Yet Another Dotfile Repo v0.9
     # Alpha Release Please Report Bugs
 
     git clone https://github.com/skwp/dotfiles ~/.yadr
@@ -49,7 +49,7 @@ Janus is an amazing _first effort_ to deliver a ready-to-use vim setup and is a 
 
 
 ## Screenshot
-![screenshot](http://i.imgur.com/lEFlF.png)
+![screenshot](http://i.imgur.com/X7npy.png)
 
 
 ## Before you start
@@ -67,6 +67,10 @@ If you omit the key combo, you'll get a list of all the maps. You can do the sam
 
 YADR is opinionated. To get the most out of using it, you should install
 all the software it depends on.
+
+### Patched fonts for Vim-Powerline
+
+Please install fonts from fonts/ directory. These are used to give a really nice vim status line.
 
 ### [Homebrew](http://mxcl.github.com/homebrew/)
 
@@ -392,6 +396,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * AnsiEsc - inteprets ansi color codes inside log files. great for looking at Rails logs
  * solarized - a color scheme scientifically calibrated for awesomeness (including skwp mods for ShowMarks)
  * csapprox - helps colors to be represented correctly on terminals (even though we expect to use MacVim)
+ * Powerline - beautiful vim status bar. Requires patched fonts (install from fonts/ directory)
 
 #### Coding
 
