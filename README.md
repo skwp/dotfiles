@@ -43,7 +43,7 @@ Janus is an amazing _first effort_ to deliver a ready-to-use vim setup and is a 
   * Optimized support for Solarized color scheme only, everything guaranteed to Look Good. Your eyes will thank you.
   * All plugins tested with Solarized and custom color maps provided where needed to ensure your eyes will not bleed.
   * No configuration file to maintain. YADR uses tiny ruby scripts to wrap git submodule maintenance.
-  * Much cleaner vimrc that does not introduce any new key maps. (Janus: 160 lines vimrc, 260 lines gvimrc; YADR: 90 lines vimrc with great comments)
+  * Much cleaner vimrc that keps keymaps isolated to a plugin file (not in the main vimrc).
   * All keymaps and customization in small, easy to maintain files under .vim/plugin/settings
   * More than just vim plugins - great shell aliases, osx, and irb/pry tweaks to make you more productive.
 
@@ -57,6 +57,11 @@ Janus is an amazing _first effort_ to deliver a ready-to-use vim setup and is a 
 For the love of all that is holy, stop abusing your hands!
 Remap caps-lock to escape: http://pqrs.org/macosx/keyremap4macbook/extra.html
 
+## Debugging vim keymappings
+
+This is so useful, it needs to be at the top. If you are having unexpected behavior, wondering why a particular key works the way it does,
+use: `:map [keycombo]` (e.g. `:map <C-\>`) to see what the key is mapped to. For bonus points, you can see where the mapping was set by using `:verbose map [keycombo]`. 
+If you omit the key combo, you'll get a list of all the maps. You can do the same thing with nmap, imap, vmap, etc.
 
 ## Dependencies
 
