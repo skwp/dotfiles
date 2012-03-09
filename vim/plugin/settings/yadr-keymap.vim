@@ -54,11 +54,6 @@ nnoremap ,. '.
 " put the cursor right after the quote
 imap <C-a> <esc>wa
 
-" ================== rails.vim
-"
-" Open corresponding unittest (or spec), alias for :AV in rails.vim
-nmap ,ru :AV<CR>
-
 " ==== NERD tree
 " Cmd-Shift-N for nerd tree
 nmap <D-N> :NERDTreeToggle<CR>
@@ -209,9 +204,9 @@ nmap ,Bc :ClearBookmarks<cr>
 abbr pry! require 'pry'; binding.pry
 
 " ============================
-" vim-rspec
+" vim-ruby-conque
 " ============================
 " Cmd-Shift-R for RSpec
-nmap <D-R> :RunSpec<CR>
+nmap <silent> <D-R> :call RunRspecCurrentFileConque()<CR>
 " Cmd-Shift-L for RSpec Current Line
-nmap <D-L> :RunSpecLine<CR>
+nmap <silent> <D-L> :call RunRspecCurrentLineConque()<CR>

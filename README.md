@@ -60,7 +60,7 @@ Remap caps-lock to escape: http://pqrs.org/macosx/keyremap4macbook/extra.html
 ## Debugging vim keymappings
 
 This is so useful, it needs to be at the top. If you are having unexpected behavior, wondering why a particular key works the way it does,
-use: `:map [keycombo]` (e.g. `:map <C-\>`) to see what the key is mapped to. For bonus points, you can see where the mapping was set by using `:verbose map [keycombo]`. 
+use: `:map [keycombo]` (e.g. `:map <C-\>`) to see what the key is mapped to. For bonus points, you can see where the mapping was set by using `:verbose map [keycombo]`.
 If you omit the key combo, you'll get a list of all the maps. You can do the same thing with nmap, imap, vmap, etc.
 
 ## Dependencies
@@ -134,6 +134,9 @@ git clone https://github.com/skwp/dotfiles ~/.yadr
 cd ~/.yadr && rake install
 ```
 
+Open the fonts in fonts/ and click Install Font for every font that you want.
+You must install Inconsolata to have YADR's powerline theme work correctly out of the box.
+
 Note: YADR will not destroy any of your files unless you tell it to.
 
 
@@ -202,7 +205,7 @@ gem install awesome_print
 
 ### User Info
 
-Since the gitconfig doesn't contain the user info, I recommend using env variables. Put the following in 
+Since the gitconfig doesn't contain the user info, I recommend using env variables. Put the following in
 your `~/.secrets` file which is automatically referenced by the provided zshrc:
 
     # Set your git user info
@@ -270,9 +273,8 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
 
 #### Rails
 
- * `,ru` - Rails Unittest - synonym for `:AV` from rails.vim, opens up the corresponding test/spec to the file you're looking for, in a vertical split
  * `,ss` to run specs, `,ll` to run a given spec on a line - using my [vim-ruby-conque plugin](https://github.com/skwp/vim-ruby-conque)
- * `Cmd-Shift-R` to use vim-rspec to run a spec file. `Cmd-Shift-L` to run from a line (individual it block)
+ * `Cmd-Shift-R` to use vim-ruby-conque to run a spec file. `Cmd-Shift-L` to run from a line (individual it block)
 
 #### Surround.vim customizations
 
@@ -431,8 +433,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * surround - super easy quote and tag manipulation - ysiw" - sourround inner word with quotes. ci"' - change inner double quotes to single quotes, etc
  * greplace - use :Gsearch to find across many files, replace inside the changes, then :Greplace to do a replace across all matches
  * ConqueTerm - embedded fully colorful shell inside your vim
- * vim-ruby-conque - helpers to run ruby,rspec,rake within ConqueTerm - use ,rr (ruby), ,ss (rspec), ,ll (rspec line), ,RR (rake)
- * vim-rspec - really clean and colorful rspec output (Cmd-Shift-R) with ability to navigate directly to error; will replace vim-ruby-conque when I do a couple enhancements/bug fixes
+ * vim-ruby-conque - helpers to run ruby,rspec,rake within ConqueTerm
  * vim-markdown-preview - :Mm to view your README.md as html
  * html-escape - ,he and ,hu to escape and unescape html
  * ruby-debug-ide - not quite working for me, but maybe it will for you. supposedly a graphical debugger you can step through
