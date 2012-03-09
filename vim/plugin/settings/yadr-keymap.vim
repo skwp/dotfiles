@@ -161,7 +161,7 @@ nmap <silent> // :nohlsearch<CR>
 " the line we're looking at (it does so by yy-copy, colon
 " to get to the command mode, C-f to get to history editing
 " p to paste it, C-c to return to command mode, and CR to execute
-nmap <silent> ,cc yy:<C-f>p<C-c><CR>
+nmap <silent> ,vc yy:<C-f>p<C-c><CR>
 
 " Type ,hl to toggle highlighting on/off, and show current value.
 noremap ,hl :set hlsearch! hlsearch?<CR>

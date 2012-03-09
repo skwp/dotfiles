@@ -355,7 +355,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
 
  * `,ig` - toggle visual indentation guides
  * `,cf` - Copy Filename of current file into system (not vi) paste buffer
- * `,cc` - (Current command) copies the command under your cursor and executes it in vim. Great for testing single line changes to vimrc.
+ * `,vc` - (Vim Command) copies the command under your cursor and executes it in vim. Great for testing single line changes to vimrc.
  * `,yw` - yank a word from anywhere within the word (so you don't have to go to the beginning of it)
  * `,ow` - overwrite a word with whatever is in your yank buffer - you can be anywhere on the word. saves having to visually select it
  * `,w` - strip trailing whitespaces
