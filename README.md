@@ -326,6 +326,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * `,.` to go to last edit location instead of `'.` because the apostrophe is hard on the pinky
  * `Cmd-'` and `Cmd-"` to change content inside quotes
  * Cmd-Space to autocomplete. Tab for snipmate snippets.
+ * `fd` and `jk` key *chords* - hit the first two homerow buttons simultaneously on either side of the keyboard to go to beginning and end of line
 
 #### Tab Navigation
 
@@ -444,6 +445,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
 
 #### General enhancements that don't add new commands
 
+ * Arpeggio - allows you to define key-chord combinations
  * IndexedSearch - when you do searches will show you "Match 2 of 4" in the status line
  * delimitMate - automatically closes quotes
  * syntastic - automatic syntax checking when you save the file

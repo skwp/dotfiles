@@ -1,3 +1,6 @@
+" Arpeggio lets us define key-chord combos (simultaneous key presses)
+call arpeggio#load()
+
 " ========================================
 " General vim sanity improvements
 " ========================================
@@ -34,6 +37,11 @@ imap <silent> <D-k> _
 imap <silent> <D-d> _
 imap <silent> <D-K> -
 imap <silent> <D-D> -
+
+" Use the two first fingers on both sides of the keyboard
+" simultaneously to go to the beginning or end of line
+Arpeggio nnoremap jk $
+Arpeggio nnoremap fd 0
 
 " Change inside quotes with Cmd-" and Cmd-'
 nnoremap <D-'> ci'
