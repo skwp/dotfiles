@@ -365,6 +365,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * `,he` - Html Escape
  * `,hu` - Html Unescape
  * `Cmd-Shift-A` - align things (type a character/expression to align by, works in visual mode or by itself)
+ * `:ColorCodes` - turn on #abc123 color highlighting (useful for css)
 
 #### Comments
 
@@ -442,6 +443,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * Gundo - visualize your undos - pretty amazing plugin. Hit ,u with my keymappings to trigger it, very user friendly
  * slime - use ctrl-c,ctrl-c to send text to a running irb/pry/console. To start the console, you must use screen with a named session: "screen -S [name] [cmd]", ex: "screen -S pry pry"
  * vim-indent-guides - visual indent guides, off by default
+ * color_highlight - use :ColorCodes to see hex colors highlighted
 
 #### General enhancements that don't add new commands
 
