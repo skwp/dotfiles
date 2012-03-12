@@ -8,7 +8,7 @@ if [[ -d $HOME/.oh-my-zsh ]]; then
 
   # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
   # Example format: plugins=(rails git textmate ruby lighthouse)
-  plugins=(git rvm ruby rails autojump)
+  plugins=(vi-mode git rvm ruby rails autojump bundler gem gnu-utils heroku rake redis-cli zsh-syntax-highlighting history-substring-search)
 
   # Load default oh-my-zsh stuff
   source $ZSH/oh-my-zsh.sh
@@ -23,9 +23,6 @@ source $yadr/zsh/zsh_aliases
 
 # Things I don't want to publish to github
 [[ -s "$HOME/.secrets" ]] && source "$HOME/.secrets"
-
-# Vim mode
-bindkey -v
 
 # Give me my bash style incremental search
 bindkey '^R' history-incremental-search-backward
