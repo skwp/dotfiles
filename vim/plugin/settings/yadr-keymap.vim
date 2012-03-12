@@ -77,6 +77,8 @@ nnoremap <silent> <D-j> }
 nnoremap <silent> <D-k> {
 autocmd FileType ruby map <buffer> <D-j> ]m
 autocmd FileType ruby map <buffer> <D-k> [m
+autocmd FileType rspec map <buffer> <D-j> }
+autocmd FileType rspec map <buffer> <D-k> {
 
 " Open the project tree and expose current file in the nerdtree with Ctrl-\
 nnoremap <silent> <C-\> :NERDTreeFind<CR>
@@ -115,10 +117,6 @@ nnoremap <silent> <C-h> <C-w>h
 nnoremap <silent> <C-l> <C-w>l
 nnoremap <silent> <C-k> <C-w>k
 nnoremap <silent> <C-j> <C-w>j
-
-" Move between tabs with Ctrl-Shift-H and Ctrl-Shift-L
-map <silent> <C-H> :tabprevious<cr>
-map <silent> <C-L> :tabnext<cr>
 
 " Zoom in and out of current window with ,,
 map <silent> ,gz <C-w>o
