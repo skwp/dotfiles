@@ -71,13 +71,12 @@ nmap <D-N> :NERDTreeToggle<CR>
 nmap <silent> ,qc :cclose<CR>
 nmap <silent> ,qo :copen<CR>
 
-" move up/down quickly by using Ctrl-j, Ctrl-k
+" move up/down quickly by using Cmd-j, Cmd-k
 " which will move us around by functions
-nnoremap <silent> <C-j> }
-nnoremap <silent> <C-k> {
-
-autocmd FileType ruby map <buffer> <C-j> ]m
-autocmd FileType ruby map <buffer> <C-k> [m
+nnoremap <silent> <D-j> }
+nnoremap <silent> <D-k> {
+autocmd FileType ruby map <buffer> <D-j> ]m
+autocmd FileType ruby map <buffer> <D-k> [m
 
 " Open the project tree and expose current file in the nerdtree with Ctrl-\
 nnoremap <silent> <C-\> :NERDTreeFind<CR>
@@ -112,10 +111,10 @@ nnoremap <silent> ,x :bn<CR>
 " Move between split windows by using the four directions H, L, I, N
 " (note that  I use I and N instead of J and K because  J already does
 " line joins and K is mapped to GitGrep the current word
-nnoremap <silent> H <C-w>h
-nnoremap <silent> L <C-w>l
-nnoremap <silent> I <C-w>k
-nnoremap <silent> M <C-w>j
+nnoremap <silent> <C-h> <C-w>h
+nnoremap <silent> <C-l> <C-w>l
+nnoremap <silent> <C-k> <C-w>k
+nnoremap <silent> <C-j> <C-w>j
 
 " Move between tabs with Ctrl-Shift-H and Ctrl-Shift-L
 map <silent> <C-H> :tabprevious<cr>

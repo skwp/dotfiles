@@ -254,7 +254,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
 
  * `,z` - go to previous buffer (:bp)
  * `,x` - go to next buffer (:bn)
- * `Ctrl-j` and `Ctrl-k` to move up and down roughly by functions
+ * `Cmd-j` and `Cmd-k` to move up and down roughly by functions
  * `Ctrl-o` - Old cursor position - this is a standard mapping but very useful, so included here
  * `Ctrl-i` - opposite of Ctrl-O (again, this is standard)
 
@@ -335,7 +335,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
 
 #### Window Navigation
 
- * `H` `L` `I` `M` - to move left, right, up, down between windows
+ * `Ctrl-h,l,j,k` - to move left, right, down, up between windows
  * `Q` - Intelligent Window Killer. Close window `wincmd c` if there are multiple windows to same buffer, or kill the buffer `bwipeout` if this is the last window into it.
  * `+` and `-` for resizing vertical windows
 
