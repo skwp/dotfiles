@@ -70,10 +70,6 @@
   path = vim/bundle/tpope-vim-repeat
   url = https://github.com/tpope/vim-repeat.git
   ignore=dirty
-[submodule "vim/bundle/vim-scripts-taglist"]
-  path = vim/bundle/vim-scripts-taglist
-  url = https://github.com/vim-scripts/taglist.vim.git
-  ignore=dirty
 [submodule "vim/bundle/tpope-vim-surround"]
   path = vim/bundle/tpope-vim-surround
   url = https://github.com/tpope/vim-surround.git
