@@ -49,7 +49,7 @@ Janus is an amazing _first effort_ to deliver a ready-to-use vim setup and is a 
 
 
 ## Screenshot
-![screenshot](http://i.imgur.com/ZYt4J.png)
+![screenshot](http://i.imgur.com/afzuR.png)
 
 
 ## Before you start
