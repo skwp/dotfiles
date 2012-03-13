@@ -285,3 +285,6 @@
 [submodule "vim/bundle/chrisbra-color_highlight"]
 	path = vim/bundle/chrisbra-color_highlight
 	url = https://github.com/chrisbra/color_highlight.git
+[submodule "vim/bundle/vim-scripts-camelcasemotion"]
+	path = vim/bundle/vim-scripts-camelcasemotion
+	url = https://github.com/vim-scripts/camelcasemotion.git
