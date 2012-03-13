@@ -36,6 +36,10 @@ __git_files () {
 # Always pushd when changing directory
 setopt auto_pushd
 
+# Use zmv, which is amazing
+autoload -U zmv
+alias zmv="noglob zmv -W"
+
 # Fuzzy matching of completions for when you mistype them:
 zstyle ':completion:*' completer _complete _match _approximate
 zstyle ':completion:*:match:*' original only
