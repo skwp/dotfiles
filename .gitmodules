@@ -126,14 +126,6 @@
   path = vim/bundle/tpope-vim-fugitive
   url = https://github.com/tpope/vim-fugitive
   ignore=dirty
-[submodule "vim/bundle/mikefarmer-snipmate"]
-  path = vim/bundle/mikefarmer-snipmate
-  url = https://github.com/mikefarmer/snipmate.vim.git
-  ignore=dirty
-[submodule "vim/snippets"]
-  path = vim/snippets
-  url = https://github.com/scrooloose/snipmate-snippets.git
-  ignore=dirty
 [submodule "vim/bundle/skwp-vim-git-grep-rails-partial"]
   path = vim/bundle/skwp-vim-git-grep-rails-partial
   url = https://github.com/skwp/vim-git-grep-rails-partial
