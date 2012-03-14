@@ -126,14 +126,6 @@
   path = vim/bundle/tpope-vim-fugitive
   url = https://github.com/tpope/vim-fugitive
   ignore=dirty
-[submodule "vim/bundle/mikefarmer-snipmate"]
-  path = vim/bundle/mikefarmer-snipmate
-  url = https://github.com/mikefarmer/snipmate.vim.git
-  ignore=dirty
-[submodule "vim/snippets"]
-  path = vim/snippets
-  url = https://github.com/scrooloose/snipmate-snippets.git
-  ignore=dirty
 [submodule "vim/bundle/skwp-vim-git-grep-rails-partial"]
   path = vim/bundle/skwp-vim-git-grep-rails-partial
   url = https://github.com/skwp/vim-git-grep-rails-partial
@@ -284,3 +276,15 @@
 [submodule "vim/bundle/vim-scripts-camelcasemotion"]
 	path = vim/bundle/vim-scripts-camelcasemotion
 	url = https://github.com/vim-scripts/camelcasemotion.git
+[submodule "vim/bundle/garbas-vim-snipmate"]
+	path = vim/bundle/garbas-vim-snipmate
+	url = https://github.com/garbas/vim-snipmate.git
+[submodule "vim/bundle/MarcWeber-vim-addon-mw-utils"]
+	path = vim/bundle/MarcWeber-vim-addon-mw-utils
+	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
+[submodule "vim/bundle/tomtom-tlib_vim"]
+	path = vim/bundle/tomtom-tlib_vim
+	url = https://github.com/tomtom/tlib_vim.git
+[submodule "vim/bundle/honza-snipmate-snippets"]
+	path = vim/bundle/honza-snipmate-snippets
+	url = https://github.com/honza/snipmate-snippets.git
