@@ -114,6 +114,12 @@ waiting for @robbyrussell to merge the theme upstream (unknown if it will happen
     git remote add skwp https://github.com/skwp/oh-my-zsh.git
     git pull skwp master
 
+### [fasd](https://github.com/clvv/fasd)
+
+fasd gives you handy shell commands `f`,`a`,`s`,`d`, and `z` to jump to recently used files.
+Read more at the project's home page. Or just type `z` followed by a partial reference to
+a recent directory to see how it works.
+
 ### [Pry](http://pry.github.com/)
 
 Pry offers a much better out of the box IRB experience with colors, tab completion, and lots of other tricks. You should:
@@ -230,7 +236,6 @@ your `~/.secrets` file which is automatically referenced by the provided zshrc:
   * Some sensible default configs, such as improving merge messages, push only pushes the current branch, removing status hints, and using mnemonic prefixes in diff: (i)ndex, (w)ork tree, (c)ommit and (o)bject
   * Slightly imrpoved colors for diff
   * `git unstage` (remove from index) and `git uncommit` (revert to the time prior to the last commit - dangerous if already pushed) aliases
-
 
 ## RubyGems
 
@@ -522,11 +527,6 @@ and other places for the cream of the crop of vim awesomeness.
 
 And everything that's in the modules included in vim/bundle of course.
 Please explore these people's work.
-
-
-### Coming Soon
-
- * Automatic installation setup
 
 
 ### Contributors

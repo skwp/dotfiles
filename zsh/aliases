@@ -117,3 +117,11 @@ alias sgi='sudo gem install --no-ri --no-rdoc'
 # to find the note called 'todo'
 alias todo='open nvalt://find/todo'
 
+# fasd - https://github.com/clvv/fasd
+# jump to recently used items
+alias a='fasd -a' # any
+alias s='fasd -s' # show / search / select
+alias d='fasd -d' # directory
+alias f='fasd -f' # file
+alias z='fasd_cd -d' # cd, same functionality as j in autojump
+alias v='f -e vim' # quick opening files with vim
