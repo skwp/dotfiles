@@ -110,10 +110,6 @@
   path = vim/bundle/skwp-vim-colors-solarized
   url = https://github.com/skwp/vim-colors-solarized
   ignore=dirty
-[submodule "vim/bundle/rson-vim-conque"]
-  path = vim/bundle/rson-vim-conque
-  url = https://github.com/rson/vim-conque.git
-  ignore=dirty
 [submodule "vim/bundle/tpope-vim-pathogen"]
   path = vim/bundle/tpope-vim-pathogen
   url = https://github.com/tpope/vim-pathogen
@@ -288,3 +284,6 @@
 [submodule "vim/bundle/honza-snipmate-snippets"]
 	path = vim/bundle/honza-snipmate-snippets
 	url = https://github.com/honza/snipmate-snippets.git
+[submodule "vim/bundle/skwp-vim-conque"]
+	path = vim/bundle/skwp-vim-conque
+	url = https://github.com/skwp/vim-conque
