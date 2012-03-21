@@ -14,10 +14,6 @@
   path = vim/bundle/vim-scripts-AnsiEsc
   url = https://github.com/vim-scripts/AnsiEsc.vim.git
   ignore=dirty
-[submodule "vim/bundle/garbas-vim-showmarks"]
-  path = vim/bundle/garbas-vim-showmarks
-  url = https://github.com/garbas/vim-showmarks
-  ignore=dirty
 [submodule "vim/bundle/skwp-vim-ruby-conque"]
   path = vim/bundle/skwp-vim-ruby-conque
   url = https://github.com/skwp/vim-ruby-conque
@@ -74,10 +70,6 @@
   path = vim/bundle/tpope-vim-repeat
   url = https://github.com/tpope/vim-repeat.git
   ignore=dirty
-[submodule "vim/bundle/vim-scripts-taglist"]
-  path = vim/bundle/vim-scripts-taglist
-  url = https://github.com/vim-scripts/taglist.vim.git
-  ignore=dirty
 [submodule "vim/bundle/tpope-vim-surround"]
   path = vim/bundle/tpope-vim-surround
   url = https://github.com/tpope/vim-surround.git
@@ -118,10 +110,6 @@
   path = vim/bundle/skwp-vim-colors-solarized
   url = https://github.com/skwp/vim-colors-solarized
   ignore=dirty
-[submodule "vim/bundle/rson-vim-conque"]
-  path = vim/bundle/rson-vim-conque
-  url = https://github.com/rson/vim-conque.git
-  ignore=dirty
 [submodule "vim/bundle/tpope-vim-pathogen"]
   path = vim/bundle/tpope-vim-pathogen
   url = https://github.com/tpope/vim-pathogen
@@ -133,14 +121,6 @@
 [submodule "vim/bundle/tpope-vim-fugitive"]
   path = vim/bundle/tpope-vim-fugitive
   url = https://github.com/tpope/vim-fugitive
-  ignore=dirty
-[submodule "vim/bundle/mikefarmer-snipmate"]
-  path = vim/bundle/mikefarmer-snipmate
-  url = https://github.com/mikefarmer/snipmate.vim.git
-  ignore=dirty
-[submodule "vim/snippets"]
-  path = vim/snippets
-  url = https://github.com/scrooloose/snipmate-snippets.git
   ignore=dirty
 [submodule "vim/bundle/skwp-vim-git-grep-rails-partial"]
   path = vim/bundle/skwp-vim-git-grep-rails-partial
@@ -234,10 +214,6 @@
   path = vim/bundle/bootleq-vim-textobj-rubysymbol
   url = https://github.com/bootleq/vim-textobj-rubysymbol
   ignore=dirty
-[submodule "vim/bundle/skwp-vim-rspec"]
-  path = vim/bundle/skwp-vim-rspec
-  url = https://github.com/skwp/vim-rspec
-  ignore=dirty
 [submodule "vim/bundle/nathanaelkane-vim-indent-guides"]
   path = vim/bundle/nathanaelkane-vim-indent-guides
   url = https://github.com/nathanaelkane/vim-indent-guides
@@ -249,10 +225,6 @@
 [submodule "vim/bundle/tpope-vim-haml"]
   path = vim/bundle/tpope-vim-haml
   url = https://github.com/tpope/vim-haml
-  ignore=dirty
-[submodule "vim/bundle/kien-tabman"]
-  path = vim/bundle/kien-tabman
-  url = https://github.com/kien/tabman.vim
   ignore=dirty
 [submodule "vim/bundle/claco-jasmine"]
   path = vim/bundle/claco-jasmine
@@ -285,3 +257,33 @@
 [submodule "vim/bundle/joestelmach-javaScriptLint"]
 	path = vim/bundle/joestelmach-javaScriptLint
 	url = https://github.com/joestelmach/javaScriptLint.vim
+[submodule "vim/bundle/VimEz-ShowMarks"]
+	path = vim/bundle/VimEz-ShowMarks
+	url = https://github.com/VimEz/ShowMarks.git
+[submodule "vim/bundle/skwp-vim-powerline"]
+	path = vim/bundle/skwp-vim-powerline
+	url = https://github.com/skwp/vim-powerline
+[submodule "vim/bundle/kana-vim-arpeggio"]
+	path = vim/bundle/kana-vim-arpeggio
+	url = https://github.com/kana/vim-arpeggio
+[submodule "vim/bundle/chrisbra-color_highlight"]
+	path = vim/bundle/chrisbra-color_highlight
+	url = https://github.com/chrisbra/color_highlight.git
+[submodule "vim/bundle/vim-scripts-camelcasemotion"]
+	path = vim/bundle/vim-scripts-camelcasemotion
+	url = https://github.com/vim-scripts/camelcasemotion.git
+[submodule "vim/bundle/garbas-vim-snipmate"]
+	path = vim/bundle/garbas-vim-snipmate
+	url = https://github.com/garbas/vim-snipmate.git
+[submodule "vim/bundle/MarcWeber-vim-addon-mw-utils"]
+	path = vim/bundle/MarcWeber-vim-addon-mw-utils
+	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
+[submodule "vim/bundle/tomtom-tlib_vim"]
+	path = vim/bundle/tomtom-tlib_vim
+	url = https://github.com/tomtom/tlib_vim.git
+[submodule "vim/bundle/honza-snipmate-snippets"]
+	path = vim/bundle/honza-snipmate-snippets
+	url = https://github.com/honza/snipmate-snippets.git
+[submodule "vim/bundle/skwp-vim-conque"]
+	path = vim/bundle/skwp-vim-conque
+	url = https://github.com/skwp/vim-conque

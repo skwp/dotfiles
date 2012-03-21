@@ -1,3 +1,6 @@
+" Arpeggio lets us define key-chord combos (simultaneous key presses)
+call arpeggio#load()
+
 " ========================================
 " General vim sanity improvements
 " ========================================
@@ -35,15 +38,17 @@ imap <silent> <D-d> _
 imap <silent> <D-K> -
 imap <silent> <D-D> -
 
+" Use the two first fingers on both sides of the keyboard
+" simultaneously to go to the beginning or end of line
+Arpeggio nnoremap jk $
+Arpeggio nnoremap fd 0
+
 " Change inside quotes with Cmd-" and Cmd-'
 nnoremap <D-'> ci'
 nnoremap <D-"> ci"
 
 " Add spaces around a symbol with Ctrl-Space
 nnoremap <C-Space> i <esc><right>a <esc>
-
-" Don't have to use Shift to get into command mode, just hit semicolon
-nnoremap ; :
 
 "Go to last edit location with ,.
 nnoremap ,. '.
@@ -57,11 +62,6 @@ nnoremap ,. '.
 " put the cursor right after the quote
 imap <C-a> <esc>wa
 
-" ================== rails.vim
-"
-" Open corresponding unittest (or spec), alias for :AV in rails.vim
-nmap ,ru :AV<CR>
-
 " ==== NERD tree
 " Cmd-Shift-N for nerd tree
 nmap <D-N> :NERDTreeToggle<CR>
@@ -71,13 +71,14 @@ nmap <D-N> :NERDTreeToggle<CR>
 nmap <silent> ,qc :cclose<CR>
 nmap <silent> ,qo :copen<CR>
 
-" move up/down quickly by using Ctrl-j, Ctrl-k
+" move up/down quickly by using Cmd-j, Cmd-k
 " which will move us around by functions
-nnoremap <silent> <C-j> }
-nnoremap <silent> <C-k> {
-
-autocmd FileType ruby map <buffer> <C-j> ]m
-autocmd FileType ruby map <buffer> <C-k> [m
+nnoremap <silent> <D-j> }
+nnoremap <silent> <D-k> {
+autocmd FileType ruby map <buffer> <D-j> ]m
+autocmd FileType ruby map <buffer> <D-k> [m
+autocmd FileType rspec map <buffer> <D-j> }
+autocmd FileType rspec map <buffer> <D-k> {
 
 " Open the project tree and expose current file in the nerdtree with Ctrl-\
 nnoremap <silent> <C-\> :NERDTreeFind<CR>
@@ -97,6 +98,9 @@ nnoremap <silent> ,f <C-]>
 " use ,F to jump to tag in a vertical split
 nnoremap <silent> ,F :let word=expand("<cword>")<CR>:vsp<CR>:wincmd w<cr>:exec("tag ". word)<cr>
 
+" use ,gf to go to file in a vertical split
+nnoremap <silent> ,gf :vertical botright wincmd f<CR>
+
 
 "Move back and forth through previous and next buffers
 "with ,z and ,x
@@ -109,14 +113,10 @@ nnoremap <silent> ,x :bn<CR>
 " Move between split windows by using the four directions H, L, I, N
 " (note that  I use I and N instead of J and K because  J already does
 " line joins and K is mapped to GitGrep the current word
-nnoremap <silent> H <C-w>h
-nnoremap <silent> L <C-w>l
-nnoremap <silent> I <C-w>k
-nnoremap <silent> M <C-w>j
-
-" Move between tabs with Ctrl-Shift-H and Ctrl-Shift-L
-map <silent> <C-H> :tabprevious<cr>
-map <silent> <C-L> :tabnext<cr>
+nnoremap <silent> <C-h> <C-w>h
+nnoremap <silent> <C-l> <C-w>l
+nnoremap <silent> <C-k> <C-w>k
+nnoremap <silent> <C-j> <C-w>j
 
 " Zoom in and out of current window with ,,
 map <silent> ,gz <C-w>o
@@ -138,8 +138,9 @@ map <silent> <D-9> :tabn 9<cr>
 nnoremap <silent> vv <C-w>v
 nnoremap <silent> ss <C-w>s
 
-"open the taglist (method browser) using ,t
-nnoremap <silent> ,T :TlistToggle<CR>
+" Resize vertical windows by hitting plus and minus
+nnoremap <silent> + <C-w>+
+nnoremap <silent> - <C-w>-
 
 " create <%= foo %> erb tags using Ctrl-k in edit mode
 imap <silent> <C-K> <%=   %><Esc>3hi
@@ -162,7 +163,7 @@ nmap <silent> // :nohlsearch<CR>
 " the line we're looking at (it does so by yy-copy, colon
 " to get to the command mode, C-f to get to history editing
 " p to paste it, C-c to return to command mode, and CR to execute
-nmap <silent> ,cc yy:<C-f>p<C-c><CR>
+nmap <silent> ,vc yy:<C-f>p<C-c><CR>
 
 " Type ,hl to toggle highlighting on/off, and show current value.
 noremap ,hl :set hlsearch! hlsearch?<CR>
@@ -209,9 +210,9 @@ nmap ,Bc :ClearBookmarks<cr>
 abbr pry! require 'pry'; binding.pry
 
 " ============================
-" vim-rspec
+" vim-ruby-conque
 " ============================
 " Cmd-Shift-R for RSpec
-nmap <D-R> :RunSpec<CR>
+nmap <silent> <D-R> :call RunRspecCurrentFileConque()<CR>
 " Cmd-Shift-L for RSpec Current Line
-nmap <D-L> :RunSpecLine<CR>
+nmap <silent> <D-L> :call RunRspecCurrentLineConque()<CR>

@@ -5,7 +5,7 @@
      _____| / ___ ( (_| | |
     (_______\_____|\____|_|
 
-    # Yet Another Dotfile Repo v0.8
+    # Yet Another Dotfile Repo v0.9
     # Alpha Release Please Report Bugs
 
     git clone https://github.com/skwp/dotfiles ~/.yadr
@@ -43,13 +43,13 @@ Janus is an amazing _first effort_ to deliver a ready-to-use vim setup and is a 
   * Optimized support for Solarized color scheme only, everything guaranteed to Look Good. Your eyes will thank you.
   * All plugins tested with Solarized and custom color maps provided where needed to ensure your eyes will not bleed.
   * No configuration file to maintain. YADR uses tiny ruby scripts to wrap git submodule maintenance.
-  * Much cleaner vimrc that does not introduce any new key maps. (Janus: 160 lines vimrc, 260 lines gvimrc; YADR: 90 lines vimrc with great comments)
+  * Much cleaner vimrc that keps keymaps isolated to a plugin file (not in the main vimrc).
   * All keymaps and customization in small, easy to maintain files under .vim/plugin/settings
   * More than just vim plugins - great shell aliases, osx, and irb/pry tweaks to make you more productive.
 
 
 ## Screenshot
-![screenshot](http://i.imgur.com/lEFlF.png)
+![screenshot](http://i.imgur.com/afzuR.png)
 
 
 ## Before you start
@@ -57,11 +57,20 @@ Janus is an amazing _first effort_ to deliver a ready-to-use vim setup and is a 
 For the love of all that is holy, stop abusing your hands!
 Remap caps-lock to escape: http://pqrs.org/macosx/keyremap4macbook/extra.html
 
+## Debugging vim keymappings
+
+This is so useful, it needs to be at the top. If you are having unexpected behavior, wondering why a particular key works the way it does,
+use: `:map [keycombo]` (e.g. `:map <C-\>`) to see what the key is mapped to. For bonus points, you can see where the mapping was set by using `:verbose map [keycombo]`.
+If you omit the key combo, you'll get a list of all the maps. You can do the same thing with nmap, imap, vmap, etc.
 
 ## Dependencies
 
 YADR is opinionated. To get the most out of using it, you should install
 all the software it depends on.
+
+### Patched fonts for Vim-Powerline
+
+Please install fonts from fonts/ directory. These are used to give a really nice vim status line.
 
 ### [Homebrew](http://mxcl.github.com/homebrew/)
 
@@ -105,6 +114,12 @@ waiting for @robbyrussell to merge the theme upstream (unknown if it will happen
     git remote add skwp https://github.com/skwp/oh-my-zsh.git
     git pull skwp master
 
+### [fasd](https://github.com/clvv/fasd)
+
+fasd gives you handy shell commands `f`,`a`,`s`,`d`, and `z` to jump to recently used files.
+Read more at the project's home page. Or just type `z` followed by a partial reference to
+a recent directory to see how it works.
+
 ### [Pry](http://pry.github.com/)
 
 Pry offers a much better out of the box IRB experience with colors, tab completion, and lots of other tricks. You should:
@@ -124,6 +139,9 @@ started please run:
 git clone https://github.com/skwp/dotfiles ~/.yadr
 cd ~/.yadr && rake install
 ```
+
+Open the fonts in fonts/ and click Install Font for every font that you want.
+You must install Inconsolata to have YADR's powerline theme work correctly out of the box.
 
 Note: YADR will not destroy any of your files unless you tell it to.
 
@@ -193,7 +211,7 @@ gem install awesome_print
 
 ### User Info
 
-Since the gitconfig doesn't contain the user info, I recommend using env variables. Put the following in 
+Since the gitconfig doesn't contain the user info, I recommend using env variables. Put the following in
 your `~/.secrets` file which is automatically referenced by the provided zshrc:
 
     # Set your git user info
@@ -219,7 +237,6 @@ your `~/.secrets` file which is automatically referenced by the provided zshrc:
   * Slightly imrpoved colors for diff
   * `git unstage` (remove from index) and `git uncommit` (revert to the time prior to the last commit - dangerous if already pushed) aliases
 
-
 ## RubyGems
 
 A .gemrc is included. Never again type `gem install whatever --no-ri --no-rdoc`. `--no-ri --no-rdoc` is done by default.
@@ -242,7 +259,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
 
  * `,z` - go to previous buffer (:bp)
  * `,x` - go to next buffer (:bn)
- * `Ctrl-j` and `Ctrl-k` to move up and down roughly by functions
+ * `Cmd-j` and `Cmd-k` to move up and down roughly by functions
  * `Ctrl-o` - Old cursor position - this is a standard mapping but very useful, so included here
  * `Ctrl-i` - opposite of Ctrl-O (again, this is standard)
 
@@ -261,9 +278,8 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
 
 #### Rails
 
- * `,ru` - Rails Unittest - synonym for `:AV` from rails.vim, opens up the corresponding test/spec to the file you're looking for, in a vertical split
  * `,ss` to run specs, `,ll` to run a given spec on a line - using my [vim-ruby-conque plugin](https://github.com/skwp/vim-ruby-conque)
- * `Cmd-Shift-R` to use vim-rspec to run a spec file. `Cmd-Shift-L` to run from a line (individual it block)
+ * `Cmd-Shift-R` to use vim-ruby-conque to run a spec file. `Cmd-Shift-L` to run from a line (individual it block)
 
 #### Surround.vim customizations
 
@@ -275,11 +291,12 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
 
  * `,f` - instantly Find definition of class (must have exuberant ctags installed)
  * `,F` - same as ,f but in a vertical split
+ * `,gf` - same as vim normal gf (go to file), but in a vertical split
  * `K` - GitGrep the current word under the cursor and show results in quickfix window
  * `,K` - GitGrep the current word up to next exclamation point (useful for ruby foo! methods)
  * `Cmd-*` - highlight all occurrences of current word (similar to regular `*` except doesn't move)
  * `,hl` - toggle search highlight on and off
- * `,gg` - GitGrep command line with a quote pretyped (close the quote yourself)
+ * `,gg` - GitGrep command line, type between quotes
  * `,gd` - GitGrep def (greps for 'def [function name]') when cursor is over the function name
  * `,gcp` - GitGrep Current Partial to find references to the current view partial
  * `//` - clear the search
@@ -314,6 +331,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * `,.` to go to last edit location instead of `'.` because the apostrophe is hard on the pinky
  * `Cmd-'` and `Cmd-"` to change content inside quotes
  * Cmd-Space to autocomplete. Tab for snipmate snippets.
+ * `fd` and `jk` key *chords* - hit the first two homerow buttons simultaneously on either side of the keyboard to go to beginning and end of line
 
 #### Tab Navigation
 
@@ -322,8 +340,9 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
 
 #### Window Navigation
 
- * `H` `L` `I` `M` - to move left, right, up, down between windows
+ * `Ctrl-h,l,j,k` - to move left, right, down, up between windows
  * `Q` - Intelligent Window Killer. Close window `wincmd c` if there are multiple windows to same buffer, or kill the buffer `bwipeout` if this is the last window into it.
+ * `+` and `-` for resizing vertical windows
 
 #### Splits
 
@@ -342,7 +361,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
 
  * `,ig` - toggle visual indentation guides
  * `,cf` - Copy Filename of current file into system (not vi) paste buffer
- * `,cc` - (Current command) copies the command under your cursor and executes it in vim. Great for testing single line changes to vimrc.
+ * `,vc` - (Vim Command) copies the command under your cursor and executes it in vim. Great for testing single line changes to vimrc.
  * `,yw` - yank a word from anywhere within the word (so you don't have to go to the beginning of it)
  * `,ow` - overwrite a word with whatever is in your yank buffer - you can be anywhere on the word. saves having to visually select it
  * `,w` - strip trailing whitespaces
@@ -351,6 +370,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * `,he` - Html Escape
  * `,hu` - Html Unescape
  * `Cmd-Shift-A` - align things (type a character/expression to align by, works in visual mode or by itself)
+ * `:ColorCodes` - turn on #abc123 color highlighting (useful for css)
 
 #### Comments
 
@@ -374,7 +394,6 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * TagBar - hit ,T to see a list of methods in a class (uses ctags)
  * CtrlP - Ctrl-p or ,t to find a file
  * VimBookmarks - toggle an anonymous bookmark ,bb and go thru them ,bn ,bp and clear them ,bc
- * TabMan - hit ,mt to see all tabs and buffers in a tree. Easy to navigate and close.
 
 #### Git
 
@@ -387,6 +406,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * AnsiEsc - inteprets ansi color codes inside log files. great for looking at Rails logs
  * solarized - a color scheme scientifically calibrated for awesomeness (including skwp mods for ShowMarks)
  * csapprox - helps colors to be represented correctly on terminals (even though we expect to use MacVim)
+ * Powerline - beautiful vim status bar. Requires patched fonts (install from fonts/ directory)
 
 #### Coding
 
@@ -421,17 +441,18 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * surround - super easy quote and tag manipulation - ysiw" - sourround inner word with quotes. ci"' - change inner double quotes to single quotes, etc
  * greplace - use :Gsearch to find across many files, replace inside the changes, then :Greplace to do a replace across all matches
  * ConqueTerm - embedded fully colorful shell inside your vim
- * vim-ruby-conque - helpers to run ruby,rspec,rake within ConqueTerm - use ,rr (ruby), ,ss (rspec), ,ll (rspec line), ,RR (rake)
- * vim-rspec - really clean and colorful rspec output (Cmd-Shift-R) with ability to navigate directly to error; will replace vim-ruby-conque when I do a couple enhancements/bug fixes
+ * vim-ruby-conque - helpers to run ruby,rspec,rake within ConqueTerm
  * vim-markdown-preview - :Mm to view your README.md as html
  * html-escape - ,he and ,hu to escape and unescape html
  * ruby-debug-ide - not quite working for me, but maybe it will for you. supposedly a graphical debugger you can step through
  * Gundo - visualize your undos - pretty amazing plugin. Hit ,u with my keymappings to trigger it, very user friendly
  * slime - use ctrl-c,ctrl-c to send text to a running irb/pry/console. To start the console, you must use screen with a named session: "screen -S [name] [cmd]", ex: "screen -S pry pry"
  * vim-indent-guides - visual indent guides, off by default
+ * color_highlight - use :ColorCodes to see hex colors highlighted
 
 #### General enhancements that don't add new commands
 
+ * Arpeggio - allows you to define key-chord combinations
  * IndexedSearch - when you do searches will show you "Match 2 of 4" in the status line
  * delimitMate - automatically closes quotes
  * syntastic - automatic syntax checking when you save the file
@@ -506,11 +527,6 @@ and other places for the cream of the crop of vim awesomeness.
 
 And everything that's in the modules included in vim/bundle of course.
 Please explore these people's work.
-
-
-### Coming Soon
-
- * Automatic installation setup
 
 
 ### Contributors
