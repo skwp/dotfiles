@@ -63,4 +63,3 @@ export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
 
 # Initialize fasd (https://github.com/clvv/fasd)
 eval "$(fasd --init posix-alias zsh-hook)"
-
