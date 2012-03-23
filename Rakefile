@@ -1,7 +1,14 @@
 require 'rake'
 
 desc "Hook our dotfiles into system-standard positions."
-task :install => :submodules do
+task :install => [:submodules] do
+  puts
+  puts "======================================================"
+  puts "Welcome to YADR Installation. I'll ask you a few"
+  puts "questions about which files to install. Nothing will"
+  puts "be overwritten without your consent."
+  puts "======================================================"
+  puts
   # this has all the linkables from this directory.
   linkables = []
   linkables += Dir.glob('git/*') if want_to_install?('git')
@@ -9,6 +16,7 @@ task :install => :submodules do
   linkables += Dir.glob('ruby/*') if want_to_install?('ruby (gems)')
   linkables += Dir.glob('{vim,vimrc}') if want_to_install?('vim')
   linkables += Dir.glob('zsh/zshrc') if want_to_install?('zsh')
+  Rake::Task['zsh_themes'].invoke
 
   skip_all = false
   overwrite_all = false
@@ -36,11 +44,15 @@ task :install => :submodules do
         end
       end
       FileUtils.rm_rf(target) if overwrite || overwrite_all
-      `mv "$HOME/.#{file}" "$HOME/.#{file}.backup"` if backup || backup_all
+      run %{ mv "$HOME/.#{file}" "$HOME/.#{file}.backup"` if backup || backup_all }
     end
-    `ln -s "#{source}" "#{target}"`
+    run %{ ln -s "#{source}" "#{target}" }
   end
   success_msg("installed")
+end
+
+task :zsh_themes do
+  run %{ ln -nfs #{ENV["PWD"]}/oh-my-zsh/themes/* $HOME/.oh-my-zsh/themes/ } if want_to_install?('zsh themes')
 end
 
 desc "Init and update submodules."
@@ -52,6 +64,11 @@ task :default => 'install'
 
 
 private
+def run(cmd)
+  puts
+  puts "[Installing] #{cmd}"
+  `#{cmd}` unless ENV['DEBUG']
+end
 
 def want_to_install? (section)
   puts "Would you like to install configuration files for: #{section}? [y]es, [n]o"

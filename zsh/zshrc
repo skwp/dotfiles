@@ -15,7 +15,7 @@ if [[ -d $HOME/.oh-my-zsh ]]; then
   ZSH=$HOME/.oh-my-zsh
 
   # Set name of the theme to load.
-  ZSH_THEME="robbyrussell"
+  ZSH_THEME="skwp"
 
   # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
   # Example format: plugins=(rails git textmate ruby lighthouse)

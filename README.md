@@ -106,14 +106,6 @@ sudo mv /usr/bin/ctags /usr/bin/ctags_original
 curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 ```
 
-Please note: if you want the skwp theme referenced in these dotfiles, you should
-grab the skwp fork of oh-my-zsh, which just has the additional theme. While we are
-waiting for @robbyrussell to merge the theme upstream (unknown if it will happen).
-
-    cd ~/.oh-my-zsh
-    git remote add skwp https://github.com/skwp/oh-my-zsh.git
-    git pull skwp master
-
 ### [fasd](https://github.com/clvv/fasd)
 
 fasd gives you handy shell commands `f`,`a`,`s`,`d`, and `z` to jump to recently used files.
