@@ -87,9 +87,12 @@ nnoremap <silent> <C-\> :NERDTreeFind<CR>
 map <D-/> :TComment<CR>
 imap <D-/> <Esc>:TComment<CR>i
 
-"open up a git grep line, with a quote started for the search
+"GitGrep - open up a git grep line, with a quote started for the search
 nnoremap ,gg :GitGrep ""<left>
+"GitGrep Current Partial
 nnoremap ,gcp :GitGrepCurrentPartial<CR>
+"GitGrep Current File
+nnoremap ,gcf :call GitGrep(expand("%:t:r"))<CR>
 
 " hit ,f to find the definition of the current class
 " this uses ctags. the standard way to get this is Ctrl-]

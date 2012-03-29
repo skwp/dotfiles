@@ -291,6 +291,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * `,gg` - GitGrep command line, type between quotes
  * `,gd` - GitGrep def (greps for 'def [function name]') when cursor is over the function name
  * `,gcp` - GitGrep Current Partial to find references to the current view partial
+ * `,gcf` - GitGrep Current File to find references to the current file
  * `//` - clear the search
  * `,q/` -  quickfix window with last search (stolen from Steve Losh)
  * `,qa/` - quickfix Ack last search (Steve Losh)
