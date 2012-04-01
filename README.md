@@ -172,6 +172,21 @@ mnemonic aliases. Please feel free to edit them:
  * Bash style ctrl-R for reverse history finder
  * Fuzzy matching - if you mistype a directory name, tab completion will fix it
 
+### How To Customize ZSH
+
+YADR allows you to completely customize your ZSH without having to fork and maintain the project. Here's how it works: YADR will
+source (include) any files matching the pattern `*.before.zsh` or `*.after.zsh` in the `custom/zsh` directory. `before` files are
+useful for setting the theme and plugins. `after` files allow you to override options set by YADR, define your own aliases, etc.
+
+To make your life easier, create a `zsh` folder in your Dropbox (or as a git repo) and symlink it into `~/.yadr/custom`. Do it like this:
+
+```bash
+ln -s ~/Dropbox/path/to/zsh ~/.yadr/custom/zsh
+```
+
+Create as many `whatever.before.zsh` or `whatever.after.zsh` files as you need within the `zsh` directory. Please see `custom/zsh.sample` for
+an example.
+
 
 ## Pry
 

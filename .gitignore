@@ -1,4 +1,5 @@
-.DS_Store
+custom/zsh
+
 vim/backups
 vim/view
 *un~
