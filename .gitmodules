@@ -202,10 +202,6 @@
   path = vim/bundle/AndrewRadev-splitjoin
   url = https://github.com/AndrewRadev/splitjoin.vim
   ignore=dirty
-[submodule "vim/bundle/int3-vim-extradite"]
-  path = vim/bundle/int3-vim-extradite
-  url = https://github.com/int3/vim-extradite
-  ignore=dirty
 [submodule "vim/bundle/vim-scripts-argtextobj"]
   path = vim/bundle/vim-scripts-argtextobj
   url = https://github.com/vim-scripts/argtextobj.vim
@@ -287,3 +283,6 @@
 [submodule "vim/bundle/skwp-vim-conque"]
 	path = vim/bundle/skwp-vim-conque
 	url = https://github.com/skwp/vim-conque
+[submodule "vim/bundle/gregsexton-gitv"]
+	path = vim/bundle/gregsexton-gitv
+	url = https://github.com/gregsexton/gitv

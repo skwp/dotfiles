@@ -364,6 +364,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * `,hu` - Html Unescape
  * `Cmd-Shift-A` - align things (type a character/expression to align by, works in visual mode or by itself)
  * `:ColorCodes` - turn on #abc123 color highlighting (useful for css)
+ * `:gitv` - Git log browsers
 
 #### Comments
 
@@ -391,7 +392,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
 #### Git
 
  * fugitive - "a git wrapper so awesome, it should be illegal...". Try Gstatus and hit `-` to toggle files. Git `d` to see a diff. Learn more: http://vimcasts.org/blog/2011/05/the-fugitive-series/
- * extradite - use :Extradite to get a really great git log browser. Only works when you have a file open.
+ * gitv - use :gitv for a better git log browser
  * GitGrep - much better than the grep provided with fugitive; use :GitGrep or hit K to grep current word
 
 #### Colors
