@@ -44,7 +44,7 @@ task :install => [:submodules] do
         end
       end
       FileUtils.rm_rf(target) if overwrite || overwrite_all
-      run %{ mv "$HOME/.#{file}" "$HOME/.#{file}.backup"` if backup || backup_all }
+      run %{ mv "$HOME/.#{file}" "$HOME/.#{file}.backup" } if backup || backup_all
     end
     run %{ ln -s "#{source}" "#{target}" }
   end
