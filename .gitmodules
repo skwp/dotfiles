@@ -286,3 +286,6 @@
 [submodule "vim/bundle/gregsexton-gitv"]
 	path = vim/bundle/gregsexton-gitv
 	url = https://github.com/gregsexton/gitv
+[submodule "vim/bundle/briandoll-change-inside-surroundings"]
+	path = vim/bundle/briandoll-change-inside-surroundings
+	url = https://github.com/briandoll/change-inside-surroundings.vim.git

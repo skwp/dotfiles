@@ -340,6 +340,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * `Cmd-'` and `Cmd-"` to change content inside quotes
  * Cmd-Space to autocomplete. Tab for snipmate snippets.
  * `fd` and `jk` key *chords* - hit the first two homerow buttons simultaneously on either side of the keyboard to go to beginning and end of line
+ * `,ci` to change inside any set of quotes/brackets/etc
 
 #### Tab Navigation
 
@@ -458,6 +459,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * slime - use ctrl-c,ctrl-c to send text to a running irb/pry/console. To start the console, you must use screen with a named session: "screen -S [name] [cmd]", ex: "screen -S pry pry"
  * vim-indent-guides - visual indent guides, off by default
  * color_highlight - use :ColorCodes to see hex colors highlighted
+ * change-inside-surroundings - change content inside delimiters like quotes/brackets
 
 #### General enhancements that don't add new commands
 
