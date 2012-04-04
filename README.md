@@ -270,18 +270,10 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * `Ctrl-o` - Old cursor position - this is a standard mapping but very useful, so included here
  * `Ctrl-i` - opposite of Ctrl-O (again, this is standard)
 
-#### Marks
-
- * `,mm` - set the next available mark (set a mark with `mX` where `X` is a letter, navigate to mark using `'X`). Uppercase marks to mark files, lowercase marks to use within a file.
- * `,ma` - clear all marks
- * `,mh` - clear current mark
- * `,Bt` - toggle local anonymous bookmark at current location
- * `,Bn` `,Bp` - next and previous anonymous bookmark
- * `,Bc` - clear anonymous bookmarks
-
 #### LustyJuggler
 
  * `,lj` - show buffers (LustyJuggler buffer search), just type to fuzzy match a buffer name
+ * `,lf` - file system browser
 
 #### Rails
 
@@ -403,7 +395,6 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * LustyJuggler/Explorer - hit B, type buf name to match a buffer, or type S and use the home row keys to select a buffer
  * TagBar - hit ,T to see a list of methods in a class (uses ctags)
  * CtrlP - Ctrl-p or ,t to find a file
- * VimBookmarks - toggle an anonymous bookmark ,bb and go thru them ,bn ,bp and clear them ,bc
 
 #### Git
 
