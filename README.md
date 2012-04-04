@@ -112,16 +112,6 @@ fasd gives you handy shell commands `f`,`a`,`s`,`d`, and `z` to jump to recently
 Read more at the project's home page. Or just type `z` followed by a partial reference to
 a recent directory to see how it works.
 
-### [Pry](http://pry.github.com/)
-
-Pry offers a much better out of the box IRB experience with colors, tab completion, and lots of other tricks. You should:
-
-```bash
-gem install pry
-gem install awesome_print
-```
-
-
 ## Installation
 
 Installation is automated via `rake` and the `yadr` command. To get
@@ -373,6 +363,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * `Cmd-Shift-A` - align things (type a character/expression to align by, works in visual mode or by itself)
  * `:ColorCodes` - turn on #abc123 color highlighting (useful for css)
  * `:gitv` - Git log browsers
+ * `,hi` - show current Highlight group. if you don't like the color of something, use this, then use `hi! link [groupname] [anothergroupname]` in your vimrc.after to remap the color. You can see available colors using `:hi`
 
 #### Comments
 

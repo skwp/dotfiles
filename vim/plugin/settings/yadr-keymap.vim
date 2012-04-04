@@ -219,3 +219,6 @@ abbr pry! require 'pry'; binding.pry
 nmap <silent> <D-R> :call RunRspecCurrentFileConque()<CR>
 " Cmd-Shift-L for RSpec Current Line
 nmap <silent> <D-L> :call RunRspecCurrentLineConque()<CR>
+
+" Get the current highlight group. Useful for then remapping the color
+map ,hi :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")<CR>
