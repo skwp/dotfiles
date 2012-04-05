@@ -165,7 +165,7 @@ mnemonic aliases. Please feel free to edit them:
 ### How To Customize ZSH
 
 YADR allows you to completely customize your ZSH without having to fork and maintain the project. Here's how it works: YADR will
-source (include) any files matching the pattern `*.before.zsh` or `*.after.zsh` in the `custom/zsh` directory. `before` files are
+source (include) any files in `.yadr/custom/zsh/before/*` or `.yadr/custom/zsh/after/*`. The `before` files are
 useful for setting the theme and plugins. `after` files allow you to override options set by YADR, define your own aliases, etc.
 
 To make your life easier, create a `zsh` folder in your Dropbox (or as a git repo) and symlink it into `~/.yadr/custom`. Do it like this:

@@ -19,11 +19,11 @@ if [[ -d $HOME/.oh-my-zsh ]]; then
 
   # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
   # Example format: plugins=(rails git textmate ruby lighthouse)
-  plugins=(vi-mode git rvm ruby rails autojump bundler gem gnu-utils heroku rake redis-cli zsh-syntax-highlighting history-substring-search)
+  plugins=(vi-mode git rvm ruby rails autojump bundler gem gnu-utils heroku rake redis-cli zsh-syntax-highlighting history-substring-search ssh-agent)
 
   # source every zsh file in user's custom/zsh/before. This is useful for setting theme and plugins.
-  if [[ -d $yadr/custom/zsh/ ]]; then
-    for config_file ($yadr/custom/zsh/**/*.before.zsh) source $config_file
+  if [[ -d $yadr/custom/zsh/before ]]; then
+    for config_file ($yadr/custom/zsh/before/*) source $config_file
   fi
 
   # Source oh-my-zsh
@@ -55,8 +55,8 @@ fi
 # zsh/after
 # ==================
 # source every zsh file in user's custom/zsh/after.
-if [[ -d $yadr/custom/zsh/ ]]; then
-  for config_file ($yadr/custom/zsh/**/*.after.zsh) source $config_file
+if [[ -d $yadr/custom/zsh/after ]]; then
+  for config_file ($yadr/custom/zsh/after/*) source $config_file
 fi
 
 # Put secret configuration settings in ~/.secrets
