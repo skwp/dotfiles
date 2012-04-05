@@ -105,7 +105,3 @@ set sidescroll=1
 for f in split(glob('~/.vim/plugin/settings/*.vim'), '\n')
   exe 'source' f
 endfor
-
-if filereadable(expand("~/.vimrc.after"))
-  source ~/.vimrc.after
-endif
