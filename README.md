@@ -94,7 +94,7 @@ assume you have installed ctags via homebrew. If you have homebrew setup correct
 
 Make sure `/usr/local/bin` is before `/usr/bin` in your PATH.
 
-If that doesn't work, move the OSX supplies ctags [like so](http://www.mattpolito.info/post/1648956809/ctags-got-you-down):
+If that doesn't work, move the OSX supplied ctags [like so](http://www.mattpolito.info/post/1648956809/ctags-got-you-down):
 
 ```bash
 sudo mv /usr/bin/ctags /usr/bin/ctags_original
