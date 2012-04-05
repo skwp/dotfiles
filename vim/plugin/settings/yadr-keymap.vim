@@ -157,7 +157,7 @@ imap <silent> <C-J> <%  %><Esc>2hi
 
 " copy current filename into system clipboard - mnemonic: (c)urrent(f)ilename
 " this is helpful to paste someone the path you're looking at
-nnoremap <silent> ,cf :let @* = expand("%:p")<CR>
+nnoremap <silent> ,cf :let @* = expand("%:~")<CR>
 
 "Clear current search highlight by double tapping //
 nmap <silent> // :nohlsearch<CR>
