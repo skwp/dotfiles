@@ -26,8 +26,8 @@ alias du='du -h -d 2'
 alias lsg='ll | grep'
 
 # Alias Editing
-alias ae='vi $yadr/zsh/aliases' #alias edit
-alias ar='source $yadr/zsh/aliases'  #alias reload
+alias ae='vi $yadr/zsh/aliases.zsh' #alias edit
+alias ar='source $yadr/zsh/aliases.zsh'  #alias reload
 
 # vim using
 alias vim=$(brew ls macvim | grep Contents/MacOS/Vim)
