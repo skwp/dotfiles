@@ -361,7 +361,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * `,he` - Html Escape
  * `,hu` - Html Unescape
  * `Cmd-Shift-A` - align things (type a character/expression to align by, works in visual mode or by itself)
- * `:ColorCodes` - turn on #abc123 color highlighting (useful for css)
+ * `:ColorToggle` - turn on #abc123 color highlighting (useful for css)
  * `:gitv` - Git log browsers
  * `,hi` - show current Highlight group. if you don't like the color of something, use this, then use `hi! link [groupname] [anothergroupname]` in your vimrc.after to remap the color. You can see available colors using `:hi`
 
