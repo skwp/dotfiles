@@ -285,6 +285,3 @@
 [submodule "vim/bundle/briandoll-change-inside-surroundings"]
 	path = vim/bundle/briandoll-change-inside-surroundings
 	url = https://github.com/briandoll/change-inside-surroundings.vim.git
-[submodule "vim/bundle/timcharper-textile"]
-	path = vim/bundle/timcharper-textile
-	url = https://github.com/timcharper/textile.vim.git
