@@ -1,4 +1,0 @@
-h1. A textile plugin for vim
-
-"See the documentation":http://github.com/timcharper/textile.vim/raw/master/doc/textile.txt
-
