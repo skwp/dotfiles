@@ -19,7 +19,7 @@ if [[ -d $HOME/.oh-my-zsh ]]; then
 
   # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
   # Example format: plugins=(rails git textmate ruby lighthouse)
-  plugins=(vi-mode git rvm ruby rails autojump bundler gem gnu-utils heroku rake redis-cli zsh-syntax-highlighting history-substring-search ssh-agent)
+  plugins=(vi-mode rvm ruby bundler zsh-syntax-highlighting history-substring-search)
 
   # source every zsh file in user's custom/zsh/before. This is useful for setting theme and plugins.
   if [[ -d $yadr/custom/zsh/before ]]; then
