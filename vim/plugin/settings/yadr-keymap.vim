@@ -38,6 +38,9 @@ imap <silent> <D-d> _
 imap <silent> <D-K> -
 imap <silent> <D-D> -
 
+" gary bernhardt's hashrocket
+imap <c-l> <space>=><space>
+
 " Use the two first fingers on both sides of the keyboard
 " simultaneously to go to the beginning or end of line
 Arpeggio nnoremap jk $
@@ -141,9 +144,11 @@ map <silent> <D-9> :tabn 9<cr>
 nnoremap <silent> vv <C-w>v
 nnoremap <silent> ss <C-w>s
 
-" Resize vertical windows by hitting plus and minus
-nnoremap <silent> + <C-w>+
-nnoremap <silent> - <C-w>-
+" Resize windows with arrow keys
+nnoremap <Up> <C-w>+
+nnoremap <Down> <C-w>-
+nnoremap <Left> <C-w><
+nnoremap <Right> <C-w>>
 
 " create <%= foo %> erb tags using Ctrl-k in edit mode
 imap <silent> <C-K> <%=   %><Esc>3hi
@@ -171,6 +176,9 @@ nmap <silent> ,vc yy:<C-f>p<C-c><CR>
 
 " Type ,hl to toggle highlighting on/off, and show current value.
 noremap ,hl :set hlsearch! hlsearch?<CR>
+
+" clear highlights by hitting enter
+noremap <CR> :nohlsearch<CR>
 
 " Apple-* Highlight all occurrences of current word (like '*' but without moving)
 " http://vim.wikia.com/wiki/Highlight_all_search_pattern_matches

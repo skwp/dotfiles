@@ -285,6 +285,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * `,K` - GitGrep the current word up to next exclamation point (useful for ruby foo! methods)
  * `Cmd-*` - highlight all occurrences of current word (similar to regular `*` except doesn't move)
  * `,hl` - toggle search highlight on and off
+ * `Enter` - hit enter in normal mode to unhighlight search
  * `,gg` - GitGrep command line, type between quotes
  * `,gd` - GitGrep def (greps for 'def [function name]') when cursor is over the function name
  * `,gcp` - GitGrep Current Partial to find references to the current view partial
@@ -317,8 +318,9 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
 #### RSI-reduction
 
  * `Cmd-k` and `Cmd-d` to type underscores and dashes (use Shift), since they are so common in code but so far away from home row
- * `;` in addition to `:` - avoid Shift for common tasks, just hit semicolon to get to ex mode
- * `,.` to go to last edit location instead of `'.` because the apostrophe is hard on the pinky
+ * `Cmd-k` and `Cmd-d` to type underscores and dashes (use Shift), since they are so common in code but so far away from home row
+ * `Ctrl-l` to insert a => hashrocket (thanks @garybernhardt)
+ * `,.` to go to last edit location (same as `'.`) because the apostrophe is hard on the pinky
  * `Cmd-'` and `Cmd-"` to change content inside quotes
  * Cmd-Space to autocomplete. Tab for snipmate snippets.
  * `fd` and `jk` key *chords* - hit the first two homerow buttons simultaneously on either side of the keyboard to go to beginning and end of line
@@ -333,7 +335,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
 
  * `Ctrl-h,l,j,k` - to move left, right, down, up between windows
  * `Q` - Intelligent Window Killer. Close window `wincmd c` if there are multiple windows to same buffer, or kill the buffer `bwipeout` if this is the last window into it.
- * `+` and `-` for resizing vertical windows
+ * Arrow keys - resize windows (up/down for vertical, left=make smaller horizontally, right=make bigger horizontally)
 
 #### Splits
 
