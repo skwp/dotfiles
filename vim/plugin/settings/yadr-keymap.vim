@@ -41,11 +41,6 @@ imap <silent> <D-D> -
 " gary bernhardt's hashrocket
 imap <c-l> <space>=><space>
 
-" Use the two first fingers on both sides of the keyboard
-" simultaneously to go to the beginning or end of line
-Arpeggio nnoremap jk $
-Arpeggio nnoremap fd 0
-
 " Change inside quotes with Cmd-" and Cmd-'
 nnoremap <D-'> ci'
 nnoremap <D-"> ci"
@@ -148,7 +143,7 @@ nnoremap <silent> ss <C-w>s
 nnoremap <Up> <C-w>+
 nnoremap <Down> <C-w>-
 nnoremap <Left> <C-w><
-nnoremap <Right> <C-w>>
+nnoremap <Right>  <C-w>>
 
 " create <%= foo %> erb tags using Ctrl-k in edit mode
 imap <silent> <C-K> <%=   %><Esc>3hi

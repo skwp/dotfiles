@@ -323,7 +323,6 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * `,.` to go to last edit location (same as `'.`) because the apostrophe is hard on the pinky
  * `Cmd-'` and `Cmd-"` to change content inside quotes
  * Cmd-Space to autocomplete. Tab for snipmate snippets.
- * `fd` and `jk` key *chords* - hit the first two homerow buttons simultaneously on either side of the keyboard to go to beginning and end of line
  * `,ci` to change inside any set of quotes/brackets/etc
 
 #### Tab Navigation
