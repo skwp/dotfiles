@@ -285,7 +285,6 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * `,K` - GitGrep the current word up to next exclamation point (useful for ruby foo! methods)
  * `Cmd-*` - highlight all occurrences of current word (similar to regular `*` except doesn't move)
  * `,hl` - toggle search highlight on and off
- * `Enter` - hit enter in normal mode to unhighlight search
  * `,gg` - GitGrep command line, type between quotes
  * `,gd` - GitGrep def (greps for 'def [function name]') when cursor is over the function name
  * `,gcp` - GitGrep Current Partial to find references to the current view partial

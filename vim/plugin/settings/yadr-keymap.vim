@@ -172,9 +172,6 @@ nmap <silent> ,vc yy:<C-f>p<C-c><CR>
 " Type ,hl to toggle highlighting on/off, and show current value.
 noremap ,hl :set hlsearch! hlsearch?<CR>
 
-" clear highlights by hitting enter
-noremap <CR> :nohlsearch<CR>
-
 " Apple-* Highlight all occurrences of current word (like '*' but without moving)
 " http://vim.wikia.com/wiki/Highlight_all_search_pattern_matches
 nnoremap <D-*> :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
