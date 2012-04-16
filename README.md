@@ -231,7 +231,7 @@ your `~/.secrets` file which is automatically referenced by the provided zshrc:
   * `git cp` - cherry-pick -x (showing what was cherrypicked)
   * `git changelog` - a nice format for creating changelogs
   * Some sensible default configs, such as improving merge messages, push only pushes the current branch, removing status hints, and using mnemonic prefixes in diff: (i)ndex, (w)ork tree, (c)ommit and (o)bject
-  * Slightly imrpoved colors for diff
+  * Slightly improved colors for diff
   * `git unstage` (remove from index) and `git uncommit` (revert to the time prior to the last commit - dangerous if already pushed) aliases
 
 ## RubyGems
