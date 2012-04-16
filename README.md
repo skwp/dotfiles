@@ -83,7 +83,7 @@ Homebrew is _the missing package manager for OSX_. To install:
 With homebrew installed, install some packages:
 
 ```bash
-brew install ack ctags git hub imagemagick macvim
+brew install ack ctags git hub macvim
 ```
 
 ### [ctags](http://ctags.sourceforge.net/)
