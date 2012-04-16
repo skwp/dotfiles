@@ -174,7 +174,7 @@ To make your life easier, create a `zsh` folder in your Dropbox (or as a git rep
 ln -s ~/Dropbox/path/to/zsh ~/.yadr/custom/zsh
 ```
 
-Create as many `whatever.before.zsh` or `whatever.after.zsh` files as you need within the `zsh` directory. Please see `custom/zsh.sample` for
+Create as many `before/whatever.zsh` or `after/whatever.zsh` files as you need within the `zsh` directory. Please see `custom/zsh.sample` for
 an example.
 
 
