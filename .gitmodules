@@ -298,3 +298,7 @@
 	path = vim/bundle/timcharper-textile
   url = https://github.com/timcharper/textile.vim.git
   ignore = dirty
+[submodule "vim/bundle/vim-scripts-Specky"]
+	path = vim/bundle/vim-scripts-Specky
+	url = https://github.com/vim-scripts/Specky.git
+  ignore = dirty

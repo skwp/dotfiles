@@ -443,6 +443,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * vim-indent-guides - visual indent guides, off by default
  * color_highlight - use :ColorCodes to see hex colors highlighted
  * change-inside-surroundings - change content inside delimiters like quotes/brackets
+ * Specky - used for color highlighting rspec correctly even if specs live outside of spec/ (rails.vim doesn't handle this)
 
 #### General enhancements that don't add new commands
 
