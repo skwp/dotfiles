@@ -333,7 +333,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
 
  * `Ctrl-h,l,j,k` - to move left, right, down, up between windows
  * `Q` - Intelligent Window Killer. Close window `wincmd c` if there are multiple windows to same buffer, or kill the buffer `bwipeout` if this is the last window into it.
- * Arrow keys - resize windows (up/down for vertical, left=make smaller horizontally, right=make bigger horizontally)
+ * Cmd-Arrow keys - resize windows (up/down for vertical, left=make smaller horizontally, right=make bigger horizontally)
 
 #### Splits
 
