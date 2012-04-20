@@ -160,6 +160,7 @@ mnemonic aliases. Please feel free to edit them:
 
  * Vim mode
  * Bash style ctrl-R for reverse history finder
+ * Ctrl-x,Ctrl-l to insert output of last command
  * Fuzzy matching - if you mistype a directory name, tab completion will fix it
 
 ### How To Customize ZSH

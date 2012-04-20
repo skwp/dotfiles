@@ -100,6 +100,7 @@ alias gz='tar -zcvf'
 
 # Ruby
 alias c='script/console --irb=pry'
+alias ts='thin start'
 alias ms='mongrel_rails start'
 
 # Vim/ctags "mctags = make ctags", using the ruby specific version
