@@ -31,4 +31,3 @@ bindkey '^?' backward-delete-char                   # [Delete] - delete backward
 bindkey '^[[3~' delete-char                         # [fn-Delete] - delete forward
 bindkey '^[3;5~' delete-char
 bindkey '\e[3~' delete-char
-

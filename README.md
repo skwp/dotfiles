@@ -100,11 +100,12 @@ If that doesn't work, move the OSX supplied ctags [like so](http://www.mattpolit
 sudo mv /usr/bin/ctags /usr/bin/ctags_original
 ```
 
-### [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
+### [oh-my-zsh](https://github.com/sorin-ionescu/oh-my-zsh)
 
-```bash
-curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
-```
+Follow instructions here: [oh-my-zsh](https://github.com/sorin-ionescu/oh-my-zsh)
+
+We prefer the @sorin-ionescu rewrite of Oh My Zsh. It will eventually be shipped
+as a submodule of YADR, although you can use the original @robbyrussell version as well.
 
 ### [fasd](https://github.com/clvv/fasd)
 

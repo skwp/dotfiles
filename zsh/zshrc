@@ -26,8 +26,12 @@ if [[ -d $HOME/.oh-my-zsh ]]; then
     for config_file ($yadr/custom/zsh/before/*) source $config_file
   fi
 
-  # Source oh-my-zsh
-  source $ZSH/oh-my-zsh.sh
+  # Figure out if we have Robby's or Sorin's Oh-my-zsh
+  if [[ -f $ZSH/oh-my-zsh.sh ]]; then
+    source $ZSH/oh-my-zsh.sh # OMZ Robby Russell (https://github.com/robbyrussell/oh-my-zsh)
+  else
+    source $yadr/zsh/omz-sorin/omz-sorin.zsh # OMZ Sorin Ionescu (https://github.com/sorin-ionescu/oh-my-zsh)
+  fi
 fi
 
 # Configuration

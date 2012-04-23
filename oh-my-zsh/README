@@ -1,0 +1,7 @@
+The themes/ dir contains themes for oh-my-zsh Robby,
+while modules contains themes for oh-my-zsh Sorin Ionescu.
+
+The themes dir will eventually be deprecated in favor
+of Sorin's OMZ branch.
+
+See more at: https://github.com/sorin-ionescu/oh-my-zsh

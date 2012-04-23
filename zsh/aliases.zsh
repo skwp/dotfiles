@@ -9,6 +9,7 @@ alias yuv='yadr vim-update-plugins'
 alias yip='yadr init-plugins'
 
 # PS
+alias psa="ps aux"
 alias psg="ps aux | grep "
 alias psr='ps aux | grep ruby'
 
@@ -56,7 +57,7 @@ alias guns='git unstage'
 alias gunc='git uncommit'
 alias gm='git merge'
 alias gms='git merge --squash'
-alias gam='git amend'
+alias gam='git amend --reset-author'
 alias gr='git rebase'
 alias gra='git rebase --abort'
 alias ggrc='git rebase --continue'
@@ -93,7 +94,6 @@ alias l='less'
 alias lh='ls -alt | head' # see the last modified files
 alias screen='TERM=screen screen'
 alias cl='clear'
-alias ps='ps aux'
 
 # Zippin
 alias gz='tar -zcvf'
