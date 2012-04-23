@@ -55,7 +55,7 @@ task :zsh_themes do
   if File.exist?("#{ENV['HOME']}/.oh-my-zsh/modules/prompt/functions")
     puts "Detected oh-my-zsh @sorin-ionescu version."
     run %{ ln -nfs #{ENV["PWD"]}/oh-my-zsh/modules/prompt/functions/* $HOME/.oh-my-zsh/modules/prompt/functions/ } if want_to_install?('zsh themes')
-  elsif File.exist("#{ENV['HOME']}/.oh-my-zsh")
+  elsif File.exist?("#{ENV['HOME']}/.oh-my-zsh")
     puts "Detected oh-my-zsh @robbyrussell version."
     run %{ ln -nfs #{ENV["PWD"]}/oh-my-zsh/themes/* $HOME/.oh-my-zsh/themes/ } if want_to_install?('zsh themes')
   end
