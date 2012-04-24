@@ -21,6 +21,10 @@ bindkey '^[[F'  end-of-line                         # [End] - Go to end of line
 bindkey '^[[4~' end-of-line                         # [End] - Go to end of line
 bindkey '^[OF' end-of-line                          # [End] - Go to end of line
 
+# emacs style
+bindkey '^a' beginning-of-line
+bindkey '^e' end-of-line
+
 bindkey ' ' magic-space                             # [Space] - do history expansion
 
 bindkey '^[[1;5C' forward-word                      # [Ctrl-RightArrow] - move forward one word
