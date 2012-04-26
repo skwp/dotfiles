@@ -163,11 +163,11 @@ nnoremap <silent> ,cn :let @* = expand("%:t")<CR>
 "Clear current search highlight by double tapping //
 nmap <silent> // :nohlsearch<CR>
 
-" (c)opy (c)ommand - which allows us to execute
-" the line we're looking at (it does so by yy-copy, colon
-" to get to the command mode, C-f to get to history editing
-" p to paste it, C-c to return to command mode, and CR to execute
+"(v)im (c)ommand - execute current line as a vim command
 nmap <silent> ,vc yy:<C-f>p<C-c><CR>
+
+"(v)im (r)eload
+nmap <silent> ,vr :so %<CR>
 
 " Type ,hl to toggle highlighting on/off, and show current value.
 noremap ,hl :set hlsearch! hlsearch?<CR>

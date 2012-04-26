@@ -14,6 +14,7 @@ hi! link rubyPseudoVariable Type
 hi! link rubyRailsARAssociationMethod Title
 hi! link rubyRailsARValidationMethod Title
 hi! link rubyRailsMethod Title
+hi! link MatchParen DiffText
 
 " Enforce the colors set here
 au VimEnter * so ~/.vim/plugin/settings/solarized.vim
