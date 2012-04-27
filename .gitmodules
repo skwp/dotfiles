@@ -305,3 +305,6 @@
 [submodule "zsh/zsh-syntax-highlighting"]
 	path = zsh/zsh-syntax-highlighting
 	url = git://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "vim/bundle/skwp-vim-spec-finder"]
+	path = vim/bundle/skwp-vim-spec-finder
+	url = https://github.com/skwp/vim-spec-finder
