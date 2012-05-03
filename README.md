@@ -306,7 +306,8 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
 
  * `,t` - CtrlP fuzzy file selector
  * `,b` - CtrlP buffer selector
- * `Cmd-Shift-P` - Clear CtrlP cache
+ * `,m` - jump to method - CtrlP tag search within current buffer
+ * `,M` - jump to any Method - CtrlP tag search within all buffers
  * `,jm` jump (via CtrlP) to app/models
  * `,jc` app/controllers
  * `,jv` app/views
@@ -320,6 +321,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * `,jC` config
  * `,jV` vendor
  * `,jF` factories
+ * `Cmd-Shift-P` - Clear CtrlP cache
 
 #### RSI-reduction
 

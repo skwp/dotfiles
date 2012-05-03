@@ -27,8 +27,14 @@ map ,jl :CtrlP lib<CR>
 map ,jp :CtrlP public<CR>
 map ,js :CtrlP spec<CR>
 map ,jf :CtrlP fast_spec<CR>
-map ,jt :CtrlP test<CR>
 map ,jd :CtrlP db<CR>
 map ,jC :CtrlP config<CR>
 map ,jV :CtrlP vendor<CR>
 map ,jF :CtrlP factories<CR>
+map ,jT :CtrlP test<CR>
+
+"Cmd-(m)ethod - jump to a method (tag in current file)
+map ,m :CtrlPBufTag<CR>
+
+"Ctrl-(M)ethod - jump to a method (tag in all files)
+map ,M :CtrlPBufTagAll<CR>
