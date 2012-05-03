@@ -308,3 +308,6 @@
 [submodule "vim/bundle/skwp-vim-spec-finder"]
 	path = vim/bundle/skwp-vim-spec-finder
 	url = https://github.com/skwp/vim-spec-finder
+[submodule "vim/bundle/tpope-vim-bundler"]
+	path = vim/bundle/tpope-vim-bundler
+	url = https://github.com/tpope/vim-bundler

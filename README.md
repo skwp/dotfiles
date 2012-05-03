@@ -322,6 +322,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * `,jV` vendor
  * `,jF` factories
  * `Cmd-Shift-P` - Clear CtrlP cache
+ * `:Bopen [gem name]` to navigate to a gem (@tpope/vim-bundler)
 
 #### RSI-reduction
 
@@ -423,6 +424,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * jasmine.vim - support for jasmine javascript unit testing, including snippets for it, before, etc..
  * vim-coffeescript - support for coffeescript, highlighting
  * vim-stylus - support for stylus css language
+ * vim-bundler - work with bundled gems
 
 #### TextObjects
 
