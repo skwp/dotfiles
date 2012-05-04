@@ -1,0 +1,36 @@
+#!/bin/bash
+
+main() {
+  REMOTES="$@";
+  if [ -z "$REMOTES" ]; then
+    REMOTES=$(git remote);
+  fi
+  REMOTES=$(echo "$REMOTES" | xargs -n1 echo)
+  CLB=$(git branch -l|awk '/^\*/{print $2}');
+  echo "$REMOTES" | while read REMOTE; do
+    git remote update $REMOTE
+    git remote show $REMOTE -n \
+    | awk '/merges with remote/{print $5" "$1}' \
+    | while read line; do
+      RB=$(echo "$line"|cut -f1 -d" ");
+      ARB="refs/remotes/$REMOTE/$RB";
+      LB=$(echo "$line"|cut -f2 -d" ");
+      ALB="refs/heads/$LB";
+      NBEHIND=$(( $(git rev-list --count $ALB..$ARB 2>/dev/null) +0));
+      NAHEAD=$(( $(git rev-list --count $ARB..$ALB 2>/dev/null) +0));
+      if [ "$NBEHIND" -gt 0 ]; then
+        if [ "$NAHEAD" -gt 0 ]; then
+          echo " branch $LB is $NBEHIND commit(s) behind and $NAHEAD commit(s) ahead of $REMOTE/$RB. could not be fast-forwarded";
+        elif [ "$LB" = "$CLB" ]; then
+          echo " branch $LB was $NBEHIND commit(s) behind of $REMOTE/$RB. fast-forward merge";
+          git merge -q $ARB;
+        else
+          echo " branch $LB was $NBEHIND commit(s) behind of $REMOTE/$RB. reseting local branch to remote";
+          git branch -l -f $LB -t $ARB >/dev/null;
+        fi
+      fi
+    done
+  done
+}
+
+main $@
