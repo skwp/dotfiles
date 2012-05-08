@@ -38,6 +38,11 @@ imap <silent> <D-d> _
 imap <silent> <D-K> -
 imap <silent> <D-D> -
 
+" ,# Surround a word with #{ruby interpolation}
+map ,# ysiw#
+" ,# Surround a word with quotes
+map ," ysiw"
+
 " gary bernhardt's hashrocket
 imap <c-l> <space>=><space>
 

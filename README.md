@@ -333,6 +333,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * `Cmd-'` and `Cmd-"` to change content inside quotes
  * Cmd-Space to autocomplete. Tab for snipmate snippets.
  * `,ci` to change inside any set of quotes/brackets/etc
+ * `,#` and ',"' to surround a word in #{ruby interpolation} or "quotes"
 
 #### Tab Navigation
 
