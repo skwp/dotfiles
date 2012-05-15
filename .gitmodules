@@ -50,10 +50,6 @@
   path = vim/bundle/scrooloose-syntastic
   url = https://github.com/scrooloose/syntastic.git
   ignore = dirty
-[submodule "vim/bundle/Lokaltog-vim-easymotion"]
-  path = vim/bundle/Lokaltog-vim-easymotion
-  url = https://github.com/Lokaltog/vim-easymotion
-  ignore = dirty
 [submodule "vim/bundle/sjbach-lusty"]
   path = vim/bundle/sjbach-lusty
   url = https://github.com/sjbach/lusty.git
@@ -314,3 +310,6 @@
 [submodule "vim/bundle/tpope-vim-rake"]
 	path = vim/bundle/tpope-vim-rake
 	url = https://github.com/tpope/vim-rake.git
+[submodule "vim/bundle/skwp-vim-easymotion"]
+	path = vim/bundle/skwp-vim-easymotion
+	url = https://github.com/skwp/vim-easymotion

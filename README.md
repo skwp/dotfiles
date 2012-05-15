@@ -301,6 +301,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * `,qg/` - quickfix GitGrep last search
  * `,T` - Tag list (list of methods in a class)
  * `Ctrl-s` - Open related spec in a split. Similar to :A and :AV from rails.vim but is also aware of the fast_spec dir and faster to type
+ * `,,w` (alias `,<esc>`) or `,,b` (alias `,<shift-esc>`) - EasyMotion, a vimperator style tool that highlights jump-points on the screen and lets you type to get there.
 
 #### File Navigation
 
@@ -396,7 +397,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * NERDTree - everyone's favorite tree browser
  * NERDTree-tabs - makes NERDTree play nice with MacVim tabs so that it's on every tab
  * ShowMarks - creates a visual gutter to the left of the number column showing you your marks
- * EasyMotion - hit ,,w (forward) or ,,b (back) and watch the magic happen. just type the letters and jump directly to your target - in the provided vimrc the keys are optimized for home and upper row, no pinkies
+ * EasyMotion - hit ,<esc> (forward) or ,<Shift-Esc> (back) and watch the magic happen. Just type the letters and jump directly to your target - in the provided vimrc the keys are optimized for home row mostly. Using @skwp modified EasyMotion which uses vimperator-style two character targets.
  * LustyJuggler/Explorer - hit B, type buf name to match a buffer, or type S and use the home row keys to select a buffer
  * TagBar - hit ,T to see a list of methods in a class (uses ctags)
  * CtrlP - Ctrl-p or ,t to find a file

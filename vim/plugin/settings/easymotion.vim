@@ -4,7 +4,7 @@
 " but it'll all be isolated to one area of the keyboard
 call EasyMotion#InitOptions({
 \   'leader_key'      : '<Leader><Leader>'
-\ , 'keys'            : 'fjdkslewio'
+\ , 'keys'            : 'fjdksewoavn'
 \ , 'do_shade'        : 1
 \ , 'do_mapping'      : 1
 \ , 'grouping'        : 1
@@ -16,3 +16,6 @@ call EasyMotion#InitOptions({
 " Make EasyMotion more yellow, less red
 hi clear EasyMotionTarget
 hi! EasyMotionTarget guifg=yellow
+
+nmap ,<ESC> ,,w
+nmap ,<S-ESC> ,,b
