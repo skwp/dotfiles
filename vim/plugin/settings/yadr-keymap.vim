@@ -72,12 +72,15 @@ vmap ,{ c{<C-R>"}<ESC>
 " gary bernhardt's hashrocket
 imap <c-l> <space>=><space>
 
-" Change inside quotes with Cmd-" and Cmd-'
-nnoremap <D-'> ci'
-nnoremap <D-"> ci"
-
-" Add spaces around a symbol with Ctrl-Space
-nnoremap <C-Space> i <esc><right>a <esc>
+" Change inside various enclosures with Cmd-" and Cmd-'
+" The f makes it find the enclosure so you don't have
+" to be standing inside it
+nnoremap <D-'> f'ci'
+nnoremap <D-"> f"ci"
+nnoremap <D-(> f(ci(
+nnoremap <D-)> f)ci)
+nnoremap <D-[> f[ci[
+nnoremap <D-]> f]ci]
 
 "Go to last edit location with ,.
 nnoremap ,. '.
@@ -150,7 +153,7 @@ nnoremap <silent> <C-l> <C-w>l
 nnoremap <silent> <C-k> <C-w>k
 nnoremap <silent> <C-j> <C-w>j
 
-" Zoom in and out of current window with ,,
+" Zoom in and out of current window with ,gz
 map <silent> ,gz <C-w>o
 
 " Use numbers to pick the tab you want (like iTerm)
@@ -229,22 +232,6 @@ nmap sj :SplitjoinSplit<cr>
 nmap sk :SplitjoinJoin<cr>
 
 " ============================
-" VimBookmarking
-" ============================
-"
-" Set anonymous bookmarks
-nmap ,Bb :ToggleBookmark<cr>
-nmap ,Bn :NextBookmark<cr>
-nmap ,Bp :PreviousBookmark<cr>
-nmap ,Bc :ClearBookmarks<cr>
-"
-" ============================
-" Abbreviations to use...
-" ============================
-" snippets that are expanded with space
-abbr pry! require 'pry'; binding.pry
-
-" ============================
 " vim-ruby-conque
 " ============================
 " Cmd-Shift-R for RSpec
@@ -256,3 +243,6 @@ nmap <silent> ,<D-R> :call RunLastConqueCommand()<CR>
 
 " Get the current highlight group. Useful for then remapping the color
 map ,hi :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")<CR>
+
+" Source current file Cmd-% (good for vim development)
+map <D-%> :so %<CR>

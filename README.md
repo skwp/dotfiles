@@ -326,14 +326,14 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
 
 #### RSI-reduction
 
+ * Cmd-Space to autocomplete. Tab for snipmate snippets.
  * `Cmd-k` and `Cmd-d` to type underscores and dashes (use Shift), since they are so common in code but so far away from home row
  * `Cmd-k` and `Cmd-d` to type underscores and dashes (use Shift), since they are so common in code but so far away from home row
  * `Ctrl-l` to insert a => hashrocket (thanks @garybernhardt)
  * `,.` to go to last edit location (same as `'.`) because the apostrophe is hard on the pinky
- * `Cmd-'` and `Cmd-"` to change content inside quotes
- * Cmd-Space to autocomplete. Tab for snipmate snippets.
  * `,ci` to change inside any set of quotes/brackets/etc
  * `,#` `,"` `,'` `,]` `,)` `,}` to surround a word in these common wrappers. the # does #{ruby interpolation}. works in visual mode (thanks @cj)
+ * `Cmd-'`, `Cmd-"`, `Cmd-]`, `Cmd-)`, etc to change content inside those surrounding marks. You don't have to be inside them.
 
 #### Tab Navigation
 
