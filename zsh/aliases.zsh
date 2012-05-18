@@ -102,6 +102,7 @@ alias gz='tar -zcvf'
 alias c='script/console --irb=pry'
 alias ts='thin start'
 alias ms='mongrel_rails start'
+alias tfdl='tail -f log/development.log'
 
 # Vim/ctags "mctags = make ctags", using the ruby specific version
 # to save some time
@@ -117,4 +118,5 @@ alias sgi='sudo gem install --no-ri --no-rdoc'
 # This uses NValt (NotationalVelocity alt fork) - http://brettterpstra.com/project/nvalt/
 # to find the note called 'todo'
 alias todo='open nvalt://find/todo'
+
 

@@ -244,6 +244,10 @@ your `~/.secrets` file which is automatically referenced by the provided zshrc:
 
 A .gemrc is included. Never again type `gem install whatever --no-ri --no-rdoc`. `--no-ri --no-rdoc` is done by default.
 
+## Vimization of everything
+
+The provided inputrc and editrc will turn your various command line tools like mysql and irb into vim prompts. There's
+also an included Ctrl-R reverse history search feature in editrc, very useful in irb.
 
 ## Vim Configuration
 
