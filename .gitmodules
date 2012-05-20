@@ -313,3 +313,6 @@
 [submodule "vim/bundle/skwp-vim-easymotion"]
 	path = vim/bundle/skwp-vim-easymotion
 	url = https://github.com/skwp/vim-easymotion
+[submodule "vim/bundle/git:--github.com-groenewege-vim-less"]
+	path = vim/bundle/git:--github.com-groenewege-vim-less
+	url = git://github.com/groenewege/vim-less.git
