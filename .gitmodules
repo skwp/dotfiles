@@ -316,3 +316,6 @@
 [submodule "vim/bundle/groenewege-vim-less"]
 	path = vim/bundle/groenewege-vim-less
 	url = https://github.com/groenewege/vim-less.git
+[submodule "vim/bundle/mattn-webapi-vim"]
+	path = vim/bundle/mattn-webapi-vim
+	url = https://github.com/mattn/webapi-vim.git
