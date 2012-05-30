@@ -2,9 +2,9 @@
 Pry.editor = 'vi'
 
 # == Pry-Nav - Using pry as a debugger ==
-Pry.commands.alias_command 'c', 'continue'
-Pry.commands.alias_command 's', 'step'
-Pry.commands.alias_command 'n', 'next'
+Pry.commands.alias_command 'c', 'continue' rescue nil
+Pry.commands.alias_command 's', 'step' rescue nil
+Pry.commands.alias_command 'n', 'next' rescue nil
 
 # === CUSTOM PROMPT ===
 # This prompt shows the ruby version (useful for RVM)
