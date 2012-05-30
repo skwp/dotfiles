@@ -1,4 +1,4 @@
-let g:ConqueTerm_InsertOnEnter = 1
+let g:ConqueTerm_InsertOnEnter = 0
 let g:ConqueTerm_CWInsert = 1
 let g:ConqueTerm_Color = 2
 let g:ConqueTerm_ReadUnfocused = 1 " update conqueterm buffer while we're not looking (for running tests)
