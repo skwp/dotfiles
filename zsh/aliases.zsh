@@ -70,6 +70,7 @@ alias gf='git fetch'
 alias gfch='git fetch'
 alias gd='git diff'
 alias gb='git b'
+alias gbd='git b -D'
 alias gdc='git diff --cached'
 alias gpub='grb publish'
 alias gtr='grb track'
@@ -119,4 +120,5 @@ alias sgi='sudo gem install --no-ri --no-rdoc'
 # to find the note called 'todo'
 alias todo='open nvalt://find/todo'
 
-
+# Forward port 80 to 3000
+alias portforward='sudo ipfw add 1000 forward 127.0.0.1,3000 ip from any to any 80 in'
