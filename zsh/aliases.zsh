@@ -122,3 +122,6 @@ alias todo='open nvalt://find/todo'
 
 # Forward port 80 to 3000
 alias portforward='sudo ipfw add 1000 forward 127.0.0.1,3000 ip from any to any 80 in'
+
+alias rdm='rake db:migrate'
+alias rdmr='rake db:migrate:redo'
