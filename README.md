@@ -86,6 +86,15 @@ With homebrew installed, install some packages:
 brew install ack ctags git hub macvim
 ```
 
+### Ruby Debugger
+
+This gem is used to give you visual IDE-style debugging within vim, combined
+with the vim-ruby-debugger plugin:
+
+```bash
+gem install ruby-debug-ide
+```
+
 ### [ctags](http://ctags.sourceforge.net/)
 
 Vim will complain every time you save a file if you do not have ctags installed correctly. We
@@ -283,8 +292,8 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
 
 #### Rails
 
- * `,ss` to run specs, `,ll` to run a given spec on a line - using my [vim-ruby-conque plugin](https://github.com/skwp/vim-ruby-conque)
  * `Cmd-Shift-R` to use vim-ruby-conque to run a spec file. `Cmd-Shift-L` to run from a line (individual it block), `,Cmd-Shift-R` to rerun the last run command (great for re-running specs)
+ * `,vv` and `,cc` to switch between view and controller
 
 #### Surround.vim customizations
 
@@ -390,6 +399,10 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * `:gitv` - Git log browsers
  * `,hi` - show current Highlight group. if you don't like the color of something, use this, then use `hi! link [groupname] [anothergroupname]` in your vimrc.after to remap the color. You can see available colors using `:hi`
 
+#### Ruby Debugger
+
+ * Visual ruby debugger included. All keys remapped to `,d(something)` such as `,dn` for Debugger Next or `,dv` for Debugger Variables. Use `:help ruby-debugger` for more info, but keep in mind the new key maps (see vim/plugin/settings/vim-ruby-debugger.vim)
+
 #### Comments
 
  * `Cmd-/` - toggle comments (usually gcc from tComment)
@@ -438,6 +451,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * vim-coffeescript - support for coffeescript, highlighting
  * vim-stylus - support for stylus css language
  * vim-bundler - work with bundled gems
+ * vim-ruby-debugger - visual IDE-style debugger. Use `:help ruby-debugger` or `:Rdebugger` and `,dn` to step
 
 #### TextObjects
 
