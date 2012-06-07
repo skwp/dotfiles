@@ -316,3 +316,6 @@
 [submodule "vim/bundle/mattn-webapi-vim"]
 	path = vim/bundle/mattn-webapi-vim
 	url = https://github.com/mattn/webapi-vim.git
+[submodule "vim/bundle/astashov-vim-ruby-debugger"]
+	path = vim/bundle/astashov-vim-ruby-debugger
+	url = https://github.com/astashov/vim-ruby-debugger
