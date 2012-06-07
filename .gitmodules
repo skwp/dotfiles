@@ -202,10 +202,6 @@
   path = vim/bundle/nathanaelkane-vim-indent-guides
   url = https://github.com/nathanaelkane/vim-indent-guides
   ignore = dirty
-[submodule "vim/bundle/aaronjensen-vim-sass-status"]
-  path = vim/bundle/aaronjensen-vim-sass-status
-  url = https://github.com/aaronjensen/vim-sass-status
-  ignore = dirty
 [submodule "vim/bundle/tpope-vim-haml"]
   path = vim/bundle/tpope-vim-haml
   url = https://github.com/tpope/vim-haml
@@ -245,10 +241,6 @@
 [submodule "vim/bundle/VimEz-ShowMarks"]
   path = vim/bundle/VimEz-ShowMarks
   url = https://github.com/VimEz/ShowMarks.git
-  ignore = dirty
-[submodule "vim/bundle/skwp-vim-powerline"]
-  path = vim/bundle/skwp-vim-powerline
-  url = https://github.com/skwp/vim-powerline
   ignore = dirty
 [submodule "vim/bundle/kana-vim-arpeggio"]
   path = vim/bundle/kana-vim-arpeggio
@@ -301,21 +293,36 @@
 [submodule "zsh/zsh-syntax-highlighting"]
 	path = zsh/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+  ignore = dirty
 [submodule "vim/bundle/tpope-vim-bundler"]
 	path = vim/bundle/tpope-vim-bundler
 	url = https://github.com/tpope/vim-bundler
+  ignore = dirty
 [submodule "vim/bundle/tpope-vim-rake"]
 	path = vim/bundle/tpope-vim-rake
 	url = https://github.com/tpope/vim-rake.git
+  ignore = dirty
 [submodule "vim/bundle/skwp-vim-easymotion"]
 	path = vim/bundle/skwp-vim-easymotion
 	url = https://github.com/skwp/vim-easymotion
+  ignore = dirty
 [submodule "vim/bundle/groenewege-vim-less"]
 	path = vim/bundle/groenewege-vim-less
 	url = https://github.com/groenewege/vim-less.git
+  ignore = dirty
 [submodule "vim/bundle/mattn-webapi-vim"]
 	path = vim/bundle/mattn-webapi-vim
 	url = https://github.com/mattn/webapi-vim.git
+  ignore = dirty
 [submodule "vim/bundle/astashov-vim-ruby-debugger"]
 	path = vim/bundle/astashov-vim-ruby-debugger
 	url = https://github.com/astashov/vim-ruby-debugger
+  ignore = dirty
+[submodule "vim/bundle/aaronjensen-vim-sass-status"]
+	path = vim/bundle/aaronjensen-vim-sass-status
+	url = https://github.com/aaronjensen/vim-sass-status.git
+  ignore = dirty
+[submodule "vim/bundle/skwp-vim-powerline"]
+	path = vim/bundle/skwp-vim-powerline
+	url = https://github.com/skwp/vim-powerline.git
+  ignore = dirty
