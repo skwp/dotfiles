@@ -100,7 +100,7 @@ alias cl='clear'
 alias gz='tar -zcvf'
 
 # Ruby
-alias c='script/console --irb=pry'
+alias c='pry -r ./config/environment'
 alias ts='thin start'
 alias ms='mongrel_rails start'
 alias tfdl='tail -f log/development.log'
