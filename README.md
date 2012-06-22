@@ -348,7 +348,6 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
 
  * Cmd-Space to autocomplete. Tab for snipmate snippets.
  * `Cmd-k` and `Cmd-d` to type underscores and dashes (use Shift), since they are so common in code but so far away from home row
- * `Cmd-k` and `Cmd-d` to type underscores and dashes (use Shift), since they are so common in code but so far away from home row
  * `Ctrl-l` to insert a => hashrocket (thanks @garybernhardt)
  * `,.` to go to last edit location (same as `'.`) because the apostrophe is hard on the pinky
  * `,ci` to change inside any set of quotes/brackets/etc
