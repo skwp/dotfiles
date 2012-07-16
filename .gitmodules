@@ -326,3 +326,6 @@
 	path = vim/bundle/vim-scripts-YankRing
 	url = https://github.com/vim-scripts/YankRing.vim
   ignore = dirty
+[submodule "vim/bundle/vim-scripts-SearchComplete"]
+	path = vim/bundle/vim-scripts-SearchComplete
+	url = https://github.com/vim-scripts/SearchComplete.git
