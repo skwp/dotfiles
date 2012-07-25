@@ -490,6 +490,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * Arpeggio - allows you to define key-chord combinations
  * IndexedSearch - when you do searches will show you "Match 2 of 4" in the status line
  * delimitMate - automatically closes quotes
+ * SearchComplete - tab completion in the / search window
  * syntastic - automatic syntax checking when you save the file
  * repeat - adds `.` (repeat command) support for complex commands like surround.vim. i.e. if you perform a surround and hit `.`, it will Just Work (vim by default will only repeat the last piece of the complex command)
  * endwise - automatically closes blocks (if/end)
