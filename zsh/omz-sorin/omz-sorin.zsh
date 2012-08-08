@@ -29,7 +29,7 @@ zstyle ':omz:load' omodule 'environment' 'terminal' 'editor' 'completion' \
 # Set the prompt theme to load.
 # Setting it to 'random' loads a random theme.
 # Auto set to 'off' on dumb terminals.
-zstyle ':omz:module:prompt' theme 'skwp'
+zstyle ':omz:module:prompt' theme $ZSH_THEME
 
 # This will make you shout: OH MY ZSHELL!
 source "$OMZ/init.zsh"
