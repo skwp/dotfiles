@@ -77,7 +77,7 @@ Please install fonts from fonts/ directory. These are used to give a really nice
 Homebrew is _the missing package manager for OSX_. To install:
 
 ```bash
-/usr/bin/ruby -e "$(curl -fsSL https://raw.github.com/gist/323731)"
+/usr/bin/ruby <(curl -fsSk https://raw.github.com/mxcl/homebrew/go)
 ```
 
 With homebrew installed, install some packages:
