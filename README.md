@@ -109,7 +109,7 @@ If that doesn't work, move the OSX supplied ctags [like so](http://www.mattpolit
 sudo mv /usr/bin/ctags /usr/bin/ctags_original
 ```
 
-### [oh-my-zsh](https://github.com/sorin-ionescu/oh-my-zsh)
+### [oh-my-zsh](https://github.com/sorin-ionescu/prezto)
 
 ```bash
 git clone --recursive git://github.com/sorin-ionescu/prezto.git ~/.oh-my-zsh
