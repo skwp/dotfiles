@@ -13,9 +13,11 @@
 #   Yan Pritzker <yan@pritzker.ws>
 
 function rvm_info_for_prompt {
-  ruby_version=$(~/.rvm/bin/rvm-prompt)
-  if [ -n "$ruby_version" ]; then
-    echo "[$ruby_version]"
+  if [[ -d ~/.rvm/ ]]; then
+    ruby_version=$(~/.rvm/bin/rvm-prompt)
+    if [ -n "$ruby_version" ]; then
+      echo "[$ruby_version]"
+    fi
   fi
 }
 
