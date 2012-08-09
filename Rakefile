@@ -9,24 +9,46 @@ task :install => [:submodules] do
   puts "be overwritten without your consent."
   puts "======================================================"
   puts
-  # this has all the linkables from this directory.
-  linkables = []
-  linkables += Dir.glob('git/*') if want_to_install?('git')
-  linkables += Dir.glob('irb/*') if want_to_install?('irb/pry')
-  linkables += Dir.glob('ruby/*') if want_to_install?('ruby (gems)')
-  linkables += Dir.glob('ctags/*') if want_to_install?('ctags config (better js/ruby support)')
-  linkables += Dir.glob('vimify/*') if want_to_install?('vimification of mysql/irb/command line')
-  linkables += Dir.glob('{vim,vimrc}') if want_to_install?('vim')
-  linkables += Dir.glob('zsh/zshrc') if want_to_install?('zsh')
-  Rake::Task['zsh_themes'].invoke
+  # this has all the runcoms from this directory.
+  file_operation(Dir.glob('git/*')) if want_to_install?('git')
+  file_operation(Dir.glob('irb/*')) if want_to_install?('irb/pry')
+  file_operation(Dir.glob('ruby/*')) if want_to_install?('ruby (gems)')
+  file_operation(Dir.glob('ctags/*')) if want_to_install?('ctags config (better js/ruby support)')
+  file_operation(Dir.glob('vimify/*')) if want_to_install?('vimification of mysql/irb/command line')
+  file_operation(Dir.glob('{vim,vimrc}')) if want_to_install?('vim')
+  file_operation(Dir.glob('zsh/prezto/runcoms/z*'), :copy)
 
+  success_msg("installed")
+end
+
+desc "Init and update submodules."
+task :submodules do
+  sh('git submodule update --init')
+end
+
+task :default => 'install'
+
+
+private
+def run(cmd)
+  puts
+  puts "[Installing] #{cmd}"
+  `#{cmd}` unless ENV['DEBUG']
+end
+
+def want_to_install? (section)
+  puts "Would you like to install configuration files for: #{section}? [y]es, [n]o"
+  STDIN.gets.chomp == 'y'
+end
+
+def file_operation(files, method = :symlink)
   skip_all = false
   overwrite_all = false
   backup_all = false
 
-  linkables.each do |linkable|
-    file = linkable.split('/').last
-    source = "#{ENV["PWD"]}/#{linkable}"
+  files.each do |f|
+    file = f.split('/').last
+    source = "#{ENV["PWD"]}/#{f}"
     target = "#{ENV["HOME"]}/.#{file}"
 
     puts "--------"
@@ -48,35 +70,21 @@ task :install => [:submodules] do
       FileUtils.rm_rf(target) if overwrite || overwrite_all
       run %{ mv "$HOME/.#{file}" "$HOME/.#{file}.backup" } if backup || backup_all
     end
-    run %{ ln -s "#{source}" "#{target}" }
+
+    if method == :symlink
+      run %{ ln -s "#{source}" "#{target}" }
+    else
+      run %{ cp -f "#{source}" "#{target}" }
+    end
+
+    # Temporary solution until we find a way to allow customization
+    if file == 'zshrc'
+      run %{ ln -s "~/.yadr/zsh/prezto" "$HOME/.oh-my-zsh" }
+      File.open(target, 'a') do |f|
+        f.write('for config_file (~/.yadr/zsh/*.zsh) source $config_file')
+      end
+    end
   end
-  success_msg("installed")
-end
-
-task :zsh_themes do
-  if File.exist?("#{ENV['HOME']}/.oh-my-zsh/modules/prompt/functions")
-    run %{ ln -nfs #{ENV["PWD"]}/oh-my-zsh/modules/prompt/functions/* $HOME/.oh-my-zsh/modules/prompt/functions/ } if want_to_install?('zsh themes')
-  end
-end
-
-desc "Init and update submodules."
-task :submodules do
-  sh('git submodule update --init')
-end
-
-task :default => 'install'
-
-
-private
-def run(cmd)
-  puts
-  puts "[Installing] #{cmd}"
-  `#{cmd}` unless ENV['DEBUG']
-end
-
-def want_to_install? (section)
-  puts "Would you like to install configuration files for: #{section}? [y]es, [n]o"
-  STDIN.gets.chomp == 'y'
 end
 
 def success_msg(action)
