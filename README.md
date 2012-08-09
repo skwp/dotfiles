@@ -109,14 +109,14 @@ If that doesn't work, move the OSX supplied ctags [like so](http://www.mattpolit
 sudo mv /usr/bin/ctags /usr/bin/ctags_original
 ```
 
-### [oh-my-zsh](https://github.com/sorin-ionescu/prezto)
+### [Prezto](https://github.com/sorin-ionescu/prezto)
 
 ```bash
 git clone --recursive git://github.com/sorin-ionescu/prezto.git ~/.oh-my-zsh
 ```
 
-We prefer the @sorin-ionescu rewrite of Oh My Zsh. It will eventually be shipped
-as a submodule of YADR, although you can use the original @robbyrussell version as well.
+For a more complete Zsh experience we use **[Prezto](http://github.com/sorin-ionescu/prezto)**. It will eventually be shipped
+as a submodule of YADR.
 
 You only need to do the one command above. The rest of the installation is done
 by YADR, which ships with a tie-in to sorin's OMZ.
@@ -126,6 +126,10 @@ by YADR, which ships with a tie-in to sorin's OMZ.
 fasd gives you handy shell commands `f`,`a`,`s`,`d`, and `z` to jump to recently used files.
 Read more at the project's home page. Or just type `z` followed by a partial reference to
 a recent directory to see how it works.
+
+```bash
+brew install fasd
+```
 
 ## Installation
 
@@ -559,7 +563,7 @@ and other places for the cream of the crop of vim awesomeness.
  * https://github.com/tpope
  * https://github.com/scrooloose
  * https://github.com/kana
- * https://github.com/robbyrussell
+ * https://github.com/sorin-ionescu
  * https://github.com/nelstrom
 
 And everything that's in the modules included in vim/bundle of course.
@@ -570,6 +574,7 @@ Please explore these people's work.
 
  * Initial Version: @skwp
  * Cleanup, auto installer: @kylewest
+ * Switch from oh-my-zsh to Presto: @JeanMertz
 
 
 ### For more tips and tricks
