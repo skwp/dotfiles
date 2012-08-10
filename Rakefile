@@ -84,6 +84,12 @@ def file_operation(files, method = :symlink)
         f.write('for config_file (~/.yadr/zsh/*.zsh) source $config_file')
       end
     end
+
+    if file == 'zshenv'
+      text = File.read(target)
+      text.gsub!('export PDIR="$ZDOTDIR/.zsh.d"', 'export PDIR="$HOME/.yadr/zsh/prezto"')
+      File.open(target, 'w') { |f| f.puts text }
+    end
   end
 end
 
