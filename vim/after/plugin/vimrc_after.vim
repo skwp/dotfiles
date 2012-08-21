@@ -4,7 +4,7 @@
 " This loads after the janus plugins so that janus-specific plugin mappings can
 " be overwritten.
 
-if filereadable(expand("~/.vimrc.after"))
-  source ~/.vimrc.after
+if filereadable(expand("~/.yadr/vim/after/vimrc.after"))
+  source ~/.yadr/vim/after/vimrc.after
 endif
 
