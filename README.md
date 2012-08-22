@@ -502,7 +502,9 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
 
 ### Overriding vim settings
 
-You may use `~/.vimrc.before` for settings like the __leader__ setting. You may `~/.vimrc.after` for any additional overrides/settings.
+You may use `~/.vimrc.before` for settings like the __leader__ setting. 
+You may `~/.vimrc.after` (for those transitioning from janus) or in `~/.yadr/vim/after/.vimrc.after` for any additional overrides/settings.
+If you didn't have janus before, it is recommended to just put it in `~/.yadr/vim/after` so you can better manage your overrides.
 
 
 ### Adding your own vim plugins
