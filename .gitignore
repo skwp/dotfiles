@@ -5,6 +5,7 @@ vim/view
 *un~
 vim/.netrwhist
 vim/tmp
+vim/after/.vimrc.after
 .netrwhist
 bin/subl
 tags
