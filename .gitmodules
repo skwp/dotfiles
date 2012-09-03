@@ -329,3 +329,6 @@
 [submodule "vim/bundle/vim-scripts-SearchComplete"]
 	path = vim/bundle/vim-scripts-SearchComplete
 	url = https://github.com/vim-scripts/SearchComplete.git
+[submodule "vim/bundle/bbommarito-vim-slim"]
+	path = vim/bundle/bbommarito-vim-slim
+	url = https://github.com/bbommarito/vim-slim
