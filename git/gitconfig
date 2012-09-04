@@ -2,6 +2,8 @@
 # See the README for examples.
 [color]
   ui = true
+[credential]
+  helper = osxkeychain
 [color "branch"]
   current = yellow reverse
   local = yellow
