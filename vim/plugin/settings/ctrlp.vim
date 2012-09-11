@@ -38,3 +38,6 @@ map ,m :CloseSingleConque<CR>:CtrlPBufTag<CR>
 
 "Ctrl-(M)ethod - jump to a method (tag in all files)
 map ,M :CloseSingleConque<CR>:CtrlPBufTagAll<CR>
+
+" Open new file in vertical split
+let g:ctrlp_open_new_file = 'v'
