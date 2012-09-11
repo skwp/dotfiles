@@ -394,6 +394,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
  * `sk` - unsplit a link (k = up)
  * `,he` - Html Escape
  * `,hu` - Html Unescape
+ * `,hp` - Html Preview (open in Safari)
  * `Cmd-Shift-A` - align things (type a character/expression to align by, works in visual mode or by itself)
  * `:ColorToggle` - turn on #abc123 color highlighting (useful for css)
  * `:gitv` - Git log browsers

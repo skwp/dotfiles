@@ -246,3 +246,7 @@ map ,hi :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 
 " Source current file Cmd-% (good for vim development)
 map <D-%> :so %<CR>
+
+
+" ,hp = html preview
+map <silent> ,hp :!open -a Safari %<CR><CR>
