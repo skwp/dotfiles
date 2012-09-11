@@ -247,5 +247,5 @@ map ,hi :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 " Source current file Cmd-% (good for vim development)
 map <D-%> :so %<CR>
 
-nmap <leader>w :w!<cr>
-nmap <leader>q :wq!<cr>
+nmap <leader>w :w<cr>
+nmap <leader>q :wq<cr>
