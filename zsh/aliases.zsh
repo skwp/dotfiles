@@ -1,7 +1,7 @@
 # Aliases in this file are bash and zsh compatible
 
 # Don't change. The following determines where YADR is installed.
-yadr=`find -L ~ -type file -maxdepth 2 -name .yadr | head | sed 's:\.yadr\/::'`
+yadr=$HOME/.yadr
 
 # YADR support
 alias yav='yadr vim-add-plugin'

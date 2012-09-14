@@ -7,7 +7,7 @@
 # ================================
 
 # Don't change. The following determines where YADR is installed.
-yadr=`find -L ~ -type file -maxdepth 2 -name .yadr | head | sed 's:\.yadr\/::'`
+yadr=$HOME/.yadr
 
 # Source oh-my-zsh if it is installed.
 if [[ -d $HOME/.oh-my-zsh ]]; then
