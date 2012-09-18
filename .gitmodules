@@ -329,3 +329,9 @@
 [submodule "vim/bundle/vim-scripts-SearchComplete"]
 	path = vim/bundle/vim-scripts-SearchComplete
 	url = https://github.com/vim-scripts/SearchComplete.git
+[submodule "vim/bundle/briancollins-vim-jst"]
+	path = vim/bundle/briancollins-vim-jst
+	url = https://github.com/briancollins/vim-jst
+[submodule "vim/bundle/pangloss-vim-javascript"]
+	path = vim/bundle/pangloss-vim-javascript
+	url = https://github.com/pangloss/vim-javascript
