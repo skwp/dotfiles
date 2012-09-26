@@ -48,9 +48,6 @@ def install_prezto
 
   file_operation(Dir.glob('zsh/prezto/runcoms/z*'), :copy)
 
-  puts "Installing YADR themes for Prezto..."
-  run %{ ln -nfs $HOME/.yadr/zsh/prezto-themes/modules/prompt/functions/* $HOME/.zprezto/modules/prompt/functions}
-
   puts "Creating directories for your customizations"
   run %{ mkdir -p $HOME/.zsh.before }
   run %{ mkdir -p $HOME/.zsh.after }
