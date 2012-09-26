@@ -296,6 +296,7 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
 #### Rails
 
  * `Cmd-Shift-R` to use vim-ruby-conque to run a spec file. `Cmd-Shift-L` to run from a line (individual it block), `,Cmd-Shift-R` to rerun the last run command (great for re-running specs)
+ * :Rspec1 and :Rspec2 to switch between rspec versions for the vim-ruby-conque runner
  * `,vv` and `,cc` to switch between view and controller
 
 #### Surround.vim customizations
