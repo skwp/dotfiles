@@ -152,10 +152,7 @@ After a lifetime of bash, I am now using ZSH as my default shell because of its 
 and autocomplete features (the spelling fixer autocomplete is worth the money alone).
 
 Migrating from bash to zsh is essentially pain free. The zshrc provided here
-restores the only feature that I felt was 'broken' which is the Ctrl-R reverse history search.
-
-While I am not going to support bash out of the box here, YADR _should_ work with bash if
-you just source the _aliases_ file. However, you soul will sing if you install zsh. I promise.
+restores a few features that I felt was 'broken' including Ctrl-R reverse history search.
 
 Lots of things I do every day are done with two or three character
 mnemonic aliases. Please feel free to edit them:
@@ -163,17 +160,31 @@ mnemonic aliases. Please feel free to edit them:
     ae # alias edit
     ar # alias reload
 
-### [ZSH Customizations & Prezto](https://github.com/sorin-ionescu/prezto)
+### [Prezto](https://github.com/sorin-ionescu/prezto)
 
 For a more complete Zsh experience we use **[Prezto](http://github.com/sorin-ionescu/prezto)**. 
 Prezto is included as a submodule.
+
+### Adding your own ZSH theme
+
+If you want to add your own zsh theme, you can place it into ~/.zsh.prompts and it will automatically be picked up by the prompt loader.
+
+Make sure you follow the naming convention of `prompt_[name]_setup`
+
+```
+touch ~/.zsh.prompts/prompt_mytheme_setup
+```
+
+Check out ~/.yadr/zsh/prezto-themes/prompt_skwp_setup for an example of how to write a prompt.
+See also the [Prezto](https://github.com/sorin-ionescu/prezto) project for more info on themes.
+
+### Customizing ZSH & Picking a theme
 
 If you want to customize your zsh experience, yadr provides two hooks via ~/.zsh.after/ and ~/.zsh.before/ directories.
 In these directories, you can place files to customize things that load before and after other zsh customizations that come from ~/.yadr/zsh/*
 
 For example, to override the theme, you can do something like this:
 ```
-mkdir ~/.zsh.after
 echo "prompt skwp" > ~/.zsh.after/prompt.zsh
 ```
 

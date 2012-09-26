@@ -50,6 +50,11 @@ def install_prezto
 
   puts "Installing YADR themes for Prezto..."
   run %{ ln -nfs $HOME/.yadr/zsh/prezto-themes/modules/prompt/functions/* $HOME/.zprezto/modules/prompt/functions}
+
+  puts "Creating directories for your customizations"
+  run %{ mkdir -p $HOME/.zsh.before }
+  run %{ mkdir -p $HOME/.zsh.after }
+  run %{ mkdir -p $HOME/.zsh.prompts }
 end
 
 def want_to_install? (section)
