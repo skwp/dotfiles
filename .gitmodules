@@ -322,22 +322,27 @@
 	path = vim/bundle/skwp-vim-powerline
 	url = https://github.com/skwp/vim-powerline.git
   ignore = dirty
-[submodule "vim/bundle/vim-scripts-YankRing"]
-	path = vim/bundle/vim-scripts-YankRing
-	url = https://github.com/vim-scripts/YankRing.vim
-  ignore = dirty
 [submodule "vim/bundle/vim-scripts-SearchComplete"]
 	path = vim/bundle/vim-scripts-SearchComplete
 	url = https://github.com/vim-scripts/SearchComplete.git
+  ignore = dirty
 [submodule "vim/bundle/briancollins-vim-jst"]
 	path = vim/bundle/briancollins-vim-jst
 	url = https://github.com/briancollins/vim-jst
+  ignore = dirty
 [submodule "vim/bundle/pangloss-vim-javascript"]
 	path = vim/bundle/pangloss-vim-javascript
 	url = https://github.com/pangloss/vim-javascript
+  ignore = dirty
 [submodule "vim/bundle/chrisbra-NrrwRgn"]
 	path = vim/bundle/chrisbra-NrrwRgn
 	url = https://github.com/chrisbra/NrrwRgn
+  ignore = dirty
 [submodule "zsh/prezto"]
 	path = zsh/prezto
-	url = git://github.com/sorin-ionescu/prezto.git
+	url = https://github.com/sorin-ionescu/prezto.git
+  ignore = dirty
+[submodule "vim/bundle/skwp-YankRing"]
+	path = vim/bundle/skwp-YankRing
+	url = https://github.com/skwp/YankRing.vim
+  ignore = dirty
