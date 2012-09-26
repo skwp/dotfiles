@@ -109,23 +109,15 @@ If that doesn't work, move the OSX supplied ctags [like so](http://www.mattpolit
 sudo mv /usr/bin/ctags /usr/bin/ctags_original
 ```
 
-### [oh-my-zsh](https://github.com/sorin-ionescu/prezto)
-
-```bash
-git clone --recursive git://github.com/sorin-ionescu/prezto.git ~/.oh-my-zsh
-```
-
-We prefer the @sorin-ionescu rewrite of Oh My Zsh. It will eventually be shipped
-as a submodule of YADR, although you can use the original @robbyrussell version as well.
-
-You only need to do the one command above. The rest of the installation is done
-by YADR, which ships with a tie-in to sorin's OMZ.
-
 ### [fasd](https://github.com/clvv/fasd)
 
 fasd gives you handy shell commands `f`,`a`,`s`,`d`, and `z` to jump to recently used files.
+
 Read more at the project's home page. Or just type `z` followed by a partial reference to
 a recent directory to see how it works.
+
+fasd is currently shipped with yadr in the bin directory.
+In the future it will be included as a submodule.
 
 ## Installation
 
@@ -171,28 +163,28 @@ mnemonic aliases. Please feel free to edit them:
     ae # alias edit
     ar # alias reload
 
+### [ZSH Customizations & Prezto](https://github.com/sorin-ionescu/prezto)
+
+For a more complete Zsh experience we use **[Prezto](http://github.com/sorin-ionescu/prezto)**. 
+Prezto is included as a submodule.
+
+If you want to customize your zsh experience, yadr provides two hooks via ~/.zsh.after/ and ~/.zsh.before/ directories.
+In these directories, you can place files to customize things that load before and after other zsh customizations that come from ~/.yadr/zsh/*
+
+For example, to override the theme, you can do something like this:
+```
+mkdir ~/.zsh.after
+echo "prompt skwp" > ~/.zsh.after/prompt.zsh
+```
+
+Next time you load your shell, this file will be read and your prompt will be the skwp prompt. Use `prompt -l` to see the available prompts.
+
 ### ZSH Customizations
 
  * Vim mode
  * Bash style ctrl-R for reverse history finder
  * Ctrl-x,Ctrl-l to insert output of last command
  * Fuzzy matching - if you mistype a directory name, tab completion will fix it
-
-### How To Customize ZSH
-
-YADR allows you to completely customize your ZSH without having to fork and maintain the project. Here's how it works: YADR will
-source (include) any files in `.yadr/custom/zsh/before/*` or `.yadr/custom/zsh/after/*`. The `before` files are
-useful for setting the theme and plugins. `after` files allow you to override options set by YADR, define your own aliases, etc.
-
-To make your life easier, create a `zsh` folder in your Dropbox (or as a git repo) and symlink it into `~/.yadr/custom`. Do it like this:
-
-```bash
-ln -s ~/Dropbox/path/to/zsh ~/.yadr/custom/zsh
-```
-
-Create as many `before/whatever.zsh` or `after/whatever.zsh` files as you need within the `zsh` directory. Please see `custom/zsh.sample` for
-an example.
-
 
 ## Pry
 
@@ -563,7 +555,7 @@ and other places for the cream of the crop of vim awesomeness.
  * https://github.com/tpope
  * https://github.com/scrooloose
  * https://github.com/kana
- * https://github.com/robbyrussell
+ * https://github.com/sorin-ionescu
  * https://github.com/nelstrom
 
 And everything that's in the modules included in vim/bundle of course.
@@ -574,6 +566,7 @@ Please explore these people's work.
 
  * Initial Version: @skwp
  * Cleanup, auto installer: @kylewest
+ * Switch from oh-my-zsh to Presto: @JeanMertz
 
 
 ### For more tips and tricks
