@@ -5,8 +5,8 @@
      _____| / ___ ( (_| | |
     (_______\_____|\____|_|
 
-    # Yet Another Dotfile Repo v0.9
-    # Alpha Release Please Report Bugs
+    # Yet Another Dotfile Repo v1.0
+    # Now with Prezto!
 
     git clone https://github.com/skwp/dotfiles ~/.yadr
     cd ~/.yadr && rake install
@@ -17,7 +17,6 @@
 
 This is a collection of best of breed tools from across the web,
 from scouring other people's dotfile repos, blogs, and projects.
-
 
 ## What is YADR?
 
