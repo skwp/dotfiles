@@ -346,3 +346,6 @@
 	path = vim/bundle/skwp-YankRing
 	url = https://github.com/skwp/YankRing.vim
   ignore = dirty
+[submodule "vim/bundle/tpope-vim-abolish"]
+	path = vim/bundle/tpope-vim-abolish
+	url = https://github.com/tpope/vim-abolish
