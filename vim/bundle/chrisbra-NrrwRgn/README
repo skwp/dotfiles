@@ -1,0 +1,523 @@
+*NrrwRgn.txt*   A Narrow Region Plugin (similar to Emacs)
+
+Author:  Christian Brabandt <cb@256bit.org>
+Version: 0.29 Mon, 20 Aug 2012 19:34:23 +0200
+Copyright: (c) 2009, 2010, 2011, 2012 by Christian Brabandt         
+           The VIM LICENSE applies to NrrwRgnPlugin.vim and NrrwRgnPlugin.txt
+           (see |copyright|) except use NrrwRgnPlugin instead of "Vim".
+           NO WARRANTY, EXPRESS OR IMPLIED.  USE AT-YOUR-OWN-RISK.
+
+
+==============================================================================
+1. Contents                                     *NarrowRegion*  *NrrwRgnPlugin*
+
+        1.  Contents.....................................: |NrrwRgnPlugin|
+        2.  NrrwRgn Manual...............................: |NrrwRgn-manual|
+        2.1   NrrwRgn Howto..............................: |NR-HowTo|
+        2.2   NrrwRgn Multi..............................: |NR-multi-example|
+        2.3   NrrwRgn Configuration......................: |NrrwRgn-config|
+        3.  NrrwRgn Feedback.............................: |NrrwRgn-feedback|
+        4.  NrrwRgn History..............................: |NrrwRgn-history|
+
+==============================================================================
+2. NrrwRgn Manual                                       *NrrwRgn-manual*
+
+Functionality
+
+This plugin is based on a discussion in comp.editors (see the thread at
+http://groups.google.com/group/comp.editors/browse_frm/thread/0f562d97f80dde13)
+
+Narrowing means focussing on a region and making the rest inaccessible. You
+simply select the region, call |:NarrowRegion| and the selected part will open
+in a new scratch buffer. The rest of the file will be protected, so you won't
+accidentally modify that buffer. In the new buffer, you can do a global
+replace, search or anything else to modify that part. When you are finished,
+simply write that buffer (e.g. by |:w|) and your modifications will be put in
+the original buffer making it accessible again.
+
+NrrwRgn allows you to either select a line based selection using an Ex-command
+or you can simply use any visual selected region and press your preferred key
+combination to open that selection in a new buffer.
+
+This plugin defines the following commands:
+
+                                                        *:NarrowRegion* *:NR*
+:[range]NR[!]
+:[range]NarrowRegion[!]     When [range] is omitted, select only the current
+                            line, else use the lines in the range given and 
+                            open it in a new Scratch Window.
+                            If the current line is selected and is on a folded
+                            region, select the whole folded text.
+                            Whenever you are finished modifying that region
+                            simply write the buffer.
+                            If ! is given, open the narrowed buffer not in a
+                            split buffer but in the current window.
+
+                                                        *:NarrowWindow* *:NW*
+:NW[!]
+:NarrowWindow[!]            Select only the range that is visible the current
+                            window and open it in a new Scratch Window. 
+                            Whenever you are finished modifying that region
+                            simply write the buffer.
+                            If ! is given, open the narrowed buffer not in a
+                            split buffer but in the current window.
+
+                                                                *:WidenRegion*
+:WidenRegion[!]             This command is only available in the narrowed 
+                            scratch window. If the buffer has been modified,
+                            the contents will be put back on the original
+                            buffer. If ! is specified, the window will be
+                            closed, otherwise it will remain open.
+
+                                                                        *:NRV*
+:NRV[!]                     Opened the narrowed window for the region that was
+                            last selected in visual mode
+                            If ! is given, open the narrowed buffer not in a
+                            split buffer but in the current window.
+
+                                                                        *:NUD*
+
+:NUD                        When viewing unified diffs, this command opens
+                            the current chunk in 2 Narrowed Windows in
+                            |diff-mode| The current chunk is determined as the
+                            one, that the cursor is at. This command does not
+                            make sense if editing a different file format (or
+                            even different diff format)
+
+                                                                  *:NRPrepare*
+:[range]NRPrepare[!]
+:[range]NRP[!]              You can use this command, to mark several lines
+                            that will later be put into a Narrowed Window
+                            using |:NRM|.
+                            If the ! is used, all earlier selected lines will
+                            be cleared first.
+
+                                                                  *:NRMulti*
+:NRMulti
+:NRM                        This command takes all lines, that have been
+                            marked by |:NRP| and puts them together in a new
+                            narrowed buffer.
+                            When you write your changes back, all separate
+                            lines will be put back at their origin.
+                            This command also clears the list of marked lines,
+                            that was created with |NRP|.
+                            See also |NR-multi-example|.
+
+                                                    *:NRSyncOnWrite* *:NRS*
+:NRSyncOnWrite
+:NRS                        Enable synching the buffer content back to the
+                            original buffer when writing.
+                            (this is the default).
+
+                                                    *:NRNoSyncOnWrite* *:NRN*
+:NRNoSyncOnWrite
+:NRN                        Disable synching the buffer content back to the
+                            original buffer when writing. When set, the
+                            narrowed buffer behaves like an ordinary buffer
+                            that you can write in the filesystem.
+                            (this is the default).
+
+                                                                    *:NRL*
+                
+:NRL[!]                     Reselect the last selected region again and open in
+                            a narrowed window. 
+                            If ! is given, open the narrowed buffer not in a
+                            split buffer but in the current window.
+
+
+2.1 NrrwRgn HowTo                                                *NR-HowTo*
+-----------------
+
+Use the commands provided above to select a certain region to narrow. You can
+also start visual mode and have the selected region being narrowed. In this
+mode, NarrowRegion allows you to block select |CTRL-V| , character select |v|
+or linewise select |V| a region. Then press <Leader>nr where <Leader> by
+default is set to '\', unless you have set it to something different (see
+|<Leader>| for information how to change this) and the selected range will
+open in a new scratch buffer. This key combination only works in |Visual-mode|
+
+When finished, simply write that Narrowed Region window, from which you want
+to take the modifications in your original file.
+
+It is possible, to recursively open a Narrowed Window on top of an already
+narrowed window. This sounds a little bit silly, but this makes it possible,
+to have several narrowed windows, which you can use for several different
+things, e.g. If you have 2 different buffers opened and you want to diff a
+certain region of each of those 2 buffers, simply open a Narrowed Window for
+each buffer, and execute |:diffthis| in each narrowed window.
+
+You can then interactively merge those 2 windows. And when you are finished,
+simply write the narrowed window and the changes will be taken back into the
+original buffer.
+
+When viewing unified diffs, you can use the provided |:NUD| command to open 2
+Narrowed Windows side by side viewing the current chunk in |diff-mode|. Those
+2 Narrowed windows will be marked 'modified', since there was some post
+processing involved when opening the narrowed windows. Be careful, when
+quitting the windows, not to write unwanted changes into your patch file! In
+the window that contains the unified buffer, you can move to a different
+chunk, run |:NUD| and the 2 Narrowed Windows in diff mode will update.
+
+2.2 NrrwRgn Multi                                    *NR-multi-example*
+-----------------
+
+Using the commands |:NRP| and |:NRM| allows to select a range of lines, that
+will be put into a narrowed buffer together. This might sound confusing, but
+this allows to apply a filter before making changes. For example before
+editing your config file, you decide to strip all comments for making big
+changes but when you write your changes back, these comments will stay in your
+file. You would do it like this: >
+    :v/^#/NRP
+    :NRMulti
+< 
+Now a Narrowed Window will open, that contains only the configuration lines.
+Each block of independent region will be separated by a string like
+
+# Start NarrowRegion1
+.....
+# End NarrowRegion1
+
+This is needed, so the plugin later knows, which region belongs where in the
+original place. Blocks you don't want to change, you can safely delete, they
+won't be written back into your original file. But other than that, you
+shouldn't change those separating lines.
+
+When you are finished, simply write your changes back.
+
+==============================================================================
+
+2.3 NrrwRgn Configuration                                    *NrrwRgn-config*
+-------------------------
+
+NarrowRegion can be customized by setting some global variables. If you'd
+like to open the narrowed window as a vertical split buffer, simply set the
+variable g:nrrw_rgn_vert to 1 in your |.vimrc| >
+
+    let g:nrrw_rgn_vert = 1
+<
+------------------------------------------------------------------------------
+
+If you'd like to specify a certain width/height for you scratch buffer, then
+set the variable g:nrrw_rgn_wdth in your |.vimrc| . This variable defines the
+width or the nr of columns, if you have also set g:nrrw_rgn_vert. >
+
+    let g:nrrw_rgn_wdth = 30
+<
+------------------------------------------------------------------------------
+
+By default, NarrowRegion highlights the region that has been selected
+using the WildMenu highlighting (see |hl-WildMenu|). If you'd like to use a
+different highlighting, set the variable g:nrrw_rgn_hl to your preferred
+highlighting Group. For example to have the region highlighted like a search
+result, you could put that in your |.vimrc| >
+
+    let g:nrrw_rgn_hl = 'Search'
+<
+If you want to turn off the highlighting (because this can be distracting), you
+can set the global variable g:nrrw_rgn_nohl to 1 in your |.vimrc| >
+
+    let g:nrrw_rgn_nohl = 1
+<
+------------------------------------------------------------------------------
+
+If you'd like to change the key combination that starts the Narrowed Window
+for your selected range, you could put this in your |.vimrc| >
+
+   xmap <F3> <Plug>NrrwrgnDo
+<
+This will let <F3> open the Narrow-Window, but only if you have pressed it in
+Visual Mode. It doesn't really make sense to map this combination to any other
+mode, unless you want it to Narrow your last visually selected range.
+
+------------------------------------------------------------------------------
+
+If you'd like to specify the options that you want to have set for the
+narrowed window, you can set the g:nrrw_custom_options setting, in your
+|.vimrc| e.g. >
+
+   let g:nrrw_custom_options={}
+   let g:nrrw_custom_options['filetype'] = 'python'
+>
+This will only apply those options to the narrowed buffer. You need to take
+care that all options you need will apply.
+
+------------------------------------------------------------------------------
+
+If you don't like that your narrowed window opens above the current window,
+define the g:nrrw_topbot_leftright variable to your taste, e.g. >
+
+  let g:nrrw_topbot_leftright = 'botright'
+<
+Now, all narrowed windows will appear below the original window. If not
+specified, the narrowed window will appear above/left of the original window.
+
+------------------------------------------------------------------------------
+
+If you want to use several independent narrowed regions of the same buffer
+that you want to write at the same time, protecting the original buffer is not
+really useful. Therefore, set the g:nrrw_rgn_protect variable, e.g. in your
+|.vimrc| >
+  
+   let g:nrrw_rgn_protect = 'n'
+<
+This can be useful if you diff different regions of the same file, and want
+to be able to put back the changes at different positions. Please note that
+you should take care not to change any part that will later be influenced
+when writing the narrowed region back.
+
+Note: Don't use overlapping regions! Your changes will probably not be put
+back correctly and there is no guard against losing data accidentally. NrrwRgn
+tries hard to adjust the highlighting and regions as you write your changes
+back into the original buffer, but it can't guarantee that this will work and
+might fail silently. Therefore, this feature is experimental!
+
+------------------------------------------------------------------------------
+                                                                    *NR-hooks*
+
+NarrowRegion can execute certain commands, when creating the narrowed window
+and when closing the narrowed window. For this, you can set 2 buffer-local
+variables that specify what commands to execute, which will hook into the
+execution of the Narrow Region plugin.
+
+For example, suppose you have a file, containing columns separated data (CSV
+format) which you want to modify and you also have the CSV filetype plugin
+(http://www.vim.org/scripts/script.php?script_id=2830) installed and you want
+to modify the CSV data which should be visually arranged like a table in the
+narrowed window. 
+
+Therefore you want the command |:ArrangeColumn| to be executed in the new
+narrowed window upon entering it, and when writing the changes back, you want
+the command |:UnArrangeColumn| to be executed just before putting the
+changes back. So you set those two variables in your original buffer: >
+
+    let b:nrrw_aucmd_create = "set ft=csv|%ArrangeCol"
+    let b:nrrw_aucmd_close  = "%UnArrangeColumn"
+<
+This will execute the commands in the narrowed window: >
+
+    :set ft=csv
+    :%ArrangeCol
+
+and before writing the changes back, it'll execute: >
+    
+    :%UnArrangeCol
+
+==============================================================================
+3. NrrwRgn Feedback                                         *NrrwRgn-feedback*
+
+Feedback is always welcome. If you like the plugin, please rate it at the
+vim-page:
+http://www.vim.org/scripts/script.php?script_id=3075
+
+You can also follow the development of the plugin at github:
+http://github.com/chrisbra/NrrwRgn
+
+Please don't hesitate to report any bugs to the maintainer, mentioned in the
+third line of this document.
+
+If you like the plugin, write me an email (look in the third line for my mail
+address). And if you are really happy, vote for the plugin and consider
+looking at my Amazon whishlist: http://www.amazon.de/wishlist/2BKAHE8J7Z6UW
+
+==============================================================================
+4. NrrwRgn History                                          *NrrwRgn-history*
+
+
+0.29: Aug 20, 2012 {{{1
+- Use ! to have the narrowed buffer not opened in a new window (suggested by
+  Greg Sexton thanks!, issue #8
+  https://github.com/chrisbra/NrrwRgn/issues/8)
+- Fix mappings for visual mode (https://github.com/chrisbra/NrrwRgn/issues/9,
+  reported by Sung Pae, thanks!)
+- Fix problem with setting the filetype
+  (https://github.com/chrisbra/NrrwRgn/issues/10, reported by Hong Xu,
+  thanks!)
+- Fix some minor problems, when using ! mode
+0.28: Jun 03, 2012 {{{1
+- Plugin did not store last narrowed region when narrowed window was moved to
+  another tabpage (reported by Ben Fritz, thanks!)
+
+0.27: May 17, 2012 {{{1
+- When using |:NR| on a line that is folded, include the whole folded region
+  in the Narrowed window.
+- Better filetype detection for comments
+- Error handling, when doing |:NRM| without doing |:NRP| first
+- Use |:NRP!| to clear the old selection
+- Don't load the autoload script when sourcing the plugin script
+  (reported by Sergey Khorev, thanks!)
+- Vim 7.3.449 introduced E855, prevent this error.
+- |:NRL|
+- |NRM| did not correctly parse the list of lines provided by |:NRP|
+- highlighted pattern for blockwise visual narrowed regions was wrong
+- Saving blockwise visual selected regions back, could corrupt the contents
+
+0.26: Jan 02, 2012 {{{1
+
+- Fix issue https://github.com/chrisbra/NrrwRgn/issues/7
+  (reported by Alessio B., thanks!)
+
+
+0.25: Nov 08, 2011 {{{1
+
+- updated documentation (patch by Jean, thanks!)
+- make it possible, to not sync the narrowed buffer back by disabling
+  it using |:NRSyncOnWrite| |:NRNoSyncOnWrite|
+
+0.24: Oct 24, 2011 {{{1
+
+- error on vim.org page, reuploaded version 0.22 as 0.24
+
+0.23: Oct 24, 2011 {{{1
+
+- (wrongly uploaded to vim.org)
+  
+0.22: Oct 24, 2011 {{{1
+
+- Allow customization via the use of hooks (|NR-hooks|)
+
+0.21: July 26, 2011 {{{1
+
+- Fix undefined variable adjust_line_numbers
+  https://github.com/chrisbra/NrrwRgn/issues/5 (reported by jmcantrell,
+  thanks!)
+
+0.20: July 25, 2011 {{{1
+- allow customization via the g:nrrw_topbot_leftright variable (Thanks Herbert
+  Sitz!)
+- allow what options will be applied using the g:nrrw_custom_options dict
+  (suggested by Herbert Sitz. Thanks!)
+- NRV didn't hightlight the region that was selected (reported by Herbert
+  Sitz, thanks!)
+- use the g:nrrw_rgn_protect variable, to prevent that the original buffer
+  will be protected. This is useful, if you narrow several regions of the same
+  buffer and want to write those changes indepentently (reported by kolyuchiy
+  in https://github.com/chrisbra/NrrwRgn/issues/3, Thanks!)
+- fix an error with not correctly deleting the highlighted region, that was
+  discovered when reporting issue 3 (see above). (Reported by kolyuchiy,
+  thanks!)
+- Catch errors, when setting window local options. (Patch by Sung Pae,
+  Thanks!)
+
+0.19: May 22, 2011 {{{1
+- fix issue 2 from github https://github.com/chrisbra/NrrwRgn/issues/2
+  (Widening does not work, if the narrowed windows have been moved to a new
+  tabspace). Reported by vanschelven, thanks!
+
+0.18: December 10, 2010 {{{1
+- experimental feature: Allow to Narrow several different regions at once
+  using :g/pattern/NRP and afterwards calling :NRM
+  (This only works linewise. Should that be made possible for any reagion?)
+- disable folds, before writing changes back, otherwise chances are, you'll
+  lose more data then wanted
+- code cleanup
+
+0.17: November 23, 2010 {{{1
+- cache the options, that will be set (instead of parsing
+  $VIMRUNTIME/doc/options.txt every time) in the Narrowed Window
+- getting the options didn't work, when using an autocommand like this:
+  autocmd BufEnter * cd %:p:h
+  (reported by Xu Hong, Thanks!)
+- :q didn't clean up the Narrowed Buffer correctly. Fix this
+- some code cleanup
+
+0.16: November 16, 2010 {{{1
+- Bugfix: copy all local options to the narrowed window (reported by Xu Hong,
+  Thanks!)
+
+0.15: August 26, 2010 {{{1
+- Bugfix: minor documentation update (reported by Hong Xu, Thanks!)
+
+0.14: August 26, 2010 {{{1
+- Bugfix: :only in the original buffer resulted in errors (reported by Adam
+  Monsen, Thanks!)
+
+0.13: August 22, 2010 {{{1
+- Unified Diff Handling (experimental feature)
+
+0.12: July 29, 2010 {{{1
+
+- Version 0.11, wasn't packaged correctly and the vimball file
+  contained some garbage. (Thanks Dennis Hostetler!)
+
+0.11: July 28, 2010 {{{1
+
+- Don't set 'winfixwidth' and 'winfixheight' (suggested by Charles Campbell)
+
+0.10: May 20, 2010 {{{1
+
+- Restore cursor position using winrestview() and winsaveview()
+- fix a bug, that prevented the use of visual narrowing
+- Make sure when closing the narrowed buffer, the content will be written to
+  the right original region
+- use topleft for opening the Narrowed window
+- check, that the original buffer is still available
+- If you Narrow the complete buffer using :NRV and write the changes back, an
+  additional trailing line is inserted. Remove that line.
+- When writing the changes back, update the highlighting.
+
+0.9: May 20, 2010 {{{1
+
+- It is now possible to Narrow a window recursively. This allows to have
+  several narrowed windows, and allows for example to only diff certain
+  regions (as was suggested in a recent thread at the vim_use mailinglist:
+  http://groups.google.com/group/vim_use/msg/05d7fd9bd1556f0e) therefore, the
+  use for the g:nrrw_rgn_sepwin variable isn't necessary anymore.
+- Small documentation updates
+
+0.8: May 18, 2010 {{{1
+
+- the g:nrrw_rgn_sepwin variable can be used to force separate Narrowed
+  Windows, so you could easily diff those windows.
+- make the separating of several windows a little bit safer (look at the
+  bufnr(), so it should work without problems for several buffers)
+- switch from script local variables to buffer local variables, so narrowing
+  for several buffers should work.
+- set 'winfixheight' for narrowed window 
+- Added command :NRV (suggested by Charles Campbell, thanks!)
+- added error handling, in case :NRV is called, without a selected region
+- take care of beeps, when calling :NRV
+- output WarningMsg
+
+0.7: May 17, 2010 {{{1
+
+- really use the black hole register for deleting the old buffer contents in
+  the narrowed buffer (suggestion by esquifit in
+  http://groups.google.com/group/comp.editors/msg/3eb3e3a7c68597db)
+- make autocommand nesting, so the highlighting will be removed when writing
+  the buffer contents.
+- Use g:nrrw_rgn_nohl variable to disable highlighting (as this can be
+  disturbing).
+
+0.6: May 04, 2010 {{{1
+
+- the previous version had problems restoring the orig buffer, this version
+  fixes it (highlighting and setl ma did not work correctly)
+
+0.5: May 04, 2010 {{{1
+
+- The mapping that allows for narrowing a visually selected range, did not
+  work.  (Fixed!)
+- Make :WidenRegion work as expected (close the widened window) (unreleased)
+
+0.4: Apr 28, 2010 {{{1
+
+- Highlight narrowed region in the original buffer
+- Save and Restore search-register
+- Provide shortcut commands |:NR| 
+- Provide command |:NW| and |:NarrowWindow|
+- Make plugin autoloadable
+- Enable GLVS (see |:GLVS|)
+- Provide Documenation (:h NarrowRegion)
+- Distribute Plugin as vimball |pi_vimball.txt|
+
+0.3: Apr 28, 2010 {{{1
+
+- Initial upload
+- development versions are available at the github repository
+- put plugin on a public repository (http://github.com/chrisbra/NrrwRgn)
+
+  }}}
+
+==============================================================================
+Modeline:
+vim:tw=78:ts=8:ft=help:et:fdm=marker:fdl=0:norl

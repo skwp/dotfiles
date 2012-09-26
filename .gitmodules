@@ -335,3 +335,6 @@
 [submodule "vim/bundle/pangloss-vim-javascript"]
 	path = vim/bundle/pangloss-vim-javascript
 	url = https://github.com/pangloss/vim-javascript
+[submodule "vim/bundle/chrisbra-NrrwRgn"]
+	path = vim/bundle/chrisbra-NrrwRgn
+	url = https://github.com/chrisbra/NrrwRgn
