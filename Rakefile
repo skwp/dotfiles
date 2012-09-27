@@ -26,7 +26,7 @@ end
 
 desc "Init and update submodules."
 task :submodules do
-  sh('git submodule update --init')
+  sh('git submodule update --init --recursive')
 end
 
 task :default => 'install'
