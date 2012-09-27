@@ -85,6 +85,30 @@ With homebrew installed, install some packages:
 brew install ack ctags git hub macvim
 ```
 
+#### OS X Keychain Helper
+
+If you don't use homebrew to install git, you need to install the osxkeychain
+helper to cache your password on Smart HTTPS requests. To see if it is
+installed:
+
+```bash
+git credential-osxkeychain
+```
+
+That should output usage. If it doesn't, then you'll need to install it via
+curl:
+
+```bash
+curl -s -O http://github-media-downloads.s3.amazonaws.com/osx/git-credential-osxkeychain
+# Download the helper
+chmod u+x git-credential-osxkeychain
+# make it executable
+sudo mv git-credential-osxkeychain /usr/local/git/bin
+# move it so git can access it
+# NOTE: the /usr/local/git/bin path may vary based on how you installed git.
+# You can use `which git` to find the correct path to use
+```
+
 ### Ruby Debugger
 
 This gem is used to give you visual IDE-style debugging within vim, combined
