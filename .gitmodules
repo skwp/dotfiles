@@ -349,3 +349,6 @@
 [submodule "vim/bundle/tpope-vim-abolish"]
 	path = vim/bundle/tpope-vim-abolish
 	url = https://github.com/tpope/vim-abolish
+[submodule "vim/bundle/bbommarito-vim-slim"]
+	path = vim/bundle/bbommarito-vim-slim
+	url = https://github.com/bbommarito/vim-slim.git
