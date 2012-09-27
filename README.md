@@ -309,7 +309,8 @@ files contain key mappings as well (TODO: probably will move them out to skwp-ke
 
  * `,f` - instantly Find definition of class (must have exuberant ctags installed)
  * `,F` - same as ,f but in a vertical split
- * `,gf` - same as vim normal gf (go to file), but in a vertical split
+ * `,gf` or `Ctrl-f` - same as vim normal gf (go to file), but in a vertical split (works with file.rb:123 line numbers also)
+ * `gF` - standard vim mapping, here for completeness (go to file at line number)
  * `K` - GitGrep the current word under the cursor and show results in quickfix window
  * `,K` - GitGrep the current word up to next exclamation point (useful for ruby foo! methods)
  * `Cmd-*` - highlight all occurrences of current word (similar to regular `*` except doesn't move)
