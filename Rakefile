@@ -9,6 +9,9 @@ task :install => [:submodules] do
   puts "be overwritten without your consent."
   puts "======================================================"
   puts
+
+  install_homebrew
+
   # this has all the runcoms from this directory.
   file_operation(Dir.glob('git/*')) if want_to_install?('git configs (color, aliases)')
   file_operation(Dir.glob('irb/*')) if want_to_install?('irb/pry configs (more colorful)')
@@ -21,12 +24,18 @@ task :install => [:submodules] do
     install_prezto
   end
 
+  install_fonts
+
   success_msg("installed")
 end
 
 desc "Init and update submodules."
 task :submodules do
+  puts "======================================================"
+  puts "Downloading YADR submodules...please wait"
+  puts "======================================================"
   sh('git submodule update --init --recursive')
+  puts
 end
 
 task :default => 'install'
@@ -37,6 +46,30 @@ def run(cmd)
   puts
   puts "[Installing] #{cmd}"
   `#{cmd}` unless ENV['DEBUG']
+end
+
+def install_homebrew
+  puts "======================================================"
+  puts "Installing Homebrew, the OSX package manager...If it's"
+  puts "already installed, this will do nothing."
+  puts "======================================================"
+  run %{ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"}
+  puts
+  puts
+  puts "======================================================"
+  puts "Installing Homebrew packages...There may be some warnings."
+  puts "======================================================"
+  run %{brew install ack ctags git hub}
+  puts
+  puts
+end
+
+def install_fonts
+  puts "======================================================"
+  puts "Installing patched fonts for Powerline."
+  puts "======================================================"
+  run %{ cp -f $HOME/.yadr/fonts/* $HOME/Library/Fonts }
+  puts
 end
 
 def install_prezto
