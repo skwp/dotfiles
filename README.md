@@ -82,6 +82,11 @@ You can install macvim from brew as well, or download it from their website.
 brew install ack ctags git hub macvim
 ```
 
+
+### Github Issues: [ghi gem](https://github.com/stephencelis/ghi)
+
+We include the `ghi` command. Try `ghi list` and have fun managing issues from command line!
+
 ### Ruby Debugger
 
 This gem is optonal and not included. It's used to give you visual IDE-style debugging within vim, combined
