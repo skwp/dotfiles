@@ -318,6 +318,7 @@ If you omit the key combo, you'll get a list of all the maps. You can do the sam
 
 #### Utility
 
+ * `,orb` - outer ruby block. takes you one level up from nested blocks (great for rspec)
  * `crs`, `crc`, `cru` via abolish.vim, coerce to snake_case, camelCase, and UPPERCASE. There are more `:help abolish`
  * `:NR` - NarrowRgn - use this on a bit of selected text to create a new split with just that text. Do some work on it, then :wq it to get the results back.
  * `,ig` - toggle visual indentation guides
