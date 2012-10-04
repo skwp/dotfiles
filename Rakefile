@@ -10,7 +10,7 @@ task :install => [:submodules] do
   puts "======================================================"
   puts
 
-  install_homebrew
+  install_homebrew if RUBY_PLATFORM.downcase.include?("darwin")
   install_rvm_binstubs
 
   # this has all the runcoms from this directory.
@@ -25,7 +25,7 @@ task :install => [:submodules] do
     install_prezto
   end
 
-  install_fonts
+  install_fonts if RUBY_PLATFORM.downcase.include?("darwin")
 
   success_msg("installed")
 end
