@@ -56,7 +56,7 @@ Upgrading is easy.
 ```bash
 cd ~/.yadr
 git pull origin master
-rake install
+rake update
 ```
 
 # What's included, and how to customize?
@@ -454,10 +454,6 @@ If you didn't have janus before, it is recommended to just put it in `~/.yadr/vi
 YADR comes with a dead simple plugin manager that just uses git submodules, without any fancy config files.
 
     yav -u https://github.com/airblade/vim-rooter
-
-You can update all the plugins easily:
-
-    yuv
 
 Delete a plugin (Coming Soon)
 

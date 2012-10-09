@@ -30,12 +30,22 @@ task :install => [:submodules] do
   success_msg("installed")
 end
 
+task :update => [:install] do
+  #TODO: for now, we do the same as install. But it would be nice
+  #not to clobber zsh files
+end
+
 desc "Init and update submodules."
 task :submodules do
   puts "======================================================"
   puts "Downloading YADR submodules...please wait"
   puts "======================================================"
-  sh('git submodule update --init --recursive')
+
+  run %{
+    cd $HOME/.yadr
+    git submodule foreach 'git fetch origin; git checkout master; git reset --hard origin/master; git submodule update --recursive; git clean -dfx'
+    git clean -dfx
+  }
   puts
 end
 
@@ -45,7 +55,7 @@ task :default => 'install'
 private
 def run(cmd)
   puts
-  puts "[Installing] #{cmd}"
+  puts "[Running] #{cmd}"
   `#{cmd}` unless ENV['DEBUG']
 end
 
