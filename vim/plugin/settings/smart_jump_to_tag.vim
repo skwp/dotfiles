@@ -36,8 +36,11 @@ endfunction
 " this uses ctags. the standard way to get this is Ctrl-]
 nnoremap <silent> ,f <C-]>
 
+" Jump to tag with awareness of ruby bang! methods
 nnoremap <silent> ,,f :call JumpToRubyMethod()<CR> 
+
+" Jump to tag with awareness of ruby bang! methods (in vertical split)
+nnoremap <silent> ,,F :vsp<cr> :wincmd w<cr> :call JumpToRubyMethod()<CR> 
 
 " use ,F to jump to tag in a vertical split
 nnoremap <silent> ,F :let word=expand("<cword>")<CR>:vsp<CR>:wincmd w<cr>:exec("tag ". word)<cr>
-
