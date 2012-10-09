@@ -34,10 +34,6 @@ endfunction
 
 " hit ,f to find the definition of the current class
 " this uses ctags. the standard way to get this is Ctrl-]
-" Using viW so we select the entire word, including any 
-" exclamation point in a ruby method. FIXME this is not
-" good for methods like this(foo) which has parens
-" nnoremap <silent> ,f viW<C-]>
 nnoremap <silent> ,f <C-]>
 
 nnoremap <silent><C-m> :call JumpToRubyMethod()<CR> 
