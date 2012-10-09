@@ -241,6 +241,7 @@ If you omit the key combo, you'll get a list of all the maps. You can do the sam
 #### Search/Code Navigation
 
  * `,f` - instantly Find definition of class (must have exuberant ctags installed)
+ * `ctrl-m` - jump to Method. Same as vim's built in jump to tag, but much more aware of ruby bang_methods! and method.invocations!
  * `,F` - same as ,f but in a vertical split
  * `,gf` or `Ctrl-f` - same as vim normal gf (go to file), but in a vertical split (works with file.rb:123 line numbers also)
  * `gF` - standard vim mapping, here for completeness (go to file at line number)
