@@ -1,7 +1,7 @@
 require 'rake'
 
 desc "Hook our dotfiles into system-standard positions."
-task :install => [:submodules] do
+task :install => [:submodule_init, :submodules] do
   puts
   puts "======================================================"
   puts "Welcome to YADR Installation. I'll ask you a few"
@@ -33,6 +33,10 @@ end
 task :update => [:install] do
   #TODO: for now, we do the same as install. But it would be nice
   #not to clobber zsh files
+end
+
+task :submodule_init do
+  run %{ git submodule update --init --recursive }
 end
 
 desc "Init and update submodules."
