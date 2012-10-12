@@ -32,7 +32,9 @@ alias ae='vi $yadr/zsh/aliases.zsh' #alias edit
 alias ar='source $yadr/zsh/aliases.zsh'  #alias reload
 
 # vim using
-alias vim=$(brew ls macvim | grep Contents/MacOS/Vim)
+if [ "$(command -v brew)" ]; then
+  alias vim=$(brew ls macvim | grep Contents/MacOS/Vim)
+fi
 
 # vimrc editing
 alias ve='vi ~/.vimrc'
@@ -84,10 +86,11 @@ alias gplr='git pull --rebase'
 alias gps='git push'
 alias gpsh='git push'
 alias gnb='git nb' # new branch aka checkout -b
-alias grs='git reset' 
+alias grs='git reset'
 alias grsh='git reset --hard'
 alias gcln='git clean'
 alias gclndf='git clean -df'
+alias gclndfx='git clean -dfx'
 alias gsm='git submodule'
 alias gsmi='git submodule init'
 alias gsmu='git submodule update'
