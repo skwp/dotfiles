@@ -234,10 +234,6 @@
   path = vim/bundle/joestelmach-javaScriptLint
   url = https://github.com/joestelmach/javaScriptLint.vim
   ignore = dirty
-[submodule "vim/bundle/VimEz-ShowMarks"]
-  path = vim/bundle/VimEz-ShowMarks
-  url = https://github.com/VimEz/ShowMarks.git
-  ignore = dirty
 [submodule "vim/bundle/kana-vim-arpeggio"]
   path = vim/bundle/kana-vim-arpeggio
   url = https://github.com/kana/vim-arpeggio
@@ -358,3 +354,6 @@
 	path = vim/bundle/jtratner-vim-flavored-markdown
 	url = https://github.com/jtratner/vim-flavored-markdown.git
   ignore = dirty
+[submodule "vim/bundle/vim-scripts-ShowMarks"]
+	path = vim/bundle/vim-scripts-ShowMarks
+	url = https://github.com/vim-scripts/ShowMarks
