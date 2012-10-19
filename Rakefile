@@ -102,9 +102,10 @@ def install_prezto
 
   unless File.exists?(File.join(ENV['ZDOTDIR'] || ENV['HOME'], ".zprezto"))
     run %{ ln -nfs "$HOME/.yadr/zsh/prezto" "${ZDOTDIR:-$HOME}/.zprezto" }
-  end
 
-  file_operation(Dir.glob('zsh/prezto/runcoms/z*'), :copy)
+    # The prezto runcoms are only going to be installed if zprezto has never been installed
+    file_operation(Dir.glob('zsh/prezto/runcoms/z*'), :copy)
+  end
 
   puts "Creating directories for your customizations"
   run %{ mkdir -p $HOME/.zsh.before }
@@ -156,8 +157,8 @@ def file_operation(files, method = :symlink)
     # This modifies zshrc to load all of yadr's zsh extensions.
     # Eventually yadr's zsh extensions should be ported to prezto modules.
     if file == 'zshrc'
-      File.open(target, 'a') do |f|
-        f.puts('for config_file ($HOME/.yadr/zsh/*.zsh) source $config_file')
+      File.open(target, 'a') do |zshrc|
+        zshrc.puts('for config_file ($HOME/.yadr/zsh/*.zsh) source $config_file')
       end
     end
 
