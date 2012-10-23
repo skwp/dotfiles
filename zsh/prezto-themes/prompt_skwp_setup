@@ -1,6 +1,6 @@
 #
 # A theme based on steeef theme
-#  * RVM info shown on the right
+#  * RVM/Rbenv info shown on the right
 #  * Git branch info on the left
 #  * Single line prompt
 #
@@ -15,9 +15,11 @@
 function rvm_info_for_prompt {
   if [[ -d ~/.rvm/ ]]; then
     ruby_version=$(~/.rvm/bin/rvm-prompt)
-    if [ -n "$ruby_version" ]; then
-      echo "[$ruby_version]"
-    fi
+  elif [[ -d ~/.rbenv/ ]]; then
+    ruby_version=$(<~/.rbenv/version)
+  fi
+  if [ -n "$ruby_version" ]; then
+    echo "[$ruby_version]"
   fi
 }
 
