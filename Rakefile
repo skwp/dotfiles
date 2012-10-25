@@ -21,13 +21,17 @@ task :install => [:submodule_init, :submodules] do
   file_operation(Dir.glob('vimify/*')) if want_to_install?('vimification of command line tools')
   file_operation(Dir.glob('{vim,vimrc}')) if want_to_install?('vim configuration (highly recommended)')
 
-  if want_to_install?('zsh enhancements & prezto')
-    install_prezto
-  end
+  Rake::Task["install_prezto"].execute
 
   install_fonts if RUBY_PLATFORM.downcase.include?("darwin")
 
   success_msg("installed")
+end
+
+task :install_prezto do
+  if want_to_install?('zsh enhancements & prezto')
+    install_prezto
+  end
 end
 
 task :update => [:install] do
@@ -106,6 +110,9 @@ def install_prezto
     # The prezto runcoms are only going to be installed if zprezto has never been installed
     file_operation(Dir.glob('zsh/prezto/runcoms/z*'), :copy)
   end
+
+  puts "Overriding prezto ~/.zpreztorc with YADR's zpreztorc to enable additional modules..."
+  run %{ ln -nfs "$HOME/.yadr/zsh/prezto-override/zpreztorc" "${ZDOTDIR:-$HOME}/.zpreztorc" }
 
   puts "Creating directories for your customizations"
   run %{ mkdir -p $HOME/.zsh.before }
