@@ -4,9 +4,7 @@ desc "Hook our dotfiles into system-standard positions."
 task :install => [:submodule_init, :submodules] do
   puts
   puts "======================================================"
-  puts "Welcome to YADR Installation. I'll ask you a few"
-  puts "questions about which files to install. Nothing will"
-  puts "be overwritten without your consent."
+  puts "Welcome to YADR Installation."
   puts "======================================================"
   puts
 
@@ -40,21 +38,25 @@ task :update => [:install] do
 end
 
 task :submodule_init do
-  run %{ git submodule update --init --recursive }
+  unless ENV["SKIP_SUBMODULES"]
+    run %{ git submodule update --init --recursive }
+  end
 end
 
 desc "Init and update submodules."
 task :submodules do
-  puts "======================================================"
-  puts "Downloading YADR submodules...please wait"
-  puts "======================================================"
+  unless ENV["SKIP_SUBMODULES"]
+    puts "======================================================"
+    puts "Downloading YADR submodules...please wait"
+    puts "======================================================"
 
-  run %{
-    cd $HOME/.yadr
-    git submodule foreach 'git fetch origin; git checkout master; git reset --hard origin/master; git submodule update --recursive; git clean -dfx'
-    git clean -dfx
-  }
-  puts
+    run %{
+      cd $HOME/.yadr
+      git submodule foreach 'git fetch origin; git checkout master; git reset --hard origin/master; git submodule update --recursive; git clean -dfx'
+      git clean -dfx
+    }
+    puts
+  end
 end
 
 task :default => 'install'
@@ -62,7 +64,6 @@ task :default => 'install'
 
 private
 def run(cmd)
-  puts
   puts "[Running] #{cmd}"
   `#{cmd}` unless ENV['DEBUG']
 end
@@ -102,6 +103,7 @@ def install_fonts
 end
 
 def install_prezto
+  puts
   puts "Installing Prezto (ZSH Enhancements)..."
 
   unless File.exists?(File.join(ENV['ZDOTDIR'] || ENV['HOME'], ".zprezto"))
@@ -111,9 +113,11 @@ def install_prezto
     file_operation(Dir.glob('zsh/prezto/runcoms/z*'), :copy)
   end
 
+  puts
   puts "Overriding prezto ~/.zpreztorc with YADR's zpreztorc to enable additional modules..."
   run %{ ln -nfs "$HOME/.yadr/zsh/prezto-override/zpreztorc" "${ZDOTDIR:-$HOME}/.zpreztorc" }
 
+  puts
   puts "Creating directories for your customizations"
   run %{ mkdir -p $HOME/.zsh.before }
   run %{ mkdir -p $HOME/.zsh.after }
@@ -121,41 +125,31 @@ def install_prezto
 end
 
 def want_to_install? (section)
-  puts "Would you like to install configuration files for: #{section}? [y]es, [n]o"
-  STDIN.gets.chomp == 'y'
+  if ENV["ask"]=="true"
+    puts "Would you like to install configuration files for: #{section}? [y]es, [n]o"
+    STDIN.gets.chomp == 'y'
+  else
+    true
+  end
 end
 
 def file_operation(files, method = :symlink)
-  skip_all = false
-  overwrite_all = false
-  backup_all = false
-
   files.each do |f|
     file = f.split('/').last
     source = "#{ENV["PWD"]}/#{f}"
     target = "#{ENV["HOME"]}/.#{file}"
 
-    puts "--------"
-    puts "file:   #{file}"
-    puts "source: #{source}"
-    puts "target: #{target}"
+    puts "======================#{file}=============================="
+    puts "Source: #{source}"
+    puts "Target: #{target}"
 
     if File.exists?(target) || File.symlink?(target)
-      unless skip_all || overwrite_all || backup_all
-        puts "File already exists: #{target}, what do you want to do? [s]kip, [S]kip all, [o]verwrite, [O]verwrite all, [b]ackup, [B]ackup all"
-        case STDIN.gets.chomp
-        when 'o' then overwrite = true when 'b' then backup = true
-        when 'O' then overwrite_all = true
-        when 'B' then backup_all = true
-        when 'S' then skip_all = true
-        end
-      end
-      FileUtils.rm_rf(target) if overwrite || overwrite_all
-      run %{ mv "$HOME/.#{file}" "$HOME/.#{file}.backup" } if backup || backup_all
+      puts "[Overwriting] #{target}...leaving original at #{target}.backup..."
+      run %{ mv "$HOME/.#{file}" "$HOME/.#{file}.backup" }
     end
 
     if method == :symlink
-      run %{ ln -s "#{source}" "#{target}" }
+      run %{ ln -nfs "#{source}" "#{target}" }
     else
       run %{ cp -f "#{source}" "#{target}" }
     end
@@ -169,6 +163,8 @@ def file_operation(files, method = :symlink)
       end
     end
 
+    puts "=========================================================="
+    puts
   end
 end
 

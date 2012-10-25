@@ -47,7 +47,8 @@ git clone https://github.com/skwp/dotfiles ~/.yadr
 cd ~/.yadr && rake install
 ```
 
-Note: YADR will not destroy any of your files unless you tell it to.
+**Note:** YADR will automatically install all of its subcomponents. If you want to be asked
+about each one, use `ASK=true rake install`
 
 ### Upgrading
 
