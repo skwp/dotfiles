@@ -1,0 +1,2 @@
+# bells suck
+setopt nobeep
