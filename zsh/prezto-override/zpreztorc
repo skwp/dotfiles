@@ -32,9 +32,7 @@ zstyle ':prezto:load' pmodule \
   'spectrum' \
   'utility' \
   'completion' \
-  'prompt' \
-  'syntax-highlighting' \
-  'history-substring-search'
+  'prompt'
 
 #
 # Editor
@@ -51,7 +49,7 @@ zstyle ':prezto:module:editor' keymap 'emacs'
 #
 
 # Ignore submodules when they are 'dirty', 'untracked', 'all', or 'none'.
-# zstyle ':prezto:module:git:ignore' submodule 'all'
+# zstyle ':prezto:module:git:status:ignore' submodules 'all'
 
 #
 # GNU Utility
@@ -84,11 +82,18 @@ zstyle ':prezto:module:prompt' theme 'sorin'
 # zstyle ':prezto:module:screen' auto-start 'yes'
 
 #
+# GPG-Agent
+#
+
+# Enable SSH-Agent protocol emulation.
+# zstyle ':prezto:module:gpg-agent' ssh-support 'yes'
+
+#
 # SSH-Agent
 #
 
 # Enable ssh-agent forwarding.
-zstyle ':prezto:module:ssh-agent' forwarding 'yes'
+# zstyle ':prezto:module:ssh-agent' forwarding 'yes'
 
 # Set ssh-agent identities to load.
 # zstyle ':prezto:module:ssh-agent' identities 'id_rsa' 'id_rsa2' 'id_github'
@@ -99,12 +104,12 @@ zstyle ':prezto:module:ssh-agent' forwarding 'yes'
 
 # Set syntax highlighters.
 # By default main, brackets, and cursor are enabled.
-zstyle ':prezto:module:syntax-highlighting' highlighters \
-  'main' \
-  'brackets' \
-  'pattern' \
-  'cursor' \
-  'root'
+# zstyle ':prezto:module:syntax-highlighting' highlighters \
+#   'main' \
+#   'brackets' \
+#   'pattern' \
+#   'cursor' \
+#   'root'
 
 #
 # Terminal
@@ -119,3 +124,4 @@ zstyle ':prezto:module:terminal' auto-title 'yes'
 
 # Auto start a session when Zsh is launched.
 # zstyle ':prezto:module:tmux' auto-start 'yes'
+
