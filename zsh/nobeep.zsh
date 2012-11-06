@@ -1,2 +1,0 @@
-# bells suck
-setopt nobeep
