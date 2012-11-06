@@ -12,30 +12,19 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #   Yan Pritzker <yan@pritzker.ws>
 
-function rvm_info_for_prompt {
-  if [[ -d ~/.rvm/ ]]; then
-    ruby_version=$(~/.rvm/bin/rvm-prompt)
-    if [ -n "$ruby_version" ]; then
-      echo "[$ruby_version]"
-    fi
-  elif [[ -d ~/.rbenv/ ]]; then
-    ruby_version=(${(s: :)$(rbenv version)})
-    if [ -n "$ruby_version" ]; then
-      echo "[${ruby_version[1]}]"
-    fi
-  fi
-}
-
 function prompt_skwp_precmd {
-  # Check for untracked files or updated submodules since vcs_info doesn't.
-  if [[ ! -z $(git ls-files --other --exclude-standard 2> /dev/null) ]]; then
-    fmt_branch="(${__PROMPT_SKWP_COLORS[1]}%b%f%u%c${__PROMPT_SKWP_COLORS[4]}●%f)"
-  else
-    fmt_branch="(${__PROMPT_SKWP_COLORS[1]}%b%f%u%c)"
-  fi
-  zstyle ':vcs_info:*:prompt:*' formats "${fmt_branch}"
+  setopt LOCAL_OPTIONS
+  unsetopt XTRACE KSH_ARRAYS
 
-  vcs_info 'prompt'
+  # Get Git repository information.
+  if (( $+functions[git-info] )); then
+    git-info
+  fi
+
+  # Get ruby information
+  if (( $+functions[ruby-info] )); then
+    ruby-info
+  fi
 }
 
 function prompt_skwp_setup {
@@ -44,7 +33,6 @@ function prompt_skwp_setup {
   prompt_opts=(cr percent subst)
 
   autoload -Uz add-zsh-hook
-  autoload -Uz vcs_info
 
   add-zsh-hook precmd prompt_skwp_precmd
 
@@ -67,33 +55,19 @@ function prompt_skwp_setup {
     )
   fi
 
-  # Enable VCS systems you use.
-  zstyle ':vcs_info:*' enable bzr git hg svn
+  # git
+  zstyle ':prezto:module:git:info:branch' format "${__PROMPT_SKWP_COLORS[1]}%b%f"
+  zstyle ':prezto:module:git:info:added' format "${__PROMPT_SKWP_COLORS[5]}●%f"
+  zstyle ':prezto:module:git:info:deleted' format "${__PROMPT_SKWP_COLORS[2]}●%f"
+  zstyle ':prezto:module:git:info:modified' format "${__PROMPT_SKWP_COLORS[4]}●%f"
+  zstyle ':prezto:module:git:info:untracked' format "${__PROMPT_SKWP_COLORS[5]}●%f"
+  zstyle ':prezto:module:git:info:keys' format 'prompt' '(%b%d%a%m%u)'
 
-  # check-for-changes can be really slow.
-  # You should disable it if you work with large repositories.
-  zstyle ':vcs_info:*:prompt:*' check-for-changes true
+  # ruby info (rvm, rbenv)
+  zstyle ':prezto:module:ruby:info:version' format '[%v]'
 
-  # Formats:
-  # %b - branchname
-  # %u - unstagedstr (see below)
-  # %c - stagedstr (see below)
-  # %a - action (e.g. rebase-i)
-  # %R - repository path
-  # %S - path in the repository
-  local fmt_branch="(${__PROMPT_SKWP_COLORS[1]}%b%f%u%c)"
-  local fmt_action="(${__PROMPT_SKWP_COLORS[5]}%a%f)"
-  local fmt_unstaged="${__PROMPT_SKWP_COLORS[2]}●%f"
-  local fmt_staged="${__PROMPT_SKWP_COLORS[5]}●%f"
-
-  zstyle ':vcs_info:*:prompt:*' unstagedstr   "${fmt_unstaged}"
-  zstyle ':vcs_info:*:prompt:*' stagedstr     "${fmt_staged}"
-  zstyle ':vcs_info:*:prompt:*' actionformats "${fmt_branch}${fmt_action}"
-  zstyle ':vcs_info:*:prompt:*' formats       "${fmt_branch}"
-  zstyle ':vcs_info:*:prompt:*' nvcsformats   ""
-
-  PROMPT="${__PROMPT_SKWP_COLORS[3]}%n%f@${__PROMPT_SKWP_COLORS[2]}%m%f ${__PROMPT_SKWP_COLORS[5]}%~%f "'${vcs_info_msg_0_}'"$ "
-  RPROMPT="%F{blue}"'$(rvm_info_for_prompt)'""
+  PROMPT="${__PROMPT_SKWP_COLORS[3]}%n%f@${__PROMPT_SKWP_COLORS[2]}%m%f ${__PROMPT_SKWP_COLORS[5]}%~%f "'$git_info[prompt]'"$ "
+  RPROMPT='%F{blue}${ruby_info[version]}'
 }
 
 prompt_skwp_setup "$@"
