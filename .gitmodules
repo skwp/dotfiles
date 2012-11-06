@@ -354,3 +354,6 @@
 	path = vim/bundle/xsunsmile-showmarks
 	url = https://github.com/xsunsmile/showmarks.git
   ignore = dirty
+[submodule "vim/bundle/digitaltoad-vim-jade"]
+	path = vim/bundle/digitaltoad-vim-jade
+	url = git://github.com/digitaltoad/vim-jade.git
