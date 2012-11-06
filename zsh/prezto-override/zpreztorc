@@ -32,14 +32,14 @@ zstyle ':prezto:load' pmodule \
   'spectrum' \
   'utility' \
   'completion' \
-  'prompt' \
   'archive' \
   'fasd' \
   'git' \
+  'osx' \
+  'ruby' \
   'syntax-highlighting' \
   'history-substring-search' \
-  'osx' \
-  'ruby'
+  'prompt'
 
 #
 # Editor
@@ -111,12 +111,12 @@ zstyle ':prezto:module:ssh-agent' forwarding 'yes'
 
 # Set syntax highlighters.
 # By default main, brackets, and cursor are enabled.
-zstyle ':prezto:module:syntax-highlighting' highlighters \
-  'main' \
-  'brackets' \
-  'pattern' \
-  'cursor' \
-  'root'
+# zstyle ':prezto:module:syntax-highlighting' highlighters \
+#   'main' \
+#   'brackets' \
+#   'pattern' \
+#   'cursor' \
+#   'root'
 
 #
 # Terminal
