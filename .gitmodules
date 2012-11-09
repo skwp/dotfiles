@@ -357,3 +357,8 @@
 [submodule "vim/bundle/digitaltoad-vim-jade"]
 	path = vim/bundle/digitaltoad-vim-jade
 	url = git://github.com/digitaltoad/vim-jade.git
+  ignore = dirty
+[submodule "vim/bundle/tpope-vim-ragtag"]
+	path = vim/bundle/tpope-vim-ragtag
+	url = https://github.com/tpope/vim-ragtag
+  ignore = dirty
