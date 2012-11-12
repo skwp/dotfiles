@@ -80,9 +80,8 @@ We automatically install a few useful packages including ack, ctags, git, and hu
 You can install macvim from brew as well, or download it from their website.
 
 ```bash
-brew install ack ctags git hub macvim
+brew install ack ctags git hub macvim tmux reattach-to-user-namespace
 ```
-
 
 ### Github Issues: [ghi gem](https://github.com/stephencelis/ghi)
 
