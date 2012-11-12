@@ -64,9 +64,9 @@ rake update
 
 Read on to learn what YADR provides!
 
-## Public service announcement: stop abusing your hands!
+### Public service announcement: stop abusing your hands!
 
-[Remap caps-lock to escape](http://pqrs.org/macosx/keyremap4macbook/extra.html)
+[Remap caps-lock to escape with PCKeyboardHack](http://pqrs.org/macosx/keyremap4macbook/pckeyboardhack.html)
 
 The escape key is the single most used key in vim.
 Old keyboards used to have Ctrl where caps lock is today. But it's even better if you put escape there.
