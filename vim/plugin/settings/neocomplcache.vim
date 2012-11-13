@@ -37,3 +37,6 @@ if !exists('g:neocomplcache_omni_patterns')
   let g:neocomplcache_omni_patterns = {}
 endif
 let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+
+" Prevent hanging with python: https://github.com/skwp/dotfiles/issues/163
+let g:neocomplcache_omni_patterns['python'] = ''
