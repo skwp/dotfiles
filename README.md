@@ -266,7 +266,7 @@ If you omit the key combo, you'll get a list of all the maps. You can do the sam
 
  * `,t` - CtrlP fuzzy file selector
  * `,b` - CtrlP buffer selector
- * `zm` - jump to method - CtrlP tag search within current buffer
+ * `Cmd-Shift-M` - jump to method - CtrlP tag search within current buffer
  * `,jm` jump (via CtrlP) to app/models
  * `,jc` app/controllers
  * `,jv` app/views

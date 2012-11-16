@@ -34,6 +34,6 @@ map ,jV :CloseSingleConque<CR>:CtrlP vendor<CR>
 map ,jF :CloseSingleConque<CR>:CtrlP factories<CR>
 map ,jT :CloseSingleConque<CR>:CtrlP test<CR>
 
-"Cmd-(m)ethod - jump to a method (tag in current file)
-"Ctrl-m is not good - it overrides behavior of ENter
-nnoremap <silent> zm :CloseSingleConque<CR>:CtrlPBufTag<CR>
+"Cmd-Shift-(M)ethod - jump to a method (tag in current file)
+"Ctrl-m is not good - it overrides behavior of Enter
+nnoremap <silent> <D-M> :CloseSingleConque<CR>:CtrlPBufTag<CR>
