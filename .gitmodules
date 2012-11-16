@@ -362,3 +362,13 @@
 	path = vim/bundle/tpope-vim-ragtag
 	url = https://github.com/tpope/vim-ragtag
   ignore = dirty
+[submodule "vim/bundle/vim-scripts-TagHighlight"]
+	path = vim/bundle/vim-scripts-TagHighlight
+	url = https://github.com/vim-scripts/TagHighlight.git
+  ignore = dirty
+[submodule "vim/bundle/jelera-vim-javascript-syntax"]
+	path = vim/bundle/jelera-vim-javascript-syntax
+	url = https://github.com/jelera/vim-javascript-syntax.git
+[submodule "vim/bundle/itspriddle-vim-jquery"]
+	path = vim/bundle/itspriddle-vim-jquery
+	url = https://github.com/itspriddle/vim-jquery.git

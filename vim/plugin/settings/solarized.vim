@@ -16,5 +16,22 @@ hi! link rubyRailsARValidationMethod Title
 hi! link rubyRailsMethod Title
 hi! link MatchParen DiffText
 
+hi! link CTagsModule Type
+hi! link CTagsClass Type
+hi! link CTagsMethod Identifier
+
+hi! link javascriptFuncName Type
+hi! link javascriptFunction Statement
+hi! link javascriptThis Statement
+hi! link javascriptParens Normal
+hi! link jOperators javascriptStringD
+hi! link jId Title
+hi! link jClass Title
+
+" Brighten the regular text
+hi! Normal guifg=#93a1a1
+hi! Constant guifg=#00ADCE
+hi! link htmlLink Include
+
 " Enforce the colors set here
 au VimEnter * so ~/.vim/plugin/settings/solarized.vim
