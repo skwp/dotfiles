@@ -35,7 +35,5 @@ map ,jF :CloseSingleConque<CR>:CtrlP factories<CR>
 map ,jT :CloseSingleConque<CR>:CtrlP test<CR>
 
 "Cmd-(m)ethod - jump to a method (tag in current file)
-map ,m :CloseSingleConque<CR>:CtrlPBufTag<CR>
-
-"Ctrl-(M)ethod - jump to a method (tag in all files)
-map ,M :CloseSingleConque<CR>:CtrlPBufTagAll<CR>
+"Ctrl-m is not good - it overrides behavior of ENter
+nnoremap <silent> zm :CloseSingleConque<CR>:CtrlPBufTag<CR>

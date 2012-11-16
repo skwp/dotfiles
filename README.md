@@ -35,7 +35,7 @@ from scouring other people's dotfile repos, blogs, and projects.
   * More than just vim plugins - great shell aliases, osx, and irb/pry tweaks to make you more productive.
 
 ## Screenshot
-![screenshot](http://i.imgur.com/afzuR.png)
+![screenshot](http://i.imgur.com/3C1Ze.png)
 
 # Installation
 
@@ -266,8 +266,7 @@ If you omit the key combo, you'll get a list of all the maps. You can do the sam
 
  * `,t` - CtrlP fuzzy file selector
  * `,b` - CtrlP buffer selector
- * `,m` - jump to method - CtrlP tag search within current buffer
- * `,M` - jump to any Method - CtrlP tag search within all buffers
+ * `zm` - jump to method - CtrlP tag search within current buffer
  * `,jm` jump (via CtrlP) to app/models
  * `,jc` app/controllers
  * `,jv` app/views
