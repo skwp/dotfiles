@@ -28,9 +28,22 @@ hi! link jOperators javascriptStringD
 hi! link jId Title
 hi! link jClass Title
 
-" Brighten the regular text
-hi! Normal guifg=#93a1a1
-hi! Constant guifg=#00ADCE
+hi! link NERDTreeFile Constant
+hi! link NERDTreeDir Identifier
+
+" Solarized separators are a little garish.
+" This moves separators, comments, and normal
+" text into the same color family as the background.
+" Using the http://drpeterjones.com/colorcalc/,
+" they are now just differently saturated and
+" valued riffs on the background color, making
+" everything play together just a little more nicely.
+hi! VertSplit guifg=#003745 gui=bold
+hi! LineNR guifg=#004C60 gui=bold guibg=#002B36
+hi! link NonText VertSplit
+hi! Normal guifg=#77A5B1
+hi! Constant guifg=#00BCE0
+hi! Comment guifg=#52737B
 hi! link htmlLink Include
 
 " Enforce the colors set here
