@@ -314,10 +314,6 @@
 	path = vim/bundle/skwp-vim-powerline
 	url = https://github.com/skwp/vim-powerline.git
   ignore = dirty
-[submodule "vim/bundle/vim-scripts-SearchComplete"]
-	path = vim/bundle/vim-scripts-SearchComplete
-	url = https://github.com/vim-scripts/SearchComplete.git
-  ignore = dirty
 [submodule "vim/bundle/briancollins-vim-jst"]
 	path = vim/bundle/briancollins-vim-jst
 	url = https://github.com/briancollins/vim-jst
