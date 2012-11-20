@@ -36,6 +36,9 @@ hi! link jClass Title
 hi! link NERDTreeFile Constant
 hi! link NERDTreeDir Identifier
 
+hi! link htmlTagName Type
+hi! PreProc gui=bold
+
 " Solarized separators are a little garish.
 " This moves separators, comments, and normal
 " text into the same color family as the background.
@@ -52,6 +55,7 @@ hi! Comment guifg=#52737B
 hi! link htmlLink Include
 hi! CursorLine cterm=NONE gui=NONE
 hi! Visual ctermbg=233
+hi! Type gui=bold
 
 
 " Enforce the colors set here

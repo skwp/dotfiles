@@ -391,6 +391,8 @@ If you omit the key combo, you'll get a list of all the maps. You can do the sam
  * necomplcache - intelligent and fast complete as you type, and added Command-Space to select a completion (same as Ctrl-N)
  * snipMate - offers textmate-like snippet expansion + scrooloose-snippets . try hitting TAB after typing a snippet
  * jasmine.vim - support for jasmine javascript unit testing, including snippets for it, before, etc..
+ * vim-javascript-syntax, vim-jquery - better highlighting
+ * TagHighlight - highlights class names and method names
  * vim-coffeescript - support for coffeescript, highlighting
  * vim-stylus - support for stylus css language
  * vim-bundler - work with bundled gems
