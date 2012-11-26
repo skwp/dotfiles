@@ -123,6 +123,9 @@ def install_prezto
   run %{ mkdir -p $HOME/.zsh.before }
   run %{ mkdir -p $HOME/.zsh.after }
   run %{ mkdir -p $HOME/.zsh.prompts }
+
+  puts "Setting zsh as your default shell"
+  run %{ chsh -s /bin/zsh }
 end
 
 def want_to_install? (section)
