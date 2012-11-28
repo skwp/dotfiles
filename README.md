@@ -242,8 +242,6 @@ If you omit the key combo, you'll get a list of all the maps. You can do the sam
 
  * `,f` - instantly Find definition of class (must have exuberant ctags installed)
  * `,F` - same as `,f` but in a vertical split
- * `,,f` - jump to Method. Same as vim's built in jump to tag, but much more aware of ruby bang_methods! and method.invocations!
- * `,,F` - same as `,,f` but in a vertical split
  * `,gf` or `Ctrl-f` - same as vim normal gf (go to file), but in a vertical split (works with file.rb:123 line numbers also)
  * `gF` - standard vim mapping, here for completeness (go to file at line number)
  * `K` - GitGrep the current word under the cursor and show results in quickfix window
@@ -310,7 +308,6 @@ If you omit the key combo, you'll get a list of all the maps. You can do the sam
  * `ss` - horizontal split (`Ctrl-w,s`)
  * `,qo` - open quickfix window (this is where output from GitGrep goes)
  * `,qc` - close quickfix
- * `,gz` - zoom a window to max size and again to unzoom it (ZoomWin plugin, usually `C-w,o`)
 
 #### NERDTree Project Tree
 
