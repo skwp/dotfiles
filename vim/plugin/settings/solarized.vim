@@ -36,7 +36,9 @@ hi! link jClass Title
 hi! link NERDTreeFile Constant
 hi! link NERDTreeDir Identifier
 
+hi! link sassProperty Type
 hi! link htmlTagName Type
+
 hi! PreProc gui=bold
 
 " Solarized separators are a little garish.
