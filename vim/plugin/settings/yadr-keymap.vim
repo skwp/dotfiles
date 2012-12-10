@@ -115,9 +115,9 @@ nnoremap <silent> <D-k> {
 autocmd FileType ruby map <buffer> <D-j> ]m
 autocmd FileType ruby map <buffer> <D-k> [m
 autocmd FileType rspec map <buffer> <D-j> }
-autocmd FileType rspec map <buffer> <D-j> }
-autocmd FileType javascript map <buffer> <D-k> {
-autocmd FileType javascript map <buffer> <D-k> {
+autocmd FileType rspec map <buffer> <D-k> {
+autocmd FileType javascript map <buffer> <D-k> }
+autocmd FileType javascript map <buffer> <D-j> {
 
 
 " Command-/ to toggle comments
