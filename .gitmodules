@@ -334,10 +334,6 @@
 	path = vim/bundle/tpope-vim-abolish
 	url = https://github.com/tpope/vim-abolish
   ignore = dirty
-[submodule "vim/bundle/bbommarito-vim-slim"]
-	path = vim/bundle/bbommarito-vim-slim
-	url = https://github.com/bbommarito/vim-slim.git
-  ignore = dirty
 [submodule "vim/bundle/jtratner-vim-flavored-markdown"]
 	path = vim/bundle/jtratner-vim-flavored-markdown
 	url = https://github.com/jtratner/vim-flavored-markdown.git
