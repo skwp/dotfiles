@@ -253,15 +253,11 @@ If you omit the key combo, you'll get a list of all the maps. You can do the sam
  * `,gcp` - GitGrep Current Partial to find references to the current view partial
  * `,gcf` - GitGrep Current File to find references to the current file
  * `//` - clear the search
- * `,q/` -  quickfix window with last search (stolen from Steve Losh)
- * `,qa/` - quickfix Ack last search (Steve Losh)
- * `,qg/` - quickfix GitGrep last search
  * `,T` - Tag list (list of methods in a class)
  * `Ctrl-s` - Open related spec in a split. Similar to :A and :AV from rails.vim but is also aware of the fast_spec dir and faster to type
  * `,,w` (alias `,<esc>`) or `,,b` (alias `,<shift-esc>`) - EasyMotion, a vimperator style tool that highlights jump-points on the screen and lets you type to get there.
 
 #### File Navigation
-
  * `,t` - CtrlP fuzzy file selector
  * `,b` - CtrlP buffer selector
  * `Cmd-Shift-M` - jump to method - CtrlP tag search within current buffer
@@ -338,6 +334,7 @@ If you omit the key combo, you'll get a list of all the maps. You can do the sam
  * `:gitv` - Git log browsers
  * `,hi` - show current Highlight group. if you don't like the color of something, use this, then use `hi! link [groupname] [anothergroupname]` in your vimrc.after to remap the color. You can see available colors using `:hi`
  * `,yr` - view the yankring - a list of your previous copy commands. also you can paste and hit `ctrl-p` for cycling through previous copy commands
+ * `,gt` - Go Tidy - tidy up your html code (works on a visual selection)
 
 #### Ruby Debugger
 
