@@ -24,6 +24,7 @@ hi! link MatchParen DiffText
 hi! link CTagsModule Type
 hi! link CTagsClass Type
 hi! link CTagsMethod Identifier
+hi! link CTagsSingleton Identifier
 
 hi! link javascriptFuncName Type
 hi! link javascriptFunction Statement
