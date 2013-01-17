@@ -27,7 +27,7 @@ alias du='du -h -d 2'
 alias lsg='ll | grep'
 
 # Alias Editing
-alias ae='vi $yadr/zsh/aliases.zsh' #alias edit
+alias ae='vim $yadr/zsh/aliases.zsh' #alias edit
 alias ar='source $yadr/zsh/aliases.zsh'  #alias reload
 
 # vim using
@@ -38,10 +38,10 @@ if [ $MACVIM_INSTALLED -eq 0 ]; then
 fi
 
 # vimrc editing
-alias ve='vi ~/.vimrc'
+alias ve='vim ~/.vimrc'
 
 # zsh profile editing
-alias ze='vi ~/.zshrc'
+alias ze='vim ~/.zshrc'
 alias zr='source ~/.zshrc'
 
 # Git Aliases
@@ -53,7 +53,7 @@ alias gsa='git stash apply'
 alias gsh='git show'
 alias gshw='git show'
 alias gshow='git show'
-alias gi='vi .gitignore'
+alias gi='vim .gitignore'
 alias gcm='git ci -m'
 alias gcim='git ci -m'
 alias gci='git ci'
