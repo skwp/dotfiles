@@ -15,7 +15,6 @@ alias psg="ps aux | grep "
 alias psr='ps aux | grep ruby'
 
 # Moving around
-alias ..='cd ..'
 alias cdb='cd -'
 
 # Show human friendly numbers and colors
