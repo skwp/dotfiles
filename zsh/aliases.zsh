@@ -5,7 +5,6 @@ yadr=$HOME/.yadr
 
 # YADR support
 alias yav='yadr vim-add-plugin'
-alias yuv='yadr update-plugins' #FIXME: backwards compatibility. Kill me after Jan 1, 2013
 alias yup='yadr update-plugins'
 alias yip='yadr init-plugins'
 
