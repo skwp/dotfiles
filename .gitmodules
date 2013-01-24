@@ -86,10 +86,6 @@
   path = vim/bundle/vim-scripts-matchit.zip
   url = https://github.com/vim-scripts/matchit.zip.git
   ignore = dirty
-[submodule "vim/bundle/skwp-vim-indexed-search"]
-  path = vim/bundle/skwp-vim-indexed-search
-  url = https://github.com/skwp/vim-indexed-search
-  ignore = dirty
 [submodule "vim/bundle/tpope-vim-endwise"]
   path = vim/bundle/tpope-vim-endwise
   url = https://github.com/tpope/vim-endwise.git
@@ -145,10 +141,6 @@
 [submodule "vim/bundle/mileszs-ack"]
   path = vim/bundle/mileszs-ack
   url = https://github.com/mileszs/ack.vim
-  ignore = dirty
-[submodule "vim/bundle/mattn-zencoding-vim"]
-  path = vim/bundle/mattn-zencoding-vim
-  url = https://github.com/mattn/zencoding-vim
   ignore = dirty
 [submodule "vim/bundle/nelstrom-vim-textobj-rubyblock"]
   path = vim/bundle/nelstrom-vim-textobj-rubyblock
