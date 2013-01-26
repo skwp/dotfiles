@@ -79,7 +79,7 @@ def install_rvm_binstubs
 end
 
 def install_homebrew
-  brew_path = run("which brew")
+  run %{which brew}
   unless $?.success?
     puts "======================================================"
     puts "Installing Homebrew, the OSX package manager...If it's"
