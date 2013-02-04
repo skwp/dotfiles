@@ -80,11 +80,15 @@ def install_rvm_binstubs
 end
 
 def install_homebrew
-  puts "======================================================"
-  puts "Installing Homebrew, the OSX package manager...If it's"
-  puts "already installed, this will do nothing."
-  puts "======================================================"
-  run %{ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"}
+  run %{which brew}
+  unless $?.success?
+    puts "======================================================"
+    puts "Installing Homebrew, the OSX package manager...If it's"
+    puts "already installed, this will do nothing."
+    puts "======================================================"
+    run %{ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"}
+  end
+
   puts
   puts
   puts "======================================================"
