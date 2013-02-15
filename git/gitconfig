@@ -55,6 +55,7 @@
   shortnocolor = log --pretty=format:\"%h %cr %cn %s\"
 
   # pull
+  pl = pull --rebase                # pull
   pl = pull                         # pull
   plr = pull --rebase               # pull with rebase
 
