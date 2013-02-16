@@ -426,7 +426,6 @@ If you omit the key combo, you'll get a list of all the maps. You can do the sam
 
 #### General enhancements that don't add new commands
 
- * Arpeggio - allows you to define key-chord combinations
  * IndexedSearch - when you do searches will show you "Match 2 of 4" in the status line
  * delimitMate - automatically closes quotes
  * SearchComplete - tab completion in the / search window
