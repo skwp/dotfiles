@@ -345,12 +345,16 @@
 [submodule "vim/bundle/jelera-vim-javascript-syntax"]
 	path = vim/bundle/jelera-vim-javascript-syntax
 	url = https://github.com/jelera/vim-javascript-syntax.git
+  ignore = dirty
 [submodule "vim/bundle/itspriddle-vim-jquery"]
 	path = vim/bundle/itspriddle-vim-jquery
 	url = https://github.com/itspriddle/vim-jquery.git
+  ignore = dirty
 [submodule "vim/bundle/vim-slim"]
 	path = vim/bundle/vim-slim
 	url = https://github.com/slim-template/vim-slim.git
+  ignore = dirty
 [submodule "vim/bundle/airblade-vim-gitgutter"]
 	path = vim/bundle/airblade-vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter
+  ignore = dirty
