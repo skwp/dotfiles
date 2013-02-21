@@ -354,7 +354,3 @@
 	path = vim/bundle/vim-slim
 	url = https://github.com/slim-template/vim-slim.git
   ignore = dirty
-[submodule "vim/bundle/airblade-vim-gitgutter"]
-	path = vim/bundle/airblade-vim-gitgutter
-	url = https://github.com/airblade/vim-gitgutter
-  ignore = dirty
