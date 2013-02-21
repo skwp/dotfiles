@@ -355,3 +355,6 @@
 [submodule "vim/bundle/vim-slim"]
 	path = vim/bundle/vim-slim
 	url = https://github.com/slim-template/vim-slim.git
+[submodule "vim/bundle/airblade-vim-gitgutter"]
+	path = vim/bundle/airblade-vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter
