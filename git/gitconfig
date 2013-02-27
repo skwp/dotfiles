@@ -56,6 +56,7 @@
 
   # pull
   pl = pull                         # pull
+  plr = pull --rebase               # pull with rebase
 
   # push
   ps = push                         # push
