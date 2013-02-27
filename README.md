@@ -50,6 +50,15 @@ cd ~/.yadr && rake install
 **Note:** YADR will automatically install all of its subcomponents. If you want to be asked
 about each one, use `ASK=true rake install`
 
+# Additional Installation
+
+ * [Highly recommended: Install iTerm theme](https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized)
+ * [Highly recommended: Remap caps-lock to escape with PCKeyboardHack](http://pqrs.org/macosx/keyremap4macbook/pckeyboardhack.html)
+
+The escape key is the single most used key in vim.
+Old keyboards used to have Ctrl where caps lock is today. But it's even better if you put escape there.
+If you're hitting a small target in the corner, you are slowing yourself down considerably, and probably damaging your hands with repetitive strain injuries.
+
 ### Upgrading
 
 Upgrading is easy.
@@ -63,14 +72,6 @@ rake update
 # What's included, and how to customize?
 
 Read on to learn what YADR provides!
-
-### Public service announcement: stop abusing your hands!
-
-[Remap caps-lock to escape with PCKeyboardHack](http://pqrs.org/macosx/keyremap4macbook/pckeyboardhack.html)
-
-The escape key is the single most used key in vim.
-Old keyboards used to have Ctrl where caps lock is today. But it's even better if you put escape there.
-If you're hitting a small target in the corner, you are slowing yourself down considerably, and probably damaging your hands with repetitive strain injuries.
 
 ### [Homebrew](http://mxcl.github.com/homebrew/)
 
