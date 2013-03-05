@@ -1,0 +1,1 @@
+/home/alan/.yadr/vim
