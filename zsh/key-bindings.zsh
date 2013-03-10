@@ -14,3 +14,7 @@ bindkey -s "^[Op" "0"
 bindkey -s "^[Ol" "."
 bindkey -s "^[OM" "^M"
 
+# Inserts sudo at the beginning of a line
+insert_sudo () { zle beginning-of-line; zle -U "sudo " }
+zle -N insert-sudo insert_sudo
+bindkey "^s" insert-sudo
