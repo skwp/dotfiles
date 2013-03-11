@@ -353,3 +353,15 @@
 [submodule "vim/bundle/airblade-vim-gitgutter"]
 	path = vim/bundle/airblade-vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter
+[submodule "vim/bundle/puppetlabs-puppet-syntax-vim"]
+	path = vim/bundle/puppetlabs-puppet-syntax-vim
+	url = https://github.com/puppetlabs/puppet-syntax-vim.git
+[submodule "vim/bundle/fholgado-minibufexpl"]
+	path = vim/bundle/fholgado-minibufexpl
+	url = https://github.com/fholgado/minibufexpl.vim.git
+[submodule "vim/bundle/vim-scripts-bufexplorer.zip"]
+	path = vim/bundle/vim-scripts-bufexplorer.zip
+	url = https://github.com/vim-scripts/bufexplorer.zip.git
+[submodule "vim/bundle/thinca-vim-template"]
+	path = vim/bundle/thinca-vim-template
+	url = https://github.com/thinca/vim-template.git
