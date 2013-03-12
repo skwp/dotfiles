@@ -121,3 +121,9 @@
   enabled = true
 [credential]
 	helper = osxkeychain
+[user]
+	name = Jonas Bygdén
+	email = jonas.bygden@trioptima.com
+[committer]
+	name = Jonas Bygdén
+	email = jonas.bygden@trioptima.com
