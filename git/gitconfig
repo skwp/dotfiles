@@ -121,7 +121,3 @@
   enabled = true
 [credential]
 	helper = osxkeychain
-[user]
-	name = Jonas Bygdén
-[committer]
-	name = Jonas Bygdén
