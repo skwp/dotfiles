@@ -15,7 +15,7 @@ if has("gui_running")
   set lines=60
   set columns=190
 
-  set guifont=Monaco\ for\ Powerline:h11
+  set guifont=Monaco\ for\ Powerline:h12
 else
   "dont load csapprox if we no gui support - silences an annoying warning
   let g:CSApprox_loaded = 1
