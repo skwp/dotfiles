@@ -24,6 +24,8 @@ task :install => [:submodule_init, :submodules] do
 
   install_fonts if RUBY_PLATFORM.downcase.include?("darwin")
 
+  install_term_theme if RUBY_PLATFORM.downcase.include?("darwin")
+
   success_msg("installed")
 end
 
@@ -105,6 +107,22 @@ def install_fonts
   puts "======================================================"
   run %{ cp -f $HOME/.yadr/fonts/* $HOME/Library/Fonts }
   puts
+end
+
+def install_term_theme
+  puts "======================================================"
+  puts "Installing iTerm2 solarized theme."
+  puts "======================================================"
+  run %{ /usr/libexec/PlistBuddy -c "Add :'Custom Color Presets':'Solarized Light' dict" ~/Library/Preferences/com.googlecode.iterm2.plist }
+  run %{ /usr/libexec/PlistBuddy -c "Merge 'iTerm2/Solarized Light.itermcolors' :'Custom Color Presets':'Solarized Light'" ~/Library/Preferences/com.googlecode.iterm2.plist }
+  run %{ /usr/libexec/PlistBuddy -c "Add :'Custom Color Presets':'Solarized Dark' dict" ~/Library/Preferences/com.googlecode.iterm2.plist }
+  run %{ /usr/libexec/PlistBuddy -c "Merge 'iTerm2/Solarized Dark.itermcolors' :'Custom Color Presets':'Solarized Dark'" ~/Library/Preferences/com.googlecode.iterm2.plist }
+
+  puts "======================================================"
+  puts "To make sure your profile is using the solarized theme"
+  puts "Please check your settings under:"
+  puts "Preferences> Profiles> [your profile]> Colors> Load Preset.."
+  puts "======================================================"
 end
 
 def install_prezto
