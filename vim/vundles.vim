@@ -18,7 +18,6 @@ Bundle "gmarik/vundle"
 
 " All your bundles here
 Bundle "Raimondi/delimitMate"
-Bundle "godlygeek/csapprox.git"
 Bundle "vim-scripts/AnsiEsc.vim.git"
 Bundle "skwp/vim-ruby-conque"
 Bundle "kogakure/vim-sparkup.git"
