@@ -1,5 +1,6 @@
 require 'rake'
 require 'fileutils'
+require File.join(File.dirname(__FILE__), 'bin', 'yadr', 'vundle')
 
 desc "Hook our dotfiles into system-standard positions."
 task :install => [:submodule_init, :submodules] do
@@ -107,7 +108,7 @@ task :install_vundle do
   puts "Press a key to continue"
   STDIN.getc
   
-  system "vim --noplugin -u vim/vundles.vim -N \"+set hidden\" \"+syntax on\" +BundleClean +BundleInstall +qall"
+  Vundle::update_vundle
   
 end
 
