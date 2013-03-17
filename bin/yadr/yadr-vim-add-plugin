@@ -1,23 +1,27 @@
 #!/usr/bin/env ruby
 require File.join(File.dirname(__FILE__), 'default_libs')
+require File.join(File.dirname(__FILE__), 'vundle')
 
 GitStyleBinary.command do
   version "yadr-add-vim-plugin 1.0"
 
-  short_desc "Add a vim plugin from a github repo"
-  opt :url, "Github url (http:// or git://)", :type => String
+  short_desc "Add a vim plugin from a repo"
 
+  opt :url, "Repository URL (see usage)", :required => true, :type => String
+
+  banner <<-'EOS'
+      Usage: yadr-add-vim-plugin --url [URL]
+      Specify a plugin repository URL in one of the following forms:
+        - Custom repository URL (full URL): git://git.wincent.com/command-t.git
+        - Github repository (username/repo_name): robgleesson/hammer.vim.git
+        - Vim script repository (plugin_name): FuzzyFinder
+  EOS
   run do |command|
-    unless ARGV.size==1
-      puts "Example: #{$0} https://github.com/robgleeson/hammer.vim.git"
-    else
-      begin
-        repo=command[:url]
-        bundle_path=repo.gsub("https://github.com/","").gsub(".git","").gsub("/","-").gsub(".vim","")
-        system("cd #{$yadr} && git submodule add #{repo} vim/bundle/#{bundle_path}")
-      rescue
-        puts "Sorry, couldn't parse your path: #{$!}"
-      end
-    end
+    repo=command.opts[:url]
+    repo=command.opts[:url]
+    puts "Adding \"#{repo}\" to the plugin list"
+    bundle_path=repo.gsub("https://github.com/", "")
+    Vundle::add_plugin_to_vundle repo
+    Vundle::update_vundle
   end
 end
