@@ -106,9 +106,10 @@
   # the usual default is to push all branches
   default = tracking
 [core]
-  autocrlf = false
+	autocrlf = input
   editor = vi
   excludesfile = ~/.yadr/git/gitignore
+	safecrlf = true
 [advice]
   statusHints = false
 [diff]
