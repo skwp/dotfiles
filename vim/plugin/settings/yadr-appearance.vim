@@ -12,8 +12,8 @@ if has("gui_running")
   " (the numbers don't show up) so I made it a VimEnter event
   autocmd VimEnter * set guitablabel=%N:\ %t\ %M
 
-  set lines=80
-  set columns=120
+  set lines=70
+  set columns=160
 
   set guifont=Monaco\ for\ Powerline:h12
 else
