@@ -97,7 +97,7 @@
   default = tracking
 [core]
   autocrlf = false
-  editor = vim
+	editor = subl -n -w
   excludesfile = ~/.yadr/git/gitignore
 [advice]
   statusHints = false
@@ -109,3 +109,11 @@
   # Remember my merges
   # http://gitfu.wordpress.com/2008/04/20/git-rerere-rereremember-what-you-did-last-time/
   enabled = true
+[user]
+	name = Christian Zacharias
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true

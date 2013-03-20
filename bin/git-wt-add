@@ -1,0 +1,196 @@
+#!/usr/bin/env ruby
+
+## git-wt-add: A darcs-style interactive staging script for git. As the
+## name implies, git-wt-add walks you through unstaged changes on a
+## hunk-by-hunk basis and allows you to pick the ones you'd like staged.
+##
+## git-wt-add Copyright 2007 William Morgan <wmorgan-git-wt-add@masanjin.net>.
+## This program is free software: you can redistribute it and/or modify
+## it under the terms of the GNU General Public License as published by
+## the Free Software Foundation, either version 3 of the License, or
+## (at your option) any later version.
+##
+## This program is distributed in the hope that it will be useful,
+## but WITHOUT ANY WARRANTY; without even the implied warranty of
+## MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+## GNU General Public License for more details.
+##
+## You can find the GNU General Public License at:
+##   http://www.gnu.org/licenses/
+
+COLOR = /\e\[\d*m/
+
+class Hunk
+  attr_reader :file, :file_header, :diff
+  attr_accessor :disposition
+
+  def initialize file, file_header, diff
+    @file = file
+    @file_header = file_header
+    @diff = diff
+    @disposition = :unknown
+  end
+
+  def self.make_from diff
+    ret = []
+    state = :outside
+    file_header = hunk = file = nil
+
+    diff.each do |l| # a little state machine to parse git diff output
+      reprocess = false
+      begin
+        reprocess = false
+        case
+        when state == :outside && l =~ /^(#{COLOR})*diff --git a\/(.+) b\/(\2)/
+          file = $2
+          file_header = ""
+        when state == :outside && l =~ /^(#{COLOR})*index /
+        when state == :outside && l =~ /^(#{COLOR})*(---|\+\+\+) /
+          file_header += l + "\n"
+        when state == :outside && l =~ /^(#{COLOR})*@@ /
+          state = :in_hunk
+          hunk = l + "\n"
+        when state == :in_hunk && l =~ /^(#{COLOR})*(@@ |diff --git a)/
+          ret << Hunk.new(file, file_header, hunk)
+          state = :outside
+          reprocess = true
+        when state == :in_hunk
+          hunk += l + "\n"
+        else
+          raise "unparsable diff input: #{l.inspect}"
+        end
+      end while reprocess
+    end
+
+    ## add the final hunk
+    ret << Hunk.new(file, file_header, hunk) if hunk
+
+    ret
+  end
+end
+
+def help
+  puts <<EOS
+y: record this patch
+n: don't record it
+w: wait and decide later, defaulting to no
+
+s: don't record the rest of the changes to this file
+f: record the rest of the changes to this file
+
+d: record selected patches, skipping all the remaining patches
+a: record all the remaining patches
+q: cancel record
+
+j: skip to next patch
+k: back up to previous patch
+c: calculate number of patches
+h or ?: show this help
+
+<Space>: accept the current default (which is capitalized)
+EOS
+end
+
+def walk_through hunks
+  skip_files, record_files = {}, {}
+  skip_rest = record_rest = false
+
+  while hunks.any? { |h| h.disposition == :unknown }
+    pos = 0
+    until pos >= hunks.length
+      h = hunks[pos]
+      if h.disposition != :unknown
+        pos += 1
+        next
+      elsif skip_rest || skip_files[h.file]
+        h.disposition = :ignore
+        pos += 1
+        next
+      elsif record_rest || record_files[h.file]
+        h.disposition = :record
+        pos += 1
+        next
+      end
+
+      puts "Hunk from #{h.file}"
+      puts h.diff
+      print "Shall I stage this change? (#{pos + 1}/#{hunks.length}) [ynWsfqadk], or ? for help: "
+      c = $stdin.getc
+      puts
+      case c
+      when ?y: h.disposition = :record
+      when ?n: h.disposition = :ignore
+      when ?w, ?\ : h.disposition = :unknown
+      when ?s
+        h.disposition = :ignore
+        skip_files[h.file] = true
+      when ?f
+        h.disposition = :record
+        record_files[h.file] = true
+      when ?d: skip_rest = true
+      when ?a: record_rest = true
+      when ?q: exit
+      when ?k
+        if pos > 0
+          hunks[pos - 1].disposition = :unknown
+          pos -= 2 # double-bah
+        end
+      else
+        help
+        pos -= 1 # bah
+      end
+
+      pos += 1
+      puts
+    end
+  end
+end
+
+def make_patch hunks
+  patch = ""
+  did_header = {}
+  hunks.each do |h|
+    next unless h.disposition == :record
+    unless did_header[h.file]
+      patch += h.file_header
+      did_header[h.file] = true
+    end
+    patch += h.diff
+  end
+
+  patch.gsub COLOR, ""
+end
+
+### execution starts here ###
+
+diff = `git diff`.split(/\r?\n/)
+if diff.empty?
+  puts "No unstaged changes."
+  exit
+end
+hunks = Hunk.make_from diff
+
+## unix-centric!
+state = `stty -g`
+begin
+  `stty -icanon` # immediate keypress mode
+  walk_through hunks
+ensure
+  `stty #{state}`
+end
+
+patch = make_patch hunks
+if patch.empty?
+  puts "No changes selected for staging."
+else
+  IO.popen("git apply --cached", "w") { |f| f.puts patch }
+  puts <<EOS
+Staged patch of #{patch.split("\n").size} lines.
+
+Possible next commands:
+  git diff --cached: see staged changes
+         git commit: commit staged changes
+          git reset: unstage changes
+EOS
+end
+
