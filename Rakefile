@@ -86,10 +86,6 @@ task :vundle_migration do
     FileUtils.rm_rf(File.join('.git', 'modules', sub_path))
   end
   FileUtils.mv(File.join('vim','bundle'), File.join('vim', 'bundle.old'))
-  run %{
-    cd $HOME/.yadr
-    git clone https://github.com/gmarik/vundle.git #{File.join('vim','bundle', 'vundle')}
-  }
 end
 
 desc "Runs Vundle installer in a clean vim environment"
@@ -108,8 +104,12 @@ task :install_vundle do
   puts "Press a key to continue"
   STDIN.getc
   
+  run %{
+    cd $HOME/.yadr
+    git clone https://github.com/gmarik/vundle.git #{File.join('vim','bundle', 'vundle')}
+  }
+
   Vundle::update_vundle
-  
 end
 
 task :default => 'install'
