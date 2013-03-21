@@ -97,7 +97,7 @@ task :install_vundle do
   puts "when installing the plugin 'syntastic'. Fortunately"
   puts "Syntastic will install and work properly despite the"
   puts "errors so please just ignore them and let's hope for"
-  puts "an update that fixex the problem!"
+  puts "an update that fixes the problem!"
   puts "======================================================"
 
   puts ""
