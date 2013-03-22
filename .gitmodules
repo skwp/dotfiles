@@ -353,3 +353,6 @@
 [submodule "vim/bundle/airblade-vim-gitgutter"]
 	path = vim/bundle/airblade-vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter
+[submodule "vim/bundle/bogado-file-line"]
+	path = vim/bundle/bogado-file-line
+	url = https://github.com/bogado/file-line.git
