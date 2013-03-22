@@ -365,3 +365,6 @@
 [submodule "vim/bundle/rson-vim-bufstat"]
 	path = vim/bundle/rson-vim-bufstat
 	url = https://github.com/rson/vim-bufstat.git
+[submodule "vim/bundle/bogado-file-line"]
+	path = vim/bundle/bogado-file-line
+	url = https://github.com/bogado/file-line.git

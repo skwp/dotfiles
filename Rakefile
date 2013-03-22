@@ -146,8 +146,12 @@ def install_prezto
   run %{ mkdir -p $HOME/.zsh.after }
   run %{ mkdir -p $HOME/.zsh.prompts }
 
-  puts "Setting zsh as your default shell"
-  run %{ chsh -s /bin/zsh }
+  if ENV["SHELL"].include? 'zsh' then
+    puts "Zsh is already configured as your shell of choice. Restart your session to load the new settings"
+  else
+    puts "Setting zsh as your default shell"
+    run %{ chsh -s /bin/zsh }
+  end
 end
 
 def want_to_install? (section)
@@ -169,7 +173,7 @@ def file_operation(files, method = :symlink)
     puts "Source: #{source}"
     puts "Target: #{target}"
 
-    if File.exists?(target) || File.symlink?(target)
+    if File.exists?(target) && (!File.symlink?(target) || (File.symlink?(target) && File.readlink(target) != source))
       puts "[Overwriting] #{target}...leaving original at #{target}.backup..."
       run %{ mv "$HOME/.#{file}" "$HOME/.#{file}.backup" }
     end
