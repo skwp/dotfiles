@@ -157,20 +157,11 @@ as an actual debugger on MRI 1.9.2+ by installing [pry-debugger](https://github.
 
 [Learn more about YADR's pry customizations and how to install](https://github.com/skwp/dotfiles/blob/master/README-pry.md)
 
-### Git User Info
+### Git Configuration
 
-Since the gitconfig doesn't contain the user info, I recommend using env variables. Put the following in
-your `~/.secrets` file which is automatically referenced by the provided zshrc:
+You can customize the standard Git configuration in `~/.gitconfig.user`. Any configuration in this file will override the default configuration.
 
-    # Set your git user info
-    export GIT_AUTHOR_NAME='Your Name'
-    export GIT_AUTHOR_EMAIL='you@domain.com'
-    export GIT_COMMITTER_NAME='Your Name'
-    export GIT_COMMITTER_EMAIL='you@domain.com'
-
-    # Optionally, set your GitHub credentials
-    export GITHUB_USER='your_user_name'
-    export GITHUB_TOKEN='your_github_token'
+It is recommended to use this file to set your user info. Alternately, you can set the appropriate environment variables in your `~/.secrets`.
 
 ### Git Customizations:
 
