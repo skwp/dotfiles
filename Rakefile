@@ -42,7 +42,7 @@ end
 
 task :update do
   Rake::Task["vundle_migration"].execute if needs_migration_to_vundle?
-  Rake::Task["install"]
+  Rake::Task["install"].execute
   #TODO: for now, we do the same as install. But it would be nice
   #not to clobber zsh files
 end
