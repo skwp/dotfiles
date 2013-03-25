@@ -101,8 +101,6 @@ task :install_vundle do
   puts "======================================================"
 
   puts ""
-  puts "Press a key to continue"
-  STDIN.getc
   
   run %{
     cd $HOME/.yadr
