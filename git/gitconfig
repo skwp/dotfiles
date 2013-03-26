@@ -122,3 +122,5 @@
   enabled = true
 [credential]
 	helper = osxkeychain
+[include]
+  path = .gitconfig.user
