@@ -5,11 +5,13 @@
      _____| / ___ ( (_| | |
     (_______\_____|\____|_|
 
-    # Yet Another Dotfile Repo v1.0
-    # Now with Prezto!
+    # Yet Another Dotfile Repo v1.1
+    # Now with Prezto and Vundle!
 
     git clone https://github.com/skwp/dotfiles ~/.yadr
     cd ~/.yadr && rake install
+
+**Always be sure to run `rake update` after pulling to ensure plugins are updated**
 
 This is a collection of best of breed tools from across the web,
 from scouring other people's dotfile repos, blogs, and projects.
