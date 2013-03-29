@@ -99,7 +99,7 @@ Bundle "vim-scripts/TagHighlight.git"
 Bundle "itspriddle/vim-jquery.git"
 Bundle "slim-template/vim-slim.git"
 Bundle "airblade/vim-gitgutter.git"
-Bundle "https://github.com/bogado/file-line"
+Bundle "bogado/file-line.git"
 
 "Filetype plugin indent on is required by vundle
 filetype plugin indent on
