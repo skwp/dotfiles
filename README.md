@@ -362,7 +362,6 @@ If you omit the key combo, you'll get a list of all the maps. You can do the sam
 
  * AnsiEsc - inteprets ansi color codes inside log files. great for looking at Rails logs
  * solarized - a color scheme scientifically calibrated for awesomeness (including skwp mods for ShowMarks)
- * csapprox - helps colors to be represented correctly on terminals (even though we expect to use MacVim)
  * Powerline - beautiful vim status bar. Requires patched fonts (installed from fonts/ directory)
 
 #### Coding
