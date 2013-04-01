@@ -492,9 +492,12 @@ Please explore these people's work.
 
 ### Contributors
 
+Yadr is made possible by many awesome people, too many to list :) But here are a few of the bigger contributors and core committers.
+
  * Initial Version: @skwp
  * Cleanup, auto installer: @kylewest
  * Switch from oh-my-zsh to Presto: @JeanMertz
+ * Vundle migration: @duhanebel
 
 
 ### For more tips and tricks
