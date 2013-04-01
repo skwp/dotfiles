@@ -1,0 +1,1 @@
+autocmd BufEnter * Rvm
