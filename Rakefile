@@ -62,8 +62,8 @@ task :submodules do
 
     run %{
       cd $HOME/.yadr
-      git submodule foreach 'git fetch origin; git checkout master; git reset --hard origin/master; git submodule update --recursive; git clean -dfx'
-      git clean -dfx
+      git submodule foreach 'git fetch origin; git checkout master; git reset --hard origin/master; git submodule update --recursive; git clean -df'
+      git clean -df
     }
     puts
   end
