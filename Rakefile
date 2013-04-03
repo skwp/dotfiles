@@ -1,4 +1,6 @@
 require 'rake'
+require 'fileutils'
+require File.join(File.dirname(__FILE__), 'bin', 'yadr', 'vundle')
 
 desc "Hook our dotfiles into system-standard positions."
 task :install => [:submodule_init, :submodules] do
@@ -18,7 +20,10 @@ task :install => [:submodule_init, :submodules] do
   file_operation(Dir.glob('ctags/*')) if want_to_install?('ctags config (better js/ruby support)')
   file_operation(Dir.glob('tmux/*')) if want_to_install?('tmux config')
   file_operation(Dir.glob('vimify/*')) if want_to_install?('vimification of command line tools')
-  file_operation(Dir.glob('{vim,vimrc}')) if want_to_install?('vim configuration (highly recommended)')
+  if want_to_install?('vim configuration (highly recommended)')
+    file_operation(Dir.glob('{vim,vimrc}')) 
+    Rake::Task["install_vundle"].execute
+  end
 
   Rake::Task["install_prezto"].execute
 
@@ -35,7 +40,9 @@ task :install_prezto do
   end
 end
 
-task :update => [:install] do
+task :update do
+  Rake::Task["vundle_migration"].execute if needs_migration_to_vundle?
+  Rake::Task["install"].execute
   #TODO: for now, we do the same as install. But it would be nice
   #not to clobber zsh files
 end
@@ -55,11 +62,52 @@ task :submodules do
 
     run %{
       cd $HOME/.yadr
-      git submodule foreach 'git fetch origin; git checkout master; git reset --hard origin/master; git submodule update --recursive; git clean -dfx'
-      git clean -dfx
+      git submodule foreach 'git fetch origin; git checkout master; git reset --hard origin/master; git submodule update --recursive; git clean -df'
+      git clean -df
     }
     puts
   end
+end
+
+desc "Performs migration from pathogen to vundle"
+task :vundle_migration do
+  puts "======================================================"
+  puts "Migrating from pathogen to vundle vim plugin manager. "
+  puts "This will move the old .vim/bundle directory to" 
+  puts ".vim/bundle.old and replacing all your vim plugins with"
+  puts "the standard set of plugins. You will then be able to "
+  puts "manage your vim's plugin configuration by editing the "
+  puts "file .vim/vundles.vim"
+  puts "======================================================"
+
+  Dir.glob(File.join('vim', 'bundle','**')) do |sub_path|
+    run %{git config -f #{File.join('.git', 'config')} --remove-section submodule.#{sub_path}}
+    # `git rm --cached #{sub_path}`
+    FileUtils.rm_rf(File.join('.git', 'modules', sub_path))
+  end
+  FileUtils.mv(File.join('vim','bundle'), File.join('vim', 'bundle.old'))
+end
+
+desc "Runs Vundle installer in a clean vim environment"
+task :install_vundle do
+  puts "======================================================"
+  puts "Installing vundle."
+  puts "The installer will now proceed to run BundleInstall."
+  puts "Due to a bug, the installer may report some errors"
+  puts "when installing the plugin 'syntastic'. Fortunately"
+  puts "Syntastic will install and work properly despite the"
+  puts "errors so please just ignore them and let's hope for"
+  puts "an update that fixes the problem!"
+  puts "======================================================"
+
+  puts ""
+  
+  run %{
+    cd $HOME/.yadr
+    git clone https://github.com/gmarik/vundle.git #{File.join('vim','bundle', 'vundle')}
+  }
+
+  Vundle::update_vundle
 end
 
 task :default => 'install'
@@ -96,7 +144,7 @@ def install_homebrew
   puts "======================================================"
   puts "Installing Homebrew packages...There may be some warnings."
   puts "======================================================"
-  run %{brew install ack ctags git hub}
+  run %{brew install zsh ack ctags git hub tmux reattach-to-user-namespace the_silver_searcher}
   puts
   puts
 end
@@ -197,6 +245,17 @@ def file_operation(files, method = :symlink)
     puts
   end
 end
+
+def needs_migration_to_vundle?
+  File.exists? File.join('vim', 'bundle', 'tpope-vim-pathogen')
+end
+
+
+def list_vim_submodules
+  result=`git submodule -q foreach 'echo $name"||"\`git remote -v | awk "END{print \\\\\$2}"\`'`.select{ |line| line =~ /^vim.bundle/ }.map{ |line| line.split('||') }
+  Hash[*result.flatten]
+end
+
 
 def success_msg(action)
   puts ""
