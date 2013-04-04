@@ -101,7 +101,7 @@ Bundle "slim-template/vim-slim.git"
 Bundle "airblade/vim-gitgutter.git"
 Bundle "bogado/file-line.git"
 Bundle "tpope/vim-rvm.git"
-Bundle "https://github.com/Finkregh/vim-dnstools.git"
-Bundle "https://github.com/puppetlabs/puppet-syntax-vim.git"
+Bundle "Finkregh/vim-dnstools.git"
+Bundle "puppetlabs/puppet-syntax-vim.git"
 "Filetype plugin indent on is required by vundle
 filetype plugin indent on
