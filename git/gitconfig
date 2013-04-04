@@ -47,10 +47,6 @@
 
   # pull
   pl = pull                         # pull
-  rpull = pull --rebase --verbose --stat
-
-  # submodule
-  sm = submodule
 
   # push
   ps = push                         # push
@@ -90,13 +86,13 @@
   pretty = format:%C(blue)%ad%Creset %C(yellow)%h%C(green)%d%Creset %C(blue)%s %C(magenta) [%an]%Creset
 [mergetool]
   prompt = false
-[mergetool "vimdiff"]
-  cmd="vi -c 'Gdiff' $MERGED"     # use fugitive.vim for 3-way merge
+[mergetool "mvimdiff"]
+  cmd="mvim -c 'Gdiff' $MERGED"     # use fugitive.vim for 3-way merge
   keepbackup=false
 [merge]
   summary = true
   verbosity = 1
-  tool = vimdiff
+  tool = mvimdiff
 [apply]
   whitespace = nowarn
 [branch]
@@ -106,10 +102,9 @@
   # the usual default is to push all branches
   default = tracking
 [core]
-	autocrlf = input
-  editor = vi
+  autocrlf = false
+  editor = vim
   excludesfile = ~/.yadr/git/gitignore
-	safecrlf = true
 [advice]
   statusHints = false
 [diff]
