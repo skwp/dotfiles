@@ -8,8 +8,7 @@
     # Yet Another Dotfile Repo v1.1
     # Now with Prezto and Vundle!
 
-    git clone https://github.com/skwp/dotfiles ~/.yadr
-    cd ~/.yadr && rake install
+    sh -c "`curl -fsSL https://raw.github.com/skwp/dotfiles/master/install.sh`"
 
 **Always be sure to run `rake update` after pulling to ensure plugins are updated**
 
@@ -45,12 +44,14 @@ Installation is automated via `rake` and the `yadr` command. To get
 started please run:
 
 ```bash
-git clone https://github.com/skwp/dotfiles ~/.yadr
-cd ~/.yadr && rake install
+sh -c "`curl -fsSL https://raw.github.com/skwp/dotfiles/master/install.sh`"
 ```
 
 **Note:** YADR will automatically install all of its subcomponents. If you want to be asked
-about each one, use `ASK=true rake install`
+about each one, use:
+```bash
+sh -c "`curl -fsSL https://raw.github.com/skwp/dotfiles/master/install.sh`" -s ask
+```
 
 # Additional Installation
 
