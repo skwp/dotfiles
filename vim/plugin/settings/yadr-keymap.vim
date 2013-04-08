@@ -130,6 +130,10 @@ nnoremap ,gcf :call GitGrep(expand("%:t:r"))<CR>
 nnoremap <silent> ,z :bp<CR>
 nnoremap <silent> ,x :bn<CR>
 
+" Reselect visual block after indent/outdent
+vnoremap < <gv
+vnoremap > >gv
+
 " ==============================
 " Window/Tab/Split Manipulation
 " ==============================
