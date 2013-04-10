@@ -439,15 +439,17 @@ If you didn't have janus before, it is recommended to just put it in `~/.yadr/vi
 
 ### Adding your own vim plugins
 
-YADR comes with a dead simple plugin manager that just uses git submodules, without any fancy config files.
+YADR comes with a dead simple plugin manager that just uses vundles and submodules, without any fancy config files.
+
+Add a plugin
 
     yav -u https://github.com/airblade/vim-rooter
 
-Delete a plugin (Coming Soon)
+Delete a plugin 
 
-   ydv -p airblade-vim-rooter
+    ydv -u airblade/vim-rooter
 
-The aliases (yav=yadr vim-add-plugin) and (yuv=yadr vim-update-all-plugins) live in the aliases file.
+The aliases (yav=yadr vim-add-plugin), (ydp=yadr vim-delete-plugin) and (yuv=yadr vim-update-all-plugins) live in the aliases file.
 You can then commit the change. It's good to have your own fork of this project to do that.
 
 
