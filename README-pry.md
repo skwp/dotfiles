@@ -1,10 +1,10 @@
 ### Install the gem
 
 ```bash
-gem install pry
-gem install pry-nav
-gem install awesome_print
+gem install jazz_hands
 ```
+
+[Jazz hands](https://github.com/nixme/jazz_hands) is a nice bundling of all pry-related gems.
 
 ### Use pry
 
