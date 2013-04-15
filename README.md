@@ -293,8 +293,6 @@ If you omit the key combo, you'll get a list of all the maps. You can do the sam
 
 #### Splits
 
- * `vv` - vertical split (`Ctrl-w,v`)
- * `ss` - horizontal split (`Ctrl-w,s`)
  * `,qo` - open quickfix window (this is where output from GitGrep goes)
  * `,qc` - close quickfix
 
@@ -317,8 +315,8 @@ If you omit the key combo, you'll get a list of all the maps. You can do the sam
  * `,ow` - overwrite a word with whatever is in your yank buffer - you can be anywhere on the word. saves having to visually select it
  * `,ocf` - open changed files (stolen from @garybernhardt). open all files with git changes in splits
  * `,w` - strip trailing whitespaces
- * `sj` - split a line such as a hash {:foo => {:bar => :baz}} into a multiline hash (j = down)
- * `sk` - unsplit a link (k = up)
+ * `,sj` - split a line such as a hash {:foo => {:bar => :baz}} into a multiline hash (j = down)
+ * `,sk` - unsplit a link (k = up)
  * `,he` - Html Escape
  * `,hu` - Html Unescape
  * `,hp` - Html Preview (open in Safari)
