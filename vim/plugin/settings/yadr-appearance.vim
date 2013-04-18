@@ -14,7 +14,6 @@ if filereadable(expand(s:colorSchemeCustom))
     exec "au VimEnter * so " . s:colorSchemeCustom
 endif
 
-
 set background=dark
 
 if has("gui_running")
