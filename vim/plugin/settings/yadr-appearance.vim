@@ -1,7 +1,20 @@
 " Make it beautiful - colors and fonts
 
 " http://ethanschoonover.com/solarized/vim-colors-solarized
-colorscheme solarized
+let s:myTheme='marelo'
+exec 'colorscheme ' . s:myTheme
+" Enforce the colors for each color scheme:
+let s:powerlineCustom="~/.vim/colors-settings/" . s:myTheme . "-powerline.vim"
+if filereadable(expand(s:powerlineCustom))
+    exec "au VimEnter * so " . s:powerlineCustom
+endif
+
+let s:colorSchemeCustom="~/.vim/colors-settings/" . s:myTheme . ".vim"
+if filereadable(expand(s:colorSchemeCustom))
+    exec "au VimEnter * so " . s:colorSchemeCustom
+endif
+
+
 set background=dark
 
 if has("gui_running")
