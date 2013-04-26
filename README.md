@@ -280,7 +280,6 @@ If you omit the key combo, you'll get a list of all the maps. You can do the sam
 
 #### Tab Navigation
 
- * `Ctrl-H` and `Ctrl-L` - left an right on tabs
  * Use `Cmd-1` thru `Cmd-9` to switch to a specific tab number (like iTerm) - and tabs have been set up to show numbers
 
 #### Window Navigation
