@@ -80,7 +80,7 @@ Read on to learn what YADR provides!
 
 Homebrew is _the missing package manager for OSX_. Installed automatically.
 
-We automatically install a few useful packages including ack, ctags, git, and hub, and the silver searcher ('ag')
+We automatically install a few useful packages including ctags, git, and hub, and the silver searcher ('ag')
 You can install macvim from brew as well, or download it from their website.
 
 ### Github Issues: [ghi gem](https://github.com/stephencelis/ghi)
@@ -413,6 +413,7 @@ If you omit the key combo, you'll get a list of all the maps. You can do the sam
  * color_highlight - use :ColorCodes to see hex colors highlighted
  * change-inside-surroundings - change content inside delimiters like quotes/brackets
  * Specky - used for color highlighting rspec correctly even if specs live outside of spec/ (rails.vim doesn't handle this)
+ * Ag - use :Ag to search across multiple files. Faster than Grep and Ack.
 
 #### General enhancements that don't add new commands
 
