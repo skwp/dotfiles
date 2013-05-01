@@ -89,11 +89,11 @@ We include the `ghi` command. Try `ghi list` and have fun managing issues from c
 
 ### Ruby Debugger
 
-This gem is optonal and not included. It's used to give you visual IDE-style debugging within vim, combined
-with the vim-ruby-debugger plugin. To install:
+This plugin is optional and not included. It's used to give you visual IDE-style debugging within vim, combined
+with the debugger-xml gem. To install:
 
 ```bash
-gem install ruby-debug-ide
+gem install debugger-xml
 ```
 
 ### ZSH
