@@ -80,7 +80,7 @@ Read on to learn what YADR provides!
 
 Homebrew is _the missing package manager for OSX_. Installed automatically.
 
-We automatically install a few useful packages including ack, ctags, git, and hub, and the silver searcher ('ag')
+We automatically install a few useful packages including ctags, git, and hub, and the silver searcher ('ag')
 You can install macvim from brew as well, or download it from their website.
 
 ### Github Issues: [ghi gem](https://github.com/stephencelis/ghi)
@@ -350,7 +350,7 @@ If you omit the key combo, you'll get a list of all the maps. You can do the sam
  * EasyMotion - hit ,<esc> (forward) or ,<Shift-Esc> (back) and watch the magic happen. Just type the letters and jump directly to your target - in the provided vimrc the keys are optimized for home row mostly. Using @skwp modified EasyMotion which uses vimperator-style two character targets.
  * LustyJuggler/Explorer - hit B, type buf name to match a buffer, or type S and use the home row keys to select a buffer
  * TagBar - hit ,T to see a list of methods in a class (uses ctags)
- * CtrlP - Ctrl-p or ,t to find a file
+ * CtrlP - ,t to find a file
  * Visual-star-search - make the * (star) search in visual mode behave like expected: searching for the whole selection instead of just the word under the cursor.
 
 #### Git
@@ -413,6 +413,7 @@ If you omit the key combo, you'll get a list of all the maps. You can do the sam
  * color_highlight - use :ColorCodes to see hex colors highlighted
  * change-inside-surroundings - change content inside delimiters like quotes/brackets
  * Specky - used for color highlighting rspec correctly even if specs live outside of spec/ (rails.vim doesn't handle this)
+ * Ag - use :Ag to search across multiple files. Faster than Grep and Ack.
 
 #### General enhancements that don't add new commands
 

@@ -48,7 +48,7 @@ Bundle "tpope/vim-git"
 Bundle "vim-scripts/lastpos.vim"
 Bundle "sjl/gundo.vim"
 Bundle "vim-scripts/sudo.vim"
-Bundle "mileszs/ack.vim"
+Bundle "rking/ag.vim"
 Bundle "nelstrom/vim-textobj-rubyblock"
 Bundle "kana/vim-textobj-user"
 Bundle "austintaylor/vim-indentobject"
@@ -102,5 +102,13 @@ Bundle "airblade/vim-gitgutter.git"
 Bundle "bogado/file-line.git"
 Bundle "tpope/vim-rvm.git"
 Bundle "nelstrom/vim-visual-star-search"
+
+" Customization
+" The plugins listed in ~/.vim/.vundles.local will be added here to
+" allow the user to add vim plugins to yadr without the need for a fork.
+if filereadable(expand("~/.yadr/vim/.vundles.local"))
+  source ~/.yadr/vim/.vundles.local
+endif
+
 "Filetype plugin indent on is required by vundle
 filetype plugin indent on

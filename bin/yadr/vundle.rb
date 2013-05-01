@@ -1,7 +1,7 @@
 require 'fileutils'
 
 module Vundle
-  @vundles_path = File.expand_path File.join('~', '.vim', 'vundles.vim')
+  @vundles_path = File.expand_path File.join(ENV['HOME'], '.vim', '.vundles.local')
   def self.add_plugin_to_vundle(plugin_repo)
     return if contains_vundle? plugin_repo
 
