@@ -393,7 +393,10 @@ If you omit the key combo, you'll get a list of all the maps. You can do the sam
  * vim-textobj-entire - gives you `e` for entire document. so vae (visual around entire document), and etc
  * vim-textobj-rubysymbol - gives you `:` textobj. so va: to select a ruby symbol. da: to delete a symbol..etc
  * vim-textobj-function - gives you `f` textobj. so vaf to select a function
+ * vim-textobj-function-javascript - same as above, but for javascript functions
+ * vim-textobj-underscore - gives you `_` textobj. So vi_ selects what's inside a pair of underscores
  * next-textobject - from Steve Losh, ability to use `n` such as vinb (visual inside (n)ext set of parens)
+ * textobj-word-column - gives you `c` (word) and `C` (WORD) for handling columns/blocks.
 
 #### Utils
 
