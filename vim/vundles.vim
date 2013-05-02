@@ -50,7 +50,6 @@ Bundle "tpope/vim-haml"
 Bundle "wavded/vim-stylus"
 
 " Git related...
-Bundle "airblade/vim-gitgutter.git"
 Bundle "gregsexton/gitv"
 Bundle "mattn/gist-vim"
 Bundle "skwp/vim-git-grep-rails-partial"
