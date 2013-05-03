@@ -2,7 +2,10 @@
 "<leader>b
 let g:ruby_debugger_no_maps=1
 
-let g:ruby_debugger_progname='mvim'
+let os=substitute(system('uname'), '\n', '', '')
+if os == 'Darwin' || os == 'Mac'
+  let g:ruby_debugger_progname='mvim'
+endif
 
 "Make our own maps
 noremap <leader>db  :call ruby_debugger#load_debugger() <bar> call g:RubyDebugger.toggle_breakpoint()<CR>
