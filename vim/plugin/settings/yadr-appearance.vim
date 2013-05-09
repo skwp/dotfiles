@@ -1,7 +1,24 @@
 " Make it beautiful - colors and fonts
 
 " http://ethanschoonover.com/solarized/vim-colors-solarized
-colorscheme solarized
+let s:myTheme='solarized'
+exec 'colorscheme ' . s:myTheme
+
+" If there's a custom powerline theme too, load it. Otherwise load the
+" solarized one just so it won't look very bad.
+let s:powerlineCustom="~/.vim/colors-settings/" . s:myTheme . "-powerline.vim"
+if filereadable(expand(s:powerlineCustom))
+  exec "au VimEnter * so " . s:powerlineCustom
+else
+  exec "au VimEnter * so ~/.vim/colors-settings/solarized-powerline.vim"
+endif
+
+let s:colorSchemeCustom="~/.vim/colors-settings/" . s:myTheme . ".vim"
+if filereadable(expand(s:colorSchemeCustom))
+  exec "au VimEnter * so " . s:colorSchemeCustom
+endif
+
+
 set background=dark
 
 if has("gui_running")

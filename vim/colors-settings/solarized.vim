@@ -62,7 +62,3 @@ hi! link htmlLink Include
 hi! CursorLine cterm=NONE gui=NONE
 hi! Visual ctermbg=233
 hi! Type gui=bold
-
-
-" Enforce the colors set here
-au VimEnter * so ~/.vim/plugin/settings/solarized.vim
