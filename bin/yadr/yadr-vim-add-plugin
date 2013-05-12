@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 require File.join(File.dirname(__FILE__), 'default_libs')
-require File.join(File.dirname(__FILE__), 'vundle')
+require File.join(File.dirname(__FILE__), 'neobundle')
 
 GitStyleBinary.command do
   version "yadr-add-vim-plugin 1.0"
@@ -21,7 +21,7 @@ GitStyleBinary.command do
     repo=command.opts[:url]
     puts "Adding \"#{repo}\" to the plugin list"
     bundle_path=repo.gsub("https://github.com/", "")
-    Vundle::add_plugin_to_vundle repo
-    Vundle::update_vundle
+    NeoBundle::add_plugin_to_neobundle repo
+    NeoBundle::update_neobundle
   end
 end
