@@ -15,6 +15,10 @@ nnoremap ,ow "_diwhp
 "make Y consistent with C and D
 nnoremap Y y$
 
+" retain visual mode while indenting
+vnoremap > >gv
+vnoremap < <gv
+
 " ========================================
 " RSI Prevention - keyboard remaps
 " ========================================
