@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# 
 require File.join(File.dirname(__FILE__), 'default_libs')
 require File.join(File.dirname(__FILE__), 'vundle')
 
@@ -20,7 +21,7 @@ GitStyleBinary.command do
     repo=command.opts[:url]
     repo=command.opts[:url]
     puts "Adding \"#{repo}\" to the plugin list"
-    bundle_path=repo.gsub("https://github.com/", "")
+    bundle_path=repo.gsub(/http.?:\/\/github\.com\//, "")
     Vundle::add_plugin_to_vundle repo
     Vundle::update_vundle
   end
