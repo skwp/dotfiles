@@ -1,1 +1,2 @@
-set editing-mode vi
+set editing-mode emacs
+set keymap emacs
