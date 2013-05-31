@@ -1,15 +1,8 @@
-" Arpeggio lets us define key-chord combos (simultaneous key presses)
-call arpeggio#load()
-
 " ========================================
 " General vim sanity improvements
 " ========================================
 "
 "
-" Change leader to a comma because the backslash is too far away
-" That means all \x commands turn into ,x
-let mapleader=","
-
 " alias yw to yank the entire word 'yank inner word'
 " even if the cursor is halfway inside the word
 " FIXME: will not properly repeat when you use a dot (tie into repeat.vim)
@@ -113,6 +106,8 @@ autocmd FileType ruby map <buffer> <D-j> ]m
 autocmd FileType ruby map <buffer> <D-k> [m
 autocmd FileType rspec map <buffer> <D-j> }
 autocmd FileType rspec map <buffer> <D-k> {
+autocmd FileType javascript map <buffer> <D-k> }
+autocmd FileType javascript map <buffer> <D-j> {
 
 
 " Command-/ to toggle comments
@@ -196,10 +191,6 @@ nmap <silent> ,vr :so %<CR>
 " Type ,hl to toggle highlighting on/off, and show current value.
 noremap ,hl :set hlsearch! hlsearch?<CR>
 
-" Apple-* Highlight all occurrences of current word (like '*' but without moving)
-" http://vim.wikia.com/wiki/Highlight_all_search_pattern_matches
-nnoremap <D-*> :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
-
 " These are very similar keys. Typing 'a will jump to the line in the current
 " file marked with ma. However, `a will jump to the line and column marked
 " with ma.  It’s more useful in any case I can imagine, but it’s located way
@@ -236,7 +227,6 @@ map ,hi :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 
 " Source current file Cmd-% (good for vim development)
 map <D-%> :so %<CR>
-
 
 " ,hp = html preview
 map <silent> ,hp :!open -a Safari %<CR><CR>

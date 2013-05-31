@@ -5,11 +5,12 @@
      _____| / ___ ( (_| | |
     (_______\_____|\____|_|
 
-    # Yet Another Dotfile Repo v1.0
-    # Now with Prezto!
+    # Yet Another Dotfile Repo v1.1
+    # Now with Prezto and Vundle!
 
-    git clone https://github.com/skwp/dotfiles ~/.yadr
-    cd ~/.yadr && rake install
+    sh -c "`curl -fsSL https://raw.github.com/skwp/dotfiles/master/install.sh`"
+
+**Always be sure to run `rake update` after pulling to ensure plugins are updated**
 
 This is a collection of best of breed tools from across the web,
 from scouring other people's dotfile repos, blogs, and projects.
@@ -35,7 +36,7 @@ from scouring other people's dotfile repos, blogs, and projects.
   * More than just vim plugins - great shell aliases, osx, and irb/pry tweaks to make you more productive.
 
 ## Screenshot
-![screenshot](http://i.imgur.com/afzuR.png)
+![screenshot](http://i.imgur.com/3C1Ze.png)
 
 # Installation
 
@@ -43,12 +44,23 @@ Installation is automated via `rake` and the `yadr` command. To get
 started please run:
 
 ```bash
-git clone https://github.com/skwp/dotfiles ~/.yadr
-cd ~/.yadr && rake install
+sh -c "`curl -fsSL https://raw.github.com/skwp/dotfiles/master/install.sh`"
 ```
 
 **Note:** YADR will automatically install all of its subcomponents. If you want to be asked
-about each one, use `ASK=true rake install`
+about each one, use:
+```bash
+sh -c "`curl -fsSL https://raw.github.com/skwp/dotfiles/master/install.sh`" -s ask
+```
+
+# Additional Installation
+
+ * [Highly recommended: Install iTerm theme](https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized)
+ * [Highly recommended: Remap caps-lock to escape with PCKeyboardHack](http://pqrs.org/macosx/keyremap4macbook/pckeyboardhack.html)
+
+The escape key is the single most used key in vim.
+Old keyboards used to have Ctrl where caps lock is today. But it's even better if you put escape there.
+If you're hitting a small target in the corner, you are slowing yourself down considerably, and probably damaging your hands with repetitive strain injuries.
 
 ### Upgrading
 
@@ -64,25 +76,12 @@ rake update
 
 Read on to learn what YADR provides!
 
-## Public service announcement: stop abusing your hands!
-
-[Remap caps-lock to escape](http://pqrs.org/macosx/keyremap4macbook/extra.html)
-
-The escape key is the single most used key in vim.
-Old keyboards used to have Ctrl where caps lock is today. But it's even better if you put escape there.
-If you're hitting a small target in the corner, you are slowing yourself down considerably, and probably damaging your hands with repetitive strain injuries.
-
 ### [Homebrew](http://mxcl.github.com/homebrew/)
 
 Homebrew is _the missing package manager for OSX_. Installed automatically.
 
-We automatically install a few useful packages including ack, ctags, git, and hub
+We automatically install a few useful packages including ctags, git, and hub, and the silver searcher ('ag')
 You can install macvim from brew as well, or download it from their website.
-
-```bash
-brew install ack ctags git hub macvim
-```
-
 
 ### Github Issues: [ghi gem](https://github.com/stephencelis/ghi)
 
@@ -90,11 +89,11 @@ We include the `ghi` command. Try `ghi list` and have fun managing issues from c
 
 ### Ruby Debugger
 
-This gem is optonal and not included. It's used to give you visual IDE-style debugging within vim, combined
-with the vim-ruby-debugger plugin. To install:
+This plugin is optional and not included. It's used to give you visual IDE-style debugging within vim, combined
+with the debugger-xml gem. To install:
 
 ```bash
-gem install ruby-debug-ide
+gem install debugger-xml
 ```
 
 ### ZSH
@@ -157,20 +156,11 @@ as an actual debugger on MRI 1.9.2+ by installing [pry-debugger](https://github.
 
 [Learn more about YADR's pry customizations and how to install](https://github.com/skwp/dotfiles/blob/master/README-pry.md)
 
-### Git User Info
+### Git Configuration
 
-Since the gitconfig doesn't contain the user info, I recommend using env variables. Put the following in
-your `~/.secrets` file which is automatically referenced by the provided zshrc:
+You can customize the standard Git configuration in `~/.gitconfig.user`. Any configuration in this file will override the default configuration.
 
-    # Set your git user info
-    export GIT_AUTHOR_NAME='Your Name'
-    export GIT_AUTHOR_EMAIL='you@domain.com'
-    export GIT_COMMITTER_NAME='Your Name'
-    export GIT_COMMITTER_EMAIL='you@domain.com'
-
-    # Optionally, set your GitHub credentials
-    export GITHUB_USER='your_user_name'
-    export GITHUB_TOKEN='your_github_token'
+It is recommended to use this file to set your user info. Alternately, you can set the appropriate environment variables in your `~/.secrets`.
 
 ### Git Customizations:
 
@@ -243,8 +233,6 @@ If you omit the key combo, you'll get a list of all the maps. You can do the sam
 
  * `,f` - instantly Find definition of class (must have exuberant ctags installed)
  * `,F` - same as `,f` but in a vertical split
- * `,,f` - jump to Method. Same as vim's built in jump to tag, but much more aware of ruby bang_methods! and method.invocations!
- * `,,F` - same as `,,f` but in a vertical split
  * `,gf` or `Ctrl-f` - same as vim normal gf (go to file), but in a vertical split (works with file.rb:123 line numbers also)
  * `gF` - standard vim mapping, here for completeness (go to file at line number)
  * `K` - GitGrep the current word under the cursor and show results in quickfix window
@@ -256,19 +244,14 @@ If you omit the key combo, you'll get a list of all the maps. You can do the sam
  * `,gcp` - GitGrep Current Partial to find references to the current view partial
  * `,gcf` - GitGrep Current File to find references to the current file
  * `//` - clear the search
- * `,q/` -  quickfix window with last search (stolen from Steve Losh)
- * `,qa/` - quickfix Ack last search (Steve Losh)
- * `,qg/` - quickfix GitGrep last search
  * `,T` - Tag list (list of methods in a class)
  * `Ctrl-s` - Open related spec in a split. Similar to :A and :AV from rails.vim but is also aware of the fast_spec dir and faster to type
  * `,,w` (alias `,<esc>`) or `,,b` (alias `,<shift-esc>`) - EasyMotion, a vimperator style tool that highlights jump-points on the screen and lets you type to get there.
 
 #### File Navigation
-
  * `,t` - CtrlP fuzzy file selector
  * `,b` - CtrlP buffer selector
- * `,m` - jump to method - CtrlP tag search within current buffer
- * `,M` - jump to any Method - CtrlP tag search within all buffers
+ * `Cmd-Shift-M` - jump to method - CtrlP tag search within current buffer
  * `,jm` jump (via CtrlP) to app/models
  * `,jc` app/controllers
  * `,jv` app/views
@@ -297,7 +280,6 @@ If you omit the key combo, you'll get a list of all the maps. You can do the sam
 
 #### Tab Navigation
 
- * `Ctrl-H` and `Ctrl-L` - left an right on tabs
  * Use `Cmd-1` thru `Cmd-9` to switch to a specific tab number (like iTerm) - and tabs have been set up to show numbers
 
 #### Window Navigation
@@ -312,7 +294,6 @@ If you omit the key combo, you'll get a list of all the maps. You can do the sam
  * `ss` - horizontal split (`Ctrl-w,s`)
  * `,qo` - open quickfix window (this is where output from GitGrep goes)
  * `,qc` - close quickfix
- * `,gz` - zoom a window to max size and again to unzoom it (ZoomWin plugin, usually `C-w,o`)
 
 #### NERDTree Project Tree
 
@@ -343,6 +324,7 @@ If you omit the key combo, you'll get a list of all the maps. You can do the sam
  * `:gitv` - Git log browsers
  * `,hi` - show current Highlight group. if you don't like the color of something, use this, then use `hi! link [groupname] [anothergroupname]` in your vimrc.after to remap the color. You can see available colors using `:hi`
  * `,yr` - view the yankring - a list of your previous copy commands. also you can paste and hit `ctrl-p` for cycling through previous copy commands
+ * `,gt` - Go Tidy - tidy up your html code (works on a visual selection)
 
 #### Ruby Debugger
 
@@ -368,7 +350,8 @@ If you omit the key combo, you'll get a list of all the maps. You can do the sam
  * EasyMotion - hit ,<esc> (forward) or ,<Shift-Esc> (back) and watch the magic happen. Just type the letters and jump directly to your target - in the provided vimrc the keys are optimized for home row mostly. Using @skwp modified EasyMotion which uses vimperator-style two character targets.
  * LustyJuggler/Explorer - hit B, type buf name to match a buffer, or type S and use the home row keys to select a buffer
  * TagBar - hit ,T to see a list of methods in a class (uses ctags)
- * CtrlP - Ctrl-p or ,t to find a file
+ * CtrlP - ,t to find a file
+ * Visual-star-search - make the * (star) search in visual mode behave like expected: searching for the whole selection instead of just the word under the cursor.
 
 #### Git
 
@@ -380,7 +363,6 @@ If you omit the key combo, you'll get a list of all the maps. You can do the sam
 
  * AnsiEsc - inteprets ansi color codes inside log files. great for looking at Rails logs
  * solarized - a color scheme scientifically calibrated for awesomeness (including skwp mods for ShowMarks)
- * csapprox - helps colors to be represented correctly on terminals (even though we expect to use MacVim)
  * Powerline - beautiful vim status bar. Requires patched fonts (installed from fonts/ directory)
 
 #### Coding
@@ -393,6 +375,8 @@ If you omit the key combo, you'll get a list of all the maps. You can do the sam
  * necomplcache - intelligent and fast complete as you type, and added Command-Space to select a completion (same as Ctrl-N)
  * snipMate - offers textmate-like snippet expansion + scrooloose-snippets . try hitting TAB after typing a snippet
  * jasmine.vim - support for jasmine javascript unit testing, including snippets for it, before, etc..
+ * vim-javascript-syntax, vim-jquery - better highlighting
+ * TagHighlight - highlights class names and method names
  * vim-coffeescript - support for coffeescript, highlighting
  * vim-stylus - support for stylus css language
  * vim-bundler - work with bundled gems
@@ -409,7 +393,10 @@ If you omit the key combo, you'll get a list of all the maps. You can do the sam
  * vim-textobj-entire - gives you `e` for entire document. so vae (visual around entire document), and etc
  * vim-textobj-rubysymbol - gives you `:` textobj. so va: to select a ruby symbol. da: to delete a symbol..etc
  * vim-textobj-function - gives you `f` textobj. so vaf to select a function
+ * vim-textobj-function-javascript - same as above, but for javascript functions
+ * vim-textobj-underscore - gives you `_` textobj. So vi_ selects what's inside a pair of underscores
  * next-textobject - from Steve Losh, ability to use `n` such as vinb (visual inside (n)ext set of parens)
+ * textobj-word-column - gives you `c` (word) and `C` (WORD) for handling columns/blocks.
 
 #### Utils
 
@@ -417,7 +404,7 @@ If you omit the key combo, you'll get a list of all the maps. You can do the sam
  * tabularize - align code effortlessly by using :Tabularize /[character] to align by a character, or try the keymaps
  * yankring - effortless sanity for pasting. every time you yank something it goes into a buffer. after hitting p to paste, use ctrl-p or ctrl-n to cycle through the paste options. great for when you accidentally overwrite your yank with a delete.
  * surround - super easy quote and tag manipulation - ysiw" - sourround inner word with quotes. ci"' - change inner double quotes to single quotes, etc
- * greplace - use :Gsearch to find across many files, replace inside the changes, then :Greplace to do a replace across all matches
+ * greplace - use :Gsearch to find across many files, replace inside the changes, then :Greplace to do a replace across all matches - made lightning fast with Silver Searcher
  * ConqueTerm - embedded fully colorful shell inside your vim
  * vim-ruby-conque - helpers to run ruby,rspec,rake within ConqueTerm
  * vim-markdown-preview - :Mm to view your README.md as html
@@ -429,10 +416,10 @@ If you omit the key combo, you'll get a list of all the maps. You can do the sam
  * color_highlight - use :ColorCodes to see hex colors highlighted
  * change-inside-surroundings - change content inside delimiters like quotes/brackets
  * Specky - used for color highlighting rspec correctly even if specs live outside of spec/ (rails.vim doesn't handle this)
+ * Ag - use :Ag to search across multiple files. Faster than Grep and Ack.
 
 #### General enhancements that don't add new commands
 
- * Arpeggio - allows you to define key-chord combinations
  * IndexedSearch - when you do searches will show you "Match 2 of 4" in the status line
  * delimitMate - automatically closes quotes
  * SearchComplete - tab completion in the / search window
@@ -453,15 +440,17 @@ If you didn't have janus before, it is recommended to just put it in `~/.yadr/vi
 
 ### Adding your own vim plugins
 
-YADR comes with a dead simple plugin manager that just uses git submodules, without any fancy config files.
+YADR comes with a dead simple plugin manager that just uses vundles and submodules, without any fancy config files.
+
+Add a plugin
 
     yav -u https://github.com/airblade/vim-rooter
 
-Delete a plugin (Coming Soon)
+Delete a plugin 
 
-   ydv -p airblade-vim-rooter
+    ydv -u airblade/vim-rooter
 
-The aliases (yav=yadr vim-add-plugin) and (yuv=yadr vim-update-all-plugins) live in the aliases file.
+The aliases (yav=yadr vim-add-plugin), (ydp=yadr vim-delete-plugin) and (yuv=yadr vim-update-all-plugins) live in the aliases file.
 You can then commit the change. It's good to have your own fork of this project to do that.
 
 
@@ -510,9 +499,12 @@ Please explore these people's work.
 
 ### Contributors
 
- * Initial Version: @skwp
- * Cleanup, auto installer: @kylewest
- * Switch from oh-my-zsh to Presto: @JeanMertz
+Yadr is made possible by many awesome people, too many to list :) But here are a few of the bigger contributors and core committers.
+
+ * Initial Version: @[skwp](https://github.com/skwp)
+ * Cleanup, auto installer: @[kylewest](https://github.com/kylewest)
+ * Switch from oh-my-zsh to Presto: @[JeanMertz](https://github.com/JeanMertz)
+ * Vundle migration: @[duhanebel](https://github.com/duhanebel)
 
 
 ### For more tips and tricks

@@ -27,6 +27,9 @@ defaults write NSGlobalDomain NSTextShowsControlCharacters -bool true
 # Disable opening and closing window animations
 defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
 
+# Disable Mission Control Animations
+defaults write com.apple.dock expose-animation-duration -int 0
+
 # Increase window resize speed for Cocoa applications
 defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
 
@@ -230,6 +233,9 @@ defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
 # Disable local Time Machine backups
 # hash tmutil &> /dev/null && sudo tmutil disablelocal
+
+# Disable Swipe controls for Google Chrome
+defaults write com.google.Chrome.plist AppleEnableSwipeNavigateWithScrolls -bool FALSE
 
 # # Remove Dropbox’s green checkmark icons in Finder
 # file=/Applications/Dropbox.app/Contents/Resources/check.icns

@@ -8,7 +8,7 @@ let g:ctrlp_by_filename = 1
 " We don't want to use Ctrl-p as the mapping because
 " it interferes with YankRing (paste, then hit ctrl-p)
 let g:ctrlp_map = ',t'
-nnoremap <silent> ,t :CtrlPMixed<CR>
+nnoremap <silent> ,t :CtrlP<CR>
 
 " Additional mapping for buffer search
 nnoremap <silent> ,b :CloseSingleConque<CR>:CtrlPBuffer<cr>
@@ -34,8 +34,6 @@ map ,jV :CloseSingleConque<CR>:CtrlP vendor<CR>
 map ,jF :CloseSingleConque<CR>:CtrlP factories<CR>
 map ,jT :CloseSingleConque<CR>:CtrlP test<CR>
 
-"Cmd-(m)ethod - jump to a method (tag in current file)
-map ,m :CloseSingleConque<CR>:CtrlPBufTag<CR>
-
-"Ctrl-(M)ethod - jump to a method (tag in all files)
-map ,M :CloseSingleConque<CR>:CtrlPBufTagAll<CR>
+"Cmd-Shift-(M)ethod - jump to a method (tag in current file)
+"Ctrl-m is not good - it overrides behavior of Enter
+nnoremap <silent> <D-M> :CloseSingleConque<CR>:CtrlPBufTag<CR>

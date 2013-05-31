@@ -15,6 +15,7 @@ function prompt_kylewest_precmd {
 
   # Get Git repository information.
   if (( $+functions[git-info] )); then
+    git-info on
     git-info
   fi
 
