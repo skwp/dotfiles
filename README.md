@@ -217,6 +217,10 @@ If you omit the key combo, you'll get a list of all the maps. You can do the sam
  * `,lj` - show buffers (LustyJuggler buffer search), just type to fuzzy match a buffer name
  * `,lf` - file system browser
 
+#### BufferExplorer
+
+ * `<Tab>` - list buffers (BufferExplorer), use `/search<CR>` for quick jump.
+
 #### Rails
 
  * `Cmd-Shift-R` to use vim-ruby-conque to run a spec file. `Cmd-Shift-L` to run from a line (individual it block), `,Cmd-Shift-R` to rerun the last run command (great for re-running specs)
