@@ -408,7 +408,8 @@ If you omit the key combo, you'll get a list of all the maps. You can do the sam
  * tabularize - align code effortlessly by using :Tabularize /[character] to align by a character, or try the keymaps
  * yankring - effortless sanity for pasting. every time you yank something it goes into a buffer. after hitting p to paste, use ctrl-p or ctrl-n to cycle through the paste options. great for when you accidentally overwrite your yank with a delete.
  * surround - super easy quote and tag manipulation - ysiw" - sourround inner word with quotes. ci"' - change inner double quotes to single quotes, etc
- * greplace - use :Gsearch to find across many files, replace inside the changes, then :Greplace to do a replace across all matches - made lightning fast with Silver Searcher
+ * greplace - use :Gsearch to find across many files, replace inside the changes, then :Greplace to do a replace across all matches - made lightning fast with Silver Searcher. If it's not fast enough check `qargs`.
+ * qargs - replacing in many files? use `:Ag` to find across many files, then do `:Qargs | Argdo %s/some/hello/g` to apply the replacement to each file in the list.
  * ConqueTerm - embedded fully colorful shell inside your vim
  * vim-ruby-conque - helpers to run ruby,rspec,rake within ConqueTerm
  * vim-markdown-preview - :Mm to view your README.md as html
