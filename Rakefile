@@ -49,7 +49,7 @@ end
 
 task :submodule_init do
   unless ENV["SKIP_SUBMODULES"]
-    run %{ git submodule init }
+    run %{ git submodule update --init --recursive }
   end
 end
 
@@ -62,7 +62,7 @@ task :submodules do
 
     run %{
       cd $HOME/.yadr
-      git submodule update --recursive
+      git submodule foreach 'git fetch origin; git checkout master; git reset --hard origin/master; git submodule update --recursive; git clean -df'
       git clean -df
     }
     puts
