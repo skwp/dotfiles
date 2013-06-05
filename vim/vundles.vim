@@ -71,6 +71,7 @@ Bundle "tpope/vim-bundler"
 Bundle "vim-scripts/IndexedSearch"
 Bundle "vim-scripts/camelcasemotion.git"
 Bundle "vim-scripts/matchit.zip.git"
+Bundle "terryma/vim-multiple-cursors"
 
 " General vim improvements
 Bundle "MarcWeber/vim-addon-mw-utils.git"
