@@ -352,6 +352,7 @@ If you omit the key combo, you'll get a list of all the maps. You can do the sam
  * TagBar - hit ,T to see a list of methods in a class (uses ctags)
  * CtrlP - ,t to find a file
  * Visual-star-search - make the * (star) search in visual mode behave like expected: searching for the whole selection instead of just the word under the cursor.
+ * accelerated-smooth-scroll - Vim plugin for accelerated smooth scroll (mapping to `<C-D>/<C-U>`, `<C-F>/<C-B>`)
 
 #### Git
 

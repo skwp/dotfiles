@@ -125,6 +125,7 @@ Bundle "slim-template/vim-slim.git"
 Bundle "bogado/file-line.git"
 Bundle "tpope/vim-rvm.git"
 Bundle "nelstrom/vim-visual-star-search"
+Bundle "yonchu/accelerated-smooth-scroll"
 
 " Customization
 " The plugins listed in ~/.vim/.vundles.local will be added here to
