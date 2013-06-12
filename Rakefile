@@ -143,8 +143,8 @@ def install_homebrew
   puts
   puts "======================================================"
   puts "Updating Homebrew."
-  run %{brew update}
   puts "======================================================"
+  run %{brew update}
   puts
   puts
   puts "======================================================"
