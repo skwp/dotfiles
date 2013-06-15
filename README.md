@@ -501,11 +501,11 @@ Please explore these people's work.
 
 Yadr is made possible by many awesome people, too many to list :) But here are a few of the bigger contributors and core committers.
 
- * Initial Version: @skwp
- * Cleanup, auto installer: @kylewest
- * Switch from oh-my-zsh to Presto: @JeanMertz
- * Vundle migration: @duhanebel
- * NeoBundle migration: @lfilho
+ * Initial Version: @[skwp](https://github.com/skwp)
+ * Cleanup, auto installer: @[kylewest](https://github.com/kylewest)
+ * Switch from oh-my-zsh to Presto: @[JeanMertz](https://github.com/JeanMertz)
+ * Vundle migration: @[duhanebel](https://github.com/duhanebel)
+ * NeoBundle migration: @[lfilho](https://github.com/lfilho)
 
 
 ### For more tips and tricks

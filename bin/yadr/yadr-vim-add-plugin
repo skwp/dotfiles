@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# 
 require File.join(File.dirname(__FILE__), 'default_libs')
 require File.join(File.dirname(__FILE__), 'neobundle')
 
@@ -21,6 +22,7 @@ GitStyleBinary.command do
     repo=command.opts[:url]
     puts "Adding \"#{repo}\" to the plugin list"
     bundle_path=repo.gsub("https://github.com/", "")
+    bundle_path=repo.gsub(/http.?:\/\/github\.com\//, "")
     NeoBundle::add_plugin_to_neobundle repo
     NeoBundle::update_neobundle
   end
