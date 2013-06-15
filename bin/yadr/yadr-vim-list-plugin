@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 require File.join(File.dirname(__FILE__), 'default_libs')
-require File.join(File.dirname(__FILE__), 'vundle')
+require File.join(File.dirname(__FILE__), 'neobundle')
 
 GitStyleBinary.command do
   version "yadr-list-vim-plugin 1.0"
@@ -13,7 +13,7 @@ GitStyleBinary.command do
   run do |command|
     puts "Currently configured plugins:" 
     i=1
-    Vundle::vundle_list.each do |plugin|
+    NeoBundle::neobundle_list.each do |plugin|
       puts "#{i}. #{plugin}"
       i=i+1
     end
