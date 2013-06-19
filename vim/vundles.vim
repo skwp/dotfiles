@@ -27,6 +27,7 @@ Bundle "tpope/vim-rake.git"
 Bundle "tpope/vim-rvm.git"
 Bundle "vim-ruby/vim-ruby.git"
 Bundle "vim-scripts/Specky.git"
+Bundle "ck3g/vim-change-hash-syntax"
 
 " Other languages
 Bundle "briancollins/vim-jst"
