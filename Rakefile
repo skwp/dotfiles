@@ -62,7 +62,7 @@ task :submodules do
 
     run %{
       cd $HOME/.yadr
-      git submodule foreach 'git fetch origin; git checkout master; git reset --hard origin/master; git submodule update --recursive; git clean -df'
+      git submodule update --recursive
       git clean -df
     }
     puts
@@ -139,6 +139,12 @@ def install_homebrew
     run %{ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"}
   end
 
+  puts
+  puts
+  puts "======================================================"
+  puts "Updating Homebrew."
+  puts "======================================================"
+  run %{brew update}
   puts
   puts
   puts "======================================================"
