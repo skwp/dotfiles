@@ -100,6 +100,7 @@ Bundle "vim-scripts/AutoTag.git"
 Bundle "vim-scripts/lastpos.vim"
 Bundle "vim-scripts/sudo.vim"
 Bundle "xsunsmile/showmarks.git"
+Bundle "terryma/vim-multiple-cursors"
 
 " Text objects
 Bundle "austintaylor/vim-indentobject"
