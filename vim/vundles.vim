@@ -34,7 +34,6 @@ Bundle "briancollins/vim-jst"
 Bundle "pangloss/vim-javascript"
 
 " Html, Xml, Css, Markdown...
-Bundle "aaronjensen/vim-sass-status.git"
 Bundle "claco/jasmine.vim"
 Bundle "digitaltoad/vim-jade.git"
 Bundle "groenewege/vim-less.git"
