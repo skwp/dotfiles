@@ -125,7 +125,6 @@ Make sure you follow the naming convention of `prompt_[name]_setup`
 touch ~/.zsh.prompts/prompt_mytheme_setup
 ```
 
-Check out ~/.yadr/zsh/prezto-themes/prompt_skwp_setup for an example of how to write a prompt.
 See also the [Prezto](https://github.com/sorin-ionescu/prezto) project for more info on themes.
 
 ### Customizing ZSH & Picking a theme
@@ -135,10 +134,10 @@ In these directories, you can place files to customize things that load before a
 
 For example, to override the theme, you can do something like this:
 ```
-echo "prompt skwp" > ~/.zsh.after/prompt.zsh
+echo "prompt yourprompt" > ~/.zsh.after/prompt.zsh
 ```
 
-Next time you load your shell, this file will be read and your prompt will be the skwp prompt. Use `prompt -l` to see the available prompts.
+Next time you load your shell, this file will be read and your prompt will be the youprompt prompt. Use `prompt -l` to see the available prompts.
 
 ### Included ZSH Customizations
 
