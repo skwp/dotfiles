@@ -411,6 +411,7 @@ If you omit the key combo, you'll get a list of all the maps. You can do the sam
  * change-inside-surroundings - change content inside delimiters like quotes/brackets
  * Specky - used for color highlighting rspec correctly even if specs live outside of spec/ (rails.vim doesn't handle this)
  * Ag - use :Ag to search across multiple files. Faster than Grep and Ack.
+ * vim-session: use `:SaveSession` and `:OpenSession` to come back to your saved window layout
 
 #### General enhancements that don't add new commands
 
