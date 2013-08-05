@@ -14,6 +14,9 @@ nnoremap ,ow "_diwhp
 
 "make Y consistent with C and D
 nnoremap Y y$
+function! YRRunAfterMaps()
+  nnoremap Y   :<C-U>YRYankCount 'y$'<CR>
+endfunction
 
 " ========================================
 " RSI Prevention - keyboard remaps
@@ -61,6 +64,8 @@ map ,} ysiw}
 map ,{ ysiw{
 vmap ,} c{ <C-R>" }<ESC>
 vmap ,{ c{<C-R>"}<ESC>
+
+map ,` ysiw`
 
 " gary bernhardt's hashrocket
 imap <c-l> <space>=><space>

@@ -34,7 +34,6 @@ Bundle "briancollins/vim-jst"
 Bundle "pangloss/vim-javascript"
 
 " Html, Xml, Css, Markdown...
-Bundle "aaronjensen/vim-sass-status.git"
 Bundle "claco/jasmine.vim"
 Bundle "digitaltoad/vim-jade.git"
 Bundle "groenewege/vim-less.git"
@@ -100,6 +99,10 @@ Bundle "vim-scripts/AutoTag.git"
 Bundle "vim-scripts/lastpos.vim"
 Bundle "vim-scripts/sudo.vim"
 Bundle "xsunsmile/showmarks.git"
+Bundle "terryma/vim-multiple-cursors"
+"vim-misc is required for vim-session
+Bundle "xolox/vim-misc"
+Bundle "xolox/vim-session"
 
 " Text objects
 Bundle "austintaylor/vim-indentobject"
@@ -118,12 +121,9 @@ Bundle "vim-scripts/argtextobj.vim"
 " Cosmetics, color scheme, Powerline...
 Bundle "chrisbra/color_highlight.git"
 Bundle "skwp/vim-colors-solarized"
-Bundle "skwp/vim-powerline.git"
+Bundle "bling/vim-airline.git"
 Bundle "vim-scripts/TagHighlight.git"
-Bundle "itspriddle/vim-jquery.git"
 Bundle "bogado/file-line.git"
-Bundle "tpope/vim-rvm.git"
-Bundle "nelstrom/vim-visual-star-search"
 
 " Customization
 " The plugins listed in ~/.vim/.vundles.local will be added here to
