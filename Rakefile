@@ -23,6 +23,8 @@ task :install => [:submodule_init, :submodules] do
   if want_to_install?('vim configuration (highly recommended)')
     file_operation(Dir.glob('{vim,vimrc}'))
     Rake::Task["install_vundle"].execute
+    has_ycm = File.exists?(File.join(ENV['HOME'], ".vim", 'bundle', 'YouCompleteMe'))
+    Rake::Task["compile_ycm"].execute unless has_ycm
   end
 
   Rake::Task["install_prezto"].execute
@@ -108,6 +110,14 @@ task :install_vundle do
   end
 
   Vundle::update_vundle
+end
+
+desc "compile YouCompleteMe"
+task :compile_ycm do
+  run %{
+    cd ~/.vim/bundle/YouCompleteMe
+    ./install.sh --clang-completer
+  }
 end
 
 task :default => 'install'
