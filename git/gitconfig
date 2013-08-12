@@ -47,13 +47,15 @@
 
   # log
   l = log --graph --date=short
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
   changes = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\" --name-status
   short = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\"
   simple = log --pretty=format:\" * %s\"
   shortnocolor = log --pretty=format:\"%h %cr %cn %s\"
 
   # pull
-  pl = pull                         # pull
+  pl  = pull                        # pull
+  plr = pull --rebase               # pull with rebase
 
   # push
   ps = push                         # push
@@ -61,6 +63,10 @@
   # rebase
   rc = rebase --continue            # continue rebase
   rs = rebase --skip                # skip rebase
+  ra = rebase --abort                # abort rebase
+  
+  # merge
+  ra = merge --abort                # abort rebase
 
   # remote
   r = remote -v                     # show remotes (verbose)
@@ -89,6 +95,41 @@
   svnr = svn rebase
   svnd = svn dcommit
   svnl = svn log --oneline --show-commit
+
+  #period
+  ld = log -p --since="1am"
+  l1 = log -p --since=1.day.ago
+  l2 = log -p --since=2.days.ago
+  l3 = log -p --since=3.days.ago
+  l4 = log -p --since=4.days.ago
+  l5 = log -p --since=5.days.ago
+  l6 = log -p --since=6.days.ago
+  lw = log -p --since=1.week.ago
+  l2w = log -p --since=2.weeks.ago
+  l3w = log -p --since=3.weeks.ago
+  lm = log -p --since=1.month.ago
+  wd = whatchanged --since="1am"
+  w1 = whatchanged --since=1.day.ago
+  w2 = whatchanged --since=2.days.ago
+  w3 = whatchanged --since=3.days.ago
+  w4 = whatchanged --since=4.days.ago
+  w5 = whatchanged --since=5.days.ago
+  w6 = whatchanged --since=6.days.ago
+  ww = whatchanged --since=1.week.ago
+  w2w = whatchanged --since=2.weeks.ago
+  w3w = whatchanged --since=3.weeks.ago
+  wm = whatchanged --since=1.month.ago
+  dd = diff --ignore-space-change 'HEAD@{1am}' HEAD
+  d1 = diff --ignore-space-change 'HEAD@{1.day.ago}' HEAD
+  d2 = diff --ignore-space-change 'HEAD@{2.days.ago}' HEAD
+  d3 = diff --ignore-space-change 'HEAD@{3.days.ago}' HEAD
+  d4 = diff --ignore-space-change 'HEAD@{4.days.ago}' HEAD
+  d5 = diff --ignore-space-change 'HEAD@{5.days.ago}' HEAD
+  d6 = diff --ignore-space-change 'HEAD@{6.days.ago}' HEAD
+  dw = diff --ignore-space-change 'HEAD@{1.week.ago}' HEAD
+  d2w = diff --ignore-space-change 'HEAD@{2.weeks.ago}' HEAD
+  d3w = diff --ignore-space-change 'HEAD@{3.weeks.ago}' HEAD
+  dm = diff --ignore-space-change 'HEAD@{1.month.ago}' HEAD
 [format]
   pretty = format:%C(blue)%ad%Creset %C(yellow)%h%C(green)%d%Creset %C(blue)%s %C(magenta) [%an]%Creset
 [mergetool]
