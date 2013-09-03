@@ -20,6 +20,7 @@ nnoremap <silent> <D-P> :ClearCtrlPCache<cr>
 " Idea from : http://www.charlietanksley.net/blog/blog/2011/10/18/vim-navigation-with-lustyexplorer-and-lustyjuggler/
 " Open CtrlP starting from a particular path, making it much
 " more likely to find the correct thing first. mnemonic 'jump to [something]'
+map ,ja :CloseSingleConque<CR>:CtrlP app/assets<CR>
 map ,jm :CloseSingleConque<CR>:CtrlP app/models<CR>
 map ,jc :CloseSingleConque<CR>:CtrlP app/controllers<CR>
 map ,jv :CloseSingleConque<CR>:CtrlP app/views<CR>
