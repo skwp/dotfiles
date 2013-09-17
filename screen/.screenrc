@@ -1,0 +1,22 @@
+escape ^bb
+hardstatus alwayslastline
+hardstatus string "%{= B}:%{= b}: %{= r}[ %{G}%H%{= r} ] %= %{=b b}%-w%{=rb db}%>%n %t%{-}%+w %=%{= r}[ %{G}%c %{M}%D %m-%d %{r}] %{= b}:%{B}:"
+terminfo xterm*|rxvt ti@:te@
+terminfo rxvt-unicode 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+terminfo xterm* 'XT:hs:ts=\E]2;:fs=\007:ds=\E]2;screen\007'
+autodetach on       # default: on
+altscreen on
+defscrollback 1000
+msgwait 5
+msgminwait 2
+pow_detach_msg "Screen session of \$LOGNAME \$:cr:\$:nl:ended."
+startup_message off # default: on
+vbell off
+vbell_msg "   Wuff  ----  Wuff!!  "
+nethack on
+defutf8 on
+#shell /bin/zsh
+bindkey -k F1 prev
+bindkey -k F2 next
+screen
+screen
