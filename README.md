@@ -26,13 +26,13 @@ from scouring other people's dotfile repos, blogs, and projects.
   * Easy to use plugin architecture, no config files to edit.
   * Pick one tool and use it everywhere: vim-ize everything
   * Beautiful, easy to read and small vimrc**
-  * No key overrides or custom hackery in vimrc, everything in well factored snippets in .vim/plugin/settings**
+  * No key overrides or custom hackery in vimrc, everything in well factored snippets in .vim/settings**
   * Much larger list of vim plugins than Janus, specifically geared to Ruby/Rails/Git development.
   * Optimized support for Solarized color scheme only, everything guaranteed to Look Good. Your eyes will thank you.
   * All plugins tested with Solarized and custom color maps provided where needed to ensure your eyes will not bleed.
   * No configuration file to maintain. YADR uses tiny ruby scripts to wrap git submodule maintenance.
   * Much cleaner vimrc that keps keymaps isolated to a plugin file (not in the main vimrc).
-  * All keymaps and customization in small, easy to maintain files under .vim/plugin/settings
+  * All keymaps and customization in small, easy to maintain files under .vim/settings
   * More than just vim plugins - great shell aliases, osx, and irb/pry tweaks to make you more productive.
 
 ## Screenshot
@@ -192,7 +192,7 @@ if you don't like them, or make your own.
 
 ### Vim Keymaps
 
-The files in vim/plugin/settings are customizations stored on a per-plugin
+The files in vim/settings are customizations stored on a per-plugin
 basis. The main keymap is available in skwp-keymap.vim, but some of the vim
 files contain key mappings as well (TODO: probably will move them out to skwp-keymap.vim)
 
@@ -220,7 +220,7 @@ If you omit the key combo, you'll get a list of all the maps. You can do the sam
 
 #### Surround.vim customizations
 
- * in plugin/settings/surround.vim (this folder contains all my customizations)
+ * in settings/surround.vim (this folder contains all my customizations)
  * the `#` key now surrounds with `#{}`, so `ysaw#` (surround around word) `#{foo}`
  * `=` surrounds with `<%= erb tag %>`; `-` for `<% this %>`. So, `yss=` or `yss-` to wrap code
 
@@ -322,7 +322,7 @@ If you omit the key combo, you'll get a list of all the maps. You can do the sam
 
 #### Ruby Debugger
 
- * Visual ruby debugger included. All keys remapped to `,d(something)` such as `,dn` for Debugger Next or `,dv` for Debugger Variables. Use `:help ruby-debugger` for more info, but keep in mind the new key maps (see vim/plugin/settings/vim-ruby-debugger.vim)
+ * Visual ruby debugger included. All keys remapped to `,d(something)` such as `,dn` for Debugger Next or `,dv` for Debugger Variables. Use `:help ruby-debugger` for more info, but keep in mind the new key maps (see vim/settings/vim-ruby-debugger.vim)
 
 #### Comments
 
