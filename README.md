@@ -281,7 +281,6 @@ If you omit the key combo, you'll get a list of all the maps. You can do the sam
 
  * `Ctrl-h,l,j,k` - to move left, right, down, up between windows
  * `Q` - Intelligent Window Killer. Close window `wincmd c` if there are multiple windows to same buffer, or kill the buffer `bwipeout` if this is the last window into it.
- * Cmd-Arrow keys - resize windows (up/down for vertical, left=make smaller horizontally, right=make bigger horizontally)
 
 #### Splits
 
