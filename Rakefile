@@ -150,7 +150,7 @@ def install_homebrew
   puts "======================================================"
   puts "Installing Homebrew packages...There may be some warnings."
   puts "======================================================"
-  run %{brew install zsh ctags git hub tmux reattach-to-user-namespace the_silver_searcher}
+  run %{brew install zsh ctags fortune git hub tmux reattach-to-user-namespace the_silver_searcher}
   puts
   puts
 end
