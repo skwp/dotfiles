@@ -41,6 +41,7 @@ Bundle "itspriddle/vim-jquery.git"
 Bundle "jtratner/vim-flavored-markdown.git"
 Bundle "kchmck/vim-coffee-script"
 Bundle "nelstrom/vim-markdown-preview"
+Bundle 'tristen/vim-sparkup.git'
 Bundle "skwp/vim-html-escape"
 Bundle "slim-template/vim-slim.git"
 Bundle "timcharper/textile.vim.git"
