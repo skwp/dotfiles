@@ -361,7 +361,6 @@ If you omit the key combo, you'll get a list of all the maps. You can do the sam
 #### Coding
 
  * tComment - gcc to comment a line, gcp to comment blocks, nuff said
- * sparkup - div.foo#bar - hit `ctrl-e`, expands into `<div class="foo" id="bar"/>`, and that's just the beginning
  * rails.vim - syntax highlighting, gf (goto file) enhancements, and lots more. should be required for any rails dev
  * rake.vim - like rails.vim but for non-rails projects. makes `:Rtags` and other commands just work
  * ruby.vim - lots of general enhancements for ruby dev
