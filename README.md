@@ -178,6 +178,11 @@ It is recommended to use this file to set your user info. Alternately, you can s
 
 A .gemrc is included. Never again type `gem install whatever --no-ri --no-rdoc`. `--no-ri --no-rdoc` is done by default.
 
+### Tmux configuration
+
+`tmux.conf` provides some sane defaults for tmux on Mac OS, a powerful status bar and vim keybindings.
+You can customize the configuration in `~/.tmux.conf.user`.
+
 ### Vimization of everything
 
 The provided inputrc and editrc will turn your various command line tools like mysql and irb into vim prompts. There's
