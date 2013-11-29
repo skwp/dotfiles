@@ -1,7 +1,7 @@
-if !has("gui_macvim")
-  set t_Co=256
-  let g:solarized_termcolors=256
-endif
+" if !has("gui_macvim")
+"   set t_Co=256
+"   let g:solarized_termcolors=256
+" endif
 
 hi! link txtBold Identifier
 hi! link zshVariableDef Identifier
