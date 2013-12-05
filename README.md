@@ -23,15 +23,9 @@ from scouring other people's dotfile repos, blogs, and projects.
   * Apple-style philosophy: make everything Just Work and Look Good. Don't worry about too many options.
   * All common commands should be two and three character mnemonic aliases - less keystrokes, RSI reduction
   * Avoid stressful hand motions, e.g. remap Esc to caps lock key, remap underscore to Alt-k in vim, make window management in vim easy.
-  * Easy to use plugin architecture, no config files to edit.
   * Pick one tool and use it everywhere: vim-ize everything
-  * Beautiful, easy to read and small vimrc**
-  * No key overrides or custom hackery in vimrc, everything in well factored snippets in .vim/settings**
   * Much larger list of vim plugins than Janus, specifically geared to Ruby/Rails/Git development.
   * Optimized support for Solarized color scheme only, everything guaranteed to Look Good. Your eyes will thank you.
-  * All plugins tested with Solarized and custom color maps provided where needed to ensure your eyes will not bleed.
-  * No configuration file to maintain. YADR uses tiny ruby scripts to wrap git submodule maintenance.
-  * Much cleaner vimrc that keps keymaps isolated to a plugin file (not in the main vimrc).
   * All keymaps and customization in small, easy to maintain files under .vim/settings
   * More than just vim plugins - great shell aliases, osx, and irb/pry tweaks to make you more productive.
 
@@ -40,8 +34,7 @@ from scouring other people's dotfile repos, blogs, and projects.
 
 # Installation
 
-Installation is automated via `rake` and the `yadr` command. To get
-started please run:
+To get started please run:
 
 ```bash
 sh -c "`curl -fsSL https://raw.github.com/skwp/dotfiles/master/install.sh`"
@@ -53,13 +46,17 @@ about each one, use:
 sh -c "`curl -fsSL https://raw.github.com/skwp/dotfiles/master/install.sh`" -s ask
 ```
 
-# Additional Installation
+# Install iTerm Theme
 
  * [Highly recommended: Install iTerm theme](https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized)
+
+
+# Remap your caps-lock to use vim like it was desgined
+
  * [Highly recommended: Remap caps-lock to escape with PCKeyboardHack](http://pqrs.org/macosx/keyremap4macbook/pckeyboardhack.html)
 
 The escape key is the single most used key in vim.
-Old keyboards used to have Ctrl where caps lock is today. But it's even better if you put escape there.
+Old keyboards used to have Escape where Tab is today. Apple keyboards are the worst with their tiny Esc keys. But all this is fixed by remapping Caps to Escape.
 If you're hitting a small target in the corner, you are slowing yourself down considerably, and probably damaging your hands with repetitive strain injuries.
 
 ### Upgrading
@@ -68,7 +65,7 @@ Upgrading is easy.
 
 ```bash
 cd ~/.yadr
-git pull origin master
+gplr
 rake update
 ```
 
@@ -163,16 +160,17 @@ It is recommended to use this file to set your user info. Alternately, you can s
 
 ### Git Customizations:
 
-  * `git l` - a much more usable git log
-  * `git b` - a list of branches with summary of last commit
+  * `git l` or `gl`- a much more usable git log
+  * `git b` or `gb`- a list of branches with summary of last commit
   * `git r` - a list of remotes with info
-  * `git t` - a list of tags with info
-  * `git nb` - a (n)ew (b)ranch - like checkout -b
-  * `git cp` - cherry-pick -x (showing what was cherrypicked)
+  * `git t` or `gt`- a list of tags with info
+  * `git nb` or `gnb`- a (n)ew (b)ranch - like checkout -b
+  * `git cp` or `gcp`- cherry-pick -x (showing what was cherrypicked)
   * `git changelog` - a nice format for creating changelogs
+  * `git recent-branches` - if you forgot what you've been working on
   * Some sensible default configs, such as improving merge messages, push only pushes the current branch, removing status hints, and using mnemonic prefixes in diff: (i)ndex, (w)ork tree, (c)ommit and (o)bject
   * Slightly improved colors for diff
-  * `git unstage` (remove from index) and `git uncommit` (revert to the time prior to the last commit - dangerous if already pushed) aliases
+  * `git unstage` / `guns` (remove from index) and `git uncommit` / `gunc` (revert to the time prior to the last commit - dangerous if already pushed) aliases
 
 ### RubyGems
 
@@ -221,13 +219,14 @@ If you omit the key combo, you'll get a list of all the maps. You can do the sam
 
  * `Cmd-Shift-R` to use vim-ruby-conque to run a spec file. `Cmd-Shift-L` to run from a line (individual it block), `,Cmd-Shift-R` to rerun the last run command (great for re-running specs)
  * :Rspec1 and :Rspec2 to switch between rspec versions for the vim-ruby-conque runner
- * `,vv` and `,cc` to switch between view and controller
+ * `,vv` and `,cc` to switch between view and controller - these are maps to :Rcontroller and :Rview. Explore the :R<Tab> family of commands for more fun from rails.vim!
 
 #### Surround.vim customizations
 
- * in settings/surround.vim (this folder contains all my customizations)
- * the `#` key now surrounds with `#{}`, so `ysaw#` (surround around word) `#{foo}`
+ * the `#` key now surrounds with `#{}` for ruby string interpolation, so `ysaw#` (surround around word) `#{foo}`
  * `=` surrounds with `<%= erb tag %>`; `-` for `<% this %>`. So, `yss=` or `yss-` to wrap code
+ * Surround any word with any character by using these combos: `,'`, `,"`, `,#` and so on. 
+ * Edit anything inside [brackets], "quotes", 'singles', etc by using Cmd+[the character in question]. So to edit inside [brackets] you use `Cmd-[`
 
 #### Search/Code Navigation
 
