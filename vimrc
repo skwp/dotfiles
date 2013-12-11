@@ -106,3 +106,9 @@ set sidescroll=1
 
 " ================ Custom Settings ========================
 so ~/.yadr/vim/settings.vim
+
+
+" source ~/.vimrc.after if it exists.
+if filereadable(expand("~/.vimrc.after"))
+  source ~/.vimrc.after
+endif
