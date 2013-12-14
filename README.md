@@ -215,8 +215,8 @@ If you omit the key combo, you'll get a list of all the maps. You can do the sam
  * `Ctrl-i` - opposite of Ctrl-O (again, this is standard)
 
 
-#### Rails
-
+#### Rails & Ruby
+ * vim-ruby-refactoring - try `,rem`, `,rel` to extract methods or let statements
  * `Cmd-Shift-R` to use vim-ruby-conque to run a spec file. `Cmd-Shift-L` to run from a line (individual it block), `,Cmd-Shift-R` to rerun the last run command (great for re-running specs)
  * :Rspec1 and :Rspec2 to switch between rspec versions for the vim-ruby-conque runner
  * `,vv` and `,cc` to switch between view and controller - these are maps to :Rcontroller and :Rview. Explore the :R<Tab> family of commands for more fun from rails.vim!
@@ -352,15 +352,15 @@ If you omit the key combo, you'll get a list of all the maps. You can do the sam
 
 #### Git
 
- * fugitive - "a git wrapper so awesome, it should be illegal...". Try Gstatus and hit `-` to toggle files. Git `d` to see a diff. Learn more: http://vimcasts.org/blog/2011/05/the-fugitive-series/
+ * fugitive - "a git wrapper so awesome, it should be illegal...". Try `:Gstatus` and hit `-` to toggle files in and out of the index. Git `d` to see a diff. Use `git mergetool` or `gmt` to launch vim as a mergetool. The left buffer is your branch, the right is the incoming change, and in the middle is the working copy. Move to the left or right and use `dp` to put the change into the middle. Learn more: http://vimcasts.org/blog/2011/05/the-fugitive-series/
  * gitv - use :gitv for a better git log browser
- * GitGrep - much better than the grep provided with fugitive; use :GitGrep or hit K to grep current word
+ * GitGrep - much better than the grep provided with fugitive; use `:GitGrep` or hit `K` to grep current word
 
 #### Colors
 
  * AnsiEsc - inteprets ansi color codes inside log files. great for looking at Rails logs
  * solarized - a color scheme scientifically calibrated for awesomeness (including skwp mods for ShowMarks)
- * Powerline - beautiful vim status bar. Requires patched fonts (installed from fonts/ directory)
+ * Airline - Improved status bar. Requires patched fonts (installed from fonts/ directory)
 
 #### Coding
 
@@ -407,7 +407,6 @@ If you omit the key combo, you'll get a list of all the maps. You can do the sam
  * html-escape - ,he and ,hu to escape and unescape html
  * ruby-debug-ide - not quite working for me, but maybe it will for you. supposedly a graphical debugger you can step through
  * Gundo - visualize your undos - pretty amazing plugin. Hit ,u with my keymappings to trigger it, very user friendly
- * slime - use ctrl-c,ctrl-c to send text to a running irb/pry/console. To start the console, you must use screen with a named session: "screen -S [name] [cmd]", ex: "screen -S pry pry"
  * vim-indent-guides - visual indent guides, off by default
  * color_highlight - use :ColorCodes to see hex colors highlighted
  * change-inside-surroundings - change content inside delimiters like quotes/brackets
