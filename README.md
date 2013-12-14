@@ -26,7 +26,7 @@ from scouring other people's dotfile repos, blogs, and projects.
   * Pick one tool and use it everywhere: vim-ize everything
   * Much larger list of vim plugins than Janus, specifically geared to Ruby/Rails/Git development.
   * Optimized support for Solarized color scheme only, everything guaranteed to Look Good. Your eyes will thank you.
-  * All keymaps and customization in small, easy to maintain files under .vim/settings
+  * All vim keymaps and customizations are in small, easy to maintain files under .vim/settings
   * More than just vim plugins - great shell aliases, osx, and irb/pry tweaks to make you more productive.
 
 ## Screenshot
@@ -99,7 +99,7 @@ After a lifetime of bash, I am now using ZSH as my default shell because of its 
 and autocomplete features (the spelling fixer autocomplete is worth the money alone).
 
 Migrating from bash to zsh is essentially pain free. The zshrc provided here
-restores a few features that I felt was 'broken' including Ctrl-R reverse history search.
+restores a few features that I felt were 'broken' including Ctrl-R reverse history search.
 
 Lots of things I do every day are done with two or three character
 mnemonic aliases. Please feel free to edit them:
@@ -114,7 +114,7 @@ Prezto is included as a submodule.
 
 ### Adding your own ZSH theme
 
-If you want to add your own zsh theme, you can place it into ~/.zsh.prompts and it will automatically be picked up by the prompt loader.
+If you want to add your own zsh theme, you can place it in `~/.zsh.prompts` and it will automatically be picked up by the prompt loader.
 
 Make sure you follow the naming convention of `prompt_[name]_setup`
 
@@ -126,8 +126,8 @@ See also the [Prezto](https://github.com/sorin-ionescu/prezto) project for more 
 
 ### Customizing ZSH & Picking a theme
 
-If you want to customize your zsh experience, yadr provides two hooks via ~/.zsh.after/ and ~/.zsh.before/ directories.
-In these directories, you can place files to customize things that load before and after other zsh customizations that come from ~/.yadr/zsh/*
+If you want to customize your zsh experience, yadr provides two hooks via `~/.zsh.after/` and `~/.zsh.before/` directories.
+In these directories, you can place files to customize things that load before and after other zsh customizations that come from `~/.yadr/zsh/*`
 
 For example, to override the theme, you can do something like this:
 ```
@@ -178,7 +178,7 @@ A .gemrc is included. Never again type `gem install whatever --no-ri --no-rdoc`.
 
 ### Tmux configuration
 
-`tmux.conf` provides some sane defaults for tmux on Mac OS, a powerful status bar and vim keybindings.
+`tmux.conf` provides some sane defaults for tmux on Mac OS like a powerful status bar and vim keybindings.
 You can customize the configuration in `~/.tmux.conf.user`.
 
 ### Vimization of everything
@@ -188,14 +188,14 @@ also an included Ctrl-R reverse history search feature in editrc, very useful in
 
 ### Vim Configuration
 
-The .vimrc is well commented and broken up by settings. I encourage you
+The `.vimrc` is well commented and broken up by settings. I encourage you
 to take a look and learn some of my handy aliases, or comment them out
 if you don't like them, or make your own.
 
 
 ### Vim Keymaps
 
-The files in vim/settings are customizations stored on a per-plugin
+The files in `vim/settings` are customizations stored on a per-plugin
 basis. The main keymap is available in skwp-keymap.vim, but some of the vim
 files contain key mappings as well (TODO: probably will move them out to skwp-keymap.vim)
 
