@@ -66,18 +66,14 @@ Homebrew is _the missing package manager for OSX_. Installed automatically.
 We automatically install a few useful packages including ctags, git, and hub, and the silver searcher ('ag')
 You can install macvim from brew as well, or download it from their website.
 
-### Github Issues: [ghi gem](https://github.com/stephencelis/ghi)
-
-We include the `ghi` command. Try `ghi list` and have fun managing issues from command line!
-
 ### ZSH
 
 Think of Zsh as a more awesome bash without having to learn anything new.
 Automatic spell correction for your commands, syntax highlighting, and more.
 We've also provided lots of enhancements:
 
-* Vim mode and bash style Ctrl-R for reverse history finder
-* Ctrl-x,Ctrl-l to insert output of last command
+* Vim mode and bash style `Ctrl-R` for reverse history finder
+* `Ctrl-x,Ctrl-l` to insert output of last command
 * Fuzzy matching - if you mistype a directory name, tab completion will fix it
 * [fasd](https://github.com/clvv/fasd) integration - hit `z` and partial match for recently used directory. Tab completion enabled.
 * [Prezto - the power behind YADR's zsh](http://github.com/sorin-ionescu/prezto)
@@ -99,13 +95,11 @@ as an actual debugger by installing [pry-nav](https://github.com/nixme/pry-nav).
 
 [Learn more about YADR's pry customizations and how to install](doc/pry.md)
 
-### Git Configuration
+### Git Customizations:
 
-You can customize the standard Git configuration in `~/.gitconfig.user`. Any configuration in this file will override the default configuration.
+YADR will take over your `~/.gitconfig`, so if you want to store your usernames, please put them into `~/.gitconfig.user`
 
 It is recommended to use this file to set your user info. Alternately, you can set the appropriate environment variables in your `~/.secrets`.
-
-### Git Customizations:
 
   * `git l` or `gl`- a much more usable git log
   * `git b` or `gb`- a list of branches with summary of last commit
@@ -132,6 +126,11 @@ You can customize the configuration in `~/.tmux.conf.user`.
 
 The provided inputrc and editrc will turn your various command line tools like mysql and irb into vim prompts. There's
 also an included Ctrl-R reverse history search feature in editrc, very useful in irb, postgres command line, and etc.
+
+### Github Issues: [ghi gem](https://github.com/stephencelis/ghi)
+
+We include the `ghi` command. Try `ghi list` and have fun managing issues from command line!
+
 
 ## Vim - What's included?
 
