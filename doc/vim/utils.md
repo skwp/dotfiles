@@ -11,6 +11,6 @@
 * vim-indent-guides - visual indent guides, off by default
 * color_highlight - use :ColorCodes to see hex colors highlighted
 * change-inside-surroundings - change content inside delimiters like quotes/brackets
-* Specky - used for color highlighting rspec correctly even if specs live outside of spec/ (rails.vim doesn't handle this)
+* rspec.vim - used for color highlighting rspec correctly even if specs live outside of spec/ (rails.vim doesn't handle this)
 * Ag - use :Ag to search across multiple files. Faster than Grep and Ack.
 * vim-session: use `:SaveSession` and `:OpenSession` to come back to your saved window layout
