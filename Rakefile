@@ -21,7 +21,7 @@ task :install => [:submodule_init, :submodules] do
   file_operation(Dir.glob('tmux/*')) if want_to_install?('tmux config')
   file_operation(Dir.glob('vimify/*')) if want_to_install?('vimification of command line tools')
   if want_to_install?('vim configuration (highly recommended)')
-    file_operation(Dir.glob('{vim,vimrc}')) 
+    file_operation(Dir.glob('{vim,vimrc}'))
     Rake::Task["install_vundle"].execute
   end
 
@@ -73,7 +73,7 @@ desc "Performs migration from pathogen to vundle"
 task :vundle_migration do
   puts "======================================================"
   puts "Migrating from pathogen to vundle vim plugin manager. "
-  puts "This will move the old .vim/bundle directory to" 
+  puts "This will move the old .vim/bundle directory to"
   puts ".vim/bundle.old and replacing all your vim plugins with"
   puts "the standard set of plugins. You will then be able to "
   puts "manage your vim's plugin configuration by editing the "
@@ -91,21 +91,19 @@ end
 desc "Runs Vundle installer in a clean vim environment"
 task :install_vundle do
   puts "======================================================"
-  puts "Installing vundle."
+  puts "Installing and updating vundles."
   puts "The installer will now proceed to run BundleInstall."
-  puts "Due to a bug, the installer may report some errors"
-  puts "when installing the plugin 'syntastic'. Fortunately"
-  puts "Syntastic will install and work properly despite the"
-  puts "errors so please just ignore them and let's hope for"
-  puts "an update that fixes the problem!"
   puts "======================================================"
 
   puts ""
-  
-  run %{
-    cd $HOME/.yadr
-    git clone https://github.com/gmarik/vundle.git #{File.join('vim','bundle', 'vundle')}
-  }
+
+  vundle_path = File.join('vim','bundle', 'vundle')
+  unless File.exists?(vundle_path)
+    run %{
+      cd $HOME/.yadr
+      git clone https://github.com/gmarik/vundle.git #{vundle_path}
+    }
+  end
 
   Vundle::update_vundle
 end
@@ -192,7 +190,7 @@ def install_term_theme
   message = "I've found #{profiles.size} #{profiles.size>1 ? 'profiles': 'profile'} on your iTerm2 configuration, which one would you like to apply the Solarized theme to?"
   profiles << 'All'
   selected = ask message, profiles
-  
+
   if selected == 'All'
     (profiles.size-1).times { |idx| apply_theme_to_iterm_profile_idx idx, color_scheme_file }
   else
@@ -223,7 +221,7 @@ def ask(message, values)
     else
       break
     end
-  end 
+  end
   selection = selection.to_i-1
   values[selection]
 end
