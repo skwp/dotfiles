@@ -100,7 +100,7 @@ nnoremap <silent> <C-\> :NERDTreeFind<CR>:vertical res 30<CR>
 
 " ,q to toggle quickfix window (where you have stuff like GitGrep)
 " ,oq to open it back up (rare)
-nmap <silent> ,qc :CloseSingleConque<CR>:cclose<CR>
+nmap <silent> ,qc :cclose<CR>
 nmap <silent> ,qo :copen<CR>
 
 " move up/down quickly by using Cmd-j, Cmd-k
@@ -216,16 +216,6 @@ vmap <D-A> :Tabularize /
 " ============================
 nmap sj :SplitjoinSplit<cr>
 nmap sk :SplitjoinJoin<cr>
-
-" ============================
-" vim-ruby-conque
-" ============================
-" Cmd-Shift-R for RSpec
-nmap <silent> <D-R> :call RunRspecCurrentFileConque()<CR>
-" Cmd-Shift-L for RSpec Current Line
-nmap <silent> <D-L> :call RunRspecCurrentLineConque()<CR>
-" ,Cmd-R for Last conque command
-nmap <silent> ,<D-R> :call RunLastConqueCommand()<CR>
 
 " Get the current highlight group. Useful for then remapping the color
 map ,hi :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")<CR>

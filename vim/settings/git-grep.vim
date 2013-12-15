@@ -1,5 +1,5 @@
 "git grep the current word using K (mnemonic Kurrent)
-nnoremap <silent> K :call CloseSingleConque()<CR>:GitGrep <cword><CR>
+nnoremap <silent> K :GitGrep <cword><CR>
 
 function! GetVisual()
   let reg_save = getreg('"')
@@ -14,7 +14,7 @@ function! GetVisual()
 endfunction
 
 "git grep visual selection
-vnoremap K :call CloseSingleConque()<CR>:<C-U>execute GitGrep(GetVisual())<CR>
+vnoremap K :<C-U>execute GitGrep(GetVisual())<CR>
 
 "git grep current word up to the next exclamation point using ,K
 nnoremap ,K viwf!:<C-U>execute GitGrep(GetVisual())<CR>

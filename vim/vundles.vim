@@ -20,7 +20,7 @@ Bundle "gmarik/vundle"
 
 " Ruby, Rails, Rake...
 Bundle "ecomba/vim-ruby-refactoring"
-Bundle "skwp/vim-ruby-conque"
+Bundle "skwp/vim-spec-finder"
 Bundle "tpope/vim-rails.git"
 Bundle "tpope/vim-rake.git"
 Bundle "tpope/vim-rvm.git"
