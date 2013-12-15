@@ -23,6 +23,12 @@
   * Much larger list of vim plugins than Janus, specifically geared to Ruby/Rails/Git development and keystroke reduction.
   * Optimized support for Solarized color scheme only, everything guaranteed to Look Good. Your eyes will thank you.
 
+## Mailing List
+
+Got questions, concerns, want to hear announcements? Join the [Google Group](https://groups.google.com/forum/#!forum/yadr-users)
+
+Please use GitHub Issues for pull requests or bug reports only. 
+
 ## Screenshot
 
 ![screenshot](http://i.imgur.com/3C1Ze.png)
