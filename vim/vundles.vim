@@ -19,7 +19,6 @@ Bundle "gmarik/vundle"
 " All your bundles here
 
 " Ruby, Rails, Rake...
-Bundle "astashov/vim-ruby-debugger"
 Bundle "ecomba/vim-ruby-refactoring"
 Bundle "skwp/vim-ruby-conque"
 Bundle "tpope/vim-rails.git"
@@ -61,9 +60,7 @@ Bundle "AndrewRadev/splitjoin.vim"
 Bundle "Raimondi/delimitMate"
 Bundle "Shougo/neocomplcache.git"
 Bundle "briandoll/change-inside-surroundings.vim.git"
-Bundle "garbas/vim-snipmate.git"
 Bundle "godlygeek/tabular"
-Bundle "honza/vim-snippets"
 Bundle "nelstrom/vim-visual-star-search"
 Bundle "skwp/vim-easymotion"
 Bundle "tomtom/tcomment_vim.git"
@@ -72,6 +69,11 @@ Bundle "vim-scripts/IndexedSearch"
 Bundle "vim-scripts/camelcasemotion.git"
 Bundle "vim-scripts/matchit.zip.git"
 Bundle "terryma/vim-multiple-cursors"
+
+
+" Tabbable snippets
+Bundle "garbas/vim-snipmate.git"
+Bundle "honza/vim-snippets"
 
 " General vim improvements
 Bundle "MarcWeber/vim-addon-mw-utils.git"
