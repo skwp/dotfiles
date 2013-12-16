@@ -180,6 +180,8 @@ of plugins above to learn more.
  * `,gd` - GitGrep def (greps for 'def [function name]') when cursor is over the function name
  * `,gcp` - GitGrep Current Partial to find references to the current view partial
  * `,gcf` - GitGrep Current File to find references to the current file
+ * `,ag` - Ag - silver searcher. Alternative to GitGrep that is as fast or faster.
+ * `,af` - AgFile - silver searcher for a filename
  * `//` - clear the search
  * `,T` - Tag list (list of methods in a class)
  * `Ctrl-s` - Open related spec in a split. Similar to :A and :AV from rails.vim but is also aware of the fast_spec dir and faster to type
