@@ -166,13 +166,6 @@ of plugins above to learn more.
  * `,rs` and `,rl` to run rspec or a spec line in iTerm (check iTerm window for results)
  * `,ss` and `,sl` for the same using `spring rspec` which makes your Rails specs faster by caching the Rails env (must have spring gem installed)
 
-#### Surround.vim customizations
-
- * the `#` key now surrounds with `#{}` for ruby string interpolation, so `ysaw#` (surround around word) `#{foo}`
- * `=` surrounds with `<%= erb tag %>`; `-` for `<% this %>`. So, `yss=` or `yss-` to wrap code
- * Surround any word with any character by using these combos: `,'`, `,"`, `,#` and so on.
- * Edit anything inside [brackets], "quotes", 'singles', etc by using Cmd+[the character in question]. So to edit inside [brackets] you use `Cmd-[`
-
 #### Search/Code Navigation
 
  * `,f` - instantly Find definition of class (must have exuberant ctags installed)
@@ -213,36 +206,27 @@ of plugins above to learn more.
  * `Cmd-Shift-P` - Clear CtrlP cache
  * `:Bopen [gem name]` to navigate to a gem (@tpope/vim-bundler)
 
-#### RSI-reduction
+#### Better keystrokes for common editing commands
 
  * Cmd-Space to autocomplete. Tab for snipmate snippets.
  * `Cmd-k` and `Cmd-d` to type underscores and dashes (use Shift), since they are so common in code but so far away from home row
  * `Ctrl-l` to insert a => hashrocket (thanks @garybernhardt)
  * `,.` to go to last edit location (same as `'.`) because the apostrophe is hard on the pinky
  * `,ci` to change inside any set of quotes/brackets/etc
- * `,#` `,"` `,'` `,]` `,)` `,}` to surround a word in these common wrappers. the # does #{ruby interpolation}. works in visual mode (thanks @cj)
- * `Cmd-'`, `Cmd-"`, `Cmd-]`, `Cmd-)`, etc to change content inside those surrounding marks. You don't have to be inside them.
+ * `,#` `,"` `,'` `,]` `,)` `,}` to surround a word in these common wrappers. the # does #{ruby interpolation}. works in visual mode (thanks @cj). Normally these are done with something like `ysw#`
+ * `Cmd-'`, `Cmd-"`, `Cmd-]`, `Cmd-)`, etc to change content inside those surrounding marks. You don't have to be inside them. 
 
-#### Tab Navigation
+#### Tabs, Windows, Splits
 
- * Use `Cmd-1` thru `Cmd-9` to switch to a specific tab number (like iTerm) - and tabs have been set up to show numbers
-
-#### Window Navigation
-
- * `Ctrl-h,l,j,k` - to move left, right, down, up between windows
+ * Use `Cmd-1` thru `Cmd-9` to switch to a specific tab number (like iTerm and Chrome) - and tabs have been set up to show numbers
+ * `Ctrl-h,l,j,k` - to move left, right, down, up between splits
  * `Q` - Intelligent Window Killer. Close window `wincmd c` if there are multiple windows to same buffer, or kill the buffer `bwipeout` if this is the last window into it.
-
-#### Splits
-
  * `vv` - vertical split (`Ctrl-w,v`)
  * `ss` - horizontal split (`Ctrl-w,s`)
  * `,qo` - open quickfix window (this is where output from GitGrep goes)
  * `,qc` - close quickfix
-
-#### NERDTree Project Tree
-
  * `Cmd-Shift-N` - NERDTree toggle
- * `Ctrl-\` - Show current file tree
+ * `Ctrl-\` - Show current file in NERDTree
 
 #### Utility
 
@@ -271,7 +255,6 @@ of plugins above to learn more.
  * `,gt` - Go Tidy - tidy up your html code (works on a visual selection)
  * `Ctrl-p` after pasting - Use `p` to paste and `Ctrl-p` to cycle through previous pastes. Provided by YankRing.
  * `:Wrap` - wrap long lines (e.g. when editing markdown files).
- * `Cmd-[j, k]` - navigate display lines.
  * `Cmd-/` - toggle comments (usually gcc from tComment)
  * `gcp` (comment a paragraph)
 

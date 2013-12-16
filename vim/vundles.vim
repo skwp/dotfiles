@@ -78,6 +78,7 @@ Bundle "garbas/vim-snipmate.git"
 Bundle "honza/vim-snippets"
 
 " General vim improvements
+Bundle "chrisbra/NrrwRgn"
 Bundle "MarcWeber/vim-addon-mw-utils.git"
 Bundle "bogado/file-line.git"
 Bundle "jistr/vim-nerdtree-tabs.git"
