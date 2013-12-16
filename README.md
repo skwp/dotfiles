@@ -16,7 +16,8 @@
 
 **YADR is an opinionated dotfile repo that will make your heart sing**
 
-  * This is a curated collection of best of breed tools from across the web, from scouring all other top dotfile repos, blogs, and projects.
+  * YADR takes a curated set of the best of the best in plugins, dotfile repos and ties them all together into a cohesive system.
+  * Each plugin is researched and configured to be at its best and to work with other plugins. See `.yadr/vim/settings` and `.yadr/zsh/`for some examples.
   * All common shell commands should be two and three character mnemonic aliases - less keystrokes, RSI reduction
   * Most common vim behaviors have been simplified to bare minimum key strokes.
   * All things are vimized: irb, postres command line, etc.
