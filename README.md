@@ -17,18 +17,17 @@
 **YADR is an opinionated dotfile repo that will make your heart sing**
 
   * YADR takes a curated set of the best of the best in plugins, dotfile repos and ties them all together into a cohesive system.
-  * Each plugin is researched and configured to be at its best and to work with other plugins. See `.yadr/vim/settings` and `.yadr/zsh/`for some examples.
-  * All common shell commands should be two and three character mnemonic aliases - less keystrokes, RSI reduction
-  * Most common vim behaviors have been simplified to bare minimum key strokes.
+  * More than 90 vim plugins, all under one roof, working together.
+  * Each plugin is researched and configured to be at its best and to work with other plugins. Often times, better keymaps are provided. See `.yadr/vim/settings` and `.yadr/zsh/`for some examples.
+  * All common shell and vim commands should be two and three character mnemonic aliases - less keystrokes, RSI reduction
   * All things are vimized: irb, postres command line, etc.
-  * Much larger list of vim plugins than Janus, specifically geared to Ruby/Rails/Git development and keystroke reduction.
   * Optimized support for Solarized color scheme only, everything guaranteed to Look Good. Your eyes will thank you.
 
 ## Mailing List
 
 Got questions, concerns, want to hear announcements? Join the [Google Group](https://groups.google.com/forum/#!forum/yadr-users)
 
-Please use GitHub Issues for pull requests or bug reports only. 
+Please use GitHub Issues for pull requests or bug reports only.
 
 ## Screenshot
 
