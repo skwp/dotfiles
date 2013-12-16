@@ -164,6 +164,8 @@ of plugins above to learn more.
 
  * vim-ruby-refactoring - try `,rem`, `,rel` to extract methods or let statements
  * `,vv` and `,cc` to switch between view and controller - these are maps to :Rcontroller and :Rview. Explore the :R<Tab> family of commands for more fun from rails.vim!
+ * `,rs` and `,rl` to run rspec or a spec line in iTerm (check iTerm window for results)
+ * `,ss` and `,sl` for the same using `spring rspec` which makes your Rails specs faster by caching the Rails env (must have spring gem installed)
 
 #### Surround.vim customizations
 

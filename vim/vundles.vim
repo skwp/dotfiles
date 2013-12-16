@@ -20,12 +20,13 @@ Bundle "gmarik/vundle"
 
 " Ruby, Rails, Rake...
 Bundle "ecomba/vim-ruby-refactoring"
-Bundle "skwp/vim-spec-finder"
 Bundle "tpope/vim-rails.git"
 Bundle "tpope/vim-rake.git"
 Bundle "tpope/vim-rvm.git"
 Bundle "vim-ruby/vim-ruby.git"
 Bundle "Keithbsmiley/rspec.vim"
+Bundle "skwp/vim-iterm-rspec"
+Bundle "skwp/vim-spec-finder"
 
 Bundle "ck3g/vim-change-hash-syntax"
 
