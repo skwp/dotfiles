@@ -14,6 +14,10 @@ endif
 " controller
 let g:ctrlp_by_filename = 1
 
+" Don't jump to already open window. This is annoying if you are maintaining
+" several Tab workspaces and want to open two windows into the same file.
+let g:ctrlp_switch_buffer = 0
+
 " We don't want to use Ctrl-p as the mapping because
 " it interferes with YankRing (paste, then hit ctrl-p)
 let g:ctrlp_map = ',t'
