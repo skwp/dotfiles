@@ -1,34 +1,36 @@
-" Disable AutoComplPop.
-let g:acp_enableAtStartup = 0
-" Use neocomplcache.
-let g:neocomplcache_enable_at_startup = 1
-" Use smartcase.
-let g:neocomplcache_enable_smart_case = 1
-" Set minimum syntax keyword length.
-let g:neocomplcache_min_syntax_length = 3
-let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+" neocomplete
+" Next generation completion framework.
 
-" Enable heavy features.
-" Use camel case completion.
-"let g:neocomplcache_enable_camel_case_completion = 1
-" Use underbar completion.
-"let g:neocomplcache_enable_underbar_completion = 1
+let g:acp_enableAtStartup = 0
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+
+" Default # of completions is 100, that's crazy.
+let g:neocomplete#max_list = 5
+
+" Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+
+" Map standard Ctrl-N completion to Cmd-Space
+inoremap <D-Space> <C-n>
+
+" This makes sure we use neocomplete completefunc instead of
+" the one in rails.vim, otherwise this plugin will crap out.
+" let g:neocomplete#force_overwrite_completefunc = 1
 
 " Define dictionary.
-let g:neocomplcache_dictionary_filetype_lists = {
+let g:neocomplete#sources#dictionary#dictionaries = {
     \ 'default' : '',
     \ 'vimshell' : $HOME.'/.vimshell_hist',
     \ 'scheme' : $HOME.'/.gosh_completions'
     \ }
 
 " Define keyword.
-if !exists('g:neocomplcache_keyword_patterns')
-    let g:neocomplcache_keyword_patterns = {}
+if !exists('g:neocomplete#keyword_patterns')
+    let g:neocomplete#keyword_patterns = {}
 endif
-let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
-
-" Map standard Ctrl-N completion to Cmd-Space
-inoremap <D-Space> <C-n>
+let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
