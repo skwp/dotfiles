@@ -207,6 +207,9 @@ of plugins above to learn more.
  * `,jF` factories
  * `Cmd-Shift-P` - Clear CtrlP cache
  * `:Bopen [gem name]` to navigate to a gem (@tpope/vim-bundler)
+ * `Cmd-Shift-N` - NERDTree toggle
+ * `Ctrl-\` - Show current file in NERDTree
+ * `-` open the nerdtree in the current split, rather than popping out a project drawer (uses vim-vingar)
 
 #### Better keystrokes for common editing commands
 
@@ -227,8 +230,6 @@ of plugins above to learn more.
  * `ss` - horizontal split (`Ctrl-w,s`)
  * `,qo` - open quickfix window (this is where output from GitGrep goes)
  * `,qc` - close quickfix
- * `Cmd-Shift-N` - NERDTree toggle
- * `Ctrl-\` - Show current file in NERDTree
 
 #### Utility
 
