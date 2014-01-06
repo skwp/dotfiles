@@ -1,3 +1,8 @@
+### Jan 5, 2013
+* Switch to lightline instead of airline for status bar. Works better in terminal vim and should be faster.
+* Added investigate.vim (gK for docs)
+* Fix homebrew installation of macvim with lua enabled, and fix deprecated homebrew install.
+
 ### Dec 17, 2013
 
 * Cleanup of README to make it more palatable, focusing on the primary key bindings

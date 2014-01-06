@@ -27,6 +27,7 @@ hi! link CTagsMethod Identifier
 hi! link CTagsSingleton Identifier
 
 hi! link javascriptFuncName Type
+hi! link jsFuncCall jsFuncName
 hi! link javascriptFunction Statement
 hi! link javascriptThis Statement
 hi! link javascriptParens Normal
