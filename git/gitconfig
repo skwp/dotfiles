@@ -125,3 +125,6 @@
   enabled = true
 [include]
   path = .gitconfig.user
+[user]
+	name = Teddy
+	email = teddypku@gmail.com

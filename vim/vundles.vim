@@ -19,21 +19,21 @@ Bundle "gmarik/vundle"
 " All your bundles here
 
 " Ruby, Rails, Rake...
-Bundle "ecomba/vim-ruby-refactoring"
+" Bundle "ecomba/vim-ruby-refactoring"
 Bundle "tpope/vim-rails.git"
 Bundle "tpope/vim-rake.git"
-Bundle "tpope/vim-rvm.git"
+" Bundle "tpope/vim-rvm.git"
 Bundle "vim-ruby/vim-ruby.git"
 Bundle "Keithbsmiley/rspec.vim"
 Bundle "skwp/vim-iterm-rspec"
 Bundle "skwp/vim-spec-finder"
 
-Bundle "ck3g/vim-change-hash-syntax"
+" Bundle "ck3g/vim-change-hash-syntax"
 
 " Other languages
 Bundle "briancollins/vim-jst"
 Bundle "pangloss/vim-javascript"
-Bundle "rodjek/vim-puppet"
+" Bundle "rodjek/vim-puppet"
 Bundle "othree/javascript-libraries-syntax.vim"
 
 " Html, Xml, Css, Markdown...
@@ -45,40 +45,40 @@ Bundle "jtratner/vim-flavored-markdown.git"
 Bundle "kchmck/vim-coffee-script"
 Bundle "nelstrom/vim-markdown-preview"
 Bundle "skwp/vim-html-escape"
-Bundle "slim-template/vim-slim.git"
-Bundle "timcharper/textile.vim.git"
-Bundle "tpope/vim-haml"
-Bundle "wavded/vim-stylus"
+" Bundle "slim-template/vim-slim.git"
+" Bundle "timcharper/textile.vim.git"
+" Bundle "tpope/vim-haml"
+" Bundle "wavded/vim-stylus"
 
 " Git related...
-Bundle "gregsexton/gitv"
-Bundle "mattn/gist-vim"
+" Bundle "gregsexton/gitv"
+" Bundle "mattn/gist-vim"
 Bundle "tpope/vim-fugitive"
 Bundle "tpope/vim-git"
 
 " General text editing improvements...
 Bundle "AndrewRadev/splitjoin.vim"
 Bundle "Raimondi/delimitMate"
-Bundle "Shougo/neocomplcache.git"
-Bundle "briandoll/change-inside-surroundings.vim.git"
+" Bundle "Shougo/neocomplcache.git"
+" Bundle "briandoll/change-inside-surroundings.vim.git"
 Bundle "godlygeek/tabular"
-Bundle "skwp/vim-easymotion"
+" Bundle "skwp/vim-easymotion"
 Bundle "tomtom/tcomment_vim.git"
-Bundle "tpope/vim-bundler"
+" Bundle "tpope/vim-bundler"
 Bundle "vim-scripts/camelcasemotion.git"
-Bundle "vim-scripts/matchit.zip.git"
-Bundle "terryma/vim-multiple-cursors"
+" Bundle "vim-scripts/matchit.zip.git"
+" Bundle "terryma/vim-multiple-cursors"
 
 
 " Tabbable snippets
-Bundle "garbas/vim-snipmate.git"
-Bundle "honza/vim-snippets"
+" Bundle "garbas/vim-snipmate.git"
+" Bundle "honza/vim-snippets"
 
 "File Navigation / Project Management
 Bundle "jistr/vim-nerdtree-tabs.git"
 Bundle "scrooloose/nerdtree.git"
 Bundle "kien/ctrlp.vim"
-Bundle "tpope/vim-vinegar"
+" Bundle "tpope/vim-vinegar"
 
 "Search
 Bundle "rking/ag.vim"
