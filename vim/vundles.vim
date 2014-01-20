@@ -59,7 +59,7 @@ Bundle "tpope/vim-git"
 " General text editing improvements...
 Bundle "AndrewRadev/splitjoin.vim"
 Bundle "Raimondi/delimitMate"
-Bundle "Shougo/neocomplcache.git"
+Bundle "Shougo/neocomplete.git"
 Bundle "briandoll/change-inside-surroundings.vim.git"
 Bundle "godlygeek/tabular"
 Bundle "skwp/vim-easymotion"
