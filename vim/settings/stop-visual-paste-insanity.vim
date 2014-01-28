@@ -6,4 +6,3 @@
 " whatever is in your paste buffer.
 "
 vnoremap p "_dP
-

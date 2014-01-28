@@ -1,5 +1,5 @@
 The files in `vim/settings` are customizations stored on a per-plugin
-basis. The main keymap is available in skwp-keymap.vim, but some of the vim
+basis. The main keymap is available in yadr-keymap.vim, but some of the vim
 files contain key mappings as well.
 
 If you are having unexpected behavior, wondering why a particular key works the way it does,
