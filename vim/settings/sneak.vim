@@ -1,0 +1,1 @@
+nmap <Space> <Plug>SneakForward
