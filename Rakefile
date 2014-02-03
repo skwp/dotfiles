@@ -120,10 +120,6 @@ def run(cmd)
 end
 
 def number_of_cores
-  puts "======================================================"
-  puts "Calculating number of cores"
-  puts "======================================================"
-
   if RUBY_PLATFORM.downcase.include?("darwin")
     cores = run %{ sysctl -n hw.ncpu }
   else
