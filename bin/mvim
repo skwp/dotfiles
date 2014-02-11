@@ -27,7 +27,7 @@ fi
 # MacVim might be installed by HomeBrew
 if [ -d "$HOMEBREW_ROOT" ]
 then
-  if [ -e "$HOMEBREW_ROOT/bin/mvim"]
+  if [ -e "$HOMEBREW_ROOT/bin/mvim" ]
   then
     binary="$HOMEBREW_ROOT/bin/mvim"
   fi
