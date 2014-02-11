@@ -106,3 +106,8 @@ set sidescroll=1
 
 " ================ Custom Settings ========================
 so ~/.yadr/vim/settings.vim
+" TODO: this may not be in the correct place. It is intended to allow overriding <Leader>.
+" source ~/.vimrc.after if it exists.
+if filereadable(expand("~/.vimrc.after"))
+  source ~/.vimrc.after
+endif
