@@ -31,6 +31,8 @@ task :install => [:submodule_init, :submodules] do
 
   install_term_theme if RUBY_PLATFORM.downcase.include?("darwin")
 
+  run_bundle_config
+
   success_msg("installed")
 end
 
@@ -115,6 +117,25 @@ private
 def run(cmd)
   puts "[Running] #{cmd}"
   `#{cmd}` unless ENV['DEBUG']
+end
+
+def number_of_cores
+  if RUBY_PLATFORM.downcase.include?("darwin")
+    cores = run %{ sysctl -n hw.ncpu }
+  else
+    cores = run %{ nproc }
+  end
+  puts
+  cores.to_i
+end
+
+def run_bundle_config
+  bundler_jobs = number_of_cores - 1
+  puts "======================================================"
+  puts "Configuring Bundlers for parallel gem installation"
+  puts "======================================================"
+  run %{ bundle config --global jobs #{bundler_jobs} }
+  puts
 end
 
 def install_rvm_binstubs
