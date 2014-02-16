@@ -113,7 +113,7 @@ It is recommended to use this file to set your user info. Alternately, you can s
   * `git t` or `gt`- a list of tags with info
   * `git nb` or `gnb`- a (n)ew (b)ranch - like checkout -b
   * `git cp` or `gcp`- cherry-pick -x (showing what was cherrypicked)
-  * `git changelog` - a nice format for creating changelogs
+  * `git simple` - a clean format for creating changelogs
   * `git recent-branches` - if you forgot what you've been working on
   * `git unstage` / `guns` (remove from index) and `git uncommit` / `gunc` (revert to the time prior to the last commit - dangerous if already pushed) aliases
   * Some sensible default configs, such as improving merge messages, push only pushes the current branch, removing status hints, and using mnemonic prefixes in diff: (i)ndex, (w)ork tree, (c)ommit and (o)bject
