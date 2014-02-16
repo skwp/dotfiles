@@ -78,7 +78,6 @@ Bundle "honza/vim-snippets"
 Bundle "jistr/vim-nerdtree-tabs.git"
 Bundle "scrooloose/nerdtree.git"
 Bundle "kien/ctrlp.vim"
-Bundle "tpope/vim-vinegar"
 Bundle "justinmk/vim-sneak"
 
 "Search
