@@ -153,16 +153,6 @@ of plugins above to learn more.
  * `Ctrl-o` - Old cursor position - this is a standard mapping but very useful, so included here
  * `Ctrl-i` - opposite of Ctrl-O (again, this is standard)
 
-#### Rails & Ruby
-
- * `,vv` and `,cc` to switch between view and controller - these are maps to :Rcontroller and :Rview. Explore the :R<Tab> family of commands for more fun from rails.vim!
- * `,rs` and `,rl` to run rspec or a spec line in iTerm (check iTerm window for results)
- * `,ss` and `,sl` for the same using `spring rspec` which makes your Rails specs faster by caching the Rails env (must have spring gem installed)
- * vim-ruby-refactoring - try `,rem`, `,rel` to extract methods or let statements
- * `Ctrl-s` - Open related spec in a split. Similar to :A and :AV from rails.vim but is also aware of the fast_spec dir and faster to type
- * `:Bopen [gem name]` to navigate to a gem (@tpope/vim-bundler)
- * `,gcp` - Grep Current Partial to find references to the current view partial
-
 #### Search/Code Navigation
 
  * `,f` - instantly Find definition of class (must have exuberant ctags installed)
@@ -196,12 +186,10 @@ of plugins above to learn more.
 #### Better keystrokes for common editing commands
 
  * Cmd-Space to autocomplete. Tab for snipmate snippets.
- * `Cmd-k` and `Cmd-d` to type underscores and dashes (use Shift), since they are so common in code but so far away from home row
- * `Ctrl-l` to insert a => hashrocket (thanks @garybernhardt)
- * `,.` to go to last edit location (same as `'.`) because the apostrophe is hard on the pinky
- * `,ci` to change inside any set of quotes/brackets/etc
  * `,#` `,"` `,'` `,]` `,)` `,}` to surround a word in these common wrappers. the # does #{ruby interpolation}. works in visual mode (thanks @cj). Normally these are done with something like `ysw#`
  * `Cmd-'`, `Cmd-"`, `Cmd-]`, `Cmd-)`, etc to change content inside those surrounding marks. You don't have to be inside them.
+ * `,.` to go to last edit location (same as `'.`) because the apostrophe is hard on the pinky
+ * `,ci` to change inside any set of quotes/brackets/etc
 
 #### Tabs, Windows, Splits
 
@@ -215,14 +203,13 @@ of plugins above to learn more.
 
 #### Utility
 
- * `,orb` - outer ruby block. takes you one level up from nested blocks (great for rspec)
+ * `Ctrl-p` after pasting - Use `p` to paste and `Ctrl-p` to cycle through previous pastes. Provided by YankRing.
+ * `,yr` - view the yankring - a list of your previous copy commands. also you can paste and hit `ctrl-p` for cycling through previous copy commands
  * `crs`, `crc`, `cru` via abolish.vim, coerce to snake_case, camelCase, and UPPERCASE. There are more `:help abolish`
  * `:NR` - NarrowRgn - use this on a bit of selected text to create a new split with just that text. Do some work on it, then :wq it to get the results back.
  * `,ig` - toggle visual indentation guides
  * `,cf` - Copy Filename of current file (full path) into system (not vi) paste buffer
  * `,cn` - Copy Filename of current file (name only, no path)
- * `,vc` - (Vim Command) copies the command under your cursor and executes it in vim. Great for testing single line changes to vimrc.
- * `,vr` - (Vim Reload) source current file as a vim file
  * `,yw` - yank a word from anywhere within the word (so you don't have to go to the beginning of it)
  * `,ow` - overwrite a word with whatever is in your yank buffer - you can be anywhere on the word. saves having to visually select it
  * `,ocf` - open changed files (stolen from @garybernhardt). open all files with git changes in splits
@@ -234,14 +221,28 @@ of plugins above to learn more.
  * `,hp` - Html Preview (open in Safari)
  * `Cmd-Shift-A` - align things (type a character/expression to align by, works in visual mode or by itself)
  * `:ColorToggle` - turn on #abc123 color highlighting (useful for css)
- * `:gitv` - Git log browsers
+ * `:Gitv` - Git log browsers
  * `,hi` - show current Highlight group. if you don't like the color of something, use this, then use `hi! link [groupname] [anothergroupname]` in your vimrc.after to remap the color. You can see available colors using `:hi`
- * `,yr` - view the yankring - a list of your previous copy commands. also you can paste and hit `ctrl-p` for cycling through previous copy commands
  * `,gt` - Go Tidy - tidy up your html code (works on a visual selection)
- * `Ctrl-p` after pasting - Use `p` to paste and `Ctrl-p` to cycle through previous pastes. Provided by YankRing.
  * `:Wrap` - wrap long lines (e.g. when editing markdown files).
  * `Cmd-/` - toggle comments (usually gcc from tComment)
  * `gcp` (comment a paragraph)
+
+#### Rails & Ruby
+
+ * `,vv` and `,cc` to switch between view and controller - these are maps to :Rcontroller and :Rview. Explore the :R<Tab> family of commands for more fun from rails.vim!
+ * `,rs` and `,rl` to run rspec or a spec line in iTerm (check iTerm window for results)
+ * `,ss` and `,sl` for the same using `spring rspec` which makes your Rails specs faster by caching the Rails env (must have spring gem installed)
+ * vim-ruby-refactoring - try `,rem`, `,rel` to extract methods or let statements
+ * `Ctrl-s` - Open related spec in a split. Similar to :A and :AV from rails.vim but is also aware of the fast_spec dir and faster to type
+ * `:Bopen [gem name]` to navigate to a gem (@tpope/vim-bundler)
+ * `,gcp` - Grep Current Partial to find references to the current view partial
+ * `,orb` - outer ruby block. takes you one level up from nested blocks (great for rspec)
+
+#### Vim Dev
+
+ * `,vc` - (Vim Command) copies the command under your cursor and executes it in vim. Great for testing single line changes to vimrc.
+ * `,vr` - (Vim Reload) source current file as a vim file
 
 ## Extending and overriding YADR settings
 
