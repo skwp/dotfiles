@@ -5,4 +5,4 @@
 * TagBar - hit ,T to see a list of methods in a class (uses ctags)
 * CtrlP - ,t to find a file
 * Visual-star-search - make the * (star) search in visual mode behave like expected: searching for the whole selection instead of just the word under the cursor.
-* GitGrep - much better than the grep provided with fugitive; use `:GitGrep` or hit `K` to grep current word
+* Ag - super fast search by Silver Searcher. hit `K` to grep current word

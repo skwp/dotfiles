@@ -172,15 +172,15 @@ of plugins above to learn more.
  * `,F` - same as `,f` but in a vertical split
  * `,gf` or `Ctrl-f` - same as vim normal gf (go to file), but in a vertical split (works with file.rb:123 line numbers also)
  * `gF` - standard vim mapping, here for completeness (go to file at line number)
- * `K` - GitGrep the current word under the cursor and show results in quickfix window
- * `,K` - GitGrep the current word up to next exclamation point (useful for ruby foo! methods)
+ * `K` - Search the current word under the cursor and show results in quickfix window
+ * `,K` - Grep the current word up to next exclamation point (useful for ruby foo! methods)
  * `Cmd-*` - highlight all occurrences of current word (similar to regular `*` except doesn't move)
  * `,hl` - toggle search highlight on and off
- * `,gg` - GitGrep command line, type between quotes
- * `,gd` - GitGrep def (greps for 'def [function name]') when cursor is over the function name
- * `,gcp` - GitGrep Current Partial to find references to the current view partial
- * `,gcf` - GitGrep Current File to find references to the current file
- * `,ag` - Ag - silver searcher. Alternative to GitGrep that is as fast or faster.
+ * `,gg` - Grep command line, type between quotes
+ * `,gd` - Grep def (greps for 'def [function name]') when cursor is over the function name
+ * `,gcp` - Grep Current Partial to find references to the current view partial
+ * `,gcf` - Grep Current File to find references to the current file
+ * `,ag` - Ag - silver searcher. Alternative to Grep that is as fast or faster.
  * `,af` - AgFile - silver searcher for a filename
  * `//` - clear the search
  * `,T` - Tag list (list of methods in a class)
@@ -229,7 +229,7 @@ of plugins above to learn more.
  * `Q` - Intelligent Window Killer. Close window `wincmd c` if there are multiple windows to same buffer, or kill the buffer `bwipeout` if this is the last window into it.
  * `vv` - vertical split (`Ctrl-w,v`)
  * `ss` - horizontal split (`Ctrl-w,s`)
- * `,qo` - open quickfix window (this is where output from GitGrep goes)
+ * `,qo` - open quickfix window (this is where output from Grep goes)
  * `,qc` - close quickfix
 
 #### Utility

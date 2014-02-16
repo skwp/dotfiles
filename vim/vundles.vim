@@ -83,8 +83,6 @@ Bundle "justinmk/vim-sneak"
 
 "Search
 Bundle "rking/ag.vim"
-Bundle "skwp/vim-git-grep-rails-partial"
-Bundle "tjennings/git-grep-vim"
 Bundle "vim-scripts/IndexedSearch"
 Bundle "nelstrom/vim-visual-star-search"
 
