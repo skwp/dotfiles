@@ -16,12 +16,10 @@
 
 **YADR is an opinionated dotfile repo that will make your heart sing**
 
-  * YADR takes a curated set of the best of the best in plugins, dotfile repos and ties them all together into a cohesive system.
-  * More than 90 vim plugins, all under one roof, working together.
-  * Each plugin is researched and configured to be at its best and to work with other plugins. Often times, better keymaps are provided. See `.yadr/vim/settings` and `.yadr/zsh/`for some examples.
-  * All common shell and vim commands should be two and three character mnemonic aliases - less keystrokes, RSI reduction
+  * The best bits of all the top dotfile repos, vim and zsh plugins curated in one place, into a simple and cohesive way of working.
+  * More than 90 vim plugins, all under one roof, working together, each plugin researched and configured to be at its best, often with better shortcut keys.
+  * Many zsh plugins, starting with the wonderful Prezto base, and adding a few niceties on top.
   * All things are vimized: irb, postres command line, etc.
-  * Optimized support for Solarized color scheme only, everything guaranteed to Look Good. Your eyes will thank you.
 
 ## Mailing List
 
@@ -43,9 +41,12 @@ sh -c "`curl -fsSL https://raw.github.com/skwp/dotfiles/master/install.sh`"
 
 **Note:** YADR will automatically install all of its subcomponents. If you want to be asked
 about each one, use:
+
 ```bash
 sh -c "`curl -fsSL https://raw.github.com/skwp/dotfiles/master/install.sh`" -s ask
 ```
+
+## Wait, you're not done! Do this:
 
 * Install iTerm Solarized Colors - YADR will install Solarized colorschemes into your iTerm. Go to Profiles => Colors => Load Presets to pick Solarized Dark.
 * [Remap caps-lock to escape with PCKeyboardHack](http://pqrs.org/macosx/keyremap4macbook/pckeyboardhack.html) - The escape key is the single most used key in vim.  Old keyboards used to have Escape where Tab is today. Apple keyboards are the worst with their tiny Esc keys. But all this is fixed by remapping Caps to Escape.  If you're hitting a small target in the corner, you are slowing yourself down considerably, and probably damaging your hands with repetitive strain injuries.
@@ -69,8 +70,8 @@ Read on to learn what YADR provides!
 
 Homebrew is _the missing package manager for OSX_. Installed automatically.
 
-We automatically install a few useful packages including ctags, git, and hub, and the silver searcher ('ag')
-You can install macvim from brew as well, or download it from their website.
+We automatically install a few useful packages including ctags, git, macvim, hub, and the silver searcher ('ag')
+Note that our autocomplete plugin requires a MacVim that supports Lua. The installer knows how to install it, but if you had one installed before, you may need to manually remove your old MacVim.
 
 ### ZSH
 
@@ -87,19 +88,12 @@ We've also provided lots of enhancements:
 
 ### Aliases
 
-Lots of things I do every day are done with two or three character
+Lots of things we do every day are done with two or three character
 mnemonic aliases. Please feel free to edit them:
 
     ae # alias edit
     ar # alias reload
 
-
-### [Pry](http://pry.github.com/)
-
-Pry offers a much better out of the box IRB experience with colors, tab completion, and lots of other tricks. You can also use it
-as an actual debugger by installing [pry-nav](https://github.com/nixme/pry-nav).
-
-[Learn more about YADR's pry customizations and how to install](doc/pry.md)
 
 ### Git Customizations:
 
@@ -161,10 +155,13 @@ of plugins above to learn more.
 
 #### Rails & Ruby
 
- * vim-ruby-refactoring - try `,rem`, `,rel` to extract methods or let statements
  * `,vv` and `,cc` to switch between view and controller - these are maps to :Rcontroller and :Rview. Explore the :R<Tab> family of commands for more fun from rails.vim!
  * `,rs` and `,rl` to run rspec or a spec line in iTerm (check iTerm window for results)
  * `,ss` and `,sl` for the same using `spring rspec` which makes your Rails specs faster by caching the Rails env (must have spring gem installed)
+ * vim-ruby-refactoring - try `,rem`, `,rel` to extract methods or let statements
+ * `Ctrl-s` - Open related spec in a split. Similar to :A and :AV from rails.vim but is also aware of the fast_spec dir and faster to type
+ * `:Bopen [gem name]` to navigate to a gem (@tpope/vim-bundler)
+ * `,gcp` - Grep Current Partial to find references to the current view partial
 
 #### Search/Code Navigation
 
@@ -176,41 +173,25 @@ of plugins above to learn more.
  * `,K` - Grep the current word up to next exclamation point (useful for ruby foo! methods)
  * `Cmd-*` - highlight all occurrences of current word (similar to regular `*` except doesn't move)
  * `,hl` - toggle search highlight on and off
- * `,gg` - Grep command line, type between quotes
+ * `,gg` or `,ag` - Grep command line, type between quotes. Uses Ag Silver Searcher.
  * `,gd` - Grep def (greps for 'def [function name]') when cursor is over the function name
- * `,gcp` - Grep Current Partial to find references to the current view partial
  * `,gcf` - Grep Current File to find references to the current file
- * `,ag` - Ag - silver searcher. Alternative to Grep that is as fast or faster.
- * `,af` - AgFile - silver searcher for a filename
  * `//` - clear the search
  * `,T` - Tag list (list of methods in a class)
- * `Ctrl-s` - Open related spec in a split. Similar to :A and :AV from rails.vim but is also aware of the fast_spec dir and faster to type
  * `,,w` (alias `,<esc>`) or `,,b` (alias `,<shift-esc>`) - EasyMotion, a vimperator style tool that highlights jump-points on the screen and lets you type to get there.
  * `,mc` - mark this word for MultiCursor (like sublime). Use `Ctrl-n` (next), `Ctrl-p` (prev), `Ctrl-x`(skip) to add more cursors, then do normal vim things like edit the word.
  * `gK` - Opens the documentation for the word under the cursor.
+ * Spacebar - Sneak - type two characters to move there in a line. Kind of like vim's `f` but more accurate.
 
 #### File Navigation
+
  * `,t` - CtrlP fuzzy file selector
- * `,b` - CtrlP buffer selector
+ * `,b` - CtrlP buffer selector - great for jumping to a file you already have open
  * `Cmd-Shift-M` - jump to method - CtrlP tag search within current buffer
- * `,jm` jump (via CtrlP) to app/models
- * `,jc` app/controllers
- * `,jv` app/views
- * `,jh` app/helpers
- * `,jl` lib
- * `,jp` public
- * `,js` spec
- * `,jf` fast_spec
- * `,jt` test
- * `,jd` db
- * `,jC` config
- * `,jV` vendor
- * `,jF` factories
- * `Cmd-Shift-P` - Clear CtrlP cache
- * `:Bopen [gem name]` to navigate to a gem (@tpope/vim-bundler)
+ * `,jm` jump to models. Other `,j` mappings: `,jc` for controllers, `,jh` for helpers, etc. If you think of a concept and a letter, we've got you covered.
  * `Cmd-Shift-N` - NERDTree toggle
  * `Ctrl-\` - Show current file in NERDTree
- * `-` open the nerdtree in the current split, rather than popping out a project drawer (uses vim-vingar)
+ * `Cmd-Shift-P` - Clear CtrlP cache
 
 #### Better keystrokes for common editing commands
 
@@ -220,7 +201,7 @@ of plugins above to learn more.
  * `,.` to go to last edit location (same as `'.`) because the apostrophe is hard on the pinky
  * `,ci` to change inside any set of quotes/brackets/etc
  * `,#` `,"` `,'` `,]` `,)` `,}` to surround a word in these common wrappers. the # does #{ruby interpolation}. works in visual mode (thanks @cj). Normally these are done with something like `ysw#`
- * `Cmd-'`, `Cmd-"`, `Cmd-]`, `Cmd-)`, etc to change content inside those surrounding marks. You don't have to be inside them. 
+ * `Cmd-'`, `Cmd-"`, `Cmd-]`, `Cmd-)`, etc to change content inside those surrounding marks. You don't have to be inside them.
 
 #### Tabs, Windows, Splits
 
@@ -286,3 +267,12 @@ These hacks are Lion-centric. May not work for other OS'es. My favorite mods inc
   * Ultra fast key repeat rate (now you can scroll super quick using j/k)
   * No disk image verification (downloaded files open quicker)
   * Display the ~/Library folder in finder (hidden in Lion)
+
+
+### [Pry](http://pry.github.com/)
+
+Pry offers a much better out of the box IRB experience with colors, tab completion, and lots of other tricks. You can also use it
+as an actual debugger by installing [pry-nav](https://github.com/nixme/pry-nav).
+
+[Learn more about YADR's pry customizations and how to install](doc/pry.md)
+
