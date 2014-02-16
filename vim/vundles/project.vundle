@@ -1,0 +1,6 @@
+Bundle "jistr/vim-nerdtree-tabs.git"
+Bundle "scrooloose/nerdtree.git"
+Bundle "kien/ctrlp.vim"
+Bundle "majutsushi/tagbar.git"
+Bundle "xolox/vim-misc"
+Bundle "xolox/vim-session"
