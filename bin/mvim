@@ -24,12 +24,21 @@ then
 		fi
 	done
 fi
-if [ -z "$VIM_APP_DIR" ]
+# MacVim might be installed by HomeBrew
+if [ -d "$HOMEBREW_ROOT" ]
 then
-	echo "Sorry, cannot find MacVim.app.  Try setting the VIM_APP_DIR environment variable to the directory containing MacVim.app."
-	exit 1
+  if [ -e "$HOMEBREW_ROOT/bin/mvim" ]
+  then
+    binary="$HOMEBREW_ROOT/bin/mvim"
+  fi
+else
+  if [ -z "$VIM_APP_DIR" ]
+  then
+    echo "Sorry, cannot find MacVim.app.  Try setting the VIM_APP_DIR environment variable to the directory containing MacVim.app."
+    exit 1
+  fi
+  binary="$VIM_APP_DIR/MacVim.app/Contents/MacOS/Vim"
 fi
-binary="$VIM_APP_DIR/MacVim.app/Contents/MacOS/Vim"
 
 # Next, peek at the name used to invoke this script, and set options
 # accordingly.
