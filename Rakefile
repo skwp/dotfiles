@@ -130,6 +130,8 @@ def number_of_cores
 end
 
 def run_bundle_config
+  return unless system("which bundle")
+
   bundler_jobs = number_of_cores - 1
   puts "======================================================"
   puts "Configuring Bundlers for parallel gem installation"
