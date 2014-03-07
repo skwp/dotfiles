@@ -9,13 +9,9 @@ call EasyMotion#InitOptions({
 \ , 'do_mapping'      : 1
 \ , 'grouping'        : 1
 \
-\ , 'hl_group_target' : 'Question'
-\ , 'hl_group_shade'  : 'EasyMotionShade'
+\ , 'hl_group_target' : 'ErrorMsg'
+\ , 'hl_group_shade'  : 'Comment'
 \ })
-
-" Make EasyMotion more yellow, less red
-hi clear EasyMotionTarget
-hi! EasyMotionTarget guifg=yellow
 
 nmap ,<ESC> ,,w
 nmap ,<S-ESC> ,,b
