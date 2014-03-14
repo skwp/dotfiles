@@ -9,7 +9,7 @@ call EasyMotion#InitOptions({
 \ , 'do_mapping'      : 1
 \ , 'grouping'        : 1
 \
-\ , 'hl_group_target' : 'ErrorMsg'
+\ , 'hl_group_target' : 'Type'
 \ , 'hl_group_shade'  : 'Comment'
 \ })
 
