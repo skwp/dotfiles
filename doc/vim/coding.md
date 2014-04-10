@@ -3,7 +3,7 @@
 * rake.vim - like rails.vim but for non-rails projects. makes `:Rtags` and other commands just work
 * ruby.vim - lots of general enhancements for ruby dev
 * necomplcache - intelligent and fast complete as you type, and added Command-Space to select a completion (same as Ctrl-N)
-* snipMate - offers textmate-like snippet expansion + scrooloose-snippets . try hitting TAB after typing a snippet
+* snipMate - offers textmate-like snippet expansion + snippets collection (honza/vim-snippets). Try hitting TAB after typing a snippet
 * jasmine.vim - support for jasmine javascript unit testing, including snippets for it, before, etc..
 * vim-javascript-syntax, vim-jquery - better highlighting
 * TagHighlight - highlights class names and method names
