@@ -39,6 +39,7 @@ end
 task :install_prezto do
   if want_to_install?('zsh enhancements & prezto')
     install_prezto
+    install_dircolors
   end
 end
 
@@ -248,6 +249,12 @@ def ask(message, values)
   end
   selection = selection.to_i-1
   values[selection]
+end
+
+def install_dircolors
+  puts
+  puts "Installing Dircolors (ls and completion coloring)..."
+  run %{ ln -nfs "$HOME/.yadr/zsh/dircolors/dircolors.256dark" "${ZDOTDIR:-$HOME}/.dircolors" }
 end
 
 def install_prezto
