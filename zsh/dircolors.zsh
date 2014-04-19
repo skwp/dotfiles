@@ -1,0 +1,1 @@
+eval $(dircolors $HOME/.dircolors)
