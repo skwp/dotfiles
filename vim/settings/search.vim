@@ -10,14 +10,14 @@ function! GetVisual()
   return selection
 endfunction
 
-"git grep the current word using K (mnemonic Kurrent)
+"grep the current word using K (mnemonic Kurrent)
 nnoremap <silent> K :Ag <cword><CR>
 
-"git grep visual selection
-vnoremap K :<C-U>execute Ag(GetVisual())<CR>
+"grep visual selection
+vnoremap K :<C-U>execute "Ag " . GetVisual()<CR>
 
-"git grep current word up to the next exclamation point using ,K
-nnoremap ,K viwf!:<C-U>execute Ag(GetVisual())<CR>
+"grep current word up to the next exclamation point using ,K
+nnoremap ,K viwf!:<C-U>execute "Ag " . GetVisual()<CR>
 
 "grep for 'def foo'
 nnoremap <silent> ,gd :Ag 'def <cword>'<CR>
@@ -27,7 +27,7 @@ nnoremap <silent> ,gd :Ag 'def <cword>'<CR>
 nnoremap ,gg :Ag ""<left>
 
 "Grep Current Partial
-function! AgCurrentPartial() 
+function! AgCurrentPartial()
   let l:fileNameWithoutExtension = expand('%:t:r')
   let l:fileNameWithoutUnderscore = substitute(l:fileNameWithoutExtension, '^_','','g')
   let l:grepPattern = "render.*[\\\'\\\"].*" . l:fileNameWithoutUnderscore . "[\\\'\\\"]$"
@@ -40,4 +40,3 @@ nnoremap ,gcp :AgCurrentPartial<CR>
 
 "Grep for usages of the current file
 nnoremap ,gcf :exec "Ag " . expand("%:t:r")<CR>
-
