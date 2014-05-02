@@ -2,3 +2,6 @@
 	path = zsh/prezto
 	url = https://github.com/sorin-ionescu/prezto.git
   ignore = dirty
+[submodule "zsh/dircolors"]
+	path = zsh/dircolors
+	url = git@github.com:b1n/dircolors-solarized
