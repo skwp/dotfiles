@@ -2,6 +2,10 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+" Nerdtree
+let g:nerdtree_tabs_open_on_console_startup=1
+let g:NERDTreeWinPos = "left"
+
 " TODO: this may not be in the correct place. It is intended to allow overriding <Leader>.
 " source ~/.vimrc.before if it exists.
 if filereadable(expand("~/.vimrc.before"))
@@ -103,6 +107,14 @@ set scrolloff=8         "Start scrolling when we're 8 lines away from margins
 set sidescrolloff=15
 set sidescroll=1
 
+" ================ My Additions for powerline =======
+set t_Co=256
+set background=dark
+if !has('gui_running')
+  let g:solarized_termcolors=&t_Co
+  let g:solarized_termtrans=1
+endif
+colorscheme solarized
 
 " ================ Custom Settings ========================
 so ~/.yadr/vim/settings.vim
