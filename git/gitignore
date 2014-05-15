@@ -48,3 +48,6 @@ Session.vim
 
 # Editors
 .idea
+.agignore
+.ruby-version
+.rbenv-version
