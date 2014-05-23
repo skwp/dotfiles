@@ -78,10 +78,10 @@ alias c='clear'
 alias gz='tar -zcvf'
 
 # Ruby
-alias rc='rails c' # Rails 3
-alias rs='rails server'
+alias be='bundle exec'
+alias rc='bundle exec rails c'
+alias rs='bundle exec rails s'
 alias tfdl='tail -f log/development.log'
-
 alias ka9='killall -9'
 alias k9='kill -9'
 
