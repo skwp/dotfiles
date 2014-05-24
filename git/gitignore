@@ -51,3 +51,6 @@ Session.vim
 .agignore
 .ruby-version
 .rbenv-version
+.idea/
+html5shiv.min.js
+respond.min.js
