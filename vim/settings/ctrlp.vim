@@ -1,4 +1,6 @@
-unlet g:ctrlp_user_command
+if exists("g:ctrlp_user_command")
+  unlet g:ctrlp_user_command
+endif
 if executable('ag')
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
   let g:ctrlp_user_command =
