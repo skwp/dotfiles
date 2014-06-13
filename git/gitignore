@@ -54,3 +54,5 @@ Session.vim
 .idea/
 html5shiv.min.js
 respond.min.js
+.env
+.smex-items
