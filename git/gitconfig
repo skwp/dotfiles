@@ -126,5 +126,5 @@
 [include]
   path = .gitconfig.user
 [user]
-	name = Dave Rapin, Brian Ewing
+	name = Dave Rapin
 	email = dave@rapin.com
