@@ -79,10 +79,9 @@ alias gz='tar -zcvf'
 
 # Ruby
 alias be='bundle exec'
-alias brc='bundle exec rails c'
-alias brs='bundle exec rails s'
-alias brg='bundle exec rails g'
-alias br='bundle exec rake'
+alias rc='rails c'
+alias rs='rails s'
+alias rg='rails g'
 alias tfdl='tail -f log/development.log'
 alias ka9='killall -9'
 alias k9='kill -9'
