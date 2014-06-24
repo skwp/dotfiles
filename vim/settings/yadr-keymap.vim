@@ -146,7 +146,7 @@ nnoremap gf :e<cfile><CR>
 nnoremap <C-w>f :sp +e<cfile><CR>
 nnoremap <C-w>gf :tabe<cfile><CR>
 
-" Zoom in and out of current window with ,gz
+" Zoom in
 map <silent> ,gz <C-w>o
 
 " Use numbers to pick the tab you want (like iTerm)
