@@ -9,3 +9,7 @@
 * AnsiEsc - inteprets ansi color codes inside log files. great for looking at Rails logs
 * solarized - a color scheme scientifically calibrated for awesomeness (including skwp mods for ShowMarks)
 * Airline - Improved status bar. Requires patched fonts (installed from fonts/ directory)
+
+YADR provides solarized enhancements that make it even better. If you're using another theme, you can disable them with this line in `~/.vimrc.before`:
+
+    let g:yadr_disable_solarized_enhancements=1
