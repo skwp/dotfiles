@@ -1,7 +1,3 @@
-if !has("gui_macvim")
-  set t_Co=256
-endif
-
 if !exists("g:yadr_disable_solarized_enhancements")
   hi! link txtBold Identifier
   hi! link zshVariableDef Identifier
