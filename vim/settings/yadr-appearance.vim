@@ -20,8 +20,10 @@ if has("gui_running")
 else
   "dont load csapprox if we no gui support - silences an annoying warning
   let g:CSApprox_loaded = 1
-  let g:solarized_termcolors=256
-  let g:solarized_termtrans=1
+  if !exists("g:yadr_disable_solarized_enhancements")
+    let g:solarized_termcolors=256
+    let g:solarized_termtrans=1
+  endif
 endif
 
 " http://ethanschoonover.com/solarized/vim-colors-solarized
