@@ -13,3 +13,11 @@ Bundle "nelstrom/vim-markdown-preview"
 Bundle "skwp/vim-html-escape"
 Bundle "tpope/vim-haml"
 Bundle "honza/vim-snippets"
+Bundle 'jimenezrick/vimerl'
+Bundle 'derekwyatt/vim-scala'
+Bundle 'slim-template/vim-slim.git'
+Bundle 'mustache/vim-mustache-handlebars'
+"Completion for c, cpp, python
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'qianthinking/javacomplete'
+Bundle 'qianthinking/vim-android'

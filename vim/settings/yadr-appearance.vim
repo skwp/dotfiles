@@ -28,4 +28,5 @@ else
 endif
 
 colorscheme solarized
+"colorscheme gruvbox
 set background=dark

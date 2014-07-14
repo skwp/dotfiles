@@ -36,10 +36,10 @@ nnoremap ^ 0
 " Now using the middle finger of either hand you can type
 " underscores with apple-k or apple-d, and add Shift
 " to type dashes
-imap <silent> <D-k> _
-imap <silent> <D-d> _
-imap <silent> <D-K> -
-imap <silent> <D-D> -
+"imap <silent> <D-k> _
+"imap <silent> <D-d> _
+"imap <silent> <D-K> -
+"imap <silent> <D-D> -
 
 " ,# Surround a word with #{ruby interpolation}
 map ,# ysiw#
@@ -80,12 +80,12 @@ imap <c-l> <space>=><space>
 " Change inside various enclosures with Cmd-" and Cmd-'
 " The f makes it find the enclosure so you don't have
 " to be standing inside it
-nnoremap <D-'> f'ci'
-nnoremap <D-"> f"ci"
-nnoremap <D-(> f(ci(
-nnoremap <D-)> f)ci)
-nnoremap <D-[> f[ci[
-nnoremap <D-]> f]ci]
+"nnoremap <D-'> f'ci'
+"nnoremap <D-"> f"ci"
+"nnoremap <D-(> f(ci(
+"nnoremap <D-)> f)ci)
+"nnoremap <D-[> f[ci[
+"nnoremap <D-]> f]ci]
 
 "Go to last edit location with ,.
 nnoremap ,. '.
@@ -97,34 +97,46 @@ nnoremap ,. '.
 "
 " the first quote will autoclose so you'll get 'foo' and hitting <c-a> will
 " put the cursor right after the quote
-imap <C-a> <esc>wa
+"imap <C-a> <esc>wa
 
-" ==== NERD tree
-" Cmd-Shift-N for nerd tree
-nmap <D-N> :NERDTreeToggle<CR>
-" Open the project tree and expose current file in the nerdtree with Ctrl-\
-nnoremap <silent> <C-\> :NERDTreeFind<CR>:vertical res 30<CR>
+" Emacs move in insert mode
+inoremap <C-a> <C-O><S-i>
+inoremap <C-e> <End>
+inoremap <C-b> <LEFT>
+inoremap <C-f> <RIGHT>
+inoremap <C-h> <BACKSPACE>
+inoremap <C-d> <DELETE>
+
+cnoremap <C-a> <Home>
+cnoremap <C-e> <End>
+cnoremap <C-p> <UP>
+cnoremap <C-n> <DOWN>
+cnoremap <C-b> <LEFT>
+cnoremap <C-f> <RIGHT>
+cnoremap <C-h> <BACKSPACE>
+cnoremap <C-d> <DELETE>
 
 " ,q to toggle quickfix window (where you have stuff like Ag)
 " ,oq to open it back up (rare)
+" instead, use ListToggle
 nmap <silent> ,qc :cclose<CR>
 nmap <silent> ,qo :copen<CR>
 
 " move up/down quickly by using Cmd-j, Cmd-k
 " which will move us around by functions
-nnoremap <silent> <D-j> }
-nnoremap <silent> <D-k> {
-autocmd FileType ruby map <buffer> <D-j> ]m
-autocmd FileType ruby map <buffer> <D-k> [m
-autocmd FileType rspec map <buffer> <D-j> }
-autocmd FileType rspec map <buffer> <D-k> {
-autocmd FileType javascript map <buffer> <D-k> }
-autocmd FileType javascript map <buffer> <D-j> {
+"nnoremap <silent> <D-j> }
+"nnoremap <silent> <D-k> {
+"autocmd FileType ruby map <buffer> <D-j> ]m
+"autocmd FileType ruby map <buffer> <D-k> [m
+"autocmd FileType rspec map <buffer> <D-j> }
+"autocmd FileType rspec map <buffer> <D-k> {
+"autocmd FileType javascript map <buffer> <D-k> }
+"autocmd FileType javascript map <buffer> <D-j> {
 
 
 " Command-/ to toggle comments
-map <D-/> :TComment<CR>
-imap <D-/> <Esc>:TComment<CR>i
+"map <D-/> :TComment<CR>
+"imap <D-/> <Esc>:TComment<CR>i
 
 
 "Move back and forth through previous and next buffers
@@ -149,16 +161,28 @@ nnoremap <C-w>gf :tabe<cfile><CR>
 " Zoom in
 map <silent> ,gz <C-w>o
 
+
 " Use numbers to pick the tab you want (like iTerm)
-map <silent> <D-1> :tabn 1<cr>
-map <silent> <D-2> :tabn 2<cr>
-map <silent> <D-3> :tabn 3<cr>
-map <silent> <D-4> :tabn 4<cr>
-map <silent> <D-5> :tabn 5<cr>
-map <silent> <D-6> :tabn 6<cr>
-map <silent> <D-7> :tabn 7<cr>
-map <silent> <D-8> :tabn 8<cr>
-map <silent> <D-9> :tabn 9<cr>
+"map <silent> <D-1> :tabn 1<cr>
+"map <silent> <D-2> :tabn 2<cr>
+"map <silent> <D-3> :tabn 3<cr>
+"map <silent> <D-4> :tabn 4<cr>
+"map <silent> <D-5> :tabn 5<cr>
+"map <silent> <D-6> :tabn 6<cr>
+"map <silent> <D-7> :tabn 7<cr>
+"map <silent> <D-8> :tabn 8<cr>
+"map <silent> <D-9> :tabn 9<cr>
+map <silent> <C-t>h :tabprevious<CR>
+map <silent> <C-t>l :tabnext<CR>
+map <silent> <C-t>1 :tabn 1<cr>
+map <silent> <C-t>2 :tabn 2<cr>
+map <silent> <C-t>3 :tabn 3<cr>
+map <silent> <C-t>4 :tabn 4<cr>
+map <silent> <C-t>5 :tabn 5<cr>
+map <silent> <C-t>6 :tabn 6<cr>
+map <silent> <C-t>7 :tabn 7<cr>
+map <silent> <C-t>8 :tabn 8<cr>
+map <silent> <C-t>9 :tabn 9<cr>
 
 " Create window splits easier. The default
 " way is Ctrl-w,v and Ctrl-w,s. I remap
@@ -167,15 +191,19 @@ nnoremap <silent> vv <C-w>v
 nnoremap <silent> ss <C-w>s
 
 " Resize windows with arrow keys
-nnoremap <D-Up> <C-w>+
-nnoremap <D-Down> <C-w>-
-nnoremap <D-Left> <C-w><
-nnoremap <D-Right>  <C-w>>
+"nnoremap <D-Up> <C-w>+
+"nnoremap <D-Down> <C-w>-
+"nnoremap <D-Left> <C-w><
+"nnoremap <D-Right>  <C-w>>
+nnoremap < <C-w>>
+nnoremap > <C-w><
+nnoremap + <C-w>+
+nnoremap _ <C-w>-
 
 " create <%= foo %> erb tags using Ctrl-k in edit mode
 imap <silent> <C-K> <%=   %><Esc>3hi
 
-" create <%= foo %> erb tags using Ctrl-j in edit mode
+" create <% foo %> erb tags using Ctrl-j in edit mode
 imap <silent> <C-J> <%  %><Esc>2hi
 
 " ============================
@@ -211,8 +239,11 @@ nnoremap ` '
 " Tabularize - alignment
 " ============================
 " Hit Cmd-Shift-A then type a character you want to align by
-nmap <D-A> :Tabularize /
-vmap <D-A> :Tabularize /
+"nmap <D-A> :Tabularize /
+"vmap <D-A> :Tabularize /
+map <silent> <leader>aa :Tabularize /
+map <silent> <leader>a= :Tabularize /=<CR>
+map <silent> <leader>a: :Tabularize /:\zs<CR>
 
 " ============================
 " SplitJoin plugin
@@ -224,7 +255,53 @@ nmap sk :SplitjoinJoin<cr>
 map ,hi :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")<CR>
 
 " Source current file Cmd-% (good for vim development)
-map <D-%> :so %<CR>
+"map <D-%> :so %<CR>
 
 " ,hp = html preview
 map <silent> ,hp :!open -a Safari %<CR><CR>
+
+imap jj <ESC>
+map! jj <C-C>
+imap uu _
+imap hh =>
+imap kk ->
+imap aa @
+
+nnoremap <C-t>n :tabnew<CR>
+nnoremap <silent> <Leader>w= :wincmd =<CR>
+nnoremap <silent> <Leader>wr :NERDTreeToggle<CR>:wincmd r<CR>:NERDTreeToggle<CR>
+nnoremap <silent> <Leader>wR :NERDTreeToggle<CR>:wincmd R<CR>:NERDTreeToggle<CR>
+nnoremap <silent> <Leader>wK :NERDTreeToggle<CR>:wincmd K<CR>:NERDTreeToggle<CR>
+nnoremap <silent> <Leader>wJ :NERDTreeToggle<CR>:wincmd J<CR>:NERDTreeToggle<CR>
+nnoremap <silent> <Leader>wH :NERDTreeToggle<CR>:wincmd H<CR>:NERDTreeToggle<CR>
+nnoremap <silent> <Leader>wL :NERDTreeToggle<CR>:wincmd L<CR>:NERDTreeToggle<CR>
+
+"custom copy'n'paste
+""copy the current visual selection to ~/.vbuf
+vmap <silent> <leader>xy :w! ~/.vbuf<CR>
+"copy the current line to the buffer file if no visual selection
+nmap <silent> <leader>xy :.w! ~/.vbuf<CR>
+""paste the contents of the buffer file
+nmap <silent> <leader>xp :r ~/.vbuf<CR>
+
+"Reselect visual block after indent/outdent 
+vnoremap < <gv
+vnoremap > >gv
+
+"Improve up/down movement on wrapped lines 
+nnoremap j gj
+nnoremap k gk
+
+inoremap <expr> <c-j> pumvisible() ? "\<C-e>\<Down>" : "\<Down>"
+inoremap <expr> <c-k> pumvisible() ? "\<C-e>\<Up>" : "\<Up>"
+
+
+"to camel case
+nmap <silent> <leader>> ciw<Esc>:let @"=substitute(strtrans(@"), '[A-Z]\C', '_\L&', 'g')<CR>"0p
+"from camel case
+nmap <silent> <leader>< ciw<Esc>:let @"=substitute(strtrans(@"), '_\([a-z]\)\C', '\U\1', 'g')<CR>"0p
+
+
+"map for macro q
+"<Space> has been mapped for Sneak
+nnoremap <Space><Space> @q

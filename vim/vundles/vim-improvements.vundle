@@ -3,7 +3,9 @@ Bundle "Raimondi/delimitMate"
 Bundle "Shougo/neocomplete.git"
 Bundle "briandoll/change-inside-surroundings.vim.git"
 Bundle "godlygeek/tabular"
-Bundle "tomtom/tcomment_vim.git"
+"Bundle "tomtom/tcomment_vim.git"
+"Comment, map: <leader>c(c,u,i,s,a,A,m)
+Bundle 'scrooloose/nerdcommenter'
 Bundle "vim-scripts/camelcasemotion.git"
 Bundle "vim-scripts/matchit.zip.git"
 Bundle "terryma/vim-multiple-cursors"
@@ -26,3 +28,5 @@ Bundle "vim-scripts/AutoTag.git"
 Bundle "vim-scripts/lastpos.vim"
 Bundle "vim-scripts/sudo.vim"
 Bundle "goldfeld/ctrlr.vim"
+"Tags in file, map in its window: <F1>, p, s, <c-n>, <c-p>, q
+Bundle 'majutsushi/tagbar'
