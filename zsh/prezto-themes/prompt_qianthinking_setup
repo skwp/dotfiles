@@ -42,11 +42,11 @@ function prompt_qianthinking_setup {
   # Use extended color pallete if available.
   if [[ $TERM = *256color* || $TERM = *rxvt* ]]; then
     __PROMPT_QIANTHINKING_COLORS=(
-      "%F{81}"  # turquoise
-      "%F{166}" # orange
-      "%F{135}" # purple
+      "%F{74}"  # turquoise
+      "%F{130}" # orange
+      "%F{97}" # purple
       "%F{161}" # hotpink
-      "%F{118}" # limegreen
+      "%F{70}" # limegreen
     )
   else
     __PROMPT_QIANTHINKING_COLORS=(
@@ -72,7 +72,7 @@ function prompt_qianthinking_setup {
   zstyle ':prezto:module:ruby:info:version' format '[%v]'
 
   PROMPT="${__PROMPT_QIANTHINKING_COLORS[3]}%n%f@${__PROMPT_QIANTHINKING_COLORS[2]}%m%f ${__PROMPT_QIANTHINKING_COLORS[5]}%~%f "'$git_info[prompt]'"$%(?.%F{norm} .%F{red}(%?%)%F{norm} "
-  RPROMPT='%F{blue}${ruby_info[version]}[$current_time]'
+  RPROMPT='%F{24}${ruby_info[version]}[$current_time]'
 }
 
 function prompt_awreece_is_ssh {
