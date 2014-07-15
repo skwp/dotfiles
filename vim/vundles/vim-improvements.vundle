@@ -30,3 +30,5 @@ Bundle "vim-scripts/sudo.vim"
 Bundle "goldfeld/ctrlr.vim"
 "Tags in file, map in its window: <F1>, p, s, <c-n>, <c-p>, q
 Bundle 'majutsushi/tagbar'
+"execute whole/part of editing file, map: <F5>
+Bundle 'thinca/vim-quickrun'
