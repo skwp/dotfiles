@@ -6,7 +6,9 @@ Bundle "godlygeek/tabular"
 "Bundle "tomtom/tcomment_vim.git"
 "Comment, map: <leader>c(c,u,i,s,a,A,m)
 Bundle 'scrooloose/nerdcommenter'
-Bundle "vim-scripts/camelcasemotion.git"
+"CamelCase motion through words, map: <silent> [c,v,d,y...](,w ,b ,e)
+Bundle 'bkad/CamelCaseMotion'
+"Bundle "vim-scripts/camelcasemotion.git"
 Bundle "vim-scripts/matchit.zip.git"
 Bundle "terryma/vim-multiple-cursors"
 Bundle "Keithbsmiley/investigate.vim"
@@ -32,3 +34,5 @@ Bundle "goldfeld/ctrlr.vim"
 Bundle 'majutsushi/tagbar'
 "execute whole/part of editing file, map: <F5>
 Bundle 'thinca/vim-quickrun'
+"Gblame require it
+Bundle 'godlygeek/csapprox'

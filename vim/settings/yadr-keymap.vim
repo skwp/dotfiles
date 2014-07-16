@@ -195,10 +195,10 @@ nnoremap <silent> ss <C-w>s
 "nnoremap <D-Down> <C-w>-
 "nnoremap <D-Left> <C-w><
 "nnoremap <D-Right>  <C-w>>
-nnoremap < <C-w>>
-nnoremap > <C-w><
-nnoremap + <C-w>+
-nnoremap _ <C-w>-
+nnoremap < <C-w>5<
+nnoremap > <C-w>5>
+nnoremap + <C-w>5+
+nnoremap _ <C-w>5-
 
 " create <%= foo %> erb tags using Ctrl-k in edit mode
 imap <silent> <C-K> <%=   %><Esc>3hi

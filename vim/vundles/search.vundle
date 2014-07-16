@@ -1,4 +1,3 @@
-Bundle "justinmk/vim-sneak"
 "e, o/enter, go, t, T, h,H, v,gv,q
 Bundle "rking/ag.vim"
 "shows 'Nth match out of M' at every search
