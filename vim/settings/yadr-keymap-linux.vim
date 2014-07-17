@@ -21,12 +21,12 @@ imap <silent> <C-D> -
 " Change inside various enclosures with Ctrl-" and Ctrl-'
 " The f makes it find the enclosure so you don't have
 " to be standing inside it
-nnoremap <C-'> f'ci'
-nnoremap <C-"> f"ci"
-nnoremap <C-(> f(ci(
-nnoremap <C-)> f)ci)
-nnoremap <C-[> f[ci[
-nnoremap <C-]> f]ci]
+nnoremap <A-'> f'ci'
+nnoremap <A-"> f"ci"
+nnoremap <A-(> f(ci(
+nnoremap <A-)> f)ci)
+nnoremap <A-[> f[ci[
+nnoremap <A-]> f]ci]
 
 " ==== NERD tree
 " Ctrl-Shift-N for nerd tree
