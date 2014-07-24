@@ -140,7 +140,7 @@
 [merge]
   summary = true
   verbosity = 1
-  tool = mvimdiff
+  tool = vimdiff
 [apply]
   whitespace = nowarn
 [branch]
@@ -153,6 +153,7 @@
   autocrlf = false
   editor = vim
   excludesfile = ~/.yadr/git/gitignore
+	whitespace = cr-at-eol
 [advice]
   statusHints = false
 [diff]
@@ -160,6 +161,7 @@
   # instead of a/b/c/d as prefixes for patches
   mnemonicprefix = true
 	algorithm = patience
+	noprefix = true
 [rerere]
   # Remember my merges
   # http://gitfu.wordpress.com/2008/04/20/git-rerere-rereremember-what-you-did-last-time/
