@@ -305,3 +305,7 @@ nmap <silent> <leader>< ciw<Esc>:let @"=substitute(strtrans(@"), '_\([a-z]\)\C',
 "map for macro q
 "<Space> has been mapped for Sneak
 nnoremap <Space><Space> @q
+
+map <leader>ww :w<CR>
+map <leader>xx :x<CR>
+map <leader>qq :qa<CR>
