@@ -260,8 +260,6 @@ map ,hi :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 " ,hp = html preview
 map <silent> ,hp :!open -a Safari %<CR><CR>
 
-imap jj <ESC>
-map! jj <C-C>
 imap uu _
 imap hh =>
 imap kk ->
