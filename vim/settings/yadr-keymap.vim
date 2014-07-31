@@ -307,3 +307,7 @@ nnoremap <Space><Space> @q
 map <leader>ww :w<CR>
 map <leader>xx :x<CR>
 map <leader>qq :qa<CR>
+
+"redraw
+nmap <leader>rd :redraw!<CR>
+
