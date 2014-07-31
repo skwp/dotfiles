@@ -1,10 +1,9 @@
-# Ring the bell if any background window rang a bell
-set -g bell-action any
-
 #--References-------------------------------------------------------------------
 # http://blog.hawkhost.com/2010/07/02/tmux-%E2%80%93-the-terminal-multiplexer-part-2/
+
 # Default termtype. If the rcfile sets $TERM, that overrides this value.
 set -g default-terminal screen-256color
+# set -g default-terminal "screen-256color"
 
 set-option -g default-command "reattach-to-user-namespace -l $SHELL -l"
 #--Key-Bindings-----------------------------------------------------------------
@@ -69,12 +68,39 @@ bind S command-prompt -p "ssh to:" "new-window -n %1 'ssh %1'"
 set -g status-bg black
 set -g status-fg white
 
-# Screen like binding for last window
-unbind l
-bind C-a last-window
+## Left side of status bar
+# Show session name and hostname in my choice of colors
+set -g status-left-length 20
+set -g status-left '#[fg=green][#[bg=black,fg=cyan]#S#[bg=black,fg=blue,dim]:#H#[fg=green]]'
 
-# Bigger history
-set -g history-limit 10000
+## Middle of status bar, window labels
+# Inactive windows in status bar
+set-window-option -g window-status-format '#[fg=cyan,dim]#I#[fg=blue]:#[default]#W#[fg=grey,dim]#F'
+# Current or active window in status bar
+set-window-option -g window-status-current-format '#[bg=blue,fg=cyan,bold]#I#[bg=blue,fg=cyan]:#[fg=white]#W#[fg=dim]#F'
+# Alerted window in status bar. Windows which have an alert (bell, activity or content).
+set-window-option -g window-status-activity-fg colour228
+set-window-option -g window-status-activity-attr dim
+set-window-option -g window-status-bell-fg colour228
+set-window-option -g window-status-bell-attr dim
+set-window-option -g window-status-content-fg colour228
+set-window-option -g window-status-content-attr dim
+
+## Right side of status bar
+# show current window title, date and time in my choice of colors
+set -g status-right '#[fg=green][#[fg=white]#T#[fg=green]][#[fg=blue]%Y-%m-%d #[fg=white]%H:%M#[default]#[fg=green]]'
 
 # Local config
 if-shell "[ -f ~/.tmux.conf.user ]" 'source ~/.tmux.conf.user'
+#--Usability--------------------------------------------------------------------
+set-option -g status-keys vi
+set-option -g history-limit 100000
+set-window-option -g mode-keys vi
+# keep tmux msgs around longer
+set -g display-time 3000
+# set -g set-titles off
+# Set window notifications
+#set-window-option -g monitor-activity on
+#set -g visual-activity on
+#setw -g automatic-rename off
+#
