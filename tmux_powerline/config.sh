@@ -3,7 +3,7 @@
 
 if [ -z "$DEBUG_MODE" ]; then
 	# Disable debug mode by default
-	export DEBUG_MODE="false"
+	export DEBUG_MODE="true"
 fi
 
 if [ -z "$PLATFORM" ]; then
