@@ -14,6 +14,16 @@ nnoremap ,ow "_diwhp
 
 "make Y consistent with C and D
 nnoremap Y y$
+function! YRRunAfterMaps()
+  nnoremap Y   :<C-U>YRYankCount 'y$'<CR>
+endfunction
+
+" Make 0 go to the first character rather than the beginning
+" of the line. When we're programming, we're almost always
+" interested in working with text rather than empty space. If
+" you want the traditional beginning of line, use ^
+nnoremap 0 ^
+nnoremap ^ 0
 
 " ========================================
 " RSI Prevention - keyboard remaps
@@ -62,6 +72,8 @@ map ,{ ysiw{
 vmap ,} c{ <C-R>" }<ESC>
 vmap ,{ c{<C-R>"}<ESC>
 
+map ,` ysiw`
+
 " gary bernhardt's hashrocket
 imap <c-l> <space>=><space>
 
@@ -93,9 +105,9 @@ nmap <D-N> :NERDTreeToggle<CR>
 " Open the project tree and expose current file in the nerdtree with Ctrl-\
 nnoremap <silent> <C-\> :NERDTreeFind<CR>:vertical res 30<CR>
 
-" ,q to toggle quickfix window (where you have stuff like GitGrep)
+" ,q to toggle quickfix window (where you have stuff like Ag)
 " ,oq to open it back up (rare)
-nmap <silent> ,qc :CloseSingleConque<CR>:cclose<CR>
+nmap <silent> ,qc :cclose<CR>
 nmap <silent> ,qo :copen<CR>
 
 " move up/down quickly by using Cmd-j, Cmd-k
@@ -114,13 +126,6 @@ autocmd FileType javascript map <buffer> <D-j> {
 map <D-/> :TComment<CR>
 imap <D-/> <Esc>:TComment<CR>i
 
-"GitGrep - open up a git grep line, with a quote started for the search
-nnoremap ,gg :GitGrep ""<left>
-"GitGrep Current Partial
-nnoremap ,gcp :GitGrepCurrentPartial<CR>
-"GitGrep Current File
-nnoremap ,gcf :call GitGrep(expand("%:t:r"))<CR>
-
 
 "Move back and forth through previous and next buffers
 "with ,z and ,x
@@ -131,14 +136,17 @@ nnoremap <silent> ,x :bn<CR>
 " Window/Tab/Split Manipulation
 " ==============================
 " Move between split windows by using the four directions H, L, I, N
-" (note that  I use I and N instead of J and K because  J already does
-" line joins and K is mapped to GitGrep the current word
 nnoremap <silent> <C-h> <C-w>h
 nnoremap <silent> <C-l> <C-w>l
 nnoremap <silent> <C-k> <C-w>k
 nnoremap <silent> <C-j> <C-w>j
 
-" Zoom in and out of current window with ,gz
+" Make gf (go to file) create the file, if not existent
+nnoremap gf :e<cfile><CR>
+nnoremap <C-w>f :sp +e<cfile><CR>
+nnoremap <C-w>gf :tabe<cfile><CR>
+
+" Zoom in
 map <silent> ,gz <C-w>o
 
 " Use numbers to pick the tab you want (like iTerm)
@@ -211,16 +219,6 @@ vmap <D-A> :Tabularize /
 " ============================
 nmap sj :SplitjoinSplit<cr>
 nmap sk :SplitjoinJoin<cr>
-
-" ============================
-" vim-ruby-conque
-" ============================
-" Cmd-Shift-R for RSpec
-nmap <silent> <D-R> :call RunRspecCurrentFileConque()<CR>
-" Cmd-Shift-L for RSpec Current Line
-nmap <silent> <D-L> :call RunRspecCurrentLineConque()<CR>
-" ,Cmd-R for Last conque command
-nmap <silent> ,<D-R> :call RunLastConqueCommand()<CR>
 
 " Get the current highlight group. Useful for then remapping the color
 map ,hi :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")<CR>

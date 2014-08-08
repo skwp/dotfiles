@@ -21,7 +21,7 @@ task :install => [:submodule_init, :submodules] do
   file_operation(Dir.glob('tmux/*')) if want_to_install?('tmux config')
   file_operation(Dir.glob('vimify/*')) if want_to_install?('vimification of command line tools')
   if want_to_install?('vim configuration (highly recommended)')
-    file_operation(Dir.glob('{vim,vimrc}')) 
+    file_operation(Dir.glob('{vim,vimrc}'))
     Rake::Task["install_vundle"].execute
   end
 
@@ -30,6 +30,8 @@ task :install => [:submodule_init, :submodules] do
   install_fonts if RUBY_PLATFORM.downcase.include?("darwin")
 
   install_term_theme if RUBY_PLATFORM.downcase.include?("darwin")
+
+  run_bundle_config
 
   success_msg("installed")
 end
@@ -49,7 +51,7 @@ end
 
 task :submodule_init do
   unless ENV["SKIP_SUBMODULES"]
-    run %{ git submodule init }
+    run %{ git submodule update --init --recursive }
   end
 end
 
@@ -73,7 +75,7 @@ desc "Performs migration from pathogen to vundle"
 task :vundle_migration do
   puts "======================================================"
   puts "Migrating from pathogen to vundle vim plugin manager. "
-  puts "This will move the old .vim/bundle directory to" 
+  puts "This will move the old .vim/bundle directory to"
   puts ".vim/bundle.old and replacing all your vim plugins with"
   puts "the standard set of plugins. You will then be able to "
   puts "manage your vim's plugin configuration by editing the "
@@ -91,21 +93,19 @@ end
 desc "Runs Vundle installer in a clean vim environment"
 task :install_vundle do
   puts "======================================================"
-  puts "Installing vundle."
+  puts "Installing and updating vundles."
   puts "The installer will now proceed to run BundleInstall."
-  puts "Due to a bug, the installer may report some errors"
-  puts "when installing the plugin 'syntastic'. Fortunately"
-  puts "Syntastic will install and work properly despite the"
-  puts "errors so please just ignore them and let's hope for"
-  puts "an update that fixes the problem!"
   puts "======================================================"
 
   puts ""
-  
-  run %{
-    cd $HOME/.yadr
-    git clone https://github.com/gmarik/vundle.git #{File.join('vim','bundle', 'vundle')}
-  }
+
+  vundle_path = File.join('vim','bundle', 'vundle')
+  unless File.exists?(vundle_path)
+    run %{
+      cd $HOME/.yadr
+      git clone https://github.com/gmarik/vundle.git #{vundle_path}
+    }
+  end
 
   Vundle::update_vundle
 end
@@ -117,6 +117,27 @@ private
 def run(cmd)
   puts "[Running] #{cmd}"
   `#{cmd}` unless ENV['DEBUG']
+end
+
+def number_of_cores
+  if RUBY_PLATFORM.downcase.include?("darwin")
+    cores = run %{ sysctl -n hw.ncpu }
+  else
+    cores = run %{ nproc }
+  end
+  puts
+  cores.to_i
+end
+
+def run_bundle_config
+  return unless system("which bundle")
+
+  bundler_jobs = number_of_cores - 1
+  puts "======================================================"
+  puts "Configuring Bundlers for parallel gem installation"
+  puts "======================================================"
+  run %{ bundle config --global jobs #{bundler_jobs} }
+  puts
 end
 
 def install_rvm_binstubs
@@ -136,22 +157,29 @@ def install_homebrew
     puts "Installing Homebrew, the OSX package manager...If it's"
     puts "already installed, this will do nothing."
     puts "======================================================"
-    run %{ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"}
+    run %{ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"}
   end
 
+  puts
+  puts
+  puts "======================================================"
+  puts "Updating Homebrew."
+  puts "======================================================"
+  run %{brew update}
   puts
   puts
   puts "======================================================"
   puts "Installing Homebrew packages...There may be some warnings."
   puts "======================================================"
   run %{brew install zsh ctags git hub tmux reattach-to-user-namespace the_silver_searcher}
+  run %{brew install macvim --custom-icons --override-system-vim --with-lua --with-luajit}
   puts
   puts
 end
 
 def install_fonts
   puts "======================================================"
-  puts "Installing patched fonts for Powerline."
+  puts "Installing patched fonts for Powerline/Lightline."
   puts "======================================================"
   run %{ cp -f $HOME/.yadr/fonts/* $HOME/Library/Fonts }
   puts
@@ -186,7 +214,7 @@ def install_term_theme
   message = "I've found #{profiles.size} #{profiles.size>1 ? 'profiles': 'profile'} on your iTerm2 configuration, which one would you like to apply the Solarized theme to?"
   profiles << 'All'
   selected = ask message, profiles
-  
+
   if selected == 'All'
     (profiles.size-1).times { |idx| apply_theme_to_iterm_profile_idx idx, color_scheme_file }
   else
@@ -217,7 +245,7 @@ def ask(message, values)
     else
       break
     end
-  end 
+  end
   selection = selection.to_i-1
   values[selection]
 end
@@ -226,12 +254,10 @@ def install_prezto
   puts
   puts "Installing Prezto (ZSH Enhancements)..."
 
-  unless File.exists?(File.join(ENV['ZDOTDIR'] || ENV['HOME'], ".zprezto"))
-    run %{ ln -nfs "$HOME/.yadr/zsh/prezto" "${ZDOTDIR:-$HOME}/.zprezto" }
+  run %{ ln -nfs "$HOME/.yadr/zsh/prezto" "${ZDOTDIR:-$HOME}/.zprezto" }
 
-    # The prezto runcoms are only going to be installed if zprezto has never been installed
-    file_operation(Dir.glob('zsh/prezto/runcoms/z*'), :copy)
-  end
+  # The prezto runcoms are only going to be installed if zprezto has never been installed
+  file_operation(Dir.glob('zsh/prezto/runcoms/z*'), :copy)
 
   puts
   puts "Overriding prezto ~/.zpreztorc with YADR's zpreztorc to enable additional modules..."
@@ -247,7 +273,15 @@ def install_prezto
     puts "Zsh is already configured as your shell of choice. Restart your session to load the new settings"
   else
     puts "Setting zsh as your default shell"
-    run %{ chsh -s /bin/zsh }
+    if File.exists?("/usr/local/bin/zsh")
+      if File.readlines("/private/etc/shells").grep("/usr/local/bin/zsh").empty?
+        puts "Adding zsh to standard shell list"
+        run %{ echo "/usr/local/bin/zsh" | sudo tee -a /private/etc/shells }
+      end
+      run %{ chsh -s /usr/local/bin/zsh }
+    else
+      run %{ chsh -s /bin/zsh }
+    end
   end
 end
 
@@ -312,6 +346,7 @@ def apply_theme_to_iterm_profile_idx(index, color_scheme_path)
   values.flatten.each { |entry| run %{ /usr/libexec/PlistBuddy -c "Delete :'New Bookmarks':#{index}:'#{entry}'" ~/Library/Preferences/com.googlecode.iterm2.plist } }
 
   run %{ /usr/libexec/PlistBuddy -c "Merge '#{color_scheme_path}' :'New Bookmarks':#{index}" ~/Library/Preferences/com.googlecode.iterm2.plist }
+  run %{ defaults read com.googlecode.iterm2 }
 end
 
 def success_msg(action)

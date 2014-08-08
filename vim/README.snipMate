@@ -1,4 +1,0 @@
-We are purposefully including an older version of snipMate (0.84) from mikefarmer's repo
-so that it works with the long list of snippets available from the scrooloose/snippets
-collection. The current mainline snipMate seems to be no longer compatible with those
-snippets, but the scrooloose collection is still the best one to use.
