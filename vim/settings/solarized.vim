@@ -32,6 +32,17 @@ if !exists("g:yadr_disable_solarized_enhancements")
   hi! link jId Title
   hi! link jClass Title
 
+  " Javascript language support
+  hi! link javascriptJGlobalMethod Statement
+
+  " Make the braces and other noisy things slightly less noisy
+  hi! jsParens guifg=#005F78 cterm=NONE term=NONE ctermfg=NONE ctermbg=NONE
+  hi! link jsFuncParens jsParens
+  hi! link jsFuncBraces jsParens
+  hi! link jsBraces jsParens
+  hi! link jsParens jsParens
+  hi! link jsNoise jsParens
+
   hi! link NERDTreeFile Constant
   hi! link NERDTreeDir Identifier
 
