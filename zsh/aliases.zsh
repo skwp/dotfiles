@@ -145,6 +145,7 @@ alias zc='zeus console'
 # Rspec
 alias rs='rspec spec'
 alias sr='spring rspec'
+alias src='spring rails c'
 alias srgm='spring rails g migration'
 alias srdm='spring rake db:migrate'
 alias srdt='spring rake db:migrate'
