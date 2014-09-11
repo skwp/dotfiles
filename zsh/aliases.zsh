@@ -168,3 +168,21 @@ alias dbm='spring rake db:migrate'
 alias dbmr='spring rake db:migrate:redo'
 alias dbmd='spring rake db:migrate:down'
 alias dbmu='spring rake db:migrate:up'
+
+
+#ls tree view
+alias lr='ls -R | grep ":$" | sed -e "s/:$//" -e "s/[^-][^\/]*\//--/g" -e "s/^/   /" -e "s/-/|/"'
+#ls for hidden files
+alias l.='ls -dl .*'
+alias netlisteners='lsof -i -P | grep LISTEN'
+alias internetip='curl ifconfig.me'
+alias wotgobblemem='LC_ALL=C sudo ps -o time,ppid,pid,nice,pcpu,pmem,user,comm -A | sort -n -k 6 | tail -15'
+mcd() { mkdir -p "$1" && cd "$1" }
+t() {tail -f $1 | perl -pe "s/$2/\e[1;31;43m$&\e[0m/g"}
+sssh (){ ssh -t "$1" 'tmux attach -t leon || tmux new -s leon || screen -d -RR -S leon'}
+authme() { ssh "$1" 'mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys' < ~/.ssh/id_rsa.pub }
+servedir(){ python -m SimpleHTTPServer $1 }
+workdone(){
+    default="1"
+    git log --committer=leon --pretty=format:"%Cgreen%ar (%h)%n%Creset> %s %b%n" --since="${1:-$default} day ago" --no-merges
+}
