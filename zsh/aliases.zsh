@@ -17,6 +17,7 @@ alias psr='ps aux | grep ruby'
 
 # Moving around
 alias cdb='cd -'
+alias cls='clear;ls'
 
 # Show human friendly numbers and colors
 alias df='df -h'
@@ -168,3 +169,6 @@ alias dbm='spring rake db:migrate'
 alias dbmr='spring rake db:migrate:redo'
 alias dbmd='spring rake db:migrate:down'
 alias dbmu='spring rake db:migrate:up'
+
+# Homebrew
+alias brewu='brew update && brew upgrade && brew cleanup && brew prune && brew doctor'
