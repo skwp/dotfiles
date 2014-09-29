@@ -11,14 +11,14 @@
 " a lot of hand movement. Vim to the rescue
 "
 " Now using the middle finger of either hand you can type
-" underscores with Ctrl-k or Ctrl-d, and add Shift
+" underscores with Alt-k or Alt-d, and add Shift
 " to type dashes
-imap <silent> <C-k> _
-imap <silent> <C-d> _
-imap <silent> <C-K> -
-imap <silent> <C-D> -
+imap <silent> <A-k> _
+imap <silent> <A-d> _
+imap <silent> <A-K> -
+imap <silent> <A-D> -
 
-" Change inside various enclosures with Ctrl-" and Ctrl-'
+" Change inside various enclosures with Alt-" and Alt-'
 " The f makes it find the enclosure so you don't have
 " to be standing inside it
 nnoremap <A-'> f'ci'
@@ -29,23 +29,23 @@ nnoremap <A-[> f[ci[
 nnoremap <A-]> f]ci]
 
 " ==== NERD tree
-" Ctrl-Shift-N for nerd tree
-nmap <C-N> :NERDTreeToggle<CR>
+" Alt-Shift-N for nerd tree
+nmap <A-N> :NERDTreeToggle<CR>
 
-" move up/down quickly by using Ctrl-j, Ctrl-k
+" move up/down quickly by using Alt-j, Alt-k
 " which will move us around by functions
-nnoremap <silent> <C-j> }
-nnoremap <silent> <C-k> {
-autocmd FileType ruby map <buffer> <C-j> ]m
-autocmd FileType ruby map <buffer> <C-k> [m
-autocmd FileType rspec map <buffer> <C-j> }
-autocmd FileType rspec map <buffer> <C-k> {
-autocmd FileType javascript map <buffer> <C-k> }
-autocmd FileType javascript map <buffer> <C-j> {
+nnoremap <silent> <A-j> }
+nnoremap <silent> <A-k> {
+autocmd FileType ruby map <buffer> <A-j> ]m
+autocmd FileType ruby map <buffer> <A-k> [m
+autocmd FileType rspec map <buffer> <A-j> }
+autocmd FileType rspec map <buffer> <A-k> {
+autocmd FileType javascript map <buffer> <A-k> }
+autocmd FileType javascript map <buffer> <A-j> {
 
 " Command-/ to toggle comments
-map <C-/> :TComment<CR>
-imap <C-/> <Esc>:TComment<CR>i
+map <A-/> :TComment<CR>
+imap <A-/> <Esc>:TComment<CR>i
 
 " Use Alt- numbers to pick the tab you want
 map <silent> <A-1> :tabn 1<cr>
@@ -73,9 +73,9 @@ nnoremap <C-Right>  <C-w>>
 " ============================
 " Tabularize - alignment
 " ============================
-" Hit Ctrl-Shift-A then type a character you want to align by
-nmap <C-A> :Tabularize /
-vmap <C-A> :Tabularize /
+" Hit Alt-Shift-A then type a character you want to align by
+nmap <A-A> :Tabularize /
+vmap <A-A> :Tabularize /
 
-" Source current file Ctrl-% (good for vim development)
-map <C-%> :so %<CR>
+" Source current file Alt-% (good for vim development)
+map <A-%> :so %<CR>
