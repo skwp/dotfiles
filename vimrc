@@ -68,6 +68,8 @@ set expandtab
 filetype plugin on
 filetype indent on
 
+scriptencoding utf-8
+set encoding=utf-8
 " Display tabs and trailing spaces visually
 set list listchars=tab:\ \ ,trail:·
 
