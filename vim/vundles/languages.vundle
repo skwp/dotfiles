@@ -17,7 +17,7 @@ Bundle 'jimenezrick/vimerl'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'slim-template/vim-slim.git'
 Bundle 'mustache/vim-mustache-handlebars'
-"Completion for c, cpp, python
-Bundle 'Valloric/YouCompleteMe'
+"Completion for c, cpp, python, need compile with clang
+"Bundle 'Valloric/YouCompleteMe'
 Bundle 'qianthinking/javacomplete'
 Bundle 'qianthinking/vim-android'
