@@ -24,6 +24,7 @@ map <F10> :!ctags -R --fields=+l --extra=+q .<CR>
 
 au BufNewFile,BufRead *.mxml set filetype=mxml
 au BufNewFile,BufRead *.jsp set filetype=java
+au BufNewFile,BufRead *.es6 set filetype=javascript
 au BufNewFile,BufRead *.as set filetype=actionscript
 au BufNewFile,BufRead {Gemfile,Rakefile,Capfile,*.rake,config.ru} set ft=ruby
 au BufNewFile,BufRead *.vundle set filetype=vim
