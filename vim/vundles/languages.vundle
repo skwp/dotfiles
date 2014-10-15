@@ -1,5 +1,6 @@
 Bundle "briancollins/vim-jst"
-Bundle "pangloss/vim-javascript"
+"Bundle "pangloss/vim-javascript"
+Bundle "othree/yajs.vim"
 Bundle "rodjek/vim-puppet"
 Bundle "othree/javascript-libraries-syntax.vim"
 Bundle "digitaltoad/vim-jade.git"
@@ -18,6 +19,7 @@ Bundle 'derekwyatt/vim-scala'
 Bundle 'slim-template/vim-slim.git'
 Bundle 'mustache/vim-mustache-handlebars'
 "Completion for c, cpp, python, need compile with clang
+"I put it into vim/.vundles.local due to it is too heavy.
 "Bundle 'Valloric/YouCompleteMe'
 Bundle 'qianthinking/javacomplete'
 Bundle 'qianthinking/vim-android'
