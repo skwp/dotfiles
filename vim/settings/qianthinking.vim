@@ -22,6 +22,8 @@ set pastetoggle=<F7>
 set tags=./tags,tags,~/tags;
 map <F10> :!ctags -R --fields=+l --extra=+q .<CR>
 
+let g:used_javascript_libs = 'jquery'
+
 au BufNewFile,BufRead *.mxml set filetype=mxml
 au BufNewFile,BufRead *.jsp set filetype=java
 au BufNewFile,BufRead *.es6 set filetype=javascript
