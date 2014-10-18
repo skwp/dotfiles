@@ -157,7 +157,7 @@ def install_homebrew
     puts "Installing Homebrew, the OSX package manager...If it's"
     puts "already installed, this will do nothing."
     puts "======================================================"
-    run %{ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"}
+    run %{ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"}
   end
 
   puts
