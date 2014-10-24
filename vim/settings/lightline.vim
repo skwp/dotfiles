@@ -14,3 +14,6 @@ let g:lightline = {
       \ 'separator': { 'left': '⮀', 'right': '⮂' },
       \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
       \ }
+
+" Use status bar even with single buffer
+set laststatus=2
