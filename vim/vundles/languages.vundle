@@ -23,4 +23,5 @@ Bundle 'slim-template/vim-slim.git'
 Bundle 'qianthinking/javacomplete'
 Bundle 'qianthinking/vim-android'
 Bundle 'mattn/emmet-vim'
+Bundle 'mustache/vim-mustache-handlebars'
 
