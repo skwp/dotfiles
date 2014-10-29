@@ -17,9 +17,10 @@ Bundle "honza/vim-snippets"
 Bundle 'jimenezrick/vimerl'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'slim-template/vim-slim.git'
-Bundle 'mustache/vim-mustache-handlebars'
 "Completion for c, cpp, python, need compile with clang
 "I put it into vim/.vundles.local due to it is too heavy.
 "Bundle 'Valloric/YouCompleteMe'
 Bundle 'qianthinking/javacomplete'
 Bundle 'qianthinking/vim-android'
+Bundle 'mattn/emmet-vim'
+
