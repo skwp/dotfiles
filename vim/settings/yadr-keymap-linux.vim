@@ -17,6 +17,7 @@ imap <silent> <A-k> _
 imap <silent> <A-d> _
 imap <silent> <A-K> -
 imap <silent> <A-D> -
+imap <silent> <A-e> =
 
 " Change inside various enclosures with Alt-" and Alt-'
 " The f makes it find the enclosure so you don't have

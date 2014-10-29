@@ -17,6 +17,7 @@ imap <silent> <D-k> _
 imap <silent> <D-d> _
 imap <silent> <D-K> -
 imap <silent> <D-D> -
+imap <silent> <D-e> =
 
 " Change inside various enclosures with Cmd-" and Cmd-'
 " The f makes it find the enclosure so you don't have
