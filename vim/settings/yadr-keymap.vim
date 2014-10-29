@@ -25,22 +25,6 @@ endfunction
 nnoremap 0 ^
 nnoremap ^ 0
 
-" ========================================
-" RSI Prevention - keyboard remaps
-" ========================================
-" Certain things we do every day as programmers stress
-" out our hands. For example, typing underscores and
-" dashes are very common, and in position that require
-" a lot of hand movement. Vim to the rescue
-"
-" Now using the middle finger of either hand you can type
-" underscores with apple-k or apple-d, and add Shift
-" to type dashes
-"imap <silent> <D-k> _
-"imap <silent> <D-d> _
-"imap <silent> <D-K> -
-"imap <silent> <D-D> -
-
 " ,# Surround a word with #{ruby interpolation}
 map ,# ysiw#
 vmap ,# c#{<C-R>"}<ESC>
@@ -77,16 +61,6 @@ map ,` ysiw`
 " gary bernhardt's hashrocket
 imap <c-l> <space>=><space>
 
-" Change inside various enclosures with Cmd-" and Cmd-'
-" The f makes it find the enclosure so you don't have
-" to be standing inside it
-"nnoremap <D-'> f'ci'
-"nnoremap <D-"> f"ci"
-"nnoremap <D-(> f(ci(
-"nnoremap <D-)> f)ci)
-"nnoremap <D-[> f[ci[
-"nnoremap <D-]> f]ci]
-
 "Go to last edit location with ,.
 nnoremap ,. '.
 
@@ -97,7 +71,6 @@ nnoremap ,. '.
 "
 " the first quote will autoclose so you'll get 'foo' and hitting <c-a> will
 " put the cursor right after the quote
-"imap <C-a> <esc>wa
 
 " Emacs move in insert mode
 inoremap <C-a> <C-O><S-i>
@@ -115,29 +88,13 @@ cnoremap <C-b> <LEFT>
 cnoremap <C-f> <RIGHT>
 cnoremap <C-h> <BACKSPACE>
 cnoremap <C-d> <DELETE>
+"imap <C-a> <esc>wa
 
 " ,q to toggle quickfix window (where you have stuff like Ag)
 " ,oq to open it back up (rare)
 " instead, use ListToggle
 nmap <silent> ,qc :cclose<CR>
 nmap <silent> ,qo :copen<CR>
-
-" move up/down quickly by using Cmd-j, Cmd-k
-" which will move us around by functions
-"nnoremap <silent> <D-j> }
-"nnoremap <silent> <D-k> {
-"autocmd FileType ruby map <buffer> <D-j> ]m
-"autocmd FileType ruby map <buffer> <D-k> [m
-"autocmd FileType rspec map <buffer> <D-j> }
-"autocmd FileType rspec map <buffer> <D-k> {
-"autocmd FileType javascript map <buffer> <D-k> }
-"autocmd FileType javascript map <buffer> <D-j> {
-
-
-" Command-/ to toggle comments
-"map <D-/> :TComment<CR>
-"imap <D-/> <Esc>:TComment<CR>i
-
 
 "Move back and forth through previous and next buffers
 "with ,z and ,x
@@ -147,11 +104,12 @@ nnoremap <silent> ,x :bn<CR>
 " ==============================
 " Window/Tab/Split Manipulation
 " ==============================
-" Move between split windows by using the four directions H, L, I, N
-nnoremap <silent> <C-h> <C-w>h
-nnoremap <silent> <C-l> <C-w>l
-nnoremap <silent> <C-k> <C-w>k
-nnoremap <silent> <C-j> <C-w>j
+" Move between split windows by using the four directions H, L, K, J
+" NOTE: This has moved to vim/settings/vim-tmux-navigator.vim.
+" nnoremap <silent> <C-h> <C-w>h
+" nnoremap <silent> <C-l> <C-w>l
+" nnoremap <silent> <C-k> <C-w>k
+" nnoremap <silent> <C-j> <C-w>j
 
 " Make gf (go to file) create the file, if not existent
 nnoremap gf :e<cfile><CR>
@@ -161,17 +119,6 @@ nnoremap <C-w>gf :tabe<cfile><CR>
 " Zoom in
 map <silent> ,gz <C-w>o
 
-
-" Use numbers to pick the tab you want (like iTerm)
-"map <silent> <D-1> :tabn 1<cr>
-"map <silent> <D-2> :tabn 2<cr>
-"map <silent> <D-3> :tabn 3<cr>
-"map <silent> <D-4> :tabn 4<cr>
-"map <silent> <D-5> :tabn 5<cr>
-"map <silent> <D-6> :tabn 6<cr>
-"map <silent> <D-7> :tabn 7<cr>
-"map <silent> <D-8> :tabn 8<cr>
-"map <silent> <D-9> :tabn 9<cr>
 map <silent> <C-t>h :tabprevious<CR>
 map <silent> <C-t>l :tabnext<CR>
 map <silent> <C-t>1 :tabn 1<cr>
@@ -190,11 +137,6 @@ map <silent> <C-t>9 :tabn 9<cr>
 nnoremap <silent> vv <C-w>v
 nnoremap <silent> ss <C-w>s
 
-" Resize windows with arrow keys
-"nnoremap <D-Up> <C-w>+
-"nnoremap <D-Down> <C-w>-
-"nnoremap <D-Left> <C-w><
-"nnoremap <D-Right>  <C-w>>
 nnoremap < <C-w>5<
 nnoremap > <C-w>5>
 nnoremap + <C-w>5+
@@ -238,9 +180,6 @@ nnoremap ` '
 " ============================
 " Tabularize - alignment
 " ============================
-" Hit Cmd-Shift-A then type a character you want to align by
-"nmap <D-A> :Tabularize /
-"vmap <D-A> :Tabularize /
 map <silent> <leader>aa :Tabularize /
 map <silent> <leader>a= :Tabularize /=<CR>
 map <silent> <leader>a: :Tabularize /:\zs<CR>
@@ -253,9 +192,6 @@ nmap sk :SplitjoinJoin<cr>
 
 " Get the current highlight group. Useful for then remapping the color
 map ,hi :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")<CR>
-
-" Source current file Cmd-% (good for vim development)
-"map <D-%> :so %<CR>
 
 " ,hp = html preview
 map <silent> ,hp :!open -a Safari %<CR><CR>
