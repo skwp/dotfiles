@@ -119,18 +119,6 @@ nnoremap <C-w>gf :tabe<cfile><CR>
 " Zoom in
 map <silent> ,gz <C-w>o
 
-map <silent> <C-t>h :tabprevious<CR>
-map <silent> <C-t>l :tabnext<CR>
-map <silent> <C-t>1 :tabn 1<cr>
-map <silent> <C-t>2 :tabn 2<cr>
-map <silent> <C-t>3 :tabn 3<cr>
-map <silent> <C-t>4 :tabn 4<cr>
-map <silent> <C-t>5 :tabn 5<cr>
-map <silent> <C-t>6 :tabn 6<cr>
-map <silent> <C-t>7 :tabn 7<cr>
-map <silent> <C-t>8 :tabn 8<cr>
-map <silent> <C-t>9 :tabn 9<cr>
-
 " Create window splits easier. The default
 " way is Ctrl-w,v and Ctrl-w,s. I remap
 " this to vv and ss
