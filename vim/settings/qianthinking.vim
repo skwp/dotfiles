@@ -78,3 +78,5 @@ au BufNewFile,BufReadPost *.coffee setl sw=2 ts=2 sts=2 expandtab
 au WinEnter * setlocal cursorline
 au WinLeave * setlocal nocursorline
 
+" other simple settings
+let g:user_emmet_leader_key='<C-Z>'
