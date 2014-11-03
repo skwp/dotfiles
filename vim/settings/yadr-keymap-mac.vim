@@ -19,6 +19,9 @@ imap <silent> <D-K> -
 imap <silent> <D-D> -
 imap <silent> <D-e> =
 
+map <D-ESC> :macaction selectNextWindow:<CR>
+map <D-S-ESC> :macaction selectPreviousWindow:<CR>
+
 " Change inside various enclosures with Cmd-" and Cmd-'
 " The f makes it find the enclosure so you don't have
 " to be standing inside it
