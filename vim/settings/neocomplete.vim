@@ -12,9 +12,6 @@ let g:neocomplete#max_list = 20
 " Set minimum syntax keyword length.
 let g:neocomplete#auto_completion_start_length = 3
 
-" Map standard Ctrl-N completion to Cmd-Space
-inoremap <D-Space> <C-n>
-
 " This makes sure we use neocomplete completefunc instead of
 " the one in rails.vim, otherwise this plugin will crap out.
 let g:neocomplete#force_overwrite_completefunc = 1
@@ -32,3 +29,4 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+
