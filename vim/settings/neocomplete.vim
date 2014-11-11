@@ -5,6 +5,7 @@ let g:acp_enableAtStartup = 0
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_camel_case = 1
 let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#sources#buffer#disabled_pattern = '\/dist\/\|\.log\|\/tmp\/'
 
 " Default # of completions is 100, that's crazy.
 let g:neocomplete#max_list = 20
