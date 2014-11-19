@@ -8,4 +8,4 @@
 * matchit - helps with matching brackets, improves other plugins
 * AnsiEsc - inteprets ansi color codes inside log files. great for looking at Rails logs
 * solarized - a color scheme scientifically calibrated for awesomeness (including skwp mods for ShowMarks)
-* Airline - Improved status bar. Requires patched fonts (installed from fonts/ directory)
+* Lightline - Improved status bar. Requires patched fonts (installed from fonts/ directory)
