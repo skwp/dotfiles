@@ -25,4 +25,5 @@ Bundle 'qianthinking/vim-android'
 Bundle 'mattn/emmet-vim'
 Bundle 'mustache/vim-mustache-handlebars'
 Bundle 'wavded/vim-stylus'
+Bundle 'heartsentwined/vim-emblem'
 
