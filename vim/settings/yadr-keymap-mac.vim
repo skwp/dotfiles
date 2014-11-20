@@ -14,9 +14,7 @@
 " underscores with apple-k or apple-d, and add Shift
 " to type dashes
 imap <silent> <D-k> _
-imap <silent> <D-d> _
-imap <silent> <D-K> -
-imap <silent> <D-D> -
+imap <silent> <D-d> -
 imap <silent> <D-e> =
 
 map <D-ESC> :macaction selectNextWindow:<CR>

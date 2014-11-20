@@ -14,9 +14,7 @@
 " underscores with Alt-k or Alt-d, and add Shift
 " to type dashes
 imap <silent> <A-k> _
-imap <silent> <A-d> _
-imap <silent> <A-K> -
-imap <silent> <A-D> -
+imap <silent> <A-d> -
 imap <silent> <A-e> =
 
 " Change inside various enclosures with Alt-" and Alt-'
