@@ -4,6 +4,7 @@
 Bundle "austintaylor/vim-indentobject"
 Bundle "bootleq/vim-textobj-rubysymbol"
 Bundle "coderifous/textobj-word-column.vim"
+Bundle "itspriddle/vim-jquery.git"
 Bundle "kana/vim-textobj-datetime"
 Bundle "kana/vim-textobj-entire"
 Bundle "kana/vim-textobj-function"
