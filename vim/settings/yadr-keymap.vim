@@ -235,3 +235,5 @@ map <leader>qq :qa<CR>
 "redraw
 nmap <leader>rd :redraw!<CR>
 
+nnoremap <F8> :set wrap! wrap?<CR>
+imap <F8> <C-O><F8>
