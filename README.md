@@ -275,7 +275,7 @@ of plugins above to learn more.
 The osx file is a bash script that sets up sensible defaults for devs and power users
 under osx. Read through it before running it. To use:
 
-    ./osx
+    bin/osx
 
 These hacks are Lion-centric. May not work for other OS'es. My favorite mods include:
 
