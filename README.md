@@ -189,13 +189,15 @@ of plugins above to learn more.
 
 #### File Navigation
 
- * `,t` - CtrlP fuzzy file selector
- * `,b` - CtrlP buffer selector - great for jumping to a file you already have open
+ * `,ff` - CtrlP fuzzy file selector
+ * `,fb` - CtrlP buffer selector - great for jumping to a file you already have open
+ * `,ft` - CtrlP buffer tag selector - great for jumping to a tag in a file you already have open
+ * `,fm` - CtrlP MRU selector - great for jumping to a file you open mostly
  * `Cmd-Shift-M` - jump to method - CtrlP tag search within current buffer
  * `,jm` jump to models. Other `,j` mappings: `,jc` for controllers, `,jh` for helpers, etc. If you think of a concept and a letter, we've got you covered.
  * `Cmd-Shift-N` - NERDTree toggle (`Alt` in Linux)
  * `Ctrl-\` - Show current file in NERDTree
- * `Cmd-Shift-P` - Clear CtrlP cache
+ * `Cmd-Shift-P` or `F5` - Clear CtrlP cache
 
 #### Better keystrokes for common editing commands
 

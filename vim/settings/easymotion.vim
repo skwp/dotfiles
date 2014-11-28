@@ -4,9 +4,13 @@
 " down recognition. The home keys and the immediate keys
 " accessible by middle fingers are available 
 let g:EasyMotion_keys='asdfjkoweriop'
+" replace vim-sneak
 nmap <Space> <Plug>(easymotion-s2)
 
 let g:EasyMotion_smartcase = 1
 let g:EasyMotion_force_csapprox = 1
+
+nmap ,<ESC> ,,w
+nmap ,<S-ESC> ,,b
 
 

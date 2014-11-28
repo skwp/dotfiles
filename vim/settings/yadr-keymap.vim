@@ -131,10 +131,10 @@ nnoremap + <C-w>5+
 nnoremap _ <C-w>5-
 
 " create <%= foo %> erb tags using Ctrl-k in edit mode
-imap <silent> <C-K> <%=   %><Esc>3hi
+"imap <silent> <C-K> <%=   %><Esc>3hi
 
 " create <% foo %> erb tags using Ctrl-j in edit mode
-imap <silent> <C-J> <%  %><Esc>2hi
+"imap <silent> <C-J> <%  %><Esc>2hi
 
 " ============================
 " Shortcuts for everyday tasks
@@ -225,7 +225,7 @@ nmap <silent> <leader>< ciw<Esc>:let @"=substitute(strtrans(@"), '_\([a-z]\)\C',
 
 
 "map for macro q
-"<Space> has been mapped for Sneak
+"<Space> has been mapped for Sneak/EasyMotion
 nnoremap <Space><Space> @q
 
 map <leader>ww :w<CR>

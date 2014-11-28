@@ -30,8 +30,8 @@ nnoremap <silent> ,ff :CtrlP<CR>
 " Additional mapping for buffer search
 nnoremap <silent> ,fb :CtrlPBuffer<cr>
 
-" Cmd-Shift-P to clear the cache
-nnoremap <silent> ,fc :ClearCtrlPCache<cr>
+" Cmd-Shift-P to clear the cache or <F5> which I don't know where defined
+nnoremap <silent> <D-P> :ClearCtrlPCache<cr>
 
 " Idea from : http://www.charlietanksley.net/blog/blog/2011/10/18/vim-navigation-with-lustyexplorer-and-lustyjuggler/
 " Open CtrlP starting from a particular path, making it much
