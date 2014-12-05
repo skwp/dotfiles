@@ -9,6 +9,8 @@ alias -g N="| /dev/null"
 alias -g S='| sort'
 alias -g G='| grep' # now you can do: ls foo G something
 
+alias -g be='bundle exec' #shorter, or see prezto/modules/ruby
+
 # Functions
 #
 # (f)ind by (n)ame
