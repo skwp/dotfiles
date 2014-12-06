@@ -23,13 +23,14 @@ alias df='df -h'
 alias ll='ls -alGh'
 alias ls='ls -Gh'
 alias du='du -h -d 2'
+alias free='free -m"'
 
 # show me files matching "ls grep"
 # alias lsg='ll | grep'
 
 # Alias Editing
-alias ae='vim $yadr/zsh/aliases.zsh' #alias edit
-alias ar='source $yadr/zsh/aliases.zsh'  #alias reload
+# alias ae='vim $yadr/zsh/aliases.zsh' #alias edit
+# alias ar='source $yadr/zsh/aliases.zsh'  #alias reload
 
 # vim using
 mvim --version > /dev/null 2>&1
