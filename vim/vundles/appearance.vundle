@@ -1,6 +1,6 @@
-Bundle "chrisbra/color_highlight.git"
-Bundle "skwp/vim-colors-solarized"
-Bundle "itchyny/lightline.vim"
-Bundle "jby/tmux.vim.git"
-Bundle "morhetz/gruvbox"
-Bundle "xsunsmile/showmarks.git"
+Plugin 'chrisbra/color_highlight.git'
+Plugin 'skwp/vim-colors-solarized'
+Plugin 'itchyny/lightline.vim'
+Plugin 'jby/tmux.vim.git'
+Plugin 'morhetz/gruvbox'
+Plugin 'xsunsmile/showmarks.git'
