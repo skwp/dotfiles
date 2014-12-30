@@ -6,15 +6,15 @@ module Vundle
     return if contains_vundle? plugin_repo
 
     vundles = vundles_from_file
-    last_bundle_dir = vundles.rindex{ |line| line =~ /^Bundle / }
+    last_bundle_dir = vundles.rindex{ |line| line =~ /^Plugin / }
     last_bundle_dir = last_bundle_dir ? last_bundle_dir+1 : 0
-    vundles.insert last_bundle_dir, "Bundle \"#{plugin_repo}\""
+    vundles.insert last_bundle_dir, "Plugin \"#{plugin_repo}\""
     write_vundles_to_file vundles
   end
 
   def self.remove_plugin_from_vundle(plugin_repo)
     vundles = vundles_from_file
-    deleted_value = vundles.reject!{ |line| line =~ /Bundle "#{plugin_repo}"/ }
+    deleted_value = vundles.reject!{ |line| line =~ /Plugin "#{plugin_repo}"/ }
 
     write_vundles_to_file vundles
 
@@ -22,11 +22,11 @@ module Vundle
   end
 
   def self.vundle_list
-    vundles_from_file.select{ |line| line =~ /^Bundle .*/ }.map{ |line| line.gsub(/Bundle "(.*)"/, '\1')}
+    vundles_from_file.select{ |line| line =~ /^Plugin .*/ }.map{ |line| line.gsub(/Plugin "(.*)"/, '\1')}
   end
 
   def self.update_vundle
-    system "vim --noplugin -u #{ENV['HOME']}/.vim/vundles.vim -N \"+set hidden\" \"+syntax on\" +BundleClean +BundleInstall +qall"
+    system "vim --noplugin -u #{ENV['HOME']}/.vim/vundles.vim -N \"+set hidden\" \"+syntax on\" +PluginClean +PluginInstall +qall"
   end
 
 
