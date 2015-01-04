@@ -106,7 +106,9 @@ task :install_vundle do
     }
   end
 
-  unless Vundle::update_vundle
+  begin
+    Vundle::update_vundle
+  rescue Vundle::OldVundleError => e
     pull_vundle
     Vundle::update_vundle
   end
