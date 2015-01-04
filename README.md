@@ -65,6 +65,7 @@ sh -c "`curl -fsSL https://raw.github.com/skwp/dotfiles/master/install.sh`" -s a
 * If you want to use an alternate colorcheme like Gruvbox, then in your `~/.vimrc.after` do:
 
       let g:yadr_disable_solarized_enhancements = 1
+      colorscheme base16-twilight
 
 ### Upgrading
 
