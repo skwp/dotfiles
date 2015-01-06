@@ -58,12 +58,6 @@ map <silent> <D-7> :tabn 7<cr>
 map <silent> <D-8> :tabn 8<cr>
 map <silent> <D-9> :tabn 9<cr>
 
-" Create window splits easier. The default
-" way is Ctrl-w,v and Ctrl-w,s. I remap
-" this to vv and ss
-nnoremap <silent> vv <C-w>v
-nnoremap <silent> ss <C-w>s
-
 " Resize windows with arrow keys
 nnoremap <D-Up> <C-w>+
 nnoremap <D-Down> <C-w>-
