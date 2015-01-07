@@ -29,7 +29,6 @@ module Vundle
     system "vim --noplugin -u #{ENV['HOME']}/.vim/vundles.vim -N \"+set hidden\" \"+syntax on\" +BundleClean +BundleInstall +qall"
   end
 
-
   private
   def self.contains_vundle?(vundle_name)
     FileUtils.touch(@vundles_path) unless File.exists? @vundles_path
