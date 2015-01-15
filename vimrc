@@ -7,10 +7,9 @@ set nocompatible
 if filereadable(expand("~/.vimrc.before"))
   source ~/.vimrc.before
 endif
-
 " ================ General Config ====================
 
-set number                      "Line numbers are good
+set rnu!                      "Line numbers are good
 set backspace=indent,eol,start  "Allow backspace in insert mode
 set history=1000                "Store lots of :cmdline history
 set showcmd                     "Show incomplete cmds down the bottom
@@ -95,6 +94,8 @@ set wildignore+=log/**
 set wildignore+=tmp/**
 set wildignore+=*.png,*.jpg,*.gif
 
+let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
+ let Tlist_Use_Right_Window = 1
 "
 " ================ Scrolling ========================
 
@@ -102,6 +103,6 @@ set scrolloff=8         "Start scrolling when we're 8 lines away from margins
 set sidescrolloff=15
 set sidescroll=1
 
-
+set shell=zsh
 " ================ Custom Settings ========================
 so ~/.yadr/vim/settings.vim
