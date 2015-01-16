@@ -95,17 +95,15 @@ set wildignore+=tmp/**
 set wildignore+=*.png,*.jpg,*.gif
 
 let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
- let Tlist_Use_Right_Window = 1
-"
+let Tlist_Use_Right_Window = 1
+
 " ================ Scrolling ========================
 
 set scrolloff=8         "Start scrolling when we're 8 lines away from margins
 set sidescrolloff=15
 set sidescroll=1
 
-<<<<<<< HEAD
 set shell=zsh
-=======
 " ================ Search ===========================
 
 set incsearch       " Find the next match as we type the search
@@ -113,6 +111,5 @@ set hlsearch        " Highlight searches by default
 set ignorecase      " Ignore case when searching...
 set smartcase       " ...unless we type a capital
 
->>>>>>> 2e53da3dcdf33edd45742372976088b9bbad096a
 " ================ Custom Settings ========================
 so ~/.yadr/vim/settings.vim

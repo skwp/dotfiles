@@ -2,7 +2,7 @@
 
 # Don't change. The following determines where YADR is installed.
 yadr=$HOME/.yadr
-
+alias .='pwd'
 # Get operating system
 platform='unknown'
 unamestr=$(uname)
