@@ -32,13 +32,6 @@ alias free='free -m'
 # alias ae='vim $yadr/zsh/aliases.zsh' #alias edit
 # alias ar='source $yadr/zsh/aliases.zsh'  #alias reload
 
-# vim using
-mvim --version > /dev/null 2>&1
-MACVIM_INSTALLED=$?
-if [ $MACVIM_INSTALLED -eq 0 ]; then
-  alias vim="mvim -v"
-fi
-
 # vimrc editing
 alias ve='vim ~/.vimrc'
 
@@ -90,6 +83,10 @@ alias k9='kill -9'
 # Rust
 alias cb='cargo build'
 alias cr='cargo run'
+
+# Node
+alias grunt='node_modules/.bin/grunt'
+alias gulp='node_modules/.bin/gulp'
 
 # TODOS
 # This uses NValt (NotationalVelocity alt fork) - http://brettterpstra.com/project/nvalt/
