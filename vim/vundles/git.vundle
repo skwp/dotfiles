@@ -6,5 +6,5 @@ Bundle "gregsexton/gitv"
 Bundle "mattn/gist-vim"
 Bundle "tpope/vim-fugitive"
 Bundle "tpope/vim-git"
-"Show git diff map: [h, ]h, my map: <leader>gg
+"Show git diff map: [h, ]h, my map: <leader>tg
 Bundle 'airblade/vim-gitgutter'
