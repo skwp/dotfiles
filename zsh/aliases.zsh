@@ -12,6 +12,7 @@ elif [[ $unamestr == 'Darwin' ]]; then
   platform='darwin'
 fi
 
+# tmux 
 alias killmux='tmux kill-session -t'
 alias nmux='tmux new -s'
 
