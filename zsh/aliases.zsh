@@ -15,6 +15,7 @@ fi
 # tmux 
 alias killmux='tmux kill-session -t'
 alias nmux='tmux new -s'
+alias mux='tmux new -s $PWD:t'
 
 # YADR support
 alias yav='yadr vim-add-plugin'
