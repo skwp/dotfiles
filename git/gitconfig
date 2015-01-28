@@ -91,15 +91,17 @@
   svnl = svn log --oneline --show-commit
 [format]
   pretty = format:%C(blue)%ad%Creset %C(yellow)%h%C(green)%d%Creset %C(blue)%s %C(magenta) [%an]%Creset
-[mergetool]
-  prompt = false
-[mergetool "mvimdiff"]
-  cmd="mvim -c 'Gdiff' $MERGED"     # use fugitive.vim for 3-way merge
-  keepbackup=false
+
 [merge]
   summary = true
   verbosity = 1
-  tool = mvimdiff
+  tool = sublimerge
+
+[mergetool "sublimerge"]
+  cmd = subl -n --wait \"$REMOTE\" \"$BASE\" \"$LOCAL\" \"$MERGED\" --command \"sublimerge_diff_views\"
+  trustExitCode = false
+  prompt = false
+
 [apply]
   whitespace = nowarn
 [branch]
@@ -108,17 +110,24 @@
   # 'git push' will push the current branch to its tracking branch
   # the usual default is to push all branches
   default = tracking
+
 [core]
   autocrlf = false
 	editor = subl -n -w
 	excludesfile = /Users/czacharias/.yadr/git/gitignore
 [advice]
   statusHints = false
+
 [diff]
   # Git diff will use (i)ndex, (w)ork tree, (c)ommit and (o)bject
   # instead of a/b/c/d as prefixes for patches
   mnemonicprefix = true
+  tool = sublimerge
   algorithm = patience
+
+[difftool "sublimerge"]
+  cmd = subl -n --wait \"$REMOTE\" \"$LOCAL\" --command \"sublimerge_diff_views {\\\"left_read_only\\\": true, \\\"right_read_only\\\": true}\"
+
 [rerere]
   # Remember my merges
   # http://gitfu.wordpress.com/2008/04/20/git-rerere-rereremember-what-you-did-last-time/
@@ -126,15 +135,18 @@
 
 [user]
 	name = Christian Zacharias
-	email = christian.zacharias@gmail.com
+	email = christian.zacharias@tirendo.com
+
+[include]
+  path = .gitconfig.user
+[credential]
+	helper = osxkeychain
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
-
-[include]
-  path = .gitconfig.user
-[credential]
-	helper = osxkeychain
