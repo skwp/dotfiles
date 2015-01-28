@@ -21,6 +21,10 @@ Desktop.ini
 TAGS
 !TAGS/
 tags
+<<<<<<< HEAD
+.tags
+.tags_sorted_by_file
+=======
 !tags/
 gtags.files
 GTAGS
@@ -30,6 +34,7 @@ cscope.files
 cscope.out
 cscope.in.out
 cscope.po.out
+>>>>>>> upstream/master
 
 # Vim       taken from: https://github.com/github/gitignore/blob/master/Global/vim.gitignore
 # ----------------------------------------------------------------------------------------------

@@ -10,12 +10,15 @@ touch ~/.zsh.prompts/prompt_mytheme_setup
 
 See also the [Prezto](https://github.com/sorin-ionescu/prezto) project for more info on themes.
 
-### Customizing ZSH & Picking a theme
+### Customizing ZSH with ~/.zsh.after/ and ~/.zsh.before/
 
 If you want to customize your zsh experience, yadr provides two hooks via `~/.zsh.after/` and `~/.zsh.before/` directories.
 In these directories, you can place files to customize things that load before and after other zsh customizations that come from `~/.yadr/zsh/*`
 
-For example, to override the theme, you can do something like this:
+
+### Overriding the theme
+
+To override the theme, you can do something like this:
 
 ```
 echo "prompt yourprompt" > ~/.zsh.after/prompt.zsh

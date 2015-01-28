@@ -8,7 +8,7 @@
     # Yet Another Dotfile Repo v1.1
     # Now with Prezto and Vundle!
 
-    sh -c "`curl -fsSL https://raw.github.com/skwp/dotfiles/master/install.sh`"
+    sh -c "`curl -fsSL https://raw.githubusercontent.com/skwp/dotfiles/master/install.sh`"
 
 **Always be sure to run `rake update` after pulling to ensure plugins are updated**
 
@@ -36,23 +36,35 @@ Please use GitHub Issues for pull requests or bug reports only.
 To get started please run:
 
 ```bash
-sh -c "`curl -fsSL https://raw.github.com/skwp/dotfiles/master/install.sh`"
+sh -c "`curl -fsSL https://raw.githubusercontent.com/skwp/dotfiles/master/install.sh`"
 ```
 
 **Note:** YADR will automatically install all of its subcomponents. If you want to be asked
 about each one, use:
 
 ```bash
-sh -c "`curl -fsSL https://raw.github.com/skwp/dotfiles/master/install.sh`" -s ask
+sh -c "`curl -fsSL https://raw.githubusercontent.com/skwp/dotfiles/master/install.sh`" -s ask
 ```
 
 ## Wait, you're not done! Do this:
 
-* **Install iTerm Solarized Colors** - YADR will install Solarized colorschemes into your iTerm. Go to Profiles => Colors => Load Presets to pick Solarized Dark.
-* [Remap caps-lock to escape with PCKeyboardHack](http://pqrs.org/macosx/keyremap4macbook/pckeyboardhack.html) - The escape key is the single most used key in vim.  Old keyboards used to have Escape where Tab is today. Apple keyboards are the worst with their tiny Esc keys. But all this is fixed by remapping Caps to Escape.  If you're hitting a small target in the corner, you are slowing yourself down considerably, and probably damaging your hands with repetitive strain injuries.
-* Remap your Alfred or Spotlight to `Ctrl-Cmd-Space`, so that you can use `Cmd-Space` to autocomplete in vim. This is much more friendly for your fingers than `Ctrl-n`.
-* Set up a system wide hotkey for iTerm (Keys=>Hotkey). Recommended Cmd-Escape, which is really Cmd-Capslock.
-* In iTerm, uncheck "Use Lion-style full screen" on General; in MacVim, uncheck Prefer native fullscreen under Advanced settings. This will give you fast full screen windows that are switchable without switching to spaces.
+#### Install iTerm Solarized Colors
+YADR will install Solarized colorschemes into your iTerm. Go to Profiles => Colors => Load Presets to pick Solarized Dark.
+
+#### Remap caps-lock to escape with PCKeyboardHack](http://pqrs.org/macosx/keyremap4macbook/pckeyboardhack.html)
+The escape key is the single most used key in vim.  Old keyboards used to have Escape where Tab is today. Apple keyboards are the worst with their tiny Esc keys. But all this is fixed by remapping Caps to Escape.  If you're hitting a small target in the corner, you are slowing yourself down considerably, and probably damaging your hands with repetitive strain injuries.
+
+#### Remap your Alfred or Spotlight to `Ctrl-Cmd-Space`
+This is so that you can use `Cmd-Space` to autocomplete in vim. This is much more friendly for your fingers than `Ctrl-n`.
+
+#### Set up a system wide hotkey for iTerm (Keys=>Hotkey)
+Recommended Cmd-Escape, which is really Cmd-Capslock.
+
+#### In iTerm, uncheck "Use Lion-style full screen" on General
+This will give you fast full screen windows that are switchable without switching to spaces.
+
+#### in MacVim, uncheck Prefer native fullscreen under Advanced settings
+Same as iTerm. The Lion style spaces navigation slows everything down for no reason.
 
 ## If you want to run vim in terminal
 
@@ -65,6 +77,7 @@ sh -c "`curl -fsSL https://raw.github.com/skwp/dotfiles/master/install.sh`" -s a
 * If you want to use an alternate colorcheme like Gruvbox, then in your `~/.vimrc.after` do:
 
       let g:yadr_disable_solarized_enhancements = 1
+      colorscheme base16-twilight
 
 ### Upgrading
 
@@ -163,7 +176,7 @@ of plugins above to learn more.
 
  * `,z` - go to previous buffer (:bp)
  * `,x` - go to next buffer (:bn)
- * `Cmd-j` and `Cmd-k` to move up and down roughly by functions
+ * `Cmd-j` and `Cmd-k` to move up and down roughly by functions (`Alt` in Linux)
  * `Ctrl-o` - Old cursor position - this is a standard mapping but very useful, so included here
  * `Ctrl-i` - opposite of Ctrl-O (again, this is standard)
 
@@ -181,7 +194,6 @@ of plugins above to learn more.
  * `,gd` - Grep def (greps for 'def [function name]') when cursor is over the function name
  * `,gcf` - Grep Current File to find references to the current file
  * `//` - clear the search
- * `,T` - Tag list (list of methods in a class)
  * `,,w` (alias `,<esc>`) or `,,b` (alias `,<shift-esc>`) - EasyMotion, a vimperator style tool that highlights jump-points on the screen and lets you type to get there.
  * `,mc` - mark this word for MultiCursor (like sublime). Use `Ctrl-n` (next), `Ctrl-p` (prev), `Ctrl-x`(skip) to add more cursors, then do normal vim things like edit the word.
  * `gK` - Opens the documentation for the word under the cursor.
@@ -193,7 +205,7 @@ of plugins above to learn more.
  * `,b` - CtrlP buffer selector - great for jumping to a file you already have open
  * `Cmd-Shift-M` - jump to method - CtrlP tag search within current buffer
  * `,jm` jump to models. Other `,j` mappings: `,jc` for controllers, `,jh` for helpers, etc. If you think of a concept and a letter, we've got you covered.
- * `Cmd-Shift-N` - NERDTree toggle
+ * `Cmd-Shift-N` - NERDTree toggle (`Alt` in Linux)
  * `Ctrl-\` - Show current file in NERDTree
  * `Cmd-Shift-P` - Clear CtrlP cache
 
@@ -201,14 +213,14 @@ of plugins above to learn more.
 
  * Cmd-Space to autocomplete. Tab for snipmate snippets.
  * `,#` `,"` `,'` `,]` `,)` `,}` to surround a word in these common wrappers. the # does #{ruby interpolation}. works in visual mode (thanks @cj). Normally these are done with something like `ysw#`
- * `Cmd-'`, `Cmd-"`, `Cmd-]`, `Cmd-)`, etc to change content inside those surrounding marks. You don't have to be inside them.
+ * `Cmd-'`, `Cmd-"`, `Cmd-]`, `Cmd-)`, etc to change content inside those surrounding marks. You don't have to be inside them (`Alt` in Linux)
  * `,.` to go to last edit location (same as `'.`) because the apostrophe is hard on the pinky
  * `,ci` to change inside any set of quotes/brackets/etc
 
 #### Tabs, Windows, Splits
 
- * Use `Cmd-1` thru `Cmd-9` to switch to a specific tab number (like iTerm and Chrome) - and tabs have been set up to show numbers
- * `Ctrl-h,l,j,k` - to move left, right, down, up between splits
+ * Use `Cmd-1` thru `Cmd-9` to switch to a specific tab number (like iTerm and Chrome) - and tabs have been set up to show numbers (`Alt` in Linux)
+ * `Ctrl-h,l,j,k` - to move left, right, down, up between splits. This also works between vim and tmux splits thanks to `vim-tmux-navigator`.
  * `Q` - Intelligent Window Killer. Close window `wincmd c` if there are multiple windows to same buffer, or kill the buffer `bwipeout` if this is the last window into it.
  * `vv` - vertical split (`Ctrl-w,v`)
  * `ss` - horizontal split (`Ctrl-w,s`)
@@ -233,13 +245,13 @@ of plugins above to learn more.
  * `,he` - Html Escape
  * `,hu` - Html Unescape
  * `,hp` - Html Preview (open in Safari)
- * `Cmd-Shift-A` - align things (type a character/expression to align by, works in visual mode or by itself)
+ * `Cmd-Shift-A` - align things (type a character/expression to align by, works in visual mode or by itself) (`Alt` in Linux)
  * `:ColorToggle` - turn on #abc123 color highlighting (useful for css)
  * `:Gitv` - Git log browsers
  * `,hi` - show current Highlight group. if you don't like the color of something, use this, then use `hi! link [groupname] [anothergroupname]` in your vimrc.after to remap the color. You can see available colors using `:hi`
  * `,gt` - Go Tidy - tidy up your html code (works on a visual selection)
- * `:Wrap` - wrap long lines (e.g. when editing markdown files).
- * `Cmd-/` - toggle comments (usually gcc from tComment)
+ * `:Wrap` - wrap long lines (e.g. when editing markdown files)
+ * `Cmd-/` - toggle comments (usually gcc from tComment) (`Alt` in Linux)
  * `gcp` (comment a paragraph)
 
 #### Rails & Ruby
@@ -275,7 +287,7 @@ of plugins above to learn more.
 The osx file is a bash script that sets up sensible defaults for devs and power users
 under osx. Read through it before running it. To use:
 
-    ./osx
+    bin/osx
 
 These hacks are Lion-centric. May not work for other OS'es. My favorite mods include:
 

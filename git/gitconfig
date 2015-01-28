@@ -21,7 +21,7 @@
   snapshots = !git stash list --grep snapshot
 
   #via http://stackoverflow.com/questions/5188320/how-can-i-get-a-list-of-git-branches-ordered-by-most-recent-commit
-  recent-branches = !git for-each-ref --count=5 --sort=-committerdate refs/heads/ --format='%(refname:short)'
+  recent-branches = !git for-each-ref --count=15 --sort=-committerdate refs/heads/ --format='%(refname:short)'
 
   # branch
   b = branch -v                     # branch (verbose)
@@ -109,7 +109,7 @@
 [push]
   # 'git push' will push the current branch to its tracking branch
   # the usual default is to push all branches
-  default = tracking
+  default = upstream
 
 [core]
   autocrlf = false
@@ -146,7 +146,7 @@
 	smudge = git-media-smudge %f
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
