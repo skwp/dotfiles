@@ -39,6 +39,9 @@ if filereadable(expand("~/.vim/vundles.vim"))
   source ~/.vim/vundles.vim
 endif
 
+" ================ meteor mustche settings =============
+au BufReadPost *.hbs set filetype=html.mustache syntax=html.mustache
+au BufReadPost *.html set filetype=html.mustache syntax=html.mustache
 " ================ Turn Off Swap Files ==============
 
 set noswapfile

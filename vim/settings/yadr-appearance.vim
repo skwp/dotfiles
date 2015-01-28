@@ -14,6 +14,7 @@ if has("gui_running")
 
   if has("gui_gtk2")
     set guifont=Source Code Pro Medium:h16
+  else
   end
 else
   let g:CSApprox_loaded = 1
