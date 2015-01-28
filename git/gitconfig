@@ -128,3 +128,5 @@
 [user]
 	name = rocknrollmarc
 	email = marc.bluemner@gmail.com
+[credential]
+	helper = osxkeychain
