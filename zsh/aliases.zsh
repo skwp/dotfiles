@@ -1,6 +1,4 @@
-# Aliases in this file are bash and zsh compatible
-
-# Don't change. The following determines where YADR is installed.
+# Aliases in this file are bash and zsh compatible # Don't change. The following determines where YADR is installed.
 yadr=$HOME/.yadr
 alias .='pwd'
 # Get operating system
@@ -12,8 +10,10 @@ elif [[ $unamestr == 'Darwin' ]]; then
   platform='darwin'
 fi
 
+
+# Coffeescript 
+alias givemecoffeefast="find . -type f -name '*.js' | while read f; do echo "grinding $f to ${f/.js/.coffee} "; js2coffee "$f" > "${f/.js/.coffee}"; done"
 # tmux 
-alias killmux='tmux kill-session -t'
 alias nmux='tmux new -s'
 alias mux='tmux new -s $PWD:t'
 alias lmux='tmux list-sessions'

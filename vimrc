@@ -96,7 +96,7 @@ set wildignore+=*.gem
 set wildignore+=log/**
 set wildignore+=tmp/**
 set wildignore+=*.png,*.jpg,*.gif
-
+let syntastic_mode_map = { 'passive_filetypes': ['html'] }
 let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
 let Tlist_Use_Right_Window = 1
 " ================ Scrolling ========================
