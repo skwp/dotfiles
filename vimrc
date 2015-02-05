@@ -96,9 +96,15 @@ set wildignore+=*.gem
 set wildignore+=log/**
 set wildignore+=tmp/**
 set wildignore+=*.png,*.jpg,*.gif
+
+"================= handlebar / mustache | for syntastic
 let syntastic_mode_map = { 'passive_filetypes': ['html'] }
+
+"==================== Tlist for ctags navigation 20i===========
+let g:rails_ctags_arguments = ['--languages=ruby']
 let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
 let Tlist_Use_Right_Window = 1
+
 " ================ Scrolling ========================
 au BufNewFile,BufRead *.es6 set filetype=javascript
 au FileType javascript set dictionary+=$HOME/.vim/dict/node.dict
@@ -125,6 +131,63 @@ set incsearch       " Find the next match as we type the search
 set hlsearch        " Highlight searches by default
 set ignorecase      " Ignore case when searching...
 set smartcase       " ...unless we type a capital
+
+" ====================== Go  ========================
+
+au FileType go au BufWritePre <buffer> Fmt
+au BufWritePost *.go silent! !ctags -R &
+let g:SuperTabDefaultCompletionType = "context"
+
+au Filetype go set makeprg=go\ build\ ./...
+nmap <F5> :make<CR>:copen<CR>
+
+function! s:GoVet()
+    cexpr system("go vet " . shellescape(expand('%')))
+    copen
+endfunction
+command! GoVet :call s:GoVet()
+
+
+function! s:GoLint()
+    cexpr system("golint " . shellescape(expand('%')))
+    copen
+endfunction
+command! GoLint :call s:GoLint()
+
+set foldmethod=syntax
+set foldnestmax=10
+set nofoldenable
+set foldlevel=0
+set guifont=Source\ Code\ Pro:h16 " Set default font
+set fu " Start fullscreen
+
+let g:tagbar_type_go = {
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+    \ },
+    \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \ },
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+\ }
 
 " ================ Custom Settings ========================
 so ~/.yadr/vim/settings.vim
