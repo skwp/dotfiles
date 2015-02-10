@@ -27,5 +27,6 @@ else
   end
 endif
 
+set guifont=Source\ Code\ Pro\ Light:h18
 colorscheme solarized
 set background=dark
