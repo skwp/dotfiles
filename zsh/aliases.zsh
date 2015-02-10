@@ -202,6 +202,7 @@ alias sgi='sudo gem install --no-ri --no-rdoc'
 # This uses NValt (NotationalVelocity alt fork) - http://brettterpstra.com/project/nvalt/
 # to find the note called 'todo'
 alias todo='open nvalt://find/todo'
+alias todos='$EDITOR ~/.todo'
 
 # Forward port 80 to 3000
 alias portforward='sudo ipfw add 1000 forward 127.0.0.1,3000 ip from any to any 80 in'
@@ -243,3 +244,4 @@ alias dbmu='spring rake db:migrate:up'
 # Homebrew
 alias brewu='brew update && brew upgrade && brew cleanup && brew prune && brew doctor'
 
+# productivity
