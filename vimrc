@@ -14,7 +14,6 @@ set backspace=indent,eol,start  "Allow backspace in insert mode
 set history=1000                "Store lots of :cmdline history
 set showcmd                     "Show incomplete cmds down the bottom
 set showmode                    "Show current mode down the bottom
-set gcr=a:blinkon0              "Disable cursor blink
 set visualbell                  "No sounds
 set autoread                    "Reload files changed outside vim
 
@@ -41,7 +40,6 @@ endif
 
 " ================ meteor mustche settings =============
 au BufReadPost *.hbs set filetype=html.mustache syntax=html.mustache
-au BufReadPost *.html set filetype=html.mustache syntax=html.mustache
 " ================ Turn Off Swap Files ==============
 
 set noswapfile
@@ -97,27 +95,29 @@ set wildignore+=log/**
 set wildignore+=tmp/**
 set wildignore+=*.png,*.jpg,*.gif
 
+set textwidth=80
 "================= handlebar / mustache | for syntastic
 let syntastic_mode_map = { 'passive_filetypes': ['html'] }
 
-"==================== Tlist for ctags navigation 20i===========
+"==================== Tlist for ctags navigation and other golang things===========
+au BufRead,BufNewFile *.go setlocal set softtabstop=4 shiftwidth=4 tabstop=4
 let g:rails_ctags_arguments = ['--languages=ruby']
-let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
+let tlist_Ctags_Cmd = '/usr/local/bin/ctags'
 let Tlist_Use_Right_Window = 1
 
+let g:tagbar_type_go = { \ 'ctagstype' : 'Go', \ 'kinds'     : [ \ 'p:package',
+      \ 'i:imports:1', \ 'c:constants', \ 'v:variables', \ 't:types', \
+'n:interfaces', \ 'w:fields', \ 'e:embedded', \ 'm:methods', \ 'r:constructor',
+      \ 'f:functions' \ ], \ 'sro' : '.', \ 'kind2scope' : { \ 't' : 'ctype', \
+'n' : 'ntype' \ }, \ 'scope2kind' : { \ 'ctype' : 't', \ 'ntype' : 'n' \ }, \
+'ctagsbin'  : 'gotags', \ 'ctagsargs' : '-sort -silent' }
+
+nmap <leader> :TagbarToggle<CR>
 " ================ Scrolling ========================
 au BufNewFile,BufRead *.es6 set filetype=javascript
 au FileType javascript set dictionary+=$HOME/.vim/dict/node.dict
 
 
-" =================  Tmux ========================================
-let g:tmux_navigator_no_mappings = 1
-
-nnoremap <silent> {Left-mapping} :TmuxNavigateLeft<cr>
-nnoremap <silent> {Down-Mapping} :TmuxNavigateDown<cr>
-nnoremap <silent> {Up-Mapping} :TmuxNavigateUp<cr>
-nnoremap <silent> {Right-Mapping} :TmuxNavigateRight<cr>
-nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
 "========================================================================
 
 set scrolloff=8         "Start scrolling when we're 8 lines away from margins
@@ -134,60 +134,14 @@ set smartcase       " ...unless we type a capital
 
 " ====================== Go  ========================
 
-au FileType go au BufWritePre <buffer> Fmt
-au BufWritePost *.go silent! !ctags -R &
+nnoremap <leader>ct :CtrlPTag<cr>
+
 let g:SuperTabDefaultCompletionType = "context"
-
-au Filetype go set makeprg=go\ build\ ./...
-nmap <F5> :make<CR>:copen<CR>
-
-function! s:GoVet()
-    cexpr system("go vet " . shellescape(expand('%')))
-    copen
-endfunction
-command! GoVet :call s:GoVet()
-
-
-function! s:GoLint()
-    cexpr system("golint " . shellescape(expand('%')))
-    copen
-endfunction
-command! GoLint :call s:GoLint()
 
 set foldmethod=syntax
 set foldnestmax=10
 set nofoldenable
 set foldlevel=0
-set guifont=Source\ Code\ Pro:h16 " Set default font
-set fu " Start fullscreen
-
-let g:tagbar_type_go = {
-    \ 'ctagstype' : 'go',
-    \ 'kinds'     : [
-        \ 'p:package',
-        \ 'i:imports:1',
-        \ 'c:constants',
-        \ 'v:variables',
-        \ 't:types',
-        \ 'n:interfaces',
-        \ 'w:fields',
-        \ 'e:embedded',
-        \ 'm:methods',
-        \ 'r:constructor',
-        \ 'f:functions'
-    \ ],
-    \ 'sro' : '.',
-    \ 'kind2scope' : {
-        \ 't' : 'ctype',
-        \ 'n' : 'ntype'
-    \ },
-    \ 'scope2kind' : {
-        \ 'ctype' : 't',
-        \ 'ntype' : 'n'
-    \ },
-    \ 'ctagsbin'  : 'gotags',
-    \ 'ctagsargs' : '-sort -silent'
-\ }
-
+set guifont=Source\ Code\ Pro:h17 " Set default font
 " ================ Custom Settings ========================
 so ~/.yadr/vim/settings.vim
