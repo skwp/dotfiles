@@ -13,12 +13,13 @@ if has("gui_running")
   set columns=190
 
   if has("gui_gtk2")
-    set guifont=Source Code Pro Medium:h16
+    set guifont=Source\ Code\ Pro\ Normal:h18
   else
+    set guifont=Source\ Code\ Pro\ For\ Powerline\ Normal:h18
   end
 else
   let g:CSApprox_loaded = 1
-
+  set guifont=Source\ Code\ Pro\ For\ Powerline\ Normal:h18
   " For people using a terminal that is not Solarized
   if exists("g:yadr_using_unsolarized_terminal")
     let g:solarized_termcolors=256

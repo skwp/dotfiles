@@ -105,19 +105,48 @@ let g:rails_ctags_arguments = ['--languages=ruby']
 let tlist_Ctags_Cmd = '/usr/local/bin/ctags'
 let Tlist_Use_Right_Window = 1
 
-let g:tagbar_type_go = { \ 'ctagstype' : 'Go', \ 'kinds'     : [ \ 'p:package',
-      \ 'i:imports:1', \ 'c:constants', \ 'v:variables', \ 't:types', \
-'n:interfaces', \ 'w:fields', \ 'e:embedded', \ 'm:methods', \ 'r:constructor',
-      \ 'f:functions' \ ], \ 'sro' : '.', \ 'kind2scope' : { \ 't' : 'ctype', \
-'n' : 'ntype' \ }, \ 'scope2kind' : { \ 'ctype' : 't', \ 'ntype' : 'n' \ }, \
-'ctagsbin'  : 'gotags', \ 'ctagsargs' : '-sort -silent' }
+let g:tagbar_type_go = {
+    \ 'ctagstype' : 'Go',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+    \ },
+    \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \ },
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent' }
 
+au BufRead,BufNewFile *.go setlocal set softtabstop=4 shiftwidth=4 tabstop=4
 nmap <leader> :TagbarToggle<CR>
 " ================ Scrolling ========================
 au BufNewFile,BufRead *.es6 set filetype=javascript
 au FileType javascript set dictionary+=$HOME/.vim/dict/node.dict
 
 
+" =================  Tmux ========================================
+let g:tmux_navigator_no_mappings = 1
+
+nnoremap <silent> {Left-mapping} :TmuxNavigateLeft<cr>
+nnoremap <silent> {Down-Mapping} :TmuxNavigateDown<cr>
+nnoremap <silent> {Up-Mapping} :TmuxNavigateUp<cr>
+nnoremap <silent> {Right-Mapping} :TmuxNavigateRight<cr>
+nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
 "========================================================================
 
 set scrolloff=8         "Start scrolling when we're 8 lines away from margins
@@ -142,6 +171,5 @@ set foldmethod=syntax
 set foldnestmax=10
 set nofoldenable
 set foldlevel=0
-set guifont=Source\ Code\ Pro:h17 " Set default font
 " ================ Custom Settings ========================
 so ~/.yadr/vim/settings.vim
