@@ -138,15 +138,6 @@ nmap <leader> :TagbarToggle<CR>
 au BufNewFile,BufRead *.es6 set filetype=javascript
 au FileType javascript set dictionary+=$HOME/.vim/dict/node.dict
 
-
-" =================  Tmux ========================================
-let g:tmux_navigator_no_mappings = 1
-
-nnoremap <silent> {Left-mapping} :TmuxNavigateLeft<cr>
-nnoremap <silent> {Down-Mapping} :TmuxNavigateDown<cr>
-nnoremap <silent> {Up-Mapping} :TmuxNavigateUp<cr>
-nnoremap <silent> {Right-Mapping} :TmuxNavigateRight<cr>
-nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
 "========================================================================
 
 set scrolloff=8         "Start scrolling when we're 8 lines away from margins
@@ -167,6 +158,12 @@ nnoremap <leader>ct :CtrlPTag<cr>
 
 let g:SuperTabDefaultCompletionType = "context"
 
+
+
+
+
+
+set guifont=Source\ Code\ Pro\ Light:h18
 set foldmethod=syntax
 set foldnestmax=10
 set nofoldenable
