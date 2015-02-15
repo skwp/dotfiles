@@ -1,5 +1,5 @@
 export GOPATH=$HOME/go
 
 # path, the 0 in the filename causes this to load first
-export PATH=$PATH:$HOME/.yadr/bin:$HOME/.yadr/bin/yadr:./node_modules:$GOPATH/bin
+export PATH=$PATH:$HOME/bin:$HOME/.yadr/bin:$HOME/.yadr/bin/yadr:./node_modules:$GOPATH/bin
 
