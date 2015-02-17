@@ -10,6 +10,12 @@ elif [[ $unamestr == 'Darwin' ]]; then
   platform='darwin'
 fi
 
+# Generator Stuff
+alias g:a="bee generate appcode"
+alias g:m="bee generate model"
+alias g:c="bee generate controller"
+alias g:v="bee generate view"
+alias g:mi="bee generate migration"
 
 # open files (html with w3m,)
 alias -s tex=vim
