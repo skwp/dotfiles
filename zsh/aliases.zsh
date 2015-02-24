@@ -17,6 +17,7 @@ alias g:c="bee generate controller"
 alias g:v="bee generate view"
 alias g:mi="bee generate migration"
 alias g:sc="bee generate scaffold"
+
 # open files (html with w3m,)
 alias -s tex=vim
 alias -s html=w3m
