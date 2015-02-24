@@ -11,5 +11,4 @@ Bundle "tpope/vim-bundler"
 Bundle 'KurtPreston/vim-autoformat-rails'
 Bundle 'quentindecock/vim-cucumber-align-pipes'
 Bundle 'rogeliog/Vim-Snippets'
-Bundle 'bmabey/vim-cucumber'
 Bundle 'tpope/vim-cucumber'
