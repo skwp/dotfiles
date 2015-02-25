@@ -16,7 +16,10 @@ set showcmd                     "Show incomplete cmds down the bottom
 set showmode                    "Show current mode down the bottom
 set visualbell                  "No sounds
 set autoread                    "Reload files changed outside vim
+set showmatch
+set mat=5
 
+let g:go_fmt_command = "goimports"
 " This makes vim act like all other editors, buffers can
 " exist in the background without being in a window.
 " http://items.sjbach.com/319/configuring-vim-right
@@ -100,44 +103,29 @@ set textwidth=80
 let syntastic_mode_map = { 'passive_filetypes': ['html'] }
 
 "==================== Tlist for ctags navigation and other golang things===========
-au BufRead,BufNewFile *.go setlocal set softtabstop=4 shiftwidth=4 tabstop=4
 let g:rails_ctags_arguments = ['--languages=ruby']
-let tlist_Ctags_Cmd = '/usr/local/bin/ctags'
 let Tlist_Use_Right_Window = 1
 
-let g:tagbar_type_go = {
-    \ 'ctagstype' : 'Go',
-    \ 'kinds'     : [
-        \ 'p:package',
-        \ 'i:imports:1',
-        \ 'c:constants',
-        \ 'v:variables',
-        \ 't:types',
-        \ 'n:interfaces',
-        \ 'w:fields',
-        \ 'e:embedded',
-        \ 'm:methods',
-        \ 'r:constructor',
-        \ 'f:functions'
-    \ ],
-    \ 'sro' : '.',
-    \ 'kind2scope' : {
-        \ 't' : 'ctype',
-        \ 'n' : 'ntype'
-    \ },
-    \ 'scope2kind' : {
-        \ 'ctype' : 't',
-        \ 'ntype' : 'n'
-    \ },
-    \ 'ctagsbin'  : 'gotags',
-    \ 'ctagsargs' : '-sort -silent' }
 
-au BufRead,BufNewFile *.go setlocal set softtabstop=4 shiftwidth=4 tabstop=4
-nmap <leader> :TagbarToggle<CR>
 " ================ Scrolling ========================
 au BufNewFile,BufRead *.es6 set filetype=javascript
 au FileType javascript set dictionary+=$HOME/.vim/dict/node.dict
-
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>bd <Plug>(go-build)
+au FileType go nmap <leader>ts <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)
+au FileType go nmap <Leader>ds <Plug>(go-def-split)
+au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+au FileType go nmap <Leader>e <Plug>(go-rename)
+au FileType go nmap <Leader>s <Plug>(go-implements)
+au FileType go nmap <Leader>i <Plug>(go-info)
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
 "========================================================================
 
 set scrolloff=8         "Start scrolling when we're 8 lines away from margins

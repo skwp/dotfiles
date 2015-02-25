@@ -10,5 +10,4 @@ Bundle "ck3g/vim-change-hash-syntax"
 Bundle "tpope/vim-bundler"
 Bundle 'KurtPreston/vim-autoformat-rails'
 Bundle 'quentindecock/vim-cucumber-align-pipes'
-Bundle 'rogeliog/Vim-Snippets'
 Bundle 'tpope/vim-cucumber'
