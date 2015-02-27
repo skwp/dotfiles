@@ -10,6 +10,9 @@ elif [[ $unamestr == 'Darwin' ]]; then
   platform='darwin'
 fi
 
+
+# Go 
+alias dev="devtodo2"
 # Generator Stuff
 alias g:a="bee generate appcode"
 alias g:m="bee generate model"

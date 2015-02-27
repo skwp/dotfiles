@@ -19,7 +19,6 @@ set autoread                    "Reload files changed outside vim
 set showmatch
 set mat=5
 
-let g:go_fmt_command = "goimports"
 " This makes vim act like all other editors, buffers can
 " exist in the background without being in a window.
 " http://items.sjbach.com/319/configuring-vim-right
@@ -104,6 +103,8 @@ let syntastic_mode_map = { 'passive_filetypes': ['html'] }
 
 "==================== Tlist for ctags navigation and other golang things===========
 let g:rails_ctags_arguments = ['--languages=ruby']
+let g:go_ctags_arguments = ['--languages=go']
+let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
 let Tlist_Use_Right_Window = 1
 
 
@@ -123,9 +124,15 @@ au FileType go nmap <Leader>dt <Plug>(go-def-tab)
 au FileType go nmap <Leader>e <Plug>(go-rename)
 au FileType go nmap <Leader>s <Plug>(go-implements)
 au FileType go nmap <Leader>i <Plug>(go-info)
+
+au FileType go set tabstop=8
+let g:go_fmt_command = "goimports"
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
+let Tlist_def_go_settings = 'go;g:enum;s:struct;u:union;t:type;' .
+                           \ 'v:variable;f:function'
+let Tlist_Auto_Update = 1
 "========================================================================
 
 set scrolloff=8         "Start scrolling when we're 8 lines away from margins
@@ -143,13 +150,6 @@ set smartcase       " ...unless we type a capital
 " ====================== Go  ========================
 
 nnoremap <leader>ct :CtrlPTag<cr>
-
-let g:SuperTabDefaultCompletionType = "context"
-
-
-
-
-
 
 set guifont=Source\ Code\ Pro\ Light:h18
 set foldmethod=syntax
