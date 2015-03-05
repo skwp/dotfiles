@@ -6,3 +6,5 @@ Bundle 'scrooloose/syntastic.git'
 Bundle 'nelstrom/vim-markdown-preview'
 Bundle 'skwp/vim-html-escape'
 Plugin 'fatih/vim-go'
+Plugin 'vim-jp/vim-go-extra'
+Plugin 'nsf/gocode', {'rtp': 'vim/'}
