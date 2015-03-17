@@ -13,6 +13,8 @@ fi
 
 # Go 
 alias dev="devtodo2"
+alias gob="~/go/bin/gb"
+alias goplay="~/go/src/go-play/goplay/goplay"
 # Generator Stuff
 alias g:a="bee generate appcode"
 alias g:m="bee generate model"
@@ -160,7 +162,6 @@ alias co='git co'
 alias gf='git fetch'
 alias gfch='git fetch'
 alias gd='git diff'
-alias gb='git b'
 alias gbd='git b -D -w'
 alias gdc='git diff --cached -w'
 alias gpub='grb publish'
