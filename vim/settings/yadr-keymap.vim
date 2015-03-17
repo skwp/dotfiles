@@ -98,13 +98,13 @@ nnoremap ,. '.
 "
 " the first quote will autoclose so you'll get 'foo' and hitting <c-a> will
 " put the cursor right after the quote
-imap <C-a> <esc>wa
+imap <c-a> <esc>wA
 
 " ==== NERD tree
 " Cmd-Shift-N for nerd tree
 nmap <silent> ,n  :NERDTreeToggle<CR>
 " Open the project tree and expose current file in the nerdtree with Ctrl-\
-nnoremap <silent> <C-\> :NERDTreeFind<CR>:vertical res 30<CR>
+nnoremap <silent> <C-!> :NERDTreeFind<CR>:vertical res 30<CR>
 nmap <silent> tb :Tagbar<CR>
 nmap <silent> rl :redraw!<CR>
 " ,q to toggle quickfix window (where you have stuff like Ag)
