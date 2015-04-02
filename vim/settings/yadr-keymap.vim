@@ -19,7 +19,16 @@ function! YRRunAfterMaps()
 endfunction
 
 " Set line highlight horizontal and vertical
-nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
+nnoremap <Leader>cc :set cursorline! cursorcolumn!<CR>
+" Set only horizontal highlight
+nnoremap <Leader>cl :set cursorline!<CR>
+" If you only want 
+" If you only want the highlight applied in the current window, use an autocmd instead:
+augroup CursorLine
+  au!
+  au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+  au WinLeave * setlocal nocursorline
+augroup END
 " Make 0 go to the first character rather than the beginning
 " of the line. When we're programming, we're almost always
 " interested in working with text rather than empty space. If
