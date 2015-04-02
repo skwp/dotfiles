@@ -18,6 +18,8 @@ function! YRRunAfterMaps()
   nnoremap Y   :<C-U>YRYankCount 'y$'<CR>
 endfunction
 
+" Set line highlight horizontal and vertical
+nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
 " Make 0 go to the first character rather than the beginning
 " of the line. When we're programming, we're almost always
 " interested in working with text rather than empty space. If
