@@ -10,3 +10,7 @@ Bundle "jby/tmux.vim.git"
 Bundle "morhetz/gruvbox"
 " <leader>mt, mo, mh, ma, mm
 Bundle "xsunsmile/showmarks.git"
+Bundle "chriskempson/base16-vim"
+
+" Required for Gblame in terminal vim
+Bundle "godlygeek/csapprox.git" 
