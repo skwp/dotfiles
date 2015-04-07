@@ -33,3 +33,5 @@ Bundle "goldfeld/ctrlr.vim"
 Bundle 'majutsushi/tagbar'
 "execute whole/part of editing file, map: <F5>
 Bundle 'thinca/vim-quickrun'
+Bundle 'Shougo/vimproc.vim'
+Bundle 'Shougo/vimshell.vim'
