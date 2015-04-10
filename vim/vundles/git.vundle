@@ -8,3 +8,4 @@ Bundle "tpope/vim-fugitive"
 Bundle "tpope/vim-git"
 "Show git diff map: [h, ]h, my map: <leader>tg
 Bundle 'airblade/vim-gitgutter'
+Bundle 'lambdalisue/vim-gita'
