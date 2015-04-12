@@ -108,6 +108,8 @@ set sidescroll=1
 
 " ================ Search ===========================
 
+" re-define highlighting via the ColorScheme event
+autocmd ColorScheme * highlight Search term=reverse cterm=reverse ctermfg=2 guifg=White guibg=Purple
 set incsearch       " Find the next match as we type the search
 set hlsearch        " Highlight searches by default
 set ignorecase      " Ignore case when searching...

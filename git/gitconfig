@@ -125,3 +125,7 @@
   enabled = true
 [include]
   path = .gitconfig.user
+
+[user]
+  name = zhenyuy
+  email = zhenyuy@fb.com
