@@ -58,6 +58,7 @@ MACVIM_INSTALLED=$?
 if [ $MACVIM_INSTALLED -eq 0 ]; then
   alias vim="mvim -v"
 fi
+alias vi="vim"
 
 # mimic vim functions
 alias :q='exit'
@@ -67,7 +68,6 @@ alias ge='vim ~/.gitconfig'
 
 # tmux.conf editing
 alias te='vim ~/.tmux.conf'
-
 
 # vimrc editing
 alias ve='vim ~/.vimrc'
