@@ -18,6 +18,7 @@ set showmode                    "Show current mode down the bottom
 set gcr=a:blinkon0              "Disable cursor blink
 set visualbell                  "No sounds
 set autoread                    "Reload files changed outside vim
+set cursorline                  "Set the cursorline
 
 " This makes vim act like all other editors, buffers can
 " exist in the background without being in a window.
@@ -100,6 +101,13 @@ set wildignore+=tmp/**
 set wildignore+=*.png,*.jpg,*.gif
 
 "
+" ================ Copy and Paste ========================
+" use system clipbord to enable copy and paste outside of vim
+set clipboard=unnamed
+
+" faster redrawing
+set ttyfast
+
 " ================ Moving ========================
 " use space to pagedown, which is cosistent with most web browsers
 nmap <Space> <PageDown>
@@ -118,12 +126,10 @@ autocmd ColorScheme * highlight Search term=reverse cterm=reverse ctermfg=2 guif
 
 " enable cursor line and change it's color scheme 
 autocmd ColorScheme * highlight CursorLine cterm=NONE ctermbg=darkgreen ctermfg=white guibg=darkred guifg=white
-set cursorline
 
 set incsearch       " Find the next match as we type the search
 set hlsearch        " Highlight searches by default
 set ignorecase      " Ignore case when searching...
 set smartcase       " ...unless we type a capital
-
 " ================ Custom Settings ========================
 so ~/.yadr/vim/settings.vim
