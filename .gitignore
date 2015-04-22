@@ -13,3 +13,4 @@ vim/sessions
 .netrwhist
 bin/subl
 tags
+git/gitconfig

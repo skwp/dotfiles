@@ -125,6 +125,7 @@
   enabled = true
 [include]
   path = .gitconfig.user
-[user]
-  name = Dave Rapin
-  email = dave@rapin.com
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
