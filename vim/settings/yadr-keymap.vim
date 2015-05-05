@@ -75,9 +75,8 @@ imap <C-a> <esc>wa
 
 " ==== NERD tree
 " Open the project tree and expose current file in the nerdtree with Ctrl-\
-nnoremap <silent> ,p :NERDTreeFind<CR>:vertical res 30<CR>
-nmap <C-P> :NERDTreeTabsToggle<CR>
-nmap <C-P> :NERDTreeTabsToggle<CR>
+nmap <leader>P :NERDTreeFind<CR>
+nmap <leader>P :NERDTreeTabsToggle<CR>
 
 " ,q to toggle quickfix window (where you have stuff like Ag)
 " ,oq to open it back up (rare)
