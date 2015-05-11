@@ -30,7 +30,7 @@ syntax on
 
 " Change leader to a comma because the backslash is too far away
 " That means all \x commands turn into ,x
-" The mapleader has to be set before vundle starts loading all 
+" The mapleader has to be set before vundle starts loading all
 " the plugins.
 let mapleader=","
 
@@ -124,7 +124,7 @@ set sidescroll=1
 " re-define highlighting via the ColorScheme event
 autocmd ColorScheme * highlight Search term=reverse cterm=reverse ctermfg=2 guifg=White guibg=Purple
 
-" enable cursor line and change it's color scheme 
+" enable cursor line and change it's color scheme
 autocmd ColorScheme * highlight CursorLine cterm=NONE ctermbg=darkgreen ctermfg=white guibg=darkred guifg=white
 
 " ================ Tab  ===========================
@@ -135,6 +135,9 @@ map <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
 " ================ NerdTree ===========================
 " sync NERDTree's directory to the current file's directory
 map <leader>r :NERDTreeFind<cr>
+
+" toggle NERDTree with ctrl + \
+map <C-o> :NERDTreeToggle %<CR>
 
 set incsearch       " Find the next match as we type the search
 set hlsearch        " Highlight searches by default
