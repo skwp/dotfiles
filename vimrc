@@ -132,6 +132,10 @@ autocmd ColorScheme * highlight CursorLine cterm=NONE ctermbg=darkgreen ctermfg=
 " close current tab without closing window
 map <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
 
+" ================ NerdTree ===========================
+" sync NERDTree's directory to the current file's directory
+map <leader>r :NERDTreeFind<cr>
+
 set incsearch       " Find the next match as we type the search
 set hlsearch        " Highlight searches by default
 set ignorecase      " Ignore case when searching...
