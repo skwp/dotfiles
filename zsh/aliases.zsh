@@ -145,6 +145,16 @@ alias tftl='tail -f log/test.log'
 alias ka9='killall -9'
 alias k9='kill -9'
 
+alias sd='searchAndDestroy'
+
+alias serv='http-server'
+alias sb='sublime .'
+
+alias r='cd ~/workspace/rails'
+alias p='cd ~/workspace'
+alias a='cd ~/workspace/angularjs/'
+alias klaus='~/workspace/klaus/good_luck_norris'
+
 # Gem install
 alias sgi='sudo gem install --no-ri --no-rdoc'
 

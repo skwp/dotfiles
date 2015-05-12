@@ -73,6 +73,9 @@ nnoremap ,. '.
 " put the cursor right after the quote
 imap <C-a> <esc>wa
 
+
+" Tagbar
+nmap <leader>T :TagbarToggle<CR>
 " ==== NERD tree
 " Open the project tree and expose current file in the nerdtree with Ctrl-\
 nmap <leader>P :NERDTreeFind<CR>
