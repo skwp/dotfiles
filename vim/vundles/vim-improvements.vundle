@@ -29,3 +29,10 @@ Bundle "vim-scripts/sudo.vim"
 Bundle "goldfeld/ctrlr.vim"
 Bundle "vim-scripts/utl.vim"
 Bundle "hsitz/VimOrganizer"
+Bundle 'ujihisa/unite-colorscheme'
+Bundle 'Shougo/unite.vim'
+Bundle 'Shougo/unite-outline'
+Bundle 'Shougo/vimproc'
+Bundle 'Indent-Guides'
+Bundle 'AndrewRadev/switch.vim'
+Bundle 'calendar.vim--Matsumoto'
