@@ -64,6 +64,8 @@ set shiftwidth=2
 set softtabstop=2
 set tabstop=2
 set expandtab
+set noeol
+set binary
 
 filetype plugin on
 filetype indent on
@@ -108,6 +110,13 @@ set incsearch       " Find the next match as we type the search
 set hlsearch        " Highlight searches by default
 set ignorecase      " Ignore case when searching...
 set smartcase       " ...unless we type a capital
+
+" =============== Some indention options =================
+set cinoptions=:0,(s,u0,U1.g0,t0)
+
+" =============== highlight spell errors ==================
+hi SpellErrors guibg=red guifg=black ctermbg=red ctermfg=black
+
 
 " ================ Custom Settings ========================
 so ~/.yadr/vim/settings.vim
