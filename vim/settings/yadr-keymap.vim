@@ -8,6 +8,9 @@
 " FIXME: will not properly repeat when you use a dot (tie into repeat.vim)
 nnoremap ,yw yiww
 
+" ,e to fast finding files. just type beginning of a name and hit TAB
+nmap <leader>e :e **/
+
 " ,ow = 'overwrite word', replace a word with what's in the yank buffer
 " FIXME: will not properly repeat when you use a dot (tie into repeat.vim)
 nnoremap ,ow "_diwhp
