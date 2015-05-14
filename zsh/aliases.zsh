@@ -152,7 +152,7 @@ alias sb='sublime .'
 
 alias r='cd ~/workspace/rails'
 alias p='cd ~/workspace'
-alias a='cd ~/workspace/angularjs/'
+alias ng='cd ~/workspace/angularjs/'
 alias klaus='~/workspace/klaus/good_luck_norris'
 
 # Gem install
