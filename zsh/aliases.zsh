@@ -54,6 +54,15 @@ if [ $MACVIM_INSTALLED -eq 0 ]; then
   alias vim="mvim -v"
 fi
 
+# vim Go IDE
+alias vimgo='vim -u ~/.vimrc.go'
+
+# vim Elixir IDE
+alias vimelixir='vim -u ~/.vimrc.elixir'
+
+# rubyvim IDE
+alias ruvi='vim -u ~/.vim-ruvi/.vimrc'
+
 # mimic vim functions
 alias :q='exit'
 
@@ -130,6 +139,7 @@ alias l='less'
 alias lh='ls -alt | head' # see the last modified files
 alias screen='TERM=screen screen'
 alias cl='clear'
+alias sd='searchAndDestroy'
 
 # Zippin
 alias gz='tar -zcvf'
@@ -150,10 +160,14 @@ alias sd='searchAndDestroy'
 alias serv='http-server'
 alias sb='sublime .'
 
+# Folder shortcuts
 alias r='cd ~/workspace/rails'
 alias p='cd ~/workspace'
 alias ng='cd ~/workspace/angularjs/'
 alias klaus='~/workspace/klaus/good_luck_norris'
+alias temps='~/workspace/angularjs/webtemplates'
+alias tube='/Users/marc/Desktop/youtube'
+alias capybara='/Users/marc/workspace/tests/capybara'
 
 # Gem install
 alias sgi='sudo gem install --no-ri --no-rdoc'
