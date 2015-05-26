@@ -59,7 +59,7 @@ endif
 
 set autoindent
 set smartindent
-set smarttab
+set smarttab 
 set shiftwidth=2
 set softtabstop=2
 set tabstop=2
@@ -84,12 +84,10 @@ set nofoldenable        "dont fold by default
 
 " ================ Completion =======================
 
-set wildmode=list:longest
-set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
+set wildmenu
 set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
 set wildignore+=*vim/backups*
-set wildignore+=*sass-cache*
-set wildignore+=*DS_Store*
+set wildignore+=*sass-cache* set wildignore+=*DS_Store*
 set wildignore+=vendor/rails/**
 set wildignore+=vendor/cache/**
 set wildignore+=*.gem
@@ -117,6 +115,14 @@ set cinoptions=:0,(s,u0,U1.g0,t0)
 " =============== highlight spell errors ==================
 hi SpellErrors guibg=red guifg=black ctermbg=red ctermfg=black
 
+" =============== ruby completion ==========================
+"
+" Set async completion.
+let g:monster#completion#rcodetools#backend = "async_rct_complete"
 
+" Use neocomplete.vim
+let g:neocomplete#sources#omni#input_patterns = {
+\   "ruby" : '[^. *\t]\.\w*\|\h\w*::',
+\}
 " ================ Custom Settings ========================
 so ~/.yadr/vim/settings.vim
