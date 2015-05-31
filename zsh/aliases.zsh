@@ -131,6 +131,7 @@ alias gsmu='git submodule update'
 alias gt='git t'
 alias gbg='git bisect good'
 alias gbb='git bisect bad'
+alias gl1='git log --oneline'
 
 # Common shell functions
 alias less='less -r'
@@ -164,7 +165,7 @@ alias sb='sublime .'
 alias r='cd ~/workspace/rails'
 alias p='cd ~/workspace'
 alias ng='cd ~/workspace/angularjs/'
-alias klaus='~/workspace/klaus/good_luck_norris'
+alias klaus='~/workspace/klaus/norris_deluxe_klaus'
 alias temps='~/workspace/angularjs/webtemplates'
 alias tube='/Users/marc/Desktop/youtube'
 alias capybara='/Users/marc/workspace/tests/capybara'
@@ -177,6 +178,9 @@ alias sgi='sudo gem install --no-ri --no-rdoc'
 # to find the note called 'todo'
 alias todo='open nvalt://find/todo'
 
+
+# tmux
+#alias tmux new $pwd -s
 # Forward port 80 to 3000
 alias portforward='sudo ipfw add 1000 forward 127.0.0.1,3000 ip from any to any 80 in'
 
