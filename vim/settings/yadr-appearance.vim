@@ -27,5 +27,5 @@ else
   end
 endif
 
-colorscheme molokai
+colorscheme solarized
 set background=dark

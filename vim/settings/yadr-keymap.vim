@@ -8,6 +8,8 @@
 " FIXME: will not properly repeat when you use a dot (tie into repeat.vim)
 nnoremap ,yw yiww
 
+nnoremap jk <esc>
+
 " ,e to fast finding files. just type beginning of a name and hit TAB
 nmap <leader>e :e **/
 
