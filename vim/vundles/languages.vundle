@@ -1,4 +1,5 @@
 Bundle 'sheerun/vim-polyglot'
+Bundle "dgryski/vim-godef"
 Bundle 'garbas/vim-snipmate.git'
 Bundle 'honza/vim-snippets'
 Bundle 'jtratner/vim-flavored-markdown.git'
@@ -15,4 +16,5 @@ Bundle 'vitaly/vim-syntastic-coffee'
 Bundle 'vim-scripts/jade.vim'
 Bundle 'wavded/vim-stylus'
 Bundle 'Blackrush/vim-gocode'
+Bundle 'bling/vim-airline'
 Bundle 'groenewege/vim-less'
