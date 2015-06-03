@@ -1,4 +1,8 @@
 
+2014-06-01
+==================
+ * Change Cmd-Space to Ctrl-Space for vim autocomplete so it doesn't conflict with osx spotlight by default, and so there are no additional steps to install.
+
 2014-02-15
 ==================
 
