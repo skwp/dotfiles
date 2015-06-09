@@ -156,7 +156,7 @@ alias tftl='tail -f log/test.log'
 alias ka9='killall -9'
 alias k9='kill -9'
 
-alias s&d='searchAndDestroy'
+alias D='searchAndDestroy'
 
 alias serv='http-server'
 alias sb='sublime .'
