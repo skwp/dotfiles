@@ -269,6 +269,9 @@ def install_prezto
   run %{ mkdir -p $HOME/.zsh.after }
   run %{ mkdir -p $HOME/.zsh.prompts }
 
+  puts "Installing Silver Searcher ignore file..."
+  run %{ ln -nfs "$HOME/.yadr/zsh/agignore" "${ZDOTDIR:-$HOME}/.agignore" }
+
   if ENV["SHELL"].include? 'zsh' then
     puts "Zsh is already configured as your shell of choice. Restart your session to load the new settings"
   else

@@ -1,0 +1,5 @@
+*.sql
+*.log
+schema.rb
+/vendor
+/log
