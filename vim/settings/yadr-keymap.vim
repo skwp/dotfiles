@@ -145,6 +145,9 @@ imap <silent> <C-K> <%=   %><Esc>3hi
 " create <%= foo %> erb tags using Ctrl-j in edit mode
 imap <silent> <C-J> <%  %><Esc>2hi
 
+" create {% foo %} jinja tags using Ctrl-J in edit mode
+imap <silent> <C-J><C-J> {%  %}<Esc>2hi
+
 " ============================
 " Shortcuts for everyday tasks
 " ============================
