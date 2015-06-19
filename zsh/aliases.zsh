@@ -164,6 +164,7 @@ alias sb='sublime .'
 # Folder shortcuts
 alias r='cd ~/workspace/rails'
 alias p='cd ~/workspace'
+alias ngCms='cd ~/workspace/angularjs/cms'
 alias ng='cd ~/workspace/angularjs/'
 alias ngd='cd ~/workspace/angularjs/webtemplates/angular/directives'
 alias alquemy='cd ~/workspace/alchemy_cms'

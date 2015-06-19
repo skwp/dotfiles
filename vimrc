@@ -87,7 +87,8 @@ set nofoldenable        "dont fold by default
 set wildmenu
 set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
 set wildignore+=*vim/backups*
-set wildignore+=*sass-cache* set wildignore+=*DS_Store*
+set wildignore+=*sass-cache* 
+set wildignore+=*DS_Store*
 set wildignore+=vendor/rails/**
 set wildignore+=vendor/cache/**
 set wildignore+=*.gem
@@ -114,12 +115,12 @@ set cinoptions=:0,(s,u0,U1.g0,t0)
 
 " =============== highlight spell errors ==================
 hi SpellErrors guibg=red guifg=black ctermbg=red ctermfg=black
-
+set shell=/bin/sh
 " =============== ruby completion ==========================
 "
 " Set async completion.
 let g:monster#completion#rcodetools#backend = "async_rct_complete"
-
+au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
 " Use neocomplete.vim
 let g:neocomplete#sources#omni#input_patterns = {
 \   "ruby" : '[^. *\t]\.\w*\|\h\w*::',
