@@ -99,7 +99,6 @@ task :install_vundle do
 
   puts ""
 
-  vundle_path = File.join('vim','bundle', 'vundle')
   unless File.exists?(vundle_path)
     run %{
       cd $HOME/.yadr
@@ -107,7 +106,12 @@ task :install_vundle do
     }
   end
 
-  Vundle::update_vundle
+  begin
+    Vundle::update_vundle
+  rescue Vundle::OldVundleError => e
+    pull_vundle
+    Vundle::update_vundle
+  end
 end
 
 task :default => 'install'
@@ -127,6 +131,17 @@ def number_of_cores
   end
   puts
   cores.to_i
+end
+
+def pull_vundle
+  run %{
+      cd #{vundle_path}
+      git pull --rebase
+  }
+end
+
+def vundle_path
+  File.join('vim','bundle', 'vundle')
 end
 
 def run_bundle_config
