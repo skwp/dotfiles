@@ -14,7 +14,7 @@ nnoremap jk <esc>
 nmap <leader>e :e **/
 
 " vim shell
-map ,s :sp<CR>:resize 10<CR>:VimShell<CR>
+map ,s :sp<CR>:resize 10<CR>:VimShell<CR
 
 " ,n to get the next location (compilation errors, grep etc)
 nmap <leader>n :cn<CR>
