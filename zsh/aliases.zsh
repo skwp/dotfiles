@@ -101,6 +101,9 @@ alias todo='open nvalt://find/todo'
 alias rdm='rake db:migrate'
 alias rdr='rake db:reset'
 
+# Calendar (pip install gcalci)
+alias cal='gcalcli agenda'
+
 # Sprintly - https://github.com/nextbigsoundinc/Sprintly-GitHub
 # alias sp='sprintly'
 # spb = sprintly branch - create a branch automatically based on the bug you're working on
