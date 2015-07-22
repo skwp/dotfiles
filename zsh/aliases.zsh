@@ -80,6 +80,7 @@ alias gci='git ci'
 alias gco='git co'
 alias gcp='git cp'
 alias ga='git add -A'
+alias gap='git add -p'
 alias guns='git unstage'
 alias gunc='git uncommit'
 alias gm='git merge'
@@ -136,7 +137,8 @@ alias gz='tar -zcvf'
 
 # Ruby
 alias c='rails c' # Rails 3
-alias co='script/console --irb=pry' # Rails 2
+alias co='script/console' # Rails 2
+alias cod='script/console --debugger'
 alias ts='thin start'
 alias ms='mongrel_rails start'
 alias tfdl='tail -f log/development.log'
