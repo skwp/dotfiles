@@ -10,7 +10,7 @@ endif
 
 " ================ General Config ====================
 
-set number                      "Line numbers are good
+set rnu!
 set backspace=indent,eol,start  "Allow backspace in insert mode
 set history=1000                "Store lots of :cmdline history
 set showcmd                     "Show incomplete cmds down the bottom
@@ -59,11 +59,13 @@ endif
 
 set autoindent
 set smartindent
-set smarttab
+set smarttab 
 set shiftwidth=2
 set softtabstop=2
 set tabstop=2
 set expandtab
+set noeol
+set binary
 
 " Auto indent pasted text
 nnoremap p p=`]<C-o>
@@ -86,11 +88,10 @@ set nofoldenable        "dont fold by default
 
 " ================ Completion =======================
 
-set wildmode=list:longest
-set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
+set wildmenu
 set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
 set wildignore+=*vim/backups*
-set wildignore+=*sass-cache*
+set wildignore+=*sass-cache* 
 set wildignore+=*DS_Store*
 set wildignore+=vendor/rails/**
 set wildignore+=vendor/cache/**
@@ -113,5 +114,20 @@ set hlsearch        " Highlight searches by default
 set ignorecase      " Ignore case when searching...
 set smartcase       " ...unless we type a capital
 
+" =============== Some indention options =================
+set cinoptions=:0,(s,u0,U1.g0,t0)
+
+" =============== highlight spell errors ==================
+hi SpellErrors guibg=red guifg=black ctermbg=red ctermfg=black
+set shell=/bin/sh
+" =============== ruby completion ==========================
+"
+" Set async completion.
+let g:monster#completion#rcodetools#backend = "async_rct_complete"
+au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
+" Use neocomplete.vim
+let g:neocomplete#sources#omni#input_patterns = {
+\   "ruby" : '[^. *\t]\.\w*\|\h\w*::',
+\}
 " ================ Custom Settings ========================
 so ~/.yadr/vim/settings.vim
