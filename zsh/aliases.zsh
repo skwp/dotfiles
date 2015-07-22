@@ -54,6 +54,15 @@ if [ $MACVIM_INSTALLED -eq 0 ]; then
   alias vim="mvim -v"
 fi
 
+# vim Go IDE
+alias vimgo='vim -u ~/.vimrc.go'
+
+# vim Elixir IDE
+alias vimelixir='vim -u ~/.vimrc.elixir'
+
+# rubyvim IDE
+alias ruvi='vim -u ~/.vim-ruvi/.vimrc'
+
 # mimic vim functions
 alias :q='exit'
 
@@ -123,6 +132,7 @@ alias gsmu='git submodule update'
 alias gt='git t'
 alias gbg='git bisect good'
 alias gbb='git bisect bad'
+alias gl1='git log --oneline'
 
 # Common shell functions
 alias less='less -r'
@@ -131,6 +141,7 @@ alias l='less'
 alias lh='ls -alt | head' # see the last modified files
 alias screen='TERM=screen screen'
 alias cl='clear'
+alias sd='searchAndDestroy'
 
 # Zippin
 alias gz='tar -zcvf'
@@ -147,6 +158,22 @@ alias tftl='tail -f log/test.log'
 alias ka9='killall -9'
 alias k9='kill -9'
 
+alias D='searchAndDestroy'
+
+alias serv='http-server'
+alias sb='sublime .'
+
+# Folder shortcuts
+alias r='cd ~/workspace/rails'
+alias p='cd ~/workspace'
+alias ng='cd ~/workspace/angularjs/'
+alias ngd='cd ~/workspace/angularjs/webtemplates/angular/directives'
+alias alquemy='cd ~/workspace/alchemy_cms'
+alias klaus='~/workspace/klaus/norris_deluxe_klaus'
+alias temps='~/workspace/angularjs/webtemplates'
+alias tube='/Users/marc/Desktop/youtube'
+alias capybara='/Users/marc/workspace/tests/capybara'
+
 # Gem install
 alias sgi='sudo gem install --no-ri --no-rdoc'
 
@@ -155,6 +182,9 @@ alias sgi='sudo gem install --no-ri --no-rdoc'
 # to find the note called 'todo'
 alias todo='open nvalt://find/todo'
 
+
+# tmux
+#alias tmux new $pwd -s
 # Forward port 80 to 3000
 alias portforward='sudo ipfw add 1000 forward 127.0.0.1,3000 ip from any to any 80 in'
 
