@@ -80,3 +80,7 @@ au WinLeave * setlocal nocursorline
 
 " other simple settings
 let g:user_emmet_leader_key='<C-Z>'
+
+" input method
+se noimd
+se ims=1
