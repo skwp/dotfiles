@@ -7,7 +7,7 @@ if executable('ag')
     \ 'ag %s --files-with-matches -g "" --ignore "\.git$\|\.hg$\|\.svn$"'
 
   " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
+  let g:ctrlp_use_caching = 1
 else
   " Fall back to using git ls-files if Ag is not available
   let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
@@ -53,4 +53,4 @@ map ,jT :CtrlP test<CR>
 
 "Cmd-Shift-(M)ethod - jump to a method (tag in current file)
 "Ctrl-m is not good - it overrides behavior of Enter
-nnoremap <silent> <D-M> :CtrlPBufTag<CR>
+nnoremap <silent> bt  :CtrlPBufTag<CR>

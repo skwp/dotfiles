@@ -7,17 +7,17 @@ set nocompatible
 if filereadable(expand("~/.vimrc.before"))
   source ~/.vimrc.before
 endif
-
 " ================ General Config ====================
 
-set number                      "Line numbers are good
+set rnu!                      "Line numbers are good
 set backspace=indent,eol,start  "Allow backspace in insert mode
 set history=1000                "Store lots of :cmdline history
 set showcmd                     "Show incomplete cmds down the bottom
 set showmode                    "Show current mode down the bottom
-set gcr=a:blinkon0              "Disable cursor blink
 set visualbell                  "No sounds
 set autoread                    "Reload files changed outside vim
+set showmatch
+set mat=5
 
 " This makes vim act like all other editors, buffers can
 " exist in the background without being in a window.
@@ -40,6 +40,8 @@ if filereadable(expand("~/.vim/vundles.vim"))
   source ~/.vim/vundles.vim
 endif
 
+" ================ meteor mustche settings =============
+au BufReadPost *.hbs set filetype=html.mustache syntax=html.mustache
 " ================ Turn Off Swap Files ==============
 
 set noswapfile
@@ -99,8 +101,68 @@ set wildignore+=log/**
 set wildignore+=tmp/**
 set wildignore+=*.png,*.jpg,*.gif
 
-"
+set textwidth=80
+"================= handlebar / mustache | for syntastic
+let syntastic_mode_map = { 'passive_filetypes': ['html'] }
+
+"==================== Tlist for ctags navigation and other golang things===========
+let g:rails_ctags_arguments = ['--languages=ruby']
+let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
+let Tlist_Use_Right_Window = 1
+
+let g:tagbar_type_go = {
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+    \ },
+    \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \ },
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+\ }
+
+set shell=/bin/sh
 " ================ Scrolling ========================
+au BufNewFile,BufRead *.es6 set filetype=javascript
+au FileType javascript set dictionary+=$HOME/.vim/dict/node.dict
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>bd <Plug>(go-build)
+au FileType go nmap <leader>ts <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)
+au FileType go nmap <Leader>ds <Plug>(go-def-split)
+au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+au FileType go nmap <Leader>e <Plug>(go-rename)
+au FileType go nmap <Leader>s <Plug>(go-implements)
+au FileType go nmap <Leader>i <Plug>(go-info)
+
+au FileType go set tabstop=8
+let g:go_fmt_command = "goimports"
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let Tlist_Auto_Update = 1
+"========================================================================
 
 set scrolloff=8         "Start scrolling when we're 8 lines away from margins
 set sidescrolloff=15
@@ -113,5 +175,14 @@ set hlsearch        " Highlight searches by default
 set ignorecase      " Ignore case when searching...
 set smartcase       " ...unless we type a capital
 
+" ====================== Go  ========================
+
+nnoremap <leader>ct :CtrlPTag<cr>
+
+set guifont=Source\ Code\ Pro\ Light:h18
+set foldmethod=syntax
+set foldnestmax=10
+set nofoldenable
+set foldlevel=0
 " ================ Custom Settings ========================
 so ~/.yadr/vim/settings.vim

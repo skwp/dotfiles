@@ -45,6 +45,7 @@ autocmd FileType javascript map <buffer> <D-j> {
 
 " Command-/ to toggle comments
 map <D-/> :TComment<CR>
+map <silent>cm :TComment<CR>
 imap <D-/> <Esc>:TComment<CR>i
 
 " Use numbers to pick the tab you want (like iTerm)

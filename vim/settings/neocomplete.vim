@@ -10,7 +10,7 @@ let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#max_list = 5
 
 " Set minimum syntax keyword length.
-let g:neocomplete#auto_completion_start_length = 3
+let g:neocomplete#auto_completion_start_length = 2
 
 " Map standard Ctrl-N completion to Ctrl-Space
 inoremap <C-Space> <C-n>
@@ -32,3 +32,4 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+autocmd FileType Go setlocal omnifunc=gocomplete#Complete
