@@ -8,6 +8,28 @@
 " FIXME: will not properly repeat when you use a dot (tie into repeat.vim)
 nnoremap ,yw yiww
 
+" ,e to fast finding files. just type beginning of a name and hit TAB
+nmap <leader>e :e **/
+
+" ,n to get the next location (compilation errors, grep etc)
+nmap <leader>n :cn<CR>
+nmap <leader>N :cp<CR>
+
+" ,d to diffupdate
+nmap <leader>d :diffupdate<CR>
+nmap <leader>dp :diffput<CR>
+nmap <leader>dg :diffget<CR>
+
+" center display after searching
+nnoremap n   nzz
+nnoremap N   Nzz
+nnoremap *   *zz
+nnoremap #   #zz
+nnoremap g*  g*zz
+nnoremap g#  g#z
+
+""""""""""" awesome stuff from vimbits.com
+
 " ,ow = 'overwrite word', replace a word with what's in the yank buffer
 " FIXME: will not properly repeat when you use a dot (tie into repeat.vim)
 nnoremap ,ow "_diwhp
@@ -73,9 +95,13 @@ nnoremap ,. '.
 " put the cursor right after the quote
 imap <C-a> <esc>wa
 
+
+" Tagbar
+nmap <leader>T :TagbarToggle<CR>
 " ==== NERD tree
 " Open the project tree and expose current file in the nerdtree with Ctrl-\
-nnoremap <silent> <C-\> :NERDTreeFind<CR>:vertical res 30<CR>
+nmap <leader>P :NERDTreeFind<CR>
+nmap <leader>p :NERDTreeTabsToggle<CR>
 
 " ,q to toggle quickfix window (where you have stuff like Ag)
 " ,oq to open it back up (rare)

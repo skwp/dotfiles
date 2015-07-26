@@ -10,7 +10,7 @@ endif
 
 " ================ General Config ====================
 
-set number                      "Line numbers are good
+set rnu!
 set backspace=indent,eol,start  "Allow backspace in insert mode
 set history=1000                "Store lots of :cmdline history
 set showcmd                     "Show incomplete cmds down the bottom
@@ -64,6 +64,8 @@ set shiftwidth=2
 set softtabstop=2
 set tabstop=2
 set expandtab
+set noeol
+set binary
 
 " Auto indent pasted text
 nnoremap p p=`]<C-o>
@@ -112,6 +114,13 @@ set incsearch       " Find the next match as we type the search
 set hlsearch        " Highlight searches by default
 set ignorecase      " Ignore case when searching...
 set smartcase       " ...unless we type a capital
+
+" =============== Some indention options =================
+set cinoptions=:0,(s,u0,U1.g0,t0)
+
+" =============== highlight spell errors ==================
+hi SpellErrors guibg=red guifg=black ctermbg=red ctermfg=black
+
 
 " ================ Custom Settings ========================
 so ~/.yadr/vim/settings.vim
