@@ -1,1 +1,1 @@
-map ,s :sp<CR>:resize 10<CR>:VimShell<CR
+map ,vs :sp<CR>:resize 10<CR>:VimShell<CR
