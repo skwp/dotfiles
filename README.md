@@ -8,6 +8,8 @@
     # Yet Another Dotfile Repo v1.1
     # Now with Prezto and Vundle!
 
+[![Join the chat at https://gitter.im/skwp/dotfiles](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/skwp/dotfiles?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
     sh -c "`curl -fsSL https://raw.githubusercontent.com/skwp/dotfiles/master/install.sh`"
 
 **Always be sure to run `rake update` after pulling to ensure plugins are updated**
@@ -51,7 +53,7 @@ sh -c "`curl -fsSL https://raw.githubusercontent.com/skwp/dotfiles/master/instal
 #### Install iTerm Solarized Colors
 YADR will install Solarized colorschemes into your iTerm. Go to Profiles => Colors => Load Presets to pick Solarized Dark.
 
-#### Remap caps-lock to escape with PCKeyboardHack](http://pqrs.org/macosx/keyremap4macbook/pckeyboardhack.html)
+#### Remap caps-lock to escape with [Seil](https://pqrs.org/osx/karabiner/seil.html.en)
 The escape key is the single most used key in vim.  Old keyboards used to have Escape where Tab is today. Apple keyboards are the worst with their tiny Esc keys. But all this is fixed by remapping Caps to Escape.  If you're hitting a small target in the corner, you are slowing yourself down considerably, and probably damaging your hands with repetitive strain injuries.
 
 #### Set up a system wide hotkey for iTerm (Keys=>Hotkey)
@@ -298,6 +300,14 @@ brew uninstall macvim
 brew remove macvim
 brew cleanup
 brew install macvim --custom-icons --override-system-vim --with-lua --with-luajit
+```
+
+### Terminal Vim troubles with Lua?
+Installing terminal vim (with lua) with an RVM managed Ruby can cause the neocomplete plugin to segfault. Try uninstalling vim, then installing with system ruby:
+
+```
+brew uninstall vim
+rvm system do brew install vim --with-lua
 ```
 
 
