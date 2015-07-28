@@ -98,7 +98,6 @@ nnoremap <silent> ,x :bn<CR>
 " nnoremap <silent> <C-j> <C-w>j
 
 " Make gf (go to file) create the file, if not existent
-nnoremap gf :e<cfile><CR>
 nnoremap <C-w>f :sp +e<cfile><CR>
 nnoremap <C-w>gf :tabe<cfile><CR>
 
