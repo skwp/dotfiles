@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<!--
+<?xml version="1.0"?>
+<root>
+<item>
+    <name>Remap CapsLock to Hyper</name>
+    <appendix>OS X doesn't have a Hyper. This maps CapsLock to Control + Shift + Option + Command.</appendix>
+
+    <identifier>space_cadet.escape_to_hyper</identifier>
+    <autogen>
+      __HoldingKeyToKey__
+      KeyCode::F19,
+      ModifierFlag::NONE,
+      KeyCode::ESCAPE,
+      KeyCode::VK_NONE,
+      KeyCode::COMMAND_L,
+      ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::COMMAND_R,
+      KeyCode::COMMAND_L,
+      ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L
+    </autogen>
+
+</item>
+
+</root>
+-->
+<root>
+    <item>
+        <name>COMMAND_R to Shift+Option+Command</name>
+        <identifier>space_cadet.command_r_to_shift_option_command</identifier>
+        <autogen>
+          __KeyToKey__
+          KeyCode::COMMAND_R,
+          KeyCode::COMMAND_L,
+          ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L
+        </autogen>
+    </item>
+    <item>
+        <name>F19 to F19</name>
+        <appendix>(F19 to Hyper (ctrl+shift+cmd+opt) + F19 Only, send escape)</appendix>
+        <identifier>private.f192f19_escape</identifier>
+        <autogen>
+            --KeyOverlaidModifier--
+            KeyCode::F19,
+            KeyCode::COMMAND_L,
+            ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+            KeyCode::ESCAPE
+        </autogen>
+    </item>
+    <item>
+        <name>Hyper J to Down</name>
+        <appendix>(Hyper-J to Down arrow)</appendix>
+        <identifier>private.hyper-j-down</identifier>
+        <autogen>
+            --KeyToKey--
+            KeyCode::J,
+            ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+            KeyCode::CURSOR_DOWN
+        </autogen>
+    </item>
+    <item>
+        <name>Hyper K to Up</name>
+        <appendix>(Hyper-K to Up arrow)</appendix>
+        <identifier>private.hyper-k-up</identifier>
+        <autogen>
+            --KeyToKey--
+            KeyCode::K,
+            ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+            KeyCode::CURSOR_UP
+        </autogen>
+    </item>
+    <item>
+        <name>Hyper H to Left</name>
+        <appendix>(Hyper-H to Left arrow)</appendix>
+        <identifier>private.hyper-h-left</identifier>
+        <autogen>
+            --KeyToKey--
+            KeyCode::H,
+            ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+            KeyCode::CURSOR_LEFT
+        </autogen>
+    </item>
+    <item>
+        <name>Hyper L to Right</name>
+        <appendix>(Hyper-L to Right arrow)</appendix>
+        <identifier>private.hyper-l-right</identifier>
+        <autogen>
+            --KeyToKey--
+            KeyCode::L,
+            ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+            KeyCode::CURSOR_RIGHT
+        </autogen>
+    </item>
+</root>
