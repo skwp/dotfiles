@@ -14,3 +14,5 @@ vim/sessions
 .netrwhist
 bin/subl
 tags
+clang_complete.txt
+dump.rdb
