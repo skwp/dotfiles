@@ -94,4 +94,23 @@
             KeyCode::CURSOR_RIGHT
         </autogen>
     </item>
+    <item>
+      <name>Delete to enclosing folder if you are not editing text</name>
+      <appendix>For Finder</appendix>
+      <identifier>remap.delete_enclosing_folder</identifier>
+
+      <block>
+        <only>
+          FINDER
+        </only>
+        <uielementrole_not>AXTextField, AXTextArea</uielementrole_not>
+        <modifier_only>
+          ModifierFlag::NONE,
+          ModifierFlag::SHIFT_L | ModifierFlag::NONE,
+          ModifierFlag::SHIFT_R | ModifierFlag::NONE,
+        </modifier_only>
+        <autogen>__KeyToKey__ KeyCode::DELETE, KeyCode::DELETE, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L</autogen>
+      </block>
+
+    </item>
 </root>
