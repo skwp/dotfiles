@@ -19,7 +19,7 @@ set completeopt=menu,menuone,preview
 "set completeopt=menuone,menu,longest,preview
 
 set pastetoggle=<F7>
-set tags=./tags,tags,~/tags;
+set tags=./tags;~/tags
 map <F10> :!ctags -R --fields=+l --extra=+q .<CR>
 
 let g:used_javascript_libs = 'jquery'
@@ -84,3 +84,4 @@ let g:user_emmet_leader_key='<C-Z>'
 " input method
 se noimd
 se ims=1
+
