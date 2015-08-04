@@ -1,31 +1,6 @@
 <?xml version="1.0"?>
 <!--
-<?xml version="1.0"?>
-<root>
-<item>
-    <name>Remap CapsLock to Hyper</name>
-    <appendix>OS X doesn't have a Hyper. This maps CapsLock to Control + Shift + Option + Command.</appendix>
-
-    <identifier>space_cadet.escape_to_hyper</identifier>
-    <autogen>
-      __HoldingKeyToKey__
-      KeyCode::F19,
-      ModifierFlag::NONE,
-      KeyCode::ESCAPE,
-      KeyCode::VK_NONE,
-      KeyCode::COMMAND_L,
-      ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L
-    </autogen>
-    <autogen>
-      __KeyToKey__
-      KeyCode::COMMAND_R,
-      KeyCode::COMMAND_L,
-      ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L
-    </autogen>
-
-</item>
-
-</root>
+     Some key mappings need Seil and Keyboard Meaestro
 -->
 <root>
   <appdef>
@@ -36,7 +11,7 @@
     <name>Customized: General</name>
     <item>
       <name>F19 to Hyper Key or Escape</name>
-      <appendix>(F19 to Hyper (ctrl+shift+cmd+opt) + F19 Only, send escape)</appendix>
+      <appendix>(F19 to Hyper (ctrl+shift+cmd+opt) + F19 Only, send escape. Use Seil map CapsLock to F19)</appendix>
       <identifier>private.f192f19_escape</identifier>
       <autogen>
         --KeyOverlaidModifier--
