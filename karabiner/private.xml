@@ -28,71 +28,38 @@
 </root>
 -->
 <root>
+  <appdef>
+    <appname>OmniFocus</appname>
+    <equal>com.omnigroup.OmniFocus2</equal>
+  </appdef>
+  <appdef>
+    <appname>Numbers</appname>
+    <equal>com.apple.iWork.Numbers</equal>
+  </appdef>
+
+  <item>
+    <name>Customized: General</name>
     <item>
-        <name>COMMAND_R to Shift+Option+Command</name>
-        <identifier>space_cadet.command_r_to_shift_option_command</identifier>
-        <autogen>
-          __KeyToKey__
-          KeyCode::COMMAND_R,
-          KeyCode::COMMAND_L,
-          ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L
-        </autogen>
+      <name>F19 to Hyper Key or Escape</name>
+      <appendix>(F19 to Hyper (ctrl+shift+cmd+opt) + F19 Only, send escape)</appendix>
+      <identifier>private.f192f19_escape</identifier>
+      <autogen>
+        --KeyOverlaidModifier--
+        KeyCode::F19,
+        KeyCode::COMMAND_L,
+        ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+        KeyCode::ESCAPE
+      </autogen>
     </item>
     <item>
-        <name>F19 to F19</name>
-        <appendix>(F19 to Hyper (ctrl+shift+cmd+opt) + F19 Only, send escape)</appendix>
-        <identifier>private.f192f19_escape</identifier>
-        <autogen>
-            --KeyOverlaidModifier--
-            KeyCode::F19,
-            KeyCode::COMMAND_L,
-            ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
-            KeyCode::ESCAPE
-        </autogen>
-    </item>
-    <item>
-        <name>Hyper J to Down</name>
-        <appendix>(Hyper-J to Down arrow)</appendix>
-        <identifier>private.hyper-j-down</identifier>
-        <autogen>
-            --KeyToKey--
-            KeyCode::J,
-            ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
-            KeyCode::CURSOR_DOWN
-        </autogen>
-    </item>
-    <item>
-        <name>Hyper K to Up</name>
-        <appendix>(Hyper-K to Up arrow)</appendix>
-        <identifier>private.hyper-k-up</identifier>
-        <autogen>
-            --KeyToKey--
-            KeyCode::K,
-            ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
-            KeyCode::CURSOR_UP
-        </autogen>
-    </item>
-    <item>
-        <name>Hyper H to Left</name>
-        <appendix>(Hyper-H to Left arrow)</appendix>
-        <identifier>private.hyper-h-left</identifier>
-        <autogen>
-            --KeyToKey--
-            KeyCode::H,
-            ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
-            KeyCode::CURSOR_LEFT
-        </autogen>
-    </item>
-    <item>
-        <name>Hyper L to Right</name>
-        <appendix>(Hyper-L to Right arrow)</appendix>
-        <identifier>private.hyper-l-right</identifier>
-        <autogen>
-            --KeyToKey--
-            KeyCode::L,
-            ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
-            KeyCode::CURSOR_RIGHT
-        </autogen>
+      <name>COMMAND_R to Shift+Option+Command</name>
+      <identifier>space_cadet.command_r_to_shift_option_command</identifier>
+      <autogen>
+        __KeyToKey__
+        KeyCode::COMMAND_R,
+        KeyCode::COMMAND_L,
+        ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L
+      </autogen>
     </item>
     <item>
       <name>Delete to enclosing folder if you are not editing text</name>
@@ -101,7 +68,7 @@
 
       <block>
         <only>
-          FINDER
+          FINDER,
         </only>
         <uielementrole_not>AXTextField, AXTextArea</uielementrole_not>
         <modifier_only>
@@ -111,6 +78,117 @@
         </modifier_only>
         <autogen>__KeyToKey__ KeyCode::DELETE, KeyCode::DELETE, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L</autogen>
       </block>
-
     </item>
+  </item>
+  <item>
+    <name>Customized: Use "hjkl" keys as arrow keys if you are not editing text.</name>
+
+    <item>
+      <name>Enable in some standard apps.</name>
+      <appendix>Supported Applications:</appendix>
+      <appendix>- Finder, iPhoto, iTunes, Mail.app.</appendix>
+      <appendix>- Activity Monitor.</appendix>
+      <appendix>- System Preferences, Karabiner, Seil.</appendix>
+      <identifier>remap.leon_hjkl_arrow</identifier>
+
+      {{ HJKL_ARROW_EXTRA }}
+
+      <block>
+        <only>
+          FINDER, IPHOTO, ITUNES, SYSTEM_PREFERENCES,
+          Activity_Monitor,
+          Karabiner, Seil,
+          OmniFocus, Numbers
+        </only>
+        <uielementrole_not>AXTextField, AXTextArea</uielementrole_not>
+        <modifier_only>
+          ModifierFlag::NONE,
+          ModifierFlag::SHIFT_L | ModifierFlag::NONE,
+          ModifierFlag::SHIFT_R | ModifierFlag::NONE,
+        </modifier_only>
+        <autogen>__KeyToKey__ KeyCode::H, KeyCode::CURSOR_LEFT</autogen>
+        <autogen>__KeyToKey__ KeyCode::J, KeyCode::CURSOR_DOWN</autogen>
+        <autogen>__KeyToKey__ KeyCode::K, KeyCode::CURSOR_UP</autogen>
+        <autogen>__KeyToKey__ KeyCode::L, KeyCode::CURSOR_RIGHT</autogen>
+      </block>
+
+      <block>
+        <only>MAIL</only>
+        <!-- Mail body editor is AXWebArea -->
+        <uielementrole_not>AXTextField, AXTextArea, AXWebArea</uielementrole_not>
+        <modifier_only>
+          ModifierFlag::NONE,
+          ModifierFlag::SHIFT_L | ModifierFlag::NONE,
+          ModifierFlag::SHIFT_R | ModifierFlag::NONE,
+        </modifier_only>
+        <autogen>__KeyToKey__ KeyCode::H, KeyCode::CURSOR_LEFT</autogen>
+        <autogen>__KeyToKey__ KeyCode::J, KeyCode::CURSOR_DOWN</autogen>
+        <autogen>__KeyToKey__ KeyCode::K, KeyCode::CURSOR_UP</autogen>
+        <autogen>__KeyToKey__ KeyCode::L, KeyCode::CURSOR_RIGHT</autogen>
+      </block>
+    </item>
+
+    <item>
+      <name>Enable in Xcode.</name>
+      <identifier>remap.leon_hjkl_arrow_xcode</identifier>
+      <only>XCODE</only>
+      <uielementrole_not>AXTextField, AXTextArea</uielementrole_not>
+      <modifier_only>
+        ModifierFlag::NONE,
+        ModifierFlag::SHIFT_L | ModifierFlag::NONE,
+        ModifierFlag::SHIFT_R | ModifierFlag::NONE,
+      </modifier_only>
+      <autogen>__KeyToKey__ KeyCode::H, KeyCode::CURSOR_LEFT</autogen>
+      <autogen>__KeyToKey__ KeyCode::J, KeyCode::CURSOR_DOWN</autogen>
+      <autogen>__KeyToKey__ KeyCode::K, KeyCode::CURSOR_UP</autogen>
+      <autogen>__KeyToKey__ KeyCode::L, KeyCode::CURSOR_RIGHT</autogen>
+    </item>
+  </item>
+  <item>
+    <name>Customized: Use "Hyper+hjkl" keys as arrow keys</name>
+    <item>
+      <name>Hyper J to Down</name>
+      <appendix>(Hyper-J to Down arrow)</appendix>
+      <identifier>private.hyper-j-down</identifier>
+      <autogen>
+        --KeyToKey--
+        KeyCode::J,
+        ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+        KeyCode::CURSOR_DOWN
+      </autogen>
+    </item>
+    <item>
+      <name>Hyper K to Up</name>
+      <appendix>(Hyper-K to Up arrow)</appendix>
+      <identifier>private.hyper-k-up</identifier>
+      <autogen>
+        --KeyToKey--
+        KeyCode::K,
+        ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+        KeyCode::CURSOR_UP
+      </autogen>
+    </item>
+    <item>
+      <name>Hyper H to Left</name>
+      <appendix>(Hyper-H to Left arrow)</appendix>
+      <identifier>private.hyper-h-left</identifier>
+      <autogen>
+        --KeyToKey--
+        KeyCode::H,
+        ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+        KeyCode::CURSOR_LEFT
+      </autogen>
+    </item>
+    <item>
+      <name>Hyper L to Right</name>
+      <appendix>(Hyper-L to Right arrow)</appendix>
+      <identifier>private.hyper-l-right</identifier>
+      <autogen>
+        --KeyToKey--
+        KeyCode::L,
+        ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+        KeyCode::CURSOR_RIGHT
+      </autogen>
+    </item>
+  </item>
 </root>
