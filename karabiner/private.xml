@@ -32,11 +32,6 @@
     <appname>OmniFocus</appname>
     <equal>com.omnigroup.OmniFocus2</equal>
   </appdef>
-  <appdef>
-    <appname>Numbers</appname>
-    <equal>com.apple.iWork.Numbers</equal>
-  </appdef>
-
   <item>
     <name>Customized: General</name>
     <item>
@@ -95,10 +90,10 @@
 
       <block>
         <only>
-          FINDER, IPHOTO, ITUNES, SYSTEM_PREFERENCES,
+          FINDER, IPHOTO, ITUNES, SYSTEM_PREFERENCES, IWORK_NUMBERS,
           Activity_Monitor,
           Karabiner, Seil,
-          OmniFocus, Numbers
+          OmniFocus,
         </only>
         <uielementrole_not>AXTextField, AXTextArea</uielementrole_not>
         <modifier_only>
