@@ -108,6 +108,19 @@
       </block>
 
       <block>
+        <uielementrole_only>AXMenu</uielementrole_only>
+        <modifier_only>
+          ModifierFlag::NONE,
+          ModifierFlag::SHIFT_L | ModifierFlag::NONE,
+          ModifierFlag::SHIFT_R | ModifierFlag::NONE,
+        </modifier_only>
+        <autogen>__KeyToKey__ KeyCode::H, KeyCode::CURSOR_LEFT</autogen>
+        <autogen>__KeyToKey__ KeyCode::J, KeyCode::CURSOR_DOWN</autogen>
+        <autogen>__KeyToKey__ KeyCode::K, KeyCode::CURSOR_UP</autogen>
+        <autogen>__KeyToKey__ KeyCode::L, KeyCode::CURSOR_RIGHT</autogen>
+      </block>
+
+      <block>
         <only>MAIL</only>
         <!-- Mail body editor is AXWebArea -->
         <uielementrole_not>AXTextField, AXTextArea, AXWebArea</uielementrole_not>
