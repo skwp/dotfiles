@@ -65,7 +65,7 @@
 
       <block>
         <only>
-          FINDER, IPHOTO, ITUNES, SYSTEM_PREFERENCES, IWORK_NUMBERS,
+          FINDER, IPHOTO, ITUNES, SYSTEM_PREFERENCES,
           Activity_Monitor,
           Karabiner, Seil,
           OmniFocus,
