@@ -83,6 +83,9 @@ alias tfdl='tail -f log/development.log'
 alias ka9='killall -9'
 alias k9='kill -9'
 
+# Elixir
+alias mps='mix phoenix.server'
+
 # Rust
 alias cb='cargo build'
 alias cr='cargo run'
