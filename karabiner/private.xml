@@ -49,6 +49,59 @@
         <autogen>__KeyToKey__ KeyCode::DELETE, KeyCode::DELETE, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L</autogen>
       </block>
     </item>
+    <item>
+      <name>Enable Emacs-like ALT-F/B/D</name>
+      <identifier>space_cadet.emacs_like_alt</identifier>
+      <block>
+        <uielementrole_only>AXTextField</uielementrole_only>
+        <only>
+          FINDER, MAIL
+        </only>
+        <modifier_only>
+          ModifierFlag::OPTION_L
+        </modifier_only>
+        <autogen>
+          __KeyToKey__
+          KeyCode::F,
+          KeyCode::CURSOR_RIGHT
+        </autogen>
+        <autogen>
+          __KeyToKey__
+          KeyCode::B,
+          KeyCode::CURSOR_LEFT
+        </autogen>
+        <autogen>
+          __KeyToKey__
+          KeyCode::D,
+          KeyCode::DELETE,
+          ModifierFlag::FN
+        </autogen>
+      </block>
+      <block>
+        <only>
+          GOOGLE_CHROME, SAFARI, FIREFOX
+        </only>
+        <modifier_only>
+          ModifierFlag::OPTION_L
+        </modifier_only>
+        <autogen>
+          __KeyToKey__
+          KeyCode::F,
+          KeyCode::CURSOR_RIGHT
+        </autogen>
+        <autogen>
+          __KeyToKey__
+          KeyCode::B,
+          KeyCode::CURSOR_LEFT
+        </autogen>
+        <autogen>
+          __KeyToKey__
+          KeyCode::D,
+          KeyCode::DELETE,
+          ModifierFlag::FN
+        </autogen>
+      </block>
+    </item>
   </item>
   <item>
     <name>Customized: Use "hjkl" keys as arrow keys if you are not editing text.</name>
