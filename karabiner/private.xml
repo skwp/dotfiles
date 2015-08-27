@@ -58,7 +58,7 @@
           FINDER, MAIL
         </only>
         <modifier_only>
-          ModifierFlag::OPTION_L
+          ModifierFlag::OPTION_L | ModifierFlag::NONE
         </modifier_only>
         <autogen>
           __KeyToKey__
@@ -82,7 +82,7 @@
           GOOGLE_CHROME, SAFARI, FIREFOX
         </only>
         <modifier_only>
-          ModifierFlag::OPTION_L
+          ModifierFlag::OPTION_L | ModifierFlag::NONE
         </modifier_only>
         <autogen>
           __KeyToKey__
