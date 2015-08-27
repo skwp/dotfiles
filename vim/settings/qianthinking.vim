@@ -10,12 +10,16 @@ else
     set clipboard=unnamed
 endif
 
+" copy to attached terminal using the yank(1) script:
+" https://github.com/sunaku/home/blob/master/bin/yank
+noremap <silent> <leader>y y:call system('yank', @0)<Return>
+
 set mouse=nv "Enable mouse use in all modes
 set ttyfast "Send more characters for redraws
 set ttymouse=xterm2
 
 " complete
-set completeopt=menu,menuone,preview 
+set completeopt=menu,menuone,preview
 "set completeopt=menuone,menu,longest,preview
 
 set pastetoggle=<F7>
