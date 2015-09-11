@@ -1,0 +1,5 @@
+Bundle "tpope/vim-salve"
+Bundle "tpope/vim-projectionist"
+Bundle "tpope/vim-dispatch"
+Bundle "tpope/vim-fireplace"
+Bundle "kien/rainbow_parentheses.vim"
