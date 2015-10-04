@@ -85,7 +85,11 @@ au WinLeave * setlocal nocursorline
 " other simple settings
 let g:user_emmet_leader_key='<C-Z>'
 
-" input method
-se noimd
-se ims=1
+" Input method
+set iminsert=0
+set imsearch=0
+se imd
+au InsertEnter * se noimd
+au InsertLeave * se imd
+au FocusGained * se imd
 
