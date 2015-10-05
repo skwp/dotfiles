@@ -1,7 +1,5 @@
 "e, o/enter, go, t, T, h,H, v,gv,q
 Bundle "rking/ag.vim"
-"shows 'Nth match out of M' at every search
-Bundle "vim-scripts/IndexedSearch"
 "* function for visual selection(work at first time)
 Bundle "nelstrom/vim-visual-star-search"
 "Gsearch then %s/old/new/g then Greplace then wa

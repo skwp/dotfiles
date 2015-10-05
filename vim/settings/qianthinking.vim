@@ -92,4 +92,3 @@ se imd
 au InsertEnter * se noimd
 au InsertLeave * se imd
 au FocusGained * se imd
-

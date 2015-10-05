@@ -194,7 +194,11 @@ of plugins above to learn more.
  * `,gd` - Grep def (greps for 'def [function name]') when cursor is over the function name
  * `,gcf` - Grep Current File to find references to the current file
  * `//` - clear the search
- * `,,w` (alias `,<esc>`) or `,,b` (alias `,<shift-esc>`) - EasyMotion, a vimperator style tool that highlights jump-points on the screen and lets you type to get there.
+ * `<Space>w` or `<Space>b` or `<Space>l` - EasyMotion search bidirectional words/ends/lines
+ * `<Space>j` - EasyMotion search bidirectional words and ends
+ * `f` or `t` - EasyMotion search bidirectional letters with line
+ * `s` + one letter - EasyMotion search bidirectional letters
+ * `/` - EasyMotion search with `Tab`/`S-Tab` to scroll and `Enter` to select
  * `,mc` - mark this word for MultiCursor (like sublime). Use `Ctrl-n` (next), `Ctrl-p` (prev), `Ctrl-x`(skip) to add more cursors, then do normal vim things like edit the word.
  * `gK` - Opens the documentation for the word under the cursor.
  * Spacebar - Sneak - type two characters to move there in a line. Kind of like vim's `f` but more accurate.

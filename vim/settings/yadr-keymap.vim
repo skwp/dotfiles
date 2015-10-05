@@ -122,8 +122,8 @@ map <silent> ,gz <C-w>o
 " Create window splits easier. The default
 " way is Ctrl-w,v and Ctrl-w,s. I remap
 " this to vv and ss
-nnoremap <silent> vv <C-w>v
-nnoremap <silent> ss <C-w>s
+nnoremap <silent> <Space>v <C-w>v
+nnoremap <silent> <Space>s <C-w>s
 
 nnoremap < <C-w>5<
 nnoremap > <C-w>5>
