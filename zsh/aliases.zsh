@@ -94,8 +94,6 @@ alias cr='cargo run'
 alias coffee='node_modules/.bin/coffee'
 alias grunt='node_modules/.bin/grunt'
 alias gulp='node_modules/.bin/gulp'
-alias wp='node_modules/.bin/webpack --progress --colors'
-alias wpd='node_modules/.bin/webpack-dev-server --progress --colors'
 
 # TODOS
 # This uses NValt (NotationalVelocity alt fork) - http://brettterpstra.com/project/nvalt/
