@@ -95,7 +95,7 @@
   amend = commit -a --amend
 
   # git up
-	up = pull --rebase --autostash
+  up = pull --rebase --autostash
 
   # svn helpers
   svnr = svn rebase
@@ -157,8 +157,6 @@
 	required = true
 [commit]
 	gpgsign = true
-[diff "ansible-vault"]
-	textconv = ansible-vault view
 [pager]
 	diff = false
 [init]
