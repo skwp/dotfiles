@@ -49,10 +49,44 @@ Session.vim
 # Editors
 .idea
 .agignore
-.ruby-version
 .rbenv-version
 .idea/
 html5shiv.min.js
 respond.min.js
 .env
 .smex-items
+
+# zeus
+zeus.json
+custom_plan.rb
+
+#emacs backup files
+.#*
+
+# cider
+.nrepl-port
+
+# invoker
+invoker.ini
+
+# bundler
+.bundle
+
+# Scratch stuff
+.scratch
+
+# git branch switch
+*.branch.*
+
+
+# IntelliJ Specific
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# Test uploads
+test/fixtures/files/test
+test/fixtures/files/uploads
+
+log/profiles

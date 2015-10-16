@@ -14,3 +14,5 @@ begin
 rescue LoadError => error
   puts "gem install jazz_fingers  # <-- highly recommended"
 end
+
+I18n.locale = :en if defined?(I18n)

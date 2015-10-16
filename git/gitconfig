@@ -22,7 +22,7 @@
   snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
   snapshots = !git stash list --grep snapshot
 
-  #via http://stackoverflow.com/questions/5188320/how-can-i-get-a-list-of-git-branches-ordered-by-most-recent-commit
+  # via http://stackoverflow.com/questions/5188320/how-can-i-get-a-list-of-git-branches-ordered-by-most-recent-commit
   recent-branches = !git for-each-ref --count=15 --sort=-committerdate refs/heads/ --format='%(refname:short)'
 
   # branch
@@ -88,6 +88,12 @@
   # tag
   t = tag -n                        # show tags with <n> lines of each tag message
 
+  # save work
+  save  = !git add -A && git commit -m "SAVEPOINT"
+  wip   = !git add -u && git commit -m "WIP"
+  undo  = reset HEAD~1 --mixed
+  amend = commit -a --amend
+
   # svn helpers
   svnr = svn rebase
   svnd = svn dcommit
@@ -139,3 +145,7 @@
 [user]
 	email = swanand.pagnis@gmail.com
 	name = Swanand Pagnis
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
