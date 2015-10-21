@@ -21,7 +21,7 @@
   * The best bits of all the top dotfile repos, vim and zsh plugins curated in one place, into a simple and cohesive way of working.
   * More than 90 vim plugins, all under one roof, working together, each plugin researched and configured to be at its best, often with better shortcut keys.
   * Many zsh plugins, starting with the wonderful Prezto base, and adding a few niceties on top.
-  * All things are vimized: irb, postres command line, etc.
+  * All things are vimized: irb, postgres command line, etc.
 
 ## Mailing List
 
