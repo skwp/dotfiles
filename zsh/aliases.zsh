@@ -173,6 +173,11 @@ alias rdmr='rake db:migrate:redo'
 # Zeus
 alias zs='zeus server'
 alias zc='zeus console'
+alias zr='zeus rspec'
+alias zrc='zeus rails c'
+alias zrs='zeus rails s'
+alias zrdbm='zeus rake db:migrate'
+alias zrdbtp='zeus rake db:test:prepare'
 
 # Rspec
 alias rs='rspec spec'
@@ -182,6 +187,7 @@ alias srgm='spring rails g migration'
 alias srdm='spring rake db:migrate'
 alias srdt='spring rake db:migrate'
 alias srdmt='spring rake db:migrate db:test:prepare'
+
 
 # Sprintly - https://github.com/nextbigsoundinc/Sprintly-GitHub
 alias sp='sprintly'
