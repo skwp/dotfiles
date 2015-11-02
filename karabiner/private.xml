@@ -13,6 +13,7 @@
       <name>F19 to Hyper Key or Escape</name>
       <appendix>(F19 to Hyper (ctrl+shift+cmd+opt) + F19 Only, send escape. Use Seil map CapsLock to F19)</appendix>
       <identifier>private.f192f19_escape</identifier>
+      <modifier_only>ModifierFlag::NONE</modifier_only>
       <autogen>
         --KeyOverlaidModifier--
         KeyCode::F19,
@@ -221,107 +222,32 @@
   <item>
     <name>Customized: Switch Input Method</name>
     <item>
-      <name>Shift Keys to Switch Input Method</name>
-      <appendix>Shift keys to F18 on OS X</appendix>
+      <name>COMMAND_L Keys to Switch Input Method</name>
+      <appendix>COMMAND_L keys to F18 on OS X</appendix>
       <appendix>(Works well with setting F18 to switch input method in System Preferences)</appendix>
-      <identifier>private.shifts_to_switch_input_method</identifier>
+      <identifier>private.command_l_to_switch_input_method</identifier>
       <modifier_not>
-        ModifierFlag::COMMAND_L, ModifierFlag::COMMAND_R,
+        ModifierFlag::SHIFT_L, ModifierFlag::SHIFT_R,
         ModifierFlag::OPTION_L, ModifierFlag::OPTION_R,
         ModifierFlag::CONTROL_L, ModifierFlag::CONTROL_R
       </modifier_not>
       <block>
-        <!-- SHIFT_L -->
-        <modifier_not>ModifierFlag::SHIFT_R</modifier_not>
-        <autogen>
-          __KeyOverlaidModifier__
-        <!-- from -->
-        KeyCode::SHIFT_L,
-        <!-- hold -->
-        KeyCode::SHIFT_L,
-        <!-- tap -->
-        KeyCode::F18
-        </autogen>
-        </block>
-        <block>
-        <!-- SHIFT_R -->
-        <modifier_not>ModifierFlag::SHIFT_L</modifier_not>
-        <autogen>
-          __KeyOverlaidModifier__
-        <!-- from -->
-        KeyCode::SHIFT_R,
-        <!-- hold -->
-        KeyCode::SHIFT_R,
-        <!-- tap -->
-        KeyCode::F18
-        </autogen>
-      </block>
-    </item>
-
-
-    <!-- input source definition -->
-    <inputsourcedef>
-    <!-- english input method -->
-    <name>ENGLISH</name>
-    <languagecode>en</languagecode>
-    </inputsourcedef>
-
-
-    <modifier_not>
-      ModifierFlag::OPTION_L, ModifierFlag::OPTION_R,
-      ModifierFlag::SHIFT_L, ModifierFlag::SHIFT_R,
-      ModifierFlag::CONTROL_L, ModifierFlag::CONTROL_R
-    </modifier_not>
-    <item>
-      <name>Command Keys Remappings</name>
-      <appendix>Tap Command Keys to Change Input Method</appendix>
-      <appendix>(Command_L to English)</appendix>
-      <appendix>(Command_R to Chinese)</appendix>
-      <appendix>(On OS X, use F18 to change input method)</appendix>
-      <identifier>private.commands_remappings</identifier>
-      <block>
-        <!-- Current is not English -->
-        <inputsource_not>ENGLISH</inputsource_not>
-        <!-- Command_L => F18 (tap) / Command_L (hold) -->
+        <!-- COMMAND_L -->
         <modifier_not>ModifierFlag::COMMAND_R</modifier_not>
         <autogen>
           __KeyOverlaidModifier__
         <!-- from -->
         KeyCode::COMMAND_L,
         <!-- hold -->
-        KeyCode::VK_LAZY_COMMAND_L,
+        KeyCode::COMMAND_L,
         <!-- tap -->
         KeyCode::F18
         </autogen>
-      </block>
-      <block>
-        <!-- Current is English -->
-        <inputsource_only>ENGLISH</inputsource_only>
-        <!-- Command_R => F18 (tap) / Command_R (hold) -->
-        <modifier_not>ModifierFlag::COMMAND_L</modifier_not>
-        <autogen>
-            __KeyOverlaidModifier__
-          <!-- from -->
-          KeyCode::COMMAND_R,
-          <!-- hold -->
-          KeyCode::COMMAND_L,
-          ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L,
-          <!-- tap -->
-          KeyCode::F18
-        </autogen>
-      </block>
-      <block>
-        <!-- Current is not English -->
-        <inputsource_not>ENGLISH</inputsource_not>
-        <!-- Command_R => F18 (tap) / Command_R (hold) -->
-        <modifier_not>ModifierFlag::COMMAND_L</modifier_not>
-        <autogen>
-          __KeyToKey__
-          KeyCode::COMMAND_R,
-          KeyCode::COMMAND_L,
-          ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L,
-        </autogen>
+        </block>
+        <block>
       </block>
     </item>
+
+
   </item>
 </root>
