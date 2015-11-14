@@ -222,24 +222,24 @@
   <item>
     <name>Customized: Switch Input Method</name>
     <item>
-      <name>COMMAND_L Keys to Switch Input Method</name>
-      <appendix>COMMAND_L keys to F18 on OS X</appendix>
+      <name>COMMAND_R Keys to Switch Input Method</name>
+      <appendix>COMMAND_R keys to F18 on OS X</appendix>
       <appendix>(Works well with setting F18 to switch input method in System Preferences)</appendix>
       <identifier>private.command_l_to_switch_input_method</identifier>
-      <modifier_not>
-        ModifierFlag::SHIFT_L, ModifierFlag::SHIFT_R,
-        ModifierFlag::OPTION_L, ModifierFlag::OPTION_R,
-        ModifierFlag::CONTROL_L, ModifierFlag::CONTROL_R
-      </modifier_not>
       <block>
         <!-- COMMAND_L -->
-        <modifier_not>ModifierFlag::COMMAND_R</modifier_not>
+        <modifier_not>
+          ModifierFlag::SHIFT_L, ModifierFlag::SHIFT_R,
+          ModifierFlag::OPTION_L, ModifierFlag::OPTION_R,
+          ModifierFlag::CONTROL_L, ModifierFlag::CONTROL_R,
+          ModifierFlag::COMMAND_L
+        </modifier_not>
         <autogen>
           __KeyOverlaidModifier__
         <!-- from -->
-        KeyCode::COMMAND_L,
+        KeyCode::COMMAND_R,
         <!-- hold -->
-        KeyCode::COMMAND_L,
+        KeyCode::COMMAND_R,
         <!-- tap -->
         KeyCode::F18
         </autogen>
