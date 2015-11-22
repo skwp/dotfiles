@@ -58,6 +58,9 @@
   # push
   ps = push                         # push
 
+  # restore from reflog before the change
+  back = reset --hard HEAD@{1}
+
   # rebase
   rc = rebase --continue            # continue rebase
   rs = rebase --skip                # skip rebase
