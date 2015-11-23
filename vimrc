@@ -128,7 +128,6 @@ autocmd ColorScheme * highlight Search term=reverse cterm=reverse ctermfg=2 guif
 autocmd ColorScheme * highlight CursorLine cterm=NONE ctermbg=darkgreen ctermfg=white guibg=darkred guifg=white
 
 " ================ Tab  ===========================
-
 " close current tab without closing window
 map <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
 
@@ -138,6 +137,7 @@ map <leader>r :NERDTreeFind<cr>
 
 " toggle NERDTree with ctrl + \
 map <C-o> :NERDTreeTabsToggle<CR>
+map <Leader>n <plug>NERDTreeTabsToggle<CR>
 
 set incsearch       " Find the next match as we type the search
 set hlsearch        " Highlight searches by default
