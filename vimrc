@@ -137,7 +137,7 @@ map <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
 map <leader>r :NERDTreeFind<cr>
 
 " toggle NERDTree with ctrl + \
-map <C-o> :NERDTreeToggle %<CR>
+map <C-o> :NERDTreeTabsToggle<CR>
 
 set incsearch       " Find the next match as we type the search
 set hlsearch        " Highlight searches by default
