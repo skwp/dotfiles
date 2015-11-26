@@ -10,15 +10,24 @@
   <item>
     <name>Customized: General</name>
     <item>
-      <name>F19 to Hyper Key or Escape</name>
-      <appendix>(F19 to Hyper (ctrl+shift+cmd+opt) + F19 Only, send escape. Use Seil map CapsLock to F19)</appendix>
-      <identifier>private.f192f19_escape</identifier>
+      <name>Tab to Hyper Key or Escape</name>
+      <identifier>private.tab2hyper_tab</identifier>
       <modifier_only>ModifierFlag::NONE</modifier_only>
       <autogen>
         --KeyOverlaidModifier--
-        KeyCode::F19,
+        KeyCode::TAB,
         KeyCode::COMMAND_L,
         ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+        KeyCode::TAB
+      </autogen>
+    </item>
+    <item>
+      <name>F19 to Ctrl or Escape</name>
+      <identifier>private.f192ctrl_escape</identifier>
+      <autogen>
+        --KeyOverlaidModifier--
+        KeyCode::F19,
+        KeyCode::CONTROL_L,
         KeyCode::ESCAPE
       </autogen>
     </item>
