@@ -49,3 +49,9 @@ Session.vim
 # ----------------------------------------------------------------------------------------------
 *.sublime-workspace
 *.sublime-project
+.idea
+.gemtags
+.tags
+.tags_sorted_by_file
+**/**/Iconr
+Iconr

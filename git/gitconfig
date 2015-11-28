@@ -112,9 +112,10 @@
   default = upstream
 
 [core]
-  autocrlf = false
+	autocrlf = input
 	editor = subl -n -w
 	excludesfile = /Users/czacharias/.yadr/git/gitignore
+	autocrlf = input
 [advice]
   statusHints = false
 
@@ -135,7 +136,7 @@
 
 [user]
 	name = Christian Zacharias
-	email = christian.zacharias@tirendo.com
+	email = christian.zacharias@gmail.com
 
 [include]
   path = .gitconfig.user
@@ -146,7 +147,17 @@
 	smudge = git-media-smudge %f
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
+	path = 
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true
+[filter "lfs"]
+	clean = git lfs clean %f
+	smudge = git lfs smudge %f
+	required = true
+[merge "ours"]
+	driver = true
