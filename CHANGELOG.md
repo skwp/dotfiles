@@ -1,5 +1,11 @@
-### March 29, 2013
-=======
+2015-10-27
+==================
+  * Support for running zeus commands for rspec (`zl` and `zr`)
+  * Ctrl-x and Ctrl-z to navigate the quickfix list
+
+2014-06-01
+==================
+ * Change Cmd-Space to Ctrl-Space for vim autocomplete so it doesn't conflict with osx spotlight by default, and so there are no additional steps to install.
 
 2014-02-15
 ==================
@@ -25,6 +31,7 @@ Dec 17, 2013
 * Got rid of conque term, implemented a "send to iTerm" rspec runner (invoke with ,rs ,rl ,ss ,sl) for the rspec and spring/rspec versions.
 
 March 29, 2013
+==================
 
 * Migrated to Vundle instead of pathogen for easier bundle management
 * Added Silver Searcher for lightning fast :Gsearch

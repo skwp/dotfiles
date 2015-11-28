@@ -12,8 +12,8 @@ let g:neocomplete#max_list = 5
 " Set minimum syntax keyword length.
 let g:neocomplete#auto_completion_start_length = 3
 
-" Map standard Ctrl-N completion to Cmd-Space
-inoremap <D-Space> <C-n>
+" Map standard Ctrl-N completion to Ctrl-Space
+inoremap <C-Space> <C-n>
 
 " This makes sure we use neocomplete completefunc instead of
 " the one in rails.vim, otherwise this plugin will crap out.

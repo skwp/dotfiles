@@ -1,4 +1,4 @@
-# set your user tokens as enivornment variables, such as ~/.secrets
+# set your user tokens as environment variables, such as ~/.secrets
 # See the README for examples.
 [color]
   ui = true
@@ -147,7 +147,7 @@
 	smudge = git-media-smudge %f
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true

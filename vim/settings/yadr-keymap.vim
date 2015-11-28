@@ -75,7 +75,7 @@ imap <C-a> <esc>wa
 
 " ==== NERD tree
 " Open the project tree and expose current file in the nerdtree with Ctrl-\
-nnoremap <silent> <C-\> :NERDTreeFind<CR>:vertical res 30<CR>
+nnoremap <silent> <C-\> :NERDTreeFind<CR>:vertical<CR>
 
 " ,q to toggle quickfix window (where you have stuff like Ag)
 " ,oq to open it back up (rare)
@@ -98,7 +98,6 @@ nnoremap <silent> ,x :bn<CR>
 " nnoremap <silent> <C-j> <C-w>j
 
 " Make gf (go to file) create the file, if not existent
-nnoremap gf :e<cfile><CR>
 nnoremap <C-w>f :sp +e<cfile><CR>
 nnoremap <C-w>gf :tabe<cfile><CR>
 
@@ -157,3 +156,8 @@ map ,hi :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 
 " ,hp = html preview
 map <silent> ,hp :!open -a Safari %<CR><CR>
+
+" Map Ctrl-x and Ctrl-z to navigate the quickfix error list (normally :cn and
+" :cp)
+nnoremap <silent> <C-x> :cn<CR>
+nnoremap <silent> <C-z> :cp<CR>
