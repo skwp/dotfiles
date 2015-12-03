@@ -101,6 +101,52 @@
         </autogen>
       </block>
     </item>
+    <name>Customized for Input Method</name>
+    <item>
+      <name>COMMAND_R Keys to Switch Input Method</name>
+      <appendix>COMMAND_R keys to F18 on OS X</appendix>
+      <appendix>(Works well with setting F18 to switch input method in System Preferences)</appendix>
+      <identifier>private.command_r_to_switch_input_method</identifier>
+      <block>
+        <modifier_not>
+          ModifierFlag::SHIFT_L, ModifierFlag::SHIFT_R,
+          ModifierFlag::OPTION_L, ModifierFlag::OPTION_R,
+          ModifierFlag::CONTROL_L, ModifierFlag::CONTROL_R,
+          ModifierFlag::COMMAND_L
+        </modifier_not>
+        <autogen>
+          __KeyOverlaidModifier__
+        <!-- from -->
+        KeyCode::COMMAND_R,
+        <!-- hold -->
+        KeyCode::COMMAND_R,
+        <!-- tap -->
+        KeyCode::F18
+        </autogen>
+      </block>
+    </item>
+    <name>Customized for Dock</name>
+    <item>
+      <name>OPTION_L Tap to Switch Dock Display</name>
+      <identifier>private.option_l_to_option_l_command_l_and_d</identifier>
+      <block>
+        <modifier_not>
+          ModifierFlag::SHIFT_L, ModifierFlag::SHIFT_R,
+          ModifierFlag::OPTION_R,
+          ModifierFlag::CONTROL_L, ModifierFlag::CONTROL_R,
+          ModifierFlag::COMMAND_L, ModifierFlag::COMMAND_R
+        </modifier_not>
+        <autogen>
+          __KeyOverlaidModifier__
+        <!-- from -->
+        KeyCode::OPTION_L,
+        <!-- hold -->
+        KeyCode::OPTION_L,
+        <!-- tap -->
+        KeyCode::D, ModifierFlag::OPTION_L | ModifierFlag::COMMAND_L
+        </autogen>
+      </block>
+    </item>
   </item>
   <item>
     <name>Customized: Use "hjkl" keys as arrow keys if you are not editing text.</name>
@@ -241,35 +287,12 @@
   </item>
 
   <item>
-    <name>Customized</name>
-    <item>
-      <name>COMMAND_R Keys to Switch Input Method</name>
-      <appendix>COMMAND_R keys to F18 on OS X</appendix>
-      <appendix>(Works well with setting F18 to switch input method in System Preferences)</appendix>
-      <identifier>private.command_r_to_switch_input_method</identifier>
-      <block>
-        <modifier_not>
-          ModifierFlag::SHIFT_L, ModifierFlag::SHIFT_R,
-          ModifierFlag::OPTION_L, ModifierFlag::OPTION_R,
-          ModifierFlag::CONTROL_L, ModifierFlag::CONTROL_R,
-          ModifierFlag::COMMAND_L
-        </modifier_not>
-        <autogen>
-          __KeyOverlaidModifier__
-        <!-- from -->
-        KeyCode::COMMAND_R,
-        <!-- hold -->
-        KeyCode::COMMAND_R,
-        <!-- tap -->
-        KeyCode::F18
-        </autogen>
-      </block>
-    </item>
-
+    <name>Customized for Kinesis Advantage</name>
     <item>
       <name>CONTROL_R Tap to Backspace</name>
       <appendix>Good for Advantage kinesis</appendix>
       <identifier>private.control_r_to_backspace</identifier>
+      <device_only>DeviceVendor::KINESIS, DeviceProduct::KINESIS_ADVANTAGE</device_only>
       <block>
         <modifier_not>
           ModifierFlag::SHIFT_L, ModifierFlag::SHIFT_R,
@@ -290,24 +313,86 @@
     </item>
 
     <item>
-      <name>OPTION_L Tap to OPTION+COMMAND+D</name>
-      <appendix>Good for Dock display</appendix>
-      <identifier>private.option_l_tap_to_option_command_d</identifier>
+      <name>PageDown to COMMAND+F</name>
+      <identifier>private.pagedown_to_command_f</identifier>
+      <device_only>DeviceVendor::KINESIS, DeviceProduct::KINESIS_ADVANTAGE</device_only>
       <block>
         <modifier_not>
-          ModifierFlag::SHIFT_L, ModifierFlag::SHIFT_R,
           ModifierFlag::OPTION_R,
-          ModifierFlag::CONTROL_L, ModifierFlag::CONTROL_R,
-          ModifierFlag::COMMAND_L, ModifierFlag::COMMAND_R
+          ModifierFlag::COMMAND_R
         </modifier_not>
         <autogen>
         __KeyOverlaidModifier__
         <!-- from -->
-        KeyCode::OPTION_L,
+        KeyCode::PAGEDOWN,
         <!-- hold -->
-        KeyCode::OPTION_L,
+        KeyCode::OPTION_L, ModifierFlag::COMMAND_L,
         <!-- tap -->
-        KeyCode::D, ModifierFlag::OPTION_L | ModifierFlag::COMMAND_L
+        KeyCode::F, ModifierFlag::COMMAND_L
+        </autogen>
+      </block>
+    </item>
+
+    <item>
+      <name>HOME to OPTION_L+COMMAND_L/COMMAND+C</name>
+      <identifier>private.home_to_command_c</identifier>
+      <device_only>DeviceVendor::KINESIS, DeviceProduct::KINESIS_ADVANTAGE</device_only>
+      <block>
+        <modifier_not>
+          ModifierFlag::OPTION_R,
+          ModifierFlag::COMMAND_R
+        </modifier_not>
+        <autogen>
+        __KeyOverlaidModifier__
+        <!-- from -->
+        KeyCode::HOME,
+        <!-- hold -->
+        KeyCode::OPTION_L, ModifierFlag::COMMAND_L,
+        <!-- tap -->
+        KeyCode::C, ModifierFlag::COMMAND_L
+        </autogen>
+      </block>
+    </item>
+
+    <item>
+      <name>END to OPTION_L+CONTROL_L/COMMAND+V</name>
+      <identifier>private.end_to_command_c</identifier>
+      <device_only>DeviceVendor::KINESIS, DeviceProduct::KINESIS_ADVANTAGE</device_only>
+      <block>
+        <modifier_not>
+          ModifierFlag::OPTION_R,
+          ModifierFlag::CONTROL_R,
+          ModifierFlag::COMMAND_R
+        </modifier_not>
+        <autogen>
+        __KeyOverlaidModifier__
+        <!-- from -->
+        KeyCode::END,
+        <!-- hold -->
+        KeyCode::OPTION_L, ModifierFlag::CONTROL_L,
+        <!-- tap -->
+        KeyCode::V, ModifierFlag::COMMAND_L
+        </autogen>
+      </block>
+    </item>
+
+    <item>
+      <name>FORWARD_DELETE to CONTROL_L+COMMAND_L/SPACE</name>
+      <identifier>private.forward_delete_to_space</identifier>
+      <device_only>DeviceVendor::KINESIS, DeviceProduct::KINESIS_ADVANTAGE</device_only>
+      <block>
+        <modifier_not>
+          ModifierFlag::CONTROL_R,
+          ModifierFlag::COMMAND_R
+        </modifier_not>
+        <autogen>
+        __KeyOverlaidModifier__
+        <!-- from -->
+        KeyCode::FORWARD_DELETE,
+        <!-- hold -->
+        KeyCode::COMMAND_L, ModifierFlag::CONTROL_L,
+        <!-- tap -->
+        KeyCode::SPACE
         </autogen>
       </block>
     </item>
