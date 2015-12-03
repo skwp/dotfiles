@@ -3,6 +3,14 @@
      Some key mappings need Seil and Keyboard Meaestro
 -->
 <root>
+  <devicevendordef>
+    <vendorname>KINESIS</vendorname>
+    <vendorid>0x05f3</vendorid>
+  </devicevendordef>
+  <deviceproductdef>
+    <productname>KINESIS_ADVANTAGE</productname>
+    <productid>0x0007</productid>
+  </deviceproductdef>
   <appdef>
     <appname>OmniFocus</appname>
     <equal>com.omnigroup.OmniFocus2</equal>
@@ -255,8 +263,6 @@
         <!-- tap -->
         KeyCode::F18
         </autogen>
-        </block>
-        <block>
       </block>
     </item>
 
@@ -280,8 +286,6 @@
         <!-- tap -->
         KeyCode::DELETE
         </autogen>
-        </block>
-        <block>
       </block>
     </item>
 
@@ -304,12 +308,9 @@
         KeyCode::OPTION_L,
         <!-- tap -->
         KeyCode::D, ModifierFlag::OPTION_L | ModifierFlag::COMMAND_L
-      </autogen>
-        </block>
-        <block>
+        </autogen>
       </block>
     </item>
-
 
   </item>
 </root>
