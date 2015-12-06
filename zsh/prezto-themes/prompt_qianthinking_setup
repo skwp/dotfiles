@@ -28,6 +28,11 @@ function prompt_qianthinking_precmd {
   if (( $+functions[ruby-info] )); then
     ruby-info
   fi
+  
+  # Get node information
+  if (( $+functions[node-info] )); then
+    node-info
+  fi
 }
 
 function prompt_qianthinking_setup {
@@ -70,9 +75,11 @@ function prompt_qianthinking_setup {
 
   # ruby info (rvm, rbenv)
   zstyle ':prezto:module:ruby:info:version' format '[%v]'
+  # node info (nvm)
+  zstyle ':prezto:module:node:info:version' format '[%v]'
 
   PROMPT="${__PROMPT_QIANTHINKING_COLORS[3]}%n%f@${__PROMPT_QIANTHINKING_COLORS[2]}%m%f ${__PROMPT_QIANTHINKING_COLORS[5]}%~%f "'$git_info[prompt]'"$%(?.%F{norm} .%F{red}(%?%)%F{norm} "
-  RPROMPT='%F{24}${ruby_info[version]}[$current_time]'
+  RPROMPT='%F{24}${node_info[version]}${ruby_info[version]}[$current_time]'
 }
 
 function prompt_awreece_is_ssh {

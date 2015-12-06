@@ -37,6 +37,7 @@ zstyle ':prezto:load' pmodule \
   'git' \
   'osx' \
   'ruby' \
+  'node' \
   'syntax-highlighting' \
   'history-substring-search' \
   'ssh' \
