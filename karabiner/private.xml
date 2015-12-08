@@ -288,11 +288,15 @@
 
   <item>
     <name>Customized for Kinesis Advantage</name>
+    <!-- Exchange Ctrl_R and Backspace with Remap -->
+    <!-- Exchange Alt and Delete with Remap -->
+    <!-- Exchange CMD_R and PageDown with Remap -->
     <item>
       <name>CONTROL_R Tap to Backspace</name>
       <appendix>Good for Advantage kinesis</appendix>
       <identifier>private.control_r_to_backspace</identifier>
       <device_only>DeviceVendor::KINESIS, DeviceProduct::KINESIS_ADVANTAGE</device_only>
+      <!-- Don't map Backspace to Ctrl for keep holding Backspace to delete quickly-->
       <block>
         <modifier_not>
           ModifierFlag::SHIFT_L, ModifierFlag::SHIFT_R,
@@ -313,7 +317,7 @@
     </item>
 
     <item>
-      <name>PageDown to COMMAND+F</name>
+      <name>PageDown to OPTION_L+COMMAND_L/COMMAND+F</name>
       <identifier>private.pagedown_to_command_f</identifier>
       <device_only>DeviceVendor::KINESIS, DeviceProduct::KINESIS_ADVANTAGE</device_only>
       <block>
@@ -329,6 +333,27 @@
         KeyCode::OPTION_L, ModifierFlag::COMMAND_L,
         <!-- tap -->
         KeyCode::F, ModifierFlag::COMMAND_L
+        </autogen>
+      </block>
+    </item>
+
+    <item>
+      <name>PageUp to SHIFT_L+COMMAND_L/COMMAND_L+Tab</name>
+      <identifier>private.pageup_to_shift_l_command_l</identifier>
+      <device_only>DeviceVendor::KINESIS, DeviceProduct::KINESIS_ADVANTAGE</device_only>
+      <block>
+        <modifier_not>
+          ModifierFlag::SHIFT_R,
+          ModifierFlag::COMMAND_R
+        </modifier_not>
+        <autogen>
+        __KeyOverlaidModifier__
+        <!-- from -->
+        KeyCode::PAGEUP,
+        <!-- hold -->
+        KeyCode::SHIFT_L, ModifierFlag::COMMAND_L,
+        <!-- tap -->
+        KeyCode::TAB, ModifierFlag::COMMAND_L
         </autogen>
       </block>
     </item>
