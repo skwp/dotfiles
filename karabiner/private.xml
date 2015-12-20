@@ -103,7 +103,7 @@
     </item>
     <name>Customized for Input Method</name>
     <item>
-      <name>COMMAND_R Keys to Switch Input Method</name>
+      <name>COMMAND_R Keys to Switch Input Method / COMMAND+OPTION+SHIFT</name>
       <appendix>COMMAND_R keys to F18 on OS X</appendix>
       <appendix>(Works well with setting F18 to switch input method in System Preferences)</appendix>
       <identifier>private.command_r_to_switch_input_method</identifier>
@@ -119,7 +119,7 @@
         <!-- from -->
         KeyCode::COMMAND_R,
         <!-- hold -->
-        KeyCode::COMMAND_R,
+        KeyCode::COMMAND_L, ModifierFlag::OPTION_L, ModifierFlag::SHIFT_L,
         <!-- tap -->
         KeyCode::F18
         </autogen>
