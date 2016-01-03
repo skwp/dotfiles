@@ -17,3 +17,4 @@ export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 PATH=$HOME/bin:$PATH
 export PATH
+export SIKULIXAPI_JAR=/Users/leon.li/workspace/sikulix/lib/sikulixapi.jar
