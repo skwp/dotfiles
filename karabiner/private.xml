@@ -209,7 +209,7 @@
       <block>
         <only>MAIL</only>
         <!-- Mail body editor is AXWebArea -->
-        <uielementrole_not>AXTextField, AXTextArea, AXWebArea</uielementrole_not>
+        <uielementrole_not>AXTextField, AXTextArea, AXWebArea, AXGroup</uielementrole_not>
         <modifier_only>
           ModifierFlag::NONE,
           ModifierFlag::SHIFT_L | ModifierFlag::NONE,
