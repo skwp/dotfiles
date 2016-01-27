@@ -300,8 +300,10 @@ These hacks are Lion-centric. May not work for other OS'es. My favorite mods inc
 brew uninstall macvim
 brew remove macvim
 brew cleanup
-brew install macvim --custom-icons --override-system-vim --with-lua --with-luajit
+brew install macvim --custom-icons --with-override-system-vim --with-lua --with-luajit
 ```
+
+
 
 ### Terminal Vim troubles with Lua?
 Installing terminal vim (with lua) with an RVM managed Ruby can cause the neocomplete plugin to segfault. Try uninstalling vim, then installing with system ruby:
