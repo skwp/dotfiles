@@ -19,6 +19,9 @@ vnoremap K :<C-U>execute "Ag " . GetVisual()<CR>
 "grep current word up to the next exclamation point using ,K
 nnoremap ,K viwf!:<C-U>execute "Ag " . GetVisual()<CR>
 
+"add ? to be recognized as part of a word
+set iskeyword+=?
+
 "grep for 'def foo'
 nnoremap <silent> ,gd :Ag 'def <cword>'<CR>
 
