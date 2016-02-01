@@ -1,10 +1,12 @@
-Bundle "chrisbra/color_highlight.git"
-Bundle "skwp/vim-colors-solarized"
-Bundle "itchyny/lightline.vim"
-Bundle "jby/tmux.vim.git"
-Bundle "morhetz/gruvbox"
+" Visually shows the mark on the screen
 Bundle "xsunsmile/showmarks.git"
-Bundle "chriskempson/base16-vim"
+
+"Bundle "chrisbra/color_highlight.git"
+"Bundle "skwp/vim-colors-solarized"
+"Bundle "itchyny/lightline.vim"
+"Bundle "jby/tmux.vim.git"
+"Bundle "morhetz/gruvbox"
+"Bundle "chriskempson/base16-vim"
 
 " Required for Gblame in terminal vim
-Bundle "godlygeek/csapprox.git" 
+Bundle "godlygeek/csapprox.git"
