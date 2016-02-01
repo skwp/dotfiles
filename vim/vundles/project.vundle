@@ -1,5 +1,7 @@
-Bundle "jistr/vim-nerdtree-tabs.git"
-Bundle "scrooloose/nerdtree.git"
+" Fuzzy search files
 Bundle "ctrlpvim/ctrlp.vim"
-Bundle "xolox/vim-misc"
-Bundle "xolox/vim-session"
+
+"Bundle "jistr/vim-nerdtree-tabs.git"
+"Bundle "scrooloose/nerdtree.git"
+"Bundle "xolox/vim-misc"
+"Bundle "xolox/vim-session"
