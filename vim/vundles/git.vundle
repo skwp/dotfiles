@@ -1,4 +1,8 @@
-Bundle "gregsexton/gitv"
-Bundle "mattn/gist-vim"
+" Improves on git to be more useful in the current context
+" For example, Gblame shows the author line-by-line
+"              Gbrowse opens the current file (or visual block) in the browser
 Bundle "tpope/vim-fugitive"
-Bundle "tpope/vim-git"
+
+"Bundle "gregsexton/gitv"
+"Bundle "mattn/gist-vim"
+"Bundle "tpope/vim-git"
