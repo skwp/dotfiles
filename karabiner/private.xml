@@ -132,16 +132,16 @@
       <block>
         <modifier_not>
           ModifierFlag::SHIFT_L, ModifierFlag::SHIFT_R,
-          ModifierFlag::OPTION_R,
+          ModifierFlag::COMMAND_R,
           ModifierFlag::CONTROL_L, ModifierFlag::CONTROL_R,
-          ModifierFlag::COMMAND_L, ModifierFlag::COMMAND_R
+          ModifierFlag::OPTION_L, ModifierFlag::OPTION_R
         </modifier_not>
         <autogen>
           __KeyOverlaidModifier__
         <!-- from -->
-        KeyCode::OPTION_L,
+        KeyCode::COMMAND_L,
         <!-- hold -->
-        KeyCode::OPTION_L,
+        KeyCode::COMMAND_L,
         <!-- tap -->
         KeyCode::D, ModifierFlag::OPTION_L | ModifierFlag::COMMAND_L
         </autogen>
@@ -288,9 +288,33 @@
 
   <item>
     <name>Customized for Kinesis Advantage</name>
-    <!-- Exchange Ctrl_R and Backspace with Remap -->
-    <!-- Exchange Alt and Delete with Remap -->
-    <!-- Exchange CMD_R and PageDown with Remap -->
+    <!-- Map CONTROL_R to BACKSPACE -->
+    <!-- Map OPTION_L to DELETE -->
+    <!-- Map DELETE to OPTION_L -->
+    <item>
+      <name>OPTION_L Tap to Space</name>
+      <appendix>Good for Advantage kinesis</appendix>
+      <identifier>private.option_l_to_space</identifier>
+      <device_only>DeviceVendor::KINESIS, DeviceProduct::KINESIS_ADVANTAGE</device_only>
+      <block>
+        <modifier_not>
+          ModifierFlag::SHIFT_L, ModifierFlag::SHIFT_R,
+          ModifierFlag::OPTION_R,
+          ModifierFlag::CONTROL_L, ModifierFlag::CONTROL_R,
+          ModifierFlag::COMMAND_L, ModifierFlag::COMMAND_R
+        </modifier_not>
+        <autogen>
+        __KeyOverlaidModifier__
+        <!-- from -->
+        KeyCode::OPTION_L,
+        <!-- hold -->
+        KeyCode::OPTION_L,
+        <!-- tap -->
+        KeyCode::SPACE
+        </autogen>
+      </block>
+    </item>
+
     <item>
       <name>CONTROL_R Tap to Backspace</name>
       <appendix>Good for Advantage kinesis</appendix>
@@ -402,8 +426,8 @@
     </item>
 
     <item>
-      <name>FORWARD_DELETE to CONTROL_L+COMMAND_L/SPACE</name>
-      <identifier>private.forward_delete_to_space</identifier>
+      <name>FORWARD_DELETE to CONTROL_L+COMMAND_L/ENTER</name>
+      <identifier>private.forward_delete_to_enter</identifier>
       <device_only>DeviceVendor::KINESIS, DeviceProduct::KINESIS_ADVANTAGE</device_only>
       <block>
         <modifier_not>
@@ -417,7 +441,7 @@
         <!-- hold -->
         KeyCode::COMMAND_L, ModifierFlag::CONTROL_L,
         <!-- tap -->
-        KeyCode::SPACE
+        KeyCode::ENTER
         </autogen>
       </block>
     </item>
