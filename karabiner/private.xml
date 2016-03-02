@@ -179,6 +179,8 @@
         <autogen>__KeyToKey__ KeyCode::L, KeyCode::CURSOR_RIGHT</autogen>
       </block>
 
+      <!-->
+      Disable due to tags management confliction
       <block>
         <only>OmniFocus</only>
         <uielementrole_only>AXOutline</uielementrole_only>
@@ -192,6 +194,7 @@
         <autogen>__KeyToKey__ KeyCode::K, KeyCode::CURSOR_UP</autogen>
         <autogen>__KeyToKey__ KeyCode::L, KeyCode::CURSOR_RIGHT</autogen>
       </block>
+      </!-->
 
       <block>
         <uielementrole_only>AXMenu</uielementrole_only>
