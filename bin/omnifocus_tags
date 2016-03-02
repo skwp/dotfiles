@@ -1,0 +1,67 @@
+#!/usr/bin/env ruby
+require 'omnifocus'
+
+TAG_PATTERN = /#\p{Word}+\s/u
+
+def get_search_pattern(tag)
+  Regexp.new(TAG_PATTERN.to_s.sub "\\p{Word}", tag)
+end
+
+def has_tags?(content)
+  !content.index(TAG_PATTERN).nil?
+end
+
+def add_tags(content, *tags)
+  content.force_encoding 'utf-8'
+  tags.each do |tag|
+    search_pattern = get_search_pattern tag
+    index = content.index search_pattern
+    if index.nil?
+      if has_tags? content
+        content = "##{tag} " + content
+      else
+        content = "##{tag}\n" + content
+      end
+      puts "Tag #{tag} added."
+    else
+      puts "Tag #{tag} exists!"
+    end
+  end
+  content
+end
+
+def remove_tags(content, *tags)
+  content.force_encoding 'utf-8'
+  tags.each do |tag|
+    search_pattern = get_search_pattern tag
+    content = content.gsub search_pattern, ""
+    puts "Tag #{tag} removed!"
+  end
+  content
+end
+
+def remove_all_tags(content)
+  content.force_encoding 'utf-8'
+  content = content.gsub TAG_PATTERN, ""
+  content
+end
+
+omnifocus = OmniFocus.new
+action, *tags = ARGV
+remove_all = ('remove' == action && tags == ["__ALL__"])
+omnifocus.selected_tasks.each do |task|
+  note = task.note.get
+  note = remove_all ? remove_all_tags(note) : self.send("#{action}_tags", note, *tags)
+  task.note.set note
+end
+
+if false && __FILE__ == $0
+  content1 = "asdf sdd"
+  content2 = "#ok #good\nasdf sdd"
+  tags = ["ok", "good"]
+
+  p [content2, add_tags(content1, *tags)]
+  p [content2, add_tags(content2, *tags)]
+  p [content1, remove_tags(content2, *tags)]
+end
+
