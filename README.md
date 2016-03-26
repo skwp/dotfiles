@@ -21,7 +21,7 @@
   * The best bits of all the top dotfile repos, vim and zsh plugins curated in one place, into a simple and cohesive way of working.
   * More than 90 vim plugins, all under one roof, working together, each plugin researched and configured to be at its best, often with better shortcut keys.
   * Many zsh plugins, starting with the wonderful Prezto base, and adding a few niceties on top.
-  * All things are vimized: irb, postres command line, etc.
+  * All things are vimized: irb, postgres command line, etc.
 
 ## Mailing List
 
@@ -138,6 +138,7 @@ It is recommended to use this file to set your user info. Alternately, you can s
   * `git unstage` / `guns` (remove from index) and `git uncommit` / `gunc` (revert to the time prior to the last commit - dangerous if already pushed) aliases
   * Some sensible default configs, such as improving merge messages, push only pushes the current branch, removing status hints, and using mnemonic prefixes in diff: (i)ndex, (w)ork tree, (c)ommit and (o)bject
   * Slightly improved colors for diff
+  * `gdmb` (g)it (d)elete (m)erged (b)ranches - Deletes all branches already merged on current branch
 
 ### RubyGems
 

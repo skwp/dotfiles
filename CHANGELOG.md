@@ -1,3 +1,7 @@
+2015-10-27
+==================
+  * Support for running zeus commands for rspec (`zl` and `zr`)
+  * Ctrl-x and Ctrl-z to navigate the quickfix list
 
 2014-06-01
 ==================
