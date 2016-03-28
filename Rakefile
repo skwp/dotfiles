@@ -9,6 +9,11 @@ task :install => [:submodule_init, :submodules] do
   puts "Welcome to YADR Installation."
   puts "======================================================"
   puts
+  
+  if RUBY_PLATFORM.downcase.include?("darwin")
+    puts "Password for sudo - we need it sometimes"
+    run %{ sudo -v}
+  end
 
   install_homebrew if RUBY_PLATFORM.downcase.include?("darwin")
   install_rvm_binstubs
