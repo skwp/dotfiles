@@ -9,6 +9,11 @@ task :install => [:submodule_init, :submodules] do
   puts "Welcome to YADR Installation."
   puts "======================================================"
   puts
+  
+  if RUBY_PLATFORM.downcase.include?("darwin")
+    puts "Password for sudo - we need it sometimes"
+    run %{ sudo -v}
+  end
 
   install_homebrew if RUBY_PLATFORM.downcase.include?("darwin")
   install_rvm_binstubs
@@ -173,7 +178,7 @@ def install_homebrew
   puts "Installing Homebrew packages...There may be some warnings."
   puts "======================================================"
   run %{brew install zsh ctags git hub tmux reattach-to-user-namespace the_silver_searcher}
-  run %{brew install macvim --custom-icons --override-system-vim --with-lua --with-luajit}
+  run %{brew install macvim --custom-icons --with-override-system-vim --with-lua --with-luajit}
   puts
   puts
 end
@@ -323,9 +328,12 @@ def install_files(files, method = :symlink)
     # Temporary solution until we find a way to allow customization
     # This modifies zshrc to load all of yadr's zsh extensions.
     # Eventually yadr's zsh extensions should be ported to prezto modules.
+    source_config_code = "for config_file ($HOME/.yadr/zsh/*.zsh) source $config_file"
     if file == 'zshrc'
-      File.open(target, 'a') do |zshrc|
-        zshrc.puts('for config_file ($HOME/.yadr/zsh/*.zsh) source $config_file')
+      File.open(target, 'a+') do |zshrc|
+        if zshrc.readlines.grep(/#{Regexp.escape(source_config_code)}/).empty?
+          zshrc.puts(source_config_code)
+        end
       end
     end
 
