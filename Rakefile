@@ -172,7 +172,7 @@ def install_homebrew
   puts "======================================================"
   puts "Installing Homebrew packages...There may be some warnings."
   puts "======================================================"
-  run %{brew install zsh ctags git hub tmux reattach-to-user-namespace the_silver_searcher}
+  run %{brew install zsh ctags git hub tmux reattach-to-user-namespace the_silver_searcher ghi hub}
   run %{brew install macvim --custom-icons --override-system-vim --with-lua --with-luajit}
   puts
   puts
