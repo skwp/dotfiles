@@ -303,7 +303,7 @@ These hacks are Lion-centric. May not work for other OS'es. My favorite mods inc
 brew uninstall macvim
 brew remove macvim
 brew cleanup
-brew install macvim --custom-icons --override-system-vim --with-lua --with-luajit
+brew install macvim --custom-icons --with-override-system-vim --with-lua --with-luajit
 ```
 
 ### Terminal Vim troubles with Lua?
