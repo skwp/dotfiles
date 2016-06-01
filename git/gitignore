@@ -46,3 +46,5 @@ Session.vim
 
 .powrc
 .powenv
+public/api-docs.json
+public/api/

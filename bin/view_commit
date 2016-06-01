@@ -1,0 +1,3 @@
+#!/bin/bash
+# copy the commit id and run this script in work dir
+git info | grep remote.origin.url | awk -F@ '{print $2}' | sed 's/:/\//' | sed "s/\.git/\/commit\/`pbpaste`/" | awk '{print "open http://"$1}' | sh
