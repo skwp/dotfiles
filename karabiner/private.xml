@@ -444,7 +444,7 @@
         <!-- hold -->
         KeyCode::COMMAND_L, ModifierFlag::CONTROL_L,
         <!-- tap -->
-        KeyCode::ENTER
+        KeyCode::FORWARD_DELETE
         </autogen>
       </block>
     </item>
