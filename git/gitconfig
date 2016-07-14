@@ -10,7 +10,7 @@
   meta = yellow bold
   frag = magenta bold
   old = red
-  new = green
+  new = cyan
 [alias]
   # add
   a = add                           # add
@@ -89,17 +89,15 @@
   svnr = svn rebase
   svnd = svn dcommit
   svnl = svn log --oneline --show-commit
+  spull = !git pull && git submodule sync --recursive && git submodule update --init —-recursive
 [format]
   pretty = format:%C(blue)%ad%Creset %C(yellow)%h%C(green)%d%Creset %C(blue)%s %C(magenta) [%an]%Creset
 [mergetool]
-  prompt = false
-[mergetool "mvimdiff"]
-  cmd="mvim -c 'Gdiff' $MERGED"     # use fugitive.vim for 3-way merge
-  keepbackup=false
+  prompt = true
 [merge]
   summary = true
   verbosity = 1
-  tool = mvimdiff
+  tool = kdiff3
 [apply]
   whitespace = nowarn
 [branch]
@@ -112,13 +110,16 @@
   autocrlf = false
   editor = vim
   excludesfile = ~/.yadr/git/gitignore
+  pager = less -+S
+  mergeoptions = --no-edit
 [advice]
   statusHints = false
 [diff]
   # Git diff will use (i)ndex, (w)ork tree, (c)ommit and (o)bject
   # instead of a/b/c/d as prefixes for patches
   mnemonicprefix = true
-	algorithm = patience
+  algorithm = patience
+  submodule = log
 [rerere]
   # Remember my merges
   # http://gitfu.wordpress.com/2008/04/20/git-rerere-rereremember-what-you-did-last-time/
