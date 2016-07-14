@@ -23,6 +23,7 @@ alias yip='yadr init-plugins'
 alias psa="ps aux"
 alias psg="ps aux | grep "
 alias psr='ps aux | grep ruby'
+alias ps-grep="ps -eaf | grep"
 
 # Moving around
 alias cdb='cd -'
@@ -211,3 +212,6 @@ alias dbmu='spring rake db:migrate:up'
 
 # Homebrew
 alias brewu='brew update  && brew upgrade --all && brew cleanup && brew prune && brew doctor'
+
+# jhead Photo renaming
+alias jhead="jhead -autorot -nf'%Y-%m-%d %H.%M.%S'"
