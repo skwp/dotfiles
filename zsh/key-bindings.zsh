@@ -14,3 +14,6 @@ bindkey -s "^[Op" "0"
 bindkey -s "^[Ol" "."
 bindkey -s "^[OM" "^M"
 
+# move word back/forward with ALT+left / ALT+right
+bindkey '^[[1;9C' forward-word
+bindkey '^[[1;9D' backward-word
