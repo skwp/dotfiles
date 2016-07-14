@@ -149,6 +149,19 @@ It is recommended to use this file to set your user info. Alternately, you can s
   * Slightly improved colors for diff
   * `gdmb` (g)it (d)elete (m)erged (b)ranches - Deletes all branches already merged on current branch
 
+
+### Programs I need for Data Science
+
+* R & RStudio
+* python 2.7 with numpy, pandas, jupyter
+* Spark
+
+These are in fact no dotfiles, but since I need them installed when I get started on a new Mac, 
+I put the installation script [here](data-science/install-packages.sh) as well, but it is not triggered automatically.
+
+Run it with `cd data-science && sh install-packages.sh`.
+
+
 ### RubyGems
 
 A .gemrc is included. Never again type `gem install whatever --no-ri --no-rdoc`. `--no-ri --no-rdoc` is done by default.
