@@ -54,6 +54,9 @@ sh -c "`curl -fsSL https://raw.githubusercontent.com/clamm/dotfiles/master/insta
 
 ## Wait, you're not done! Do this:
 
+#### Adapt git user config
+Go to `vim ~/.gitconfig.user` and adapt the name and email.
+
 #### Adapt selection color in iTerm Solarized Theme
 If you select text in the solarized theme it's hard to read what has been selected. Thus adapt the selection colors to be more visible: Profiles => Colors
 

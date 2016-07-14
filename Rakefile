@@ -33,7 +33,8 @@ task :install => [:submodule_init, :submodules] do
 
   run_bundle_config
 
-  create_empty_worksettings
+  create_worksettings_template
+  create_git_user_template
 
   success_msg("installed")
 end
@@ -359,10 +360,15 @@ def apply_theme_to_iterm_profile_idx(index, color_scheme_path)
   run %{ defaults read com.googlecode.iterm2 }
 end
 
-def create_empty_worksettings
-  puts "Create empty ~/.work-settings"
+def create_worksettings_template
+  puts "Create ~/.work-settings"
   run %{ touch $HOME/.work-settings }
 end  
+
+def create_git_user_template
+  puts "Create ~/.gitconfig.user"
+  run %{ echo "[user]\n#  name = Your Name\n#  email = your.email" > $HOME/.gitconfig.user }
+end
 
 def success_msg(action)
   puts ""
