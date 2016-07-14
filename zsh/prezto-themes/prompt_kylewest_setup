@@ -51,7 +51,6 @@ function prompt_kylewest_setup {
 
   # prompts
   PROMPT='%F{cyan}%c%f ${git_info[prompt]}${editor_info[keymap]} '
-  RPROMPT='%F{blue}${ruby_info[version]}'
 }
 
 prompt_kylewest_setup "$@"
