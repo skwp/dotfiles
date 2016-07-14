@@ -33,6 +33,8 @@ task :install => [:submodule_init, :submodules] do
 
   run_bundle_config
 
+  create_empty_worksettings
+
   success_msg("installed")
 end
 
@@ -356,6 +358,11 @@ def apply_theme_to_iterm_profile_idx(index, color_scheme_path)
   run %{ /usr/libexec/PlistBuddy -c "Merge '#{color_scheme_path}' :'New Bookmarks':#{index}" ~/Library/Preferences/com.googlecode.iterm2.plist }
   run %{ defaults read com.googlecode.iterm2 }
 end
+
+def create_empty_worksettings
+  puts "Create empty ~/.work-settings"
+  run %{ touch $HOME/.work-settings }
+end  
 
 def success_msg(action)
   puts ""
