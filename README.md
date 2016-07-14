@@ -54,8 +54,10 @@ sh -c "`curl -fsSL https://raw.githubusercontent.com/clamm/dotfiles/master/insta
 
 ## Wait, you're not done! Do this:
 
-#### Install iTerm Solarized Colors
-YADR will install Solarized colorschemes into your iTerm. Go to Profiles => Colors => Load Presets to pick Solarized Dark.
+#### Adapt selection color in iTerm Solarized Theme
+If you select text in the solarized theme it's hard to read what has been selected. Thus adapt the selection colors to be more visible: Profiles => Colors
+
+Possibly install more themes to choose from: http://iterm2colorschemes.com/
 
 #### Remap caps-lock to escape with [Seil](https://pqrs.org/osx/karabiner/seil.html.en)
 The escape key is the single most used key in vim.  Old keyboards used to have Escape where Tab is today. Apple keyboards are the worst with their tiny Esc keys. But all this is fixed by remapping Caps to Escape.  If you're hitting a small target in the corner, you are slowing yourself down considerably, and probably damaging your hands with repetitive strain injuries.
