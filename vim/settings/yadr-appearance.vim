@@ -27,5 +27,5 @@ else
   end
 endif
 
-colorscheme torte
+colorscheme industry
 set background=dark
