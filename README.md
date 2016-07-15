@@ -17,6 +17,7 @@
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
+## Install YADR
 
 ```
 sh -c "`curl -fsSL https://raw.githubusercontent.com/clamm/dotfiles/master/install.sh`"
