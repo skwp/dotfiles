@@ -63,6 +63,12 @@ If you select text in the solarized theme it's hard to read what has been select
 
 Possibly install more themes to choose from: http://iterm2colorschemes.com/
 
+#### Make ALT+left/right move the cursor
+Use the iTerm default key mapping and let the left ALT key send an escape sequence.
+![Screenshot](doc/iterm_key_config.png)
+
+This fixes the problem on the general zsh CLI but not within application CLIs (e.g. R, python etc.). :unamused:
+
 #### Remap caps-lock to escape with [Seil](https://pqrs.org/osx/karabiner/seil.html.en)
 The escape key is the single most used key in vim.  Old keyboards used to have Escape where Tab is today. Apple keyboards are the worst with their tiny Esc keys. But all this is fixed by remapping Caps to Escape.  If you're hitting a small target in the corner, you are slowing yourself down considerably, and probably damaging your hands with repetitive strain injuries.
 
@@ -157,7 +163,7 @@ It is recommended to use this file to set your user info. Alternately, you can s
 * python 2.7 with numpy, pandas, jupyter
 * Spark
 
-These are in fact no dotfiles, but since I need them installed when I get started on a new Mac, 
+These are in fact no dotfiles, but since I need them installed when I get started on a new Mac,
 I put the installation script [here](data-science/install-packages.sh) as well, but it is not triggered automatically.
 
 Run it with `cd data-science && sh install-packages.sh`.
@@ -223,7 +229,7 @@ of plugins above to learn more.
  * `gK` - Opens the documentation for the word under the cursor.
  * Spacebar - Sneak - type two characters to move there in a line. Kind of like vim's `f` but more accurate.
  * `:Gsearch foo` - global search, then do your normal `%s/search/replace/g` and follow up with `:Greplace` to replace across all files. When done use `:wall` to write all the files.
- 
+
 
 #### File Navigation
 
