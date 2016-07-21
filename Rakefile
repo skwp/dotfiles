@@ -1,5 +1,6 @@
 require 'rake'
 require 'fileutils'
+require 'json'
 require File.join(File.dirname(__FILE__), 'bin', 'yadr', 'vundle')
 
 desc "Hook our dotfiles into system-standard positions."
@@ -35,6 +36,8 @@ task :install => [:submodule_init, :submodules] do
 
   create_worksettings_template
   create_git_user_template
+
+  remapHomeEndKeys
 
   success_msg("installed")
 end
@@ -364,11 +367,27 @@ end
 def create_worksettings_template
   puts "Create ~/.work-settings"
   run %{ touch $HOME/.work-settings }
-end  
+end
 
 def create_git_user_template
   puts "Create ~/.gitconfig.user"
   run %{ echo "[user]\n#  name = Your Name\n#  email = your.email" > $HOME/.gitconfig.user }
+end
+
+def remapHomeEndKeys
+  #http://apple.stackexchange.com/questions/16135/remap-home-and-end-to-beginning-and-end-of-line
+  put "Remap Home and End buttons to beginning/end of the line"
+  tempHash = {
+    "\\UF729" => "moveToBeginningOfParagraph:; // home",
+    "\\UF72B" => "moveToEndOfParagraph:; // end",
+    "$\\UF729" => "moveToBeginningOfParagraphAndModifySelection:; // shift-home",
+    "$\\UF72B" => "moveToEndOfParagraphAndModifySelection:; // shift-end"
+  }
+  run %{ mkdir -p $HOME/Library/KeyBindings }
+  run %{ touch $HOME/Library/KeyBindings/DefaultKeyBinding.dict }
+  File.open(File.join(ENV['HOME'], "Library/KeyBindings/DefaultKeyBinding.dict"),"w") do |f|
+    f.write(JSON.pretty_generate(tempHash))
+  end
 end
 
 def success_msg(action)
