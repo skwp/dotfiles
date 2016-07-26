@@ -145,7 +145,10 @@
 [user]
 	email = swanand.pagnis@gmail.com
 	name = Swanand Pagnis
+	signingkey = B1F7EA103C8E8CCA
 [filter "lfs"]
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
 	required = true
+[commit]
+	gpgsign = true
