@@ -90,3 +90,12 @@ test/fixtures/files/test
 test/fixtures/files/uploads
 
 log/profiles
+vendor/cache/*.gem
+
+# 
+.rbenv-gemsets
+
+.rake_tasks
+
+# npm
+npm-debug.log*
