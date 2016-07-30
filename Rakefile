@@ -36,6 +36,7 @@ task :install => [:submodule_init, :submodules] do
 
   create_worksettings_template
   create_git_user_template
+  create_Renviron
 
   remapHomeEndKeys
 
@@ -365,18 +366,30 @@ def apply_theme_to_iterm_profile_idx(index, color_scheme_path)
 end
 
 def create_worksettings_template
-  puts "Create ~/.work-settings"
-  run %{ touch $HOME/.work-settings }
+  if !File.exists?(File.join(ENV['HOME'], '.work-settings'))
+    puts "Create ~/.work-settings"
+    run %{ touch $HOME/.work-settings }
+  end
 end
 
 def create_git_user_template
-  puts "Create ~/.gitconfig.user"
-  run %{ echo "[user]\n#  name = Your Name\n#  email = your.email" > $HOME/.gitconfig.user }
+  if !File.exists?(File.join(ENV['HOME'], '.gitconfig.user'))
+    puts "Create ~/.gitconfig.user"
+    run %{ echo "[user]\n#  name = Your Name\n#  email = your.email" > $HOME/.gitconfig.user }
+  end
+end
+
+def create_Renviron
+  run %{ mkdir -p ~/.R/library }
+  if !File.exists?(File.join(ENV['HOME'], '.Renviron'))
+    puts "Create ~/.Renviron"
+    run %{ echo "# set specific path to install packages to avoid necessity to reinstall upon R upgrade\nR_LIBS=~/.R/library" > $HOME/.Renviron }
+  end
 end
 
 def remapHomeEndKeys
   #http://apple.stackexchange.com/questions/16135/remap-home-and-end-to-beginning-and-end-of-line
-  put "Remap Home and End buttons to beginning/end of the line"
+  puts "Remap Home and End buttons to beginning/end of the line"
   tempHash = {
     "\\UF729" => "moveToBeginningOfParagraph:; // home",
     "\\UF72B" => "moveToEndOfParagraph:; // end",
