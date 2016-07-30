@@ -19,6 +19,8 @@ alias ylv='yadr vim-list-plugin'
 alias yup='yadr update-plugins'
 alias yip='yadr init-plugins'
 
+alias remove-yadr="rm -rf $HOME/.yadr $HOME/.gitconfig $HOME/.gitignore $HOME/.inputrc $HOME/.ctags $HOME/.tmux.conf $HOME/.vim $HOME/.vimrc $HOME/.zlogin $HOME/.zlogout $HOME/.zprezto $HOME/.zpreztorc $HOME/.zprofile $HOME/.zshenv $HOME/.zshrc $HOME/.zsh.after $HOME/.zsh.before $HOME/.zsh.prompts $HOME/.editrc"
+
 # PS
 alias psa="ps aux"
 alias psg="ps aux | grep "
