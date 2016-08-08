@@ -8,7 +8,9 @@
     # Yet Another Dotfile Repo v1.1
     # Now with Prezto and Vundle!
 
-    sh -c "`curl -fsSL https://raw.githubusercontent.com/qianthinking/dotfiles/master/install.sh`"
+    sh -c "\`curl -fsSL https://raw.githubusercontent.com/qianthinking/dotfiles/master/install.sh\`"
+[![Join the chat at https://gitter.im/skwp/dotfiles](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/skwp/dotfiles?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 
 **Always be sure to run `rake update` after pulling to ensure plugins are updated**
 
@@ -19,7 +21,7 @@
   * The best bits of all the top dotfile repos, vim and zsh plugins curated in one place, into a simple and cohesive way of working.
   * More than 90 vim plugins, all under one roof, working together, each plugin researched and configured to be at its best, often with better shortcut keys.
   * Many zsh plugins, starting with the wonderful Prezto base, and adding a few niceties on top.
-  * All things are vimized: irb, postres command line, etc.
+  * All things are vimized: irb, postgres command line, etc.
 
 ## Mailing List
 
@@ -51,11 +53,8 @@ sh -c "`curl -fsSL https://raw.githubusercontent.com/qianthinking/dotfiles/maste
 #### Install iTerm Solarized Colors
 YADR will install Solarized colorschemes into your iTerm. Go to Profiles => Colors => Load Presets to pick Solarized Dark.
 
-#### Remap caps-lock to escape with PCKeyboardHack](http://pqrs.org/macosx/keyremap4macbook/pckeyboardhack.html)
+#### Remap caps-lock to escape with [Seil](https://pqrs.org/osx/karabiner/seil.html.en)
 The escape key is the single most used key in vim.  Old keyboards used to have Escape where Tab is today. Apple keyboards are the worst with their tiny Esc keys. But all this is fixed by remapping Caps to Escape.  If you're hitting a small target in the corner, you are slowing yourself down considerably, and probably damaging your hands with repetitive strain injuries.
-
-#### Remap your Alfred or Spotlight to `Ctrl-Cmd-Space`
-This is so that you can use `Cmd-Space` to autocomplete in vim. This is much more friendly for your fingers than `Ctrl-n`.
 
 #### Set up a system wide hotkey for iTerm (Keys=>Hotkey)
 Recommended Cmd-Escape, which is really Cmd-Capslock.
@@ -139,6 +138,7 @@ It is recommended to use this file to set your user info. Alternately, you can s
   * `git unstage` / `guns` (remove from index) and `git uncommit` / `gunc` (revert to the time prior to the last commit - dangerous if already pushed) aliases
   * Some sensible default configs, such as improving merge messages, push only pushes the current branch, removing status hints, and using mnemonic prefixes in diff: (i)ndex, (w)ork tree, (c)ommit and (o)bject
   * Slightly improved colors for diff
+  * `gdmb` (g)it (d)elete (m)erged (b)ranches - Deletes all branches already merged on current branch
 
 ### RubyGems
 
@@ -191,6 +191,7 @@ of plugins above to learn more.
  * `Cmd-*` - highlight all occurrences of current word (similar to regular `*` except doesn't move)
  * `,hl` - toggle search highlight on and off
  * `,gg` or `,ag` - Grep command line, type between quotes. Uses Ag Silver Searcher.
+ * After searching with `,gg` you can navigate the results with `Ctrl-x` and `Ctrl-z` (or standard vim `:cn` and `:cp`)
  * `,gd` - Grep def (greps for 'def [function name]') when cursor is over the function name
  * `,gcf` - Grep Current File to find references to the current file
  * `//` - clear the search
@@ -202,6 +203,8 @@ of plugins above to learn more.
  * `,mc` - mark this word for MultiCursor (like sublime). Use `Ctrl-n` (next), `Ctrl-p` (prev), `Ctrl-x`(skip) to add more cursors, then do normal vim things like edit the word.
  * `gK` - Opens the documentation for the word under the cursor.
  * Spacebar - Sneak - type two characters to move there in a line. Kind of like vim's `f` but more accurate.
+ * `:Gsearch foo` - global search, then do your normal `%s/search/replace/g` and follow up with `:Greplace` to replace across all files. When done use `:wall` to write all the files.
+
 
 #### File Navigation
 
@@ -217,7 +220,7 @@ of plugins above to learn more.
 
 #### Better keystrokes for common editing commands
 
- * Cmd-Space to autocomplete. Tab for snipmate snippets.
+ * Ctrl-Space to autocomplete. Tab for snipmate snippets.
  * `,#` `,"` `,'` `,]` `,)` `,}` to surround a word in these common wrappers. the # does #{ruby interpolation}. works in visual mode (thanks @cj). Normally these are done with something like `ysw#`
  * `Cmd-'`, `Cmd-"`, `Cmd-]`, `Cmd-)`, etc to change content inside those surrounding marks. You don't have to be inside them (`Alt` in Linux)
  * `,.` to go to last edit location (same as `'.`) because the apostrophe is hard on the pinky
@@ -306,7 +309,15 @@ These hacks are Lion-centric. May not work for other OS'es. My favorite mods inc
 brew uninstall macvim
 brew remove macvim
 brew cleanup
-brew install macvim --custom-icons --override-system-vim --with-lua --with-luajit
+brew install macvim --custom-icons --with-override-system-vim --with-lua --with-luajit
+```
+
+### Terminal Vim troubles with Lua?
+Installing terminal vim (with lua) with an RVM managed Ruby can cause the neocomplete plugin to segfault. Try uninstalling vim, then installing with system ruby:
+
+```
+brew uninstall vim
+rvm system do brew install vim --with-lua
 ```
 
 
@@ -316,5 +327,3 @@ Pry offers a much better out of the box IRB experience with colors, tab completi
 as an actual debugger by installing [pry-nav](https://github.com/nixme/pry-nav).
 
 [Learn more about YADR's pry customizations and how to install](doc/pry.md)
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/skwp/dotfiles/trend.png)](https://bitdeli.com/free "Bitdeli Badge")

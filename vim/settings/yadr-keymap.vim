@@ -89,6 +89,17 @@ cnoremap <C-f> <RIGHT>
 cnoremap <C-h> <BACKSPACE>
 cnoremap <C-d> <DELETE>
 "imap <C-a> <esc>wa
+" ==== NERD tree
+" Open the project tree and expose current file in the nerdtree with Ctrl-\
+" " calls NERDTreeFind iff NERDTree is active, current window contains a modifiable file, and we're not in vimdiff
+function! OpenNerdTree()
+  if &modifiable && strlen(expand('%')) > 0 && !&diff
+    NERDTreeFind
+  else
+    NERDTreeToggle
+  endif
+endfunction
+nnoremap <silent> <C-\> :call OpenNerdTree()<CR>
 
 " ,q to toggle quickfix window (where you have stuff like Ag)
 " ,oq to open it back up (rare)
@@ -112,7 +123,6 @@ nnoremap <silent> ,x :bn<CR>
 " nnoremap <silent> <C-j> <C-w>j
 
 " Make gf (go to file) create the file, if not existent
-nnoremap gf :e<cfile><CR>
 nnoremap <C-w>f :sp +e<cfile><CR>
 nnoremap <C-w>gf :tabe<cfile><CR>
 
@@ -143,6 +153,7 @@ nnoremap _ <C-w>5-
 " copy current filename into system clipboard - mnemonic: (c)urrent(f)ilename
 " this is helpful to paste someone the path you're looking at
 nnoremap <silent> ,cf :let @* = expand("%:~")<CR>
+nnoremap <silent> ,cr :let @* = expand("%")<CR>
 nnoremap <silent> ,cn :let @* = expand("%:t")<CR>
 
 "Clear current search highlight by double tapping //
@@ -237,3 +248,8 @@ nmap <leader>rd :redraw!<CR>
 
 nnoremap <F8> :set wrap! wrap?<CR>
 imap <F8> <C-O><F8>
+" Map Ctrl-x and Ctrl-z to navigate the quickfix error list (normally :cn and
+" :cp)
+nnoremap <silent> <C-x> :cn<CR>
+nnoremap <silent> <C-z> :cp<CR>
+
