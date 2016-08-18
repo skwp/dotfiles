@@ -135,6 +135,9 @@ alias gbg='git bisect good'
 alias gbb='git bisect bad'
 alias gdmb='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
 
+alias git-anon='cp $HOME/.gitconfig.user.anon $HOME/.gitconfig.user'
+alias git-id='cp $HOME/.gitconfig.user.id $HOME/.gitconfig.user'
+
 # Common shell functions
 alias less='less -r'
 alias tf='tail -f'
