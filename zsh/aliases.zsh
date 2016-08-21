@@ -62,6 +62,13 @@ fi
 # mimic vim functions
 alias :q='exit'
 
+# gitconfig editing
+alias ge='vim ~/.gitconfig'
+
+# tmux.conf editing
+alias te='vim ~/.tmux.conf'
+
+
 # vimrc editing
 alias ve='vim ~/.vimrc'
 

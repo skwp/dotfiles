@@ -40,16 +40,16 @@ if filereadable(expand("~/.vim/vundles.vim"))
   source ~/.vim/vundles.vim
 endif
 
-" ================ Turn Off Swap Files ==============
+" ================ turn off swap files ==============
 
 set noswapfile
 set nobackup
 set nowb
 
-" ================ Persistent Undo ==================
-" Keep undo history across sessions, by storing in file.
-" Only works all the time.
-if has('persistent_undo') && !isdirectory(expand('~').'/.vim/backups')
+" ================ persistent undo ==================
+" keep undo history across sessions, by storing in file.
+" only works all the time.
+if has('persistent_undo')
   silent !mkdir ~/.vim/backups > /dev/null 2>&1
   set undodir=~/.vim/backups
   set undofile
@@ -98,6 +98,11 @@ set wildignore+=*.gem
 set wildignore+=log/**
 set wildignore+=tmp/**
 set wildignore+=*.png,*.jpg,*.gif
+
+"
+" ================ Moving ========================
+" use space to pagedown, which is cosistent with most web browsers
+nmap <Space> <PageDown>
 
 "
 " ================ Scrolling ========================

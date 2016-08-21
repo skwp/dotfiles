@@ -129,3 +129,5 @@
 [user]
   name = zhenyuy
   email = zhenyuy@fb.com
+[credential]
+  helper = osxkeychain
