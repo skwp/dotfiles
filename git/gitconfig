@@ -130,9 +130,9 @@
   path = .gitconfig.user
 
 [user]
-  name = zhenyuy
+  name = zhenyuy-fb
   email = zhenyuy@fb.com
-[credential]
-  helper = osxkeychain
-[http]
-	proxy = fwdproxy:8080
+# [credential]
+  # helper = osxkeychain
+# [http]
+	# proxy = fwdproxy:8080

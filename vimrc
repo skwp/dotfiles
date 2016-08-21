@@ -140,6 +140,11 @@ map <leader>r :NERDTreeFind<cr>
 map <C-o> :NERDTreeTabsToggle<CR>
 map <Leader>n <plug>NERDTreeTabsToggle<CR>
 
+
+" easily edit vimrc file and reload it
+:nnoremap <leader>vv :vsplit $MYVIMRC<cr>
+:nnoremap <leader>vs :source $MYVIMRC<cr>
+
 set incsearch       " Find the next match as we type the search
 set hlsearch        " Highlight searches by default
 set ignorecase      " Ignore case when searching...
