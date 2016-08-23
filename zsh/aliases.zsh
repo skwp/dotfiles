@@ -59,6 +59,8 @@ if [ $MACVIM_INSTALLED -eq 0 ]; then
   alias vim="mvim -v"
 fi
 alias vi="vim"
+# alias vim="vimx -v"
+alias vim="/usr/local/bin/vim"
 
 # mimic vim functions
 alias :q='exit'

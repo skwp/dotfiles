@@ -20,6 +20,7 @@ set gcr=a:blinkon0              "Disable cursor blink
 set visualbell                  "No sounds
 set autoread                    "Reload files changed outside vim
 " set cursorline                  "Set the cursorline
+" set cursorcolumn
 
 " This makes vim act like all other editors, buffers can
 " exist in the background without being in a window.
@@ -144,6 +145,9 @@ map <Leader>n <plug>NERDTreeTabsToggle<CR>
 " easily edit vimrc file and reload it
 :nnoremap <leader>vv :vsplit $MYVIMRC<cr>
 :nnoremap <leader>vs :source $MYVIMRC<cr>
+
+" reload the vimrc immediately after saving
+autocmd BufWritePost $MYVIMRC source $MYVIMRC
 
 set incsearch       " Find the next match as we type the search
 set hlsearch        " Highlight searches by default
