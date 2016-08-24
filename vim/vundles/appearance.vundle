@@ -1,2 +1,3 @@
 Bundle "skwp/vim-colors-solarized"
 Bundle "jby/tmux.vim.git"
+Bundle "itchyny/lightline.vim"
