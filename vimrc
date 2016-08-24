@@ -1,4 +1,5 @@
 " Use Vim settings, rather then Vi settings (much better!).
+"
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
@@ -105,7 +106,7 @@ set wildignore+=*.png,*.jpg,*.gif
 "
 " ================ Copy and Paste ========================
 " use system clipbord to enable copy and paste outside of vim
-set clipboard=unnamed
+set clipboard=unnamedplus
 
 " faster redrawing
 set ttyfast
@@ -115,7 +116,7 @@ set ttyfast
 nmap <Space> <C-f>
 
 "
-" ================ Scrolling ========================
+" =========== === Scrolling ========================
 
 set scrolloff=8         "Start scrolling when we're 8 lines away from margins
 set sidescrolloff=15
@@ -153,5 +154,9 @@ set incsearch       " Find the next match as we type the search
 set hlsearch        " Highlight searches by default
 set ignorecase      " Ignore case when searching...
 set smartcase       " ...unless we type a capital
+" ================ Convenient Settings ========================
+" delete in insert mode with 'dd'
+:imap <c-d> <esc>ddi
+
 " ================ Custom Settings ========================
 so ~/.yadr/vim/settings.vim
