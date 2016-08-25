@@ -157,6 +157,7 @@ set smartcase       " ...unless we type a capital
 " ================ Convenient Settings ========================
 " delete in insert mode with 'dd'
 :imap <c-d> <esc>ddi
+:nmap <leader>; mqA;<esc>`q
 
 " ================ Custom Settings ========================
 so ~/.yadr/vim/settings.vim
