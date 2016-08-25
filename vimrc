@@ -105,7 +105,7 @@ set wildignore+=*.png,*.jpg,*.gif
 
 "
 " ================ Copy and Paste ========================
-" use system clipbord to enable copy and paste outside of vim
+" use system clipboard to enable copy and paste outside of vim
 set clipboard=unnamedplus
 
 " faster redrawing
