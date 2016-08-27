@@ -4,3 +4,5 @@
 Bundle "austintaylor/vim-indentobject"
 " Bundle "lucapette/vim-textobj-underscore"
 Bundle "nathanaelkane/vim-indent-guides"
+" Bundle "kana/vim-textobj-entire"
+" Bundle "kana/vim-textobj-user"

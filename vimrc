@@ -158,6 +158,8 @@ set smartcase       " ...unless we type a capital
 " delete in insert mode with 'dd'
 :imap <c-d> <esc>ddi
 :nmap <leader>; mqA;<esc>`q
+:nmap <leader>B :tabnew<cr>
+set autochdir         " automatically change the current dir
 
 " ================ Custom Settings ========================
 so ~/.yadr/vim/settings.vim
