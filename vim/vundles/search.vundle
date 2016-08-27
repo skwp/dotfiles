@@ -1,6 +1,6 @@
-" Bundle "justinmk/vim-sneak"
-Bundle "rking/ag.vim"
-Bundle "henrik/vim-indexed-search"
-Bundle "nelstrom/vim-visual-star-search"
-Bundle "skwp/greplace.vim"
-Bundle "Lokaltog/vim-easymotion"
+" Plug 'justinmk/vim-sneak'
+Plug 'rking/ag.vim'
+Plug 'henrik/vim-indexed-search'
+Plug 'nelstrom/vim-visual-star-search'
+Plug 'skwp/greplace.vim'
+Plug 'Lokaltog/vim-easymotion'

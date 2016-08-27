@@ -1,4 +1,4 @@
-Bundle "skwp/vim-colors-solarized"
-Bundle "lifepillar/vim-solarized8"
-Bundle "jby/tmux.vim.git"
-Bundle "itchyny/lightline.vim"
+Plug 'skwp/vim-colors-solarized'
+Plug 'lifepillar/vim-solarized8'
+Plug 'jby/tmux.vim'
+Plug 'itchyny/lightline.vim'

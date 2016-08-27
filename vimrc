@@ -37,15 +37,24 @@ syntax on
 " the plugins.
 let mapleader=","
 
-" =============== Vundle Initialization ===============
+" " =============== Vundle Initialization ===============
+" " This loads all the plugins specified in ~/.vim/vundles.vim
+" " Use Vundle plugin to manage all other plugins
+" if filereadable(expand("~/.vim/vundles.vim"))
+"   source ~/.vim/vundles.vim
+" endif
+
+" use vim-plug to manage plugins, which support 'lazy load' feature
+" Make sure you use single quotes
+call plug#begin('~/.vim/plugged')
 " This loads all the plugins specified in ~/.vim/vundles.vim
-" Use Vundle plugin to manage all other plugins
 if filereadable(expand("~/.vim/vundles.vim"))
   source ~/.vim/vundles.vim
 endif
+" Add plugins to &runtimepath
+call plug#end()
 
 " ================ turn off swap files ==============
-
 set noswapfile
 set nobackup
 set nowb
