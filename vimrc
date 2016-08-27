@@ -148,8 +148,7 @@ map <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
 map <leader>r :NERDTreeFind<cr>
 
 " toggle NERDTree with ctrl + \
-map <C-o> :NERDTreeTabsToggle<CR>
-map <Leader>n <plug>NERDTreeTabsToggle<CR>
+map <C-o> :NERDTreeToggle<CR>
 
 
 " easily edit vimrc file and reload it

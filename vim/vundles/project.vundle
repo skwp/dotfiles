@@ -1,3 +1,2 @@
-Plug 'jistr/vim-nerdtree-tabs', { 'on': 'NERDTreeToggle' }
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' } | Plug 'jistr/vim-nerdtree-tabs'
 Plug 'ctrlpvim/ctrlp.vim'
