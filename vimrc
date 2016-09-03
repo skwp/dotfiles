@@ -22,6 +22,7 @@ set visualbell                  "No sounds
 set autoread                    "Reload files changed outside vim
 " set cursorline                  "Set the cursorline
 " set cursorcolumn
+set colorcolumn=80              "Set line length marker
 
 " This makes vim act like all other editors, buffers can
 " exist in the background without being in a window.
@@ -122,7 +123,8 @@ set ttyfast
 
 " ================ Moving ========================
 " use space to pagedown, which is cosistent with most web browsers
-nmap <Space> <C-f>
+" nmap <Space> <C-f>
+nmap <Space> za
 
 "
 " =========== === Scrolling ========================
@@ -150,7 +152,6 @@ map <leader>r :NERDTreeFind<cr>
 " toggle NERDTree with ctrl + \
 map <C-o> :NERDTreeToggle<CR>
 
-
 " easily edit vimrc file and reload it
 :nnoremap <leader>vv :vsplit $MYVIMRC<cr>
 :nnoremap <leader>vs :source $MYVIMRC<cr>
@@ -167,7 +168,18 @@ set smartcase       " ...unless we type a capital
 :imap <c-d> <esc>ddi
 :nmap <leader>; mqA;<esc>`q
 :nmap <leader>B :tabnew<cr>
+:nmap <leader>G :Goyo<cr>
+" cnoremap VM <C-C>:echom "loading vim-improvement plugins"<cr>
 set autochdir         " automatically change the current dir
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+"
+" " Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
+" better copy & paste
+set pastetoggle=<F2>
 
 " ================ Custom Settings ========================
 so ~/.yadr/vim/settings.vim

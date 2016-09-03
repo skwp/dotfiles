@@ -1,4 +1,4 @@
-Plug 'skwp/vim-colors-solarized'
-Plug 'lifepillar/vim-solarized8'
+" Plug 'lifepillar/vim-solarized8'
 Plug 'jby/tmux.vim'
-Plug 'itchyny/lightline.vim'
+Plug 'skwp/vim-colors-solarized'
+Plug 'itchyny/lightline.vim', { 'on': 'VM' }

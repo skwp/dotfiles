@@ -22,7 +22,7 @@ set rtp+=~/.vim/vundles/ "Submodules
 " ~/.vim/vundles/ to edit them:
 runtime ruby.vundle
 runtime languages.vundle
-" runtime git.vundle
+runtime git.vundle
 runtime appearance.vundle
 runtime textobjects.vundle
 runtime search.vundle

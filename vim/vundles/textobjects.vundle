@@ -1,7 +1,7 @@
-" these bundles introduce new textobjects into vim,
 " for example the ruby one introduces the 'r' text object
 " such that 'var' gives you visual around ruby
-Plug 'austintaylor/vim-indentobject'
 " Plug 'lucapette/vim-textobj-underscore.vim'
-Plug 'nathanaelkane/vim-indent-guides'
-Plug 'kana/vim-textobj-user' | Plug 'kana/vim-textobj-entire', { 'on': ['<Plug>(textobj-entire-a)', '<Plug>(textobj-entire-i)'] }
+Plug 'austintaylor/vim-indentobject', { 'on' : 'VM' }
+Plug 'nathanaelkane/vim-indent-guides', { 'on' : 'VM' }
+" Plug 'kana/vim-textobj-user' | Plug 'kana/vim-textobj-entire'
+Plug 'kana/vim-textobj-user' | Plug 'kana/vim-textobj-entire', { 'on': 'VM' }

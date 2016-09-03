@@ -1,2 +1,5 @@
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' } | Plug 'jistr/vim-nerdtree-tabs'
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] } | Plug 'jistr/vim-nerdtree-tabs'
+Plug 'ctrlpvim/ctrlp.vim', { 'on': ['CtrlP', 'CtrlPBuffer', 'CtrlPMixed', 'ClearCtrlPCache', 'CtrlPMRUFiles'] }
+" need two mercurial plugins as vim-lawrencium does not support 'hg blame'
+Plug 'ludovicchabant/vim-lawrencium', { 'on': ['HG'] }
+Plug 'jlfwong/vim-mercenary', { 'on': 'HG' }

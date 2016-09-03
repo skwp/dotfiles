@@ -1,31 +1,34 @@
-Plug 'kshenoy/vim-signature'
-" Plug 'AndrewRadev/splitjoin.vim'
-Plug 'Raimondi/delimitMate'
-Plug 'Shougo/neocomplete.vim'
-Plug 'briandoll/change-inside-surroundings.vim'
-" Plug 'godlygeek/tabular'
-Plug 'tomtom/tcomment_vim'
-" Plug 'tmhedberg/matchit.vim'
-" Plug 'kristijanhusak/vim-multiple-cursors'
-" Plug 'Keithbsmiley/investigate.vim'
-" Plug 'chrisbra/NrrwRgn'
-Plug 'christoomey/vim-tmux-navigator'
-" Plug 'MarcWeber/vim-addon-mw-utils.vim'
-" Plug 'bogado/file-line.vim'
-" Plug 'mattn/webapi-vim.vim'
-Plug 'sjl/gundo.vim'
-Plug 'skwp/YankRing.vim'
-" Plug 'tomtom/tlib_vim.vim'
-" Plug 'tpope/vim-abolish'
-Plug 'tpope/vim-endwise'
-" Plug 'tpope/vim-ragtag'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-unimpaired'
-" Plug 'vim-scripts/AnsiEsc.vim'
-" Plug 'vim-scripts/AutoTag.vim'
-" Plug 'vim-scripts/lastpos.vim'
-Plug 'vim-scripts/sudo.vim'
-Plug 'goldfeld/ctrlr.vim'
 " Plug 'editorconfig/editorconfig-vim'
-Plug  'gcmt/wildfire.vim'
+" Plug 'vim-scripts/lastpos.vim'
+" Plug 'vim-scripts/AutoTag.vim'
+" Plug 'vim-scripts/AnsiEsc.vim'
+" Plug 'tpope/vim-ragtag'
+" Plug 'tpope/vim-abolish'
+" Plug 'tomtom/tlib_vim.vim'
+" Plug 'skwp/YankRing.vim'
+" Plug 'mattn/webapi-vim.vim'
+" Plug 'bogado/file-line.vim'
+" Plug 'MarcWeber/vim-addon-mw-utils.vim'
+" Plug 'chrisbra/NrrwRgn'
+" Plug 'Keithbsmiley/investigate.vim'
+" Plug 'kristijanhusak/vim-multiple-cursors'
+" Plug 'tmhedberg/matchit.vim'
+" Plug 'godlygeek/tabular'
+" Plug 'AndrewRadev/splitjoin.vim'
+" VM(vim-improvement) is a fake command, which is a hacky way to load those following plugins when needed
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'Shougo/neocomplete.vim', { 'on': 'VM' }
+Plug 'briandoll/change-inside-surroundings.vim', { 'on': 'VM' }
+Plug 'sjl/gundo.vim', { 'on': 'VM' }
+Plug 'tpope/vim-endwise', { 'on': 'VM' }
+Plug 'tpope/vim-repeat', { 'on': 'VM' }
+Plug 'goldfeld/ctrlr.vim', { 'on': 'VM' }
+Plug 'tpope/vim-surround', { 'on': 'VM' }
+Plug  'junegunn/goyo.vim', { 'on': 'VM' }
+Plug 'kshenoy/vim-signature', {'on': 'VM' }
+Plug  'gcmt/wildfire.vim', {'on': 'VM' }
+Plug 'tomtom/tcomment_vim', { 'on': 'VM' }
+Plug 'tpope/vim-unimpaired', { 'on': 'VM' }
+Plug 'Raimondi/delimitMate', { 'on': 'VM' }
+Plug 'vim-scripts/sudo.vim', { 'on': 'VM' }
+Plug 'junegunn/vim-easy-align', { 'on': 'VM' }

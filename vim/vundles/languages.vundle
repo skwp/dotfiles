@@ -2,8 +2,9 @@
 " Plug 'garbas/vim-snipmate.git'
 " Plug 'honza/vim-snippets'
 Plug 'jtratner/vim-flavored-markdown', { 'for' : 'markdown' }
-Plug 'scrooloose/syntastic', { 'for': ['python', 'php'] }
+Plug 'scrooloose/syntastic', { 'for': ['php'] }
+Plug 'klen/python-mode', { 'for': ['python'] }
 Plug 'nelstrom/vim-markdown-preview', { 'for' : 'markdown' }
 Plug 'skwp/vim-html-escape', { 'for' : 'html' }
-Plug 'mxw/vim-jsx'
+" Plug 'mxw/vim-jsx', { 'for': 'js' }
 Plug 'octol/vim-cpp-enhanced-highlight', { 'for' : 'cpp' }
