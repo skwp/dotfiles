@@ -51,7 +51,7 @@ let g:pymode_breakpoint_bind = '<leader><leader>B'
 
 " keep consistent with ctags's key binding
 let g:pymode_rope_goto_definition_bind = "<C-]>"
-let g:pymode_rope_show_doc_bind = '<C-c>d'
+let g:pymode_rope_show_doc_bind = '<C-['
 
 " setup max line length
 let g:pymode_options_max_line_length = 79

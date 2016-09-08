@@ -90,7 +90,7 @@ filetype indent on
 set list listchars=tab:\ \ ,trail:·
 
 set nowrap       "Don't wrap lines
-set linebreak    "Wrap lines at convenient points
+set linebreak    "Wrap lines at convenient points, e.g., no word splitting
 
 " ================ Folds ============================
 
@@ -167,7 +167,7 @@ set smartcase       " ...unless we type a capital
 " delete in insert mode with 'dd'
 :imap <c-d> <esc>ddi
 :nmap <leader>; mqA;<esc>`q
-:nmap <leader>B :tabnew<cr>
+:nmap <leader>T :tabnew<cr>
 :nmap <leader>G :Goyo<cr>
 " cnoremap VM <C-C>:echom "loading vim-improvement plugins"<cr>
 set autochdir         " automatically change the current dir
@@ -177,9 +177,7 @@ xmap ga <Plug>(EasyAlign)
 "
 " " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
-
 " better copy & paste
 set pastetoggle=<F2>
-
 " ================ Custom Settings ========================
 so ~/.yadr/vim/settings.vim
