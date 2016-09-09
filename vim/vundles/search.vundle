@@ -4,6 +4,6 @@ Bundle "rking/ag.vim"
 Bundle "nelstrom/vim-visual-star-search"
 "Gsearch then %s/old/new/g then Greplace then wa
 Bundle "skwp/greplace.vim"
-Bundle "Lokaltog/vim-easymotion"
+Bundle "easymotion/vim-easymotion"
 "Dash, doc search, my map: <leader>sd
 Bundle 'rizzatti/dash.vim'
