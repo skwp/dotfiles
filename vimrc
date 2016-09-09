@@ -69,8 +69,8 @@ set expandtab
 nnoremap p p=`]<C-o>
 nnoremap P P=`]<C-o>
 
-vnoremap p "0p
-vnoremap P "0P
+vnoremap <leader>p "0p
+vnoremap <leader>P "0P
 
 filetype plugin on
 filetype indent on
