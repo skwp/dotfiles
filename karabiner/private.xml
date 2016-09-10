@@ -15,6 +15,10 @@
     <appname>OmniFocus</appname>
     <equal>com.omnigroup.OmniFocus2</equal>
   </appdef>
+  <appdef>
+    <appname>XMind</appname>
+    <equal>org.xmind.cathy.application</equal>
+  </appdef>
   <item>
     <name>Customized: General</name>
     <item>
@@ -49,56 +53,126 @@
       </block>
     </item>
     <item>
-      <name>Enable Emacs-like ALT-F/B/D</name>
+      <name>Ctrl-H Ctrl-J for Tab switching</name>
+      <identifier>remap.ctrl_hj_tab_switching</identifier>
+      <only>
+        GOOGLE_CHROME, SAFARI, FIREFOX, FINDER
+      </only>
+      <modifier_not>
+        ModifierFlag::SHIFT_L, ModifierFlag::SHIFT_R,
+        ModifierFlag::COMMAND_L, ModifierFlag::COMMAND_R,
+        ModifierFlag::OPTION_L, ModifierFlag::OPTION_R
+      </modifier_not>
+      <autogen>__KeyToKey__ KeyCode::H, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::TAB, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::L, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::TAB, ModifierFlag::CONTROL_L</autogen>
+    </item>
+    <item>
+      <name>Enable Emacs-like key binding</name>
       <identifier>space_cadet.emacs_like_alt</identifier>
       <block>
-        <uielementrole_only>AXTextField</uielementrole_only>
+        <uielementrole_only>AXTextArea, AXTextField</uielementrole_only>
         <only>
-          FINDER, MAIL
+          FINDER, MAIL, XMind
         </only>
-        <modifier_only>
-          ModifierFlag::OPTION_L | ModifierFlag::NONE
-        </modifier_only>
-        <autogen>
-          __KeyToKey__
-          KeyCode::F,
-          KeyCode::CURSOR_RIGHT
-        </autogen>
-        <autogen>
-          __KeyToKey__
-          KeyCode::B,
-          KeyCode::CURSOR_LEFT
-        </autogen>
-        <autogen>
-          __KeyToKey__
-          KeyCode::D,
-          KeyCode::DELETE,
-          ModifierFlag::FN
-        </autogen>
+        <block>
+          <modifier_only>
+            ModifierFlag::OPTION_L | ModifierFlag::NONE
+          </modifier_only>
+          <modifier_not>
+            ModifierFlag::SHIFT_L, ModifierFlag::SHIFT_R,
+            ModifierFlag::COMMAND_L, ModifierFlag::COMMAND_R,
+            ModifierFlag::CONTROL_L, ModifierFlag::CONTROL_R
+          </modifier_not>
+          <autogen>
+            __KeyToKey__
+            KeyCode::F,
+            KeyCode::CURSOR_RIGHT
+          </autogen>
+          <autogen>
+            __KeyToKey__
+            KeyCode::B,
+            KeyCode::CURSOR_LEFT
+          </autogen>
+          <autogen>
+            __KeyToKey__
+            KeyCode::D,
+            KeyCode::DELETE,
+            ModifierFlag::FN
+          </autogen>
+        </block>
+        <block>
+          <modifier_not>
+            ModifierFlag::SHIFT_L, ModifierFlag::SHIFT_R,
+            ModifierFlag::COMMAND_L, ModifierFlag::COMMAND_R,
+            ModifierFlag::OPTION_L, ModifierFlag::OPTION_R
+          </modifier_not>
+          <autogen>__KeyToKey__ KeyCode::F, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::CURSOR_RIGHT</autogen>
+          <autogen>__KeyToKey__ KeyCode::B, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::CURSOR_LEFT</autogen>
+          <autogen>__KeyToKey__ KeyCode::N, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::CURSOR_DOWN</autogen>
+          <autogen>__KeyToKey__ KeyCode::P, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::CURSOR_UP</autogen>
+          <autogen>__KeyToKey__ KeyCode::A, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::HOME</autogen>
+          <autogen>__KeyToKey__ KeyCode::E, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::END</autogen>
+          <autogen>__KeyToKey__ KeyCode::D, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::FORWARD_DELETE</autogen>
+          <!-- Ctrl-H / Ctrl-L for tab switch
+          <autogen>__KeyToKey__ KeyCode::H, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::DELETE</autogen>
+          -->
+          <autogen>__KeyToKey__ KeyCode::K, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::CURSOR_RIGHT, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L, KeyCode::FORWARD_DELETE</autogen>
+          <autogen>__KeyToKey__ KeyCode::J, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::RETURN, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L</autogen>
+          <autogen>__KeyToKey__ KeyCode::M, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::RETURN</autogen>
+          <autogen>__KeyToKey__ KeyCode::RETURN, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND, KeyCode::RETURN, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L</autogen>
+        </block>
       </block>
       <block>
         <only>
-          GOOGLE_CHROME, SAFARI, FIREFOX
+          GOOGLE_CHROME, SAFARI, FIREFOX, EXCEL, WORD
         </only>
-        <modifier_only>
-          ModifierFlag::OPTION_L | ModifierFlag::NONE
-        </modifier_only>
-        <autogen>
-          __KeyToKey__
-          KeyCode::F,
-          KeyCode::CURSOR_RIGHT
-        </autogen>
-        <autogen>
-          __KeyToKey__
-          KeyCode::B,
-          KeyCode::CURSOR_LEFT
-        </autogen>
-        <autogen>
-          __KeyToKey__
-          KeyCode::D,
-          KeyCode::DELETE,
-          ModifierFlag::FN
-        </autogen>
+          <block>
+          <modifier_only>
+            ModifierFlag::OPTION_L | ModifierFlag::NONE
+          </modifier_only>
+          <modifier_not>
+            ModifierFlag::SHIFT_L, ModifierFlag::SHIFT_R,
+            ModifierFlag::COMMAND_L,, ModifierFlag::COMMAND_R,
+            ModifierFlag::CONTROL_L,, ModifierFlag::CONTROL_R
+          </modifier_not>
+          <autogen>
+            __KeyToKey__
+            KeyCode::F,
+            KeyCode::CURSOR_RIGHT
+          </autogen>
+          <autogen>
+            __KeyToKey__
+            KeyCode::B,
+            KeyCode::CURSOR_LEFT
+          </autogen>
+          <autogen>
+            __KeyToKey__
+            KeyCode::D,
+            KeyCode::DELETE,
+            ModifierFlag::FN
+          </autogen>
+        </block>
+        <block>
+          <modifier_not>
+            ModifierFlag::SHIFT_L, ModifierFlag::SHIFT_R,
+            ModifierFlag::COMMAND_L, ModifierFlag::COMMAND_R,
+            ModifierFlag::OPTION_L, ModifierFlag::OPTION_R
+          </modifier_not>
+          <autogen>__KeyToKey__ KeyCode::F, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::CURSOR_RIGHT</autogen>
+          <autogen>__KeyToKey__ KeyCode::B, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::CURSOR_LEFT</autogen>
+          <autogen>__KeyToKey__ KeyCode::N, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::CURSOR_DOWN</autogen>
+          <autogen>__KeyToKey__ KeyCode::P, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::CURSOR_UP</autogen>
+          <autogen>__KeyToKey__ KeyCode::A, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::HOME</autogen>
+          <autogen>__KeyToKey__ KeyCode::E, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::END</autogen>
+          <autogen>__KeyToKey__ KeyCode::D, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::FORWARD_DELETE</autogen>
+          <!-- Ctrl-H / Ctrl-L for tab switch
+          <autogen>__KeyToKey__ KeyCode::H, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::DELETE</autogen>
+          -->
+          <autogen>__KeyToKey__ KeyCode::K, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::CURSOR_RIGHT, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L, KeyCode::FORWARD_DELETE</autogen>
+          <autogen>__KeyToKey__ KeyCode::J, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::RETURN, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L</autogen>
+          <autogen>__KeyToKey__ KeyCode::M, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::RETURN</autogen>
+          <autogen>__KeyToKey__ KeyCode::RETURN, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND, KeyCode::RETURN, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L</autogen>
+        </block>
       </block>
     </item>
     <name>Customized for Input Method</name>
