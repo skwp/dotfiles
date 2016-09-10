@@ -110,8 +110,8 @@
           <autogen>__KeyToKey__ KeyCode::B, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::CURSOR_LEFT</autogen>
           <autogen>__KeyToKey__ KeyCode::N, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::CURSOR_DOWN</autogen>
           <autogen>__KeyToKey__ KeyCode::P, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::CURSOR_UP</autogen>
-          <autogen>__KeyToKey__ KeyCode::A, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::HOME</autogen>
-          <autogen>__KeyToKey__ KeyCode::E, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::END</autogen>
+          <autogen>__KeyToKey__ KeyCode::A, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L</autogen>
+          <autogen>__KeyToKey__ KeyCode::E, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L</autogen>
           <autogen>__KeyToKey__ KeyCode::D, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::FORWARD_DELETE</autogen>
           <!-- Ctrl-H / Ctrl-L for tab switch
           <autogen>__KeyToKey__ KeyCode::H, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::DELETE</autogen>
@@ -162,8 +162,8 @@
           <autogen>__KeyToKey__ KeyCode::B, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::CURSOR_LEFT</autogen>
           <autogen>__KeyToKey__ KeyCode::N, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::CURSOR_DOWN</autogen>
           <autogen>__KeyToKey__ KeyCode::P, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::CURSOR_UP</autogen>
-          <autogen>__KeyToKey__ KeyCode::A, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::HOME</autogen>
-          <autogen>__KeyToKey__ KeyCode::E, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::END</autogen>
+          <autogen>__KeyToKey__ KeyCode::A, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L</autogen>
+          <autogen>__KeyToKey__ KeyCode::E, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L</autogen>
           <autogen>__KeyToKey__ KeyCode::D, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::FORWARD_DELETE</autogen>
           <!-- Ctrl-H / Ctrl-L for tab switch
           <autogen>__KeyToKey__ KeyCode::H, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::DELETE</autogen>
