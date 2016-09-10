@@ -70,7 +70,7 @@
       <name>Enable Emacs-like key binding</name>
       <identifier>space_cadet.emacs_like_alt</identifier>
       <block>
-        <uielementrole_only>AXTextArea, AXTextField</uielementrole_only>
+        <uielementrole_only>AXTextArea, AXTextField, AXWebArea</uielementrole_only>
         <only>
           FINDER, MAIL, XMind
         </only>
