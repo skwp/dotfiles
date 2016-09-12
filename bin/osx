@@ -245,3 +245,6 @@ defaults write com.google.Chrome.plist AppleEnableSwipeNavigateWithScrolls -bool
 # Kill affected applications
 for app in Finder Dock Mail Safari iTunes iCal Address\ Book SystemUIServer; do killall "$app" > /dev/null 2>&1; done
 echo "OSX Hacks Done. Note that some of these changes require a logout/restart to take effect."
+
+# Only display 1 second for banner notifications, need logout and login
+defaults write com.apple.notificationcenterui bannerTime 1.5
