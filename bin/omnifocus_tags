@@ -2,7 +2,7 @@
 require 'omnifocus'
 
 TAG_PATTERN = /\s+#\p{Word}+/u
-TAG_START_POS = 120
+TAG_START_POS = (ENV["TAG_START_POS"] || 120).to_i
 
 def get_search_pattern(tag)
   Regexp.new(TAG_PATTERN.to_s.sub "\\p{Word}", tag)
