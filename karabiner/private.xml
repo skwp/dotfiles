@@ -393,6 +393,31 @@
     </item>
 
     <item>
+      <name>OPTION_R Tap to COMMAND + Z</name>
+      <appendix>Good for Advantage kinesis</appendix>
+      <identifier>private.option_r_to_command+z</identifier>
+      <device_only>DeviceVendor::KINESIS, DeviceProduct::KINESIS_ADVANTAGE</device_only>
+      <block>
+        <modifier_not>
+          ModifierFlag::SHIFT_L, ModifierFlag::SHIFT_R,
+          ModifierFlag::OPTION_L,
+          ModifierFlag::CONTROL_L, ModifierFlag::CONTROL_R,
+          ModifierFlag::COMMAND_L, ModifierFlag::COMMAND_R
+        </modifier_not>
+        <autogen>
+          __KeyOverlaidModifier__
+          <!-- from -->
+          KeyCode::OPTION_R,
+          <!-- hold -->
+          KeyCode::OPTION_R,
+          <!-- tap -->
+          KeyCode::Z,
+          ModifierFlag::COMMAND_L
+        </autogen>
+      </block>
+    </item>
+
+    <item>
       <name>CONTROL_R Tap to Backspace</name>
       <appendix>Good for Advantage kinesis</appendix>
       <identifier>private.control_r_to_backspace</identifier>
@@ -444,8 +469,10 @@
       <device_only>DeviceVendor::KINESIS, DeviceProduct::KINESIS_ADVANTAGE</device_only>
       <block>
         <modifier_not>
-          ModifierFlag::SHIFT_R,
-          ModifierFlag::COMMAND_R
+          ModifierFlag::SHIFT_L, ModifierFlag::SHIFT_R,
+          ModifierFlag::OPTION_L, ModifierFlag::OPTION_R,
+          ModifierFlag::CONTROL_L, ModifierFlag::CONTROL_R,
+          ModifierFlag::COMMAND_L, ModifierFlag::COMMAND_R
         </modifier_not>
         <autogen>
         __KeyOverlaidModifier__
@@ -454,7 +481,7 @@
         <!-- hold -->
         KeyCode::SHIFT_L, ModifierFlag::COMMAND_L,
         <!-- tap -->
-        KeyCode::TAB, ModifierFlag::COMMAND_L
+        KeyCode::Z, ModifierFlag::COMMAND_L
         </autogen>
       </block>
     </item>
