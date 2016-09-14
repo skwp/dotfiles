@@ -72,7 +72,7 @@
       <block>
         <uielementrole_only>AXTextArea, AXTextField, AXWebArea</uielementrole_only>
         <only>
-          FINDER, MAIL, XMind
+          FINDER, MAIL, XMind, OmniFocus
         </only>
         <block>
           <modifier_only>
