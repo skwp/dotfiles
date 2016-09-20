@@ -41,9 +41,9 @@ zstyle ':prezto:load' pmodule \
   'node' \
   'syntax-highlighting' \
   'history-substring-search' \
+  'autosuggestions' \
   'ssh' \
-  'prompt' \
-  'autosuggestions'
+  'prompt'
 
 #
 # Editor
