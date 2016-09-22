@@ -65,10 +65,6 @@ set softtabstop=2
 set tabstop=2
 set expandtab
 
-" Auto indent pasted text
-nnoremap p p=`]<C-o>
-nnoremap P P=`]<C-o>
-
 vnoremap <leader>p "0p
 vnoremap <leader>P "0P
 
