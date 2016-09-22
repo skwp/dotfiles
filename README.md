@@ -22,6 +22,8 @@
   * More than 90 vim plugins, all under one roof, working together, each plugin researched and configured to be at its best, often with better shortcut keys.
   * Many zsh plugins, starting with the wonderful Prezto base, and adding a few niceties on top.
   * All things are vimized: irb, postgres command line, etc.
+  
+*Ubuntu is not supported!*
 
 ## Mailing List
 
