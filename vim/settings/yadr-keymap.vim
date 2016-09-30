@@ -200,7 +200,26 @@ imap hh =>
 imap kk ->
 imap aa @
 
-nnoremap <C-t>n :tabnew<CR>
+nnoremap <C-t>c :tabnew<CR>
+nnoremap <silent> H gt
+nnoremap <silent> L gT
+let g:lasttab = 1
+nnoremap <silent> T :exe "tabn ".g:lasttab<CR>
+au TabLeave * let g:lasttab = tabpagenr()
+
+nnoremap <silent> <leader>1 1gt
+nnoremap <silent> <leader>2 2gt
+nnoremap <silent> <leader>3 3gt
+nnoremap <silent> <leader>4 4gt
+nnoremap <silent> <leader>5 5gt
+nnoremap <silent> <leader>6 6gt
+nnoremap <silent> <leader>7 7gt
+nnoremap <silent> <leader>8 8gt
+nnoremap <silent> <leader>9 9gt
+nnoremap <silent> <leader>9 9gt
+nnoremap <silent> <leader>0 :tablast<CR>
+
+
 nnoremap <silent> <Leader>w= :wincmd =<CR>
 nnoremap <silent> <Leader>wr :NERDTreeToggle<CR>:wincmd r<CR>:NERDTreeToggle<CR>
 nnoremap <silent> <Leader>wR :NERDTreeToggle<CR>:wincmd R<CR>:NERDTreeToggle<CR>
