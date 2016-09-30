@@ -201,8 +201,8 @@ imap kk ->
 imap aa @
 
 nnoremap <C-t>c :tabnew<CR>
-nnoremap <silent> H gt
-nnoremap <silent> L gT
+nnoremap <silent> H :tabprevious<CR>
+nnoremap <silent> L :tabnext<CR>
 let g:lasttab = 1
 nnoremap <silent> T :exe "tabn ".g:lasttab<CR>
 au TabLeave * let g:lasttab = tabpagenr()
@@ -236,11 +236,11 @@ nmap <silent> <leader>xy :.w! ~/.vbuf<CR>
 ""paste the contents of the buffer file
 nmap <silent> <leader>xp :r ~/.vbuf<CR>
 
-"Reselect visual block after indent/outdent 
+"Reselect visual block after indent/outdent
 vnoremap < <gv
 vnoremap > >gv
 
-"Improve up/down movement on wrapped lines 
+"Improve up/down movement on wrapped lines
 nnoremap j gj
 nnoremap k gk
 
