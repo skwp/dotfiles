@@ -28,7 +28,7 @@ function prompt_qianthinking_precmd {
   if (( $+functions[ruby-info] )); then
     ruby-info
   fi
-  
+
   # Get node information
   if (( $+functions[node-info] )); then
     node-info

@@ -38,13 +38,13 @@ zstyle ':prezto:load' pmodule \
   'git' \
   'osx' \
   'ruby' \
-  'node' \
-  'syntax-highlighting' \
   'history-substring-search' \
   'autosuggestions' \
   'ssh' \
+  'syntax-highlighting' \
   'prompt'
 
+#  'node' \
 #
 # Editor
 #

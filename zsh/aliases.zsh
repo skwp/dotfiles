@@ -227,3 +227,6 @@ workdone(){
 
 # Homebrew
 alias brewu='brew update  && brew upgrade --all && brew cleanup && brew prune && brew doctor'
+
+# brew install coureutils
+alias date='gdate'
