@@ -70,6 +70,8 @@ alias ge='vim ~/.gitconfig'
 
 # tmux.conf editing
 alias te='vim ~/.tmux.conf'
+# tmux takeover: detach all other clients to force redraw the current window
+alias tt='tmux detach -a'
 
 # vimrc editing
 alias ve='vim ~/.vimrc'
@@ -219,3 +221,6 @@ alias dbmu='spring rake db:migrate:up'
 
 # Homebrew
 alias brewu='brew update  && brew upgrade --all && brew cleanup && brew prune && brew doctor'
+
+# alias for predefined tmux session
+# alias dd='tmux a -t daily'

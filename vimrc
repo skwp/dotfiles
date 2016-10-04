@@ -172,6 +172,11 @@ set smartcase       " ...unless we type a capital
 " cnoremap VM <C-C>:echom "loading vim-improvement plugins"<cr>
 set autochdir         " automatically change the current dir
 
+" set the filetype to be python for .tw files
+autocmd BufRead,BufNewFile *.tw set filetype=python
+autocmd BufRead,BufNewFile *.cinc set filetype=python
+autocmd BufRead,BufNewFile *.cconf set filetype=python
+
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
 "
