@@ -15,15 +15,19 @@ for config_file ($HOME/.yadr/zsh/*.zsh) source $config_file
 #source $HOME/.yadr/bin/aws_zsh_completer.sh
 export NVM_DIR=~/.nvm
 #source $(brew --prefix nvm)/nvm.sh #too slow
-nvm() {
+nvminit() {
   if [ -z ${NVM_SOURCED+x} ];
   then
     echo "source $(brew --prefix nvm)/nvm.sh"
     source $(brew --prefix nvm)/nvm.sh
     export NVM_SOURCED=true
   fi
+}
+nvm() {
+  nvminit
   nvm "$@"
 }
+alias node='nvminit && node'
 PATH=$HOME/bin:$PATH
 export PATH
 transfer() { if [ $# -eq 0 ]; then echo "No arguments specified. Usage:\necho transfer /tmp/test.md\ncat /tmp/test.md | transfer test.md"; return 1; fi 
