@@ -28,6 +28,7 @@ nvm() {
   nvm "$@"
 }
 alias node='nvminit && node'
+alias ember='nvminit && ember'
 PATH=$HOME/bin:$PATH
 export PATH
 transfer() { if [ $# -eq 0 ]; then echo "No arguments specified. Usage:\necho transfer /tmp/test.md\ncat /tmp/test.md | transfer test.md"; return 1; fi 
