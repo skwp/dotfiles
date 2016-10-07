@@ -36,7 +36,7 @@ au BufNewFile,BufRead {Gemfile,Rakefile,Capfile,*.rake,config.ru} set ft=ruby
 au BufNewFile,BufRead *.vundle set filetype=vim
 au BufNewFile,BufRead *.gradle set filetype=groovy
 
-au FileType text setlocal textwidth=78
+au FileType text setlocal textwidth=80
 " return previous editing position
 au BufReadPost *
             \ if line("'\"") > 1 && line("'\"") <= line("$") |
@@ -45,9 +45,9 @@ au BufReadPost *
 au FileType python let python_highlight_all=1
 au FileType python setlocal omnifunc=pythoncomplete#Complete
 
-au FileType javascript setlocal ts=2 sts=2 sw=2 
+au FileType javascript setlocal ts=2 sts=2 sw=2
 
-au FileType ruby,eruby setlocal ts=2 sts=2 sw=2 
+au FileType ruby,eruby setlocal ts=2 sts=2 sw=2
 au FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 au FileType ruby,eruby setlocal omnifunc=rubycomplete#Complete
 
