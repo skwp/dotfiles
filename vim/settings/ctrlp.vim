@@ -40,6 +40,7 @@ map ,ja :CtrlP app/assets<CR>
 map ,jm :CtrlP app/models<CR>
 map ,jc :CtrlP app/controllers<CR>
 map ,jv :CtrlP app/views<CR>
+map ,jj :CtrlP app/assets/javascripts<CR>
 map ,jh :CtrlP app/helpers<CR>
 map ,jl :CtrlP lib<CR>
 map ,jp :CtrlP public<CR>
