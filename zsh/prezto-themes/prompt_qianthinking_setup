@@ -89,5 +89,4 @@ function prompt_awreece_is_ssh {
   # update it when I figure out a better way later.
   [[ -n $SSH_CONNECTION ]]
 }
-
 prompt_qianthinking_setup "$@"
