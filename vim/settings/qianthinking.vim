@@ -83,9 +83,6 @@ au BufNewFile,BufReadPost *.coffee setl sw=2 ts=2 sts=2 expandtab
 au WinEnter * setlocal cursorline
 au WinLeave * setlocal nocursorline
 
-" other simple settings
-let g:user_emmet_leader_key='<C-Z>'
-
 " Input method
 set iminsert=0
 set imsearch=0
@@ -93,3 +90,13 @@ se imd
 au InsertEnter * se noimd
 au InsertLeave * se imd
 au FocusGained * se imd
+
+syntax match nonascii "[^\x00-\x7F]"
+highlight nonascii guibg=Red ctermbg=2
+
+"let g:vroom_use_vimux = 1
+
+let g:no_turbux_mappings = 1
+map <leader>rt <Plug>SendTestToTmux
+map <leader>rT <Plug>SendFocusedTestToTmux
+let g:turbux_test_type = 'minitest'

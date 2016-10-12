@@ -37,3 +37,4 @@ Bundle 'thinca/vim-quickrun'
 Bundle 'Shougo/vimproc.vim'
 Bundle 'Shougo/vimshell.vim'
 Bundle "editorconfig/editorconfig-vim"
+Bundle "benmills/vimux"

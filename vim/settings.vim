@@ -1,4 +1,4 @@
-"let g:yadr_disable_solarized_enhancements = 1
+let g:yadr_disable_solarized_enhancements = 1
 let vimsettings = '~/.vim/settings'
 let uname = system("uname -s")
 
