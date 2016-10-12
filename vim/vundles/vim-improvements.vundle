@@ -2,7 +2,8 @@ Bundle "AndrewRadev/splitjoin.vim"
 Bundle "Raimondi/delimitMate"
 Bundle "Shougo/neocomplete.git"
 Bundle "briandoll/change-inside-surroundings.vim.git"
-Bundle "godlygeek/tabular"
+"Bundle "godlygeek/tabular"
+Bundle "junegunn/vim-easy-align"
 Bundle "tomtom/tcomment_vim.git"
 "CamelCase motion through words, map: <silent> [c,v,d,y...](,w ,b ,e)
 Bundle 'bkad/CamelCaseMotion'
