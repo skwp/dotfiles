@@ -100,3 +100,12 @@ let g:no_turbux_mappings = 1
 map <leader>rt <Plug>SendTestToTmux
 map <leader>rT <Plug>SendFocusedTestToTmux
 let g:turbux_test_type = 'minitest'
+
+let g:indentLine_enabled = 0
+
+nnoremap <silent> <leader>tt :TagbarToggle<CR>
+nnoremap <silent> <leader>ti :IndentLinesToggle<CR>
+
+
+nnoremap  <silent>   <tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>
+nnoremap  <silent> <s-tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bprevious<CR>

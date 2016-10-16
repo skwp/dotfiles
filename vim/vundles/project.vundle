@@ -3,3 +3,5 @@ Bundle "scrooloose/nerdtree.git"
 Bundle "ctrlpvim/ctrlp.vim"
 Bundle "xolox/vim-misc"
 Bundle "xolox/vim-session"
+Bundle 'bling/vim-bufferline'
+Bundle 'jeetsukumaran/vim-buffergator'
