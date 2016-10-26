@@ -25,13 +25,16 @@ let g:ctrlp_switch_buffer = 0
 " We don't want to use Ctrl-p as the mapping because
 " it interferes with YankRing (paste, then hit ctrl-p)
 let g:ctrlp_map = ',ff'
-nnoremap <silent> ,ff :CtrlP<CR>
+nnoremap <silent> <leader>ff :CtrlP<CR>
 
 " Additional mapping for buffer search
-nnoremap <silent> ,fb :CtrlPBuffer<cr>
+nnoremap <silent> <leader>fb :CtrlPBuffer<cr>
+
+" Additional mapping for buffer undo
+nnoremap <silent> <leader>fu :CtrlPUndo<cr>
 
 " Cmd-Shift-P to clear the cache or <F5> which I don't know where defined
-nnoremap <silent> <D-P> :ClearCtrlPCache<cr>
+"nnoremap <silent> <D-P> :ClearCtrlPCache<cr>
 
 " Idea from : http://www.charlietanksley.net/blog/blog/2011/10/18/vim-navigation-with-lustyexplorer-and-lustyjuggler/
 " Open CtrlP starting from a particular path, making it much
@@ -53,6 +56,6 @@ map ,jT :CtrlP test<CR>
 
 "Cmd-Shift-(M)ethod - jump to a method (tag in current file)
 "Ctrl-m is not good - it overrides behavior of Enter
-nnoremap <silent> ,ft :CtrlPBufTag<CR>
+nnoremap <silent> ,ft :CtrlPBufTagAll<CR>
 
 nnoremap <silent> <leader>fm :CtrlPMRU<CR>
