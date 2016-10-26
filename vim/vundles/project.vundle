@@ -1,6 +1,7 @@
 Bundle "jistr/vim-nerdtree-tabs.git"
 Bundle "scrooloose/nerdtree.git"
 Bundle "ctrlpvim/ctrlp.vim"
+Bundle 'ivalkeen/vim-ctrlp-tjump'
 Bundle "xolox/vim-misc"
 Bundle "xolox/vim-session"
 Bundle 'bling/vim-bufferline'

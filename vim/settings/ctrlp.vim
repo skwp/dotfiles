@@ -25,7 +25,7 @@ let g:ctrlp_switch_buffer = 0
 " We don't want to use Ctrl-p as the mapping because
 " it interferes with YankRing (paste, then hit ctrl-p)
 let g:ctrlp_map = ',ff'
-nnoremap <silent> <leader>ff :CtrlP<CR>
+nnoremap <silent> <leader>ff :CtrlPtjump<CR>
 
 " Additional mapping for buffer search
 nnoremap <silent> <leader>fb :CtrlPBuffer<cr>
@@ -59,3 +59,16 @@ map ,jT :CtrlP test<CR>
 nnoremap <silent> ,ft :CtrlPBufTagAll<CR>
 
 nnoremap <silent> <leader>fm :CtrlPMRU<CR>
+
+nnoremap <c-]> :CtrlPtjump<cr>
+nnoremap <silent> <leader>f :CtrlPtjump<cr>
+vnoremap <c-]> :CtrlPtjumpVisual<cr>
+vnoremap <silent> <leader>f :CtrlPtjumpVisual<cr>
+"If there is only one tag found, it is possible to open it without opening
+"CtrlP window:
+let g:ctrlp_tjump_only_silent = 1
+let g:ctrlp_tjump_skip_tag_name = 1
+
+
+" use ,F to jump to tag in a vertical split
+nnoremap <silent> ,F :let word=expand("<cword>")<CR>:vsp<CR>:wincmd w<cr>:exec("CtrlPtjump ". word)<cr>
