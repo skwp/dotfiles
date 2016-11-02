@@ -108,7 +108,10 @@ alias gfap='git fetch --all --prune'
 alias gfch='git fetch'
 alias gd='git diff'
 alias gb='git b'
-# Staged and cached are the same thing
+
+alias gbd='git b -D -w'
+alias grmm='git branch --merged | grep -v "\*" | grep -v master | grep -v dev | xargs -n 1 git branch -d'
+
 alias gdc='git diff --cached -w'
 alias gds='git diff --staged -w'
 alias gpub='grb publish'
@@ -172,7 +175,7 @@ alias rdm='rake db:migrate'
 alias rdmr='rake db:migrate:redo'
 
 # Zeus
-alias zs='zeus server'
+alias zs='zeus start'
 alias zc='zeus console'
 alias zr='zeus rspec'
 alias zrc='zeus rails c'
@@ -183,7 +186,6 @@ alias zzz='rm .zeus.sock; pkill zeus; zeus start'
 
 # Rspec
 alias rs='rspec spec'
-alias sr='spring rspec'
 alias src='spring rails c'
 alias srgm='spring rails g migration'
 alias srdm='spring rake db:migrate'
@@ -210,4 +212,22 @@ alias dbmd='spring rake db:migrate:down'
 alias dbmu='spring rake db:migrate:up'
 
 # Homebrew
-alias brewu='brew update  && brew upgrade --all && brew cleanup && brew prune && brew doctor'
+alias brewu='brew update && brew upgrade --all && brew cleanup && brew prune && brew doctor'
+
+alias govagrant="vagrant up; vagrant ssh -c 'sudo service worker stop; sudo service core stop'"
+
+# DevOps
+name_to_ip () {
+	ip=`knife search node name:$1 | awk '/IP/{print $2;}'`
+}
+
+ressh () {
+	name_to_ip $1
+	echo "Ssh'ing to $ip"
+	/usr/bin/ssh reverb@$ip
+}
+
+rescp () {
+	name_to_ip $1
+	noglob scp reverb@$ip:$2 $3
+}
