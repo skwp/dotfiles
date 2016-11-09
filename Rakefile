@@ -18,14 +18,11 @@ task :install => [:submodule_init, :submodules] do
   install_files(Dir.glob('irb/*')) if want_to_install?('irb/pry configs (more colorful)')
   install_files(Dir.glob('ruby/*')) if want_to_install?('rubygems config (faster/no docs)')
   install_files(Dir.glob('ctags/*')) if want_to_install?('ctags config (better js/ruby support)')
-  install_files(Dir.glob('tmux/*')) if want_to_install?('tmux config')
-  install_files(Dir.glob('vimify/*')) if want_to_install?('vimification of command line tools')
-  if want_to_install?('vim configuration (highly recommended)')
-    install_files(Dir.glob('{vim,vimrc}'))
-    Rake::Task["install_vundle"].execute
-    has_ycm = File.exists?(File.join(ENV['HOME'], ".vim", 'bundle', 'YouCompleteMe'))
-    Rake::Task["compile_ycm"].execute unless has_ycm
+  if want_to_install?('tmux config')
+    install_files(Dir.glob('tmux/*'))
+    run %{ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm }
   end
+  install_files(Dir.glob('vimify/*')) if want_to_install?('vimification of command line tools')
 
   Rake::Task["install_prezto"].execute
 
@@ -34,7 +31,14 @@ task :install => [:submodule_init, :submodules] do
   install_term_theme if RUBY_PLATFORM.downcase.include?("darwin")
 
   run_bundle_config
+  if want_to_install?('vim configuration (highly recommended)')
+    install_files(Dir.glob('{vim,vimrc}'))
+    Rake::Task["install_vundle"].execute
+    #has_ycm = File.exists?(File.join(ENV['HOME'], ".vim", 'bundle', 'YouCompleteMe'))
+    #Rake::Task["compile_ycm"].execute unless has_ycm
+  end
 
+  puts "You can install tmux plugins via 'prefix + I'"
   success_msg("installed")
 end
 
@@ -50,6 +54,11 @@ task :update do
   Rake::Task["install"].execute
 
   run %{ vim +BundleClean +BundleInstall +qall }
+  run %{
+    cd $HOME/.tmux/plugins/tpm
+    git pull
+  }
+  puts "You can update tmux plugins via 'prefix + U'"
   #TODO: for now, we do the same as install. But it would be nice
   #not to clobber zsh files
 end
@@ -184,7 +193,7 @@ def install_homebrew
   puts "======================================================"
   puts "Installing Homebrew packages...There may be some warnings."
   puts "======================================================"
-  run %{brew install zsh ctags git hub tmux reattach-to-user-namespace the_silver_searcher ghi hub}
+  run %{brew install zsh ctags git hub tmux reattach-to-user-namespace the_silver_searcher ghi coreutils jq}
   run %{brew install macvim --custom-icons --with-override-system-vim --with-lua --with-luajit}
   puts
   puts

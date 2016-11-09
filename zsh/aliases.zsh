@@ -228,5 +228,7 @@ workdone(){
 # Homebrew
 alias brewu='brew update  && brew upgrade --all && brew cleanup && brew prune && brew doctor'
 
-# brew install coureutils
-alias date='gdate'
+# use GNU date
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  alias date='gdate'
+fi
