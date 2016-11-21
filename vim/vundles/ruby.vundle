@@ -9,5 +9,4 @@ Bundle "skwp/vim-iterm-rspec"
 Bundle "skwp/vim-spec-finder"
 Bundle "ck3g/vim-change-hash-syntax"
 "Bundle "thoughtbot/vim-rspec"
-"Bundle 'skalnik/vim-vroom'
 Bundle 'jgdavey/vim-turbux'
