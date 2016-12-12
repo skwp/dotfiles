@@ -6,3 +6,4 @@ Bundle "xolox/vim-misc"
 Bundle "xolox/vim-session"
 Bundle 'bling/vim-bufferline'
 Bundle 'jeetsukumaran/vim-buffergator'
+Bundle 'editorconfig/editorconfig-vim'
