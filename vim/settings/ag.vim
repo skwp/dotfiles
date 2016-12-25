@@ -7,5 +7,5 @@ if split(system("ag --version"), "[ \n\r\t]")[2] =~ '\d\+.\(\(2[5-9]\)\|\([3-9][
   let g:ag_prg="ag --vimgrep"
 else
   " --noheading seems odd here, but see https://github.com/ggreer/the_silver_searcher/issues/361
-  let g:ag_prg="ag --column --nogroup --noheading --ignore tags --ignore .tags"
+  let g:ag_prg="ag --column --nogroup --noheading --ignore node_modules --ignore bower_components --ignore '*.min.*' --ignore tags --ignore .tags"
 endif
