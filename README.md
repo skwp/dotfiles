@@ -96,7 +96,7 @@ Read on to learn what YADR provides!
 
 Homebrew is _the missing package manager for OSX_. Installed automatically.
 
-We automatically install a few useful packages including ctags, git, macvim, hub, and the silver searcher ('ag')
+We automatically install a few useful packages including ctags, git, macvim, hub, and RipGrep ('rg')
 Note that our autocomplete plugin requires a MacVim that supports Lua. The installer knows how to install it, but if you had one installed before, you may need to manually remove your old MacVim.
 
 ### ZSH
@@ -190,7 +190,7 @@ of plugins above to learn more.
  * `,K` - Grep the current word up to next exclamation point (useful for ruby foo! methods)
  * `Cmd-*` - highlight all occurrences of current word (similar to regular `*` except doesn't move)
  * `,hl` - toggle search highlight on and off
- * `,gg` or `,ag` - Grep command line, type between quotes. Uses Ag Silver Searcher.
+ * `,gg` or `,rg` - Grep command line, type between quotes. Uses RipGrep.
  * After searching with `,gg` you can navigate the results with `Ctrl-x` and `Ctrl-z` (or standard vim `:cn` and `:cp`)
  * `,gd` - Grep def (greps for 'def [function name]') when cursor is over the function name
  * `,gcf` - Grep Current File to find references to the current file
