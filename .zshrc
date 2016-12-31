@@ -22,3 +22,9 @@ fpath=(~/.zsh/completion $fpath)
 #autoload -Uz compinit && compinit -i # is it necessary here?
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+#date +"%T.%3N"
+[ -s "/Users/leon.li/.scm_breeze/scm_breeze.sh" ] && source "/Users/leon.li/.scm_breeze/scm_breeze.sh"
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+#date +"%T.%3N"
