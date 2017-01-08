@@ -124,7 +124,7 @@
       </block>
       <block>
         <only>
-          GOOGLE_CHROME, SAFARI, FIREFOX, EXCEL, WORD
+          GOOGLE_CHROME, SAFARI, FIREFOX, EXCEL, WORD, POWERPOINT
         </only>
           <block>
           <modifier_only>
