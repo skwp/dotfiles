@@ -508,6 +508,29 @@
     </item>
 
     <item>
+      <name>SHIFT_R to COMMAND+X</name>
+      <identifier>private.shift_r_to_command_x</identifier>
+      <device_only>DeviceVendor::KINESIS, DeviceProduct::KINESIS_ADVANTAGE</device_only>
+      <block>
+        <modifier_not>
+          ModifierFlag::SHIFT_L,
+          ModifierFlag::OPTION_L, ModifierFlag::OPTION_R,
+          ModifierFlag::CONTROL_L, ModifierFlag::CONTROL_R,
+          ModifierFlag::COMMAND_L, ModifierFlag::COMMAND_R
+        </modifier_not>
+        <autogen>
+        __KeyOverlaidModifier__
+        <!-- from -->
+        KeyCode::SHIFT_R,
+        <!-- hold -->
+        KeyCode::SHIFT_R,
+        <!-- tap -->
+        KeyCode::X, ModifierFlag::COMMAND_L
+        </autogen>
+      </block>
+    </item>
+
+    <item>
       <name>END to OPTION_L+CONTROL_L/COMMAND+V</name>
       <identifier>private.end_to_command_c</identifier>
       <device_only>DeviceVendor::KINESIS, DeviceProduct::KINESIS_ADVANTAGE</device_only>
