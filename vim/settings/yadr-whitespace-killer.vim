@@ -10,6 +10,12 @@ function! <SID>StripTrailingWhitespaces()
     " Clean up: restore previous search history, and cursor position
     let @/=_s
     call cursor(l, c)
+    " TT additions, will exit insert
+    stopinsert
 endfunction
+
 command! StripTrailingWhitespaces call <SID>StripTrailingWhitespaces()
 nmap ,w :StripTrailingWhitespaces<CR>
+
+" TT additions
+autocmd BufWritePre *rb,*js,*haml,*html,*erb,*vim :call <SID>StripTrailingWhitespaces()

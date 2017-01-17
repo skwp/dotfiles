@@ -125,3 +125,8 @@
   enabled = true
 [include]
   path = .gitconfig.user
+[user]
+	name = Joe Levering
+	email = joe@reverb.com
+[url "git@github.com:"]
+  insteadOf = https://github.com/
