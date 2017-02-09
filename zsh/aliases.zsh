@@ -131,6 +131,9 @@ alias gbg='git bisect good'
 alias gbb='git bisect bad'
 alias gdmb='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
 
+# use https://github.com/seveas/git-spindle
+glabm(){ noglob git lab merge-request "$(git-branch-current 2> /dev/null)":$1 }
+
 # Common shell functions
 alias less='less -r'
 alias tf='tail -f'
