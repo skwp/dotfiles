@@ -7,6 +7,10 @@ class OmniFocusMarker
 
   class << self
 
+    def omnifocus
+      @instance
+    end
+
     def get_tasks_and_projects
       @tasks_and_projects ||=  @instance.all_tasks + @instance.all_projects.map(&:thing)
     end
