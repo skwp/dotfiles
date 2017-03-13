@@ -9,8 +9,8 @@ Bundle "jby/tmux.vim.git"
 " theme like solarized
 Bundle "morhetz/gruvbox"
 " <leader>mt, mo, mh, ma, mm
-Bundle "xsunsmile/showmarks.git"
+"Bundle "xsunsmile/showmarks.git"
 Bundle "chriskempson/base16-vim"
 
 " Required for Gblame in terminal vim
-Bundle "godlygeek/csapprox.git" 
+Bundle "godlygeek/csapprox.git"
