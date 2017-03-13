@@ -33,7 +33,6 @@ au BufNewFile,BufRead *.jsp set filetype=java
 au BufNewFile,BufRead *.es6 set filetype=javascript
 au BufNewFile,BufRead *.as set filetype=actionscript
 au BufNewFile,BufRead {Gemfile,Rakefile,Capfile,*.rake,config.ru} set ft=ruby
-au BufNewFile,BufRead *.vundle set filetype=vim
 au BufNewFile,BufRead *.gradle set filetype=groovy
 
 au FileType text setlocal textwidth=80

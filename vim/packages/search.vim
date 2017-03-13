@@ -1,9 +1,9 @@
 "e, o/enter, go, t, T, h,H, v,gv,q
-Bundle "rking/ag.vim"
+Plug 'rking/ag.vim'
 "* function for visual selection(work at first time)
-Bundle "nelstrom/vim-visual-star-search"
+Plug 'nelstrom/vim-visual-star-search'
 "Gsearch then %s/old/new/g then Greplace then wa
-Bundle "skwp/greplace.vim"
-Bundle "easymotion/vim-easymotion"
+Plug 'skwp/greplace.vim'
+Plug 'easymotion/vim-easymotion'
 "Dash, doc search, my map: <leader>sd
-Bundle 'rizzatti/dash.vim'
+Plug 'rizzatti/dash.vim'

@@ -2,10 +2,10 @@
 "both modes: <c-n>, <c-p>, o, s, O, q, co, D, S, x, X, m, <leader>m, yc, git, x, X, r, R, P
 "browser mode:
 "file mode: i
-Bundle "gregsexton/gitv"
-Bundle "mattn/gist-vim"
-Bundle "tpope/vim-fugitive"
-Bundle "tpope/vim-git"
+Plug 'gregsexton/gitv'
+Plug 'mattn/gist-vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-git'
 "Show git diff map: [h, ]h, my map: <leader>tg
-Bundle 'airblade/vim-gitgutter'
-Bundle 'lambdalisue/vim-gita'
+Plug 'airblade/vim-gitgutter'
+Plug 'lambdalisue/vim-gita'

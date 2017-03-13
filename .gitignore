@@ -9,6 +9,7 @@ vim/spell
 vim/after/.vimrc.after
 vim/.vundles.local
 vim/.vundles.local.bak
+vim/autoload/plug.vim
 vim/bundle
 vim/sessions
 vim/session

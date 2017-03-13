@@ -26,20 +26,15 @@ set autoread                    "Reload files changed outside vim
 " http://items.sjbach.com/319/configuring-vim-right
 set hidden
 
-"turn on syntax highlighting
-syntax on
-
 " Change leader to a comma because the backslash is too far away
 " That means all \x commands turn into ,x
 " The mapleader has to be set before vundle starts loading all
 " the plugins.
 let mapleader=","
 
-" =============== Vundle Initialization ===============
-" This loads all the plugins specified in ~/.vim/vundles.vim
-" Use Vundle plugin to manage all other plugins
-if filereadable(expand("~/.vim/vundles.vim"))
-  source ~/.vim/vundles.vim
+" =============== Vim-Plug Initialization ===============
+if filereadable(expand("~/.vim/plug.vim"))
+  source ~/.vim/plug.vim
 endif
 
 " ================ Turn Off Swap Files ==============
@@ -71,9 +66,6 @@ set expandtab
 
 vnoremap <leader>p "0p
 vnoremap <leader>P "0P
-
-filetype plugin on
-filetype indent on
 
 scriptencoding utf-8
 set encoding=utf-8
