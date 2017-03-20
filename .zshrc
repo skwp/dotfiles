@@ -31,3 +31,5 @@ test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
 #date +"%T.%3N"
 
 [ -s "/Users/leon/.scm_breeze/scm_breeze.sh" ] && source "/Users/leon/.scm_breeze/scm_breeze.sh"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
