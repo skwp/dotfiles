@@ -29,3 +29,5 @@ if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
 #date +"%T.%3N"
+
+[ -s "/Users/leon/.scm_breeze/scm_breeze.sh" ] && source "/Users/leon/.scm_breeze/scm_breeze.sh"
