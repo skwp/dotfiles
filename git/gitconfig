@@ -46,7 +46,7 @@
   last = diff HEAD^                 # diff last committed change
 
   # log
-  l = log --graph --date=short
+  l = log --graph --date=short --max-count=15
   changes = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\" --name-status
   short = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\"
   simple = log --pretty=format:\" * %s\"
