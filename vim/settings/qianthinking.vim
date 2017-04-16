@@ -82,12 +82,12 @@ au WinEnter * setlocal cursorline
 au WinLeave * setlocal nocursorline
 
 " Input method
-set iminsert=0
-set imsearch=0
-se imd
-au InsertEnter * se noimd
-au InsertLeave * se imd
-au FocusGained * se imd
+"set iminsert=0
+"set imsearch=0
+"se imd
+"au InsertEnter * se noimd
+"au InsertLeave * se imd
+"au FocusGained * se imd
 
 set cul
 if exists('$TMUX')
