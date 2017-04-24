@@ -40,7 +40,6 @@ zstyle ':prezto:load' pmodule \
   'ruby' \
   'deer' \
   'history-substring-search' \
-  'autosuggestions' \
   'ssh' \
   'syntax-highlighting' \
   'prompt'
@@ -59,9 +58,9 @@ zstyle ':prezto:module:deer' key-bindings '\ek'
 # Set the key mapping style to 'emacs' or 'vi'.
 zstyle ':prezto:module:editor' key-bindings 'emacs'
 
-zstyle ':prezto:module:autosuggestions' color 'yes'
+# zstyle ':prezto:module:autosuggestions' color 'yes'
 
-zstyle ':prezto:module:autosuggestions:color' found 'fg=240'
+# zstyle ':prezto:module:autosuggestions:color' found 'fg=240'
 
 # Auto convert .... to ../..
 # zstyle ':prezto:module:editor' dot-expansion 'yes'
