@@ -3,6 +3,8 @@ set encoding=utf-8
 set fileencoding=utf-8
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 
+let g:investigate_url_for_ruby="https://www.google.co.kr/search?q=^s"
+
 " share system clipboard
 if has("win16") || has("win32") || has("win64")
     set clipboard=unnamedplus
