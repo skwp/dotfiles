@@ -186,8 +186,10 @@ map <silent> <leader>a: :Tabularize /:\zs<CR>
 " ============================
 " SplitJoin plugin
 " ============================
-nmap sj :SplitjoinSplit<cr>
-nmap sk :SplitjoinJoin<cr>
+" nmap sj :SplitjoinSplit<cr>
+" nmap sk :SplitjoinJoin<cr>
+nmap ss :SplitjoinSplit<cr>
+nmap sj :SplitjoinJoin<cr>
 
 " Get the current highlight group. Useful for then remapping the color
 map ,hi :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")<CR>
@@ -203,6 +205,11 @@ imap aa @
 nnoremap <C-t>c :tabnew<CR>
 nnoremap <silent> H :tabprevious<CR>
 nnoremap <silent> L :tabnext<CR>
+
+unmap H
+unmap L
+nnoremap ,ca :ChangeAroundSurrounding<CR>
+
 let g:lasttab = 1
 nnoremap <silent> T :exe "tabn ".g:lasttab<CR>
 au TabLeave * let g:lasttab = tabpagenr()
