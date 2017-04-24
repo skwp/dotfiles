@@ -31,6 +31,9 @@ alias clt='clear;lt'
 alias gsl='git stash list'
 alias ut='uptime'
 
+alias chrome='chrome-cli'
+alias ch='chrome-cli'
+
 # Show human friendly numbers and colors
 alias df='df -h'
 alias du='du -h -d 2'
