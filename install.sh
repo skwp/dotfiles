@@ -17,7 +17,8 @@ if [ ! -d "$HOME/.yadr" ]; then
         exit
     fi
     echo "Installing YADR for the first time."
-    git clone --depth=1 https://github.com/qianthinking/dotfiles.git "$HOME/.yadr"
+    # git clone --depth=1 https://github.com/qianthinking/dotfiles.git "$HOME/.yadr"
+    git clone --depth=1 https://github.com/wesson-yi/dotfiles.git "$HOME/.yadr"
     GIT_COMP_VERSION=`git --version | awk '{print $3"\n1.7.11"}' | sort -n | head -n 1`
     echo "git version `git --version`, and $GIT_COMP_VERSION"
     if [[ "$GIT_COMP_VERSION" != "1.7.11" ]]; then

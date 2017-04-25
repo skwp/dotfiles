@@ -11,8 +11,6 @@ alias -g G='| grep' # now you can do: ls foo G something
 
 alias -g be='bundle exec' #shorter, or see prezto/modules/ruby
 
-let g:investigate_url_for_ruby="https://www.google.co.kr/search?q=^s"
-
 # Functions
 #
 # (f)ind by (n)ame

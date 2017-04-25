@@ -4,6 +4,8 @@ set nocompatible
 set ttyfast
 set lazyredraw
 
+let g:investigate_url_for_ruby="https://www.google.co.kr/search?q=^s"
+
 " TODO: this may not be in the correct place. It is intended to allow overriding <Leader>.
 " source ~/.vimrc.before if it exists.
 if filereadable(expand("~/.vimrc.before"))
