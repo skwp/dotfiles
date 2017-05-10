@@ -5,7 +5,7 @@ function! SetupWrapping()
 endfunction
 
 " TODO: this should happen automatically for certain file types (e.g. markdown)
-command! -nargs=* Wrap :call SetupWrapping()<CR>
+command! -nargs=* Wrap call SetupWrapping()
 
 vmap <D-j> gj
 vmap <D-k> gk
@@ -17,4 +17,3 @@ nmap <D-k> gk
 nmap <D-$> g$
 nmap <D-^> g^
 nmap <D-0> g^
-
