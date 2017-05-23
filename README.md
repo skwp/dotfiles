@@ -22,6 +22,8 @@
   * More than 90 vim plugins, all under one roof, working together, each plugin researched and configured to be at its best, often with better shortcut keys.
   * Many zsh plugins, starting with the wonderful Prezto base, and adding a few niceties on top.
   * All things are vimized: irb, postgres command line, etc.
+  
+*Linux/Ubuntu is not supported! If it works, great. If it doesn't, please don't complain. You may need to install zsh if you don't already have it.*
 
 ## Mailing List
 
@@ -321,3 +323,4 @@ Pry offers a much better out of the box IRB experience with colors, tab completi
 as an actual debugger by installing [pry-nav](https://github.com/nixme/pry-nav).
 
 [Learn more about YADR's pry customizations and how to install](doc/pry.md)
+
