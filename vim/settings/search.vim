@@ -11,20 +11,20 @@ function! GetVisual()
 endfunction
 
 "grep the current word using ,k (mnemonic Kurrent)
-nnoremap <silent> ,k :Ag <cword><CR>
+nnoremap <silent> ,k :Rg <cword><CR>
 
 "grep visual selection
-vnoremap ,k :<C-U>execute "Ag " . GetVisual()<CR>
+vnoremap ,k :<C-U>execute "Rg " . GetVisual()<CR>
 
 "grep current word up to the next exclamation point using ,K
-nnoremap ,K viwf!:<C-U>execute "Ag " . GetVisual()<CR>
+nnoremap ,K viwf!:<C-U>execute "Rg " . GetVisual()<CR>
 
 "grep for 'def foo'
-nnoremap <silent> ,gd :Ag 'def <cword>'<CR>
+nnoremap <silent> ,gd :Rg 'def <cword>'<CR>
 
-",gg = Grep! - using Ag the silver searcher
+",gg = Grep! - using Rg RipGrep
 " open up a grep line, with a quote started for the search
-nnoremap ,gg :Ag ""<left>
+nnoremap ,gg :Rg ""<left>
 
 "Grep for usages of the current file
-nnoremap ,gcf :exec "Ag " . expand("%:t:r")<CR>
+nnoremap ,gcf :exec "Rg " . expand("%:t:r")<CR>
