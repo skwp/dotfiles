@@ -1,0 +1,8 @@
+version: "3"
+services:
+  dotfiles:
+    build:
+      context: .
+    image: yadr
+    volumes:
+      - ./:/root/.yadr/
