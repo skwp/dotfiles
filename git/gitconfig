@@ -94,6 +94,9 @@
   undo  = reset HEAD~1 --mixed
   amend = commit -a --amend
 
+  # git up
+	up = pull --rebase --autostash
+
   # svn helpers
   svnr = svn rebase
   svnd = svn dcommit
@@ -117,6 +120,7 @@
   summary = true
   verbosity = 1
   tool = mvimdiff
+  conflictstyle = diff3
 [apply]
   whitespace = nowarn
 [branch]
@@ -152,3 +156,5 @@
 	required = true
 [commit]
 	gpgsign = true
+[diff "ansible-vault"]
+	textconv = ansible-vault view

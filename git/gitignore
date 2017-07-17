@@ -99,3 +99,9 @@ vendor/cache/*.gem
 
 # npm
 npm-debug.log*
+
+# Temp
+.rubocop.yml
+
+# Ignore ansible vault password
+.vault_password
