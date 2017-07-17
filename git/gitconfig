@@ -121,6 +121,7 @@
   summary = true
   verbosity = 1
   tool = mvimdiff
+  conflictstyle = diff3
 [apply]
   whitespace = nowarn
 [branch]
@@ -157,3 +158,5 @@
 	required = true
 [commit]
 	gpgsign = true
+[diff "ansible-vault"]
+	textconv = ansible-vault view

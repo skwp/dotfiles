@@ -40,3 +40,4 @@ rescue LoadError => error
 end
 
 I18n.locale = :en if defined?(I18n)
+Pry.commands.delete '.<shell command>'
