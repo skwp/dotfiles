@@ -34,7 +34,7 @@ Please use GitHub Issues for pull requests or bug reports only.
 
 ## Screenshot
 
-![screenshot](http://i.imgur.com/3C1Ze.png)
+![screenshot](https://i.imgur.com/3C1Ze.png)
 
 ## Installation
 
@@ -95,9 +95,9 @@ rake update
 
 Read on to learn what YADR provides!
 
-### [Homebrew](http://mxcl.github.com/homebrew/)
+### [Homebrew](https://brew.sh/)
 
-Homebrew is _the missing package manager for OSX_. Installed automatically.
+Homebrew is _the missing package manager for macOS_. Installed automatically.
 
 We automatically install a few useful packages including ctags, git, macvim, hub, and the silver searcher ('ag')
 Note that our autocomplete plugin requires a MacVim that supports Lua. The installer knows how to install it, but if you had one installed before, you may need to manually remove your old MacVim.
@@ -112,7 +112,7 @@ We've also provided lots of enhancements:
 * `Ctrl-x,Ctrl-l` to insert output of last command
 * Fuzzy matching - if you mistype a directory name, tab completion will fix it
 * [fasd](https://github.com/clvv/fasd) integration - hit `z` and partial match for recently used directory. Tab completion enabled.
-* [Prezto - the power behind YADR's zsh](http://github.com/sorin-ionescu/prezto)
+* [Prezto - the power behind YADR's zsh](https://github.com/sorin-ionescu/prezto)
 * [How to add your own ZSH theme](doc/zsh/themes.md)
 
 ### Aliases
@@ -293,19 +293,19 @@ Assuming your host system has Docker & Docker Compose properly installed, run:
 This will build the container image it never built it before (which may take a while -- future times will be faster) and then run a `zsh` session inside that container for you.
 There you can play around, test commands, aliases, etc.
 
-*Warning*: this repo is primarly OSX oriented. So any support for Linux can only be done with the help of the community.
+*Warning*: this repo is primarly macOS oriented. So any support for Linux can only be done with the help of the community.
 
 
 ## Misc
 
 * [Credits & Thanks](doc/credits.md)
-* [Other recommended OSX productivity tools](doc/osx_tools.md)
-* [Yan's Blog](http://yanpritzker.com)
+* [Other recommended macOS productivity tools](doc/osx_tools.md)
+* [Yan's Blog](https://yanpritzker.com)
 
-### OSX Hacks
+### macOS Hacks
 
-The osx file is a bash script that sets up sensible defaults for devs and power users
-under osx. Read through it before running it. To use:
+The macOS file is a bash script that sets up sensible defaults for devs and power users
+under macOS. Read through it before running it. To use:
 
     bin/osx
 
@@ -331,7 +331,7 @@ brew uninstall vim
 rvm system do brew install vim --with-lua
 ```
 
-### [Pry](http://pry.github.com/)
+### [Pry](https://pryrepl.org/)
 
 Pry offers a much better out of the box IRB experience with colors, tab completion, and lots of other tricks. You can also use it
 as an actual debugger by installing [pry-nav](https://github.com/nixme/pry-nav).
