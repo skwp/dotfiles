@@ -299,7 +299,7 @@ There you can play around, test commands, aliases, etc.
 ## Misc
 
 * [Credits & Thanks](doc/credits.md)
-* [Other recommended macOS productivity tools](doc/osx_tools.md)
+* [Other recommended macOS productivity tools](doc/macos_tools.md)
 * [Yan's Blog](https://yanpritzker.com)
 
 ### macOS Hacks
@@ -307,7 +307,7 @@ There you can play around, test commands, aliases, etc.
 The macOS file is a bash script that sets up sensible defaults for devs and power users
 under macOS. Read through it before running it. To use:
 
-    bin/osx
+    bin/macos
 
 These hacks are Lion-centric. May not work for other OS'es. My favorite mods include:
 
