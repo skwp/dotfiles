@@ -1,4 +1,4 @@
 docker-compose.yml
 Dockerfile
 bin/fix_macvim_external_display.sh
-bin/osx
+bin/macos
