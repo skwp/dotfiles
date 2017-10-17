@@ -10,8 +10,8 @@ task :install => [:submodule_init, :submodules] do
   puts "======================================================"
   puts
 
-  install_homebrew if RUBY_PLATFORM.downcase.include?("darwin")
-  install_rvm_binstubs
+  #install_homebrew if RUBY_PLATFORM.downcase.include?("darwin")
+  #install_rvm_binstubs
 
   # this has all the runcoms from this directory.
   install_files(Dir.glob('git/*')) if want_to_install?('git configs (color, aliases)')
@@ -25,11 +25,11 @@ task :install => [:submodule_init, :submodules] do
     Rake::Task["install_vundle"].execute
   end
 
-  Rake::Task["install_prezto"].execute
+  #Rake::Task["install_prezto"].execute
 
   install_fonts
 
-  install_term_theme if RUBY_PLATFORM.downcase.include?("darwin")
+  #install_term_theme if RUBY_PLATFORM.downcase.include?("darwin")
 
   run_bundle_config
 
