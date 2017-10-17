@@ -13,3 +13,11 @@ for fpath in split(globpath(vimsettings, '*.vim'), '\n')
 
   exe 'source' fpath
 endfor
+
+set bg=light
+au BufRead,BufNewFile *md set wrap
+au BufRead,BufNewFile *md set tw=79
+
+au BufRead,BufNewFile *go set shiftwidth=4
+au BufRead,BufNewFile *go set tabstop=4
+au BufRead,BufNewFile *go set noexpandtab
