@@ -17,6 +17,10 @@
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
+## Data Science Packages
+
+The [data science packages and scripts](./data-science) are not automatically installed. You need to run that manually.
+
 ## Install YADR
 
 ```
