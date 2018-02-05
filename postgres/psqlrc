@@ -11,5 +11,6 @@
 \set VERBOSITY verbose
 \set HISTFILE ~/.psql_history- :DBNAME
 \set HISTCONTROL ignoredups
+\set HISTSIZE -1
 \set COMP_KEYWORD_CASE upper
 \unset QUIET
