@@ -17,8 +17,12 @@
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
+
+
+
 ## Data Science Packages
 
+[Install Anaconda](https://www.continuum.io/downloads#macos) for data science packages, don't forget to move activation to zsh config (by default it's put into ~/.bash_profile).
 The [data science packages and scripts](./data-science) are not automatically installed. You need to run that manually.
 
 ## Install YADR
