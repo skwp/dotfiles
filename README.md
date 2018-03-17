@@ -62,11 +62,11 @@ The escape key is the single most used key in vim.  Old keyboards used to have E
 #### Set up a system wide hotkey for iTerm (Keys=>Hotkey)
 Recommended Cmd-Escape, which is really Cmd-Capslock.
 
-#### In iTerm, uncheck "Use Lion-style full screen" on General
+#### In iTerm, uncheck "Native full screen windows" on General
 This will give you fast full screen windows that are switchable without switching to spaces.
 
-#### in MacVim, uncheck Prefer native fullscreen under Advanced settings
-Same as iTerm. The Lion style spaces navigation slows everything down for no reason.
+#### in MacVim, uncheck "Prefer native full-screen support" under Advanced settings
+Same as iTerm. The native spaces navigation slows everything down for no reason.
 
 ## If you want to run vim in terminal
 
