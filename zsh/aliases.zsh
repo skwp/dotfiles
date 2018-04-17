@@ -219,3 +219,6 @@ alias brewu='brew update  && brew upgrade --all && brew cleanup && brew prune &&
 
 # jhead Photo renaming
 alias jhead="jhead -autorot -nf'%Y-%m-%d %H.%M.%S'"
+
+# combine pdfs
+alias combine_pdfs="/System/Library/Automator/Combine\ PDF\ Pages.action/Contents/Resources/join.py"
