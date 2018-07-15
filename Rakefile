@@ -1,6 +1,5 @@
 require 'rake'
 require 'fileutils'
-require File.join(File.dirname(__FILE__), 'bin', 'yadr', 'vundle')
 
 desc "Hook our dotfiles into system-standard positions."
 task :install => [:submodule_init, :submodules] do
@@ -10,7 +9,6 @@ task :install => [:submodule_init, :submodules] do
   puts "======================================================"
   puts
 
-  install_homebrew if RUBY_PLATFORM.downcase.include?("darwin")
   install_rvm_binstubs
 
   # this has all the runcoms from this directory.
@@ -22,7 +20,7 @@ task :install => [:submodule_init, :submodules] do
   install_files(Dir.glob('vimify/*')) if want_to_install?('vimification of command line tools')
   if want_to_install?('vim configuration (highly recommended)')
     install_files(Dir.glob('{vim,vimrc}'))
-    Rake::Task["install_vundle"].execute
+    Rake::Task["install_plug"].execute
   end
 
   Rake::Task["install_prezto"].execute
@@ -91,24 +89,16 @@ task :vundle_migration do
   FileUtils.mv(File.join('vim','bundle'), File.join('vim', 'bundle.old'))
 end
 
-desc "Runs Vundle installer in a clean vim environment"
-task :install_vundle do
+desc "Runs plugin installer in a clean vim environment"
+task :install_plug do
   puts "======================================================"
-  puts "Installing and updating vundles."
-  puts "The installer will now proceed to run PluginInstall to install vundles."
+  puts "Installing and updating vim plugins."
+  puts "The installer will now proceed to run PluginInstall to install plugins."
   puts "======================================================"
 
   puts ""
 
-  vundle_path = File.join('vim','bundle', 'vundle')
-  unless File.exists?(vundle_path)
-    run %{
-      cd $HOME/.yadr
-      git clone https://github.com/gmarik/vundle.git #{vundle_path}
-    }
-  end
-
-  Vundle::update_vundle
+  sh "vim -c 'set nomore' -c 'PlugUpdate' -c 'qa!' || true"
 end
 
 task :default => 'install'
@@ -148,33 +138,6 @@ def install_rvm_binstubs
   puts "will automatically use those bins after cd'ing into dir."
   puts "======================================================"
   run %{ chmod +x $rvm_path/hooks/after_cd_bundler }
-  puts
-end
-
-def install_homebrew
-  run %{which brew}
-  unless $?.success?
-    puts "======================================================"
-    puts "Installing Homebrew, the OSX package manager...If it's"
-    puts "already installed, this will do nothing."
-    puts "======================================================"
-    run %{ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"}
-  end
-
-  puts
-  puts
-  puts "======================================================"
-  puts "Updating Homebrew."
-  puts "======================================================"
-  run %{brew update}
-  puts
-  puts
-  puts "======================================================"
-  puts "Installing Homebrew packages...There may be some warnings."
-  puts "======================================================"
-  run %{brew install zsh ctags git hub tmux reattach-to-user-namespace the_silver_searcher ghi}
-  run %{brew install macvim --with-override-system-vim --with-lua --with-luajit}
-  puts
   puts
 end
 

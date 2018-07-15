@@ -1,4 +1,4 @@
-" Use Vim settings, rather then Vi settings (much better!).
+" Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
@@ -34,12 +34,11 @@ syntax on
 let mapleader=","
 
 " =============== Vundle Initialization ===============
-" This loads all the plugins specified in ~/.vim/vundles.vim
-" Use Vundle plugin to manage all other plugins
-if filereadable(expand("~/.vim/vundles.vim"))
-  source ~/.vim/vundles.vim
+" This loads all the plugins specified in ~/.vim/plugins.vim
+if filereadable(expand("~/.vim/plugins.vim"))
+  source ~/.vim/plugins.vim
 endif
-au BufNewFile,BufRead *.vundle set filetype=vim
+au BufNewFile,BufRead *.plug set filetype=vim
 
 " ================ Turn Off Swap Files ==============
 

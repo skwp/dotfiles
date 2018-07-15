@@ -26,6 +26,10 @@ else
     let g:solarized_termtrans=1
   end
 endif
+try
+    colorscheme solarized
+catch /^Vim\%((\a\+)\)\=:E185/
+    " deal with it
+endtry
 
-colorscheme solarized
 set background=dark
