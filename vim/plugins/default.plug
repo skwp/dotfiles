@@ -1,0 +1,8 @@
+"Plug 'tpope/vim-sensible'
+"Plug 'tpope/vim-speeddating'
+"Plug 'chrisbra/csv.vim'
+"Plug 'junegunn/limelight.vim'
+"Plug 'skwp/vim-colors-solarized'
+"Plug 'jby/tmux.vim'
+"Plug 'vim-syntastic/syntastic'
+"Plug 'rust-lang/rust.vim', {'for': 'rust'}
