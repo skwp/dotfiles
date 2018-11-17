@@ -367,7 +367,7 @@ def install_tmux_tpm
   unless File.exists?(tpm_path)
     run %{
       cd $HOME/.yadr
-      $ git clone https://github.com/tmux-plugins/tpm #{tpm_path}
+      git clone https://github.com/tmux-plugins/tpm #{tpm_path}
     }
   end
 end
