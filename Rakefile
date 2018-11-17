@@ -31,6 +31,8 @@ task :install => [:submodule_init, :submodules] do
 
   install_term_theme if RUBY_PLATFORM.downcase.include?("darwin")
 
+  install_tmux_tpm
+
   run_bundle_config
 
   success_msg("installed")
@@ -355,6 +357,19 @@ def apply_theme_to_iterm_profile_idx(index, color_scheme_path)
 
   run %{ /usr/libexec/PlistBuddy -c "Merge '#{color_scheme_path}' :'New Bookmarks':#{index}" ~/Library/Preferences/com.googlecode.iterm2.plist }
   run %{ defaults read com.googlecode.iterm2 }
+end
+
+def install_tmux_tpm
+  puts "======================================================"
+  puts "Installing tpm, the tmux plugin manager"
+  puts "======================================================"
+  tpm_path = File.join('tmux','plugins', 'tmp')
+  unless File.exists?(tpm_path)
+    run %{
+      cd $HOME/.yadr
+      $ git clone https://github.com/tmux-plugins/tpm #{tpm_path}
+    }
+  end
 end
 
 def success_msg(action)
