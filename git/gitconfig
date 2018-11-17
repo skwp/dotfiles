@@ -125,3 +125,6 @@
   enabled = true
 [include]
   path = .gitconfig.user
+[user]
+	name = Rodrigo Makoto
+	email = makoto.rodrigo@gmail.com
