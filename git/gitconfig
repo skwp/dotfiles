@@ -134,5 +134,5 @@
   email = zhenyuy@fb.com
 # [credential]
   # helper = osxkeychain
-# [http]
-	# proxy = fwdproxy:8080
+[http]
+	proxy = fwdproxy:8080

@@ -1,6 +1,6 @@
 " Plug 'justinmk/vim-sneak'
 Plug 'rking/ag.vim'
-Plug 'nelstrom/vim-visual-star-search', { 'on' : 'VM' }
-Plug 'henrik/vim-indexed-search', { 'on' : 'VM' }
-Plug 'skwp/greplace.vim', { 'on' : 'VM' }
-Plug 'Lokaltog/vim-easymotion', { 'on' : 'VM' }
+Plug 'nelstrom/vim-visual-star-search'
+Plug 'henrik/vim-indexed-search'
+Plug 'skwp/greplace.vim'
+Plug 'Lokaltog/vim-easymotion'

@@ -18,17 +18,17 @@
 " VM(vim-improvement) is a fake command, which is a hacky way to load those following plugins when needed
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'Shougo/neocomplete.vim', { 'on': 'VM' }
-Plug 'briandoll/change-inside-surroundings.vim', { 'on': 'VM' }
+Plug 'briandoll/change-inside-surroundings.vim'
 Plug 'sjl/gundo.vim', { 'on': 'VM' }
 Plug 'tpope/vim-endwise', { 'on': 'VM' }
 Plug 'tpope/vim-repeat', { 'on': 'VM' }
 Plug 'goldfeld/ctrlr.vim', { 'on': 'VM' }
-Plug 'tpope/vim-surround', { 'on': 'VM' }
-Plug  'junegunn/goyo.vim', { 'on': 'VM' }
+Plug 'tpope/vim-surround'
+Plug  'junegunn/goyo.vim'
 Plug 'kshenoy/vim-signature', {'on': 'VM' }
 Plug  'gcmt/wildfire.vim', {'on': 'VM' }
-Plug 'tomtom/tcomment_vim', { 'on': 'VM' }
-Plug 'tpope/vim-unimpaired', { 'on': 'VM' }
-Plug 'Raimondi/delimitMate', { 'on': 'VM' }
+Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-unimpaired'
+Plug 'Raimondi/delimitMate'
 Plug 'vim-scripts/sudo.vim', { 'on': 'VM' }
 Plug 'junegunn/vim-easy-align', { 'on': 'VM' }

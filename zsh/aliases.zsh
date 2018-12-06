@@ -60,7 +60,7 @@ if [ $MACVIM_INSTALLED -eq 0 ]; then
 fi
 alias vi="vim"
 # alias vim="vimx -v"
-alias vim="/usr/local/bin/vim"
+alias vim="/usr/bin/vim"
 
 # mimic vim functions
 alias :q='exit'
@@ -224,3 +224,19 @@ alias brewu='brew update  && brew upgrade --all && brew cleanup && brew prune &&
 
 # alias for predefined tmux session
 # alias dd='tmux a -t daily'
+alias ta='tmux a'
+
+alias idea='~/nfs/idea-IC-145.1617.8/bin/idea.sh'
+
+# mvn related
+alias mfast='mvn clean install -T2.0C -DskipTests=true -Dfindbugs.skip=true'
+alias mf='mfast'
+alias mfull='mvn clean install -T2.0C -Dfindbugs.skip=true'
+alias mm='mfull'
+alias mtest='mvn clean test -T2.0C -Dfindbugs.skip=true'
+alias mt='mtest'
+
+alias hsf='hg status --change .'
+
+
+alias vit='vi TARGETS'
