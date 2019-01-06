@@ -1,5 +1,7 @@
 #!/usr/bin/env RScript
 
+# execute with `./total_amount_ov.R < file.csv`
+
 Sys.setenv(TZ="Europe/Berlin")
 
 data <- read.csv("stdin", sep=";", dec=",")
