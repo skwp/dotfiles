@@ -1,0 +1,17 @@
+altair-graphql-client
+slack
+skype
+paw
+docker
+dbvisualizer
+robo-3t
+apache-directory-studio
+teamviewer
+spotify
+discord
+steam
+ultimaker-cura
+atom
+google-chrome
+firefox
+java8

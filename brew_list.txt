@@ -1,0 +1,12 @@
+bash-completion
+bzt
+git
+graphviz
+imagemagick
+maven
+node
+node@10
+node@6
+rbenv
+vim
+postgresql

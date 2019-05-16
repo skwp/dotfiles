@@ -174,6 +174,14 @@ def install_homebrew
   puts "======================================================"
   run %{brew install zsh ctags git hub tmux reattach-to-user-namespace the_silver_searcher ghi}
   run %{brew install macvim --with-override-system-vim --with-lua --with-luajit}
+  run %{xargs brew install < brew_list.txt}
+  puts
+  puts
+  puts "======================================================"
+  puts "Installing Homebrew Cask packages...There may be some warnings."
+  puts "======================================================"
+  run %{brew install cask}
+  run %{brew cask install $(<brew_cask_list.txt)}
   puts
   puts
 end
@@ -367,4 +375,15 @@ def success_msg(action)
   puts "  (_______\_____|\____|_|      "
   puts ""
   puts "YADR has been #{action}. Please restart your terminal and vim."
+  puts
+  puts
+  puts "======================================================"
+  puts "Don't forget your other favorites."
+  puts "======================================================"
+  puts
+  puts "Franz : https://meetfranz.com/"
+  puts
+  puts "Boom 2 : https://www.globaldelight.com/boom/boom2.php"
+  puts
+  puts "pgAdmin : https://www.pgadmin.org/download/"
 end
