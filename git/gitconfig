@@ -133,6 +133,7 @@
   autocrlf = false
   editor = vim
   excludesfile = ~/.yadr/git/gitignore
+	pager = diff-so-fancy | less --tabs=4 -RFX
 [advice]
   statusHints = false
 [diff]
@@ -158,3 +159,5 @@
 	gpgsign = true
 [diff "ansible-vault"]
 	textconv = ansible-vault view
+[pager]
+	diff = false
