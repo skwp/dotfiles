@@ -16,3 +16,6 @@ google-chrome
 firefox
 java8
 google-drive
+vlc
+dropbox
+the-unarchiver
