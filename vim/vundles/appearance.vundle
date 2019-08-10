@@ -5,6 +5,7 @@ Bundle "jby/tmux.vim.git"
 Bundle "morhetz/gruvbox"
 Bundle "xsunsmile/showmarks.git"
 Bundle "chriskempson/base16-vim"
+Bundle "https://github.com/ryanoasis/vim-devicons"
 
 " Required for Gblame in terminal vim
-Bundle "godlygeek/csapprox.git" 
+Bundle "godlygeek/csapprox.git"

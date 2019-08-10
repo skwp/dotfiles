@@ -1,16 +1,18 @@
 # set your user tokens as environment variables, such as ~/.secrets
 # See the README for examples.
 [color]
-  ui = true
+	ui = true
 [color "branch"]
   current = yellow reverse
   local = yellow
   remote = green
 [color "diff"]
-  meta = yellow bold
-  frag = magenta bold
-  old = red
-  new = green
+	meta = yellow
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	commit = yellow bold
+	whitespace = red reverse
 [alias]
   # add
   a = add                           # add
@@ -112,6 +114,7 @@
   autocrlf = false
   editor = vim
   excludesfile = ~/.yadr/git/gitignore
+	pager = diff-so-fancy | less --tabs=4 -RFX
 [advice]
   statusHints = false
 [diff]
@@ -125,3 +128,15 @@
   enabled = true
 [include]
   path = .gitconfig.user
+[user]
+	email = arthurnovaes9@gmail.com
+	name = Arthur Novaes
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[diff-so-fancy]
+	markEmptyLines = false
+	changeHunkIndicators = false
+	useUnicodeRuler = false
