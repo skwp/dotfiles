@@ -46,11 +46,11 @@
   last = diff HEAD^                 # diff last committed change
 
   # log
-  l = log --graph --date=short
-  changes = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\" --name-status
-  short = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\"
-  simple = log --pretty=format:\" * %s\"
-  shortnocolor = log --pretty=format:\"%h %cr %cn %s\"
+  l = log --graph --date=short -n 11
+  changes = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\" --name-status -n 11
+  short = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\" -n 11
+  simple = log --pretty=format:\" * %s\" -n 11
+  shortnocolor = log --pretty=format:\"%h %cr %cn %s\" -n 11
 
   # pull
   pl = pull                         # pull
@@ -92,14 +92,10 @@
 [format]
   pretty = format:%C(blue)%ad%Creset %C(yellow)%h%C(green)%d%Creset %C(blue)%s %C(magenta) [%an]%Creset
 [mergetool]
-  prompt = false
-[mergetool "mvimdiff"]
-  cmd="mvim -c 'Gdiff' $MERGED"     # use fugitive.vim for 3-way merge
-  keepbackup=false
+  prompt = true
 [merge]
   summary = true
   verbosity = 1
-  tool = mvimdiff
 [apply]
   whitespace = nowarn
 [branch]
@@ -123,5 +119,12 @@
   # Remember my merges
   # http://gitfu.wordpress.com/2008/04/20/git-rerere-rereremember-what-you-did-last-time/
   enabled = true
+[pager]
+  diff = false
+  log = false
+  grep = false
+  show = false
+  status = false
+
 [include]
   path = .gitconfig.user
