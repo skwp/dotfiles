@@ -16,7 +16,7 @@
   a = add                           # add
   chunkyadd = add --patch           # stage commits chunk by chunk
 
-  # via http://blog.apiaxle.com/post/handy-git-tips-to-stop-you-getting-fired/
+  # via http://philjackson.github.io/2013/04/07/handy-git-tips-to-stop-you-getting-fired.html
   snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
   snapshots = !git stash list --grep snapshot
 
