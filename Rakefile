@@ -262,11 +262,11 @@ def install_prezto
   run %{ ln -nfs "$HOME/.yadr/zsh/prezto" "${ZDOTDIR:-$HOME}/.zprezto" }
 
   # The prezto runcoms are only going to be installed if zprezto has never been installed
-  install_files(Dir.glob('zsh/prezto/runcoms/z*'), :symlink)
-
-  puts
-  puts "Overriding prezto ~/.zpreztorc with YADR's zpreztorc to enable additional modules..."
-  run %{ ln -nfs "$HOME/.yadr/zsh/prezto-override/zpreztorc" "${ZDOTDIR:-$HOME}/.zpreztorc" }
+  install_files(Dir.glob('zsh/prezto/runcoms/zlogin'), :symlink)
+  install_files(Dir.glob('zsh/prezto/runcoms/zlogout'), :symlink)
+  install_files(Dir.glob('zsh/prezto-override/zpreztorc'), :symlink)
+  install_files(Dir.glob('zsh/prezto/runcoms/zprofile'), :symlink)
+  install_files(Dir.glob('zsh/prezto/runcoms/zshenv'), :symlink)
 
   puts
   puts "Creating directories for your customizations"
