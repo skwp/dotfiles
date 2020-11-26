@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 LABEL maintainer="Luiz Filho <lfilho@gmail.com>"
 
 # Let the container know that there is no tty
