@@ -1,3 +1,5 @@
+bindkey -s "^g" 'make -j12\n'
+
 # Load any custom after code
 if [ -d $HOME/.zsh.after/ ]; then
   if [ "$(ls -A $HOME/.zsh.after/)" ]; then
