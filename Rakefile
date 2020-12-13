@@ -358,13 +358,13 @@ def apply_theme_to_iterm_profile_idx(index, color_scheme_path)
 end
 
 def success_msg(action)
-  puts ''
-  puts '   _     _           _         '
-  puts '  | |   | |         | |        '
-  puts '  | |___| |_____  __| | ____   '
-  puts '  |_____  (____ |/ _  |/ ___)  '
-  puts '   _____| / ___ ( (_| | |      '
-  puts '  (_______\_____|\____|_|      '
-  puts ''
+  puts %q{
+   _     _           _
+  | |   | |         | |
+  | |___| |_____  __| | ____
+  |_____  (____ |/ _  |/ ___)
+   _____| / ___ ( (_| | |
+  (_______\_____|\____|_|
+  }
   puts "YADR has been #{action}. Please restart your terminal and vim."
 end
