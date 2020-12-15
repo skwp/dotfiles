@@ -262,11 +262,12 @@ def install_prezto
   run %{ ln -nfs "$HOME/.yadr/zsh/prezto" "${ZDOTDIR:-$HOME}/.zprezto" }
 
   # The prezto runcoms are only going to be installed if zprezto has never been installed
-  install_files(Dir.glob('zsh/prezto/runcoms/z*'), :symlink)
-
-  puts
-  puts "Overriding prezto ~/.zpreztorc with YADR's zpreztorc to enable additional modules..."
-  run %{ ln -nfs "$HOME/.yadr/zsh/prezto-override/zpreztorc" "${ZDOTDIR:-$HOME}/.zpreztorc" }
+  install_files(Dir.glob('zsh/prezto-override/zshrc'), :symlink)
+  install_files(Dir.glob('zsh/prezto/runcoms/zlogin'), :symlink)
+  install_files(Dir.glob('zsh/prezto/runcoms/zlogout'), :symlink)
+  install_files(Dir.glob('zsh/prezto-override/zpreztorc'), :symlink)
+  install_files(Dir.glob('zsh/prezto/runcoms/zprofile'), :symlink)
+  install_files(Dir.glob('zsh/prezto/runcoms/zshenv'), :symlink)
 
   puts
   puts "Creating directories for your customizations"
@@ -318,18 +319,6 @@ def install_files(files, method = :symlink)
       run %{ ln -nfs "#{source}" "#{target}" }
     else
       run %{ cp -f "#{source}" "#{target}" }
-    end
-
-    # Temporary solution until we find a way to allow customization
-    # This modifies zshrc to load all of yadr's zsh extensions.
-    # Eventually yadr's zsh extensions should be ported to prezto modules.
-    source_config_code = "for config_file ($HOME/.yadr/zsh/*.zsh) source $config_file"
-    if file == 'zshrc'
-      File.open(target, 'a+') do |zshrc|
-        if zshrc.readlines.grep(/#{Regexp.escape(source_config_code)}/).empty?
-          zshrc.puts(source_config_code)
-        end
-      end
     end
 
     puts "=========================================================="
