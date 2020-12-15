@@ -23,7 +23,6 @@ RUN localedef -i en_US -f UTF-8 en_US.UTF-8 && \
 # `security` is needed for fontconfig and fc-cache
 # Let the container know that there is no tty
 RUN DEBIAN_FRONTEND=noninteractive \
-  add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) universe security" && \
   add-apt-repository ppa:aacebedo/fasd && \
   apt-get update && \
   apt-get -yqq install \
