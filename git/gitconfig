@@ -70,6 +70,9 @@
   uncommit = reset --soft HEAD^     # go back before last commit, with files in uncommitted state
   filelog = log -u                  # show changes to a file
   mt = mergetool                    # fire up the merge tool
+  
+  # show
+  sm = show -s --format='%ci %h %B' # show last commit message
 
   # stash
   ss = stash                        # stash changes
