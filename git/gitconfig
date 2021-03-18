@@ -101,7 +101,7 @@
   svnr = svn rebase
   svnd = svn dcommit
   svnl = svn log --oneline --show-commit
-	switch = !legit switch \"$@\"
+	# switch = !legit switch \"$@\"
 	branches = !legit branches
 	sprout = !legit sprout \"$@\"
 	unpublish = !legit unpublish \"$@\"
@@ -120,7 +120,6 @@
   summary = true
   verbosity = 1
   tool = mvimdiff
-  conflictstyle = diff3
 [apply]
   whitespace = nowarn
 [branch]
@@ -150,7 +149,7 @@
 [user]
 	email = swanand.pagnis@gmail.com
 	name = Swanand Pagnis
-	signingkey = B1F7EA103C8E8CCA
+	signingkey = FA5A00047146017A
 [filter "lfs"]
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
