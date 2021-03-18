@@ -121,7 +121,6 @@
   summary = true
   verbosity = 1
   tool = mvimdiff
-  conflictstyle = diff3
 [apply]
   whitespace = nowarn
 [branch]
@@ -151,7 +150,7 @@
 [user]
 	email = swanand.pagnis@colearn.id
 	name = Swanand Pagnis
-	signingkey = B1F7EA103C8E8CCA
+	signingkey = FA5A00047146017A
 [filter "lfs"]
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
