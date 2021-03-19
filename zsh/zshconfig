@@ -18,25 +18,14 @@ alias rake='noglob rake'
 alias p="ps aux | grep"
 alias r='bin/rails'
 alias rk='bin/rake'
-alias s='bin/spring'
-alias guard='bundle exec guard'
 alias gs='git show' # use diff-so-fancy
 alias gitcg='git config --global --edit'
 alias gitcl='git config --edit'
 alias cls=clear
 alias o='open .'
-alias ic="mine ~/.invoker.ini"
-alias is='invoker start ~/.invoker.ini'
-alias ir="invoker reload $1"
-alias ia="invoker add $1"
-alias id="invoker remove $1"
 alias gdn="git --no-pager diff"
-alias sml="rlwrap sml"
-alias up="git up"
 alias ptime="ps -o etime= -p"
 alias lh="ls -lh"
-alias python="python3"
-
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -56,21 +45,17 @@ export UPDATE_ZSH_DAYS=15
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 # COMPLETION_WAITING_DOTS="true"
 
-export set HOMEBREW_GITHUB_API_TOKEN=6668357360f748bde44d41e3095a77caa18b80e3
-
-
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
+plugins=(git osx rails ruby textmate rake-fast)
 
-function format(){
-  if [[ -z $1 ]]; then
-    echo "Please provide the file path to format"
-  else
-    xmllint --format $1 -o $1
-  fi
-}
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 
+  autoload -Uz compinit
+   rm -f ~/.zcompdump; compinit
+fi
 
 function redis-start(){
   launchctl load ~/Library/LaunchAgents/homebrew.mxcl.redis.plist
@@ -85,124 +70,35 @@ function redis-restart(){
   redis-start
 }
 
-function mysql-start(){
-  launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
-}
-
-function mysql-stop(){
-  launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
-}
-
-
-function dynamodb-start() {
-  cd /Users/swanand/Software/dynamodb_local_latest && java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb
-}
-
-function dynamodb-test-mode() {
-  cd /Users/swanand/Software/dynamodb_local_latest && java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -inMemory
-}
-
-plugins=(git osx rails ruby textmate rake-fast vagrant yarn heroku)
-
-if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
-
-  autoload -Uz compinit
-   rm -f ~/.zcompdump; compinit
-fi
-
 source $ZSH/oh-my-zsh.sh
 
 export EDITOR="/usr/local/bin/mate -w"
 export BUNDLE_EDITOR="/usr/local/bin/mine"
 export GIT_EDITOR="/usr/local/bin/mate -w"
-export SVN_EDITOR="/usr/local/bin/mate -w"
-export ANDROID_HOME="$HOME/Software/android-sdk-macosx"
-export RACKET_HOME="/Applications/Racket v5.3.3"
-export NPM_PATH="/usr/local/share/npm/bin"
-export HIVE_HOME=/usr/local/Cellar/hive/1.2.1/libexec
-export HCAT_HOME=/usr/local/Cellar/hive/1.2.1/libexec/hcatalog
-export JAVA_11_HOME=$(/usr/libexec/java_home -v11)
-alias java11='export JAVA_HOME=$JAVA_11_HOME'
-export MAGICK_HOME="/usr/local/Cellar/imagemagick/6.8.0-10"
-# PKG_CONFIG_PATH="$MAGICK_HOME/lib/pkgconfig:$MAGICK_HOME/include/ImageMagick:$PKG_CONFIG_PATH"
-export C_INCLUDE_PATH="$MAGICK_HOME/include/ImageMagick"
-export GOPATH="/Users/swanand/go"
-export GOROOT="/usr/local/opt/go/libexec"
 export TM_RUBY=`which ruby`
-# export SSL_CERT_FILE="/usr/local/etc/openssl/certs/cacert.pem"
+
 # from your command line
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export set HOMEBREW_GITHUB_API_TOKEN=100dc1917da0ee76b804b5214a20683854e187f9
 export set ASK=true
-export set REASON_MERLIN_BIN="/usr/local/lib/node_modules/reason-cli/.bin/ocamlmerlin"
-export set AWS_PROFILE="default"
 export set LESS="-XFR"
 
 # Customize to your needs...
 export PATH=$HOME/.local/bin:/usr/local/bin:$HOME/bin:$PATH
 export PATH="$HOME/.rbenv/bin:$PATH"
-# export PATH="/usr/local/opt/nss/bin:$PATH"
-# export PATH="/usr/local/opt/sqlite/bin:$PATH"
 export PATH=$PATH:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/usr/libexec
-# export PATH=$PATH:$RACKET_HOME/bin:$JAVA_HOME/bin:$NPM_PATH
-# export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
-# export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
-# export PATH=$PATH:$HOME/.cargo/bin
-# export PATH="/usr/local/opt/llvm/bin:$PATH"
-# export set RBENV_VERSION=2.6.6
-export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
-export PATH="/usr/local/opt/python@3.8/bin:$PATH"
-
+export PATH="$(brew --prefix openssl)/bin:$PATH"
 
 eval "$(rbenv init -)"
 
-if [ -f ~/.config/exercism/exercism_completion.zsh ]; then
-  . ~/.config/exercism/exercism_completion.zsh
-fi
-
-# OPAM configuration
-if [ -f /Users/swanand/.opam/opam-init/init.zsh ]; then
-  . /Users/swanand/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
-  eval $(opam config env)
-fi
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-java11 # set Java 11 as default
-
-export SWIVM_DIR="/Users/swanand/.swivm"
-[ -s "$SWIVM_DIR/swivm.sh" ] && . "$SWIVM_DIR/swivm.sh"  # This loads swivm
-
-# For compilers to find nss you may need to set:
-# export LDFLAGS="-L/usr/local/opt/nss/lib -L/usr/local/opt/sqlite/lib -L/usr/local/opt/qt/lib -L/usr/local/opt/openssl@1.1/lib -L/usr/local/opt/readline/lib"
-# export CPPFLAGS="-I/usr/local/opt/nss/include -I/usr/local/opt/sqlite/include -I/usr/local/opt/qt/include -I/usr/local/opt/openssl@1.1/include -I/usr/local/opt/readline/include"
-
-export LDFLAGS="-L/usr/local/opt/nss/lib -L/usr/local/opt/openssl@1.1/lib -L/usr/local/opt/readline/lib"
-export CPPFLAGS="-I/usr/local/opt/nss/include -I/usr/local/opt/openssl@1.1/include -I/usr/local/opt/readline/include"
-
-
-# For pkg-config to find nss you may need to set:
-export PKG_CONFIG_PATH="/usr/local/opt/nss/lib/pkgconfig"
-export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:"/usr/local/opt/openssl@1.1/lib/pkgconfig"
-export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:"/usr/local/opt/readline/lib/pkgconfig"
-
-
-export set HUSKY_SKIP_HOOKS=1
+export LDFLAGS="-L/opt/homebrew/opt/openssl@3/lib -L/opt/homebrew/opt/readline/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/openssl@3/include -I/opt/homebrew/opt/readline/include"
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform
 # export PATH="/usr/local/opt/python@3.8/bin:$PATH"
 
 autoload -U add-zsh-hook
-
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/swanand/Software/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/swanand/Software/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/swanand/Software/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/swanand/Software/google-cloud-sdk/completion.zsh.inc'; fi
-
-export set RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1) --with-readline-dir=$(brew --prefix readline)"
-
+# export set RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl) --with-readline-dir=$(brew --prefix readline)"
