@@ -160,3 +160,5 @@
 	textconv = ansible-vault view
 [pager]
 	diff = false
+[init]
+	defaultBranch = main

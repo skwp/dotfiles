@@ -24,11 +24,7 @@ alias gs='git show' # use diff-so-fancy
 alias gitcg='git config --global --edit'
 alias gitcl='git config --edit'
 alias cls=clear
-# alias emacs='open -a Emacs'
 alias o='open .'
-alias H=haulhub_web
-alias hh=haulhub_web
-alias S=static
 alias ic="mine ~/.invoker.ini"
 alias is='invoker start ~/.invoker.ini'
 alias ir="invoker reload $1"
@@ -60,6 +56,9 @@ export UPDATE_ZSH_DAYS=15
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 # COMPLETION_WAITING_DOTS="true"
 
+export set HOMEBREW_GITHUB_API_TOKEN=6668357360f748bde44d41e3095a77caa18b80e3
+
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -72,18 +71,6 @@ function format(){
   fi
 }
 
-function pgstart(){
-  brew services start postgresql@9.5
-}
-
-function pgstop(){
-  brew services stop postgresql@9.5
-}
-
-function pgrestart(){
-  pgstop
-  pgstart
-}
 
 function redis-start(){
   launchctl load ~/Library/LaunchAgents/homebrew.mxcl.redis.plist
@@ -106,25 +93,6 @@ function mysql-stop(){
   launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
 }
 
-function brainy(){
-  cd ~/first/brainy
-}
-
-function static(){
-  cd ~/deserve/static 
-}
-
-function haulhub_web(){
-  cd ~/projects/haulhub/haulhub_web
-}
-
-function brainy-tunnel() {
-  ssh -L 9001:rds-us-west-2-production-brainy.cmvk8wj93rno.us-west-2.rds.amazonaws.com:5432 brainy-01
-}
-
-function brainy-qa-tunnel() {
-  ssh -L 9001:rds-us-west-2-qa-brainy.cmvk8wj93rno.us-west-2.rds.amazonaws.com:5432 brainy-qa
-}
 
 function dynamodb-start() {
   cd /Users/swanand/Software/dynamodb_local_latest && java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb
@@ -133,8 +101,6 @@ function dynamodb-start() {
 function dynamodb-test-mode() {
   cd /Users/swanand/Software/dynamodb_local_latest && java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -inMemory
 }
-
-# export DISABLE_AUTO_UPDATE="true"
 
 plugins=(git osx rails ruby textmate rake-fast vagrant yarn heroku)
 
@@ -147,10 +113,10 @@ fi
 
 source $ZSH/oh-my-zsh.sh
 
-export EDITOR="$HOME/bin/mate -w"
+export EDITOR="/usr/local/bin/mate -w"
 export BUNDLE_EDITOR="/usr/local/bin/mine"
-export GIT_EDITOR="$HOME/bin/mate -w"
-export SVN_EDITOR="$HOME/bin/mate -w"
+export GIT_EDITOR="/usr/local/bin/mate -w"
+export SVN_EDITOR="/usr/local/bin/mate -w"
 export ANDROID_HOME="$HOME/Software/android-sdk-macosx"
 export RACKET_HOME="/Applications/Racket v5.3.3"
 export NPM_PATH="/usr/local/share/npm/bin"
@@ -164,7 +130,7 @@ export C_INCLUDE_PATH="$MAGICK_HOME/include/ImageMagick"
 export GOPATH="/Users/swanand/go"
 export GOROOT="/usr/local/opt/go/libexec"
 export TM_RUBY=`which ruby`
-export SSL_CERT_FILE="/usr/local/etc/openssl/certs/cacert.pem"
+# export SSL_CERT_FILE="/usr/local/etc/openssl/certs/cacert.pem"
 # from your command line
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
@@ -177,27 +143,31 @@ export set LESS="-XFR"
 
 # Customize to your needs...
 export PATH=$HOME/.local/bin:/usr/local/bin:$HOME/bin:$PATH
-export PATH="/usr/local/opt/nss/bin:$PATH"
-export PATH="/usr/local/opt/sqlite/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:$PATH"
+# export PATH="/usr/local/opt/nss/bin:$PATH"
+# export PATH="/usr/local/opt/sqlite/bin:$PATH"
 export PATH=$PATH:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/usr/libexec
-export PATH=$PATH:$RACKET_HOME/bin:$JAVA_HOME/bin:$NPM_PATH
-export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
-export PATH=$PATH:$HOME/.cargo/bin
+# export PATH=$PATH:$RACKET_HOME/bin:$JAVA_HOME/bin:$NPM_PATH
+# export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+# export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+# export PATH=$PATH:$HOME/.cargo/bin
 # export PATH="/usr/local/opt/llvm/bin:$PATH"
 # export set RBENV_VERSION=2.6.6
+export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+export PATH="/usr/local/opt/python@3.8/bin:$PATH"
 
-# eval "$(rbenv init -)"
 
-source /usr/local/share/zsh/site-functions/_aws
+eval "$(rbenv init -)"
 
 if [ -f ~/.config/exercism/exercism_completion.zsh ]; then
   . ~/.config/exercism/exercism_completion.zsh
 fi
 
 # OPAM configuration
-. /Users/swanand/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
-eval $(opam config env)
+if [ -f /Users/swanand/.opam/opam-init/init.zsh ]; then
+  . /Users/swanand/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+  eval $(opam config env)
+fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 java11 # set Java 11 as default
@@ -217,11 +187,7 @@ export CPPFLAGS="-I/usr/local/opt/nss/include -I/usr/local/opt/openssl@1.1/inclu
 export PKG_CONFIG_PATH="/usr/local/opt/nss/lib/pkgconfig"
 export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:"/usr/local/opt/openssl@1.1/lib/pkgconfig"
 export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:"/usr/local/opt/readline/lib/pkgconfig"
-# export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:"/usr/local/opt/openblas/lib/pkgconfig"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export set HUSKY_SKIP_HOOKS=1
 
@@ -230,25 +196,7 @@ complete -o nospace -C /usr/local/bin/terraform terraform
 # export PATH="/usr/local/opt/python@3.8/bin:$PATH"
 
 autoload -U add-zsh-hook
-load-nvmrc() {
-  local node_version="$(nvm version)"
-  local nvmrc_path="$(nvm_find_nvmrc)"
 
-  if [ -n "$nvmrc_path" ]; then
-    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
-
-    if [ "$nvmrc_node_version" = "N/A" ]; then
-      nvm install
-    elif [ "$nvmrc_node_version" != "$node_version" ]; then
-      nvm use
-    fi
-  elif [ "$node_version" != "$(nvm version default)" ]; then
-    echo "Reverting to nvm default version"
-    nvm use default
-  fi
-}
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/swanand/Software/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/swanand/Software/google-cloud-sdk/path.zsh.inc'; fi
@@ -256,11 +204,5 @@ if [ -f '/Users/swanand/Software/google-cloud-sdk/path.zsh.inc' ]; then . '/User
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/swanand/Software/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/swanand/Software/google-cloud-sdk/completion.zsh.inc'; fi
 
-# export set RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1) --with-readline-dir=$(brew --prefix readline) --with-llvm-dir=$(brew --prefix llvm)"
-
 export set RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1) --with-readline-dir=$(brew --prefix readline)"
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-source /Users/swanand/.rvm/scripts/rvm
 
