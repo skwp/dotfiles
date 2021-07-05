@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 require File.join(File.dirname(__FILE__), 'default_libs')
-require File.join(File.dirname(__FILE__), 'vundle')
+require File.join(File.dirname(__FILE__), 'vimplug')
 
 GitStyleBinary.command do
   version "yadr-list-vim-plugin 1.0"
@@ -11,9 +11,9 @@ GitStyleBinary.command do
       Usage: yadr-list-vim-plugin
   EOS
   run do |command|
-    puts "Currently configured plugins:" 
+    puts "Currently configured plugins:"
     i=1
-    Vundle::vundle_list.each do |plugin|
+    VimPlug::bundle_list.each do |plugin|
       puts "#{i}. #{plugin}"
       i=i+1
     end
