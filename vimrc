@@ -33,13 +33,13 @@ syntax on
 " the plugins.
 let mapleader=","
 
-" =============== Vundle Initialization ===============
-" This loads all the plugins specified in ~/.vim/vundles.vim
-" Use Vundle plugin to manage all other plugins
-if filereadable(expand("~/.vim/vundles.vim"))
-  source ~/.vim/vundles.vim
+" =============== Plug Initialization ===============
+" This loads all the plugins specified in ~/.vim/plugins.d/main.vim
+" Use vim-plug plugin to manage all other plugins
+if filereadable(expand("~/.vim/plugins.d/main.vim"))
+  source ~/.vim/plugins.d/main.vim
 endif
-au BufNewFile,BufRead *.vundle set filetype=vim
+au BufNewFile,BufRead *.bundles set filetype=vim
 
 " ================ Turn Off Swap Files ==============
 

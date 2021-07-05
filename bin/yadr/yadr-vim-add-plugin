@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
-# 
+#
 require File.join(File.dirname(__FILE__), 'default_libs')
-require File.join(File.dirname(__FILE__), 'vundle')
+require File.join(File.dirname(__FILE__), 'vimplug')
 
 GitStyleBinary.command do
   version "yadr-add-vim-plugin 1.0"
@@ -22,7 +22,7 @@ GitStyleBinary.command do
     repo=command.opts[:url]
     puts "Adding \"#{repo}\" to the plugin list"
     bundle_path=repo.gsub(/http.?:\/\/github\.com\//, "")
-    Vundle::add_plugin_to_vundle repo
-    Vundle::update_vundle
+    VimPlug::add_plugin_to_bundles repo
+    VimPlug::update_bundles
   end
 end
