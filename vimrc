@@ -34,7 +34,7 @@ syntax on
 let mapleader=","
 
 " =============== Plug Initialization ===============
-" This loads all the plugins specified in ~/.vim/plug.vim
+" This loads all the plugins specified in ~/.vim/plugins.d/main.vim
 " Use vim-plug plugin to manage all other plugins
 if filereadable(expand("~/.vim/plugins.d/main.vim"))
   source ~/.vim/plugins.d/main.vim

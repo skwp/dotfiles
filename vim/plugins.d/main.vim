@@ -6,7 +6,7 @@
 " Once you've updated the list of plugin, you can run plugin update by issuing
 " the command :PlugInstall from within vim or directly invoking it from the
 " command line with the following syntax:
-" vim --noplugin -u vim/plugged.vim -N "+set hidden" "+syntax on" +PlugClean! +PlugInstall +qall
+" vim --noplugin -u vim/plugins.d/main.vim -N "+set hidden" "+syntax on" +PlugClean! +PlugInstall +qall
 
 if empty(glob('~/.vim' . '/autoload/plug.vim'))
   silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
