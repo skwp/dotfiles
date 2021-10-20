@@ -6,58 +6,56 @@
     (_______\_____|\____|_|
 
     # Yet Another Dotfile Repo v1.1
-    # Now with Prezto and Vundle!
+    # Agora com Prezto e Vundle!
 
 [![Join the chat at https://gitter.im/skwp/dotfiles](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/skwp/dotfiles?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 #### sh -c "\`curl -fsSL https://raw.githubusercontent.com/skwp/dotfiles/master/install.sh \`"
 
-**Always be sure to run `rake update` after pulling to ensure plugins are updated**
+**Sempre certifique-se de executar o comando `rake update` após o pull para garantir que os plug-ins sejam atualizados**
 
-##  What is YADR?
+## O QUE É YADR?
 
-**YADR is an opinionated dotfile repo that will make your heart sing**
+**YADR é um repositório dotfile opinativo que fará seu coração cantar**
 
-  * The best bits of all the top dotfile repos, vim and zsh plugins curated in one place, into a simple and cohesive way of working.
-  * More than 90 vim plugins, all under one roof, working together, each plugin researched and configured to be at its best, often with better shortcut keys.
-  * Many zsh plugins, starting with the wonderful Prezto base, and adding a few niceties on top.
-  * All things are vimized: irb, postgres command line, etc.
+  * Os melhores bits de todos os principais repositórios dotfile, plug-ins vim e zsh organizados em um só lugar, em uma maneira simples e coesa de trabalhar.
+  * Mais de 90 plug-ins do vim, todos sob o mesmo teto, trabalhando juntos, cada plug-in pesquisado e configurado para estar no seu melhor, geralmente com teclas de atalho melhores.
+  * Muitos plug-ins zsh, começando com a maravilhosa base do Prezto e adicionando algumas sutilezas por cima.
+  * Tudo está com os atalhos no estilo vim: irb, linha de comando postgres, etc.
 
-*Linux/Ubuntu is not supported! If it works, great. If it doesn't, please don't complain. You may need to install zsh if you don't already have it.*
-*That being said, check the Docker section below*
+*Linux / Ubuntu não é compatível!  Se funcionar, ótimo.  Se não, por favor, não reclame.  Pode ser necessário instalar o zsh se ainda não o tiver feito.
+*Dito isso, verifique a seção Docker abaixo
 
-## Mailing List
+## Lista de discussão
 
-Got questions, concerns, want to hear announcements? Join the [Google Group](https://groups.google.com/forum/#!forum/yadr-users)
+Tem dúvidas, preocupações, deseja ouvir anúncios?  Junte-se ao [Grupo do Google](https://groups.google.com/forum/#!forum/yadr-users)
 
-Please use GitHub Issues for pull requests or bug reports only.
+Use os problemas do GitHub apenas para solicitações de pull ou relatórios de bug.
 
 ## Screenshot
 
 ![screenshot](https://i.imgur.com/3C1Ze.png)
 
-## Installation
+## Instalação
 
-To get started please run:
+Para começar, execute:
 
 ```bash
 sh -c "`curl -fsSL https://raw.githubusercontent.com/skwp/dotfiles/master/install.sh`"
 ```
-
-**Note:** YADR will automatically install all of its subcomponents. If you want to be asked
-about each one, use:
+**Observação**: o YADR instalará automaticamente todos os seus subcomponentes.  Se você quiser ser questionado sobre cada um, use:
 
 ```bash
 sh -c "`curl -fsSL https://raw.githubusercontent.com/skwp/dotfiles/master/install.sh`" -s ask
 ```
-
-## Wait, you're not done! Do this:
+## Espere, você não terminou!  Fazem isto:
 
 #### Install iTerm Solarized Colors
-YADR will install Solarized colorschemes into your iTerm. Go to Profiles => Colors => Load Presets to pick Solarized Dark.
+O YADR instalará esquemas de cores solarizados em seu iTerm.  Vá para Perfis => Cores => Carregar Predefinições para selecionar Escuro Solarizado.
 
-#### Remap caps-lock to escape with [Karabiner-Elements](https://pqrs.org/osx/karabiner/index.html)
-The escape key is the single most used key in vim.  Old keyboards used to have Escape where Tab is today. Apple keyboards are the worst with their tiny Esc keys. But all this is fixed by remapping Caps to Escape.  If you're hitting a small target in the corner, you are slowing yourself down considerably, and probably damaging your hands with repetitive strain injuries.
+#### Remapear caps-lock para o esc com [Karabiner-Elements](https://pqrs.org/osx/karabiner/index.html)
+
+#### Remap caps-lock to escape with The escape key is the single most used key in vim.  Old keyboards used to have Escape where Tab is today. Apple keyboards are the worst with their tiny Esc keys. But all this is fixed by remapping Caps to Escape.  If you're hitting a small target in the corner, you are slowing yourself down considerably, and probably damaging your hands with repetitive strain injuries.
 
 #### Set up a system wide hotkey for iTerm (Keys=>Hotkey)
 Recommended Cmd-Escape, which is really Cmd-Capslock.
