@@ -10,6 +10,8 @@
 
 [![Join the chat at https://gitter.im/skwp/dotfiles](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/skwp/dotfiles?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
+Select Language: [English](https://github.com/skwp/dotfiles), **Portuguese**
+
 #### sh -c "\`curl -fsSL https://raw.githubusercontent.com/skwp/dotfiles/master/install.sh \`"
 
 **Sempre certifique-se de executar o comando `rake update` após o pull para garantir que os plug-ins sejam atualizados**
