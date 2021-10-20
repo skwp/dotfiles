@@ -10,6 +10,8 @@
 
 [![Join the chat at https://gitter.im/skwp/dotfiles](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/skwp/dotfiles?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
+Select Language: [English](https://github.com/skwp/dotfiles), **Portuguese**
+
 #### sh -c "\`curl -fsSL https://raw.githubusercontent.com/skwp/dotfiles/master/install.sh \`"
 
 **Sempre certifique-se de executar o comando `rake update` após o pull para garantir que os plug-ins sejam atualizados**
@@ -282,12 +284,12 @@ Para obter um conhecimento mais profundo, pratique alguns deles todos os dias e,
 
  Supondo que seu sistema host tenha Docker e Docker Compose devidamente instalado, execute:
 
-     docker-compose executar dotfiles
+    docker-compose run dotfiles
 
  Isso construirá a imagem do contêiner se nunca a tiver criado antes (o que pode demorar um pouco - os tempos futuros serão mais rápidos) e, em seguida, executará uma sessão `zsh` dentro desse contêiner para você.
  Lá você pode brincar, testar comandos, aliases, etc.
 
- * Aviso *: este repo é orientado principalmente para macOS.  Portanto, qualquer suporte para Linux só pode ser feito com a ajuda da comunidade.
+ *Aviso*: este repo é orientado principalmente para macOS.  Portanto, qualquer suporte para Linux só pode ser feito com a ajuda da comunidade.
 
 ## Diversos
 
@@ -311,20 +313,20 @@ Para obter um conhecimento mais profundo, pratique alguns deles todos os dias e,
 
  ### Problemas de Macvim com Lua?
 
- `` `
+ ```
   brew uninstall macvim
   brew remove macvim
   brew cleanup
   brew install macvim --custom-icons --with-override-system-vim --with-lua --with-luajit
- `` `
+ ```
 
  ### Problemas no Terminal Vim com Lua?
  Instalar o terminal vim (com lua) com um Ruby gerenciado por RVM pode fazer com que o plugin neocomplete falhe em segfault. Tente desinstalar o vim e, em seguida, instalar com o ruby do sistema:
 
- `` `
-brew uninstall vim
-rvm system do brew install vim --with-lua
- `` `
+ ```
+  brew uninstall vim
+  rvm system do brew install vim --with-lua
+ ```
 
  ### [Pry](https://pryrepl.org/)
 
