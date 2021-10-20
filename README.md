@@ -14,9 +14,9 @@
 
 **Always be sure to run `rake update` after pulling to ensure plugins are updated**
 
-## What is YADR?
+## O QUE É YADR?
 
-**YADR is an opinionated dotfile repo that will make your heart sing**
+**YADR é um repositório dotfile opinativo que fará seu coração cantar**
 
   * The best bits of all the top dotfile repos, vim and zsh plugins curated in one place, into a simple and cohesive way of working.
   * More than 90 vim plugins, all under one roof, working together, each plugin researched and configured to be at its best, often with better shortcut keys.
