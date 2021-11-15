@@ -365,11 +365,4 @@ def success_msg(action)
   puts "YADR has been #{action}. Please restart your terminal and vim."
   puts
   puts
-  puts "======================================================"
-  puts "Don't forget your other favorites."
-  puts "======================================================"
-  puts
-  puts "Boom 2 : https://www.globaldelight.com/boom/boom2.php"
-  puts
-  puts "pgAdmin : https://www.pgadmin.org/download/"
 end
