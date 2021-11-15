@@ -1,0 +1,12 @@
+awscli
+bash-completion
+bzt
+docker
+docker-compose
+graphviz
+imagemagick
+jenv
+maven
+nvm
+rbenv
+wget

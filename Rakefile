@@ -176,6 +176,13 @@ def install_homebrew
   run %{brew install macvim}
   puts
   puts
+  puts "======================================================"
+  puts "Installing Personally Chosen Homebrew packages from txt file...There may be some warnings."
+  puts "======================================================"
+  run %{xargs brew install < brew.txt}
+  run %{xargs brew install --cask < brew_cask.txt}
+  puts
+  puts
 end
 
 def install_fonts
@@ -361,8 +368,6 @@ def success_msg(action)
   puts "======================================================"
   puts "Don't forget your other favorites."
   puts "======================================================"
-  puts
-  puts "Franz : https://meetfranz.com/"
   puts
   puts "Boom 2 : https://www.globaldelight.com/boom/boom2.php"
   puts
