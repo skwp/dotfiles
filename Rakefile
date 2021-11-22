@@ -177,10 +177,10 @@ def install_homebrew
   puts
   puts
   puts "======================================================"
-  puts "Installing Personally Chosen Homebrew packages from txt file...There may be some warnings."
+  puts "Installing Personally Chosen Homebrew packages ...There may be some warnings."
   puts "======================================================"
-  run %{xargs brew install < brew.txt}
-  run %{xargs brew install --cask < brew_cask.txt}
+  run %{brew install awscli bash-completion bzt docker docker-compose graphviz imagemagick jenv maven nvm rbenv wget}
+  run %{brew install --cask adobe-acrobat-reader adobe-creative-cloud altair-graphql-client android-file-transfer atom boom-3d cyberduck dbvisualizer docker discord dropbox firefox google-chrome google-drive intellij-idea lastpass lens microsoft-office opera-gx paw pgadmin4 plex qbittorrent rectangle robo-3t shift skype slack spotify steam superduper the-unarchiver teamviewer transmission ultimaker-cura vlc}
   puts
   puts
 end
