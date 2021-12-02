@@ -127,3 +127,6 @@
   enabled = true
 [include]
   path = .gitconfig.user
+[user]
+	email = "59359380+malkovro@users.noreply.github.com "
+	name = Léo Figea
