@@ -10,5 +10,6 @@ pathAppend() {
 # Remove duplicate entries from PATH:
 PATH=$(echo "$PATH" | awk -v RS=':' -v ORS=":" '!a[$1]++{if (NR > 1) printf ORS; printf $a[$1]}')
 
-pathAppend "$HOME/.yadr/bin"
 pathAppend "$HOME/.yadr/bin/yadr"
+pathAppend "$HOME/.cargo/bin"
+pathAppend "$HOME/.yadr/bin"
