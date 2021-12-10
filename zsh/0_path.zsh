@@ -13,3 +13,4 @@ PATH=$(echo "$PATH" | awk -v RS=':' -v ORS=":" '!a[$1]++{if (NR > 1) printf ORS;
 pathAppend "$HOME/.yadr/bin/yadr"
 pathAppend "$HOME/.cargo/bin"
 pathAppend "$HOME/.yadr/bin"
+pathAppend "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
