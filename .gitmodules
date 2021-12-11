@@ -2,3 +2,6 @@
 	path = zsh/prezto
 	url = https://github.com/sorin-ionescu/prezto.git
   ignore = dirty
+[submodule "ycm-code/lsp-examples"]
+	path = ycm-code/lsp-examples
+	url = https://github.com/ycm-core/lsp-examples.git

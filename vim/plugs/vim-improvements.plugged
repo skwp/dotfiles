@@ -1,6 +1,6 @@
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'Raimondi/delimitMate'
-Plug 'Shougo/neocomplete'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'briandoll/change-inside-surroundings.vim'
 Plug 'godlygeek/tabular'
 Plug 'tomtom/tcomment_vim'
