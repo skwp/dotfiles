@@ -13,3 +13,11 @@ for fpath in split(globpath(vimsettings, '*.vim'), '\n')
 
   exe 'source' fpath
 endfor
+
+" ================ Custom settings ==============
+set cursorcolumn
+
+" ================ Custom Syntax ================
+" Sets syntax highlighting on non syntax'd custom
+" files
+au BufNewFile,BufRead .gitconfig.user set filetype=gitconfig
