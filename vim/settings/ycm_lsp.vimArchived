@@ -1,0 +1,16 @@
+
+     let g:ycm_lsp_dir = '/Users/lfigea/.yadr/ycm-code/lsp-examples'
+     let g:ycm_language_server = []
+  let g:ycm_language_server += [
+  \   { 'name': 'kotlin',
+  \     'filetypes': [ 'kotlin' ],
+  \     'cmdline': [ expand( g:ycm_lsp_dir . '/kotlin/server/build/install/server/bin/server' ) ],
+  \   },
+  \ ]
+let g:ycm_language_server += [
+  \   {
+  \     'name': 'ruby',
+  \     'cmdline': [ expand( g:ycm_lsp_dir . '/ruby/bin/solargraph' ), 'stdio' ],
+  \     'filetypes': [ 'ruby' ],
+  \   },
+  \ ]

@@ -15,3 +15,5 @@ for fpath in split(globpath(vimsettings, '*.vim'), '\n')
 endfor
 
 set shell=/usr/local/bin/zsh
+
+set clipboard=unnamed

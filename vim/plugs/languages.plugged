@@ -8,3 +8,4 @@ Plug 'skwp/vim-html-escape'
 Plug 'mxw/vim-jsx'
 Plug 'jparise/vim-graphql'
 Plug 'rust-lang/rust.vim'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }

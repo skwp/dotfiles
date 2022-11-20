@@ -130,3 +130,5 @@
 [user]
 	email = "59359380+malkovro@users.noreply.github.com "
 	name = Léo Figea
+[init]
+	defaultBranch = main
