@@ -150,7 +150,7 @@
 [user]
 	email = swanand.pagnis@colearn.id
 	name = Swanand Pagnis
-	signingkey = 61EA4293
+	signingkey = 5F153B354A987BEE
 [filter "lfs"]
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
