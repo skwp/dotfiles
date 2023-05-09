@@ -101,7 +101,7 @@ task :install_vundle do
   puts ""
 
   vundle_path = File.join('vim','bundle', 'vundle')
-  unless File.exists?(vundle_path)
+  unless File.exist?(vundle_path)
     run %{
       cd $HOME/.yadr
       git clone https://github.com/gmarik/vundle.git #{vundle_path}
@@ -197,7 +197,7 @@ def install_term_theme
   run %{ /usr/libexec/PlistBuddy -c "Merge 'iTerm2/Solarized Dark.itermcolors' :'Custom Color Presets':'Solarized Dark'" ~/Library/Preferences/com.googlecode.iterm2.plist }
 
   # If iTerm2 is not installed or has never run, we can't autoinstall the profile since the plist is not there
-  if !File.exists?(File.join(ENV['HOME'], '/Library/Preferences/com.googlecode.iterm2.plist'))
+  if !File.exist?(File.join(ENV['HOME'], '/Library/Preferences/com.googlecode.iterm2.plist'))
     puts "======================================================"
     puts "To make sure your profile is using the solarized theme"
     puts "Please check your settings under:"
