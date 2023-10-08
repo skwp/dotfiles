@@ -2,7 +2,7 @@
 
 pathAppend() {
   # Only adds to the path if it's not already there
-  if ! echo $PATH | egrep -q "(^|:)$1($|:)" ; then
+  if ! echo $PATH | grep -E -q "(^|:)$1($|:)" ; then
     PATH=$PATH:$1
   fi
 }
