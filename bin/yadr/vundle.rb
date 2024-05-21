@@ -32,12 +32,12 @@ module Vundle
 
   private
   def self.contains_vundle?(vundle_name)
-    FileUtils.touch(@vundles_path) unless File.exists? @vundles_path
+    FileUtils.touch(@vundles_path) unless File.exist? @vundles_path
     File.read(@vundles_path).include?(vundle_name)
   end
 
   def self.vundles_from_file
-    FileUtils.touch(@vundles_path) unless File.exists? @vundles_path
+    FileUtils.touch(@vundles_path) unless File.exist? @vundles_path
     File.read(@vundles_path).split("\n")
   end
 
