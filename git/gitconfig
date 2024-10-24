@@ -127,3 +127,6 @@
   enabled = true
 [include]
   path = .gitconfig.user
+[user]
+	name = Dain Miller
+	email = dain@hey.com
