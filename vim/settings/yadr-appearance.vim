@@ -27,5 +27,6 @@ else
   end
 endif
 
-colorscheme solarized
+colorscheme jellybeans
 set background=dark
+

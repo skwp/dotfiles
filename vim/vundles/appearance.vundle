@@ -1,4 +1,5 @@
 Bundle "chrisbra/color_highlight.git"
+Bundle "nanotech/jellybeans.vim"
 Bundle "skwp/vim-colors-solarized"
 Bundle "itchyny/lightline.vim"
 Bundle "jby/tmux.vim.git"
@@ -7,4 +8,4 @@ Bundle "xsunsmile/showmarks.git"
 Bundle "chriskempson/base16-vim"
 
 " Required for Gblame in terminal vim
-Bundle "godlygeek/csapprox.git" 
+Bundle "godlygeek/csapprox.git"

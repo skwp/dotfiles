@@ -18,6 +18,7 @@ alias ydv='yadr vim-delete-plugin'
 alias ylv='yadr vim-list-plugin'
 alias yup='yadr update-plugins'
 alias yip='yadr init-plugins'
+alias l='lazygit'
 
 # PS
 alias psa="ps aux"
@@ -211,3 +212,24 @@ alias dbmu='spring rake db:migrate:up'
 
 # Homebrew
 alias brewu='brew update && brew upgrade && brew cleanup && brew doctor'
+
+# ================= CUSTOM ALIASES =================
+alias c='rails c'
+alias aliases='vi ~/.yadr/zsh/aliases.zsh'
+alias code="cd ~/code"
+alias vimrc='vi ~/.vimrc'
+alias b='bundle'
+
+# ================= TMUX =================
+alias delete='tmux kill-session -t'
+alias new='tmux new -s'
+alias attach='tmux attach-session -t '
+alias add='tmux attach-session -t '
+alias tmadd='tmux attach'
+# alias add='tmux attach'
+alias tmnew='tmux new'
+alias tmlist='tmux list-sessions'
+alias list='tmux list-sessions'
+alias tmdel='tmux kill-session'
+alias del='tmux kill-session'
+alias t='tmux'

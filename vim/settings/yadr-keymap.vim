@@ -59,7 +59,7 @@ vmap ,{ c{<C-R>"}<ESC>
 map ,` ysiw`
 
 " gary bernhardt's hashrocket
-imap <c-l> <space>=><space>
+" imap <c-l> <space>=><space>
 
 "Go to last edit location with ,.
 nnoremap ,. '.

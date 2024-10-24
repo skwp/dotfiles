@@ -1,6 +1,7 @@
 if exists("g:ctrlp_user_command")
   unlet g:ctrlp_user_command
 endif
+
 if executable('ag')
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
   let g:ctrlp_user_command =
@@ -25,7 +26,7 @@ let g:ctrlp_switch_buffer = 0
 " We don't want to use Ctrl-p as the mapping because
 " it interferes with YankRing (paste, then hit ctrl-p)
 let g:ctrlp_map = ',t'
-nnoremap <silent> ,t :CtrlP<CR>
+let g:ctrlp_map = '<Space>t'
 
 " Additional mapping for buffer search
 nnoremap <silent> ,b :CtrlPBuffer<cr>
@@ -55,3 +56,4 @@ map ,jT :CtrlP test<CR>
 "Cmd-Shift-(M)ethod - jump to a method (tag in current file)
 "Ctrl-m is not good - it overrides behavior of Enter
 nnoremap <silent> <D-M> :CtrlPBufTag<CR>
+
