@@ -169,7 +169,7 @@ def install_homebrew
   puts "Installing Homebrew packages...There may be some warnings."
   puts "======================================================"
   run %{brew install zsh ctags git hub tmux reattach-to-user-namespace the_silver_searcher ghi}
-  run %{brew install neovim}
+  run %{brew install neovim pyenv}
   puts
   puts
 end
