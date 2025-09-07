@@ -6,4 +6,4 @@
     (_______\_____|\____|_|
 
 
-#### sh -c "\`curl -fsSL https://raw.githubusercontent.com/dainmiller/yadr-next/master/install.sh \`"
+sh -c "\`curl -fsSL https://raw.githubusercontent.com/dainmiller/yadr-next/master/install.sh \`"
