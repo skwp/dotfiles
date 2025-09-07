@@ -24,3 +24,10 @@ Clone, tweak, and make it yours.
 ```bash
 curl -fsSL https://raw.githubusercontent.com/dainmiller/yadr-next/master/install.sh | sh
 ```
+
+----
+
+## Notes:
+
+- Once you download it add your GitConfig in `/git/` folder.
+- TBD
