@@ -5,17 +5,21 @@
      _____| / ___ ( (_| | |
     (_______\_____|\____|_|
 
-YADR-Next
-=========
+✨ YADR-Next
+======
 
-YADR-Next is a lightweight, low-maintenance fork of YADR, a powerful dotfiles management system for Vim, Tmux, and other terminal tools.
+YADR-Next is a low-maintenance, streamlined fork of YADR for managing your dotfiles like a pro (Vim, Tmux, etc).
 
-This fork:
-  - Removes deprecated Ruby methods.
-  - Adds my personal favorite configurations.
-  - Removes unnecessary packages for a cleaner setup.
+What’s new:
+  - ✅ Removed deprecated Ruby methods
+  - ⚡ Slimmed down unnecessary packages
+  - 🌟 Added my favorite configs for a cleaner, faster setup
 
-Feel free to customize after cloning to make it your own!
+Clone, tweak, and make it yours.
+
+-----
+
+## Install
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/dainmiller/yadr-next/master/install.sh | sh
