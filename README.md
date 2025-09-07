@@ -17,10 +17,6 @@ This fork:
 
 Feel free to customize after cloning to make it your own!
 
-⸻
-
-If you want, I can also make an even punchier, one-paragraph version that’s more likely to grab GitHub stars. Do you want me to do that?
-
 ```bash
 curl -fsSL https://raw.githubusercontent.com/dainmiller/yadr-next/master/install.sh | sh
 ```
