@@ -9,7 +9,7 @@
 
 **Always be sure to run `rake update` after pulling to ensure plugins are updated**
 
-## What is YADR?
+## What is YADR-Next?
 
 **YADR-next is a lightweight actively maintained fork of the opinionated YADR dotfile repo**
 
