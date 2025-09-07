@@ -1,4 +1,4 @@
-"G Use Vim settings, rather then Vi settings (much better!).
+" Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
@@ -133,6 +133,7 @@ set nolist
 
 if has("gui_running")
   set guifont=Sonaco:h12
+  " colorscheme base16-unikitty-light
 endif
 
 " Use Relative Number
@@ -145,39 +146,33 @@ let g:returnApp = "iTerm"
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
 " ================ Vim Wiki Settings ========================
-let wiki = {}
-let wiki.path = "~/Dropbox/notes-main"
-let g:vimwiki_folding='expr'
-let g:markdown_syntax_conceal = 1
-let g:vimwiki_list = [wiki]
-let g:vimwiki_folding='custom'
+" ================ OFF BY DEFAULT ========================
 
-"
-" if has("gui_running")
-"     set guifont=Sonaco:h12
-"     colorscheme base16-unikitty-light
-" endif
+" let wiki = {}
+" let wiki.path = "~/Dropbox/notes-main"
+" let g:vimwiki_folding='expr'
+" let g:markdown_syntax_conceal = 1
+" let g:vimwiki_list = [wiki]
+" let g:vimwiki_folding='custom'
+" au FileType vimwiki nmap <leader>tt <Plug>VimwikiToggleListItem
+" au FileType vimwiki vmap <leader>tt <Plug>VimwikiToggleListItem
+" let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'ruby']
+" let g:medieval_langs = ['python=python3', 'ruby', 'sh', 'console=bash', 'javascript=node', 'rust=rustc']
+" let g:medieval_fences = [{'start': '{{<\s\+\(\S\+\)\s\+>}}', 'end': '{{<\s\+/\1\s\+>}}'}]
+" let wiki.nested_syntaxes = { 'python': 'python', 'c++': 'cpp', 'ruby': 'ruby', 'javascript': 'javascript', "go": "go", "vim": "vim", "rust": "rust", "sh": "sh", "lisp": "lisp", "swift": "swift", "haskell": "haskell" }
 
-au FileType vimwiki nmap <leader>tt <Plug>VimwikiToggleListItem
-au FileType vimwiki vmap <leader>tt <Plug>VimwikiToggleListItem
-let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'ruby']
-let g:medieval_langs = ['python=python3', 'ruby', 'sh', 'console=bash', 'javascript=node', 'rust=rustc']
-let g:medieval_fences = [{'start': '{{<\s\+\(\S\+\)\s\+>}}', 'end': '{{<\s\+/\1\s\+>}}'}]
-let wiki.nested_syntaxes = { 'python': 'python', 'c++': 'cpp', 'ruby': 'ruby', 'javascript': 'javascript', "go": "go", "vim": "vim", "rust": "rust", "sh": "sh", "lisp": "lisp", "swift": "swift", "haskell": "haskell" }
-
-
-function! VimwikiFindIncompleteTasks()
-  lvimgrep /- \[ \]/ %:p
-  lopen
-endfunction
-
-function! VimwikiFindAllIncompleteTasks()
-  VimwikiSearch /- \[ \]/
-  lopen
-endfunction
-
-nmap <Leader>wa :call VimwikiFindAllIncompleteTasks()<CR>
-nmap <Leader>wx :call VimwikiFindIncompleteTasks()<CR>
+" function! VimwikiFindIncompleteTasks()
+"   lvimgrep /- \[ \]/ %:p
+"   lopen
+" endfunction
+" 
+" function! VimwikiFindAllIncompleteTasks()
+"   VimwikiSearch /- \[ \]/
+"   lopen
+" endfunction
+" 
+" nmap <Leader>wa :call VimwikiFindAllIncompleteTasks()<CR>
+" nmap <Leader>wx :call VimwikiFindIncompleteTasks()<CR>
 
 " ================ Testing Shortcuts to increase speed ======================
 
@@ -185,10 +180,10 @@ map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Space>d :! spring rspec spec/ --format=documentation<CR>
 map <Space>a :! spring rspec spec/<CR>
 map <Space>rr :call RunNearestSpec()<CR>
-"map <Space>k :call RunNearestSpecRaw()<CR>
+" map <Space>k :call RunNearestSpecRaw()<CR>
 map <Space>l :call RunLastSpec()<CR>
-"map <Space>ll :call RunLastSpec()<CR>
-"map <Space>aa :call RunAllSpecs()<CR>
+" map <Space>ll :call RunLastSpec()<CR>
+" map <Space>aa :call RunAllSpecs()<CR>
 map <Space>a :call RunAllSpecs()<CR>
 
 " ================ Deleted or Unused Shortcuts =======================
@@ -213,8 +208,8 @@ map <Leader>n :noh<CR>
 " Suspend the vim session (fg to get back)
 noremap <silent> <Space>k :st<CR>
 
-" map <Leader>v :e ~/.vimrc<CR>
-" map <Space>vv :vsplit ~/.vimrc<CR>
+map <Leader>v :e ~/.vimrc<CR>
+map <Space>vv :vsplit ~/.vimrc<CR>
 map <Space>0 :colorscheme jellybeans<CR>
 " map <Leader>8 :set ft=markdown<CR>
 map <Space>9 :colorscheme morning<CR>
@@ -231,7 +226,7 @@ map <Space>g :Goyo<CR>
 " map <Space>mt :MarkedToggle!<cr>
 " map <Space>mo :MarkedOpen!<cr>
 
-"Trying to speed up vim
+" Trying to speed up vim
 let g:loaded_matchparen=1
 set nolist
 set nonumber
