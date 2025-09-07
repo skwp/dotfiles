@@ -11,9 +11,9 @@ YADR-Next
 YADR-Next is a lightweight, low-maintenance fork of YADR, a powerful dotfiles management system for Vim, Tmux, and other terminal tools.
 
 This fork:
-•	Removes deprecated Ruby methods.
-•	Adds my personal favorite configurations.
-•	Removes unnecessary packages for a cleaner setup.
+  - Removes deprecated Ruby methods.
+  - Adds my personal favorite configurations.
+  - Removes unnecessary packages for a cleaner setup.
 
 Feel free to customize after cloning to make it your own!
 
