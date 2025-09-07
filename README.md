@@ -5,5 +5,6 @@
      _____| / ___ ( (_| | |
     (_______\_____|\____|_|
 
-
-Install: `curl -fsSL https://raw.githubusercontent.com/dainmiller/yadr-next/master/install.sh | sh`
+```bash
+curl -fsSL https://raw.githubusercontent.com/dainmiller/yadr-next/master/install.sh | sh
+```
