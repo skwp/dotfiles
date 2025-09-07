@@ -6,8 +6,6 @@
         | |/ ____ \| |__| | | \ \      | |\  | |____ / . \   | |   
         |_/_/    \_\_____/|_|  \_\     |_| \_|______/_/ \_\  |_|   
 
-**Always be sure to run `rake update` after pulling to ensure plugins are updated**
-
 ## What is YADR-Next?
 
 **YADR-next is a lightweight actively maintained fork of the opinionated YADR dotfile repo**
