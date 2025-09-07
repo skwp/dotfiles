@@ -36,7 +36,7 @@ sh -c "`curl -fsSL https://raw.githubusercontent.com/dainmiller/yadr-next/master
 about each one, use:
 
 ```bash
-sh -c "`curl -fsSL https://raw.githubusercontent.com/skwp/dainmiller/yadr-next/install.sh`" -s ask
+sh -c "`curl -fsSL https://raw.githubusercontent.com/dainmiller/yadr-next/install.sh`" -s ask
 ```
 
 ## Wait, you're not done! Do this:
