@@ -311,12 +311,13 @@ brew cleanup
 brew install macvim --custom-icons --with-override-system-vim --with-lua --with-luajit
 ```
 
-### Terminal Vim troubles with Lua?
-Installing terminal vim (with lua) with an RVM managed Ruby can cause the neocomplete plugin to segfault. Try uninstalling vim, then installing with system ruby:
+### Version Management
+This setup now uses [mise](https://mise.jdx.dev/) instead of RVM for Ruby version management. Mise is faster, more reliable, and supports multiple languages (Ruby, Node.js, Python, etc.).
 
-```
-brew uninstall vim
-rvm system do brew install vim --with-lua
+To install Ruby versions:
+```bash
+mise install ruby@3.2.0
+mise use ruby@3.2.0
 ```
 
 ### [Pry](https://pryrepl.org/)

@@ -2,21 +2,12 @@ source $HOME/.zprezto/runcoms/zshrc
 
 for config_file ($HOME/.yadr/zsh/*.zsh) source $config_file
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-# export PATH="$PATH:$HOME/.rvm/bin"
-
-alias l='lazygit'
+# Mise (modern version manager) is already activated below
+# No need for RVM - mise handles Ruby, Node, Python, etc.
 
 export PATH="/opt/homebrew/opt/postgresql@14/bin:$PATH"
 export LDFLAGS="-L/opt/homebrew/opt/postgresql@14/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/postgresql@14/include"
 
-# Added by Windsurf
-export PATH="/Users/dain/.codeium/windsurf/bin:$PATH"
-
+# Activate mise (modern version manager for Ruby, Node, Python, etc.)
 eval "$(mise activate zsh)"
-
-unset GEM_HOME
-unset GEM_PATH
-export GEM_HOME="$(ruby -e 'print Gem.default_dir')"
-export GEM_PATH="$GEM_HOME"

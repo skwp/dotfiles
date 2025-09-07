@@ -219,6 +219,7 @@ alias aliases='vi ~/.yadr/zsh/aliases.zsh'
 alias code="cd ~/code"
 alias vimrc='vi ~/.vimrc'
 alias b='bundle'
+alias l='lazygit'
 
 # ================= TMUX =================
 alias delete='tmux kill-session -t'

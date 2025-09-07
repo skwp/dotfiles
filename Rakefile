@@ -1,4 +1,5 @@
 require 'rake'
+
 require 'fileutils'
 require File.join(File.dirname(__FILE__), 'bin', 'yadr', 'vundle')
 
@@ -11,7 +12,7 @@ task :install => [:submodule_init, :submodules] do
   puts
 
   install_homebrew if RUBY_PLATFORM.downcase.include?("darwin")
-  install_rvm_binstubs
+  # install_rvm_binstubs  # Removed - using mise instead
 
   # this has all the runcoms from this directory.
   install_files(Dir.glob('git/*')) if want_to_install?('git configs (color, aliases)')
@@ -141,15 +142,16 @@ def run_bundle_config
   puts
 end
 
-def install_rvm_binstubs
-  puts "======================================================"
-  puts "Installing RVM Bundler support. Never have to type"
-  puts "bundle exec again! Please use bundle --binstubs and RVM"
-  puts "will automatically use those bins after cd'ing into dir."
-  puts "======================================================"
-  run %{ chmod +x $rvm_path/hooks/after_cd_bundler }
-  puts
-end
+# Removed - using mise instead
+# def install_rvm_binstubs
+#   puts "======================================================"
+#   puts "Installing RVM Bundler support. Never have to type"
+#   puts "bundle exec again! Please use bundle --binstubs and RVM"
+#   puts "will automatically use those bins after cd'ing into dir."
+#   puts "======================================================"
+#   run %{ chmod +x $rvm_path/hooks/after_cd_bundler }
+#   puts
+# end
 
 def install_homebrew
   run %{which brew}
