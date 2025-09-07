@@ -5,7 +5,6 @@
        \   // /\ \ | |  | |  _  /______| . ` |  __|   > <    | |   
         | |/ ____ \| |__| | | \ \      | |\  | |____ / . \   | |   
         |_/_/    \_\_____/|_|  \_\     |_| \_|______/_/ \_\  |_|   
-        # Yet Another Dotfile Repo v1.2
 
 **Always be sure to run `rake update` after pulling to ensure plugins are updated**
 
