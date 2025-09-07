@@ -5,9 +5,29 @@
      _____| / ___ ( (_| | |
     (_______\_____|\____|_|
 
+✨ YADR-Next
+======
 
-UPDATED to remove Ruby methods that were removed in 3.x. 
+YADR-Next is a low-maintenance, streamlined fork of YADR for managing your dotfiles like a pro (Vim, Tmux, etc).
 
-YADR is mostly deprecated, but I still use it on all new machines. This is an up-to-date REPO
+What’s new:
+  - ✅ Removed deprecated Ruby methods
+  - ⚡ Slimmed down unnecessary packages
+  - 🌟 Added my favorite configs for a cleaner, faster setup
 
-Want more info on YADR? Click on the original repo above.
+Clone, tweak, and make it yours.
+
+-----
+
+## Install
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/dainmiller/yadr-next/master/install.sh | sh
+```
+
+----
+
+## Notes:
+
+- Once you download it add your GitConfig in `/git/` folder.
+- TBD
