@@ -1,15 +1,15 @@
-     _     _           _
-    | |   | |         | |
-    | |___| |_____  __| | ____
-    |_____  (____ |/ _  |/ ___)
-     _____| / ___ ( (_| | |
-    (_______\_____|\____|_|
-
+ __     __      _____  _____        _   _ ________   _________ 
+ \ \   / //\   |  __ \|  __ \      | \ | |  ____\ \ / /__   __|
+  \ \_/ //  \  | |  | | |__) |_____|  \| | |__   \ V /   | |   
+   \   // /\ \ | |  | |  _  /______| . ` |  __|   > <    | |   
+    | |/ ____ \| |__| | | \ \      | |\  | |____ / . \   | |   
+    |_/_/    \_\_____/|_|  \_\     |_| \_|______/_/ \_\  |_|   
+                                                               
     # Yet Another Dotfile Repo v1.2
 
 **Always be sure to run `rake update` after pulling to ensure plugins are updated**
 
-## What is YADR?
+## What is YADR-Next?
 
 **YADR-next is a lightweight actively maintained fork of the opinionated YADR dotfile repo**
 
