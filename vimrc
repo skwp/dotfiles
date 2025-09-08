@@ -176,15 +176,21 @@ nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
 " ================ Testing Shortcuts to increase speed ======================
 
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Space>d :! spring rspec spec/ --format=documentation<CR>
-map <Space>a :! spring rspec spec/<CR>
-map <Space>rr :call RunNearestSpec()<CR>
+" RSPEC
+" map <Leader>t :call RunCurrentSpecFile()<CR>
+" map <Space>a :! spring rspec spec/<CR>
+" map <Space>rr :call RunNearestSpec()<CR>
 " map <Space>k :call RunNearestSpecRaw()<CR>
-map <Space>l :call RunLastSpec()<CR>
+" map <Space>l :call RunLastSpec()<CR>
 " map <Space>ll :call RunLastSpec()<CR>
 " map <Space>aa :call RunAllSpecs()<CR>
+
+" MINITEST
 map <Space>a :call RunAllSpecs()<CR>
+map <Space>t :call TestFile()<CR>
+map <Space>v :! rails test --verbose<CR>
+map <Space>a :! rails test<CR>
+map <Space>rr :call TestNearest()<CR>
 
 " ================ Deleted or Unused Shortcuts =======================
 
