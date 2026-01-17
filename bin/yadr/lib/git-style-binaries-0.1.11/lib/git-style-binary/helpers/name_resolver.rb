@@ -36,9 +36,9 @@ module Helpers
     # available
     def binary_filename_for(name)
       user_file = File.join(binary_directory, "#{basename}-#{name}") 
-      return user_file if File.exists?(user_file)
+      return user_file if File.exist?(user_file)
       built_in = File.join(built_in_commands_directory, "#{name}.rb") 
-      return built_in if File.exists?(built_in)
+      return built_in if File.exist?(built_in)
       user_file
     end
 

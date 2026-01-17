@@ -18,8 +18,8 @@ optparse = OptionParser.new do|opts|
 	$options[:outfolder] = false
 	opts.on( '-o DIR','--output DIR', 'Output folder, default STDOUT. Use "." for current folder, void if output type is "nv"' ) do |outfolder|
 		filepath = File.expand_path(outfolder)
-		unless File.exists?(filepath) && File.directory?(filepath)
-			if File.exists?(filepath)
+		unless File.exist?(filepath) && File.directory?(filepath)
+			if File.exist?(filepath)
 				puts "Output folder is not a directory"
 				exit
 			else
@@ -90,7 +90,7 @@ end
 def html_file_to_markdown(outtype)
 	$input.each {|file|
 		input = File.expand_path(file)
-		if File.exists?(input)
+		if File.exist?(input)
 			html = File.open(input,'r') {|infile|
 				CGI.escape(CGI.unescapeHTML(infile.read))
 			}
@@ -206,7 +206,7 @@ end
 def bookmark_to_markdown(outtype)
 	$input.each {|f|
 		file = File.expand_path(f)
-		if File.exists?(file)
+		if File.exist?(file)
 			outfile = $options[:outfolder] ? $options[:outfolder] : ""
 			outfile += %x{mdls -name 'kMDItemDisplayName' -raw "#{file}"}.strip.gsub(/(\.webbookmark|\.webloc)$/,'') + '.md'
 			source_url = %x{mdls -name 'kMDItemURL' -raw "#{file}"}.strip
